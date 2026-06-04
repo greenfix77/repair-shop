@@ -13,262 +13,7 @@ from PyQt5.QtGui import QFont, QColor, QTextDocument, QIcon
 from PyQt5.QtPrintSupport import QPrinter, QPrintDialog, QPrintPreviewDialog
 import jdatetime
 
-
-class PersianCalendarWidget(QCalendarWidget):
-    """ویجت تقویم شمسی سفارشی"""
-    
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.setLocale(QLocale(QLocale.Persian, QLocale.Iran))  # ← اصلاح شد
-        self.setFirstDayOfWeek(Qt.Saturday)
-        self.setVerticalHeaderFormat(QCalendarWidget.NoVerticalHeader)
-        
-        font = QFont("Segoe UI", 10)
-        self.setFont(font)
-        
-        today = jdatetime.date.today()
-        gregorian_date = today.togregorian()
-        self.setSelectedDate(QDate(gregorian_date.year, gregorian_date.month, gregorian_date.day))
-    
-    def get_persian_date(self):
-        """دریافت تاریخ شمسی انتخاب شده"""
-        selected = self.selectedDate()
-        gregorian = datetime(selected.year(), selected.month(), selected.day())
-        jalali = jdatetime.date.fromgregorian(date=gregorian.date())
-        return jalali.strftime("%Y/%m/%d")
-
-
-
-class PersianDateEdit(QLineEdit):
-    """ویجت ورودی تاریخ شمسی"""
-    
-    dateChanged = pyqtSignal(str)
-    
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.setPlaceholderText("YYYY/MM/DD")
-        self.setReadOnly(True)
-        
-        # تنظیم تاریخ امروز
-        today = jdatetime.date.today()
-        self.setText(today.strftime("%Y/%m/%d"))
-        
-        # دکمه انتخاب تاریخ
-        self.calendar_btn = QPushButton("📅", self)
-        self.calendar_btn.setFixedSize(30, 25)
-        self.calendar_btn.clicked.connect(self.show_calendar)
-        
-        # چیدمان
-        self.setStyleSheet("padding-right: 35px;")
-        
-    def resizeEvent(self, event):
-        """تنظیم موقعیت دکمه"""
-        super().resizeEvent(event)
-        self.calendar_btn.move(5, 2)
-    
-    def show_calendar(self):
-        """نمایش تقویم"""
-        dialog = QDialog(self)
-        dialog.setWindowTitle("انتخاب تاریخ")
-        dialog.setModal(True)
-        
-        layout = QVBoxLayout()
-        
-        calendar = PersianCalendarWidget()
-        layout.addWidget(calendar)
-        
-        btn_layout = QHBoxLayout()
-        ok_btn = QPushButton("تأیید")
-        cancel_btn = QPushButton("انصراف")
-        
-        ok_btn.clicked.connect(lambda: self.set_date(calendar.get_persian_date(), dialog))
-        cancel_btn.clicked.connect(dialog.reject)
-        
-        btn_layout.addWidget(ok_btn)
-        btn_layout.addWidget(cancel_btn)
-        layout.addLayout(btn_layout)
-        
-        dialog.setLayout(layout)
-        dialog.exec_()
-    
-    def set_date(self, date_str, dialog):
-        """تنظیم تاریخ"""
-        self.setText(date_str)
-        self.dateChanged.emit(date_str)
-        dialog.accept()
-    
-    def get_date(self):
-        """دریافت تاریخ"""
-        return self.text()
-class ShopSettingsDialog(QDialog):
-    """دیالوگ تنظیمات فروشگاه"""
-    
-    def __init__(self, parent=None):
-        super().__init__(parent)
-        self.setWindowTitle("تنظیمات فروشگاه")
-        self.setModal(True)
-        self.setMinimumWidth(500)
-        self.logo_path = ""
-        
-        self.init_ui()
-        self.load_settings()
-    
-    def init_ui(self):
-        """ایجاد رابط کاربری"""
-        layout = QVBoxLayout()
-        
-        # عنوان
-        title = QLabel("تنظیمات اطلاعات فروشگاه")
-        title.setFont(QFont("Segoe UI", 14, QFont.Bold))
-        title.setAlignment(Qt.AlignCenter)
-        layout.addWidget(title)
-        
-        # فرم
-        form_layout = QGridLayout()
-        
-        # نام فروشگاه
-        form_layout.addWidget(QLabel("نام فروشگاه:"), 0, 0)
-        self.shop_name_input = QLineEdit()
-        self.shop_name_input.setPlaceholderText("نام فروشگاه خود را وارد کنید")
-        form_layout.addWidget(self.shop_name_input, 0, 1)
-        
-        # آدرس
-        form_layout.addWidget(QLabel("آدرس:"), 1, 0)
-        self.address_input = QTextEdit()
-        self.address_input.setMaximumHeight(60)
-        self.address_input.setPlaceholderText("آدرس کامل فروشگاه")
-        form_layout.addWidget(self.address_input, 1, 1)
-        
-        # تلفن
-        form_layout.addWidget(QLabel("تلفن:"), 2, 0)
-        self.phone_input = QLineEdit()
-        self.phone_input.setPlaceholderText("شماره تماس")
-        form_layout.addWidget(self.phone_input, 2, 1)
-        
-        # موبایل
-        form_layout.addWidget(QLabel("موبایل:"), 3, 0)
-        self.mobile_input = QLineEdit()
-        self.mobile_input.setPlaceholderText("شماره موبایل")
-        form_layout.addWidget(self.mobile_input, 3, 1)
-        
-        # ایمیل
-        form_layout.addWidget(QLabel("ایمیل:"), 4, 0)
-        self.email_input = QLineEdit()
-        self.email_input.setPlaceholderText("آدرس ایمیل")
-        form_layout.addWidget(self.email_input, 4, 1)
-        
-        # وبسایت
-        form_layout.addWidget(QLabel("وبسایت:"), 5, 0)
-        self.website_input = QLineEdit()
-        self.website_input.setPlaceholderText("آدرس وبسایت")
-        form_layout.addWidget(self.website_input, 5, 1)
-        
-        # لوگو
-        form_layout.addWidget(QLabel("لوگو:"), 6, 0)
-        logo_layout = QHBoxLayout()
-        self.logo_label = QLabel("لوگویی انتخاب نشده")
-        self.logo_label.setStyleSheet("padding: 5px; border: 1px solid #ccc; border-radius: 3px;")
-        logo_btn = QPushButton("انتخاب لوگو")
-        logo_btn.clicked.connect(self.select_logo)
-        logo_layout.addWidget(self.logo_label, 1)
-        logo_layout.addWidget(logo_btn)
-        form_layout.addLayout(logo_layout, 6, 1)
-        
-        layout.addLayout(form_layout)
-        
-        # دکمه‌ها
-        btn_layout = QHBoxLayout()
-        save_btn = QPushButton("ذخیره")
-        cancel_btn = QPushButton("انصراف")
-        
-        save_btn.setStyleSheet("background-color: #4CAF50; color: white; padding: 8px 20px; font-weight: bold;")
-        cancel_btn.setStyleSheet("background-color: #f44336; color: white; padding: 8px 20px;")
-        
-        save_btn.clicked.connect(self.save_settings)
-        cancel_btn.clicked.connect(self.reject)
-        
-        btn_layout.addWidget(save_btn)
-        btn_layout.addWidget(cancel_btn)
-        layout.addLayout(btn_layout)
-        
-        self.setLayout(layout)
-    def select_logo(self):
-        """انتخاب فایل لوگو"""
-        file_path, _ = QFileDialog.getOpenFileName(
-            self,
-            "انتخاب لوگو",
-            "",
-            "Image Files (*.png *.jpg *.jpeg *.bmp *.gif)"
-        )
-        
-        if file_path:
-            self.logo_path = file_path
-            self.logo_label.setText(Path(file_path).name)
-    
-    def load_settings(self):
-        """بارگذاری تنظیمات"""
-        try:
-            if Path("shop_settings.json").exists():
-                with open("shop_settings.json", "r", encoding="utf-8") as f:
-                    settings = json.load(f)
-                    
-                self.shop_name_input.setText(settings.get("shop_name", ""))
-                self.address_input.setText(settings.get("address", ""))
-                self.phone_input.setText(settings.get("phone", ""))
-                self.mobile_input.setText(settings.get("mobile", ""))
-                self.email_input.setText(settings.get("email", ""))
-                self.website_input.setText(settings.get("website", ""))
-                
-                logo = settings.get("logo", "")
-                if logo:
-                    self.logo_path = logo
-                    self.logo_label.setText(Path(logo).name if Path(logo).exists() else "فایل یافت نشد")
-        except Exception as e:
-            print(f"خطا در بارگذاری تنظیمات: {e}")
-    
-    def save_settings(self):
-        """ذخیره تنظیمات"""
-        settings = {
-            "shop_name": self.shop_name_input.text(),
-            "address": self.address_input.toPlainText(),
-            "phone": self.phone_input.text(),
-            "mobile": self.mobile_input.text(),
-            "email": self.email_input.text(),
-            "website": self.website_input.text(),
-            "logo": self.logo_path
-        }
-        
-        try:
-            with open("shop_settings.json", "w", encoding="utf-8") as f:
-                json.dump(settings, f, ensure_ascii=False, indent=4)
-            
-            QMessageBox.information(self, "موفق", "تنظیمات با موفقیت ذخیره شد.")
-            self.accept()
-        except Exception as e:
-            QMessageBox.critical(self, "خطا", f"خطا در ذخیره تنظیمات: {e}")
-    
-    @staticmethod
-    def get_settings():
-        """دریافت تنظیمات فروشگاه"""
-        default_settings = {
-            "shop_name": "تعمیرگاه لپ‌تاپ",
-            "address": "آدرس فروشگاه",
-            "phone": "021-12345678",
-            "mobile": "0912-1234567",
-            "email": "info@shop.com",
-            "website": "www.shop.com",
-            "logo": ""
-        }
-        
-        try:
-            if Path("shop_settings.json").exists():
-                with open("shop_settings.json", "r", encoding="utf-8") as f:
-                    return json.load(f)
-        except:
-            pass
-        
-        return default_settings
-
+from repair_manager.ui.components import PersianCalendarWidget, PersianDateEdit
 
 class InvoicePreviewDialog(QDialog):
     """دیالوگ پیشنمایش و چاپ فاکتور"""
@@ -337,25 +82,22 @@ class InvoicePreviewDialog(QDialog):
         
         # نمایش پیشنمایش اولیه
         self.update_preview()
-    def print_invoice(self):      # ← اینجا اضافه کن
-        from PyQt5.QtPrintSupport import QPrinter, QPrintDialog
-        printer = QPrinter(QPrinter.HighResolution)
-        dialog = QPrintDialog(printer, self)
-        if dialog.exec_() == QPrintDialog.Accepted:
-            self.preview.print_(printer)
 
-    def save_pdf(self):           # ← و اینجا
-        from PyQt5.QtPrintSupport import QPrinter
-        from PyQt5.QtWidgets import QFileDialog
-        path, _ = QFileDialog.getSaveFileName(self, "ذخیره PDF", "", "PDF Files (*.pdf)")
-        if path:
-            printer = QPrinter(QPrinter.HighResolution)
-            printer.setOutputFormat(QPrinter.PdfFormat)
-            printer.setOutputFileName(path)
-            self.preview.print_(printer)
+    def generate_print_invoice(self):
+        """تولید فاکتور چاپی (سیاه و سفید)"""
+        data = self.repair_data
+        settings = self.shop_settings
 
+        # محاسبات مالی
+        parts_cost = data.get('parts_cost', 0)
+        labor_cost = data.get('labor_cost', 0)
+        subtotal = parts_cost + labor_cost
+        tax_rate = data.get('tax', 0)
+        tax_amount = subtotal * (tax_rate / 100)
+        discount = data.get('discount', 0)
+        total = subtotal + tax_amount - discount
 
-    html = f"""
+        html = f"""
     <!DOCTYPE html>
     <html dir="rtl">
     <head>
@@ -567,7 +309,521 @@ class InvoicePreviewDialog(QDialog):
     </body>
     </html>
     """
-  
+        return html
+
+    def generate_web_invoice(self):
+        """تولید فاکتور وب (رنگی و حرفه‌ای)"""
+        data = self.repair_data
+        settings = self.shop_settings
+        
+        # محاسبات مالی
+        parts_cost = data.get('parts_cost', 0)
+        labor_cost = data.get('labor_cost', 0)
+        subtotal = parts_cost + labor_cost
+        tax_rate = data.get('tax', 0)
+        tax_amount = subtotal * (tax_rate / 100)
+        discount = data.get('discount', 0)
+        total = subtotal + tax_amount - discount
+        
+        # تعیین رنگ وضعیت
+        status = data.get('status', 'در انتظار')
+        status_colors = {
+            'در انتظار': '#FF9800',
+            'در حال تعمیر': '#2196F3',
+            'تعمیر شده': '#4CAF50',
+            'تحویل داده شده': '#9E9E9E'
+        }
+        status_color = status_colors.get(status, '#757575')
+        
+        # لوگو
+        logo_html = ""
+        if settings.get('logo') and Path(settings['logo']).exists():
+            logo_html = f'<img src="file:///{settings["logo"]}" style="max-width: 120px; max-height: 80px;">'
+        html = f"""
+        <!DOCTYPE html>
+        <html dir="rtl">
+        <head>
+            <meta charset="UTF-8">
+            <style>
+                body {{
+                    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    padding: 20px;
+                    margin: 0;
+                }}
+                
+                .invoice-container {{
+                    max-width: 800px;
+                    margin: 0 auto;
+                    background: white;
+                    border-radius: 15px;
+                    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+                    overflow: hidden;
+                }}
+                
+                .header {{
+                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+                    color: white;
+                    padding: 30px;
+                    text-align: center;
+                }}
+                
+                .header h1 {{
+                    margin: 10px 0;
+                    font-size: 28pt;
+                    font-weight: bold;
+                }}
+                
+                .header p {{
+                    margin: 5px 0;
+                    opacity: 0.9;
+                }}
+                
+                .logo {{
+                    margin-bottom: 15px;
+                }}
+                
+                .content {{
+                    padding: 30px;
+                }}
+                
+                .invoice-meta {{
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 30px;
+                    padding: 20px;
+                    background: #f8f9fa;
+                    border-radius: 10px;
+                }}
+                
+                .meta-section {{
+                    flex: 1;
+                }}
+                
+                .meta-section h3 {{
+                    co                    color: #667eea;
+                    margin-bottom: 10px;
+                    font-size: 14pt;
+                }}
+                
+                .meta-item {{
+                    margin: 8px 0;
+                    color: #555;
+                }}
+                
+                .meta-label {{
+                    font-weight: bold;
+                    color: #333;
+                }}
+                
+                .status-badge {{
+                    display: inline-block;
+                    background: {status_color};
+                    color: white;
+                    padding: 8px 20px;
+                    border-radius: 25px;
+                    font-weight: bold;
+                    margin-top: 10px;
+                }}
+                
+                .repair-details {{
+                    margin-bottom: 30px;
+                }}
+                
+                .section-title {{
+                    font-size: 16pt;
+                    color: #333;
+                    margin-bottom: 15px;
+                    padding-bottom: 10px;
+                    border-bottom: 2px solid #667eea;
+                }}
+                
+                .details-card {{
+                    background: #f8f9fa;
+                    border-radius: 10px;
+                    padding: 20px;
+                    margin-bottom: 15px;
+                }}
+                
+                .details-grid {{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                    gap: 15px;
+                }}
+                
+                .detail-item {{
+                    padding: 10px;
+                    background: white;
+                    border-radius: 8px;
+                    border-right: 4px solid #667eea;
+                }}
+                
+                .detail-label {{
+                    font-size: 9pt;
+                    color: #666;
+                    margin-bottom: 5px;
+                }}
+                
+                .detail-value {{
+                    font-size: 11pt;
+                    color: #333;
+                    font-weight: 600;
+                }}
+                
+                .financial-card {{
+                    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+                    border-radius: 15px;
+                    padding: 25px;
+                    margin-bottom: 20px;
+                }}
+                
+                .financial-row {{
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 10px 0;
+                    border-bottom: 1px solid rgba(0,0,0,0.1);
+                }}
+                
+                .financial-row.total {{
+                    border-bottom: none;
+                    margin-top: 15px;
+                    padding-top: 15px;
+                    border-top: 2px solid #667eea;
+                    font-size: 16pt;
+                    font-weight: bold;
+                    color: #667eea;
+                }}
+                
+                .notes-section {{
+                    background: #fff8e1;
+                    border-right: 4px solid #ffc107;
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin-bottom: 20px;
+                }}
+                
+                .warranty-section {{
+                    background: #e8f5e9;
+                    border-right: 4px solid #4caf50;
+                    padding: 20px;
+                    border-radius: 10px;
+                    margin-bottom: 20px;
+                }}
+                
+                .footer {{
+                    background: #f8f9fa;
+                    padding: 20px 30px;
+                    text-align: center;
+                    color: #666;
+                    border-top: 1px solid #eee;
+                }}
+            </style>
+        </head>
+        <body>
+            <div class="invoice-container">
+                <div class="header">
+                    <div class="logo">{logo_html}</div>
+                    <h1>{settings['shop_name']}</h1>
+                    <p>{settings['address']}</p>
+                    <p>📞 {settings['phone']} | 📱 {settings['mobile']}</p>
+                    <p>✉️ {settings['email']} | 🌐 {settings['website']}</p>
+                </div>
+                
+                <div class="content">
+                    <div class="invoice-meta">
+                        <div class="meta-section">
+                            <h3>اطلاعات فاکتور</h3>
+                            <div class="meta-item"><span class="meta-label">شماره:</span> {data.get('id', 'N/A')}</div>
+                            <div class="meta-item"><span class="meta-label">تاریخ پذیرش:</span> {data.get('receive_date', 'N/A')}</div>
+                            <div class="status-badge">{status}</div>
+                        </div>
+                        
+                        <div class="meta-section">
+                            <h3>اطلاعات مشتری</h3>
+                            <div class="meta-item"><span class="meta-label">نام:</span> {data.get('customer_name', 'N/A')}</div>
+                            <div class="meta-item"><span class="meta-label">تلفن:</span> {data.get('phone', 'N/A')}</div>
+                            <div class="meta-item"><span class="meta-label">تاریخ تحویل:</span> {data.get('delivery_date', 'N/A')}</div>
+                        </div>
+                    </div>
+                    
+                    <div class="repair-details">
+                        <h2 class="section-title">جزئیات تعمیر</h2>
+                        <div class="details-card">
+                            <div class="details-grid">
+                                <div class="detail-item">
+                                    <div class="detail-label">برند دستگاه</div>
+                                    <div class="detail-value">{data.get('brand', '-')}</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">مدل دستگاه</div>
+                                    <div class="detail-value">{data.get('model', '-')}</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">ایراد گزارش شده</div>
+                                    <div class="detail-value">{data.get('issue', '-')}</div>
+                                </div>
+                                <div class="detail-item">
+                                    <div class="detail-label">وضعیت فعلی</div>
+                                    <div class="detail-value">{status}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="financial-card">
+                        <h2 class="section-title">خلاصه مالی</h2>
+                        <div class="financial-row">
+                            <span>هزینه قطعات</span>
+                            <span>{parts_cost:,} تومان</span>
+                        </div>
+                        <div class="financial-row">
+                            <span>هزینه تعمیر</span>
+                            <span>{labor_cost:,} تومان</span>
+                        </div>
+                        <div class="financial-row">
+                            <span>جمع کل</span>
+                            <span>{subtotal:,} تومان</span>
+                        </div>
+                        <div class="financial-row">
+                            <span>مالیات ({tax_rate}%)</span>
+                            <span>{int(tax_amount):,} تومان</span>
+                        </div>
+                        <div class="financial-row">
+                            <span>تخفیف</span>
+                            <span>{discount:,} تومان</span>
+                        </div>
+                        <div class="financial-row total">
+                            <span>مبلغ نهایی</span>
+                            <span>{int(total):,} تومان</span>
+                        </div>
+                    </div>
+                    
+                    <div class="notes-section">
+                        <h3 style="margin-top: 0;">یادداشت‌ها</h3>
+                        <p>{data.get('notes', 'یادداشتی ثبت نشده است.')}</p>
+                    </div>
+                    
+                    <div class="warranty-section">
+                        <h3 style="margin-top: 0;">شرایط گارانتی</h3>
+                        <p>{data.get('warranty', 'بدون گارانتی')}</p>
+                    </div>
+                </div>
+                
+                <div class="footer">
+                    <p>از اعتماد شما سپاسگزاریم</p>
+                    <p>تاریخ صدور: {jdatetime.date.today().strftime('%Y/%m/%d')}</p>
+                </div>
+            </div>
+        </body>
+        </html>
+        """
+        
+        return html
+    
+    def print_invoice(self):
+        """چاپ فاکتور"""
+        printer = QPrinter(QPrinter.HighResolution)
+        dialog = QPrintDialog(printer, self)
+        
+        if dialog.exec_() == QDialog.Accepted:
+            self.preview.document().print_(printer)
+    
+    def save_pdf(self):
+        """ذخیره به صورت PDF"""
+        file_path, _ = QFileDialog.getSaveFileName(
+            self,
+            "ذخیره PDF",
+            f"invoice_{self.repair_data.get('id', 'new')}.pdf",
+            "PDF Files (*.pdf)"
+        )
+        
+        if file_path:
+            printer = QPrinter(QPrinter.HighResolution)
+            printer.setOutputFormat(QPrinter.PdfFormat)
+            printer.setOutputFileName(file_path)
+            self.preview.document().print_(printer)
+            QMessageBox.information(self, "موفق", "فایل PDF با موفقیت ذخیره شد.")
+
+    def update_preview(self):
+        """به‌روزرسانی پیش‌نمایش فاکتور"""
+        if self.print_radio.isChecked():
+            html = self.generate_print_invoice()
+        else:
+            html = self.generate_web_invoice()
+        
+        self.preview.setHtml(html)
+
+
+class ShopSettingsDialog(QDialog):
+    """دیالوگ تنظیمات فروشگاه"""
+    
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setWindowTitle("تنظیمات فروشگاه")
+        self.setModal(True)
+        self.setMinimumWidth(500)
+        self.logo_path = ""
+        
+        self.init_ui()
+        self.load_settings()
+    
+    def init_ui(self):
+        """ایجاد رابط کاربری"""
+        layout = QVBoxLayout()
+        
+        # عنوان
+        title = QLabel("تنظیمات اطلاعات فروشگاه")
+        title.setFont(QFont("Segoe UI", 14, QFont.Bold))
+        title.setAlignment(Qt.AlignCenter)
+        layout.addWidget(title)
+        
+        # فرم
+        form_layout = QGridLayout()
+        
+        # نام فروشگاه
+        form_layout.addWidget(QLabel("نام فروشگاه:"), 0, 0)
+        self.shop_name_input = QLineEdit()
+        self.shop_name_input.setPlaceholderText("نام فروشگاه خود را وارد کنید")
+        form_layout.addWidget(self.shop_name_input, 0, 1)
+        
+        # آدرس
+        form_layout.addWidget(QLabel("آدرس:"), 1, 0)
+        self.address_input = QTextEdit()
+        self.address_input.setMaximumHeight(60)
+        self.address_input.setPlaceholderText("آدرس کامل فروشگاه")
+        form_layout.addWidget(self.address_input, 1, 1)
+        
+        # تلفن
+        form_layout.addWidget(QLabel("تلفن:"), 2, 0)
+        self.phone_input = QLineEdit()
+        self.phone_input.setPlaceholderText("شماره تماس")
+        form_layout.addWidget(self.phone_input, 2, 1)
+        
+        # موبایل
+        form_layout.addWidget(QLabel("موبایل:"), 3, 0)
+        self.mobile_input = QLineEdit()
+        self.mobile_input.setPlaceholderText("شماره موبایل")
+        form_layout.addWidget(self.mobile_input, 3, 1)
+        
+        # ایمیل
+        form_layout.addWidget(QLabel("ایمیل:"), 4, 0)
+        self.email_input = QLineEdit()
+        self.email_input.setPlaceholderText("آدرس ایمیل")
+        form_layout.addWidget(self.email_input, 4, 1)
+        
+        # وبسایت
+        form_layout.addWidget(QLabel("وبسایت:"), 5, 0)
+        self.website_input = QLineEdit()
+        self.website_input.setPlaceholderText("آدرس وبسایت")
+        form_layout.addWidget(self.website_input, 5, 1)
+        
+        # لوگو
+        form_layout.addWidget(QLabel("لوگو:"), 6, 0)
+        logo_layout = QHBoxLayout()
+        self.logo_label = QLabel("لوگویی انتخاب نشده")
+        self.logo_label.setStyleSheet("padding: 5px; border: 1px solid #ccc; border-radius: 3px;")
+        logo_btn = QPushButton("انتخاب لوگو")
+        logo_btn.clicked.connect(self.select_logo)
+        logo_layout.addWidget(self.logo_label, 1)
+        logo_layout.addWidget(logo_btn)
+        form_layout.addLayout(logo_layout, 6, 1)
+        
+        layout.addLayout(form_layout)
+        
+        # دکمه‌ها
+        btn_layout = QHBoxLayout()
+        save_btn = QPushButton("ذخیره")
+        cancel_btn = QPushButton("انصراف")
+        
+        save_btn.setStyleSheet("background-color: #4CAF50; color: white; padding: 8px 20px; font-weight: bold;")
+        cancel_btn.setStyleSheet("background-color: #f44336; color: white; padding: 8px 20px;")
+        
+        save_btn.clicked.connect(self.save_settings)
+        cancel_btn.clicked.connect(self.reject)
+        
+        btn_layout.addWidget(save_btn)
+        btn_layout.addWidget(cancel_btn)
+        layout.addLayout(btn_layout)
+        
+        self.setLayout(layout)
+    def select_logo(self):
+        """انتخاب فایل لوگو"""
+        file_path, _ = QFileDialog.getOpenFileName(
+            self,
+            "انتخاب لوگو",
+            "",
+            "Image Files (*.png *.jpg *.jpeg *.bmp *.gif)"
+        )
+        
+        if file_path:
+            self.logo_path = file_path
+            self.logo_label.setText(Path(file_path).name)
+    
+    def load_settings(self):
+        """بارگذاری تنظیمات"""
+        try:
+            if Path("shop_settings.json").exists():
+                with open("shop_settings.json", "r", encoding="utf-8") as f:
+                    settings = json.load(f)
+                    
+                self.shop_name_input.setText(settings.get("shop_name", ""))
+                self.address_input.setText(settings.get("address", ""))
+                self.phone_input.setText(settings.get("phone", ""))
+                self.mobile_input.setText(settings.get("mobile", ""))
+                self.email_input.setText(settings.get("email", ""))
+                self.website_input.setText(settings.get("website", ""))
+                
+                logo = settings.get("logo", "")
+                if logo:
+                    self.logo_path = logo
+                    self.logo_label.setText(Path(logo).name if Path(logo).exists() else "فایل یافت نشد")
+        except Exception as e:
+            print(f"خطا در بارگذاری تنظیمات: {e}")
+    
+    def save_settings(self):
+        """ذخیره تنظیمات"""
+        settings = {
+            "shop_name": self.shop_name_input.text(),
+            "address": self.address_input.toPlainText(),
+            "phone": self.phone_input.text(),
+            "mobile": self.mobile_input.text(),
+            "email": self.email_input.text(),
+            "website": self.website_input.text(),
+            "logo": self.logo_path
+        }
+        
+        try:
+            with open("shop_settings.json", "w", encoding="utf-8") as f:
+                json.dump(settings, f, ensure_ascii=False, indent=4)
+            
+            QMessageBox.information(self, "موفق", "تنظیمات با موفقیت ذخیره شد.")
+            self.accept()
+        except Exception as e:
+            QMessageBox.critical(self, "خطا", f"خطا در ذخیره تنظیمات: {e}")
+    
+    @staticmethod
+    def get_settings():
+        """دریافت تنظیمات فروشگاه"""
+        default_settings = {
+            "shop_name": "تعمیرگاه لپ‌تاپ",
+            "address": "آدرس فروشگاه",
+            "phone": "021-12345678",
+            "mobile": "0912-1234567",
+            "email": "info@shop.com",
+            "website": "www.shop.com",
+            "logo": ""
+        }
+        
+        try:
+            if Path("shop_settings.json").exists():
+                with open("shop_settings.json", "r", encoding="utf-8") as f:
+                    return json.load(f)
+        except:
+            pass
+        
+        return default_settings
+
+
+   
     def generate_web_invoice(self):
         """تولید فاکتور وب (رنگی و حرفه‌ای)"""
         data = self.repair_data
@@ -1120,6 +1376,7 @@ class LaptopRepairManager(QMainWindow):
         self.repairs = []
         self.load_data()
         self.init_ui()
+        self.refresh_table()  # Populate table with loaded data
         self.check_notifications()
     
     def init_ui(self):

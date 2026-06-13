@@ -3,17 +3,28 @@ import json
 from datetime import datetime, timedelta
 from pathlib import Path
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
-                             QHBoxLayout, QPushButton, QTableWidget, QTableWidgetItem,
-                             QDialog, QLabel, QLineEdit, QTextEdit, QSpinBox, 
-                             QDoubleSpinBox, QComboBox, QCalendarWidget, QMessageBox,
-                             QHeaderView, QAbstractItemView, QTabWidget, QGridLayout,
-                             QFrame, QFileDialog, QRadioButton, QButtonGroup)
+                              QHBoxLayout, QPushButton, QTableWidget, QTableWidgetItem,
+                              QDialog, QLabel, QLineEdit, QTextEdit, QSpinBox, 
+                              QDoubleSpinBox, QComboBox, QCalendarWidget, QMessageBox,
+                              QHeaderView, QAbstractItemView, QTabWidget, QGridLayout,
+                              QFrame, QFileDialog, QRadioButton, QButtonGroup)
 from PyQt5.QtCore import Qt, QDate, QTimer, pyqtSignal, QLocale
 from PyQt5.QtGui import QFont, QColor, QTextDocument, QIcon
 from PyQt5.QtPrintSupport import QPrinter, QPrintDialog, QPrintPreviewDialog
 import jdatetime
 
 from repair_manager.ui.components import PersianCalendarWidget, PersianDateEdit
+from ui.table_renderer import render_table_rows
+from core.storage.repairs_storage import RepairsStorage
+from services.statistics import update_statistics
+from core.filters import search_repairs, filter_repairs
+from services.table_service import build_table_rows
+from services.repair_service import add_repair, delete_repair, get_repair_by_id, update_repair
+from ui.table_renderer import (
+    create_table_item,
+    set_status_styling,
+    set_total_styling
+)
 
 class InvoicePreviewDialog(QDialog):
     """دیالوگ پیشنمایش و چاپ فاکتور"""
@@ -1373,6 +1384,7 @@ class LaptopRepairManager(QMainWindow):
     
     def __init__(self):
         super().__init__()
+        self.storage = RepairsStorage()
         self.repairs = []
         self.load_data()
         self.init_ui()
@@ -1621,11 +1633,10 @@ class LaptopRepairManager(QMainWindow):
 
         if dialog.exec_() == QDialog.Accepted:
             data = dialog.get_data()
-
-            existing_ids = [r['id'] for r in self.repairs if 'id' in r]
-            data['id'] = max(existing_ids) + 1 if existing_ids else 1
-
-            self.repairs.append(data)
+            
+            # Use service to add repair
+            self.repairs = add_repair(self.repairs, data)
+            
             self.save_data()
             self.refresh_table()
 
@@ -1640,7 +1651,7 @@ class LaptopRepairManager(QMainWindow):
             return
         
         repair_id = int(self.table.item(selected_row, 0).text())
-        repair_data = next((r for r in self.repairs if r['id'] == repair_id), None)
+        repair_data = get_repair_by_id(self.repairs, repair_id)
         
         if not repair_data:
             QMessageBox.critical(self, "خطا", "داده‌ای یافت نشد.")
@@ -1652,11 +1663,8 @@ class LaptopRepairManager(QMainWindow):
             updated_data = dialog.get_data()
             updated_data['id'] = repair_id
             
-            # به‌روزرسانی
-            for i, repair in enumerate(self.repairs):
-                if repair['id'] == repair_id:
-                    self.repairs[i] = updated_data
-                    break
+            # Use service to update repair
+            self.repairs = update_repair(self.repairs, repair_id, updated_data)
             
             self.save_data()
             self.refresh_table()
@@ -1682,7 +1690,9 @@ class LaptopRepairManager(QMainWindow):
         )
         
         if reply == QMessageBox.Yes:
-            self.repairs = [r for r in self.repairs if r['id'] != repair_id]
+            # Use service to delete repair
+            self.repairs = delete_repair(self.repairs, repair_id)
+            
             self.save_data()
             self.refresh_table()
             
@@ -1707,121 +1717,29 @@ class LaptopRepairManager(QMainWindow):
         dialog.exec_()
     
     def search_repairs(self, text):
-        """جستجوی تعمیرات"""
-        text = text.lower()
-        
+        """Search repairs"""
+        matching_indices = search_repairs(self.repairs, text)
+
         for row in range(self.table.rowCount()):
-            match = False
-            
-            for col in range(self.table.columnCount() - 1):  # بدون ستون عملیات
-                item = self.table.item(row, col)
-                if item and text in item.text().lower():
-                    match = True
-                    break
-            
-            self.table.setRowHidden(row, not match)
-    
+            self.table.setRowHidden(row, row not in matching_indices)
+
+
     def filter_repairs(self, status):
-        """فیلتر بر اساس وضعیت"""
+        """Filter by status"""
+        matching_indices = filter_repairs(self.repairs, status)
+
         for row in range(self.table.rowCount()):
-            status_item = self.table.item(row, 6)
-            
-            if status == "همه":
-                self.table.setRowHidden(row, False)
-            else:
-                self.table.setRowHidden(row, status_item.text() != status)
+            self.table.setRowHidden(row, row not in matching_indices)
+        
     def refresh_table(self):
-        """به‌روزرسانی جدول"""
-        self.table.setRowCount(0)
+        """Refresh table"""
+        # Get prepared row data from service
+        rows_data = build_table_rows(self.repairs)
         
-        for repair in self.repairs:
-            row = self.table.rowCount()
-            self.table.insertRow(row)
-            
-            # شناسه
-            self.table.setItem(row, 0, QTableWidgetItem(str(repair['id'])))
-            
-            # نام مشتری
-            self.table.setItem(row, 1, QTableWidgetItem(repair.get('customer_name', '')))
-            
-            # تلفن
-            self.table.setItem(row, 2, QTableWidgetItem(repair.get('phone', '')))
-            
-            # برند
-            self.table.setItem(row, 3, QTableWidgetItem(repair.get('brand', '')))
-            
-            # مدل
-            self.table.setItem(row, 4, QTableWidgetItem(repair.get('model', '')))
-            
-            # ایراد
-            issue = repair.get('issue', '')
-            if len(issue) > 30:
-                issue = issue[:30] + "..."
-            self.table.setItem(row, 5, QTableWidgetItem(issue))
-            
-            # وضعیت
-            status_item = QTableWidgetItem(repair.get('status', ''))
-            status = repair.get('status', '')
-            
-            if status == "در انتظار":
-                status_item.setBackground(QColor("#FFF3E0"))
-                status_item.setForeground(QColor("#FF9800"))
-            elif status == "در حال تعمیر":
-                status_item.setBackground(QColor("#E3F2FD"))
-                status_item.setForeground(QColor("#2196F3"))
-            elif status == "تعمیر شده":
-                status_item.setBackground(QColor("#E8F5E9"))
-                status_item.setForeground(QColor("#4CAF50"))
-            elif status == "تحویل داده شده":
-                status_item.setBackground(QColor("#F5F5F5"))
-                status_item.setForeground(QColor("#9E9E9E"))
-            
-            self.table.setItem(row, 6, status_item)
-            
-            # تاریخ دریافت
-            self.table.setItem(row, 7, QTableWidgetItem(repair.get('receive_date', '')))
-            
-            # تاریخ تحویل
-            self.table.setItem(row, 8, QTableWidgetItem(repair.get('delivery_date', '')))
-            
-            # هزینه کل
-            parts = repair.get('parts_cost', 0)
-            labor = repair.get('labor_cost', 0)
-            tax = repair.get('tax', 0)
-            discount = repair.get('discount', 0)
-            
-            subtotal = parts + labor
-            tax_amount = subtotal * (tax / 100)
-            total = subtotal + tax_amount - discount
-            
-            total_item = QTableWidgetItem(f"{int(total):,}")
-            total_item.setForeground(QColor("#4CAF50"))
-            total_item.setFont(QFont("Segoe UI", 10, QFont.Bold))
-            self.table.setItem(row, 9, total_item)
-            
-            # دکمه‌های عملیات
-            actions_widget = QWidget()
-            actions_layout = QHBoxLayout()
-            actions_layout.setContentsMargins(5, 2, 5, 2)
-            
-            # دکمه مشاهده
-            view_btn = QPushButton("👁️")
-            view_btn.setFixedSize(30, 25)
-            view_btn.setStyleSheet("background-color: #2196F3; color: white;")
-            view_btn.clicked.connect(lambda checked, r=row: self.view_repair(r))
-            actions_layout.addWidget(view_btn)
-            
-            # دکمه فاکتور
-            invoice_btn = QPushButton("📄")
-            invoice_btn.setFixedSize(30, 25)
-            invoice_btn.setStyleSheet("background-color: #FF9800; color: white;")
-            invoice_btn.clicked.connect(lambda checked, r=row: self.quick_invoice(r))
-            actions_layout.addWidget(invoice_btn)
-            
-            actions_widget.setLayout(actions_layout)
-            self.table.setCellWidget(row, 10, actions_widget)
+        # Render all rows using the table renderer
+        render_table_rows(self.table, rows_data, self.view_repair, self.quick_invoice)
         
-        # به‌روزرسانی آمار
+        # Update statistics
         self.update_statistics()
     
     def view_repair(self, row):
@@ -1834,12 +1752,8 @@ class LaptopRepairManager(QMainWindow):
         self.table.selectRow(row)
         self.preview_invoice()
     def update_statistics(self):
-        """به‌روزرسانی آمار"""
-        total = len(self.repairs)
-        pending = len([r for r in self.repairs if r.get('status') == 'در انتظار'])
-        in_progress = len([r for r in self.repairs if r.get('status') == 'در حال تعمیر'])
-        completed = len([r for r in self.repairs if r.get('status') == 'تعمیر شده'])
-        delivered = len([r for r in self.repairs if r.get('status') == 'تحویل داده شده'])
+        """Update statistics"""
+        total, pending, in_progress, completed, delivered = update_statistics(self.repairs)
         
         self.total_label.setText(f"تعداد کل: {total}")
         self.pending_label.setText(f"در انتظار: {pending}")
@@ -1885,14 +1799,7 @@ class LaptopRepairManager(QMainWindow):
     def load_data(self):
         """بارگذاری داده‌ها از فایل"""
         try:
-            if Path("repairs.json").exists():
-                with open("repairs.json", "r", encoding="utf-8") as f:
-                    self.repairs = json.load(f)
-                for i, repair in enumerate(self.repairs):
-                    if 'id' not in repair:
-                        repair['id'] = i + 1
-            else:
-                self.repairs = []
+            self.repairs = self.storage.load_all()
         except Exception as e:
             QMessageBox.critical(self, "خطا", f"خطا در بارگذاری داده‌ها: {e}")
             self.repairs = []
@@ -1900,8 +1807,7 @@ class LaptopRepairManager(QMainWindow):
     def save_data(self):
         """ذخیره داده‌ها در فایل"""
         try:
-            with open("repairs.json", "w", encoding="utf-8") as f:
-                json.dump(self.repairs, f, ensure_ascii=False, indent=4)
+            self.storage.save_all(self.repairs)
         except Exception as e:
             QMessageBox.critical(self, "خطا", f"خطا در ذخیره داده‌ها: {e}")
 

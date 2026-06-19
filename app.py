@@ -2,11 +2,11 @@
 import json
 from datetime import datetime, timedelta
 from pathlib import Path
-from PyQt5.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout, 
-                              QHBoxLayout, QPushButton, QTableWidget, QTableWidgetItem,
-                              QDialog, QLabel, QLineEdit, QTextEdit, QSpinBox, 
-                              QDoubleSpinBox, QComboBox, QCalendarWidget, QMessageBox,
-                              QHeaderView, QAbstractItemView, QTabWidget, QGridLayout,
+from PyQt5.QtWidgets import (QApplication, QMainWindow, QVBoxLayout,
+                              QHBoxLayout, QPushButton, QTableWidgetItem,
+                              QDialog, QLabel, QLineEdit, QTextEdit, QSpinBox,
+                              QDoubleSpinBox, QCalendarWidget, QMessageBox,
+                              QTabWidget, QGridLayout,
                               QFrame, QFileDialog, QRadioButton, QButtonGroup)
 from PyQt5.QtCore import Qt, QDate, QTimer, pyqtSignal, QLocale
 from PyQt5.QtGui import QFont, QColor, QTextDocument, QIcon
@@ -38,6 +38,7 @@ from ui.table_renderer import (
 )
 from ui.dialogs.repair_dialog import RepairDialog
 from ui.dialogs.invoice_dialog import InvoicePreviewDialog
+from ui.main_window import build_ui
 
 
 class ShopSettingsDialog(QDialog):
@@ -260,227 +261,7 @@ class LaptopRepairManager(QMainWindow):
     
     def init_ui(self):
         """ایجاد رابط کاربری"""
-        self.setWindowTitle("سیستم مدیریت تعمیرات لپ‌تاپ")
-        self.setGeometry(100, 100, 1200, 700)
-        
-        # ویجت مرکزی
-        central_widget = QWidget()
-        self.setCentralWidget(central_widget)
-        
-        # لایه اصلی
-        main_layout = QVBoxLayout()
-        
-        # هدر
-        header = self.create_header()
-        main_layout.addWidget(header)
-        
-        # نوار ابزار
-        toolbar = self.create_toolbar()
-        main_layout.addWidget(toolbar)
-        
-        # جدول
-        self.table = self.create_table()
-        main_layout.addWidget(self.table)
-        
-        # نوار وضعیت
-        self.status_bar = self.create_status_bar()
-        main_layout.addWidget(self.status_bar)
-        
-        central_widget.setLayout(main_layout)
-        
-        # استایل کلی
-        self.setStyleSheet("""
-            QMainWindow {
-                background-color: #f5f5f5;
-            }
-            QPushButton {
-                padding: 8px 15px;
-                border-radius: 5px;
-                font-size: 10pt;
-                font-weight: bold;
-            }
-            QPushButton:hover {
-                opacity: 0.8;
-            }
-            QTableWidget {
-                background-color: white;
-                border: 1px solid #ddd;
-                border-radius: 5px;
-            }
-            QHeaderView::section {
-                background-color: #667eea;
-                color: white;
-                padding: 10px;
-                font-weight: bold;
-                border: none;
-            }
-        """)
-    
-    def create_header(self):
-        """ایجاد هدر"""
-        header = QFrame()
-        header.setStyleSheet("""
-            background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                       stop:0 #667eea, stop:1 #764ba2);
-            border-radius: 10px;
-            padding: 20px;
-        """)
-        
-        layout = QHBoxLayout()
-        
-        title = QLabel("🔧 سیستم مدیریت تعمیرات لپ‌تاپ")
-        title.setStyleSheet("color: white; font-size: 20pt; font-weight: bold;")
-        layout.addWidget(title)
-        
-        layout.addStretch()
-        
-        # دکمه تنظیمات فروشگاه
-        settings_btn = QPushButton("⚙️ تنظیمات فروشگاه")
-        settings_btn.setStyleSheet("""
-            background-color: rgba(255, 255, 255, 0.2);
-            color: white;
-            border: 2px solid white;
-        """)
-        settings_btn.clicked.connect(self.open_shop_settings)
-        layout.addWidget(settings_btn)
-        
-        header.setLayout(layout)
-        return header
-    
-    def create_toolbar(self):
-        """ایجاد نوار ابزار"""
-        toolbar = QFrame()
-        toolbar.setStyleSheet("background-color: white; border-radius: 5px; padding: 10px;")
-        
-        layout = QHBoxLayout()
-        
-        # دکمه افزودن
-        add_btn = QPushButton("➕ افزودن تعمیر")
-        add_btn.setStyleSheet("background-color: #4CAF50; color: white;")
-        add_btn.clicked.connect(self.add_repair)
-        layout.addWidget(add_btn)
-        
-        # دکمه ویرایش
-        edit_btn = QPushButton("✏️ ویرایش")
-        edit_btn.setStyleSheet("background-color: #2196F3; color: white;")
-        edit_btn.clicked.connect(self.edit_repair)
-        layout.addWidget(edit_btn)
-        
-        # دکمه حذف
-        delete_btn = QPushButton("🗑️ حذف")
-        delete_btn.setStyleSheet("background-color: #f44336; color: white;")
-        delete_btn.clicked.connect(self.delete_repair)
-        layout.addWidget(delete_btn)
-        
-        # دکمه پیش‌نمایش فاکتور
-        invoice_btn = QPushButton("📄 پیش‌نمایش فاکتور")
-        invoice_btn.setStyleSheet("background-color: #FF9800; color: white;")
-        invoice_btn.clicked.connect(self.preview_invoice)
-        layout.addWidget(invoice_btn)
-        
-        layout.addStretch()
-        
-        # جستجو
-        search_label = QLabel("🔍 جستجو:")
-        layout.addWidget(search_label)
-        
-        self.search_input = QLineEdit()
-        self.search_input.setPlaceholderText("نام، تلفن، برند یا مدل...")
-        self.search_input.setMinimumWidth(250)
-        self.search_input.textChanged.connect(self.search_repairs)
-        layout.addWidget(self.search_input)
-        
-        # فیلتر وضعیت
-        filter_label = QLabel("فیلتر:")
-        layout.addWidget(filter_label)
-        
-        self.filter_combo = QComboBox()
-        self.filter_combo.addItems(ALL_STATUSES_WITH_ALL)
-        self.filter_combo.currentTextChanged.connect(self.filter_repairs)
-        layout.addWidget(self.filter_combo)
-        
-        toolbar.setLayout(layout)
-        return toolbar
-
-    def create_table(self):
-        """ایجاد جدول"""
-        table = QTableWidget()
-        table.setColumnCount(11)
-        table.setHorizontalHeaderLabels([
-            "شناسه", "نام مشتری", "تلفن", "برند", "مدل", 
-            "ایراد", "وضعیت", "تاریخ دریافت", "تاریخ تحویل", 
-            "هزینه کل", "عملیات"
-        ])
-        
-        # تنظیمات جدول
-        table.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        table.setSelectionBehavior(QAbstractItemView.SelectRows)
-        table.setSelectionMode(QAbstractItemView.SingleSelection)
-        table.setAlternatingRowColors(True)
-        table.verticalHeader().setVisible(False)
-        
-        # تنظیم عرض ستون‌ها
-        header = table.horizontalHeader()
-        header.setSectionResizeMode(0, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(1, QHeaderView.Stretch)
-        header.setSectionResizeMode(2, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(3, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(4, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(5, QHeaderView.Stretch)
-        header.setSectionResizeMode(6, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(7, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(8, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(9, QHeaderView.ResizeToContents)
-        header.setSectionResizeMode(10, QHeaderView.ResizeToContents)
-        
-        # دابل کلیک برای ویرایش
-        table.doubleClicked.connect(self.edit_repair)
-        
-        return table
-    
-    def create_status_bar(self):
-        """ایجاد نوار وضعیت"""
-        status_bar = QFrame()
-        status_bar.setStyleSheet("background-color: white; border-radius: 5px; padding: 10px;")
-        
-        layout = QHBoxLayout()
-        
-        self.total_label = QLabel("تعداد کل: 0")
-        self.total_label.setStyleSheet("font-weight: bold; color: #333;")
-        layout.addWidget(self.total_label)
-        
-        layout.addWidget(QLabel("|"))
-        
-        self.pending_label = QLabel(f"{STATUS_PENDING}: 0")
-        self.pending_label.setStyleSheet(f"color: {STATUS_FG_COLORS[STATUS_PENDING]}; font-weight: bold;")
-        layout.addWidget(self.pending_label)
-        
-        layout.addWidget(QLabel("|"))
-        
-        self.in_progress_label = QLabel(f"{STATUS_IN_PROGRESS}: 0")
-        self.in_progress_label.setStyleSheet(f"color: {STATUS_FG_COLORS[STATUS_IN_PROGRESS]}; font-weight: bold;")
-        layout.addWidget(self.in_progress_label)
-        
-        layout.addWidget(QLabel("|"))
-        
-        self.completed_label = QLabel(f"{STATUS_COMPLETED}: 0")
-        self.completed_label.setStyleSheet(f"color: {STATUS_FG_COLORS[STATUS_COMPLETED]}; font-weight: bold;")
-        layout.addWidget(self.completed_label)
-        
-        layout.addWidget(QLabel("|"))
-        
-        self.delivered_label = QLabel(f"{STATUS_DELIVERED}: 0")
-        self.delivered_label.setStyleSheet(f"color: {STATUS_FG_COLORS[STATUS_DELIVERED]}; font-weight: bold;")
-        layout.addWidget(self.delivered_label)
-        
-        layout.addStretch()
-        
-        self.date_label = QLabel()
-        self.update_date_label()
-        layout.addWidget(self.date_label)
-        
-        status_bar.setLayout(layout)
-        return status_bar
+        build_ui(self)
     
     def update_date_label(self):
         """به‌روزرسانی تاریخ"""

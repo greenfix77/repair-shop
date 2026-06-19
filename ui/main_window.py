@@ -28,7 +28,7 @@ def _make_title(icon=False):
     prefix = "🔧 " if icon else ""
     if shop_name:
         return f"{prefix}سیستم مدیریت تعمیرگاه {shop_name}"
-    return f"{prefix}سیستم مدیریت تعمیرات لپ‌تاپ"
+    return f"{prefix}سیستم مدیریت تعمیرات"
 
 
 def build_header(window):

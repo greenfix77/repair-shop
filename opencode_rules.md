@@ -101,3 +101,30 @@ PRIORITY
 3. Tested
 4. Commit
 5. Next step
+
+# PROJECT STATUS
+
+Architecture refactor is COMPLETE.
+
+Do not perform additional architectural refactors unless explicitly requested.
+
+Avoid changing:
+
+- invoice_generator.py
+- notification logic
+- invoice_exporter.py
+
+Current priority:
+
+1. Stability
+2. Bug fixes
+3. New features
+
+Not priority:
+
+- More layers
+- More abstractions
+- Rewriting working code
+- Cosmetic refactors
+
+Always prefer feature development over architecture changes.

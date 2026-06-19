@@ -6,6 +6,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont
 from services.invoice_generator import generate_print_invoice_html, generate_web_invoice_html
 from services.invoice_exporter import print_invoice_content, save_invoice_to_pdf
+from ui.dialogs.shop_settings_dialog import ShopSettingsDialog
 
 
 class InvoicePreviewDialog(QDialog):
@@ -14,7 +15,6 @@ class InvoicePreviewDialog(QDialog):
     def __init__(self, repair_data, parent=None):
         super().__init__(parent)
         self.repair_data = repair_data
-        from app import ShopSettingsDialog
         self.shop_settings = ShopSettingsDialog.get_settings()
 
         self.setWindowTitle("پیش‌نمایش فاکتور")

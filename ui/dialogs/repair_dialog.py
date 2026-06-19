@@ -1,8 +1,9 @@
 from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                               QTabWidget, QWidget, QLineEdit, QTextEdit, QSpinBox,
                               QDoubleSpinBox, QComboBox, QLabel, QPushButton)
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QRegularExpressionValidator
 
+from services.notification_service import show_warning
 from core.status import ALL_STATUSES, STATUS_PENDING
 from repair_manager.ui.components import PersianDateEdit
 from services.invoice_calculator import calculate_invoice_totals
@@ -41,6 +42,7 @@ class RepairDialog(QDialog):
 
         main_layout.addWidget(QLabel("تلفن:"), 1, 0)
         self.phone_input = QLineEdit()
+        self.phone_input.setValidator(QRegularExpressionValidator(r'^0\d{10}$'))
         main_layout.addWidget(self.phone_input, 1, 1)
 
         main_layout.addWidget(QLabel("برند:"), 2, 0)
@@ -132,7 +134,7 @@ class RepairDialog(QDialog):
         save_btn = QPushButton("ذخیره")
         cancel_btn = QPushButton("انصراف")
 
-        save_btn.clicked.connect(self.accept)
+        save_btn.clicked.connect(self.validate_and_accept)
         cancel_btn.clicked.connect(self.reject)
 
         btn_layout.addWidget(save_btn)
@@ -140,6 +142,12 @@ class RepairDialog(QDialog):
         layout.addLayout(btn_layout)
 
         self.setLayout(layout)
+
+    def validate_and_accept(self):
+        if self.phone_input.text() and not self.phone_input.hasAcceptableInput():
+            show_warning(self, "خطا", "شماره تلفن باید ۱۱ رقم و با ۰ شروع شود")
+            return
+        self.accept()
 
     def calculate_total(self, value):
         """محاسبه مجموع هزینه‌ها"""

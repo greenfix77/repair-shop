@@ -5,9 +5,9 @@ from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                               QLineEdit, QTextEdit, QLabel, QPushButton,
                               QFileDialog)
 from PyQt5.QtCore import Qt
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QRegularExpressionValidator
 
-from services.notification_service import show_info, show_error
+from services.notification_service import show_info, show_error, show_warning
 
 
 class ShopSettingsDialog(QDialog):
@@ -53,24 +53,28 @@ class ShopSettingsDialog(QDialog):
         form_layout.addWidget(QLabel("تلفن:"), 2, 0)
         self.phone_input = QLineEdit()
         self.phone_input.setPlaceholderText("شماره تماس")
+        self.phone_input.setValidator(QRegularExpressionValidator(r'^0\d{10}$'))
         form_layout.addWidget(self.phone_input, 2, 1)
 
         # موبایل
         form_layout.addWidget(QLabel("موبایل:"), 3, 0)
         self.mobile_input = QLineEdit()
         self.mobile_input.setPlaceholderText("شماره موبایل")
+        self.mobile_input.setValidator(QRegularExpressionValidator(r'^0\d{10}$'))
         form_layout.addWidget(self.mobile_input, 3, 1)
 
         # ایمیل
         form_layout.addWidget(QLabel("ایمیل:"), 4, 0)
         self.email_input = QLineEdit()
         self.email_input.setPlaceholderText("آدرس ایمیل")
+        self.email_input.setValidator(QRegularExpressionValidator(r'^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$'))
         form_layout.addWidget(self.email_input, 4, 1)
 
         # وبسایت
         form_layout.addWidget(QLabel("وبسایت:"), 5, 0)
         self.website_input = QLineEdit()
         self.website_input.setPlaceholderText("آدرس وبسایت")
+        self.website_input.setValidator(QRegularExpressionValidator(r'^(https?://)?(www\.)?[A-Za-z0-9-]+\.[A-Za-z]{2,}.*$'))
         form_layout.addWidget(self.website_input, 5, 1)
 
         # لوگو
@@ -139,6 +143,18 @@ class ShopSettingsDialog(QDialog):
 
     def save_settings(self):
         """ذخیره تنظیمات"""
+        if self.phone_input.text() and not self.phone_input.hasAcceptableInput():
+            show_warning(self, "خطا", "شماره تلفن باید ۱۱ رقم و با ۰ شروع شود")
+            return
+        if self.mobile_input.text() and not self.mobile_input.hasAcceptableInput():
+            show_warning(self, "خطا", "شماره موبایل باید ۱۱ رقم و با ۰ شروع شود")
+            return
+        if self.email_input.text() and not self.email_input.hasAcceptableInput():
+            show_warning(self, "خطا", "ایمیل وارد شده معتبر نیست")
+            return
+        if self.website_input.text() and not self.website_input.hasAcceptableInput():
+            show_warning(self, "خطا", "وبسایت وارد شده معتبر نیست")
+            return
         settings = {
             "shop_name": self.shop_name_input.text(),
             "address": self.address_input.toPlainText(),

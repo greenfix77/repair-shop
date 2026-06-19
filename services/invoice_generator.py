@@ -268,11 +268,12 @@ def generate_web_invoice_html(repair_data: dict, shop_settings: dict) -> str:
                     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                     padding: 20px;
                     margin: 0;
+                    direction: rtl;
                 }}
                 
                 .invoice-container {{
-                    max-width: 800px;
-                    margin: 0 auto;
+                    width: 100%;
+                    max-width: none;
                     background: white;
                     border-radius: 15px;
                     box-shadow: 0 10px 40px rgba(0,0,0,0.2);
@@ -284,6 +285,7 @@ def generate_web_invoice_html(repair_data: dict, shop_settings: dict) -> str:
                     color: white;
                     padding: 30px;
                     text-align: center;
+                    direction: rtl;
                 }}
                 
                 .header h1 {{
@@ -312,6 +314,8 @@ def generate_web_invoice_html(repair_data: dict, shop_settings: dict) -> str:
                     padding: 20px;
                     background: #f8f9fa;
                     border-radius: 10px;
+                    direction: rtl;
+                    text-align: center;
                 }}
                 
                 .meta-section {{
@@ -346,6 +350,8 @@ def generate_web_invoice_html(repair_data: dict, shop_settings: dict) -> str:
                 
                 .repair-details {{
                     margin-bottom: 30px;
+                    direction: rtl;
+                    text-align: center;
                 }}
                 
                 .section-title {{
@@ -393,6 +399,8 @@ def generate_web_invoice_html(repair_data: dict, shop_settings: dict) -> str:
                     border-radius: 15px;
                     padding: 25px;
                     margin-bottom: 20px;
+                    direction: rtl;
+                    text-align: center;
                 }}
                 
                 .financial-row {{
@@ -418,6 +426,8 @@ def generate_web_invoice_html(repair_data: dict, shop_settings: dict) -> str:
                     padding: 20px;
                     border-radius: 10px;
                     margin-bottom: 20px;
+                    direction: rtl;
+                    text-align: center;
                 }}
                 
                 .warranty-section {{
@@ -426,6 +436,8 @@ def generate_web_invoice_html(repair_data: dict, shop_settings: dict) -> str:
                     padding: 20px;
                     border-radius: 10px;
                     margin-bottom: 20px;
+                    direction: rtl;
+                    text-align: center;
                 }}
                 
                 .footer {{
@@ -434,6 +446,7 @@ def generate_web_invoice_html(repair_data: dict, shop_settings: dict) -> str:
                     text-align: center;
                     color: #666;
                     border-top: 1px solid #eee;
+                    direction: rtl;
                 }}
             </style>
         </head>

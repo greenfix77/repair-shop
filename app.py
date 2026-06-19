@@ -1,4 +1,4 @@
-import sys
+﻿import sys
 import json
 from datetime import datetime, timedelta
 from pathlib import Path
@@ -13,6 +13,12 @@ from PyQt5.QtGui import QFont, QColor, QTextDocument, QIcon
 from PyQt5.QtPrintSupport import QPrinter, QPrintDialog, QPrintPreviewDialog
 import jdatetime
 
+from core.status import (
+    STATUS_PENDING, STATUS_IN_PROGRESS, STATUS_COMPLETED, STATUS_DELIVERED,
+    ALL_STATUSES, ALL_STATUSES_WITH_ALL,
+    STATUS_COLORS, DEFAULT_STATUS_COLOR,
+    STATUS_FG_COLORS
+)
 from repair_manager.ui.components import PersianCalendarWidget, PersianDateEdit
 from ui.table_renderer import render_table_rows
 from core.storage.repairs_storage import RepairsStorage
@@ -20,6 +26,11 @@ from services.statistics import update_statistics
 from core.filters import search_repairs, filter_repairs
 from services.table_service import build_table_rows
 from services.repair_service import add_repair, delete_repair, get_repair_by_id, update_repair
+from services.date_service import today_persian
+from services.calculations import calculate_invoice
+from services.invoice_calculator import calculate_invoice_totals
+from services.invoice_generator import generate_print_invoice_html, generate_web_invoice_html
+from ui.status_styles import get_status_color
 from ui.table_renderer import (
     create_table_item,
     set_status_styling,
@@ -27,14 +38,14 @@ from ui.table_renderer import (
 )
 
 class InvoicePreviewDialog(QDialog):
-    """دیالوگ پیشنمایش و چاپ فاکتور"""
+    """دیالوگ پیش‌نمایش و چاپ فاکتور"""
     
     def __init__(self, repair_data, parent=None):
         super().__init__(parent)
         self.repair_data = repair_data
         self.shop_settings = ShopSettingsDialog.get_settings()
         
-        self.setWindowTitle("پیشنمایش فاکتور")
+        self.setWindowTitle("پیش‌نمایش فاکتور")
         self.setMinimumSize(900, 700)
         
         self.init_ui()
@@ -65,7 +76,7 @@ class InvoicePreviewDialog(QDialog):
         
         layout.addLayout(type_layout)
         
-        # پیشنمایش
+        # پیش‌نمایش
         self.preview = QTextEdit()
         self.preview.setReadOnly(True)
         layout.addWidget(self.preview)
@@ -91,545 +102,9 @@ class InvoicePreviewDialog(QDialog):
         layout.addLayout(btn_layout)
         self.setLayout(layout)
         
-        # نمایش پیشنمایش اولیه
+        # نمایش پیش‌نمایش اولیه
         self.update_preview()
 
-    def generate_print_invoice(self):
-        """تولید فاکتور چاپی (سیاه و سفید)"""
-        data = self.repair_data
-        settings = self.shop_settings
-
-        # محاسبات مالی
-        parts_cost = data.get('parts_cost', 0)
-        labor_cost = data.get('labor_cost', 0)
-        subtotal = parts_cost + labor_cost
-        tax_rate = data.get('tax', 0)
-        tax_amount = subtotal * (tax_rate / 100)
-        discount = data.get('discount', 0)
-        total = subtotal + tax_amount - discount
-
-        html = f"""
-    <!DOCTYPE html>
-    <html dir="rtl">
-    <head>
-        <meta charset="UTF-8">
-        <style>
-            @page {{ size: A4; margin: 15mm; }}
-
-            body {{
-                font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-                font-size: 11pt;
-                color: #000;
-                line-height: 1.6;
-                direction: rtl;
-            }}
-
-            .header {{
-                text-align: center;
-                border-bottom: 2px solid #000;
-                padding-bottom: 10px;margin-bottom: 15px;
-            }}
-            .header h1 {{ margin: 5px 0; font-size: 18pt; font-weight: bold; }}
-            .header p {{ margin: 3px 0; font-size: 9pt; }}
-
-            table {{
-                width: 100%;
-                border-collapse: collapse;
-                margin: 10px 0;
-            }}
-
-            th {{
-                background-color: #d0d0d0;
-                border: 1px solid #000;
-                padding: 8px 10px;
-                text-align: center;
-                font-weight: bold;
-                font-size: 10pt;
-            }}
-
-            td {{
-                border: 1px solid #000;
-                padding: 7px 10px;
-                text-align: right;
-                font-size: 10pt;
-            }}
-
-            .td-center {{ text-align: center !important; }}
-
-            .info-table td {{ padding: 6px 10px; }}
-            .info-label {{ font-weight: bold; background-color: #f0f0f0; width: 20%; }}
-
-            .financial-summary {{
-                width: 45%;
-                margin-right: 0;
-                margin-top: 10px;
-                border: 1px solid #000;}}
-            .financial-summary td {{ padding: 6px 10px; }}
-            .financial-summary .amount {{ text-align: center; font-weight: bold; }}
-
-            .total-row {{
-                font-weight: bold;
-                background-color: #d0d0d0;
-                font-size: 11pt;
-            }}
-
-            .notes {{
-                margin-top: 12px;
-                padding: 10px;
-                border: 1px solid #000;
-                min-height: 50px;
-                text-align: right;
-            }}
-            .notes-title {{ font-weight: bold; margin-bottom: 5px; }}
-
-            .signature {{
-                margin-top: 30px;
-                display: table;
-                width: 100%;
-            }}
-            .signature-cell {{
-                display: table-cell;
-                width: 50%;
-                text-align: center;
-            }}
-            .signature-line {{
-                border-top: 1px solid #000;
-                width: 180px;
-                margin: 40px auto 5px auto;
-            }}
-
-            .footer {{
-                margin-top: 20px;
-                padding-top: 10px;
-                border-top: 1px solid #000;
-                text-align: center;
-                font-size: 9pt;color: #333;
-            }}</style>
-    </head>
-    <body>
-
-        <!-- سربرگ (وسط‌چین) -->
-        <div class="header">
-            <h1>{settings['shop_name']}</h1>
-            <p>{settings['address']}</p>
-            <p>تلفن: {settings['phone']} | موبایل: {settings['mobile']}</p>
-            <p>ایمیل: {settings['email']} | وبسایت: {settings['website']}</p>
-        </div>
-
-        <!-- اطلاعات فاکتور -->
-        <table class="info-table">
-            <tr>
-                <td class="info-label">شماره فاکتور:</td>
-                <td class="td-center">{data.get('id', 'N/A')}</td><td class="info-label">تاریخ:</td>
-                <td class="td-center">{data.get('receive_date', 'N/A')}</td>
-            </tr>
-            <tr>
-                <td class="info-label">نام مشتری:</td>
-                <td>{data.get('customer_name', 'N/A')}</td>
-                <td class="info-label">تلفن:</td>
-                <td class="td-center">{data.get('phone', 'N/A')}</td>
-            </tr>
-        </table>
-
-        <!-- جدول اصلی -->
-        <table>
-            <thead>
-                <tr>
-                    <th style="width:5%;">ردیف</th>
-                    <th style="width:30%;">شرح</th>
-                    <th style="width:35%;">مشخصات</th>
-                    <th style="width:30%;">مبلغ (تومان)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="td-center">1</td>
-                    <td>دستگاه</td>
-                    <td>{data.get('brand', '')} - {data.get('model', '')}</td>
-                    <td class="td-center">-</td>
-                </tr>
-                <tr>
-                    <td class="td-center">2</td>
-                    <td>مشکل گزارش‌شده</td>
-                    <td colspan="2">{data.get('issue', 'N/A')}</td>
-                </tr>
-                <tr>
-                    <td class="td-center">3</td>
-                    <td>هزینه قطعات</td>
-                    <td class="td-center">-</td>
-                    <td class="td-center">{parts_cost:,}</td>
-                </tr>
-                <tr>
-                    <td class="td-center">4</td>
-                    <td>هزینه تعمیر</td>
-                    <td class="td-center">-</td>
-                    <td class="td-center">{labor_cost:,}</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- جدول مالی -->
-        <table class="financial-summary">
-            <tr>
-                <td>جمع:</td>
-                <td class="amount">{subtotal:,} تومان</td>
-            </tr>
-            <tr>
-                <td>مالیات ({tax_rate}%):</td>
-                <td class="amount">{int(tax_amount):,} تومان</td>
-            </tr>
-            <tr>
-                <td>تخفیف:</td>
-                <td class="amount">{discount:,} تومان</td>
-            </tr>
-            <tr class="total-row">
-                <td>مبلغ قابل پرداخت:</td>
-                <td class="amount">{int(total):,} تومان</td>
-            </tr>
-        </table>
-
-        <!-- یادداشت و گارانتی -->
-        <div class="notes">
-            <div class="notes-title">یادداشت‌ها:</div>
-            <div>{data.get('notes', '-')}</div>
-        </div>
-
-        <div class="notes">
-            <div class="notes-title">گارانتی:</div>
-            <div>{data.get('warranty', '-')}</div>
-        </div>
-
-        <!-- امضا -->
-        <div class="signature">
-            <div class="signature-cell">
-                <div class="signature-line"></div>
-                <div>امضای مشتری</div>
-            </div>
-            <div class="signature-cell">
-                <div class="signature-line"></div>
-                <div>امضای فروشنده</div>
-            </div>
-        </div>
-
-        <!-- فوتر -->
-        <div class="footer">
-            <p>این فاکتور توسط سیستم مدیریت تعمیرات صادر شده است.</p>
-            <p>تاریخ چاپ: {jdatetime.date.today().strftime('%Y/%m/%d')}</p>
-        </div>
-
-    </body>
-    </html>
-    """
-        return html
-
-    def generate_web_invoice(self):
-        """تولید فاکتور وب (رنگی و حرفه‌ای)"""
-        data = self.repair_data
-        settings = self.shop_settings
-        
-        # محاسبات مالی
-        parts_cost = data.get('parts_cost', 0)
-        labor_cost = data.get('labor_cost', 0)
-        subtotal = parts_cost + labor_cost
-        tax_rate = data.get('tax', 0)
-        tax_amount = subtotal * (tax_rate / 100)
-        discount = data.get('discount', 0)
-        total = subtotal + tax_amount - discount
-        
-        # تعیین رنگ وضعیت
-        status = data.get('status', 'در انتظار')
-        status_colors = {
-            'در انتظار': '#FF9800',
-            'در حال تعمیر': '#2196F3',
-            'تعمیر شده': '#4CAF50',
-            'تحویل داده شده': '#9E9E9E'
-        }
-        status_color = status_colors.get(status, '#757575')
-        
-        # لوگو
-        logo_html = ""
-        if settings.get('logo') and Path(settings['logo']).exists():
-            logo_html = f'<img src="file:///{settings["logo"]}" style="max-width: 120px; max-height: 80px;">'
-        html = f"""
-        <!DOCTYPE html>
-        <html dir="rtl">
-        <head>
-            <meta charset="UTF-8">
-            <style>
-                body {{
-                    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    padding: 20px;
-                    margin: 0;
-                }}
-                
-                .invoice-container {{
-                    max-width: 800px;
-                    margin: 0 auto;
-                    background: white;
-                    border-radius: 15px;
-                    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-                    overflow: hidden;
-                }}
-                
-                .header {{
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    color: white;
-                    padding: 30px;
-                    text-align: center;
-                }}
-                
-                .header h1 {{
-                    margin: 10px 0;
-                    font-size: 28pt;
-                    font-weight: bold;
-                }}
-                
-                .header p {{
-                    margin: 5px 0;
-                    opacity: 0.9;
-                }}
-                
-                .logo {{
-                    margin-bottom: 15px;
-                }}
-                
-                .content {{
-                    padding: 30px;
-                }}
-                
-                .invoice-meta {{
-                    display: flex;
-                    justify-content: space-between;
-                    margin-bottom: 30px;
-                    padding: 20px;
-                    background: #f8f9fa;
-                    border-radius: 10px;
-                }}
-                
-                .meta-section {{
-                    flex: 1;
-                }}
-                
-                .meta-section h3 {{
-                    co                    color: #667eea;
-                    margin-bottom: 10px;
-                    font-size: 14pt;
-                }}
-                
-                .meta-item {{
-                    margin: 8px 0;
-                    color: #555;
-                }}
-                
-                .meta-label {{
-                    font-weight: bold;
-                    color: #333;
-                }}
-                
-                .status-badge {{
-                    display: inline-block;
-                    background: {status_color};
-                    color: white;
-                    padding: 8px 20px;
-                    border-radius: 25px;
-                    font-weight: bold;
-                    margin-top: 10px;
-                }}
-                
-                .repair-details {{
-                    margin-bottom: 30px;
-                }}
-                
-                .section-title {{
-                    font-size: 16pt;
-                    color: #333;
-                    margin-bottom: 15px;
-                    padding-bottom: 10px;
-                    border-bottom: 2px solid #667eea;
-                }}
-                
-                .details-card {{
-                    background: #f8f9fa;
-                    border-radius: 10px;
-                    padding: 20px;
-                    margin-bottom: 15px;
-                }}
-                
-                .details-grid {{
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 15px;
-                }}
-                
-                .detail-item {{
-                    padding: 10px;
-                    background: white;
-                    border-radius: 8px;
-                    border-right: 4px solid #667eea;
-                }}
-                
-                .detail-label {{
-                    font-size: 9pt;
-                    color: #666;
-                    margin-bottom: 5px;
-                }}
-                
-                .detail-value {{
-                    font-size: 11pt;
-                    color: #333;
-                    font-weight: 600;
-                }}
-                
-                .financial-card {{
-                    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-                    border-radius: 15px;
-                    padding: 25px;
-                    margin-bottom: 20px;
-                }}
-                
-                .financial-row {{
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 10px 0;
-                    border-bottom: 1px solid rgba(0,0,0,0.1);
-                }}
-                
-                .financial-row.total {{
-                    border-bottom: none;
-                    margin-top: 15px;
-                    padding-top: 15px;
-                    border-top: 2px solid #667eea;
-                    font-size: 16pt;
-                    font-weight: bold;
-                    color: #667eea;
-                }}
-                
-                .notes-section {{
-                    background: #fff8e1;
-                    border-right: 4px solid #ffc107;
-                    padding: 20px;
-                    border-radius: 10px;
-                    margin-bottom: 20px;
-                }}
-                
-                .warranty-section {{
-                    background: #e8f5e9;
-                    border-right: 4px solid #4caf50;
-                    padding: 20px;
-                    border-radius: 10px;
-                    margin-bottom: 20px;
-                }}
-                
-                .footer {{
-                    background: #f8f9fa;
-                    padding: 20px 30px;
-                    text-align: center;
-                    color: #666;
-                    border-top: 1px solid #eee;
-                }}
-            </style>
-        </head>
-        <body>
-            <div class="invoice-container">
-                <div class="header">
-                    <div class="logo">{logo_html}</div>
-                    <h1>{settings['shop_name']}</h1>
-                    <p>{settings['address']}</p>
-                    <p>📞 {settings['phone']} | 📱 {settings['mobile']}</p>
-                    <p>✉️ {settings['email']} | 🌐 {settings['website']}</p>
-                </div>
-                
-                <div class="content">
-                    <div class="invoice-meta">
-                        <div class="meta-section">
-                            <h3>اطلاعات فاکتور</h3>
-                            <div class="meta-item"><span class="meta-label">شماره:</span> {data.get('id', 'N/A')}</div>
-                            <div class="meta-item"><span class="meta-label">تاریخ پذیرش:</span> {data.get('receive_date', 'N/A')}</div>
-                            <div class="status-badge">{status}</div>
-                        </div>
-                        
-                        <div class="meta-section">
-                            <h3>اطلاعات مشتری</h3>
-                            <div class="meta-item"><span class="meta-label">نام:</span> {data.get('customer_name', 'N/A')}</div>
-                            <div class="meta-item"><span class="meta-label">تلفن:</span> {data.get('phone', 'N/A')}</div>
-                            <div class="meta-item"><span class="meta-label">تاریخ تحویل:</span> {data.get('delivery_date', 'N/A')}</div>
-                        </div>
-                    </div>
-                    
-                    <div class="repair-details">
-                        <h2 class="section-title">جزئیات تعمیر</h2>
-                        <div class="details-card">
-                            <div class="details-grid">
-                                <div class="detail-item">
-                                    <div class="detail-label">برند دستگاه</div>
-                                    <div class="detail-value">{data.get('brand', '-')}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">مدل دستگاه</div>
-                                    <div class="detail-value">{data.get('model', '-')}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">ایراد گزارش شده</div>
-                                    <div class="detail-value">{data.get('issue', '-')}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">وضعیت فعلی</div>
-                                    <div class="detail-value">{status}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="financial-card">
-                        <h2 class="section-title">خلاصه مالی</h2>
-                        <div class="financial-row">
-                            <span>هزینه قطعات</span>
-                            <span>{parts_cost:,} تومان</span>
-                        </div>
-                        <div class="financial-row">
-                            <span>هزینه تعمیر</span>
-                            <span>{labor_cost:,} تومان</span>
-                        </div>
-                        <div class="financial-row">
-                            <span>جمع کل</span>
-                            <span>{subtotal:,} تومان</span>
-                        </div>
-                        <div class="financial-row">
-                            <span>مالیات ({tax_rate}%)</span>
-                            <span>{int(tax_amount):,} تومان</span>
-                        </div>
-                        <div class="financial-row">
-                            <span>تخفیف</span>
-                            <span>{discount:,} تومان</span>
-                        </div>
-                        <div class="financial-row total">
-                            <span>مبلغ نهایی</span>
-                            <span>{int(total):,} تومان</span>
-                        </div>
-                    </div>
-                    
-                    <div class="notes-section">
-                        <h3 style="margin-top: 0;">یادداشت‌ها</h3>
-                        <p>{data.get('notes', 'یادداشتی ثبت نشده است.')}</p>
-                    </div>
-                    
-                    <div class="warranty-section">
-                        <h3 style="margin-top: 0;">شرایط گارانتی</h3>
-                        <p>{data.get('warranty', 'بدون گارانتی')}</p>
-                    </div>
-                </div>
-                
-                <div class="footer">
-                    <p>از اعتماد شما سپاسگزاریم</p>
-                    <p>تاریخ صدور: {jdatetime.date.today().strftime('%Y/%m/%d')}</p>
-                </div>
-            </div>
-        </body>
-        </html>
-        """
-        
-        return html
-    
     def print_invoice(self):
         """چاپ فاکتور"""
         printer = QPrinter(QPrinter.HighResolution)
@@ -657,9 +132,9 @@ class InvoicePreviewDialog(QDialog):
     def update_preview(self):
         """به‌روزرسانی پیش‌نمایش فاکتور"""
         if self.print_radio.isChecked():
-            html = self.generate_print_invoice()
+            html = generate_print_invoice_html(self.repair_data, self.shop_settings)
         else:
-            html = self.generate_web_invoice()
+            html = generate_web_invoice_html(self.repair_data, self.shop_settings)
         
         self.preview.setHtml(html)
 
@@ -756,6 +231,7 @@ class ShopSettingsDialog(QDialog):
         layout.addLayout(btn_layout)
         
         self.setLayout(layout)
+
     def select_logo(self):
         """انتخاب فایل لوگو"""
         file_path, _ = QFileDialog.getOpenFileName(
@@ -830,343 +306,7 @@ class ShopSettingsDialog(QDialog):
                     return json.load(f)
         except:
             pass
-        
         return default_settings
-
-
-   
-    def generate_web_invoice(self):
-        """تولید فاکتور وب (رنگی و حرفه‌ای)"""
-        data = self.repair_data
-        settings = self.shop_settings
-        
-        # محاسبات مالی
-        parts_cost = data.get('parts_cost', 0)
-        labor_cost = data.get('labor_cost', 0)
-        subtotal = parts_cost + labor_cost
-        tax_rate = data.get('tax', 0)
-        tax_amount = subtotal * (tax_rate / 100)
-        discount = data.get('discount', 0)
-        total = subtotal + tax_amount - discount
-        
-        # تعیین رنگ وضعیت
-        status = data.get('status', 'در انتظار')
-        status_colors = {
-            'در انتظار': '#FF9800',
-            'در حال تعمیر': '#2196F3',
-            'تعمیر شده': '#4CAF50',
-            'تحویل داده شده': '#9E9E9E'
-        }
-        status_color = status_colors.get(status, '#757575')
-        
-        # لوگو
-        logo_html = ""
-        if settings.get('logo') and Path(settings['logo']).exists():
-            logo_html = f'<img src="file:///{settings["logo"]}" style="max-width: 120px; max-height: 80px;">'
-        html = f"""
-        <!DOCTYPE html>
-        <html dir="rtl">
-        <head>
-            <meta charset="UTF-8">
-            <style>
-                body {{
-                    font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    padding: 20px;
-                    margin: 0;
-                }}
-                
-                .invoice-container {{
-                    max-width: 800px;
-                    margin: 0 auto;
-                    background: white;
-                    border-radius: 15px;
-                    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-                    overflow: hidden;
-                }}
-                
-                .header {{
-                    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-                    color: white;
-                    padding: 30px;
-                    text-align: center;
-                }}
-                
-                .header h1 {{
-                    margin: 10px 0;
-                    font-size: 28pt;
-                    font-weight: bold;
-                }}
-                
-                .header p {{
-                    margin: 5px 0;
-                    opacity: 0.9;
-                }}
-                
-                .logo {{
-                    margin-bottom: 15px;
-                }}
-                
-                .content {{
-                    padding: 30px;
-                }}
-                
-                .invoice-meta {{
-                    display: flex;
-                    justify-content: space-between;
-                    margin-bottom: 30px;
-                    padding: 20px;
-                    background: #f8f9fa;
-                    border-radius: 10px;
-                }}
-                
-                .meta-section {{
-                    flex: 1;
-                }}
-                
-                .meta-section h3 {{
-                    co                    color: #667eea;
-                    margin-bottom: 10px;
-                    font-size: 14pt;
-                }}
-                
-                .meta-item {{
-                    margin: 8px 0;
-                    color: #555;
-                }}
-                
-                .meta-label {{
-                    font-weight: bold;
-                    color: #333;
-                }}
-                
-                .status-badge {{
-                    display: inline-block;
-                    background: {status_color};
-                    color: white;
-                    padding: 8px 20px;
-                    border-radius: 25px;
-                    font-weight: bold;
-                    margin-top: 10px;
-                }}
-                
-                .repair-details {{
-                    margin-bottom: 30px;
-                }}
-                
-                .section-title {{
-                    font-size: 16pt;
-                    color: #333;
-                    margin-bottom: 15px;
-                    padding-bottom: 10px;
-                    border-bottom: 2px solid #667eea;
-                }}
-                
-                .details-card {{
-                    background: #f8f9fa;
-                    border-radius: 10px;
-                    padding: 20px;
-                    margin-bottom: 15px;
-                }}
-                
-                .details-grid {{
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 15px;
-                }}
-                
-                .detail-item {{
-                    padding: 10px;
-                    background: white;
-                    border-radius: 8px;
-                    border-right: 4px solid #667eea;
-                }}
-                
-                .detail-label {{
-                    font-size: 9pt;
-                    color: #666;
-                    margin-bottom: 5px;
-                }}
-                
-                .detail-value {{
-                    font-size: 11pt;
-                    color: #333;
-                    font-weight: 600;
-                }}
-                
-                .financial-card {{
-                    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-                    border-radius: 15px;
-                    padding: 25px;
-                    margin-bottom: 20px;
-                }}
-                
-                .financial-row {{
-                    display: flex;
-                    justify-content: space-between;
-                    padding: 10px 0;
-                    border-bottom: 1px solid rgba(0,0,0,0.1);
-                }}
-                
-                .financial-row.total {{
-                    border-bottom: none;
-                    margin-top: 15px;
-                    padding-top: 15px;
-                    border-top: 2px solid #667eea;
-                    font-size: 16pt;
-                    font-weight: bold;
-                    color: #667eea;
-                }}
-                
-                .notes-section {{
-                    background: #fff8e1;
-                    border-right: 4px solid #ffc107;
-                    padding: 20px;
-                    border-radius: 10px;
-                    margin-bottom: 20px;
-                }}
-                
-                .warranty-section {{
-                    background: #e8f5e9;
-                    border-right: 4px solid #4caf50;
-                    padding: 20px;
-                    border-radius: 10px;
-                    margin-bottom: 20px;
-                }}
-                
-                .footer {{
-                    background: #f8f9fa;
-                    padding: 20px 30px;
-                    text-align: center;
-                    color: #666;
-                    border-top: 1px solid #eee;
-                }}
-            </style>
-        </head>
-        <body>
-            <div class="invoice-container">
-                <div class="header">
-                    <div class="logo">{logo_html}</div>
-                    <h1>{settings['shop_name']}</h1>
-                    <p>{settings['address']}</p>
-                    <p>📞 {settings['phone']} | 📱 {settings['mobile']}</p>
-                    <p>✉️ {settings['email']} | 🌐 {settings['website']}</p>
-                </div>
-                
-                <div class="content">
-                    <div class="invoice-meta">
-                        <div class="meta-section">
-                            <h3>اطلاعات فاکتور</h3>
-                            <div class="meta-item"><span class="meta-label">شماره:</span> {data.get('id', 'N/A')}</div>
-                            <div class="meta-item"><span class="meta-label">تاریخ پذیرش:</span> {data.get('receive_date', 'N/A')}</div>
-                            <div class="status-badge">{status}</div>
-                        </div>
-                        
-                        <div class="meta-section">
-                            <h3>اطلاعات مشتری</h3>
-                            <div class="meta-item"><span class="meta-label">نام:</span> {data.get('customer_name', 'N/A')}</div>
-                            <div class="meta-item"><span class="meta-label">تلفن:</span> {data.get('phone', 'N/A')}</div>
-                            <div class="meta-item"><span class="meta-label">تاریخ تحویل:</span> {data.get('delivery_date', 'N/A')}</div>
-                        </div>
-                    </div>
-                    
-                    <div class="repair-details">
-                        <h2 class="section-title">جزئیات تعمیر</h2>
-                        <div class="details-card">
-                            <div class="details-grid">
-                                <div class="detail-item">
-                                    <div class="detail-label">برند دستگاه</div>
-                                    <div class="detail-value">{data.get('brand', '-')}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">مدل دستگاه</div>
-                                    <div class="detail-value">{data.get('model', '-')}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">ایراد گزارش شده</div>
-                                    <div class="detail-value">{data.get('issue', '-')}</div>
-                                </div>
-                                <div class="detail-item">
-                                    <div class="detail-label">وضعیت فعلی</div>
-                                    <div class="detail-value">{status}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="financial-card">
-                        <h2 class="section-title">خلاصه مالی</h2>
-                        <div class="financial-row">
-                            <span>هزینه قطعات</span>
-                            <span>{parts_cost:,} تومان</span>
-                        </div>
-                        <div class="financial-row">
-                            <span>هزینه تعمیر</span>
-                            <span>{labor_cost:,} تومان</span>
-                        </div>
-                        <div class="financial-row">
-                            <span>جمع کل</span>
-                            <span>{subtotal:,} تومان</span>
-                        </div>
-                        <div class="financial-row">
-                            <span>مالیات ({tax_rate}%)</span>
-                            <span>{int(tax_amount):,} تومان</span>
-                        </div>
-                        <div class="financial-row">
-                            <span>تخفیف</span>
-                            <span>{discount:,} تومان</span>
-                        </div>
-                        <div class="financial-row total">
-                            <span>مبلغ نهایی</span>
-                            <span>{int(total):,} تومان</span>
-                        </div>
-                    </div>
-                    
-                    <div class="notes-section">
-                        <h3 style="margin-top: 0;">یادداشت‌ها</h3>
-                        <p>{data.get('notes', 'یادداشتی ثبت نشده است.')}</p>
-                    </div>
-                    
-                    <div class="warranty-section">
-                        <h3 style="margin-top: 0;">شرایط گارانتی</h3>
-                        <p>{data.get('warranty', 'بدون گارانتی')}</p>
-                    </div>
-                </div>
-                
-                <div class="footer">
-                    <p>از اعتماد شما سپاسگزاریم</p>
-                    <p>تاریخ صدور: {jdatetime.date.today().strftime('%Y/%m/%d')}</p>
-                </div>
-            </div>
-        </body>
-        </html>
-        """
-        
-        return html
-    
-    def print_invoice(self):
-        """چاپ فاکتور"""
-        printer = QPrinter(QPrinter.HighResolution)
-        dialog = QPrintDialog(printer, self)
-        
-        if dialog.exec_() == QDialog.Accepted:
-            self.preview.document().print_(printer)
-    
-    def save_pdf(self):
-        """ذخیره به صورت PDF"""
-        file_path, _ = QFileDialog.getSaveFileName(
-            self,
-            "ذخیره PDF",
-            f"invoice_{self.repair_data.get('id', 'new')}.pdf",
-            "PDF Files (*.pdf)"
-        )
-        
-        if file_path:
-            printer = QPrinter(QPrinter.HighResolution)
-            printer.setOutputFormat(QPrinter.PdfFormat)
-            printer.setOutputFileName(file_path)
-            self.preview.document().print_(printer)
-            QMessageBox.information(self, "موفق", "فایل PDF با موفقیت ذخیره شد.")
-
 
 class NotificationDialog(QDialog):
     """دیالوگ نمایش اعلان‌ها"""
@@ -1204,6 +344,7 @@ class NotificationDialog(QDialog):
         layout.addWidget(close_btn)
         
         self.setLayout(layout)
+
 class RepairDialog(QDialog):
     """دیالوگ افزودن/ویرایش تعمیر"""
     
@@ -1254,7 +395,7 @@ class RepairDialog(QDialog):
         
         main_layout.addWidget(QLabel("وضعیت:"), 5, 0)
         self.status_input = QComboBox()
-        self.status_input.addItems(["در انتظار", "در حال تعمیر", "تعمیر شده", "تحویل داده شده"])
+        self.status_input.addItems(ALL_STATUSES)
         main_layout.addWidget(self.status_input, 5, 1)
         
         main_layout.addWidget(QLabel("تاریخ دریافت:"), 6, 0)
@@ -1301,6 +442,7 @@ class RepairDialog(QDialog):
         financial_layout.addWidget(self.total_label, 4, 1)
         
         financial_tab.setLayout(financial_layout)
+
         # تب یادداشت و گارانتی
         notes_tab = QWidget()
         notes_layout = QGridLayout()
@@ -1338,10 +480,14 @@ class RepairDialog(QDialog):
     
     def calculate_total(self, value):
         """محاسبه مجموع هزینه‌ها"""
-        subtotal = self.parts_cost_input.value() + self.labor_cost_input.value()
-        tax_amount = subtotal * (self.tax_input.value() / 100)
-        total = subtotal + tax_amount - self.discount_input.value()
-        self.total_label.setText(f"{int(total):,} تومان")
+        data = {
+            'parts_cost': self.parts_cost_input.value(),
+            'labor_cost': self.labor_cost_input.value(),
+            'tax': self.tax_input.value(),
+            'discount': self.discount_input.value(),
+        }
+        fin = calculate_invoice_totals(data)
+        self.total_label.setText(f"{int(fin['total']):,} تومان")
     
     def load_data(self, data):
         """بارگذاری داده‌ها"""
@@ -1350,7 +496,7 @@ class RepairDialog(QDialog):
         self.brand_input.setText(data.get('brand', ''))
         self.model_input.setText(data.get('model', ''))
         self.issue_input.setText(data.get('issue', ''))
-        self.status_input.setCurrentText(data.get('status', 'در انتظار'))
+        self.status_input.setCurrentText(data.get('status', STATUS_PENDING))
         self.receive_date_input.setText(data.get('receive_date', ''))
         self.delivery_date_input.setText(data.get('delivery_date', ''))
         self.parts_cost_input.setValue(data.get('parts_cost', 0))
@@ -1379,6 +525,7 @@ class RepairDialog(QDialog):
             'notes': self.notes_input.toPlainText(),
             'warranty': self.warranty_input.toPlainText()
         }
+
 class LaptopRepairManager(QMainWindow):
     """کلاس اصلی برنامه مدیریت تعمیرات"""
     
@@ -1388,7 +535,7 @@ class LaptopRepairManager(QMainWindow):
         self.repairs = []
         self.load_data()
         self.init_ui()
-        self.refresh_table()  # Populate table with loaded data
+        self.refresh_table()  # پر کردن جدول با داده‌های بارگذاری شده
         self.check_notifications()
     
     def init_ui(self):
@@ -1528,12 +675,13 @@ class LaptopRepairManager(QMainWindow):
         layout.addWidget(filter_label)
         
         self.filter_combo = QComboBox()
-        self.filter_combo.addItems(["همه", "در انتظار", "در حال تعمیر", "تعمیر شده", "تحویل داده شده"])
+        self.filter_combo.addItems(ALL_STATUSES_WITH_ALL)
         self.filter_combo.currentTextChanged.connect(self.filter_repairs)
         layout.addWidget(self.filter_combo)
         
         toolbar.setLayout(layout)
         return toolbar
+
     def create_table(self):
         """ایجاد جدول"""
         table = QTableWidget()
@@ -1583,26 +731,26 @@ class LaptopRepairManager(QMainWindow):
         
         layout.addWidget(QLabel("|"))
         
-        self.pending_label = QLabel("در انتظار: 0")
-        self.pending_label.setStyleSheet("color: #FF9800; font-weight: bold;")
+        self.pending_label = QLabel(f"{STATUS_PENDING}: 0")
+        self.pending_label.setStyleSheet(f"color: {STATUS_FG_COLORS[STATUS_PENDING]}; font-weight: bold;")
         layout.addWidget(self.pending_label)
         
         layout.addWidget(QLabel("|"))
         
-        self.in_progress_label = QLabel("در حال تعمیر: 0")
-        self.in_progress_label.setStyleSheet("color: #2196F3; font-weight: bold;")
+        self.in_progress_label = QLabel(f"{STATUS_IN_PROGRESS}: 0")
+        self.in_progress_label.setStyleSheet(f"color: {STATUS_FG_COLORS[STATUS_IN_PROGRESS]}; font-weight: bold;")
         layout.addWidget(self.in_progress_label)
         
         layout.addWidget(QLabel("|"))
         
-        self.completed_label = QLabel("تعمیر شده: 0")
-        self.completed_label.setStyleSheet("color: #4CAF50; font-weight: bold;")
+        self.completed_label = QLabel(f"{STATUS_COMPLETED}: 0")
+        self.completed_label.setStyleSheet(f"color: {STATUS_FG_COLORS[STATUS_COMPLETED]}; font-weight: bold;")
         layout.addWidget(self.completed_label)
         
         layout.addWidget(QLabel("|"))
         
-        self.delivered_label = QLabel("تحویل داده شده: 0")
-        self.delivered_label.setStyleSheet("color: #9E9E9E; font-weight: bold;")
+        self.delivered_label = QLabel(f"{STATUS_DELIVERED}: 0")
+        self.delivered_label.setStyleSheet(f"color: {STATUS_FG_COLORS[STATUS_DELIVERED]}; font-weight: bold;")
         layout.addWidget(self.delivered_label)
         
         layout.addStretch()
@@ -1616,8 +764,7 @@ class LaptopRepairManager(QMainWindow):
     
     def update_date_label(self):
         """به‌روزرسانی تاریخ"""
-        today = jdatetime.date.today()
-        self.date_label.setText(f"📅 {today.strftime('%Y/%m/%d')}")
+        self.date_label.setText(f"📅 {today_persian()}")
         
         # تایمر برای به‌روزرسانی روزانه
         QTimer.singleShot(60000, self.update_date_label)
@@ -1634,7 +781,7 @@ class LaptopRepairManager(QMainWindow):
         if dialog.exec_() == QDialog.Accepted:
             data = dialog.get_data()
             
-            # Use service to add repair
+            # استفاده از سرویس برای افزودن تعمیر
             self.repairs = add_repair(self.repairs, data)
             
             self.save_data()
@@ -1663,7 +810,7 @@ class LaptopRepairManager(QMainWindow):
             updated_data = dialog.get_data()
             updated_data['id'] = repair_id
             
-            # Use service to update repair
+            # استفاده از سرویس برای به‌روزرسانی تعمیر
             self.repairs = update_repair(self.repairs, repair_id, updated_data)
             
             self.save_data()
@@ -1690,7 +837,7 @@ class LaptopRepairManager(QMainWindow):
         )
         
         if reply == QMessageBox.Yes:
-            # Use service to delete repair
+            # استفاده از سرویس برای حذف تعمیر
             self.repairs = delete_repair(self.repairs, repair_id)
             
             self.save_data()
@@ -1707,7 +854,7 @@ class LaptopRepairManager(QMainWindow):
             return
         
         repair_id = int(self.table.item(selected_row, 0).text())
-        repair_data = next((r for r in self.repairs if r['id'] == repair_id), None)
+        repair_data = get_repair_by_id(self.repairs, repair_id)
         
         if not repair_data:
             QMessageBox.critical(self, "خطا", "داده‌ای یافت نشد.")
@@ -1717,29 +864,28 @@ class LaptopRepairManager(QMainWindow):
         dialog.exec_()
     
     def search_repairs(self, text):
-        """Search repairs"""
+        """جستجوی تعمیرات"""
         matching_indices = search_repairs(self.repairs, text)
 
         for row in range(self.table.rowCount()):
             self.table.setRowHidden(row, row not in matching_indices)
 
-
     def filter_repairs(self, status):
-        """Filter by status"""
+        """فیلتر بر اساس وضعیت"""
         matching_indices = filter_repairs(self.repairs, status)
 
         for row in range(self.table.rowCount()):
             self.table.setRowHidden(row, row not in matching_indices)
         
     def refresh_table(self):
-        """Refresh table"""
-        # Get prepared row data from service
+        """به‌روزرسانی جدول"""
+        # دریافت داده‌های آماده‌شده از سرویس
         rows_data = build_table_rows(self.repairs)
         
-        # Render all rows using the table renderer
+        # رندر تمام ردیف‌ها با استفاده از table renderer
         render_table_rows(self.table, rows_data, self.view_repair, self.quick_invoice)
         
-        # Update statistics
+        # به‌روزرسانی آمار
         self.update_statistics()
     
     def view_repair(self, row):
@@ -1751,15 +897,16 @@ class LaptopRepairManager(QMainWindow):
         """فاکتور سریع"""
         self.table.selectRow(row)
         self.preview_invoice()
+
     def update_statistics(self):
-        """Update statistics"""
+        """به‌روزرسانی آمار"""
         total, pending, in_progress, completed, delivered = update_statistics(self.repairs)
         
         self.total_label.setText(f"تعداد کل: {total}")
-        self.pending_label.setText(f"در انتظار: {pending}")
-        self.in_progress_label.setText(f"در حال تعمیر: {in_progress}")
-        self.completed_label.setText(f"تعمیر شده: {completed}")
-        self.delivered_label.setText(f"تحویل داده شده: {delivered}")
+        self.pending_label.setText(f"{STATUS_PENDING}: {pending}")
+        self.in_progress_label.setText(f"{STATUS_IN_PROGRESS}: {in_progress}")
+        self.completed_label.setText(f"{STATUS_COMPLETED}: {completed}")
+        self.delivered_label.setText(f"{STATUS_DELIVERED}: {delivered}")
     
     def check_notifications(self):
         """بررسی یادآوری‌ها"""
@@ -1767,7 +914,7 @@ class LaptopRepairManager(QMainWindow):
         today = jdatetime.date.today()
         
         for repair in self.repairs:
-            if repair.get('status') in ['در انتظار', 'در حال تعمیر']:
+            if repair.get('status') in (STATUS_PENDING, STATUS_IN_PROGRESS):
                 delivery_date_str = repair.get('delivery_date', '')
                 
                 if delivery_date_str:

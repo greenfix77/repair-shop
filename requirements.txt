@@ -1,3 +1,4 @@
 PyQt5>=5.15.0
 jdatetime>=4.1.0
 persiantools>=4.0.0
+SQLAlchemy>=2.0.0

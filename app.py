@@ -25,7 +25,7 @@ from core.storage.repairs_storage import RepairsStorage
 from services.statistics import update_statistics
 from core.filters import search_repairs, filter_repairs
 from services.table_service import build_table_rows
-from services.repair_service import add_repair, delete_repair, get_repair_by_id, update_repair
+from services.repair_manager_service import add_repair, delete_repair, get_repair_by_id, update_repair
 from services.date_service import today_persian
 from services.calculations import calculate_invoice
 from services.invoice_calculator import calculate_invoice_totals

@@ -1,6 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "openrouter/qwen/qwen3-coder-plus",
+  "model": "opencode/deepseek-v4-flash-free",
+  "small_model": "opencode/deepseek-v4-flash-free",
+
   "agent": {
     "plan": {
       "temperature": 0.1

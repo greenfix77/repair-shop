@@ -1,3 +1,6 @@
+import json
+from pathlib import Path
+
 from PyQt5.QtWidgets import (QWidget, QHBoxLayout, QVBoxLayout,
                               QPushButton, QTableWidget, QLabel,
                               QLineEdit, QComboBox, QHeaderView,
@@ -8,6 +11,24 @@ from core.status import (
     ALL_STATUSES_WITH_ALL,
     STATUS_FG_COLORS
 )
+
+
+def _get_shop_name():
+    try:
+        if Path("shop_settings.json").exists():
+            with open("shop_settings.json", "r", encoding="utf-8") as f:
+                return json.load(f).get("shop_name", "").strip()
+    except:
+        pass
+    return ""
+
+
+def _make_title(icon=False):
+    shop_name = _get_shop_name()
+    prefix = "🔧 " if icon else ""
+    if shop_name:
+        return f"{prefix}سیستم مدیریت تعمیرگاه {shop_name}"
+    return f"{prefix}سیستم مدیریت تعمیرات لپ‌تاپ"
 
 
 def build_header(window):
@@ -22,14 +43,14 @@ def build_header(window):
     
     layout = QHBoxLayout()
     
-    title = QLabel("🔧 سیستم مدیریت تعمیرات لپ‌تاپ")
+    title = QLabel(_make_title(icon=True))
     title.setStyleSheet("color: white; font-size: 20pt; font-weight: bold;")
     layout.addWidget(title)
     
     layout.addStretch()
     
-    # دکمه تنظیمات فروشگاه
-    settings_btn = QPushButton("⚙️ تنظیمات فروشگاه")
+    # دکمه تنظیمات کلی
+    settings_btn = QPushButton("⚙️ تنظیمات کلی")
     settings_btn.setStyleSheet("""
         background-color: rgba(255, 255, 255, 0.2);
         color: white;
@@ -182,7 +203,7 @@ def build_status_bar(window):
 
 def build_ui(window):
     """ایجاد رابط کاربری"""
-    window.setWindowTitle("سیستم مدیریت تعمیرات لپ‌تاپ")
+    window.setWindowTitle(_make_title(icon=False))
     window.setGeometry(100, 100, 1200, 700)
     
     # ویجت مرکزی

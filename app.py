@@ -5,7 +5,7 @@ from pathlib import Path
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QVBoxLayout,
                               QHBoxLayout, QPushButton, QTableWidgetItem,
                               QDialog, QLabel, QLineEdit, QTextEdit, QSpinBox,
-                              QDoubleSpinBox, QCalendarWidget, QMessageBox,
+                              QDoubleSpinBox, QCalendarWidget,
                               QTabWidget, QGridLayout,
                               QFrame, QFileDialog, QRadioButton, QButtonGroup)
 from PyQt5.QtCore import Qt, QDate, QTimer, pyqtSignal, QLocale
@@ -39,6 +39,9 @@ from ui.table_renderer import (
 from ui.dialogs.repair_dialog import RepairDialog
 from ui.dialogs.invoice_dialog import InvoicePreviewDialog
 from ui.main_window import build_ui
+from services.notification_service import (
+    show_info, show_warning, show_error, show_question
+)
 
 
 class ShopSettingsDialog(QDialog):
@@ -184,10 +187,10 @@ class ShopSettingsDialog(QDialog):
             with open("shop_settings.json", "w", encoding="utf-8") as f:
                 json.dump(settings, f, ensure_ascii=False, indent=4)
             
-            QMessageBox.information(self, "موفق", "تنظیمات با موفقیت ذخیره شد.")
+            show_info(self, "موفق", "تنظیمات با موفقیت ذخیره شد.")
             self.accept()
         except Exception as e:
-            QMessageBox.critical(self, "خطا", f"خطا در ذخیره تنظیمات: {e}")
+            show_error(self, "خطا", f"خطا در ذخیره تنظیمات: {e}")
     
     @staticmethod
     def get_settings():
@@ -288,21 +291,21 @@ class LaptopRepairManager(QMainWindow):
             self.save_data()
             self.refresh_table()
 
-            QMessageBox.information(self, "موفق", "تعمیر با موفقیت ثبت شد.")
+            show_info(self, "موفق", "تعمیر با موفقیت ثبت شد.")
 
     def edit_repair(self):
         """ویرایش تعمیر"""
         selected_row = self.table.currentRow()
         
         if selected_row < 0:
-            QMessageBox.warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
+            show_warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
             return
         
         repair_id = int(self.table.item(selected_row, 0).text())
         repair_data = get_repair_by_id(self.repairs, repair_id)
         
         if not repair_data:
-            QMessageBox.critical(self, "خطا", "داده‌ای یافت نشد.")
+            show_error(self, "خطا", "داده‌ای یافت نشد.")
             return
         
         dialog = RepairDialog(repair_data=repair_data, parent=self)
@@ -317,48 +320,41 @@ class LaptopRepairManager(QMainWindow):
             self.save_data()
             self.refresh_table()
             
-            QMessageBox.information(self, "موفق", "تعمیر با موفقیت ویرایش شد.")
+            show_info(self, "موفق", "تعمیر با موفقیت ویرایش شد.")
     
     def delete_repair(self):
         """حذف تعمیر"""
         selected_row = self.table.currentRow()
         
         if selected_row < 0:
-            QMessageBox.warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
+            show_warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
             return
         
         repair_id = int(self.table.item(selected_row, 0).text())
         customer_name = self.table.item(selected_row, 1).text()
         
-        reply = QMessageBox.question(
-            self,
-            "تأیید حذف",
-            f"آیا از حذف تعمیر '{customer_name}' اطمینان دارید؟",
-            QMessageBox.Yes | QMessageBox.No
-        )
-        
-        if reply == QMessageBox.Yes:
+        if show_question(self, "تأیید حذف", f"آیا از حذف تعمیر '{customer_name}' اطمینان دارید؟"):
             # استفاده از سرویس برای حذف تعمیر
             self.repairs = delete_repair(self.repairs, repair_id)
             
             self.save_data()
             self.refresh_table()
             
-            QMessageBox.information(self, "موفق", "تعمیر با موفقیت حذف شد.")
+            show_info(self, "موفق", "تعمیر با موفقیت حذف شد.")
     
     def preview_invoice(self):
         """پیش‌نمایش فاکتور"""
         selected_row = self.table.currentRow()
         
         if selected_row < 0:
-            QMessageBox.warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
+            show_warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
             return
         
         repair_id = int(self.table.item(selected_row, 0).text())
         repair_data = get_repair_by_id(self.repairs, repair_id)
         
         if not repair_data:
-            QMessageBox.critical(self, "خطا", "داده‌ای یافت نشد.")
+            show_error(self, "خطا", "داده‌ای یافت نشد.")
             return
         
         dialog = InvoicePreviewDialog(repair_data, parent=self)
@@ -449,7 +445,7 @@ class LaptopRepairManager(QMainWindow):
         try:
             self.repairs = self.storage.load_all()
         except Exception as e:
-            QMessageBox.critical(self, "خطا", f"خطا در بارگذاری داده‌ها: {e}")
+            show_error(self, "خطا", f"خطا در بارگذاری داده‌ها: {e}")
             self.repairs = []
 
     def save_data(self):
@@ -457,15 +453,11 @@ class LaptopRepairManager(QMainWindow):
         try:
             self.storage.save_all(self.repairs)
         except Exception as e:
-            QMessageBox.critical(self, "خطا", f"خطا در ذخیره داده‌ها: {e}")
+            show_error(self, "خطا", f"خطا در ذخیره داده‌ها: {e}")
 
     def closeEvent(self, event):
         """رویداد بستن برنامه"""
-        reply = QMessageBox.question(
-            self, "خروج", "آیا از خروج از برنامه اطمینان دارید؟",
-            QMessageBox.Yes | QMessageBox.No
-        )
-        if reply == QMessageBox.Yes:
+        if show_question(self, "خروج", "آیا از خروج از برنامه اطمینان دارید؟"):
             self.save_data()
             event.accept()
         else:

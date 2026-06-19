@@ -20,25 +20,18 @@ from core.status import (
     STATUS_FG_COLORS
 )
 from repair_manager.ui.components import PersianCalendarWidget, PersianDateEdit
-from ui.table_renderer import render_table_rows
 from core.storage.repairs_storage import RepairsStorage
 from services.statistics import update_statistics
-from core.filters import search_repairs, filter_repairs
-from services.table_service import build_table_rows
 from services.repair_manager_service import add_repair, delete_repair, get_repair_by_id, update_repair
 from services.date_service import today_persian
 from services.calculations import calculate_invoice
 from services.invoice_calculator import calculate_invoice_totals
 from services.invoice_generator import generate_print_invoice_html, generate_web_invoice_html
 from ui.status_styles import get_status_color
-from ui.table_renderer import (
-    create_table_item,
-    set_status_styling,
-    set_total_styling
-)
 from ui.dialogs.repair_dialog import RepairDialog
 from ui.dialogs.invoice_dialog import InvoicePreviewDialog
 from ui.main_window import build_ui
+from controllers.main_controller import MainController
 from services.notification_service import (
     show_info, show_warning, show_error, show_question
 )
@@ -257,6 +250,7 @@ class LaptopRepairManager(QMainWindow):
         super().__init__()
         self.storage = RepairsStorage()
         self.repairs = []
+        self.controller = MainController()
         self.load_data()
         self.init_ui()
         self.refresh_table()  # پر کردن جدول با داده‌های بارگذاری شده
@@ -362,28 +356,19 @@ class LaptopRepairManager(QMainWindow):
     
     def search_repairs(self, text):
         """جستجوی تعمیرات"""
-        matching_indices = search_repairs(self.repairs, text)
-
-        for row in range(self.table.rowCount()):
-            self.table.setRowHidden(row, row not in matching_indices)
+        self.controller.search_repairs(self.table, self.repairs, text)
 
     def filter_repairs(self, status):
         """فیلتر بر اساس وضعیت"""
-        matching_indices = filter_repairs(self.repairs, status)
-
-        for row in range(self.table.rowCount()):
-            self.table.setRowHidden(row, row not in matching_indices)
+        self.controller.filter_repairs(self.table, self.repairs, status)
         
     def refresh_table(self):
         """به‌روزرسانی جدول"""
-        # دریافت داده‌های آماده‌شده از سرویس
-        rows_data = build_table_rows(self.repairs)
-        
-        # رندر تمام ردیف‌ها با استفاده از table renderer
-        render_table_rows(self.table, rows_data, self.view_repair, self.quick_invoice)
-        
-        # به‌روزرسانی آمار
-        self.update_statistics()
+        self.controller.refresh_table(
+            self.table, self.repairs,
+            self.view_repair, self.quick_invoice,
+            self.update_statistics,
+        )
     
     def view_repair(self, row):
         """مشاهده جزئیات تعمیر"""

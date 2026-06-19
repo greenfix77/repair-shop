@@ -4,9 +4,8 @@ from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout,
                               QMessageBox)
 from PyQt5.QtCore import Qt
 from PyQt5.QtGui import QFont
-from PyQt5.QtPrintSupport import QPrinter, QPrintDialog
-
 from services.invoice_generator import generate_print_invoice_html, generate_web_invoice_html
+from services.invoice_exporter import print_invoice_content, save_invoice_to_pdf
 
 
 class InvoicePreviewDialog(QDialog):
@@ -80,11 +79,8 @@ class InvoicePreviewDialog(QDialog):
 
     def print_invoice(self):
         """چاپ فاکتور"""
-        printer = QPrinter(QPrinter.HighResolution)
-        dialog = QPrintDialog(printer, self)
-
-        if dialog.exec_() == QDialog.Accepted:
-            self.preview.document().print_(printer)
+        html_content = self.preview.toHtml()
+        print_invoice_content(html_content)
 
     def save_pdf(self):
         """ذخیره به صورت PDF"""
@@ -96,11 +92,8 @@ class InvoicePreviewDialog(QDialog):
         )
 
         if file_path:
-            printer = QPrinter(QPrinter.HighResolution)
-            printer.setOutputFormat(QPrinter.PdfFormat)
-            printer.setOutputFileName(file_path)
-            self.preview.document().print_(printer)
-            QMessageBox.information(self, "موفق", "فایل PDF با موفقیت ذخیره شد.")
+            html_content = self.preview.toHtml()
+            save_invoice_to_pdf(html_content, file_path)
 
     def update_preview(self):
         """به‌روزرسانی پیش‌نمایش فاکتور"""

@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                               QTabWidget, QWidget, QLineEdit, QTextEdit, QSpinBox,
                               QDoubleSpinBox, QComboBox, QLabel, QPushButton)
+from PyQt5.QtCore import QRegularExpression
 from PyQt5.QtGui import QFont, QRegularExpressionValidator
 
 from services.notification_service import show_warning
@@ -42,7 +43,7 @@ class RepairDialog(QDialog):
 
         main_layout.addWidget(QLabel("تلفن:"), 1, 0)
         self.phone_input = QLineEdit()
-        self.phone_input.setValidator(QRegularExpressionValidator(r'^0\d{10}$'))
+        self.phone_input.setValidator(QRegularExpressionValidator(QRegularExpression(r'^0\d{10}$')))
         main_layout.addWidget(self.phone_input, 1, 1)
 
         main_layout.addWidget(QLabel("برند:"), 2, 0)

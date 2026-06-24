@@ -99,7 +99,7 @@ class ShopSettingsDialog(QDialog):
         # اندازه لوگو در هدر برنامه
         form_layout.addWidget(QLabel("اندازه لوگو در هدر:"), 8, 0)
         self.header_logo_size_spin = QSpinBox()
-        self.header_logo_size_spin.setRange(8, 128)
+        self.header_logo_size_spin.setRange(16, 512)
         self.header_logo_size_spin.setValue(32)
         self.header_logo_size_spin.setSuffix(" px")
         form_layout.addWidget(self.header_logo_size_spin, 8, 1)

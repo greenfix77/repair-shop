@@ -9,7 +9,7 @@ from services.invoice_exporter import print_invoice_content, save_invoice_to_pdf
 from ui.dialogs.shop_settings_dialog import ShopSettingsDialog
 from ui.widgets.web_invoice_view import WebInvoiceView
 
-USE_WEB_PREVIEW = False
+USE_WEB_PREVIEW = True
 
 
 class InvoicePreviewDialog(QDialog):

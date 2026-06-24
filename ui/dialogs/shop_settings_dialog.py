@@ -104,9 +104,17 @@ class ShopSettingsDialog(QDialog):
         self.header_logo_size_spin.setSuffix(" px")
         form_layout.addWidget(self.header_logo_size_spin, 8, 1)
 
+        # اندازه فونت عنوان هدر
+        form_layout.addWidget(QLabel("اندازه فونت عنوان هدر:"), 9, 0)
+        self.header_title_size_spin = QSpinBox()
+        self.header_title_size_spin.setRange(12, 48)
+        self.header_title_size_spin.setValue(20)
+        self.header_title_size_spin.setSuffix(" pt")
+        form_layout.addWidget(self.header_title_size_spin, 9, 1)
+
         # استفاده از لوگو به عنوان آیکون
         self.use_logo_as_icon_check = QCheckBox("استفاده از لوگو به عنوان آیکون برنامه")
-        form_layout.addWidget(self.use_logo_as_icon_check, 9, 1)
+        form_layout.addWidget(self.use_logo_as_icon_check, 10, 1)
 
         layout.addLayout(form_layout)
 
@@ -161,6 +169,7 @@ class ShopSettingsDialog(QDialog):
 
                 self.invoice_logo_size_spin.setValue(settings.get("invoice_logo_size", 96))
                 self.header_logo_size_spin.setValue(settings.get("header_logo_size", 32))
+                self.header_title_size_spin.setValue(settings.get("header_title_size", 20))
                 self.use_logo_as_icon_check.setChecked(settings.get("use_logo_as_app_icon", False))
         except Exception as e:
             print(f"خطا در بارگذاری تنظیمات: {e}")
@@ -189,6 +198,7 @@ class ShopSettingsDialog(QDialog):
             "logo": self.logo_path,
             "invoice_logo_size": self.invoice_logo_size_spin.value(),
             "header_logo_size": self.header_logo_size_spin.value(),
+            "header_title_size": self.header_title_size_spin.value(),
             "use_logo_as_app_icon": self.use_logo_as_icon_check.isChecked()
         }
 
@@ -214,6 +224,7 @@ class ShopSettingsDialog(QDialog):
             "logo": "",
             "invoice_logo_size": 96,
             "header_logo_size": 32,
+            "header_title_size": 20,
             "use_logo_as_app_icon": False
         }
 

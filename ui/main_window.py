@@ -34,15 +34,19 @@ def _make_title(icon=False):
     return f"{prefix}سیستم مدیریت تعمیرات"
 
 
+def _get_header_title_size():
+    try:
+        if Path("shop_settings.json").exists():
+            with open("shop_settings.json", "r", encoding="utf-8") as f:
+                return json.load(f).get("header_title_size", 20)
+    except:
+        pass
+    return 20
+
+
 def build_header(window):
     """ایجاد هدر"""
     header = QFrame()
-    header.setStyleSheet("""
-        background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
-                                   stop:0 #667eea, stop:1 #764ba2);
-        border-radius: 10px;
-        padding: 20px;
-    """)
     
     layout = QHBoxLayout()
 
@@ -53,21 +57,12 @@ def build_header(window):
         logo_label.setStyleSheet("background: transparent; border: none;")
         layout.addWidget(logo_label)
     
+    title_size = _get_header_title_size()
     title = QLabel(_make_title(icon=True))
-    title.setStyleSheet("color: white; font-size: 20pt; font-weight: bold;")
+    title.setStyleSheet(f"color: white; font-size: {title_size}pt; font-weight: bold;")
     layout.addWidget(title)
     
     layout.addStretch()
-    
-    # دکمه تنظیمات کلی
-    settings_btn = QPushButton("⚙️ تنظیمات کلی")
-    settings_btn.setStyleSheet("""
-        background-color: rgba(255, 255, 255, 0.2);
-        color: white;
-        border: 2px solid white;
-    """)
-    settings_btn.clicked.connect(window.open_shop_settings)
-    layout.addWidget(settings_btn)
     
     header.setLayout(layout)
     return header
@@ -103,6 +98,12 @@ def build_toolbar(window):
     invoice_btn.setStyleSheet("background-color: #FF9800; color: white;")
     invoice_btn.clicked.connect(window.preview_invoice)
     layout.addWidget(invoice_btn)
+
+    # دکمه تنظیمات کلی
+    settings_btn = QPushButton("⚙️ تنظیمات کلی")
+    settings_btn.setStyleSheet("background-color: #607D8B; color: white;")
+    settings_btn.clicked.connect(window.open_shop_settings)
+    layout.addWidget(settings_btn)
     
     layout.addStretch()
     

@@ -47,11 +47,33 @@ def get_invoice_logo_html(settings=None):
     logo_path = settings.get("logo", "")
     if not logo_path or not Path(logo_path).exists():
         return ""
-    size = settings.get("invoice_logo_size", 96)
-    data_uri = image_to_base64(logo_path)
-    if not data_uri:
+
+    # Safety guard: skip files larger than 2 MB
+    if Path(logo_path).stat().st_size > 2 * 1024 * 1024:
         return ""
-    return f'<img src="{data_uri}" style="max-width: {size}px; max-height: {size}px;">'
+
+    size = settings.get("invoice_logo_size", 96)
+
+    # Load image, scale to invoice size, encode scaled version
+    try:
+        from PyQt5.QtCore import QBuffer, QIODevice
+
+        pixmap = QPixmap(logo_path)
+        if pixmap.isNull():
+            return ""
+        scaled = pixmap.scaled(size, size, Qt.KeepAspectRatio, Qt.SmoothTransformation)
+
+        buffer = QBuffer()
+        buffer.open(QIODevice.WriteOnly)
+        scaled.save(buffer, "PNG")
+        data = buffer.data()
+        buffer.close()
+
+        encoded = base64.b64encode(data).decode("utf-8")
+        data_uri = f"data:image/png;base64,{encoded}"
+        return f'<img src="{data_uri}" style="max-width: {size}px; max-height: {size}px;">'
+    except:
+        return ""
 
 
 def get_header_logo_pixmap():

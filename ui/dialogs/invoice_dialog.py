@@ -7,6 +7,9 @@ from PyQt5.QtGui import QFont
 from services.invoice_generator import generate_print_invoice_html, generate_web_invoice_html
 from services.invoice_exporter import print_invoice_content, save_invoice_to_pdf
 from ui.dialogs.shop_settings_dialog import ShopSettingsDialog
+from ui.widgets.web_invoice_view import WebInvoiceView
+
+USE_WEB_PREVIEW = False
 
 
 class InvoicePreviewDialog(QDialog):
@@ -51,7 +54,13 @@ class InvoicePreviewDialog(QDialog):
         # پیش‌نمایش
         self.preview = QTextEdit()
         self.preview.setReadOnly(True)
-        layout.addWidget(self.preview)
+
+        self.web_preview = WebInvoiceView()
+
+        if USE_WEB_PREVIEW:
+            layout.addWidget(self.web_preview)
+        else:
+            layout.addWidget(self.preview)
 
         # دکمه‌ها
         btn_layout = QHBoxLayout()
@@ -103,3 +112,5 @@ class InvoicePreviewDialog(QDialog):
             html = generate_web_invoice_html(self.repair_data, self.shop_settings)
 
         self.preview.setHtml(html)
+        if USE_WEB_PREVIEW:
+            self.web_preview.set_html(html)

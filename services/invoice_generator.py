@@ -47,7 +47,7 @@ def generate_print_invoice_html(repair_data: dict, shop_settings: dict) -> str:
             table {{
                 width: 100%;
                 border-collapse: collapse;
-                margin: 10px 0;
+                margin: 10px auto;
             }}
 
             th {{
@@ -62,7 +62,7 @@ def generate_print_invoice_html(repair_data: dict, shop_settings: dict) -> str:
             td {{
                 border: 1px solid #000;
                 padding: 7px 10px;
-                text-align: right;
+                text-align: center;
                 font-size: 10pt;
             }}
 
@@ -73,8 +73,7 @@ def generate_print_invoice_html(repair_data: dict, shop_settings: dict) -> str:
 
             .financial-summary {{
                 width: 45%;
-                margin-right: 0;
-                margin-top: 10px;
+                margin: 10px auto;
                 border: 1px solid #000;}}
             .financial-summary td {{ padding: 6px 10px; }}
             .financial-summary .amount {{ text-align: center; font-weight: bold; }}
@@ -90,7 +89,7 @@ def generate_print_invoice_html(repair_data: dict, shop_settings: dict) -> str:
                 padding: 10px;
                 border: 1px solid #000;
                 min-height: 50px;
-                text-align: right;
+                text-align: center;
             }}
             .notes-title {{ font-weight: bold; margin-bottom: 5px; }}
 
@@ -116,9 +115,16 @@ def generate_print_invoice_html(repair_data: dict, shop_settings: dict) -> str:
                 border-top: 1px solid #000;
                 text-align: center;
                 font-size: 9pt;color: #333;
+            }}
+
+            .invoice-wrapper {{
+                max-width: 180mm;
+                margin: 0 auto;
+                text-align: right;
             }}</style>
     </head>
     <body>
+        <div class="invoice-wrapper">
 
         <!-- سربرگ (وسط‌چین) -->
         <div class="header">
@@ -229,6 +235,7 @@ def generate_print_invoice_html(repair_data: dict, shop_settings: dict) -> str:
             <p>تاریخ چاپ: {jdatetime.date.today().strftime('%Y/%m/%d')}</p>
         </div>
 
+        </div>
     </body>
     </html>
     """
@@ -269,11 +276,13 @@ def generate_web_invoice_html(repair_data: dict, shop_settings: dict) -> str:
                     padding: 20px;
                     margin: 0;
                     direction: rtl;
+                    text-align: center;
                 }}
                 
                 .invoice-container {{
                     width: 100%;
-                    max-width: none;
+                    max-width: 210mm;
+                    margin: 0 auto;
                     background: white;
                     border-radius: 15px;
                     box-shadow: 0 10px 40px rgba(0,0,0,0.2);

@@ -378,3 +378,36 @@ Do not change roadmap unless requested.
 6. Commit
 7. Push
 8. Next step
+
+# DIRTY WORKTREE POLICY
+
+Before ANY task:
+
+git status
+
+If working tree is NOT clean:
+
+STOP.
+
+Do NOT continue.
+
+Show:
+
+- modified files
+- created files
+- deleted files
+
+Ask:
+
+Choose one:
+
+1. Commit current changes
+2. Stash current changes
+3. Discard current changes
+4. Stop
+
+Default action:
+
+Commit current changes first.
+
+Never continue on a dirty worktree without explicit instruction.

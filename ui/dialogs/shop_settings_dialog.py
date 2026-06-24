@@ -3,7 +3,7 @@ from pathlib import Path
 
 from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                               QLineEdit, QTextEdit, QLabel, QPushButton,
-                              QFileDialog)
+                              QFileDialog, QSpinBox, QCheckBox)
 from PyQt5.QtCore import Qt, QRegularExpression
 from PyQt5.QtGui import QFont, QRegularExpressionValidator
 
@@ -88,6 +88,26 @@ class ShopSettingsDialog(QDialog):
         logo_layout.addWidget(logo_btn)
         form_layout.addLayout(logo_layout, 6, 1)
 
+        # اندازه لوگو در فاکتور
+        form_layout.addWidget(QLabel("اندازه لوگو در فاکتور:"), 7, 0)
+        self.invoice_logo_size_spin = QSpinBox()
+        self.invoice_logo_size_spin.setRange(16, 256)
+        self.invoice_logo_size_spin.setValue(96)
+        self.invoice_logo_size_spin.setSuffix(" px")
+        form_layout.addWidget(self.invoice_logo_size_spin, 7, 1)
+
+        # اندازه لوگو در هدر برنامه
+        form_layout.addWidget(QLabel("اندازه لوگو در هدر:"), 8, 0)
+        self.header_logo_size_spin = QSpinBox()
+        self.header_logo_size_spin.setRange(8, 128)
+        self.header_logo_size_spin.setValue(32)
+        self.header_logo_size_spin.setSuffix(" px")
+        form_layout.addWidget(self.header_logo_size_spin, 8, 1)
+
+        # استفاده از لوگو به عنوان آیکون
+        self.use_logo_as_icon_check = QCheckBox("استفاده از لوگو به عنوان آیکون برنامه")
+        form_layout.addWidget(self.use_logo_as_icon_check, 9, 1)
+
         layout.addLayout(form_layout)
 
         # دکمه‌ها
@@ -138,6 +158,10 @@ class ShopSettingsDialog(QDialog):
                 if logo:
                     self.logo_path = logo
                     self.logo_label.setText(Path(logo).name if Path(logo).exists() else "فایل یافت نشد")
+
+                self.invoice_logo_size_spin.setValue(settings.get("invoice_logo_size", 96))
+                self.header_logo_size_spin.setValue(settings.get("header_logo_size", 32))
+                self.use_logo_as_icon_check.setChecked(settings.get("use_logo_as_app_icon", False))
         except Exception as e:
             print(f"خطا در بارگذاری تنظیمات: {e}")
 
@@ -162,7 +186,10 @@ class ShopSettingsDialog(QDialog):
             "mobile": self.mobile_input.text(),
             "email": self.email_input.text(),
             "website": self.website_input.text(),
-            "logo": self.logo_path
+            "logo": self.logo_path,
+            "invoice_logo_size": self.invoice_logo_size_spin.value(),
+            "header_logo_size": self.header_logo_size_spin.value(),
+            "use_logo_as_app_icon": self.use_logo_as_icon_check.isChecked()
         }
 
         try:
@@ -184,7 +211,10 @@ class ShopSettingsDialog(QDialog):
             "mobile": "0912-1234567",
             "email": "info@shop.com",
             "website": "www.shop.com",
-            "logo": ""
+            "logo": "",
+            "invoice_logo_size": 96,
+            "header_logo_size": 32,
+            "use_logo_as_app_icon": False
         }
 
         try:

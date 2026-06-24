@@ -2,6 +2,7 @@ import jdatetime
 from pathlib import Path
 
 from services.invoice_calculator import calculate_invoice_totals
+from services.logo_service import get_invoice_logo_html
 from ui.status_styles import get_status_color
 from core.status import STATUS_PENDING
 
@@ -128,6 +129,7 @@ def generate_print_invoice_html(repair_data: dict, shop_settings: dict) -> str:
 
         <!-- سربرگ (وسط‌چین) -->
         <div class="header">
+            {get_invoice_logo_html()}
             <h1>{settings['shop_name']}</h1>
             <p>{settings['address']}</p>
             <p>تلفن: {settings['phone']} | موبایل: {settings['mobile']}</p>
@@ -261,9 +263,7 @@ def generate_web_invoice_html(repair_data: dict, shop_settings: dict) -> str:
     status_color = get_status_color(status)
 
     # لوگو
-    logo_html = ""
-    if settings.get('logo') and Path(settings['logo']).exists():
-        logo_html = f'<img src="file:///{settings["logo"]}" style="max-width: 120px; max-height: 80px;">'
+    logo_html = get_invoice_logo_html()
     html = f"""
         <!DOCTYPE html>
         <html dir="rtl">

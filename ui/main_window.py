@@ -6,6 +6,9 @@ from PyQt5.QtWidgets import (QWidget, QHBoxLayout, QVBoxLayout,
                               QLineEdit, QComboBox, QHeaderView,
                               QAbstractItemView, QFrame)
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap
+
+from services.logo_service import get_header_logo_pixmap
 from core.status import (
     STATUS_PENDING, STATUS_IN_PROGRESS, STATUS_COMPLETED, STATUS_DELIVERED,
     ALL_STATUSES_WITH_ALL,
@@ -42,6 +45,12 @@ def build_header(window):
     """)
     
     layout = QHBoxLayout()
+
+    logo_pixmap = get_header_logo_pixmap()
+    if logo_pixmap:
+        logo_label = QLabel()
+        logo_label.setPixmap(logo_pixmap)
+        layout.addWidget(logo_label)
     
     title = QLabel(_make_title(icon=True))
     title.setStyleSheet("color: white; font-size: 20pt; font-weight: bold;")

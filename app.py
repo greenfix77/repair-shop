@@ -30,6 +30,7 @@ from services.notification_service import (
     show_info, show_warning, show_error, show_question
 )
 from ui.dialogs.shop_settings_dialog import ShopSettingsDialog
+from services.logo_service import get_app_icon
 
 
 class NotificationDialog(QDialog):
@@ -282,6 +283,11 @@ def main():
     # تنظیم فونت فارسی
     font = QFont("Segoe UI", 10)
     app.setFont(font)
+
+    # تنظیم آیکون برنامه از لوگو
+    icon = get_app_icon()
+    if icon:
+        app.setWindowIcon(icon)
 
     # تنظیم راست‌چین
     app.setLayoutDirection(Qt.RightToLeft)

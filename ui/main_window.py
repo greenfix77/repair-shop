@@ -34,19 +34,39 @@ def _make_title(icon=False):
     return f"{prefix}سیستم مدیریت تعمیرات"
 
 
-def _get_header_title_size():
+def _get_header_appearance():
+    defaults = {
+        "header_title_size": 20,
+        "header_title_color": "#FFFFFF",
+        "header_gradient_start": "#4F46E5",
+        "header_gradient_end": "#7C3AED",
+        "header_border_radius": 15,
+        "header_height": 60,
+    }
     try:
         if Path("shop_settings.json").exists():
             with open("shop_settings.json", "r", encoding="utf-8") as f:
-                return json.load(f).get("header_title_size", 20)
+                settings = json.load(f)
+                for k in defaults:
+                    if k in settings:
+                        defaults[k] = settings[k]
     except:
         pass
-    return 20
+    return defaults
 
 
 def build_header(window):
     """ایجاد هدر"""
+    app = _get_header_appearance()
+
     header = QFrame()
+    header.setStyleSheet(f"""
+        background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                   stop:0 {app['header_gradient_start']}, stop:1 {app['header_gradient_end']});
+        border-radius: {app['header_border_radius']}px;
+        min-height: {app['header_height']}px;
+        max-height: {app['header_height']}px;
+    """)
     
     layout = QHBoxLayout()
 
@@ -57,9 +77,8 @@ def build_header(window):
         logo_label.setStyleSheet("background: transparent; border: none;")
         layout.addWidget(logo_label)
     
-    title_size = _get_header_title_size()
     title = QLabel(_make_title(icon=True))
-    title.setStyleSheet(f"color: white; font-size: {title_size}pt; font-weight: bold;")
+    title.setStyleSheet(f"color: {app['header_title_color']}; font-size: {app['header_title_size']}pt; font-weight: bold;")
     layout.addWidget(title)
     
     layout.addStretch()

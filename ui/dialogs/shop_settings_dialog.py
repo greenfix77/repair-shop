@@ -3,9 +3,10 @@ from pathlib import Path
 
 from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                               QLineEdit, QTextEdit, QLabel, QPushButton,
-                              QFileDialog, QSpinBox, QCheckBox)
+                              QFileDialog, QSpinBox, QCheckBox, QColorDialog,
+                              QFrame)
 from PyQt5.QtCore import Qt, QRegularExpression
-from PyQt5.QtGui import QFont, QRegularExpressionValidator
+from PyQt5.QtGui import QFont, QRegularExpressionValidator, QColor
 
 from services.notification_service import show_info, show_error, show_warning
 
@@ -112,9 +113,34 @@ class ShopSettingsDialog(QDialog):
         self.header_title_size_spin.setSuffix(" pt")
         form_layout.addWidget(self.header_title_size_spin, 9, 1)
 
+        # رنگ عنوان هدر
+        self._add_color_field(form_layout, "رنگ عنوان هدر:", 11, "#FFFFFF", "_header_title_color")
+
+        # رنگ شروع گرادینت هدر
+        self._add_color_field(form_layout, "رنگ شروع گرادینت:", 12, "#4F46E5", "_header_gradient_start")
+
+        # رنگ پایان گرادینت هدر
+        self._add_color_field(form_layout, "رنگ پایان گرادینت:", 13, "#7C3AED", "_header_gradient_end")
+
+        # شعاع گوشه هدر
+        form_layout.addWidget(QLabel("شعاع گوشه هدر:"), 14, 0)
+        self.header_border_radius_spin = QSpinBox()
+        self.header_border_radius_spin.setRange(0, 50)
+        self.header_border_radius_spin.setValue(15)
+        self.header_border_radius_spin.setSuffix(" px")
+        form_layout.addWidget(self.header_border_radius_spin, 14, 1)
+
+        # ارتفاع هدر
+        form_layout.addWidget(QLabel("ارتفاع هدر:"), 15, 0)
+        self.header_height_spin = QSpinBox()
+        self.header_height_spin.setRange(40, 200)
+        self.header_height_spin.setValue(60)
+        self.header_height_spin.setSuffix(" px")
+        form_layout.addWidget(self.header_height_spin, 15, 1)
+
         # استفاده از لوگو به عنوان آیکون
         self.use_logo_as_icon_check = QCheckBox("استفاده از لوگو به عنوان آیکون برنامه")
-        form_layout.addWidget(self.use_logo_as_icon_check, 10, 1)
+        form_layout.addWidget(self.use_logo_as_icon_check, 16, 1)
 
         layout.addLayout(form_layout)
 
@@ -148,6 +174,27 @@ class ShopSettingsDialog(QDialog):
             self.logo_path = file_path
             self.logo_label.setText(Path(file_path).name)
 
+    def _add_color_field(self, form_layout, label, row, default_color, attr_name):
+        form_layout.addWidget(QLabel(label), row, 0)
+        hbox = QHBoxLayout()
+        swatch = QFrame()
+        swatch.setFixedSize(24, 24)
+        swatch.setStyleSheet(f"background-color: {default_color}; border: 1px solid #888; border-radius: 3px;")
+        btn = QPushButton("انتخاب رنگ")
+
+        def pick():
+            color = QColorDialog.getColor(QColor(getattr(self, attr_name, default_color)), self)
+            if color.isValid():
+                hex_color = color.name()
+                setattr(self, attr_name, hex_color)
+                swatch.setStyleSheet(f"background-color: {hex_color}; border: 1px solid #888; border-radius: 3px;")
+
+        btn.clicked.connect(pick)
+        hbox.addWidget(swatch)
+        hbox.addWidget(btn)
+        form_layout.addLayout(hbox, row, 1)
+        setattr(self, attr_name, default_color)
+
     def load_settings(self):
         """بارگذاری تنظیمات"""
         try:
@@ -170,6 +217,19 @@ class ShopSettingsDialog(QDialog):
                 self.invoice_logo_size_spin.setValue(settings.get("invoice_logo_size", 96))
                 self.header_logo_size_spin.setValue(settings.get("header_logo_size", 32))
                 self.header_title_size_spin.setValue(settings.get("header_title_size", 20))
+
+                color = settings.get("header_title_color", "#FFFFFF")
+                self._header_title_color = color
+                # update swatch (note: this runs before UI so we just store the value)
+
+                gs = settings.get("header_gradient_start", "#4F46E5")
+                self._header_gradient_start = gs
+
+                ge = settings.get("header_gradient_end", "#7C3AED")
+                self._header_gradient_end = ge
+
+                self.header_border_radius_spin.setValue(settings.get("header_border_radius", 15))
+                self.header_height_spin.setValue(settings.get("header_height", 60))
                 self.use_logo_as_icon_check.setChecked(settings.get("use_logo_as_app_icon", False))
         except Exception as e:
             print(f"خطا در بارگذاری تنظیمات: {e}")
@@ -199,6 +259,11 @@ class ShopSettingsDialog(QDialog):
             "invoice_logo_size": self.invoice_logo_size_spin.value(),
             "header_logo_size": self.header_logo_size_spin.value(),
             "header_title_size": self.header_title_size_spin.value(),
+            "header_title_color": getattr(self, "_header_title_color", "#FFFFFF"),
+            "header_gradient_start": getattr(self, "_header_gradient_start", "#4F46E5"),
+            "header_gradient_end": getattr(self, "_header_gradient_end", "#7C3AED"),
+            "header_border_radius": self.header_border_radius_spin.value(),
+            "header_height": self.header_height_spin.value(),
             "use_logo_as_app_icon": self.use_logo_as_icon_check.isChecked()
         }
 
@@ -225,6 +290,11 @@ class ShopSettingsDialog(QDialog):
             "invoice_logo_size": 96,
             "header_logo_size": 32,
             "header_title_size": 20,
+            "header_title_color": "#FFFFFF",
+            "header_gradient_start": "#4F46E5",
+            "header_gradient_end": "#7C3AED",
+            "header_border_radius": 15,
+            "header_height": 60,
             "use_logo_as_app_icon": False
         }
 

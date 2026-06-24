@@ -21,6 +21,8 @@ def generate_print_invoice_html(repair_data: dict, shop_settings: dict) -> str:
     tax_amount = fin['tax_amount']
     total = fin['total']
 
+    logo_html = get_invoice_logo_html(settings)
+
     html = f"""
     <!DOCTYPE html>
     <html dir="rtl">
@@ -129,7 +131,7 @@ def generate_print_invoice_html(repair_data: dict, shop_settings: dict) -> str:
 
         <!-- سربرگ (وسط‌چین) -->
         <div class="header">
-            {get_invoice_logo_html()}
+            {logo_html}
             <h1>{settings['shop_name']}</h1>
             <p>{settings['address']}</p>
             <p>تلفن: {settings['phone']} | موبایل: {settings['mobile']}</p>
@@ -263,7 +265,7 @@ def generate_web_invoice_html(repair_data: dict, shop_settings: dict) -> str:
     status_color = get_status_color(status)
 
     # لوگو
-    logo_html = get_invoice_logo_html()
+    logo_html = get_invoice_logo_html(settings)
     html = f"""
         <!DOCTYPE html>
         <html dir="rtl">

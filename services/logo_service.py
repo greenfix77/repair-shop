@@ -41,8 +41,9 @@ def image_to_base64(image_path):
         return ""
 
 
-def get_invoice_logo_html():
-    settings = _load_settings()
+def get_invoice_logo_html(settings=None):
+    if settings is None:
+        settings = _load_settings()
     logo_path = settings.get("logo", "")
     if not logo_path or not Path(logo_path).exists():
         return ""

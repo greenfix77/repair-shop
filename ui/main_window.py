@@ -50,6 +50,7 @@ def build_header(window):
     if logo_pixmap:
         logo_label = QLabel()
         logo_label.setPixmap(logo_pixmap)
+        logo_label.setStyleSheet("background: transparent; border: none;")
         layout.addWidget(logo_label)
     
     title = QLabel(_make_title(icon=True))

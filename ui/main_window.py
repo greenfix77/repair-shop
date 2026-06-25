@@ -42,6 +42,10 @@ def _get_header_appearance():
         "header_gradient_end": "#7C3AED",
         "header_border_radius": 15,
         "header_height": 60,
+        "status_card_border_radius": 12,
+        "status_card_border_color": "#D1D5DB",
+        "header_datetime_font_size": 11,
+        "header_datetime_color": "#374151",
     }
     try:
         if Path("shop_settings.json").exists():
@@ -82,23 +86,36 @@ def build_header(window):
     title.setStyleSheet(f"color: {app['header_title_color']}; font-size: {app['header_title_size']}pt; font-weight: bold;")
     layout.addWidget(title)
     
-    # Status card
+    # Status card wrapper with outer margin
+    card_wrapper = QFrame()
+    card_wrapper.setStyleSheet("background: transparent; border: none;")
+    card_wrapper_layout = QVBoxLayout()
+    card_wrapper_layout.setContentsMargins(10, 10, 10, 10)
+    
     status_card = QFrame()
-    status_card.setStyleSheet("background: rgba(255,255,255,0.12); border-radius: 6px;")
-    status_layout = QHBoxLayout()
-    status_layout.setSpacing(10)
+    status_card.setStyleSheet(f"""
+        background: rgba(255,255,255,0.12);
+        border-radius: {app['status_card_border_radius']}px;
+        border: 1px solid {app['status_card_border_color']};
+    """)
+    status_layout = QVBoxLayout()
+    status_layout.setSpacing(4)
     status_layout.setContentsMargins(8, 4, 8, 4)
     
-    items = [
+    # Status items row
+    items_row = QHBoxLayout()
+    items_row.setSpacing(10)
+    
+    items_defs = [
         ("فوری", "🔴", "header_pending_count"),
         ("در حال تعمیر", "🔵", "header_in_progress_count"),
         ("آماده تحویل", "🟢", "header_completed_count"),
         ("عادی", "⚪", "header_delivered_count"),
     ]
     
-    for label, icon, attr in items:
-        item = QFrame()
-        item.setStyleSheet("background: transparent; border: none;")
+    for label, icon, attr in items_defs:
+        item_f = QFrame()
+        item_f.setStyleSheet("background: transparent; border: none;")
         il = QHBoxLayout()
         il.setSpacing(3)
         il.setContentsMargins(0, 0, 0, 0)
@@ -116,11 +133,31 @@ def build_header(window):
         setattr(window, attr, cnt)
         il.addWidget(cnt)
         
-        item.setLayout(il)
-        status_layout.addWidget(item)
+        item_f.setLayout(il)
+        items_row.addWidget(item_f)
+    
+    status_layout.addLayout(items_row)
+    
+    # Datetime row
+    dt_row = QHBoxLayout()
+    dt_row.setAlignment(Qt.AlignCenter)
+    
+    window.header_datetime_label = QLabel()
+    window.header_datetime_label.setAlignment(Qt.AlignCenter)
+    window.header_datetime_label.setStyleSheet(f"""
+        background: transparent;
+        border: none;
+        color: {app['header_datetime_color']};
+        font-size: {app['header_datetime_font_size']}pt;
+        font-weight: bold;
+    """)
+    dt_row.addWidget(window.header_datetime_label)
+    status_layout.addLayout(dt_row)
     
     status_card.setLayout(status_layout)
-    layout.addWidget(status_card)
+    card_wrapper_layout.addWidget(status_card)
+    card_wrapper.setLayout(card_wrapper_layout)
+    layout.addWidget(card_wrapper)
     
     layout.addStretch()
     

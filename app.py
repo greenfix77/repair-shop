@@ -90,6 +90,8 @@ class LaptopRepairManager(QMainWindow):
     def update_date_label(self):
         """به‌روزرسانی تاریخ"""
         self.date_label.setText(f"📅 {today_persian()}")
+        now = datetime.now()
+        self.header_datetime_label.setText(f"{today_persian()}\n{now.strftime('%H:%M')}")
         
         # تایمر برای به‌روزرسانی روزانه
         QTimer.singleShot(60000, self.update_date_label)

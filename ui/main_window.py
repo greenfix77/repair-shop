@@ -4,7 +4,7 @@ from pathlib import Path
 from PyQt5.QtWidgets import (QWidget, QHBoxLayout, QVBoxLayout,
                               QPushButton, QTableWidget, QLabel,
                               QLineEdit, QComboBox, QHeaderView,
-                              QAbstractItemView, QFrame)
+                              QAbstractItemView, QFrame, QSizePolicy)
 from PyQt5.QtCore import Qt, QPoint, QRect, QEvent
 from PyQt5.QtGui import QPixmap
 
@@ -75,6 +75,7 @@ def build_header(window):
     """)
     
     layout = QHBoxLayout()
+    layout.setContentsMargins(4, 0, 0, 0)
 
     logo_pixmap = get_header_logo_pixmap()
     has_logo = logo_pixmap is not None
@@ -95,17 +96,21 @@ def build_header(window):
     window.status_btn.setStyleSheet("""
         QPushButton {
             background: transparent;
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.20);
+            border-radius: 6px;
             color: white;
-            font-size: 9pt;
+            font-size: 8pt;
             font-weight: bold;
-            padding: 2px 6px;
+            padding: 1px 4px;
+            margin: 0px;
         }
+
         QPushButton:hover {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.08);
         }
-    """)
+""")
+    window.status_btn.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
+    window.status_btn.setFixedSize(80, 22)
     window.status_btn.clicked.connect(window.toggle_status_popup)
     layout.addWidget(window.status_btn)
     

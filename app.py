@@ -3,7 +3,7 @@ from datetime import datetime, timedelta
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QVBoxLayout,
                               QHBoxLayout, QPushButton, QDialog,
                               QLabel, QLineEdit, QFrame)
-from PyQt5.QtCore import Qt, QTimer
+from PyQt5.QtCore import Qt, QTimer, QEvent, QPoint, QRect
 from PyQt5.QtGui import QFont
 import jdatetime
 
@@ -24,7 +24,7 @@ from services.invoice_generator import generate_print_invoice_html, generate_web
 from ui.status_styles import get_status_color
 from ui.dialogs.repair_dialog import RepairDialog
 from ui.dialogs.invoice_dialog import InvoicePreviewDialog
-from ui.main_window import build_ui, build_header
+from ui.main_window import build_ui, build_header, create_status_popup
 from controllers.main_controller import MainController
 from services.notification_service import (
     show_info, show_warning, show_error, show_question
@@ -86,6 +86,7 @@ class LaptopRepairManager(QMainWindow):
     def init_ui(self):
         """ایجاد رابط کاربری"""
         build_ui(self)
+        QApplication.instance().installEventFilter(self)
     
     def update_date_label(self):
         """به‌روزرسانی تاریخ"""
@@ -107,10 +108,38 @@ class LaptopRepairManager(QMainWindow):
         idx = self.main_layout.indexOf(self.header_widget)
         self.main_layout.removeWidget(self.header_widget)
         self.header_widget.deleteLater()
+        self.status_popup.deleteLater()
+        self.status_popup = create_status_popup(self)
         self.header_widget = build_header(self)
         self.main_layout.insertWidget(idx, self.header_widget)
         now = datetime.now()
         self.header_datetime_label.setText(f"{today_persian()}\n{now.strftime('%H:%M')}")
+
+    def toggle_status_popup(self):
+        """نمایش/پنهان کردن پاپ‌آپ وضعیت‌ها"""
+        if self.status_popup.isVisible():
+            self.status_popup.hide()
+            return
+        pos = self.status_btn.mapToGlobal(QPoint(0, self.status_btn.height()))
+        self.status_popup.move(pos)
+        self.status_popup.show()
+        self.status_popup.raise_()
+
+    def eventFilter(self, obj, event):
+        """بستن پاپ‌آپ هنگام کلیک خارج از آن"""
+        if event.type() == QEvent.MouseButtonPress and self.status_popup.isVisible():
+            global_pos = event.globalPos()
+            popup_rect = QRect(
+                self.status_popup.mapToGlobal(QPoint(0, 0)),
+                self.status_popup.size()
+            )
+            btn_rect = QRect(
+                self.status_btn.mapToGlobal(QPoint(0, 0)),
+                self.status_btn.size()
+            )
+            if not popup_rect.contains(global_pos) and not btn_rect.contains(global_pos):
+                self.status_popup.hide()
+        return super().eventFilter(obj, event)
     
     def add_repair(self):
         """افزودن تعمیر جدید"""

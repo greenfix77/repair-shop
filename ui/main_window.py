@@ -5,7 +5,7 @@ from PyQt5.QtWidgets import (QWidget, QHBoxLayout, QVBoxLayout,
                               QPushButton, QTableWidget, QLabel,
                               QLineEdit, QComboBox, QHeaderView,
                               QAbstractItemView, QFrame)
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import Qt, QPoint, QRect, QEvent
 from PyQt5.QtGui import QPixmap
 
 from services.logo_service import get_header_logo_pixmap
@@ -42,12 +42,11 @@ def _get_header_appearance():
         "header_gradient_end": "#7C3AED",
         "header_border_radius": 15,
         "header_height": 60,
-        "status_card_background_color": "#FFFFFF",
-        "status_card_border_color": "#D1D5DB",
-        "status_card_border_width": 1,
-        "status_card_border_radius": 12,
-        "status_card_text_color": "#111827",
-        "status_card_datetime_color": "#374151",
+        "status_popup_background_color": "#FFFFFF",
+        "status_popup_border_color": "#D1D5DB",
+        "status_popup_border_width": 1,
+        "status_popup_border_radius": 12,
+        "status_popup_text_color": "#111827",
     }
     try:
         if Path("shop_settings.json").exists():
@@ -88,75 +87,19 @@ def build_header(window):
     title.setStyleSheet(f"color: {app['header_title_color']}; font-size: {app['header_title_size']}pt; font-weight: bold;")
     layout.addWidget(title)
     
-    # Status card wrapper with outer margin
-    card_wrapper = QFrame()
-    card_wrapper.setStyleSheet("background: transparent; border: none;")
-    card_wrapper_layout = QVBoxLayout()
-    card_wrapper_layout.setContentsMargins(10, 10, 10, 10)
-    
-    status_card = QFrame()
-    status_card.setStyleSheet(f"""
-        background-color: {app['status_card_background_color']};
-        border: {app['status_card_border_width']}px solid {app['status_card_border_color']};
-        border-radius: {app['status_card_border_radius']}px;
-    """)
-    status_layout = QVBoxLayout()
-    status_layout.setSpacing(2)
-    status_layout.setContentsMargins(10, 8, 10, 8)
-    
-    text_color = app['status_card_text_color']
-    
-    items_defs = [
-        ("فوری", "🔴", "header_pending_count"),
-        ("آماده تحویل", "🟢", "header_completed_count"),
-        ("در حال تعمیر", "🔵", "header_in_progress_count"),
-        ("عادی", "⚪", "header_delivered_count"),
-    ]
-    
-    for label, icon, attr in items_defs:
-        row = QHBoxLayout()
-        row.setSpacing(6)
-        
-        icn = QLabel(icon)
-        icn.setStyleSheet("background: transparent; border: none; font-size: 11pt;")
-        row.addWidget(icn)
-        
-        lbl = QLabel(label)
-        lbl.setStyleSheet(f"background: transparent; border: none; color: {text_color}; font-size: 9pt; font-weight: bold;")
-        row.addWidget(lbl)
-        
-        row.addStretch()
-        
-        cnt = QLabel("0")
-        cnt.setStyleSheet(f"background: transparent; border: none; color: {text_color}; font-size: 10pt; font-weight: bold;")
-        setattr(window, attr, cnt)
-        row.addWidget(cnt)
-        
-        status_layout.addLayout(row)
-    
-    # Separator
-    sep = QFrame()
-    sep.setFixedHeight(1)
-    sep.setStyleSheet(f"background-color: {app['status_card_border_color']}; border: none; margin: 4px 0;")
-    status_layout.addWidget(sep)
-    
-    # Datetime
-    dt_label = QLabel()
-    dt_label.setAlignment(Qt.AlignCenter)
-    dt_label.setStyleSheet(f"""
-        background: transparent;
-        border: none;
-        color: {app['status_card_datetime_color']};
+    # Status toggle button
+    window.status_btn = QPushButton("وضعیت‌ها ▼")
+    window.status_btn.setStyleSheet("""
+        background: rgba(255,255,255,0.15);
+        border: 1px solid rgba(255,255,255,0.3);
+        border-radius: 6px;
+        color: white;
         font-size: 9pt;
         font-weight: bold;
+        padding: 6px 12px;
     """)
-    window.header_datetime_label = dt_label
-    status_layout.addWidget(dt_label)
-    
-    status_card.setLayout(status_layout)
-    card_wrapper_layout.addWidget(status_card)
-    card_wrapper.setLayout(card_wrapper_layout)
-    layout.addWidget(card_wrapper)
+    window.status_btn.clicked.connect(window.toggle_status_popup)
+    layout.addWidget(window.status_btn)
     
     layout.addStretch()
     
@@ -308,6 +251,76 @@ def build_status_bar(window):
     return status_bar
 
 
+def create_status_popup(window):
+    """ایجاد پاپ‌آپ وضعیت‌ها"""
+    app = _get_header_appearance()
+
+    popup = QFrame(None, Qt.FramelessWindowHint | Qt.Tool)
+    popup.setAttribute(Qt.WA_DeleteOnClose, False)
+    popup.setLayoutDirection(Qt.RightToLeft)
+    popup.setStyleSheet(f"""
+        background-color: {app['status_popup_background_color']};
+        border: {app['status_popup_border_width']}px solid {app['status_popup_border_color']};
+        border-radius: {app['status_popup_border_radius']}px;
+    """)
+    popup_layout = QVBoxLayout()
+    popup_layout.setSpacing(2)
+    popup_layout.setContentsMargins(14, 10, 14, 10)
+
+    text_color = app['status_popup_text_color']
+
+    items_defs = [
+        ("فوری", "🔴", "header_pending_count"),
+        ("آماده تحویل", "🟢", "header_completed_count"),
+        ("در حال تعمیر", "🔵", "header_in_progress_count"),
+        ("عادی", "⚪", "header_delivered_count"),
+    ]
+
+    for label, icon, attr in items_defs:
+        row = QHBoxLayout()
+        row.setSpacing(8)
+
+        icn = QLabel(icon)
+        icn.setStyleSheet("background: transparent; border: none; font-size: 11pt;")
+        row.addWidget(icn)
+
+        lbl = QLabel(label)
+        lbl.setStyleSheet(f"background: transparent; border: none; color: {text_color}; font-size: 9pt; font-weight: bold;")
+        row.addWidget(lbl)
+
+        row.addStretch()
+
+        cnt = QLabel("0")
+        cnt.setStyleSheet(f"background: transparent; border: none; color: {text_color}; font-size: 10pt; font-weight: bold;")
+        setattr(window, attr, cnt)
+        row.addWidget(cnt)
+
+        popup_layout.addLayout(row)
+
+    # Separator
+    sep = QFrame()
+    sep.setFixedHeight(1)
+    sep.setStyleSheet(f"background-color: {app['status_popup_border_color']}; border: none; margin: 4px 0;")
+    popup_layout.addWidget(sep)
+
+    # Datetime
+    dt_label = QLabel()
+    dt_label.setAlignment(Qt.AlignCenter)
+    dt_label.setStyleSheet(f"""
+        background: transparent;
+        border: none;
+        color: {text_color};
+        font-size: 9pt;
+        font-weight: bold;
+    """)
+    window.header_datetime_label = dt_label
+    popup_layout.addWidget(dt_label)
+
+    popup.setLayout(popup_layout)
+    popup.adjustSize()
+    return popup
+
+
 def build_ui(window):
     """ایجاد رابط کاربری"""
     window.setWindowTitle(_make_title(icon=False))
@@ -325,6 +338,9 @@ def build_ui(window):
     window.header_widget = header
     main_layout.addWidget(header)
     window.main_layout = main_layout
+    
+    # Status popup
+    window.status_popup = create_status_popup(window)
     
     # نوار ابزار
     toolbar = build_toolbar(window)

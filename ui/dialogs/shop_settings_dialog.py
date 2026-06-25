@@ -142,31 +142,30 @@ class ShopSettingsDialog(QDialog):
         self.use_logo_as_icon_check = QCheckBox("استفاده از لوگو به عنوان آیکون برنامه")
         form_layout.addWidget(self.use_logo_as_icon_check, 16, 1)
 
-        # --- Status card settings ---
-        card_title = QLabel("تنظیمات کارت وضعیت")
-        card_title.setFont(QFont("Segoe UI", 12, QFont.Bold))
-        card_title.setAlignment(Qt.AlignCenter)
-        form_layout.addWidget(card_title, 17, 0, 1, 2)
+        # --- Status popup settings ---
+        popup_title = QLabel("تنظیمات پاپ‌آپ وضعیت‌ها")
+        popup_title.setFont(QFont("Segoe UI", 12, QFont.Bold))
+        popup_title.setAlignment(Qt.AlignCenter)
+        form_layout.addWidget(popup_title, 17, 0, 1, 2)
 
-        self._add_color_field(form_layout, "رنگ پس‌زمینه کارت:", 18, "#FFFFFF", "_status_card_background_color")
-        self._add_color_field(form_layout, "رنگ حاشیه کارت:", 19, "#D1D5DB", "_status_card_border_color")
+        self._add_color_field(form_layout, "رنگ پس‌زمینه پاپ‌آپ:", 18, "#FFFFFF", "_status_popup_background_color")
+        self._add_color_field(form_layout, "رنگ حاشیه پاپ‌آپ:", 19, "#D1D5DB", "_status_popup_border_color")
 
-        form_layout.addWidget(QLabel("ضخامت حاشیه کارت:"), 20, 0)
-        self.status_card_border_width_spin = QSpinBox()
-        self.status_card_border_width_spin.setRange(0, 5)
-        self.status_card_border_width_spin.setValue(1)
-        self.status_card_border_width_spin.setSuffix(" px")
-        form_layout.addWidget(self.status_card_border_width_spin, 20, 1)
+        form_layout.addWidget(QLabel("ضخامت حاشیه پاپ‌آپ:"), 20, 0)
+        self.status_popup_border_width_spin = QSpinBox()
+        self.status_popup_border_width_spin.setRange(0, 5)
+        self.status_popup_border_width_spin.setValue(1)
+        self.status_popup_border_width_spin.setSuffix(" px")
+        form_layout.addWidget(self.status_popup_border_width_spin, 20, 1)
 
-        form_layout.addWidget(QLabel("شعاع گوشه کارت:"), 21, 0)
-        self.status_card_border_radius_spin = QSpinBox()
-        self.status_card_border_radius_spin.setRange(0, 30)
-        self.status_card_border_radius_spin.setValue(12)
-        self.status_card_border_radius_spin.setSuffix(" px")
-        form_layout.addWidget(self.status_card_border_radius_spin, 21, 1)
+        form_layout.addWidget(QLabel("شعاع گوشه پاپ‌آپ:"), 21, 0)
+        self.status_popup_border_radius_spin = QSpinBox()
+        self.status_popup_border_radius_spin.setRange(0, 30)
+        self.status_popup_border_radius_spin.setValue(12)
+        self.status_popup_border_radius_spin.setSuffix(" px")
+        form_layout.addWidget(self.status_popup_border_radius_spin, 21, 1)
 
-        self._add_color_field(form_layout, "رنگ متن کارت:", 22, "#111827", "_status_card_text_color")
-        self._add_color_field(form_layout, "رنگ تاریخ/ساعت:", 23, "#374151", "_status_card_datetime_color")
+        self._add_color_field(form_layout, "رنگ متن پاپ‌آپ:", 22, "#111827", "_status_popup_text_color")
 
         layout.addLayout(form_layout)
 
@@ -239,12 +238,11 @@ class ShopSettingsDialog(QDialog):
         self.header_title_size_spin.setValue(20)
         self.header_logo_size_spin.setValue(32)
         self.invoice_logo_size_spin.setValue(96)
-        self._status_card_background_color = "#FFFFFF"
-        self._status_card_border_color = "#D1D5DB"
-        self.status_card_border_width_spin.setValue(1)
-        self.status_card_border_radius_spin.setValue(12)
-        self._status_card_text_color = "#111827"
-        self._status_card_datetime_color = "#374151"
+        self._status_popup_background_color = "#FFFFFF"
+        self._status_popup_border_color = "#D1D5DB"
+        self.status_popup_border_width_spin.setValue(1)
+        self.status_popup_border_radius_spin.setValue(12)
+        self._status_popup_text_color = "#111827"
         show_info(self, "موفق", "تنظیمات ظاهری به مقادیر پیش‌فرض بازگردانده شد.")
 
     def load_settings(self):
@@ -284,16 +282,14 @@ class ShopSettingsDialog(QDialog):
                 self.header_height_spin.setValue(settings.get("header_height", 60))
                 self.use_logo_as_icon_check.setChecked(settings.get("use_logo_as_app_icon", False))
 
-                scbg = settings.get("status_card_background_color", "#FFFFFF")
-                self._status_card_background_color = scbg
-                scbc = settings.get("status_card_border_color", "#D1D5DB")
-                self._status_card_border_color = scbc
-                self.status_card_border_width_spin.setValue(settings.get("status_card_border_width", 1))
-                self.status_card_border_radius_spin.setValue(settings.get("status_card_border_radius", 12))
-                sctc = settings.get("status_card_text_color", "#111827")
-                self._status_card_text_color = sctc
-                scdc = settings.get("status_card_datetime_color", "#374151")
-                self._status_card_datetime_color = scdc
+                spbg = settings.get("status_popup_background_color", "#FFFFFF")
+                self._status_popup_background_color = spbg
+                spbc = settings.get("status_popup_border_color", "#D1D5DB")
+                self._status_popup_border_color = spbc
+                self.status_popup_border_width_spin.setValue(settings.get("status_popup_border_width", 1))
+                self.status_popup_border_radius_spin.setValue(settings.get("status_popup_border_radius", 12))
+                sptc = settings.get("status_popup_text_color", "#111827")
+                self._status_popup_text_color = sptc
         except Exception as e:
             print(f"خطا در بارگذاری تنظیمات: {e}")
 
@@ -328,12 +324,11 @@ class ShopSettingsDialog(QDialog):
             "header_border_radius": self.header_border_radius_spin.value(),
             "header_height": self.header_height_spin.value(),
             "use_logo_as_app_icon": self.use_logo_as_icon_check.isChecked(),
-            "status_card_background_color": getattr(self, "_status_card_background_color", "#FFFFFF"),
-            "status_card_border_color": getattr(self, "_status_card_border_color", "#D1D5DB"),
-            "status_card_border_width": self.status_card_border_width_spin.value(),
-            "status_card_border_radius": self.status_card_border_radius_spin.value(),
-            "status_card_text_color": getattr(self, "_status_card_text_color", "#111827"),
-            "status_card_datetime_color": getattr(self, "_status_card_datetime_color", "#374151")
+            "status_popup_background_color": getattr(self, "_status_popup_background_color", "#FFFFFF"),
+            "status_popup_border_color": getattr(self, "_status_popup_border_color", "#D1D5DB"),
+            "status_popup_border_width": self.status_popup_border_width_spin.value(),
+            "status_popup_border_radius": self.status_popup_border_radius_spin.value(),
+            "status_popup_text_color": getattr(self, "_status_popup_text_color", "#111827")
         }
 
         try:

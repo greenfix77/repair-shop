@@ -66,6 +66,7 @@ def build_header(window):
     app = _get_header_appearance()
 
     header = QFrame()
+    header.setLayoutDirection(Qt.LeftToRight)
     header.setStyleSheet(f"""
         background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
                                    stop:0 {app['header_gradient_start']}, stop:1 {app['header_gradient_end']});
@@ -75,7 +76,6 @@ def build_header(window):
     """)
     
     layout = QHBoxLayout()
-    layout.setLayoutDirection(Qt.LeftToRight)
 
     # Dashboard button on FAR LEFT
     window.status_btn = QPushButton("📊 داشبورد")

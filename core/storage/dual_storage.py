@@ -10,7 +10,7 @@ class DualStorage:
         self.sqlite_storage = SQLiteStorage()
 
     def load_all(self) -> List[Dict]:
-        return self.json_storage.load_all()
+        return self.sqlite_storage.load_all()
 
     def save_all(self, repairs: List[Dict]) -> None:
         self.json_storage.save_all(repairs)

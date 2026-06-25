@@ -66,7 +66,6 @@ def build_header(window):
     app = _get_header_appearance()
 
     header = QFrame()
-    header.setLayoutDirection(Qt.LeftToRight)
     header.setStyleSheet(f"""
         background: qlineargradient(x1:0, y1:0, x2:1, y2:0,
                                    stop:0 {app['header_gradient_start']}, stop:1 {app['header_gradient_end']});
@@ -77,6 +76,20 @@ def build_header(window):
     
     layout = QHBoxLayout()
 
+    logo_pixmap = get_header_logo_pixmap()
+    has_logo = logo_pixmap is not None
+    if has_logo:
+        logo_label = QLabel()
+        logo_label.setPixmap(logo_pixmap)
+        logo_label.setStyleSheet("background: transparent; border: none;")
+        layout.addWidget(logo_label)
+    
+    title = QLabel(_make_title(icon=not has_logo))
+    title.setStyleSheet(f"color: {app['header_title_color']}; font-size: {app['header_title_size']}pt; font-weight: bold;")
+    layout.addWidget(title)
+    
+    layout.addStretch()
+    
     # Dashboard button on FAR LEFT
     window.status_btn = QPushButton("📊 داشبورد")
     window.status_btn.setStyleSheet("""
@@ -95,22 +108,6 @@ def build_header(window):
     """)
     window.status_btn.clicked.connect(window.toggle_status_popup)
     layout.addWidget(window.status_btn)
-    
-    layout.addSpacing(6)
-    
-    logo_pixmap = get_header_logo_pixmap()
-    has_logo = logo_pixmap is not None
-    if has_logo:
-        logo_label = QLabel()
-        logo_label.setPixmap(logo_pixmap)
-        logo_label.setStyleSheet("background: transparent; border: none;")
-        layout.addWidget(logo_label)
-    
-    title = QLabel(_make_title(icon=not has_logo))
-    title.setStyleSheet(f"color: {app['header_title_color']}; font-size: {app['header_title_size']}pt; font-weight: bold;")
-    layout.addWidget(title)
-    
-    layout.addStretch()
     
     header.setLayout(layout)
     return header

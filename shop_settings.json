@@ -13,6 +13,6 @@
     "header_gradient_start": "#4F46E5",
     "header_gradient_end": "#7c3aed",
     "header_border_radius": 20,
-    "header_height": 128,
+    "header_height": 136,
     "use_logo_as_app_icon": true
 }

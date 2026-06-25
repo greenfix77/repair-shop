@@ -92,7 +92,7 @@ class LaptopRepairManager(QMainWindow):
         """به‌روزرسانی تاریخ"""
         self.date_label.setText(f"📅 {today_persian()}")
         now = datetime.now()
-        self.header_datetime_label.setText(f"{today_persian()}\n{now.strftime('%H:%M')}")
+        self.header_datetime_label.setText(f"📅 {today_persian()}\n🕒 {now.strftime('%H:%M')}")
         
         # تایمر برای به‌روزرسانی روزانه
         QTimer.singleShot(60000, self.update_date_label)
@@ -126,18 +126,21 @@ class LaptopRepairManager(QMainWindow):
         self.status_popup.raise_()
 
     def eventFilter(self, obj, event):
-        """بستن پاپ‌آپ هنگام کلیک خارج از آن"""
-        if event.type() == QEvent.MouseButtonPress and self.status_popup.isVisible():
-            global_pos = event.globalPos()
-            popup_rect = QRect(
-                self.status_popup.mapToGlobal(QPoint(0, 0)),
-                self.status_popup.size()
-            )
-            btn_rect = QRect(
-                self.status_btn.mapToGlobal(QPoint(0, 0)),
-                self.status_btn.size()
-            )
-            if not popup_rect.contains(global_pos) and not btn_rect.contains(global_pos):
+        """بستن پاپ‌آپ هنگام کلیک خارج از آن یا ESC"""
+        if self.status_popup.isVisible():
+            if event.type() == QEvent.MouseButtonPress:
+                global_pos = event.globalPos()
+                popup_rect = QRect(
+                    self.status_popup.mapToGlobal(QPoint(0, 0)),
+                    self.status_popup.size()
+                )
+                btn_rect = QRect(
+                    self.status_btn.mapToGlobal(QPoint(0, 0)),
+                    self.status_btn.size()
+                )
+                if not popup_rect.contains(global_pos) and not btn_rect.contains(global_pos):
+                    self.status_popup.hide()
+            if event.type() == QEvent.KeyPress and event.key() == Qt.Key_Escape:
                 self.status_popup.hide()
         return super().eventFilter(obj, event)
     

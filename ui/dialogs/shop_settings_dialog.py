@@ -142,30 +142,31 @@ class ShopSettingsDialog(QDialog):
         self.use_logo_as_icon_check = QCheckBox("استفاده از لوگو به عنوان آیکون برنامه")
         form_layout.addWidget(self.use_logo_as_icon_check, 16, 1)
 
-        # --- Status popup settings ---
-        popup_title = QLabel("تنظیمات پاپ‌آپ وضعیت‌ها")
-        popup_title.setFont(QFont("Segoe UI", 12, QFont.Bold))
-        popup_title.setAlignment(Qt.AlignCenter)
-        form_layout.addWidget(popup_title, 17, 0, 1, 2)
+        # --- Dashboard popup settings ---
+        dash_title = QLabel("تنظیمات داشبورد")
+        dash_title.setFont(QFont("Segoe UI", 12, QFont.Bold))
+        dash_title.setAlignment(Qt.AlignCenter)
+        form_layout.addWidget(dash_title, 17, 0, 1, 2)
 
-        self._add_color_field(form_layout, "رنگ پس‌زمینه پاپ‌آپ:", 18, "#FFFFFF", "_status_popup_background_color")
-        self._add_color_field(form_layout, "رنگ حاشیه پاپ‌آپ:", 19, "#D1D5DB", "_status_popup_border_color")
+        self._add_color_field(form_layout, "رنگ پس‌زمینه داشبورد:", 18, "#FFFFFF", "_status_popup_background_color")
+        self._add_color_field(form_layout, "رنگ حاشیه داشبورد:", 19, "#D1D5DB", "_status_popup_border_color")
 
-        form_layout.addWidget(QLabel("ضخامت حاشیه پاپ‌آپ:"), 20, 0)
+        form_layout.addWidget(QLabel("ضخامت حاشیه داشبورد:"), 20, 0)
         self.status_popup_border_width_spin = QSpinBox()
         self.status_popup_border_width_spin.setRange(0, 5)
         self.status_popup_border_width_spin.setValue(1)
         self.status_popup_border_width_spin.setSuffix(" px")
         form_layout.addWidget(self.status_popup_border_width_spin, 20, 1)
 
-        form_layout.addWidget(QLabel("شعاع گوشه پاپ‌آپ:"), 21, 0)
+        form_layout.addWidget(QLabel("شعاع گوشه داشبورد:"), 21, 0)
         self.status_popup_border_radius_spin = QSpinBox()
         self.status_popup_border_radius_spin.setRange(0, 30)
         self.status_popup_border_radius_spin.setValue(12)
         self.status_popup_border_radius_spin.setSuffix(" px")
         form_layout.addWidget(self.status_popup_border_radius_spin, 21, 1)
 
-        self._add_color_field(form_layout, "رنگ متن پاپ‌آپ:", 22, "#111827", "_status_popup_text_color")
+        self._add_color_field(form_layout, "رنگ متن داشبورد:", 22, "#111827", "_status_popup_text_color")
+        self._add_color_field(form_layout, "رنگ تاریخ/ساعت:", 23, "#374151", "_status_popup_datetime_color")
 
         layout.addLayout(form_layout)
 
@@ -243,6 +244,7 @@ class ShopSettingsDialog(QDialog):
         self.status_popup_border_width_spin.setValue(1)
         self.status_popup_border_radius_spin.setValue(12)
         self._status_popup_text_color = "#111827"
+        self._status_popup_datetime_color = "#374151"
         show_info(self, "موفق", "تنظیمات ظاهری به مقادیر پیش‌فرض بازگردانده شد.")
 
     def load_settings(self):
@@ -290,6 +292,8 @@ class ShopSettingsDialog(QDialog):
                 self.status_popup_border_radius_spin.setValue(settings.get("status_popup_border_radius", 12))
                 sptc = settings.get("status_popup_text_color", "#111827")
                 self._status_popup_text_color = sptc
+                spdc = settings.get("status_popup_datetime_color", "#374151")
+                self._status_popup_datetime_color = spdc
         except Exception as e:
             print(f"خطا در بارگذاری تنظیمات: {e}")
 
@@ -328,7 +332,8 @@ class ShopSettingsDialog(QDialog):
             "status_popup_border_color": getattr(self, "_status_popup_border_color", "#D1D5DB"),
             "status_popup_border_width": self.status_popup_border_width_spin.value(),
             "status_popup_border_radius": self.status_popup_border_radius_spin.value(),
-            "status_popup_text_color": getattr(self, "_status_popup_text_color", "#111827")
+            "status_popup_text_color": getattr(self, "_status_popup_text_color", "#111827"),
+            "status_popup_datetime_color": getattr(self, "_status_popup_datetime_color", "#374151")
         }
 
         try:

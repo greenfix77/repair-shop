@@ -47,6 +47,7 @@ def _get_header_appearance():
         "status_popup_border_width": 1,
         "status_popup_border_radius": 12,
         "status_popup_text_color": "#111827",
+        "status_popup_datetime_color": "#374151",
     }
     try:
         if Path("shop_settings.json").exists():
@@ -74,7 +75,29 @@ def build_header(window):
     """)
     
     layout = QHBoxLayout()
+    layout.setLayoutDirection(Qt.LeftToRight)
 
+    # Dashboard button on FAR LEFT
+    window.status_btn = QPushButton("📊 داشبورد")
+    window.status_btn.setStyleSheet("""
+        QPushButton {
+            background: transparent;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 4px;
+            color: white;
+            font-size: 9pt;
+            font-weight: bold;
+            padding: 2px 6px;
+        }
+        QPushButton:hover {
+            background: rgba(255,255,255,0.1);
+        }
+    """)
+    window.status_btn.clicked.connect(window.toggle_status_popup)
+    layout.addWidget(window.status_btn)
+    
+    layout.addSpacing(6)
+    
     logo_pixmap = get_header_logo_pixmap()
     has_logo = logo_pixmap is not None
     if has_logo:
@@ -86,20 +109,6 @@ def build_header(window):
     title = QLabel(_make_title(icon=not has_logo))
     title.setStyleSheet(f"color: {app['header_title_color']}; font-size: {app['header_title_size']}pt; font-weight: bold;")
     layout.addWidget(title)
-    
-    # Status toggle button
-    window.status_btn = QPushButton("وضعیت‌ها ▼")
-    window.status_btn.setStyleSheet("""
-        background: rgba(255,255,255,0.15);
-        border: 1px solid rgba(255,255,255,0.3);
-        border-radius: 6px;
-        color: white;
-        font-size: 9pt;
-        font-weight: bold;
-        padding: 6px 12px;
-    """)
-    window.status_btn.clicked.connect(window.toggle_status_popup)
-    layout.addWidget(window.status_btn)
     
     layout.addStretch()
     
@@ -252,7 +261,7 @@ def build_status_bar(window):
 
 
 def create_status_popup(window):
-    """ایجاد پاپ‌آپ وضعیت‌ها"""
+    """ایجاد پاپ‌آپ داشبورد"""
     app = _get_header_appearance()
 
     popup = QFrame(None, Qt.FramelessWindowHint | Qt.Tool)
@@ -278,7 +287,7 @@ def create_status_popup(window):
 
     for label, icon, attr in items_defs:
         row = QHBoxLayout()
-        row.setSpacing(8)
+        row.setSpacing(6)
 
         icn = QLabel(icon)
         icn.setStyleSheet("background: transparent; border: none; font-size: 11pt;")
@@ -303,13 +312,14 @@ def create_status_popup(window):
     sep.setStyleSheet(f"background-color: {app['status_popup_border_color']}; border: none; margin: 4px 0;")
     popup_layout.addWidget(sep)
 
-    # Datetime
+    # Datetime with icons
+    dt_color = app['status_popup_datetime_color']
     dt_label = QLabel()
     dt_label.setAlignment(Qt.AlignCenter)
     dt_label.setStyleSheet(f"""
         background: transparent;
         border: none;
-        color: {text_color};
+        color: {dt_color};
         font-size: 9pt;
         font-weight: bold;
     """)

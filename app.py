@@ -24,7 +24,7 @@ from services.invoice_generator import generate_print_invoice_html, generate_web
 from ui.status_styles import get_status_color
 from ui.dialogs.repair_dialog import RepairDialog
 from ui.dialogs.invoice_dialog import InvoicePreviewDialog
-from ui.main_window import build_ui
+from ui.main_window import build_ui, build_header
 from controllers.main_controller import MainController
 from services.notification_service import (
     show_info, show_warning, show_error, show_question
@@ -99,7 +99,18 @@ class LaptopRepairManager(QMainWindow):
     def open_shop_settings(self):
         """باز کردن تنظیمات فروشگاه"""
         dialog = ShopSettingsDialog(self)
-        dialog.exec_()
+        if dialog.exec_() == QDialog.Accepted:
+            self.rebuild_header()
+
+    def rebuild_header(self):
+        """بازسازی هدر پس از تغییر تنظیمات"""
+        idx = self.main_layout.indexOf(self.header_widget)
+        self.main_layout.removeWidget(self.header_widget)
+        self.header_widget.deleteLater()
+        self.header_widget = build_header(self)
+        self.main_layout.insertWidget(idx, self.header_widget)
+        now = datetime.now()
+        self.header_datetime_label.setText(f"{today_persian()}\n{now.strftime('%H:%M')}")
     
     def add_repair(self):
         """افزودن تعمیر جدید"""

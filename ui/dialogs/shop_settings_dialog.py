@@ -8,7 +8,7 @@ from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
 from PyQt5.QtCore import Qt, QRegularExpression
 from PyQt5.QtGui import QFont, QRegularExpressionValidator, QColor
 
-from services.notification_service import show_info, show_error, show_warning
+from services.notification_service import show_info, show_error, show_warning, show_question
 
 
 class ShopSettingsDialog(QDialog):
@@ -142,7 +142,39 @@ class ShopSettingsDialog(QDialog):
         self.use_logo_as_icon_check = QCheckBox("استفاده از لوگو به عنوان آیکون برنامه")
         form_layout.addWidget(self.use_logo_as_icon_check, 16, 1)
 
+        # --- Status card settings ---
+        card_title = QLabel("تنظیمات کارت وضعیت")
+        card_title.setFont(QFont("Segoe UI", 12, QFont.Bold))
+        card_title.setAlignment(Qt.AlignCenter)
+        form_layout.addWidget(card_title, 17, 0, 1, 2)
+
+        self._add_color_field(form_layout, "رنگ پس‌زمینه کارت:", 18, "#FFFFFF", "_status_card_background_color")
+        self._add_color_field(form_layout, "رنگ حاشیه کارت:", 19, "#D1D5DB", "_status_card_border_color")
+
+        form_layout.addWidget(QLabel("ضخامت حاشیه کارت:"), 20, 0)
+        self.status_card_border_width_spin = QSpinBox()
+        self.status_card_border_width_spin.setRange(0, 5)
+        self.status_card_border_width_spin.setValue(1)
+        self.status_card_border_width_spin.setSuffix(" px")
+        form_layout.addWidget(self.status_card_border_width_spin, 20, 1)
+
+        form_layout.addWidget(QLabel("شعاع گوشه کارت:"), 21, 0)
+        self.status_card_border_radius_spin = QSpinBox()
+        self.status_card_border_radius_spin.setRange(0, 30)
+        self.status_card_border_radius_spin.setValue(12)
+        self.status_card_border_radius_spin.setSuffix(" px")
+        form_layout.addWidget(self.status_card_border_radius_spin, 21, 1)
+
+        self._add_color_field(form_layout, "رنگ متن کارت:", 22, "#111827", "_status_card_text_color")
+        self._add_color_field(form_layout, "رنگ تاریخ/ساعت:", 23, "#374151", "_status_card_datetime_color")
+
         layout.addLayout(form_layout)
+
+        # Restore defaults button
+        restore_btn = QPushButton("بازگردانی تنظیمات پیش‌فرض")
+        restore_btn.setStyleSheet("background-color: #FF9800; color: white; padding: 8px 20px; font-weight: bold;")
+        restore_btn.clicked.connect(self.restore_defaults)
+        layout.addWidget(restore_btn)
 
         # دکمه‌ها
         btn_layout = QHBoxLayout()
@@ -195,6 +227,26 @@ class ShopSettingsDialog(QDialog):
         form_layout.addLayout(hbox, row, 1)
         setattr(self, attr_name, default_color)
 
+    def restore_defaults(self):
+        """بازگردانی تنظیمات پیش‌فرض ظاهری"""
+        if not show_question(self, "تأیید", "آیا از بازگردانی تنظیمات پیش‌فرض ظاهری اطمینان دارید؟"):
+            return
+        self._header_title_color = "#FFFFFF"
+        self._header_gradient_start = "#4F46E5"
+        self._header_gradient_end = "#7C3AED"
+        self.header_border_radius_spin.setValue(15)
+        self.header_height_spin.setValue(60)
+        self.header_title_size_spin.setValue(20)
+        self.header_logo_size_spin.setValue(32)
+        self.invoice_logo_size_spin.setValue(96)
+        self._status_card_background_color = "#FFFFFF"
+        self._status_card_border_color = "#D1D5DB"
+        self.status_card_border_width_spin.setValue(1)
+        self.status_card_border_radius_spin.setValue(12)
+        self._status_card_text_color = "#111827"
+        self._status_card_datetime_color = "#374151"
+        show_info(self, "موفق", "تنظیمات ظاهری به مقادیر پیش‌فرض بازگردانده شد.")
+
     def load_settings(self):
         """بارگذاری تنظیمات"""
         try:
@@ -231,6 +283,17 @@ class ShopSettingsDialog(QDialog):
                 self.header_border_radius_spin.setValue(settings.get("header_border_radius", 15))
                 self.header_height_spin.setValue(settings.get("header_height", 60))
                 self.use_logo_as_icon_check.setChecked(settings.get("use_logo_as_app_icon", False))
+
+                scbg = settings.get("status_card_background_color", "#FFFFFF")
+                self._status_card_background_color = scbg
+                scbc = settings.get("status_card_border_color", "#D1D5DB")
+                self._status_card_border_color = scbc
+                self.status_card_border_width_spin.setValue(settings.get("status_card_border_width", 1))
+                self.status_card_border_radius_spin.setValue(settings.get("status_card_border_radius", 12))
+                sctc = settings.get("status_card_text_color", "#111827")
+                self._status_card_text_color = sctc
+                scdc = settings.get("status_card_datetime_color", "#374151")
+                self._status_card_datetime_color = scdc
         except Exception as e:
             print(f"خطا در بارگذاری تنظیمات: {e}")
 
@@ -264,7 +327,13 @@ class ShopSettingsDialog(QDialog):
             "header_gradient_end": getattr(self, "_header_gradient_end", "#7C3AED"),
             "header_border_radius": self.header_border_radius_spin.value(),
             "header_height": self.header_height_spin.value(),
-            "use_logo_as_app_icon": self.use_logo_as_icon_check.isChecked()
+            "use_logo_as_app_icon": self.use_logo_as_icon_check.isChecked(),
+            "status_card_background_color": getattr(self, "_status_card_background_color", "#FFFFFF"),
+            "status_card_border_color": getattr(self, "_status_card_border_color", "#D1D5DB"),
+            "status_card_border_width": self.status_card_border_width_spin.value(),
+            "status_card_border_radius": self.status_card_border_radius_spin.value(),
+            "status_card_text_color": getattr(self, "_status_card_text_color", "#111827"),
+            "status_card_datetime_color": getattr(self, "_status_card_datetime_color", "#374151")
         }
 
         try:

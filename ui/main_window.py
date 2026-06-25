@@ -42,10 +42,12 @@ def _get_header_appearance():
         "header_gradient_end": "#7C3AED",
         "header_border_radius": 15,
         "header_height": 60,
-        "status_card_border_radius": 12,
+        "status_card_background_color": "#FFFFFF",
         "status_card_border_color": "#D1D5DB",
-        "header_datetime_font_size": 11,
-        "header_datetime_color": "#374151",
+        "status_card_border_width": 1,
+        "status_card_border_radius": 12,
+        "status_card_text_color": "#111827",
+        "status_card_datetime_color": "#374151",
     }
     try:
         if Path("shop_settings.json").exists():
@@ -94,65 +96,62 @@ def build_header(window):
     
     status_card = QFrame()
     status_card.setStyleSheet(f"""
-        background: rgba(255,255,255,0.12);
+        background-color: {app['status_card_background_color']};
+        border: {app['status_card_border_width']}px solid {app['status_card_border_color']};
         border-radius: {app['status_card_border_radius']}px;
-        border: 1px solid {app['status_card_border_color']};
     """)
     status_layout = QVBoxLayout()
-    status_layout.setSpacing(4)
-    status_layout.setContentsMargins(8, 4, 8, 4)
+    status_layout.setSpacing(2)
+    status_layout.setContentsMargins(10, 8, 10, 8)
     
-    # Status items row
-    items_row = QHBoxLayout()
-    items_row.setSpacing(10)
+    text_color = app['status_card_text_color']
     
     items_defs = [
         ("فوری", "🔴", "header_pending_count"),
-        ("در حال تعمیر", "🔵", "header_in_progress_count"),
         ("آماده تحویل", "🟢", "header_completed_count"),
+        ("در حال تعمیر", "🔵", "header_in_progress_count"),
         ("عادی", "⚪", "header_delivered_count"),
     ]
     
     for label, icon, attr in items_defs:
-        item_f = QFrame()
-        item_f.setStyleSheet("background: transparent; border: none;")
-        il = QHBoxLayout()
-        il.setSpacing(3)
-        il.setContentsMargins(0, 0, 0, 0)
+        row = QHBoxLayout()
+        row.setSpacing(6)
         
         icn = QLabel(icon)
-        icn.setStyleSheet("background: transparent; border: none; font-size: 10pt;")
-        il.addWidget(icn)
+        icn.setStyleSheet("background: transparent; border: none; font-size: 11pt;")
+        row.addWidget(icn)
         
         lbl = QLabel(label)
-        lbl.setStyleSheet("background: transparent; border: none; color: white; font-size: 8pt;")
-        il.addWidget(lbl)
+        lbl.setStyleSheet(f"background: transparent; border: none; color: {text_color}; font-size: 9pt; font-weight: bold;")
+        row.addWidget(lbl)
+        
+        row.addStretch()
         
         cnt = QLabel("0")
-        cnt.setStyleSheet("background: transparent; border: none; color: white; font-size: 9pt; font-weight: bold;")
+        cnt.setStyleSheet(f"background: transparent; border: none; color: {text_color}; font-size: 10pt; font-weight: bold;")
         setattr(window, attr, cnt)
-        il.addWidget(cnt)
+        row.addWidget(cnt)
         
-        item_f.setLayout(il)
-        items_row.addWidget(item_f)
+        status_layout.addLayout(row)
     
-    status_layout.addLayout(items_row)
+    # Separator
+    sep = QFrame()
+    sep.setFixedHeight(1)
+    sep.setStyleSheet(f"background-color: {app['status_card_border_color']}; border: none; margin: 4px 0;")
+    status_layout.addWidget(sep)
     
-    # Datetime row
-    dt_row = QHBoxLayout()
-    dt_row.setAlignment(Qt.AlignCenter)
-    
-    window.header_datetime_label = QLabel()
-    window.header_datetime_label.setAlignment(Qt.AlignCenter)
-    window.header_datetime_label.setStyleSheet(f"""
+    # Datetime
+    dt_label = QLabel()
+    dt_label.setAlignment(Qt.AlignCenter)
+    dt_label.setStyleSheet(f"""
         background: transparent;
         border: none;
-        color: {app['header_datetime_color']};
-        font-size: {app['header_datetime_font_size']}pt;
+        color: {app['status_card_datetime_color']};
+        font-size: 9pt;
         font-weight: bold;
     """)
-    dt_row.addWidget(window.header_datetime_label)
-    status_layout.addLayout(dt_row)
+    window.header_datetime_label = dt_label
+    status_layout.addWidget(dt_label)
     
     status_card.setLayout(status_layout)
     card_wrapper_layout.addWidget(status_card)
@@ -323,7 +322,9 @@ def build_ui(window):
     
     # هدر
     header = build_header(window)
+    window.header_widget = header
     main_layout.addWidget(header)
+    window.main_layout = main_layout
     
     # نوار ابزار
     toolbar = build_toolbar(window)

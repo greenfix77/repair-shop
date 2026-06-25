@@ -216,6 +216,11 @@ class LaptopRepairManager(QMainWindow):
         self.in_progress_label.setText(f"{STATUS_IN_PROGRESS}: {in_progress}")
         self.completed_label.setText(f"{STATUS_COMPLETED}: {completed}")
         self.delivered_label.setText(f"{STATUS_DELIVERED}: {delivered}")
+        
+        self.header_pending_count.setText(str(pending))
+        self.header_in_progress_count.setText(str(in_progress))
+        self.header_completed_count.setText(str(completed))
+        self.header_delivered_count.setText(str(delivered))
     
     def check_notifications(self):
         """بررسی یادآوری‌ها"""

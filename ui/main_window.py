@@ -71,15 +71,56 @@ def build_header(window):
     layout = QHBoxLayout()
 
     logo_pixmap = get_header_logo_pixmap()
-    if logo_pixmap:
+    has_logo = logo_pixmap is not None
+    if has_logo:
         logo_label = QLabel()
         logo_label.setPixmap(logo_pixmap)
         logo_label.setStyleSheet("background: transparent; border: none;")
         layout.addWidget(logo_label)
     
-    title = QLabel(_make_title(icon=True))
+    title = QLabel(_make_title(icon=not has_logo))
     title.setStyleSheet(f"color: {app['header_title_color']}; font-size: {app['header_title_size']}pt; font-weight: bold;")
     layout.addWidget(title)
+    
+    # Status card
+    status_card = QFrame()
+    status_card.setStyleSheet("background: rgba(255,255,255,0.12); border-radius: 6px;")
+    status_layout = QHBoxLayout()
+    status_layout.setSpacing(10)
+    status_layout.setContentsMargins(8, 4, 8, 4)
+    
+    items = [
+        ("فوری", "🔴", "header_pending_count"),
+        ("در حال تعمیر", "🔵", "header_in_progress_count"),
+        ("آماده تحویل", "🟢", "header_completed_count"),
+        ("عادی", "⚪", "header_delivered_count"),
+    ]
+    
+    for label, icon, attr in items:
+        item = QFrame()
+        item.setStyleSheet("background: transparent; border: none;")
+        il = QHBoxLayout()
+        il.setSpacing(3)
+        il.setContentsMargins(0, 0, 0, 0)
+        
+        icn = QLabel(icon)
+        icn.setStyleSheet("background: transparent; border: none; font-size: 10pt;")
+        il.addWidget(icn)
+        
+        lbl = QLabel(label)
+        lbl.setStyleSheet("background: transparent; border: none; color: white; font-size: 8pt;")
+        il.addWidget(lbl)
+        
+        cnt = QLabel("0")
+        cnt.setStyleSheet("background: transparent; border: none; color: white; font-size: 9pt; font-weight: bold;")
+        setattr(window, attr, cnt)
+        il.addWidget(cnt)
+        
+        item.setLayout(il)
+        status_layout.addWidget(item)
+    
+    status_card.setLayout(status_layout)
+    layout.addWidget(status_card)
     
     layout.addStretch()
     

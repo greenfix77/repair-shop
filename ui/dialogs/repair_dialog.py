@@ -261,12 +261,7 @@ class RepairDialog(QDialog):
             self._completer_model.appendRow(item)
 
     def _on_completer_activated(self, index):
-        proxy = self._completer.completionModel()
-        source_index = proxy.mapToSource(index)
-        item = self._completer_model.itemFromIndex(source_index)
-        if not item:
-            return
-        customer_id = item.data(Qt.UserRole)
+        customer_id = index.data(Qt.UserRole)
         if not customer_id:
             return
         customer = self._customer_service.get_customer(customer_id)

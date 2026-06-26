@@ -16,6 +16,10 @@ def test_customer_service():
     service = CustomerService()
     now = '2025-01-01'
 
+    # generate_customer_code before any customers
+    assert service.generate_customer_code() == 'C000001'
+    print("[PASS] generate_customer_code -> C000001")
+
     # Create first customer
     c1 = service.get_or_create_customer({
         'full_name': 'Alice',
@@ -63,15 +67,20 @@ def test_customer_service():
     assert c4['customer_code'] == 'C000003', f"expected C000003, got {c4['customer_code']}"
     print(f"[PASS] increment code -> {c4['customer_code']} {c4['full_name']}")
 
-    # find_by_phone
-    found = service.find_by_phone('2222222222')
+    # find_customer by phone
+    found = service.find_customer('2222222222')
     assert found is not None and found['full_name'] == 'Bob'
-    print(f"[PASS] find_by_phone -> {found['full_name']}")
+    print(f"[PASS] find_customer (phone) -> {found['full_name']}")
 
-    # find_by_code
-    found = service.find_by_code('C000003')
+    # find_customer by customer_code
+    found = service.find_customer('C000003')
     assert found is not None and found['full_name'] == 'Charlie'
-    print(f"[PASS] find_by_code -> {found['full_name']}")
+    print(f"[PASS] find_customer (code) -> {found['full_name']}")
+
+    # find_customer returns None for unknown query
+    found = service.find_customer('NONEXISTENT')
+    assert found is None
+    print("[PASS] find_customer (unknown) -> None")
 
     # update_customer
     updated = service.update_customer(c1['id'], {'full_name': 'Alice Smith'})

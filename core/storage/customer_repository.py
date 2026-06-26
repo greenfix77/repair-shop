@@ -5,6 +5,13 @@ from core.storage.customer_model_db import CustomerDB
 
 
 class CustomerRepository:
+    @staticmethod
+    def _normalize_phone(phone):
+        if phone is None or (isinstance(phone, str) and not phone.strip()):
+            return None
+        return phone
+
+
     def get_all(self) -> List[Dict]:
         session = SessionLocal()
         try:
@@ -43,7 +50,7 @@ class CustomerRepository:
             row = CustomerDB(
                 customer_code=customer_data.get('customer_code', ''),
                 full_name=customer_data.get('full_name', ''),
-                phone=customer_data.get('phone', ''),
+                phone=self._normalize_phone(customer_data.get('phone', '')),
                 email=customer_data.get('email', ''),
                 website=customer_data.get('website', ''),
                 national_id=customer_data.get('national_id', ''),
@@ -75,7 +82,10 @@ class CustomerRepository:
                         'national_id', 'address', 'city', 'province', 'postal_code',
                         'notes', 'created_at', 'updated_at'):
                 if key in customer_data:
-                    setattr(row, key, customer_data[key])
+                    value = customer_data[key]
+                    if key == 'phone':
+                        value = self._normalize_phone(value)
+                    setattr(row, key, value)
             session.commit()
             session.refresh(row)
             return self._to_dict(row)

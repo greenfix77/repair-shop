@@ -9,7 +9,7 @@ class CustomerDB(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     customer_code = Column(String, unique=True, default="")
     full_name = Column(String, default="")
-    phone = Column(String, unique=True, default="")
+    phone = Column(String, unique=True)
     email = Column(String, default="")
     website = Column(String, default="")
     national_id = Column(String, default="")

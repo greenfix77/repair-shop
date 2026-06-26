@@ -8,6 +8,7 @@ from services.notification_service import show_warning
 from core.status import ALL_STATUSES, STATUS_PENDING
 from repair_manager.ui.components import PersianDateEdit
 from services.invoice_calculator import calculate_invoice_totals
+from services.customer_service import CustomerService
 
 
 class RepairDialog(QDialog):
@@ -16,12 +17,14 @@ class RepairDialog(QDialog):
     def __init__(self, repair_data=None, parent=None):
         super().__init__(parent)
         self.repair_data = repair_data
+        self._customer_service = CustomerService()
 
         self.setWindowTitle("ثبت/ویرایش تعمیر")
         self.setModal(True)
         self.setMinimumSize(700, 600)
 
         self.init_ui()
+        self._connect_auto_fill()
 
         if repair_data:
             self.load_data(repair_data)
@@ -143,6 +146,23 @@ class RepairDialog(QDialog):
         layout.addLayout(btn_layout)
 
         self.setLayout(layout)
+
+    def _connect_auto_fill(self):
+        self.phone_input.editingFinished.connect(self._on_phone_editing_finished)
+
+    def _on_phone_editing_finished(self):
+        phone = self.phone_input.text()
+        if not phone or not self.phone_input.hasAcceptableInput():
+            return
+        customer = self._customer_service.find_customer(phone)
+        if not customer:
+            return
+        self.phone_input.blockSignals(True)
+        if customer.get('full_name'):
+            self.customer_name_input.setText(customer['full_name'])
+        if customer.get('notes'):
+            self.notes_input.setPlainText(customer['notes'])
+        self.phone_input.blockSignals(False)
 
     def validate_and_accept(self):
         if self.phone_input.text() and not self.phone_input.hasAcceptableInput():

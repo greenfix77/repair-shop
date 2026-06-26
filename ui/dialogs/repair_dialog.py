@@ -2,7 +2,7 @@ from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                               QTabWidget, QWidget, QLineEdit, QTextEdit, QSpinBox,
                               QDoubleSpinBox, QComboBox, QLabel, QPushButton,
                               QCompleter, QStyledItemDelegate)
-from PyQt5.QtCore import Qt, QTimer, QStringListModel, QRegularExpression
+from PyQt5.QtCore import Qt, QTimer, QStringListModel, QRegularExpression, QSize
 from PyQt5.QtGui import (
     QFont,
     QRegularExpressionValidator,
@@ -46,7 +46,8 @@ class CompleterItemDelegate(QStyledItemDelegate):
         painter.restore()
 
     def sizeHint(self, option, index):
-        return option.widget.fontMetrics().height() * 2 + 12
+        h = option.widget.fontMetrics().height() * 2 + 12
+        return QSize(super().sizeHint(option, index).width(), h)
 
 
 class RepairDialog(QDialog):

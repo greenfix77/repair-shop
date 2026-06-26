@@ -48,14 +48,15 @@ class CustomerService:
             return None
         return self._repo.get_by_phone(phone)
 
-    def find_by_full_name(self, full_name: str) -> Optional[Dict]:
+    def find_by_full_name(self, full_name: str) -> List[Dict]:
         if not full_name:
-            return None
+            return []
         customers = self._repo.search(full_name)
+        result = []
         for c in customers:
             if c.get('full_name', '').strip() == full_name.strip():
-                return c
-        return None
+                result.append(c)
+        return result
 
     def search_customers(self, query: str) -> List[Dict]:
         """Search customers by full_name or phone (contains, case-insensitive).

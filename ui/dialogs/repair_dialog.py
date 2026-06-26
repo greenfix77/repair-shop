@@ -2,11 +2,13 @@ from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                               QTabWidget, QWidget, QLineEdit, QTextEdit, QSpinBox,
                               QDoubleSpinBox, QComboBox, QLabel, QPushButton,
                               QCompleter, QStyledItemDelegate)
-from PyQt5.QtCore import Qt, QTimer, QStringListModel, QRegularExpression, QSize
+from PyQt5.QtCore import Qt, QTimer, QRegularExpression, QSize, QModelIndex
 from PyQt5.QtGui import (
     QFont,
     QRegularExpressionValidator,
     QColor,
+    QStandardItemModel,
+    QStandardItem,
 )
 
 from PyQt5.QtWidgets import (
@@ -57,8 +59,6 @@ class RepairDialog(QDialog):
         super().__init__(parent)
         self.repair_data = repair_data
         self._customer_service = CustomerService()
-        self._completer_cache = {}
-        self._skip_next_search = False
 
         self.setWindowTitle("ثبت/ویرایش تعمیر")
         self.setModal(True)
@@ -229,7 +229,7 @@ class RepairDialog(QDialog):
         self._completer_timer.setSingleShot(True)
         self._completer_timer.timeout.connect(self._on_completer_search)
 
-        self._completer_model = QStringListModel()
+        self._completer_model = QStandardItemModel()
         self._completer = QCompleter()
         self._completer.setCaseSensitivity(Qt.CaseInsensitive)
         self._completer.setFilterMode(Qt.MatchContains)
@@ -238,7 +238,7 @@ class RepairDialog(QDialog):
         self._completer_delegate = CompleterItemDelegate()
         self._completer.popup().setItemDelegate(self._completer_delegate)
         self._completer.popup().setLayoutDirection(Qt.RightToLeft)
-        self._completer.activated.connect(self._on_completer_activated)
+        self._completer.activated[QModelIndex].connect(self._on_completer_activated)
 
         self.customer_name_input.setCompleter(self._completer)
         self.customer_name_input.textChanged.connect(self._on_name_text_changed)
@@ -250,65 +250,43 @@ class RepairDialog(QDialog):
     def _on_completer_search(self):
         text = self.customer_name_input.text().strip()
         if len(text) < 2:
-            self._completer_model.setStringList([])
-            return
-        if self._skip_next_search:
-            self._skip_next_search = False
+            self._completer_model.clear()
             return
         customers = self._customer_service.search_customers(text)
-        items = []
-        self._completer_cache = {}
+        self._completer_model.clear()
         for c in customers:
             label = f"\U0001f464 {c['full_name']}\n\U0001f4de {c['phone']}"
-            items.append(label)
-            self._completer_cache[label] = c
-        self._completer_model.setStringList(items)
+            item = QStandardItem(label)
+            item.setData(c['id'], Qt.UserRole)
+            self._completer_model.appendRow(item)
 
-    def _on_completer_activated(self, text):
-        customer = self._completer_cache.get(text)
-        if not customer:
-            customer = self._resolve_customer_from_display(text)
+    def _on_completer_activated(self, index):
+        proxy = self._completer.completionModel()
+        source_index = proxy.mapToSource(index)
+        item = self._completer_model.itemFromIndex(source_index)
+        if not item:
+            return
+        customer_id = item.data(Qt.UserRole)
+        if not customer_id:
+            return
+        customer = self._customer_service.get_customer(customer_id)
         if not customer:
             return
-        self._skip_next_search = True
-        self._populate_customer_fields(customer)
+        self.populate_customer_fields(customer)
 
-    def _resolve_customer_from_display(self, text):
-        phone = ''
-        name = ''
-        if '\n' in text:
-            lines = text.split('\n')
-            if len(lines) > 0 and lines[0].startswith('\U0001f464 '):
-                name = lines[0][2:]
-            if len(lines) > 1 and lines[1].startswith('\U0001f4de '):
-                phone = lines[1][2:]
-        if phone:
-            return self._customer_service.find_by_phone(phone)
-        if name:
-            return self._customer_service.find_by_full_name(name)
-        return None
-
-    def _populate_customer_fields(self, customer):
+    def populate_customer_fields(self, customer):
         self.customer_name_input.blockSignals(True)
         self.customer_name_input.setText(customer.get('full_name', ''))
         self.customer_name_input.blockSignals(False)
         self.phone_input.setText(customer.get('phone', ''))
-        if customer.get('email'):
-            self.email_input.setText(customer['email'])
-        if customer.get('address'):
-            self.address_input.setText(customer['address'])
-        if customer.get('city'):
-            self.city_input.setText(customer['city'])
-        if customer.get('province'):
-            self.province_input.setText(customer['province'])
-        if customer.get('postal_code'):
-            self.postal_code_input.setText(customer['postal_code'])
-        if customer.get('website'):
-            self.website_input.setText(customer['website'])
-        if customer.get('national_id'):
-            self.national_id_input.setText(customer['national_id'])
-        if customer.get('notes'):
-            self.notes_input.setPlainText(customer['notes'])
+        self.email_input.setText(customer.get('email', ''))
+        self.website_input.setText(customer.get('website', ''))
+        self.national_id_input.setText(customer.get('national_id', ''))
+        self.address_input.setText(customer.get('address', ''))
+        self.city_input.setText(customer.get('city', ''))
+        self.province_input.setText(customer.get('province', ''))
+        self.postal_code_input.setText(customer.get('postal_code', ''))
+        self.notes_input.setPlainText(customer.get('notes', ''))
 
     def _connect_auto_fill(self):
         self.phone_input.editingFinished.connect(self._on_phone_editing_finished)
@@ -321,7 +299,7 @@ class RepairDialog(QDialog):
         if not customer:
             return
         self.phone_input.blockSignals(True)
-        self._populate_customer_fields(customer)
+        self.populate_customer_fields(customer)
         self.phone_input.blockSignals(False)
 
     def validate_and_accept(self):
@@ -339,11 +317,12 @@ class RepairDialog(QDialog):
         if phone:
             existing = self._customer_service.find_by_phone(phone)
             if existing:
-                self._populate_customer_fields(existing)
+                self.populate_customer_fields(existing)
                 self.accept()
                 return
-            existing = self._customer_service.find_by_full_name(full_name)
-            if existing:
+            existing_list = self._customer_service.find_by_full_name(full_name)
+            if existing_list:
+                existing = existing_list[0]
                 self.customer_name_input.setText(existing.get('full_name', ''))
                 self.phone_input.setText(existing.get('phone', ''))
                 self.accept()
@@ -353,15 +332,23 @@ class RepairDialog(QDialog):
             self.accept()
             return
         if full_name:
-            existing = self._customer_service.find_by_full_name(full_name)
-            if existing:
+            current_phone = self.phone_input.text().strip()
+            if current_phone:
+                existing = self._customer_service.find_by_phone(current_phone)
+                if existing:
+                    self.populate_customer_fields(existing)
+                    self.accept()
+                    return
+            existing_list = self._customer_service.find_by_full_name(full_name)
+            if existing_list:
+                existing = existing_list[0]
                 confirmed = show_question(
                     self,
                     "مشتری مشابه",
                     "مشتری مشابهی وجود دارد.\nاز همان مشتری استفاده شود؟"
                 )
                 if confirmed:
-                    self._populate_customer_fields(existing)
+                    self.populate_customer_fields(existing)
                     self.accept()
                     return
             customer_data = self._get_customer_data()

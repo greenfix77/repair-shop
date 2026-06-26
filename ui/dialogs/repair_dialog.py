@@ -3,7 +3,18 @@ from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                               QDoubleSpinBox, QComboBox, QLabel, QPushButton,
                               QCompleter, QStyledItemDelegate)
 from PyQt5.QtCore import Qt, QTimer, QStringListModel, QRegularExpression
-from PyQt5.QtGui import QFont, QRegularExpressionValidator, QColor, QStyle
+from PyQt5.QtGui import (
+    QFont,
+    QRegularExpressionValidator,
+    QColor,
+)
+
+from PyQt5.QtWidgets import (
+    QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
+    QTabWidget, QWidget, QLineEdit, QTextEdit, QSpinBox,
+    QDoubleSpinBox, QComboBox, QLabel, QPushButton,
+    QCompleter, QStyledItemDelegate, QStyle
+)
 
 from services.notification_service import show_warning
 from core.status import ALL_STATUSES, STATUS_PENDING
@@ -222,7 +233,7 @@ class RepairDialog(QDialog):
         self._completer.setCaseSensitivity(Qt.CaseInsensitive)
         self._completer.setFilterMode(Qt.MatchContains)
         self._completer.setModel(self._completer_model)
-        self._completer.setPopupMode(QCompleter.UnfilteredPopup)
+        self._completer.setCompletionMode(QCompleter.PopupCompletion)
         delegate = CompleterItemDelegate()
         self._completer.popup().setItemDelegate(delegate)
         self._completer.popup().setLayoutDirection(Qt.RightToLeft)

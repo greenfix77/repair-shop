@@ -267,8 +267,28 @@ class RepairDialog(QDialog):
     def _on_completer_activated(self, text):
         customer = self._completer_cache.get(text)
         if not customer:
+            customer = self._resolve_customer_from_display(text)
+        if not customer:
             return
         self._skip_next_search = True
+        self._populate_customer_fields(customer)
+
+    def _resolve_customer_from_display(self, text):
+        phone = ''
+        name = ''
+        if '\n' in text:
+            lines = text.split('\n')
+            if len(lines) > 0 and lines[0].startswith('\U0001f464 '):
+                name = lines[0][2:]
+            if len(lines) > 1 and lines[1].startswith('\U0001f4de '):
+                phone = lines[1][2:]
+        if phone:
+            return self._customer_service.find_by_phone(phone)
+        if name:
+            return self._customer_service.find_by_full_name(name)
+        return None
+
+    def _populate_customer_fields(self, customer):
         self.customer_name_input.blockSignals(True)
         self.customer_name_input.setText(customer.get('full_name', ''))
         self.customer_name_input.blockSignals(False)
@@ -301,23 +321,7 @@ class RepairDialog(QDialog):
         if not customer:
             return
         self.phone_input.blockSignals(True)
-        self.customer_name_input.setText(customer.get('full_name', ''))
-        if customer.get('email'):
-            self.email_input.setText(customer['email'])
-        if customer.get('website'):
-            self.website_input.setText(customer['website'])
-        if customer.get('national_id'):
-            self.national_id_input.setText(customer['national_id'])
-        if customer.get('address'):
-            self.address_input.setText(customer['address'])
-        if customer.get('city'):
-            self.city_input.setText(customer['city'])
-        if customer.get('province'):
-            self.province_input.setText(customer['province'])
-        if customer.get('postal_code'):
-            self.postal_code_input.setText(customer['postal_code'])
-        if customer.get('notes'):
-            self.notes_input.setPlainText(customer['notes'])
+        self._populate_customer_fields(customer)
         self.phone_input.blockSignals(False)
 
     def validate_and_accept(self):
@@ -329,9 +333,19 @@ class RepairDialog(QDialog):
             return
         phone = self.phone_input.text().strip()
         full_name = self.customer_name_input.text().strip()
+        full_name = self._sanitize_display_name(full_name)
+        if full_name != self.customer_name_input.text().strip():
+            self.customer_name_input.setText(full_name)
         if phone:
             existing = self._customer_service.find_by_phone(phone)
             if existing:
+                self._populate_customer_fields(existing)
+                self.accept()
+                return
+            existing = self._customer_service.find_by_full_name(full_name)
+            if existing:
+                self.customer_name_input.setText(existing.get('full_name', ''))
+                self.phone_input.setText(existing.get('phone', ''))
                 self.accept()
                 return
             customer_data = self._get_customer_data()
@@ -347,6 +361,7 @@ class RepairDialog(QDialog):
                     "مشتری مشابهی وجود دارد.\nاز همان مشتری استفاده شود؟"
                 )
                 if confirmed:
+                    self._populate_customer_fields(existing)
                     self.accept()
                     return
             customer_data = self._get_customer_data()
@@ -354,6 +369,14 @@ class RepairDialog(QDialog):
             self.accept()
             return
         self.accept()
+
+    @staticmethod
+    def _sanitize_display_name(name):
+        if '\n' in name:
+            lines = name.split('\n')
+            if lines and lines[0].startswith('\U0001f464 '):
+                return lines[0][2:]
+        return name
 
     def _get_customer_data(self):
         return {

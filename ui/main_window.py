@@ -96,7 +96,7 @@ def build_header(window):
     window.status_btn.setStyleSheet("""
         QPushButton {
             background: transparent;
-            border: 1px solid rgba(255,255,255,0.20);
+            border: none;
             border-radius: 6px;
             color: white;
             font-size: 8pt;

@@ -14,7 +14,7 @@ from core.status import (
     STATUS_FG_COLORS
 )
 from repair_manager.ui.components import PersianCalendarWidget, PersianDateEdit
-from core.storage.dual_storage import DualStorage
+from core.storage.sqlite_storage import SQLiteStorage
 from services.statistics import update_statistics
 from services.repair_manager_service import add_repair, delete_repair, get_repair_by_id, update_repair
 from services.date_service import today_persian
@@ -75,7 +75,7 @@ class LaptopRepairManager(QMainWindow):
     
     def __init__(self):
         super().__init__()
-        self.storage = DualStorage()
+        self.storage = SQLiteStorage()
         self.repairs = []
         self.controller = MainController()
         self.load_data()

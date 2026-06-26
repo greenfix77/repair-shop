@@ -20,6 +20,13 @@ def test_customer_service():
     assert service.generate_customer_code() == 'C000001'
     print("[PASS] generate_customer_code -> C000001")
 
+    # get_or_create_customer — missing phone raises
+    try:
+        service.get_or_create_customer({'full_name': 'No Phone'})
+        assert False, "should have raised ValueError"
+    except ValueError:
+        print("[PASS] get_or_create_customer (no phone) -> ValueError")
+
     # Create first customer
     c1 = service.get_or_create_customer({
         'full_name': 'Alice',
@@ -81,6 +88,16 @@ def test_customer_service():
     found = service.find_customer('NONEXISTENT')
     assert found is None
     print("[PASS] find_customer (unknown) -> None")
+
+    # get_customer
+    got = service.get_customer(c1['id'])
+    assert got is not None and got['full_name'] == 'Alice'
+    print(f"[PASS] get_customer -> {got['full_name']}")
+
+    # get_customer returns None for unknown id
+    got = service.get_customer(99999)
+    assert got is None
+    print("[PASS] get_customer (unknown) -> None")
 
     # update_customer
     updated = service.update_customer(c1['id'], {'full_name': 'Alice Smith'})

@@ -31,22 +31,35 @@ class CustomerService:
     def resolve_customer(self, customer_data: Dict, confirm_callback=None) -> Optional[Dict]:
         """Single entry point for all customer resolution.
 
-        Handles lookup by phone, lookup by name, duplicate detection,
-        confirmation requirements, and customer creation.
+        Decision order:
+          1. Normalize input (trim whitespace, convert empty to None).
+          2. Phone lookup — if phone present, search by phone and return
+             existing immediately. Never create from this path.
+          3. No phone — skip phone lookup. Continue with name resolution.
+          4. Exact name match — if found, ask user to reuse. If yes,
+             return existing. If no, continue.
+          5. Similar names — search with LIKE. If similar names exist,
+             show confirmation. User may continue or cancel.
+          6. Only then — create a new customer.
 
         Args:
             customer_data: Form data dict with customer fields.
             confirm_callback: Optional callable(title, message) -> bool.
-                              Called when a name match is found but phone
-                              does not match or is absent. Return True to
-                              reuse the existing customer.
+                              Return True to confirm/reuse, False to decline.
 
         Returns:
             Customer dict (existing or newly created), or None if no
-            identifying data (phone or full_name) was provided.
+            identifying data was provided or user cancelled.
         """
         phone = customer_data.get('phone', '').strip()
         full_name = customer_data.get('full_name', '').strip()
+
+        if not phone:
+            phone = None
+            customer_data['phone'] = ''
+
+        if not full_name:
+            full_name = None
 
         if not phone and not full_name:
             return None
@@ -69,6 +82,23 @@ class CustomerService:
                         return existing
                 else:
                     return existing
+
+            similar = self._repo.search(full_name)
+            similar = [
+                c for c in similar
+                if c.get('full_name', '').strip() != full_name
+            ]
+            if similar:
+                if confirm_callback:
+                    names = '\n'.join(
+                        c.get('full_name', '') for c in similar[:5]
+                    )
+                    proceed = confirm_callback(
+                        "نام‌های مشابه",
+                        f"نام‌های مشابهی یافت شد:\n{names}\n\nآیا ادامه می‌دهید؟"
+                    )
+                    if not proceed:
+                        return None
 
         customer_data['customer_code'] = self.generate_customer_code()
         return self._repo.create(customer_data)

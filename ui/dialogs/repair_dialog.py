@@ -234,8 +234,8 @@ class RepairDialog(QDialog):
         self._completer.setFilterMode(Qt.MatchContains)
         self._completer.setModel(self._completer_model)
         self._completer.setCompletionMode(QCompleter.PopupCompletion)
-        delegate = CompleterItemDelegate()
-        self._completer.popup().setItemDelegate(delegate)
+        self._completer_delegate = CompleterItemDelegate()
+        self._completer.popup().setItemDelegate(self._completer_delegate)
         self._completer.popup().setLayoutDirection(Qt.RightToLeft)
         self._completer.activated.connect(self._on_completer_activated)
 
@@ -243,6 +243,7 @@ class RepairDialog(QDialog):
         self.customer_name_input.textChanged.connect(self._on_name_text_changed)
 
     def _on_name_text_changed(self, text):
+        self._completer.setCompletionPrefix(text)
         self._completer_timer.start(250)
 
     def _on_completer_search(self):

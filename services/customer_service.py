@@ -28,20 +28,56 @@ class CustomerService:
         customer_data['customer_code'] = self.generate_customer_code()
         return self._repo.create(customer_data)
 
-    def find_customer(self, query: str) -> Optional[Dict]:
-        """Find a single customer by phone or customer_code.
+    def resolve_customer(self, customer_data: Dict, confirm_callback=None) -> Optional[Dict]:
+        """Single entry point for all customer resolution.
 
-        Designed for future extension: additional search fields
-        (name, email, serial_number, repair_id, notes, etc.) can be
-        added here without changing any caller.
+        Handles lookup by phone, lookup by name, duplicate detection,
+        confirmation requirements, and customer creation.
+
+        Args:
+            customer_data: Form data dict with customer fields.
+            confirm_callback: Optional callable(title, message) -> bool.
+                              Called when a name match is found but phone
+                              does not match or is absent. Return True to
+                              reuse the existing customer.
+
+        Returns:
+            Customer dict (existing or newly created), or None if no
+            identifying data (phone or full_name) was provided.
         """
-        result = self._repo.get_by_phone(query)
-        if result:
-            return result
-        result = self._repo.get_by_code(query)
-        if result:
-            return result
-        return None
+        phone = customer_data.get('phone', '').strip()
+        full_name = customer_data.get('full_name', '').strip()
+
+        if not phone and not full_name:
+            return None
+
+        if phone:
+            existing = self._repo.get_by_phone(phone)
+            if existing:
+                return existing
+
+        if full_name:
+            exact = self.find_by_full_name(full_name)
+            if exact:
+                existing = exact[0]
+                if confirm_callback:
+                    confirmed = confirm_callback(
+                        "مشتری مشابه",
+                        "مشتری مشابهی وجود دارد.\nاز همان مشتری استفاده شود؟"
+                    )
+                    if confirmed:
+                        return existing
+                else:
+                    return existing
+
+        customer_data['customer_code'] = self.generate_customer_code()
+        return self._repo.create(customer_data)
+
+    def find_customer(self, query: str) -> Optional[Dict]:
+        """Find a single customer by phone."""
+        if not query:
+            return None
+        return self._repo.get_by_phone(query)
 
     def find_by_phone(self, phone: str) -> Optional[Dict]:
         if not phone:

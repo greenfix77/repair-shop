@@ -309,52 +309,19 @@ class RepairDialog(QDialog):
         if self.repair_data:
             self.accept()
             return
-        phone = self.phone_input.text().strip()
-        full_name = self.customer_name_input.text().strip()
-        full_name = self._sanitize_display_name(full_name)
-        if full_name != self.customer_name_input.text().strip():
-            self.customer_name_input.setText(full_name)
-        if phone:
-            existing = self._customer_service.find_by_phone(phone)
-            if existing:
-                self.populate_customer_fields(existing)
-                self.accept()
-                return
-            existing_list = self._customer_service.find_by_full_name(full_name)
-            if existing_list:
-                existing = existing_list[0]
-                self.customer_name_input.setText(existing.get('full_name', ''))
-                self.phone_input.setText(existing.get('phone', ''))
-                self.accept()
-                return
-            customer_data = self._get_customer_data()
-            self._customer_service.create_customer(customer_data)
+
+        customer_data = self._get_customer_data()
+
+        if not customer_data.get('phone') and not customer_data.get('full_name'):
             self.accept()
             return
-        if full_name:
-            current_phone = self.phone_input.text().strip()
-            if current_phone:
-                existing = self._customer_service.find_by_phone(current_phone)
-                if existing:
-                    self.populate_customer_fields(existing)
-                    self.accept()
-                    return
-            existing_list = self._customer_service.find_by_full_name(full_name)
-            if existing_list:
-                existing = existing_list[0]
-                confirmed = show_question(
-                    self,
-                    "مشتری مشابه",
-                    "مشتری مشابهی وجود دارد.\nاز همان مشتری استفاده شود؟"
-                )
-                if confirmed:
-                    self.populate_customer_fields(existing)
-                    self.accept()
-                    return
-            customer_data = self._get_customer_data()
-            self._customer_service.create_customer(customer_data)
-            self.accept()
-            return
+
+        customer = self._customer_service.resolve_customer(
+            customer_data,
+            confirm_callback=lambda title, msg: show_question(self, title, msg)
+        )
+        if customer:
+            self.populate_customer_fields(customer)
         self.accept()
 
     @staticmethod

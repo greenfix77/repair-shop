@@ -43,6 +43,20 @@ class CustomerService:
             return result
         return None
 
+    def find_by_phone(self, phone: str) -> Optional[Dict]:
+        if not phone:
+            return None
+        return self._repo.get_by_phone(phone)
+
+    def find_by_full_name(self, full_name: str) -> Optional[Dict]:
+        if not full_name:
+            return None
+        customers = self._repo.search(full_name)
+        for c in customers:
+            if c.get('full_name', '').strip() == full_name.strip():
+                return c
+        return None
+
     def search_customers(self, query: str) -> List[Dict]:
         """Search customers by full_name or phone (contains, case-insensitive).
 
@@ -61,6 +75,10 @@ class CustomerService:
     def update_customer(self, customer_id: int, data: Dict) -> Optional[Dict]:
         """Update customer fields. Returns updated dict or None if not found."""
         return self._repo.update(customer_id, data)
+
+    def create_customer(self, customer_data: Dict) -> Dict:
+        customer_data['customer_code'] = self.generate_customer_code()
+        return self._repo.create(customer_data)
 
     def get_all_customers(self) -> List[Dict]:
         """Return every customer as a list of dicts."""

@@ -411,3 +411,17 @@ Default action:
 Commit current changes first.
 
 Never continue on a dirty worktree without explicit instruction.
+
+# PYQT VERSION POLICY
+
+Current UI framework:
+
+PyQt5
+
+Rules:
+
+- All new code must compile and run on PyQt5.
+- Avoid Qt-version-specific implementations when a version-neutral solution exists.
+- Prefer APIs that are compatible with both PyQt5 and PyQt6.
+- Do not introduce Qt6-only APIs.
+- Keep future migration to PyQt6/PySide6 straightforward.

@@ -16,7 +16,7 @@ from PyQt5.QtWidgets import (
     QCompleter, QStyledItemDelegate, QStyle
 )
 
-from services.notification_service import show_warning
+from services.notification_service import show_warning, show_question
 from core.status import ALL_STATUSES, STATUS_PENDING
 from repair_manager.ui.components import PersianDateEdit
 from services.invoice_calculator import calculate_invoice_totals
@@ -322,7 +322,50 @@ class RepairDialog(QDialog):
         if self.phone_input.text() and not self.phone_input.hasAcceptableInput():
             show_warning(self, "خطا", "شماره تلفن باید ۱۱ رقم و با ۰ شروع شود")
             return
+        if self.repair_data:
+            self.accept()
+            return
+        phone = self.phone_input.text().strip()
+        full_name = self.customer_name_input.text().strip()
+        if phone:
+            existing = self._customer_service.find_by_phone(phone)
+            if existing:
+                self.accept()
+                return
+            customer_data = self._get_customer_data()
+            self._customer_service.create_customer(customer_data)
+            self.accept()
+            return
+        if full_name:
+            existing = self._customer_service.find_by_full_name(full_name)
+            if existing:
+                confirmed = show_question(
+                    self,
+                    "مشتری مشابه",
+                    "مشتری مشابهی وجود دارد.\nاز همان مشتری استفاده شود؟"
+                )
+                if confirmed:
+                    self.accept()
+                    return
+            customer_data = self._get_customer_data()
+            self._customer_service.create_customer(customer_data)
+            self.accept()
+            return
         self.accept()
+
+    def _get_customer_data(self):
+        return {
+            'full_name': self.customer_name_input.text().strip(),
+            'phone': self.phone_input.text().strip(),
+            'email': self.email_input.text().strip(),
+            'website': self.website_input.text().strip(),
+            'national_id': self.national_id_input.text().strip(),
+            'address': self.address_input.text().strip(),
+            'city': self.city_input.text().strip(),
+            'province': self.province_input.text().strip(),
+            'postal_code': self.postal_code_input.text().strip(),
+            'notes': self.notes_input.toPlainText().strip(),
+        }
 
     def calculate_total(self, value):
         """محاسبه مجموع هزینه‌ها"""

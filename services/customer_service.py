@@ -43,6 +43,17 @@ class CustomerService:
             return result
         return None
 
+    def search_customers(self, query: str) -> List[Dict]:
+        """Search customers by full_name or phone (contains, case-insensitive).
+
+        Designed for future extension: additional fields (customer_code,
+        email, serial_number, repair_id, notes) can be added here
+        without changing callers.
+        """
+        if not query or len(query) < 2:
+            return []
+        return self._repo.search(query)
+
     def get_customer(self, customer_id: int) -> Optional[Dict]:
         """Get a single customer by primary key."""
         return self._repo.get_by_id(customer_id)

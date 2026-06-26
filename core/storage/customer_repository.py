@@ -114,6 +114,18 @@ class CustomerRepository:
         finally:
             session.close()
 
+    def search(self, query: str) -> List[Dict]:
+        session = SessionLocal()
+        try:
+            pattern = f'%{query}%'
+            rows = session.query(CustomerDB).filter(
+                CustomerDB.full_name.ilike(pattern) |
+                CustomerDB.phone.ilike(pattern)
+            ).all()
+            return [self._to_dict(row) for row in rows]
+        finally:
+            session.close()
+
     @staticmethod
     def _to_dict(row: CustomerDB) -> Dict:
         return {

@@ -1,14 +1,41 @@
 from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                               QTabWidget, QWidget, QLineEdit, QTextEdit, QSpinBox,
-                              QDoubleSpinBox, QComboBox, QLabel, QPushButton)
-from PyQt5.QtCore import QRegularExpression
-from PyQt5.QtGui import QFont, QRegularExpressionValidator
+                              QDoubleSpinBox, QComboBox, QLabel, QPushButton,
+                              QCompleter, QStyledItemDelegate)
+from PyQt5.QtCore import Qt, QTimer, QStringListModel, QRegularExpression
+from PyQt5.QtGui import QFont, QRegularExpressionValidator, QColor, QStyle
 
 from services.notification_service import show_warning
 from core.status import ALL_STATUSES, STATUS_PENDING
 from repair_manager.ui.components import PersianDateEdit
 from services.invoice_calculator import calculate_invoice_totals
 from services.customer_service import CustomerService
+
+
+class CompleterItemDelegate(QStyledItemDelegate):
+    def paint(self, painter, option, index):
+        text = index.data(Qt.DisplayRole) or ''
+        painter.save()
+        if option.state & QStyle.State_Selected:
+            painter.fillRect(option.rect, option.palette.highlight())
+        rect = option.rect.adjusted(8, 4, -8, -4)
+        lines = text.split('\n')
+        font = painter.font()
+        if lines:
+            f = QFont(font)
+            f.setPointSize(font.pointSize() + 1)
+            painter.setFont(f)
+            painter.drawText(rect, Qt.AlignRight | Qt.AlignBottom, lines[0])
+        if len(lines) > 1:
+            f = QFont(font)
+            f.setPointSize(font.pointSize() - 1)
+            painter.setFont(f)
+            painter.setPen(QColor('#666666'))
+            painter.drawText(rect, Qt.AlignRight | Qt.AlignTop, lines[1])
+        painter.restore()
+
+    def sizeHint(self, option, index):
+        return option.widget.fontMetrics().height() * 2 + 12
 
 
 class RepairDialog(QDialog):
@@ -18,12 +45,15 @@ class RepairDialog(QDialog):
         super().__init__(parent)
         self.repair_data = repair_data
         self._customer_service = CustomerService()
+        self._completer_cache = {}
+        self._skip_next_search = False
 
         self.setWindowTitle("ثبت/ویرایش تعمیر")
         self.setModal(True)
         self.setMinimumSize(700, 600)
 
         self.init_ui()
+        self._init_customer_completer()
         self._connect_auto_fill()
 
         if repair_data:
@@ -112,6 +142,40 @@ class RepairDialog(QDialog):
 
         financial_tab.setLayout(financial_layout)
 
+        # تب اطلاعات مشتری
+        customer_tab = QWidget()
+        customer_layout = QGridLayout()
+
+        customer_layout.addWidget(QLabel("ایمیل:"), 0, 0)
+        self.email_input = QLineEdit()
+        customer_layout.addWidget(self.email_input, 0, 1)
+
+        customer_layout.addWidget(QLabel("وبسایت:"), 1, 0)
+        self.website_input = QLineEdit()
+        customer_layout.addWidget(self.website_input, 1, 1)
+
+        customer_layout.addWidget(QLabel("کد ملی:"), 2, 0)
+        self.national_id_input = QLineEdit()
+        customer_layout.addWidget(self.national_id_input, 2, 1)
+
+        customer_layout.addWidget(QLabel("آدرس:"), 3, 0)
+        self.address_input = QLineEdit()
+        customer_layout.addWidget(self.address_input, 3, 1)
+
+        customer_layout.addWidget(QLabel("شهر:"), 4, 0)
+        self.city_input = QLineEdit()
+        customer_layout.addWidget(self.city_input, 4, 1)
+
+        customer_layout.addWidget(QLabel("استان:"), 5, 0)
+        self.province_input = QLineEdit()
+        customer_layout.addWidget(self.province_input, 5, 1)
+
+        customer_layout.addWidget(QLabel("کدپستی:"), 6, 0)
+        self.postal_code_input = QLineEdit()
+        customer_layout.addWidget(self.postal_code_input, 6, 1)
+
+        customer_tab.setLayout(customer_layout)
+
         # تب یادداشت و گارانتی
         notes_tab = QWidget()
         notes_layout = QGridLayout()
@@ -128,6 +192,7 @@ class RepairDialog(QDialog):
         notes_tab.setLayout(notes_layout)
 
         tabs.addTab(main_tab, "اطلاعات اصلی")
+        tabs.addTab(customer_tab, "اطلاعات مشتری")
         tabs.addTab(financial_tab, "اطلاعات مالی")
         tabs.addTab(notes_tab, "یادداشت و گارانتی")
 
@@ -147,6 +212,71 @@ class RepairDialog(QDialog):
 
         self.setLayout(layout)
 
+    def _init_customer_completer(self):
+        self._completer_timer = QTimer()
+        self._completer_timer.setSingleShot(True)
+        self._completer_timer.timeout.connect(self._on_completer_search)
+
+        self._completer_model = QStringListModel()
+        self._completer = QCompleter()
+        self._completer.setCaseSensitivity(Qt.CaseInsensitive)
+        self._completer.setFilterMode(Qt.MatchContains)
+        self._completer.setModel(self._completer_model)
+        self._completer.setPopupMode(QCompleter.UnfilteredPopup)
+        delegate = CompleterItemDelegate()
+        self._completer.popup().setItemDelegate(delegate)
+        self._completer.popup().setLayoutDirection(Qt.RightToLeft)
+        self._completer.activated.connect(self._on_completer_activated)
+
+        self.customer_name_input.setCompleter(self._completer)
+        self.customer_name_input.textChanged.connect(self._on_name_text_changed)
+
+    def _on_name_text_changed(self, text):
+        self._completer_timer.start(250)
+
+    def _on_completer_search(self):
+        text = self.customer_name_input.text().strip()
+        if len(text) < 2:
+            self._completer_model.setStringList([])
+            return
+        if self._skip_next_search:
+            self._skip_next_search = False
+            return
+        customers = self._customer_service.search_customers(text)
+        items = []
+        self._completer_cache = {}
+        for c in customers:
+            label = f"\U0001f464 {c['full_name']}\n\U0001f4de {c['phone']}"
+            items.append(label)
+            self._completer_cache[label] = c
+        self._completer_model.setStringList(items)
+
+    def _on_completer_activated(self, text):
+        customer = self._completer_cache.get(text)
+        if not customer:
+            return
+        self._skip_next_search = True
+        self.customer_name_input.blockSignals(True)
+        self.customer_name_input.setText(customer.get('full_name', ''))
+        self.customer_name_input.blockSignals(False)
+        self.phone_input.setText(customer.get('phone', ''))
+        if customer.get('email'):
+            self.email_input.setText(customer['email'])
+        if customer.get('address'):
+            self.address_input.setText(customer['address'])
+        if customer.get('city'):
+            self.city_input.setText(customer['city'])
+        if customer.get('province'):
+            self.province_input.setText(customer['province'])
+        if customer.get('postal_code'):
+            self.postal_code_input.setText(customer['postal_code'])
+        if customer.get('website'):
+            self.website_input.setText(customer['website'])
+        if customer.get('national_id'):
+            self.national_id_input.setText(customer['national_id'])
+        if customer.get('notes'):
+            self.notes_input.setPlainText(customer['notes'])
+
     def _connect_auto_fill(self):
         self.phone_input.editingFinished.connect(self._on_phone_editing_finished)
 
@@ -158,8 +288,21 @@ class RepairDialog(QDialog):
         if not customer:
             return
         self.phone_input.blockSignals(True)
-        if customer.get('full_name'):
-            self.customer_name_input.setText(customer['full_name'])
+        self.customer_name_input.setText(customer.get('full_name', ''))
+        if customer.get('email'):
+            self.email_input.setText(customer['email'])
+        if customer.get('website'):
+            self.website_input.setText(customer['website'])
+        if customer.get('national_id'):
+            self.national_id_input.setText(customer['national_id'])
+        if customer.get('address'):
+            self.address_input.setText(customer['address'])
+        if customer.get('city'):
+            self.city_input.setText(customer['city'])
+        if customer.get('province'):
+            self.province_input.setText(customer['province'])
+        if customer.get('postal_code'):
+            self.postal_code_input.setText(customer['postal_code'])
         if customer.get('notes'):
             self.notes_input.setPlainText(customer['notes'])
         self.phone_input.blockSignals(False)

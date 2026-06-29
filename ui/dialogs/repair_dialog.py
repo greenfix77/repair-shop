@@ -22,7 +22,7 @@ from services.notification_service import show_warning, show_question
 from core.status import ALL_STATUSES, STATUS_PENDING
 from repair_manager.ui.components import PersianDateEdit
 from services.invoice_calculator import calculate_invoice_totals
-from services.customer_service import CustomerService
+from services.customer_workflow import CustomerWorkflow
 
 
 class CompleterItemDelegate(QStyledItemDelegate):
@@ -58,7 +58,7 @@ class RepairDialog(QDialog):
     def __init__(self, repair_data=None, parent=None):
         super().__init__(parent)
         self.repair_data = repair_data
-        self._customer_service = CustomerService()
+        self._workflow = CustomerWorkflow()
 
         self.setWindowTitle("ثبت/ویرایش تعمیر")
         self.setModal(True)
@@ -252,7 +252,7 @@ class RepairDialog(QDialog):
         if len(text) < 2:
             self._completer_model.clear()
             return
-        customers = self._customer_service.search_customers(text)
+        customers = self._workflow.search_customers(text)
         self._completer_model.clear()
         for c in customers:
             phone_line = c['phone'] if c.get('phone') else ''
@@ -265,24 +265,10 @@ class RepairDialog(QDialog):
         customer_id = index.data(Qt.UserRole)
         if not customer_id:
             return
-        customer = self._customer_service.get_customer(customer_id)
+        customer = self._workflow.get_customer(customer_id)
         if not customer:
             return
-        self.populate_customer_fields(customer)
-
-    def populate_customer_fields(self, customer):
-        self.customer_name_input.blockSignals(True)
-        self.customer_name_input.setText(customer.get('full_name', ''))
-        self.customer_name_input.blockSignals(False)
-        self.phone_input.setText(customer.get('phone', ''))
-        self.email_input.setText(customer.get('email', ''))
-        self.website_input.setText(customer.get('website', ''))
-        self.national_id_input.setText(customer.get('national_id', ''))
-        self.address_input.setText(customer.get('address', ''))
-        self.city_input.setText(customer.get('city', ''))
-        self.province_input.setText(customer.get('province', ''))
-        self.postal_code_input.setText(customer.get('postal_code', ''))
-        self.notes_input.setPlainText(customer.get('notes', ''))
+        self._workflow.populate_fields(self, customer)
 
     def _connect_auto_fill(self):
         self.phone_input.editingFinished.connect(self._on_phone_editing_finished)
@@ -291,17 +277,17 @@ class RepairDialog(QDialog):
         phone = self.phone_input.text()
         if not phone or not self.phone_input.hasAcceptableInput():
             return
-        found = self._customer_service.find_customer(phone)
+        found = self._workflow.find_customer_by_phone(phone)
         if not found:
             return
         customer_id = found.get('id')
         if not customer_id:
             return
-        customer = self._customer_service.get_customer(customer_id)
+        customer = self._workflow.get_customer(customer_id)
         if not customer:
             return
         self.phone_input.blockSignals(True)
-        self.populate_customer_fields(customer)
+        self._workflow.populate_fields(self, customer)
         self.phone_input.blockSignals(False)
 
     def validate_and_accept(self):
@@ -318,12 +304,12 @@ class RepairDialog(QDialog):
             self.accept()
             return
 
-        customer = self._customer_service.resolve_customer(
+        customer = self._workflow.resolve_customer(
             customer_data,
             confirm_callback=lambda title, msg: show_question(self, title, msg)
         )
         if customer:
-            self.populate_customer_fields(customer)
+            self._workflow.populate_fields(self, customer)
         self.accept()
 
     def _get_customer_data(self):

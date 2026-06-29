@@ -13,21 +13,6 @@ class CustomerService:
     def __init__(self):
         self._repo = CustomerRepository()
 
-    def get_or_create_customer(self, customer_data: Dict) -> Dict:
-        """Return existing customer by phone, or create a new one.
-
-        Validates phone presence, prevents duplicate phones,
-        and auto-generates customer_code for new records.
-        """
-        phone = customer_data.get('phone', '')
-        if not phone:
-            raise ValueError("Phone number is required")
-        existing = self._repo.get_by_phone(phone)
-        if existing:
-            return existing
-        customer_data['customer_code'] = self.generate_customer_code()
-        return self._repo.create(customer_data)
-
     def resolve_customer(self, customer_data: Dict, confirm_callback=None) -> Optional[Dict]:
         """Single entry point for all customer resolution.
 
@@ -109,11 +94,6 @@ class CustomerService:
             return None
         return self._repo.get_by_phone(query)
 
-    def find_by_phone(self, phone: str) -> Optional[Dict]:
-        if not phone:
-            return None
-        return self._repo.get_by_phone(phone)
-
     def find_by_full_name(self, full_name: str) -> List[Dict]:
         if not full_name:
             return []
@@ -138,18 +118,6 @@ class CustomerService:
     def get_customer(self, customer_id: int) -> Optional[Dict]:
         """Get a single customer by primary key."""
         return self._repo.get_by_id(customer_id)
-
-    def update_customer(self, customer_id: int, data: Dict) -> Optional[Dict]:
-        """Update customer fields. Returns updated dict or None if not found."""
-        return self._repo.update(customer_id, data)
-
-    def create_customer(self, customer_data: Dict) -> Dict:
-        customer_data['customer_code'] = self.generate_customer_code()
-        return self._repo.create(customer_data)
-
-    def get_all_customers(self) -> List[Dict]:
-        """Return every customer as a list of dicts."""
-        return self._repo.get_all()
 
     def generate_customer_code(self) -> str:
         """Return the next customer_code in C000001, C000002, … format."""

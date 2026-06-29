@@ -255,7 +255,8 @@ class RepairDialog(QDialog):
         customers = self._customer_service.search_customers(text)
         self._completer_model.clear()
         for c in customers:
-            label = f"\U0001f464 {c['full_name']}\n\U0001f4de {c['phone']}"
+            phone_line = c['phone'] if c.get('phone') else ''
+            label = f"{c['full_name']}\n{phone_line}"
             item = QStandardItem(label)
             item.setData(c['id'], Qt.UserRole)
             self._completer_model.appendRow(item)
@@ -290,7 +291,13 @@ class RepairDialog(QDialog):
         phone = self.phone_input.text()
         if not phone or not self.phone_input.hasAcceptableInput():
             return
-        customer = self._customer_service.find_customer(phone)
+        found = self._customer_service.find_customer(phone)
+        if not found:
+            return
+        customer_id = found.get('id')
+        if not customer_id:
+            return
+        customer = self._customer_service.get_customer(customer_id)
         if not customer:
             return
         self.phone_input.blockSignals(True)
@@ -318,14 +325,6 @@ class RepairDialog(QDialog):
         if customer:
             self.populate_customer_fields(customer)
         self.accept()
-
-    @staticmethod
-    def _sanitize_display_name(name):
-        if '\n' in name:
-            lines = name.split('\n')
-            if lines and lines[0].startswith('\U0001f464 '):
-                return lines[0][2:]
-        return name
 
     def _get_customer_data(self):
         return {

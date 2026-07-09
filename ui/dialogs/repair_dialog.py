@@ -241,7 +241,7 @@ class RepairDialog(QDialog):
         self._completer.popup().setLayoutDirection(Qt.RightToLeft)
         self._completer.activated[QModelIndex].connect(self._on_completer_activated)
 
-        self.customer_name_input.setCompleter(self._completer)
+        self._completer.setWidget(self.customer_name_input)
         self.customer_name_input.textChanged.connect(self._on_name_text_changed)
 
     def _on_name_text_changed(self, text):

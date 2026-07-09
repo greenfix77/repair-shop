@@ -119,6 +119,15 @@ class CustomerService:
         """Get a single customer by primary key."""
         return self._repo.get_by_id(customer_id)
 
+    def update_customer(self, customer_id: int, customer_data: Dict) -> Optional[Dict]:
+        """Update an existing customer's data."""
+        return self._repo.update(customer_id, customer_data)
+
+    def create_customer(self, customer_data: Dict) -> Dict:
+        """Create a new customer without duplicate detection (conscious clone path)."""
+        customer_data['customer_code'] = self.generate_customer_code()
+        return self._repo.create(customer_data)
+
     def generate_customer_code(self) -> str:
         """Return the next customer_code in C000001, C000002, … format."""
         customers = self._repo.get_all()

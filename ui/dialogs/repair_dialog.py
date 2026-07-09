@@ -15,7 +15,7 @@ from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
     QTabWidget, QWidget, QLineEdit, QTextEdit, QSpinBox,
     QDoubleSpinBox, QComboBox, QLabel, QPushButton,
-    QCompleter, QStyledItemDelegate, QStyle
+    QCompleter, QStyledItemDelegate, QStyle, QMessageBox
 )
 
 from services.notification_service import show_warning, show_question
@@ -59,6 +59,7 @@ class RepairDialog(QDialog):
         super().__init__(parent)
         self.repair_data = repair_data
         self._workflow = CustomerWorkflow()
+        self._selected_customer_id = None
 
         self.setWindowTitle("ثبت/ویرایش تعمیر")
         self.setModal(True)
@@ -244,6 +245,7 @@ class RepairDialog(QDialog):
         self.customer_name_input.textChanged.connect(self._on_name_text_changed)
 
     def _on_name_text_changed(self, text):
+        self._selected_customer_id = None
         self._completer.setCompletionPrefix(text)
         self._completer_timer.start(250)
 
@@ -270,6 +272,7 @@ class RepairDialog(QDialog):
         if not customer:
             return
         self._workflow.populate_fields(self, customer)
+        self._selected_customer_id = customer_id
 
     def _connect_auto_fill(self):
         self.phone_input.editingFinished.connect(self._on_phone_editing_finished)
@@ -290,6 +293,26 @@ class RepairDialog(QDialog):
         self.phone_input.blockSignals(True)
         self._workflow.populate_fields(self, customer)
         self.phone_input.blockSignals(False)
+        self._selected_customer_id = customer_id
+
+    def _show_modification_dialog(self):
+        msg = QMessageBox(self)
+        msg.setWindowTitle("تغییر اطلاعات مشتری")
+        msg.setText(
+            "شما اطلاعات مشتری موجود را تغییر داده‌اید.\n"
+            "آیا می‌خواهید اطلاعات همین مشتری به‌روزرسانی شود\n"
+            "یا به عنوان مشتری جدید ثبت شود؟"
+        )
+        btn_update = msg.addButton("به‌روزرسانی مشتری موجود", QMessageBox.ActionRole)
+        btn_create = msg.addButton("ثبت به عنوان مشتری جدید", QMessageBox.ActionRole)
+        btn_cancel = msg.addButton("انصراف", QMessageBox.ActionRole)
+        msg.exec_()
+        clicked = msg.clickedButton()
+        if clicked == btn_update:
+            return 'update'
+        if clicked == btn_create:
+            return 'create'
+        return 'cancel'
 
     def validate_and_accept(self):
         if self.phone_input.text() and not self.phone_input.hasAcceptableInput():
@@ -304,6 +327,27 @@ class RepairDialog(QDialog):
         if not customer_data.get('phone') and not customer_data.get('full_name'):
             self.accept()
             return
+
+        if self._selected_customer_id is not None:
+            original = self._workflow.get_customer(self._selected_customer_id)
+            if original is not None:
+                if self._workflow.is_modified(original, customer_data):
+                    choice = self._show_modification_dialog()
+                    if choice == 'update':
+                        self._workflow.update_customer(
+                            self._selected_customer_id, customer_data
+                        )
+                        self.accept()
+                    elif choice == 'create':
+                        new_customer = self._workflow.create_customer(customer_data)
+                        if new_customer:
+                            self._workflow.populate_fields(self, new_customer)
+                            self.accept()
+                    return
+                else:
+                    self._workflow.populate_fields(self, original)
+                    self.accept()
+                    return
 
         customer = self._workflow.resolve_customer(
             customer_data,

@@ -2,6 +2,9 @@ from typing import List, Dict, Optional
 
 from services.customer_service import CustomerService
 
+CUSTOMER_FIELDS = ['full_name', 'phone', 'email', 'website', 'national_id',
+                   'address', 'city', 'province', 'postal_code', 'notes']
+
 
 class CustomerWorkflow:
     """Single execution path for all customer UI workflows.
@@ -62,6 +65,21 @@ class CustomerWorkflow:
             no identifying data was provided or user cancelled.
         """
         return self._service.resolve_customer(customer_data, confirm_callback)
+
+    def is_modified(self, original: Dict, form_data: Dict) -> bool:
+        """Return True if any customer field differs between original and form."""
+        for key in CUSTOMER_FIELDS:
+            if original.get(key, '') != form_data.get(key, ''):
+                return True
+        return False
+
+    def update_customer(self, customer_id: int, customer_data: Dict) -> Optional[Dict]:
+        """Update an existing customer's data."""
+        return self._service.update_customer(customer_id, customer_data)
+
+    def create_customer(self, customer_data: Dict) -> Dict:
+        """Create a new customer (conscious clone path, no duplicate detection)."""
+        return self._service.create_customer(customer_data)
 
     def populate_fields(self, form, customer: Dict) -> None:
         """Populate all customer UI fields from a customer dict.

@@ -4,7 +4,7 @@ from pathlib import Path
 from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                               QLineEdit, QTextEdit, QLabel, QPushButton,
                               QFileDialog, QSpinBox, QCheckBox, QColorDialog,
-                              QFrame)
+                              QFrame, QScrollArea, QWidget)
 from PyQt5.QtCore import Qt, QRegularExpression
 from PyQt5.QtGui import QFont, QRegularExpressionValidator, QColor
 
@@ -33,6 +33,13 @@ class ShopSettingsDialog(QDialog):
         title.setFont(QFont("Segoe UI", 14, QFont.Bold))
         title.setAlignment(Qt.AlignCenter)
         layout.addWidget(title)
+
+        # اسکرول
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll_widget = QWidget()
+        scroll_layout = QVBoxLayout(scroll_widget)
+        scroll_layout.setContentsMargins(0, 0, 0, 0)
 
         # فرم
         form_layout = QGridLayout()
@@ -168,13 +175,16 @@ class ShopSettingsDialog(QDialog):
         self._add_color_field(form_layout, "رنگ متن داشبورد:", 22, "#111827", "_status_popup_text_color")
         self._add_color_field(form_layout, "رنگ تاریخ/ساعت:", 23, "#374151", "_status_popup_datetime_color")
 
-        layout.addLayout(form_layout)
+        scroll_layout.addLayout(form_layout)
 
         # Restore defaults button
         restore_btn = QPushButton("بازگردانی تنظیمات پیش‌فرض")
         restore_btn.setStyleSheet("background-color: #FF9800; color: white; padding: 8px 20px; font-weight: bold;")
         restore_btn.clicked.connect(self.restore_defaults)
-        layout.addWidget(restore_btn)
+        scroll_layout.addWidget(restore_btn)
+
+        scroll.setWidget(scroll_widget)
+        layout.addWidget(scroll)
 
         # دکمه‌ها
         btn_layout = QHBoxLayout()

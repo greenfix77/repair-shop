@@ -241,7 +241,8 @@ class RepairDialog(QDialog):
         self._completer.popup().setLayoutDirection(Qt.RightToLeft)
         self._completer.activated[QModelIndex].connect(self._on_completer_activated)
 
-        self._completer.setWidget(self.customer_name_input)
+        self._completer.setCompletionRole(Qt.EditRole)
+        self.customer_name_input.setCompleter(self._completer)
         self.customer_name_input.textChanged.connect(self._on_name_text_changed)
 
     def _on_name_text_changed(self, text):
@@ -260,6 +261,7 @@ class RepairDialog(QDialog):
             phone_line = c['phone'] if c.get('phone') else ''
             label = f"{c['full_name']}\n{phone_line}"
             item = QStandardItem(label)
+            item.setData(c['full_name'], Qt.EditRole)
             item.setData(c['id'], Qt.UserRole)
             self._completer_model.appendRow(item)
         self._completer.setCompletionPrefix(text)
@@ -272,7 +274,7 @@ class RepairDialog(QDialog):
         if not customer:
             return
         self._workflow.populate_fields(self, customer)
-        self._selected_customer_id = customer_id
+        QTimer.singleShot(0, lambda cid=customer_id: setattr(self, '_selected_customer_id', cid))
 
     def _connect_auto_fill(self):
         self.phone_input.editingFinished.connect(self._on_phone_editing_finished)

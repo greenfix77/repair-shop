@@ -260,6 +260,7 @@ class RepairDialog(QDialog):
             item = QStandardItem(label)
             item.setData(c['id'], Qt.UserRole)
             self._completer_model.appendRow(item)
+        self._completer.setCompletionPrefix(text)
 
     def _on_completer_activated(self, index):
         customer_id = index.data(Qt.UserRole)

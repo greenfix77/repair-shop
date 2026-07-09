@@ -310,7 +310,7 @@ class RepairDialog(QDialog):
         )
         if customer:
             self._workflow.populate_fields(self, customer)
-        self.accept()
+            self.accept()
 
     def _get_customer_data(self):
         return {

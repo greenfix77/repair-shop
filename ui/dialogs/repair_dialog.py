@@ -79,46 +79,84 @@ class RepairDialog(QDialog):
 
         tabs = QTabWidget()
 
-        # تب اطلاعات اصلی
+        # تب اطلاعات اصلی (فقط تعمیر)
         main_tab = QWidget()
         main_layout = QGridLayout()
 
-        main_layout.addWidget(QLabel("نام مشتری:"), 0, 0)
-        self.customer_name_input = QLineEdit()
-        main_layout.addWidget(self.customer_name_input, 0, 1)
-
-        main_layout.addWidget(QLabel("تلفن:"), 1, 0)
-        self.phone_input = QLineEdit()
-        self.phone_input.setValidator(QRegularExpressionValidator(QRegularExpression(r'^0\d{10}$')))
-        main_layout.addWidget(self.phone_input, 1, 1)
-
-        main_layout.addWidget(QLabel("برند:"), 2, 0)
+        main_layout.addWidget(QLabel("برند:"), 0, 0)
         self.brand_input = QLineEdit()
-        main_layout.addWidget(self.brand_input, 2, 1)
+        main_layout.addWidget(self.brand_input, 0, 1)
 
-        main_layout.addWidget(QLabel("مدل:"), 3, 0)
+        main_layout.addWidget(QLabel("مدل:"), 1, 0)
         self.model_input = QLineEdit()
-        main_layout.addWidget(self.model_input, 3, 1)
+        main_layout.addWidget(self.model_input, 1, 1)
 
-        main_layout.addWidget(QLabel("ایراد:"), 4, 0)
+        main_layout.addWidget(QLabel("ایراد:"), 2, 0)
         self.issue_input = QTextEdit()
         self.issue_input.setMaximumHeight(80)
-        main_layout.addWidget(self.issue_input, 4, 1)
+        main_layout.addWidget(self.issue_input, 2, 1)
 
-        main_layout.addWidget(QLabel("وضعیت:"), 5, 0)
+        main_layout.addWidget(QLabel("وضعیت:"), 3, 0)
         self.status_input = QComboBox()
         self.status_input.addItems(ALL_STATUSES)
-        main_layout.addWidget(self.status_input, 5, 1)
+        main_layout.addWidget(self.status_input, 3, 1)
 
-        main_layout.addWidget(QLabel("تاریخ دریافت:"), 6, 0)
+        main_layout.addWidget(QLabel("تاریخ دریافت:"), 4, 0)
         self.receive_date_input = PersianDateEdit()
-        main_layout.addWidget(self.receive_date_input, 6, 1)
+        main_layout.addWidget(self.receive_date_input, 4, 1)
 
-        main_layout.addWidget(QLabel("تاریخ تحویل:"), 7, 0)
+        main_layout.addWidget(QLabel("تاریخ تحویل:"), 5, 0)
         self.delivery_date_input = PersianDateEdit()
-        main_layout.addWidget(self.delivery_date_input, 7, 1)
+        main_layout.addWidget(self.delivery_date_input, 5, 1)
 
         main_tab.setLayout(main_layout)
+
+        # تب اطلاعات مشتری
+        customer_tab = QWidget()
+        customer_layout = QGridLayout()
+
+        customer_layout.addWidget(QLabel("نام مشتری:"), 0, 0)
+        self.customer_name_input = QLineEdit()
+        customer_layout.addWidget(self.customer_name_input, 0, 1)
+
+        customer_layout.addWidget(QLabel("تلفن:"), 1, 0)
+        self.phone_input = QLineEdit()
+        self.phone_input.setValidator(QRegularExpressionValidator(QRegularExpression(r'^0\d{10}$')))
+        customer_layout.addWidget(self.phone_input, 1, 1)
+
+        customer_layout.addWidget(QLabel("ایمیل:"), 2, 0)
+        self.email_input = QLineEdit()
+        customer_layout.addWidget(self.email_input, 2, 1)
+
+        customer_layout.addWidget(QLabel("وبسایت:"), 3, 0)
+        self.website_input = QLineEdit()
+        customer_layout.addWidget(self.website_input, 3, 1)
+
+        customer_layout.addWidget(QLabel("کد ملی:"), 4, 0)
+        self.national_id_input = QLineEdit()
+        customer_layout.addWidget(self.national_id_input, 4, 1)
+
+        customer_layout.addWidget(QLabel("آدرس:"), 5, 0)
+        self.address_input = QLineEdit()
+        customer_layout.addWidget(self.address_input, 5, 1)
+
+        customer_layout.addWidget(QLabel("شهر:"), 6, 0)
+        self.city_input = QLineEdit()
+        customer_layout.addWidget(self.city_input, 6, 1)
+
+        customer_layout.addWidget(QLabel("استان:"), 7, 0)
+        self.province_input = QLineEdit()
+        customer_layout.addWidget(self.province_input, 7, 1)
+
+        customer_layout.addWidget(QLabel("کدپستی:"), 8, 0)
+        self.postal_code_input = QLineEdit()
+        customer_layout.addWidget(self.postal_code_input, 8, 1)
+
+        customer_layout.addWidget(QLabel("یادداشت‌ها:"), 9, 0)
+        self.notes_input = QTextEdit()
+        customer_layout.addWidget(self.notes_input, 9, 1)
+
+        customer_tab.setLayout(customer_layout)
 
         # تب مالی
         financial_tab = QWidget()
@@ -155,59 +193,21 @@ class RepairDialog(QDialog):
 
         financial_tab.setLayout(financial_layout)
 
-        # تب اطلاعات مشتری
-        customer_tab = QWidget()
-        customer_layout = QGridLayout()
-
-        customer_layout.addWidget(QLabel("ایمیل:"), 0, 0)
-        self.email_input = QLineEdit()
-        customer_layout.addWidget(self.email_input, 0, 1)
-
-        customer_layout.addWidget(QLabel("وبسایت:"), 1, 0)
-        self.website_input = QLineEdit()
-        customer_layout.addWidget(self.website_input, 1, 1)
-
-        customer_layout.addWidget(QLabel("کد ملی:"), 2, 0)
-        self.national_id_input = QLineEdit()
-        customer_layout.addWidget(self.national_id_input, 2, 1)
-
-        customer_layout.addWidget(QLabel("آدرس:"), 3, 0)
-        self.address_input = QLineEdit()
-        customer_layout.addWidget(self.address_input, 3, 1)
-
-        customer_layout.addWidget(QLabel("شهر:"), 4, 0)
-        self.city_input = QLineEdit()
-        customer_layout.addWidget(self.city_input, 4, 1)
-
-        customer_layout.addWidget(QLabel("استان:"), 5, 0)
-        self.province_input = QLineEdit()
-        customer_layout.addWidget(self.province_input, 5, 1)
-
-        customer_layout.addWidget(QLabel("کدپستی:"), 6, 0)
-        self.postal_code_input = QLineEdit()
-        customer_layout.addWidget(self.postal_code_input, 6, 1)
-
-        customer_tab.setLayout(customer_layout)
-
-        # تب یادداشت و گارانتی
+        # تب گارانتی
         notes_tab = QWidget()
         notes_layout = QGridLayout()
 
-        notes_layout.addWidget(QLabel("یادداشت‌ها:"), 0, 0)
-        self.notes_input = QTextEdit()
-        notes_layout.addWidget(self.notes_input, 0, 1)
-
-        notes_layout.addWidget(QLabel("گارانتی:"), 1, 0)
+        notes_layout.addWidget(QLabel("گارانتی:"), 0, 0)
         self.warranty_input = QTextEdit()
         self.warranty_input.setMaximumHeight(80)
-        notes_layout.addWidget(self.warranty_input, 1, 1)
+        notes_layout.addWidget(self.warranty_input, 0, 1)
 
         notes_tab.setLayout(notes_layout)
 
         tabs.addTab(main_tab, "اطلاعات اصلی")
         tabs.addTab(customer_tab, "اطلاعات مشتری")
         tabs.addTab(financial_tab, "اطلاعات مالی")
-        tabs.addTab(notes_tab, "یادداشت و گارانتی")
+        tabs.addTab(notes_tab, "گارانتی")
 
         layout.addWidget(tabs)
 

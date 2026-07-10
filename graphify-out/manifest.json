@@ -15,8 +15,8 @@
     "semantic_hash": "111287aed37970b605d3ab422d1c93ec"
   },
   "app.py": {
-    "mtime": 1783667018.1668892,
-    "ast_hash": "25b8bc531bf757adec9678a05c32cc13",
+    "mtime": 1783672514.3476295,
+    "ast_hash": "caf8cc7182d770f22b71f152162eb676",
     "semantic_hash": ""
   },
   "controllers/__init__.py": {
@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   "ui/main_window.py": {
-    "mtime": 1783666859.192669,
-    "ast_hash": "0cc8d3695a21650343eef6c14f401ab5",
+    "mtime": 1783671395.304423,
+    "ast_hash": "6d3a0bad1963481da3cde231c6fa0cdc",
     "semantic_hash": ""
   },
   "ui/status_styles.py": {
@@ -225,9 +225,9 @@
     "semantic_hash": "f9ecf5626360b5d6600932ec6bea3ff0"
   },
   "ui/table_renderer.py": {
-    "mtime": 1781719962.7780137,
-    "ast_hash": "c0f743b3f51888339734f54c019d3364",
-    "semantic_hash": "c0f743b3f51888339734f54c019d3364"
+    "mtime": 1783671174.2739806,
+    "ast_hash": "314b0273189a20135d625a1dee37bdfb",
+    "semantic_hash": ""
   },
   "ui/widgets/web_invoice_view.py": {
     "mtime": 1782322002.6680512,
@@ -390,13 +390,13 @@
     "semantic_hash": ""
   },
   "ui/customer_view.py": {
-    "mtime": 1783666749.7734993,
-    "ast_hash": "15f19e654844f19284c46a42b3e290f3",
+    "mtime": 1783671030.045385,
+    "ast_hash": "1aae685ca2545ab06ee16a084c676301",
     "semantic_hash": ""
   },
   "ui/dialogs/customer_edit_dialog.py": {
-    "mtime": 1783669231.612564,
-    "ast_hash": "bbb8b958c8fe735b6c320b53bd9e5e94",
+    "mtime": 1783670944.2468257,
+    "ast_hash": "8b5b7885ca05aa13581f9c310b667a8d",
     "semantic_hash": ""
   }
 }

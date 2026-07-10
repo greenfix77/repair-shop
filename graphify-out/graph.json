@@ -274,7 +274,7 @@
       "source_location": "L147",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_add_repair",
-      "community": 30,
+      "community": 3,
       "norm_label": ".add_repair()"
     },
     {
@@ -284,7 +284,7 @@
       "source_location": "L162",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_repair",
-      "community": 30,
+      "community": 3,
       "norm_label": ".edit_repair()"
     },
     {
@@ -294,7 +294,7 @@
       "source_location": "L191",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_repair",
-      "community": 30,
+      "community": 3,
       "norm_label": ".delete_repair()"
     },
     {
@@ -334,7 +334,7 @@
       "source_location": "L237",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_refresh_table",
-      "community": 30,
+      "community": 3,
       "norm_label": ".refresh_table()"
     },
     {
@@ -394,7 +394,7 @@
       "source_location": "L313",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_save_data",
-      "community": 30,
+      "community": 3,
       "norm_label": ".save_data()"
     },
     {
@@ -404,7 +404,7 @@
       "source_location": "L320",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_closeevent",
-      "community": 30,
+      "community": 3,
       "norm_label": ".closeevent()"
     },
     {
@@ -494,7 +494,7 @@
       "source_location": "L314",
       "_origin": "ast",
       "id": "app_rationale_314",
-      "community": 30,
+      "community": 3,
       "norm_label": "\u0630\u062e\u06cc\u0631\u0647 \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u062f\u0631 \u0641\u0627\u06cc\u0644"
     },
     {
@@ -1150,6 +1150,96 @@
       "norm_label": "main()"
     },
     {
+      "label": "opencode - Copy.json",
+      "file_type": "code",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "opencode_copy",
+      "community": 58,
+      "norm_label": "opencode - copy.json"
+    },
+    {
+      "label": "$schema",
+      "file_type": "code",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L2",
+      "_origin": "ast",
+      "id": "opencode_copy_schema",
+      "community": 58,
+      "norm_label": "$schema"
+    },
+    {
+      "label": "model",
+      "file_type": "code",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L3",
+      "_origin": "ast",
+      "id": "opencode_copy_model",
+      "community": 58,
+      "norm_label": "model"
+    },
+    {
+      "label": "small_model",
+      "file_type": "code",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L4",
+      "_origin": "ast",
+      "id": "opencode_copy_small_model",
+      "community": 58,
+      "norm_label": "small_model"
+    },
+    {
+      "label": "agent",
+      "file_type": "code",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "opencode_copy_agent",
+      "community": 58,
+      "norm_label": "agent"
+    },
+    {
+      "label": "plan",
+      "file_type": "code",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "opencode_copy_agent_plan",
+      "community": 58,
+      "norm_label": "plan"
+    },
+    {
+      "label": "temperature",
+      "file_type": "code",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L8",
+      "_origin": "ast",
+      "id": "opencode_copy_plan_temperature",
+      "community": 58,
+      "norm_label": "temperature"
+    },
+    {
+      "label": "build",
+      "file_type": "code",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "opencode_copy_agent_build",
+      "community": 58,
+      "norm_label": "build"
+    },
+    {
+      "label": "temperature",
+      "file_type": "code",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "opencode_copy_build_temperature",
+      "community": 58,
+      "norm_label": "temperature"
+    },
+    {
       "label": "opencode.json",
       "file_type": "code",
       "source_file": "opencode.json",
@@ -1170,74 +1260,104 @@
       "norm_label": "$schema"
     },
     {
-      "label": "model",
+      "label": "provider",
       "file_type": "code",
       "source_file": "opencode.json",
       "source_location": "L3",
       "_origin": "ast",
-      "id": "opencode_model",
+      "id": "opencode_provider",
       "community": 8,
-      "norm_label": "model"
+      "norm_label": "provider"
     },
     {
-      "label": "small_model",
+      "label": "agentrouter",
       "file_type": "code",
       "source_file": "opencode.json",
       "source_location": "L4",
       "_origin": "ast",
-      "id": "opencode_small_model",
+      "id": "opencode_provider_agentrouter",
       "community": 8,
-      "norm_label": "small_model"
+      "norm_label": "agentrouter"
     },
     {
-      "label": "agent",
+      "label": "npm",
+      "file_type": "code",
+      "source_file": "opencode.json",
+      "source_location": "L5",
+      "_origin": "ast",
+      "id": "opencode_agentrouter_npm",
+      "community": 8,
+      "norm_label": "npm"
+    },
+    {
+      "label": "name",
       "file_type": "code",
       "source_file": "opencode.json",
       "source_location": "L6",
       "_origin": "ast",
-      "id": "opencode_agent",
+      "id": "opencode_agentrouter_name",
       "community": 8,
-      "norm_label": "agent"
+      "norm_label": "name"
     },
     {
-      "label": "plan",
+      "label": "options",
       "file_type": "code",
       "source_file": "opencode.json",
       "source_location": "L7",
       "_origin": "ast",
-      "id": "opencode_agent_plan",
+      "id": "opencode_agentrouter_options",
       "community": 8,
-      "norm_label": "plan"
+      "norm_label": "options"
     },
     {
-      "label": "temperature",
+      "label": "baseURL",
       "file_type": "code",
       "source_file": "opencode.json",
       "source_location": "L8",
       "_origin": "ast",
-      "id": "opencode_plan_temperature",
+      "id": "opencode_options_baseurl",
       "community": 8,
-      "norm_label": "temperature"
+      "norm_label": "baseurl"
     },
     {
-      "label": "build",
+      "label": "models",
       "file_type": "code",
       "source_file": "opencode.json",
       "source_location": "L10",
       "_origin": "ast",
-      "id": "opencode_agent_build",
+      "id": "opencode_agentrouter_models",
       "community": 8,
-      "norm_label": "build"
+      "norm_label": "models"
     },
     {
-      "label": "temperature",
+      "label": "glm-5.2",
       "file_type": "code",
       "source_file": "opencode.json",
       "source_location": "L11",
       "_origin": "ast",
-      "id": "opencode_build_temperature",
+      "id": "opencode_models_glm_5_2",
       "community": 8,
-      "norm_label": "temperature"
+      "norm_label": "glm-5.2"
+    },
+    {
+      "label": "name",
+      "file_type": "code",
+      "source_file": "opencode.json",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "opencode_glm_5_2_name",
+      "community": 8,
+      "norm_label": "name"
+    },
+    {
+      "label": "model",
+      "file_type": "code",
+      "source_file": "opencode.json",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "opencode_model",
+      "community": 8,
+      "norm_label": "model"
     },
     {
       "label": "components.py",
@@ -1246,7 +1366,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "repair_manager_ui_components",
-      "community": 2,
+      "community": 30,
       "norm_label": "components.py"
     },
     {
@@ -1440,20 +1560,10 @@
       "norm_label": ".__init__()"
     },
     {
-      "label": ".get_or_create_customer()",
-      "file_type": "code",
-      "source_file": "services/customer_service.py",
-      "source_location": "L16",
-      "_origin": "ast",
-      "id": "services_customer_service_customerservice_get_or_create_customer",
-      "community": 1,
-      "norm_label": ".get_or_create_customer()"
-    },
-    {
       "label": ".resolve_customer()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L31",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_resolve_customer",
       "community": 1,
@@ -1463,27 +1573,17 @@
       "label": ".find_customer()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L106",
+      "source_location": "L91",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_find_customer",
       "community": 1,
       "norm_label": ".find_customer()"
     },
     {
-      "label": ".find_by_phone()",
-      "file_type": "code",
-      "source_file": "services/customer_service.py",
-      "source_location": "L112",
-      "_origin": "ast",
-      "id": "services_customer_service_customerservice_find_by_phone",
-      "community": 1,
-      "norm_label": ".find_by_phone()"
-    },
-    {
       "label": ".find_by_full_name()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L117",
+      "source_location": "L97",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_find_by_full_name",
       "community": 1,
@@ -1493,7 +1593,7 @@
       "label": ".search_customers()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L127",
+      "source_location": "L107",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_search_customers",
       "community": 1,
@@ -1503,7 +1603,7 @@
       "label": ".get_customer()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L138",
+      "source_location": "L118",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_get_customer",
       "community": 1,
@@ -1513,7 +1613,7 @@
       "label": ".update_customer()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L142",
+      "source_location": "L122",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_update_customer",
       "community": 1,
@@ -1523,27 +1623,17 @@
       "label": ".create_customer()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L146",
+      "source_location": "L126",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_create_customer",
       "community": 1,
       "norm_label": ".create_customer()"
     },
     {
-      "label": ".get_all_customers()",
-      "file_type": "code",
-      "source_file": "services/customer_service.py",
-      "source_location": "L150",
-      "_origin": "ast",
-      "id": "services_customer_service_customerservice_get_all_customers",
-      "community": 1,
-      "norm_label": ".get_all_customers()"
-    },
-    {
       "label": ".generate_customer_code()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L154",
+      "source_location": "L131",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_generate_customer_code",
       "community": 1,
@@ -1560,22 +1650,12 @@
       "norm_label": "business logic layer for customer operations.      all customer business rules"
     },
     {
-      "label": "Return existing customer by phone, or create a new one.          Validates pho",
+      "label": "Single entry point for all customer resolution.          Decision order:",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
       "source_location": "L17",
       "_origin": "ast",
       "id": "services_customer_service_rationale_17",
-      "community": 1,
-      "norm_label": "return existing customer by phone, or create a new one.          validates pho"
-    },
-    {
-      "label": "Single entry point for all customer resolution.          Decision order:",
-      "file_type": "rationale",
-      "source_file": "services/customer_service.py",
-      "source_location": "L32",
-      "_origin": "ast",
-      "id": "services_customer_service_rationale_32",
       "community": 1,
       "norm_label": "single entry point for all customer resolution.          decision order:"
     },
@@ -1583,9 +1663,9 @@
       "label": "Find a single customer by phone.",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L107",
+      "source_location": "L92",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_107",
+      "id": "services_customer_service_rationale_92",
       "community": 1,
       "norm_label": "find a single customer by phone."
     },
@@ -1593,9 +1673,9 @@
       "label": "Search customers by full_name or phone (contains, case-insensitive).",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L128",
+      "source_location": "L108",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_128",
+      "id": "services_customer_service_rationale_108",
       "community": 1,
       "norm_label": "search customers by full_name or phone (contains, case-insensitive)."
     },
@@ -1603,39 +1683,39 @@
       "label": "Get a single customer by primary key.",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L139",
+      "source_location": "L119",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_139",
+      "id": "services_customer_service_rationale_119",
       "community": 1,
       "norm_label": "get a single customer by primary key."
     },
     {
-      "label": "Update customer fields. Returns updated dict or None if not found.",
+      "label": "Update an existing customer's data.",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L143",
+      "source_location": "L123",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_143",
+      "id": "services_customer_service_rationale_123",
       "community": 1,
-      "norm_label": "update customer fields. returns updated dict or none if not found."
+      "norm_label": "update an existing customer's data."
     },
     {
-      "label": "Return every customer as a list of dicts.",
+      "label": "Create a new customer without duplicate detection (conscious clone path).",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L151",
+      "source_location": "L127",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_151",
+      "id": "services_customer_service_rationale_127",
       "community": 1,
-      "norm_label": "return every customer as a list of dicts."
+      "norm_label": "create a new customer without duplicate detection (conscious clone path)."
     },
     {
       "label": "Return the next customer_code in C000001, C000002, \u2026 format.",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L155",
+      "source_location": "L132",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_155",
+      "id": "services_customer_service_rationale_132",
       "community": 1,
       "norm_label": "return the next customer_code in c000001, c000002, ... format."
     },
@@ -1653,130 +1733,190 @@
       "label": "CustomerWorkflow",
       "file_type": "code",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L6",
+      "source_location": "L9",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow",
-      "community": 4,
+      "community": 52,
       "norm_label": "customerworkflow"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L21",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow_init",
-      "community": 4,
+      "community": 52,
       "norm_label": ".__init__()"
     },
     {
       "label": ".search_customers()",
       "file_type": "code",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L24",
+      "source_location": "L27",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow_search_customers",
-      "community": 4,
+      "community": 52,
       "norm_label": ".search_customers()"
     },
     {
       "label": ".get_customer()",
       "file_type": "code",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L31",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow_get_customer",
-      "community": 4,
+      "community": 52,
       "norm_label": ".get_customer()"
     },
     {
       "label": ".find_customer_by_phone()",
       "file_type": "code",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L40",
+      "source_location": "L43",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow_find_customer_by_phone",
-      "community": 4,
+      "community": 52,
       "norm_label": ".find_customer_by_phone()"
     },
     {
       "label": ".resolve_customer()",
       "file_type": "code",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L48",
+      "source_location": "L51",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow_resolve_customer",
-      "community": 4,
+      "community": 52,
       "norm_label": ".resolve_customer()"
+    },
+    {
+      "label": ".is_modified()",
+      "file_type": "code",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "services_customer_workflow_customerworkflow_is_modified",
+      "community": 52,
+      "norm_label": ".is_modified()"
+    },
+    {
+      "label": ".update_customer()",
+      "file_type": "code",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "services_customer_workflow_customerworkflow_update_customer",
+      "community": 52,
+      "norm_label": ".update_customer()"
+    },
+    {
+      "label": ".create_customer()",
+      "file_type": "code",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L80",
+      "_origin": "ast",
+      "id": "services_customer_workflow_customerworkflow_create_customer",
+      "community": 52,
+      "norm_label": ".create_customer()"
     },
     {
       "label": ".populate_fields()",
       "file_type": "code",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L66",
+      "source_location": "L84",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow_populate_fields",
-      "community": 4,
+      "community": 52,
       "norm_label": ".populate_fields()"
     },
     {
       "label": "Single execution path for all customer UI workflows.      RepairDialog calls onl",
       "file_type": "rationale",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L7",
+      "source_location": "L10",
       "_origin": "ast",
-      "id": "services_customer_workflow_rationale_7",
-      "community": 4,
+      "id": "services_customer_workflow_rationale_10",
+      "community": 52,
       "norm_label": "single execution path for all customer ui workflows.      repairdialog calls onl"
     },
     {
       "label": "Search customers for completer popup.          Returns list of customer dicts wi",
       "file_type": "rationale",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L25",
+      "source_location": "L28",
       "_origin": "ast",
-      "id": "services_customer_workflow_rationale_25",
-      "community": 4,
+      "id": "services_customer_workflow_rationale_28",
+      "community": 52,
       "norm_label": "search customers for completer popup.          returns list of customer dicts wi"
     },
     {
       "label": "Get a single customer by primary key.          This is the SINGLE source of trut",
       "file_type": "rationale",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L32",
+      "source_location": "L35",
       "_origin": "ast",
-      "id": "services_customer_workflow_rationale_32",
-      "community": 4,
+      "id": "services_customer_workflow_rationale_35",
+      "community": 52,
       "norm_label": "get a single customer by primary key.          this is the single source of trut"
     },
     {
       "label": "Find customer by phone number (exact match).          Returns the full customer",
       "file_type": "rationale",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L41",
+      "source_location": "L44",
       "_origin": "ast",
-      "id": "services_customer_workflow_rationale_41",
-      "community": 4,
+      "id": "services_customer_workflow_rationale_44",
+      "community": 52,
       "norm_label": "find customer by phone number (exact match).          returns the full customer"
     },
     {
       "label": "Resolve customer on save: create-or-reuse with duplicate detection.          Thi",
       "file_type": "rationale",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L51",
+      "source_location": "L54",
       "_origin": "ast",
-      "id": "services_customer_workflow_rationale_51",
-      "community": 4,
+      "id": "services_customer_workflow_rationale_54",
+      "community": 52,
       "norm_label": "resolve customer on save: create-or-reuse with duplicate detection.          thi"
+    },
+    {
+      "label": "Return True if any customer field differs between original and form.",
+      "file_type": "rationale",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "services_customer_workflow_rationale_70",
+      "community": 52,
+      "norm_label": "return true if any customer field differs between original and form."
+    },
+    {
+      "label": "Update an existing customer's data.",
+      "file_type": "rationale",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "services_customer_workflow_rationale_77",
+      "community": 52,
+      "norm_label": "update an existing customer's data."
+    },
+    {
+      "label": "Create a new customer (conscious clone path, no duplicate detection).",
+      "file_type": "rationale",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L81",
+      "_origin": "ast",
+      "id": "services_customer_workflow_rationale_81",
+      "community": 52,
+      "norm_label": "create a new customer (conscious clone path, no duplicate detection)."
     },
     {
       "label": "Populate all customer UI fields from a customer dict.          This is the ONLY",
       "file_type": "rationale",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L67",
+      "source_location": "L85",
       "_origin": "ast",
-      "id": "services_customer_workflow_rationale_67",
-      "community": 4,
+      "id": "services_customer_workflow_rationale_85",
+      "community": 52,
       "norm_label": "populate all customer ui fields from a customer dict.          this is the only"
     },
     {
@@ -1937,7 +2077,7 @@
       "source_location": "L44",
       "_origin": "ast",
       "id": "services_logo_service_get_invoice_logo_html",
-      "community": 2,
+      "community": 29,
       "norm_label": "get_invoice_logo_html()"
     },
     {
@@ -2047,7 +2187,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "services_repair_manager_service_get_repair_by_id",
-      "community": 7,
+      "community": 3,
       "norm_label": "get_repair_by_id()"
     },
     {
@@ -2087,7 +2227,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_29",
-      "community": 7,
+      "community": 3,
       "norm_label": "find and return a repair by its id."
     },
     {
@@ -2477,7 +2617,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog",
-      "community": 6,
+      "community": 2,
       "norm_label": "invoice_dialog.py"
     },
     {
@@ -2567,7 +2707,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog",
-      "community": 2,
+      "community": 30,
       "norm_label": "repair_dialog.py"
     },
     {
@@ -2577,7 +2717,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate",
-      "community": 4,
+      "community": 63,
       "norm_label": "completeritemdelegate"
     },
     {
@@ -2587,7 +2727,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qstyleditemdelegate",
-      "community": 4,
+      "community": 63,
       "norm_label": "qstyleditemdelegate"
     },
     {
@@ -2597,7 +2737,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate_paint",
-      "community": 4,
+      "community": 63,
       "norm_label": ".paint()"
     },
     {
@@ -2607,7 +2747,7 @@
       "source_location": "L50",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate_sizehint",
-      "community": 4,
+      "community": 63,
       "norm_label": ".sizehint()"
     },
     {
@@ -2617,7 +2757,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog",
-      "community": 4,
+      "community": 54,
       "norm_label": "repairdialog"
     },
     {
@@ -2627,14 +2767,14 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_init",
-      "community": 4,
+      "community": 54,
       "norm_label": ".__init__()"
     },
     {
       "label": ".init_ui()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L76",
+      "source_location": "L77",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_init_ui",
       "community": 4,
@@ -2644,110 +2784,120 @@
       "label": "._init_customer_completer()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L227",
+      "source_location": "L228",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_init_customer_completer",
-      "community": 4,
+      "community": 63,
       "norm_label": "._init_customer_completer()"
     },
     {
       "label": "._on_name_text_changed()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L246",
+      "source_location": "L248",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_on_name_text_changed",
-      "community": 4,
+      "community": 54,
       "norm_label": "._on_name_text_changed()"
     },
     {
       "label": "._on_completer_search()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L250",
+      "source_location": "L253",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_on_completer_search",
-      "community": 4,
+      "community": 54,
       "norm_label": "._on_completer_search()"
     },
     {
       "label": "._on_completer_activated()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L264",
+      "source_location": "L269",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_on_completer_activated",
-      "community": 4,
+      "community": 54,
       "norm_label": "._on_completer_activated()"
     },
     {
       "label": "._connect_auto_fill()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L273",
+      "source_location": "L279",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_connect_auto_fill",
-      "community": 4,
+      "community": 54,
       "norm_label": "._connect_auto_fill()"
     },
     {
       "label": "._on_phone_editing_finished()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L276",
+      "source_location": "L282",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_on_phone_editing_finished",
-      "community": 4,
+      "community": 54,
       "norm_label": "._on_phone_editing_finished()"
+    },
+    {
+      "label": "._show_modification_dialog()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L300",
+      "_origin": "ast",
+      "id": "ui_dialogs_repair_dialog_repairdialog_show_modification_dialog",
+      "community": 54,
+      "norm_label": "._show_modification_dialog()"
     },
     {
       "label": ".validate_and_accept()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L293",
+      "source_location": "L319",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_validate_and_accept",
-      "community": 4,
+      "community": 54,
       "norm_label": ".validate_and_accept()"
     },
     {
       "label": "._get_customer_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L315",
+      "source_location": "L362",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_get_customer_data",
-      "community": 4,
+      "community": 54,
       "norm_label": "._get_customer_data()"
     },
     {
       "label": ".calculate_total()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L329",
+      "source_location": "L376",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_calculate_total",
-      "community": 4,
+      "community": 54,
       "norm_label": ".calculate_total()"
     },
     {
       "label": ".load_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L340",
+      "source_location": "L387",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_load_data",
-      "community": 4,
+      "community": 54,
       "norm_label": ".load_data()"
     },
     {
       "label": ".get_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L358",
+      "source_location": "L405",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_get_data",
-      "community": 4,
+      "community": 54,
       "norm_label": ".get_data()"
     },
     {
@@ -2757,17 +2907,17 @@
       "source_location": "L56",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_rationale_56",
-      "community": 4,
+      "community": 54,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u062a\u0639\u0645\u06cc\u0631"
     },
     {
       "label": "\u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u062c\u0645\u0648\u0639 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627",
       "file_type": "rationale",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L330",
+      "source_location": "L377",
       "_origin": "ast",
-      "id": "ui_dialogs_repair_dialog_rationale_330",
-      "community": 4,
+      "id": "ui_dialogs_repair_dialog_rationale_377",
+      "community": 54,
       "norm_label": "\u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u062c\u0645\u0648\u0639 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627"
     },
     {
@@ -2814,7 +2964,7 @@
       "label": ".select_logo()",
       "file_type": "code",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
-      "source_location": "L196",
+      "source_location": "L206",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_select_logo",
       "community": 35,
@@ -2824,7 +2974,7 @@
       "label": "._add_color_field()",
       "file_type": "code",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
-      "source_location": "L209",
+      "source_location": "L219",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_add_color_field",
       "community": 35,
@@ -2834,7 +2984,7 @@
       "label": ".restore_defaults()",
       "file_type": "code",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
-      "source_location": "L230",
+      "source_location": "L240",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_restore_defaults",
       "community": 30,
@@ -2844,7 +2994,7 @@
       "label": ".load_settings()",
       "file_type": "code",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
-      "source_location": "L250",
+      "source_location": "L260",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_load_settings",
       "community": 35,
@@ -2854,7 +3004,7 @@
       "label": ".save_settings()",
       "file_type": "code",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
-      "source_location": "L300",
+      "source_location": "L310",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_save_settings",
       "community": 30,
@@ -2864,7 +3014,7 @@
       "label": ".get_settings()",
       "file_type": "code",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
-      "source_location": "L349",
+      "source_location": "L359",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_get_settings",
       "community": 35,
@@ -2884,9 +3034,9 @@
       "label": "\u0628\u0627\u0632\u06af\u0631\u062f\u0627\u0646\u06cc \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u067e\u06cc\u0634\u200c\u0641\u0631\u0636 \u0638\u0627\u0647\u0631\u06cc",
       "file_type": "rationale",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
-      "source_location": "L231",
+      "source_location": "L241",
       "_origin": "ast",
-      "id": "ui_dialogs_shop_settings_dialog_rationale_231",
+      "id": "ui_dialogs_shop_settings_dialog_rationale_241",
       "community": 30,
       "norm_label": "\u0628\u0627\u0632\u06af\u0631\u062f\u0627\u0646\u06cc \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u067e\u06cc\u0634\u200c\u0641\u0631\u0636 \u0638\u0627\u0647\u0631\u06cc"
     },
@@ -2894,9 +3044,9 @@
       "label": "\u062f\u0631\u06cc\u0627\u0641\u062a \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647",
       "file_type": "rationale",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
-      "source_location": "L350",
+      "source_location": "L360",
       "_origin": "ast",
-      "id": "ui_dialogs_shop_settings_dialog_rationale_350",
+      "id": "ui_dialogs_shop_settings_dialog_rationale_360",
       "community": 35,
       "norm_label": "\u062f\u0631\u06cc\u0627\u0641\u062a \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647"
     },
@@ -3284,6 +3434,16 @@
       "norm_label": "graphify"
     },
     {
+      "label": "Architecture Refactor Session",
+      "file_type": "document",
+      "source_file": "AGENTS.md",
+      "source_location": "L14",
+      "_origin": "ast",
+      "id": "agents_architecture_refactor_session",
+      "community": 46,
+      "norm_label": "architecture refactor session"
+    },
+    {
       "label": "ARCHITECTURE_FINAL.md",
       "file_type": "document",
       "source_file": "ARCHITECTURE_FINAL.md",
@@ -3574,6 +3734,1116 @@
       "norm_label": "backup checklist"
     },
     {
+      "label": "CUSTOMER_ARCHITECTURE.md",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "customer_architecture",
+      "community": 50,
+      "norm_label": "customer_architecture.md"
+    },
+    {
+      "label": "Customer Workflow Architecture",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "customer_architecture_customer_workflow_architecture",
+      "community": 50,
+      "norm_label": "customer workflow architecture"
+    },
+    {
+      "label": "Table of Contents",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "customer_architecture_table_of_contents",
+      "community": 50,
+      "norm_label": "table of contents"
+    },
+    {
+      "label": "1. Current Architecture",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L27",
+      "_origin": "ast",
+      "id": "customer_architecture_1_current_architecture",
+      "community": 50,
+      "norm_label": "1. current architecture"
+    },
+    {
+      "label": "Current Production Call Chain",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "customer_architecture_current_production_call_chain",
+      "community": 50,
+      "norm_label": "current production call chain"
+    },
+    {
+      "label": "Layer Count",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L59",
+      "_origin": "ast",
+      "id": "customer_architecture_layer_count",
+      "community": 50,
+      "norm_label": "layer count"
+    },
+    {
+      "label": "2. Final Architecture",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L72",
+      "_origin": "ast",
+      "id": "customer_architecture_2_final_architecture",
+      "community": 50,
+      "norm_label": "2. final architecture"
+    },
+    {
+      "label": "What Was Stabilized",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "customer_architecture_what_was_stabilized",
+      "community": 50,
+      "norm_label": "what was stabilized"
+    },
+    {
+      "label": "Dead Code Removed",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "customer_architecture_dead_code_removed",
+      "community": 50,
+      "norm_label": "dead code removed"
+    },
+    {
+      "label": "3. Responsibility Matrix",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L105",
+      "_origin": "ast",
+      "id": "customer_architecture_3_responsibility_matrix",
+      "community": 50,
+      "norm_label": "3. responsibility matrix"
+    },
+    {
+      "label": "RepairDialog",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L107",
+      "_origin": "ast",
+      "id": "customer_architecture_repairdialog",
+      "community": 50,
+      "norm_label": "repairdialog"
+    },
+    {
+      "label": "CustomerWorkflow",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L118",
+      "_origin": "ast",
+      "id": "customer_architecture_customerworkflow",
+      "community": 50,
+      "norm_label": "customerworkflow"
+    },
+    {
+      "label": "CustomerService",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L128",
+      "_origin": "ast",
+      "id": "customer_architecture_customerservice",
+      "community": 50,
+      "norm_label": "customerservice"
+    },
+    {
+      "label": "CustomerRepository",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L139",
+      "_origin": "ast",
+      "id": "customer_architecture_customerrepository",
+      "community": 50,
+      "norm_label": "customerrepository"
+    },
+    {
+      "label": "4. Call Graph",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L155",
+      "_origin": "ast",
+      "id": "customer_architecture_4_call_graph",
+      "community": 50,
+      "norm_label": "4. call graph"
+    },
+    {
+      "label": "Completer Search",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L157",
+      "_origin": "ast",
+      "id": "customer_architecture_completer_search",
+      "community": 50,
+      "norm_label": "completer search"
+    },
+    {
+      "label": "Completer Selection",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L178",
+      "_origin": "ast",
+      "id": "customer_architecture_completer_selection",
+      "community": 50,
+      "norm_label": "completer selection"
+    },
+    {
+      "label": "Phone Auto-Fill",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L204",
+      "_origin": "ast",
+      "id": "customer_architecture_phone_auto_fill",
+      "community": 50,
+      "norm_label": "phone auto-fill"
+    },
+    {
+      "label": "Save / Customer Resolution",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L228",
+      "_origin": "ast",
+      "id": "customer_architecture_save_customer_resolution",
+      "community": 50,
+      "norm_label": "save / customer resolution"
+    },
+    {
+      "label": "Edit Mode (No Customer Resolution)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L264",
+      "_origin": "ast",
+      "id": "customer_architecture_edit_mode_no_customer_resolution",
+      "community": 50,
+      "norm_label": "edit mode (no customer resolution)"
+    },
+    {
+      "label": "5. Sequence Diagrams",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L281",
+      "_origin": "ast",
+      "id": "customer_architecture_5_sequence_diagrams",
+      "community": 50,
+      "norm_label": "5. sequence diagrams"
+    },
+    {
+      "label": "5.1 Completer Search",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L283",
+      "_origin": "ast",
+      "id": "customer_architecture_5_1_completer_search",
+      "community": 50,
+      "norm_label": "5.1 completer search"
+    },
+    {
+      "label": "5.2 Completer Selection",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L305",
+      "_origin": "ast",
+      "id": "customer_architecture_5_2_completer_selection",
+      "community": 50,
+      "norm_label": "5.2 completer selection"
+    },
+    {
+      "label": "5.3 Phone Auto-Fill",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L325",
+      "_origin": "ast",
+      "id": "customer_architecture_5_3_phone_auto_fill",
+      "community": 50,
+      "norm_label": "5.3 phone auto-fill"
+    },
+    {
+      "label": "5.4 Save / Customer Resolution",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L355",
+      "_origin": "ast",
+      "id": "customer_architecture_5_4_save_customer_resolution",
+      "community": 50,
+      "norm_label": "5.4 save / customer resolution"
+    },
+    {
+      "label": "5.5 Edit Mode (No Customer Resolution)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L417",
+      "_origin": "ast",
+      "id": "customer_architecture_5_5_edit_mode_no_customer_resolution",
+      "community": 50,
+      "norm_label": "5.5 edit mode (no customer resolution)"
+    },
+    {
+      "label": "6. Class Responsibilities",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L440",
+      "_origin": "ast",
+      "id": "customer_architecture_6_class_responsibilities",
+      "community": 50,
+      "norm_label": "6. class responsibilities"
+    },
+    {
+      "label": "`ui/dialogs/repair_dialog.py` \u2014 `RepairDialog`",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L442",
+      "_origin": "ast",
+      "id": "customer_architecture_ui_dialogs_repair_dialog_py_repairdialog",
+      "community": 50,
+      "norm_label": "`ui/dialogs/repair_dialog.py` \u2014 `repairdialog`"
+    },
+    {
+      "label": "`services/customer_workflow.py` \u2014 `CustomerWorkflow`",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L459",
+      "_origin": "ast",
+      "id": "customer_architecture_services_customer_workflow_py_customerworkflow",
+      "community": 50,
+      "norm_label": "`services/customer_workflow.py` \u2014 `customerworkflow`"
+    },
+    {
+      "label": "`services/customer_service.py` \u2014 `CustomerService`",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L470",
+      "_origin": "ast",
+      "id": "customer_architecture_services_customer_service_py_customerservice",
+      "community": 50,
+      "norm_label": "`services/customer_service.py` \u2014 `customerservice`"
+    },
+    {
+      "label": "`core/storage/customer_repository.py` \u2014 `CustomerRepository`",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L482",
+      "_origin": "ast",
+      "id": "customer_architecture_core_storage_customer_repository_py_customerrepository",
+      "community": 50,
+      "norm_label": "`core/storage/customer_repository.py` \u2014 `customerrepository`"
+    },
+    {
+      "label": "7. Verification Results",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L501",
+      "_origin": "ast",
+      "id": "customer_architecture_7_verification_results",
+      "community": 50,
+      "norm_label": "7. verification results"
+    },
+    {
+      "label": "7.1 Compilation",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L503",
+      "_origin": "ast",
+      "id": "customer_architecture_7_1_compilation",
+      "community": 50,
+      "norm_label": "7.1 compilation"
+    },
+    {
+      "label": "7.2 Architecture Rule Verification",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L511",
+      "_origin": "ast",
+      "id": "customer_architecture_7_2_architecture_rule_verification",
+      "community": 50,
+      "norm_label": "7.2 architecture rule verification"
+    },
+    {
+      "label": "7.3 Import Chain",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L530",
+      "_origin": "ast",
+      "id": "customer_architecture_7_3_import_chain",
+      "community": 50,
+      "norm_label": "7.3 import chain"
+    },
+    {
+      "label": "8. Architecture Limitations",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L546",
+      "_origin": "ast",
+      "id": "customer_architecture_8_architecture_limitations",
+      "community": 50,
+      "norm_label": "8. architecture limitations"
+    },
+    {
+      "label": "8.1 `_normalize_phone` in Repository",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L550",
+      "_origin": "ast",
+      "id": "customer_architecture_8_1_normalize_phone_in_repository",
+      "community": 50,
+      "norm_label": "8.1 `_normalize_phone` in repository"
+    },
+    {
+      "label": "8.2 Phone Auto-Fill Double Round-Trip",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L558",
+      "_origin": "ast",
+      "id": "customer_architecture_8_2_phone_auto_fill_double_round_trip",
+      "community": 50,
+      "norm_label": "8.2 phone auto-fill double round-trip"
+    },
+    {
+      "label": "8.3 Dead Methods in Repository",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L568",
+      "_origin": "ast",
+      "id": "customer_architecture_8_3_dead_methods_in_repository",
+      "community": 50,
+      "norm_label": "8.3 dead methods in repository"
+    },
+    {
+      "label": "8.4 No Customer Update From UI",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L576",
+      "_origin": "ast",
+      "id": "customer_architecture_8_4_no_customer_update_from_ui",
+      "community": 50,
+      "norm_label": "8.4 no customer update from ui"
+    },
+    {
+      "label": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "customer_behavior_specification",
+      "community": 55,
+      "norm_label": "customer_behavior_specification.md"
+    },
+    {
+      "label": "Customer Workflow Behavior Specification",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "community": 55,
+      "norm_label": "customer workflow behavior specification"
+    },
+    {
+      "label": "Table of Contents",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_table_of_contents",
+      "community": 55,
+      "norm_label": "table of contents"
+    },
+    {
+      "label": "1. Architecture Overview",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_1_architecture_overview",
+      "community": 65,
+      "norm_label": "1. architecture overview"
+    },
+    {
+      "label": "Layered Architecture",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_layered_architecture",
+      "community": 65,
+      "norm_label": "layered architecture"
+    },
+    {
+      "label": "Layer Communication Contract",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L66",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_layer_communication_contract",
+      "community": 65,
+      "norm_label": "layer communication contract"
+    },
+    {
+      "label": "Prohibited Patterns",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_prohibited_patterns",
+      "community": 65,
+      "norm_label": "prohibited patterns"
+    },
+    {
+      "label": "2. Layer Responsibilities",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L85",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_2_layer_responsibilities",
+      "community": 60,
+      "norm_label": "2. layer responsibilities"
+    },
+    {
+      "label": "2.1 RepairDialog (UI Layer)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_2_1_repairdialog_ui_layer",
+      "community": 60,
+      "norm_label": "2.1 repairdialog (ui layer)"
+    },
+    {
+      "label": "2.2 CustomerWorkflow (Orchestration Layer)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L116",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_2_2_customerworkflow_orchestration_layer",
+      "community": 60,
+      "norm_label": "2.2 customerworkflow (orchestration layer)"
+    },
+    {
+      "label": "2.3 CustomerService (Business Logic Layer)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L142",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_2_3_customerservice_business_logic_layer",
+      "community": 60,
+      "norm_label": "2.3 customerservice (business logic layer)"
+    },
+    {
+      "label": "2.4 CustomerRepository (Data Access Layer)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L178",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_2_4_customerrepository_data_access_layer",
+      "community": 60,
+      "norm_label": "2.4 customerrepository (data access layer)"
+    },
+    {
+      "label": "2.5 CustomerDB (ORM Model)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L208",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_2_5_customerdb_orm_model",
+      "community": 60,
+      "norm_label": "2.5 customerdb (orm model)"
+    },
+    {
+      "label": "3. Event Flow Diagram",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L229",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_3_event_flow_diagram",
+      "community": 55,
+      "norm_label": "3. event flow diagram"
+    },
+    {
+      "label": "Complete Signal-Flow Map",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L231",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_complete_signal_flow_map",
+      "community": 55,
+      "norm_label": "complete signal-flow map"
+    },
+    {
+      "label": "4. Scenario Specifications",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L339",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_4_scenario_specifications",
+      "community": 59,
+      "norm_label": "4. scenario specifications"
+    },
+    {
+      "label": "Scenario 1: Phone Auto-Fill",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L341",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_scenario_1_phone_auto_fill",
+      "community": 59,
+      "norm_label": "scenario 1: phone auto-fill"
+    },
+    {
+      "label": "Scenario 2: Completer Selection",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L401",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_scenario_2_completer_selection",
+      "community": 59,
+      "norm_label": "scenario 2: completer selection"
+    },
+    {
+      "label": "Scenario 3: New Customer Save",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L464",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_scenario_3_new_customer_save",
+      "community": 59,
+      "norm_label": "scenario 3: new customer save"
+    },
+    {
+      "label": "Scenario 4: Duplicate Customer Name Save",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L525",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_scenario_4_duplicate_customer_name_save",
+      "community": 59,
+      "norm_label": "scenario 4: duplicate customer name save"
+    },
+    {
+      "label": "Scenario 5: Similar Names (Completer)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L580",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_scenario_5_similar_names_completer",
+      "community": 59,
+      "norm_label": "scenario 5: similar names (completer)"
+    },
+    {
+      "label": "Scenario 6: Customer Without Phone",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L616",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_scenario_6_customer_without_phone",
+      "community": 59,
+      "norm_label": "scenario 6: customer without phone"
+    },
+    {
+      "label": "Scenario 7: Phone Edited \u2014 Refreshed Fields",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L655",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_scenario_7_phone_edited_refreshed_fields",
+      "community": 59,
+      "norm_label": "scenario 7: phone edited \u2014 refreshed fields"
+    },
+    {
+      "label": "5. Field Mapping",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L699",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_5_field_mapping",
+      "community": 61,
+      "norm_label": "5. field mapping"
+    },
+    {
+      "label": "Widget-to-Field Map",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L701",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_widget_to_field_map",
+      "community": 61,
+      "norm_label": "widget-to-field map"
+    },
+    {
+      "label": "Widget Constraints",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L716",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_widget_constraints",
+      "community": 61,
+      "norm_label": "widget constraints"
+    },
+    {
+      "label": "Reading Widgets (`_get_customer_data`)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L724",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_reading_widgets_get_customer_data",
+      "community": 61,
+      "norm_label": "reading widgets (`_get_customer_data`)"
+    },
+    {
+      "label": "Writing Widgets (`populate_fields`)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L741",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_writing_widgets_populate_fields",
+      "community": 61,
+      "norm_label": "writing widgets (`populate_fields`)"
+    },
+    {
+      "label": "Rules",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L750",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_rules",
+      "community": 61,
+      "norm_label": "rules"
+    },
+    {
+      "label": "6. Completer Specification",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L760",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_6_completer_specification",
+      "community": 56,
+      "norm_label": "6. completer specification"
+    },
+    {
+      "label": "6.1 Trigger Conditions",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L762",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_6_1_trigger_conditions",
+      "community": 56,
+      "norm_label": "6.1 trigger conditions"
+    },
+    {
+      "label": "6.2 Timing",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L772",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_6_2_timing",
+      "community": 56,
+      "norm_label": "6.2 timing"
+    },
+    {
+      "label": "6.3 Search Algorithm",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L778",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_6_3_search_algorithm",
+      "community": 56,
+      "norm_label": "6.3 search algorithm"
+    },
+    {
+      "label": "6.4 Sorting",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L794",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_6_4_sorting",
+      "community": 56,
+      "norm_label": "6.4 sorting"
+    },
+    {
+      "label": "6.5 Popup Display",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L799",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_6_5_popup_display",
+      "community": 56,
+      "norm_label": "6.5 popup display"
+    },
+    {
+      "label": "6.6 Data Storage Per Item",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L820",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_6_6_data_storage_per_item",
+      "community": 56,
+      "norm_label": "6.6 data storage per item"
+    },
+    {
+      "label": "6.7 Selection Behavior",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L826",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_6_7_selection_behavior",
+      "community": 56,
+      "norm_label": "6.7 selection behavior"
+    },
+    {
+      "label": "6.8 Duplicate Handling",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L835",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_6_8_duplicate_handling",
+      "community": 56,
+      "norm_label": "6.8 duplicate handling"
+    },
+    {
+      "label": "6.9 QCompleter Configuration",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L843",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_6_9_qcompleter_configuration",
+      "community": 56,
+      "norm_label": "6.9 qcompleter configuration"
+    },
+    {
+      "label": "7. Phone Auto-Fill Specification",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L857",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_7_phone_auto_fill_specification",
+      "community": 62,
+      "norm_label": "7. phone auto-fill specification"
+    },
+    {
+      "label": "7.1 Trigger",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L859",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_7_1_trigger",
+      "community": 62,
+      "norm_label": "7.1 trigger"
+    },
+    {
+      "label": "7.2 Guards",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L871",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_7_2_guards",
+      "community": 62,
+      "norm_label": "7.2 guards"
+    },
+    {
+      "label": "7.3 Lookup Flow",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L880",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_7_3_lookup_flow",
+      "community": 62,
+      "norm_label": "7.3 lookup flow"
+    },
+    {
+      "label": "7.4 Signal Safety",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L897",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_7_4_signal_safety",
+      "community": 62,
+      "norm_label": "7.4 signal safety"
+    },
+    {
+      "label": "7.5 Silent Failure",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L903",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_7_5_silent_failure",
+      "community": 62,
+      "norm_label": "7.5 silent failure"
+    },
+    {
+      "label": "8. Duplicate Detection Decision Tree",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L909",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_8_duplicate_detection_decision_tree",
+      "community": 66,
+      "norm_label": "8. duplicate detection decision tree"
+    },
+    {
+      "label": "resolve_customer Full Decision Tree",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L911",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_resolve_customer_full_decision_tree",
+      "community": 66,
+      "norm_label": "resolve_customer full decision tree"
+    },
+    {
+      "label": "Priority Summary",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L965",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_priority_summary",
+      "community": 66,
+      "norm_label": "priority summary"
+    },
+    {
+      "label": "Key Behavioral Rules",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L974",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_key_behavioral_rules",
+      "community": 66,
+      "norm_label": "key behavioral rules"
+    },
+    {
+      "label": "9. Save Workflow Specification",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L984",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_9_save_workflow_specification",
+      "community": 67,
+      "norm_label": "9. save workflow specification"
+    },
+    {
+      "label": "9.1 Complete Save Sequence",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L986",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_9_1_complete_save_sequence",
+      "community": 67,
+      "norm_label": "9.1 complete save sequence"
+    },
+    {
+      "label": "9.2 Edit Mode Behavior",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1019",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_9_2_edit_mode_behavior",
+      "community": 67,
+      "norm_label": "9.2 edit mode behavior"
+    },
+    {
+      "label": "9.3 Save Outcomes Summary",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1034",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_9_3_save_outcomes_summary",
+      "community": 67,
+      "norm_label": "9.3 save outcomes summary"
+    },
+    {
+      "label": "10. State Transitions",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1049",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_10_state_transitions",
+      "community": 55,
+      "norm_label": "10. state transitions"
+    },
+    {
+      "label": "Dialog State Machine",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1051",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_dialog_state_machine",
+      "community": 55,
+      "norm_label": "dialog state machine"
+    },
+    {
+      "label": "State Transition Triggers",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1131",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_state_transition_triggers",
+      "community": 55,
+      "norm_label": "state transition triggers"
+    },
+    {
+      "label": "11. Error Handling",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1159",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_11_error_handling",
+      "community": 57,
+      "norm_label": "11. error handling"
+    },
+    {
+      "label": "11.1 Empty Phone",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1161",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_11_1_empty_phone",
+      "community": 57,
+      "norm_label": "11.1 empty phone"
+    },
+    {
+      "label": "11.2 Duplicate Phone",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1170",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_11_2_duplicate_phone",
+      "community": 57,
+      "norm_label": "11.2 duplicate phone"
+    },
+    {
+      "label": "11.3 Duplicate Name",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1179",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_11_3_duplicate_name",
+      "community": 57,
+      "norm_label": "11.3 duplicate name"
+    },
+    {
+      "label": "11.4 Cancelled Dialog",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1188",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_11_4_cancelled_dialog",
+      "community": 57,
+      "norm_label": "11.4 cancelled dialog"
+    },
+    {
+      "label": "11.5 Deleted Customer",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1197",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_11_5_deleted_customer",
+      "community": 57,
+      "norm_label": "11.5 deleted customer"
+    },
+    {
+      "label": "11.6 Invalid customer_id",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1206",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_11_6_invalid_customer_id",
+      "community": 57,
+      "norm_label": "11.6 invalid customer_id"
+    },
+    {
+      "label": "11.7 No Phone + No Name Save",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1215",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_11_7_no_phone_no_name_save",
+      "community": 57,
+      "norm_label": "11.7 no phone + no name save"
+    },
+    {
+      "label": "11.8 Database Error",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1225",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_11_8_database_error",
+      "community": 57,
+      "norm_label": "11.8 database error"
+    },
+    {
+      "label": "12. SQLite Interaction Map",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1235",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_12_sqlite_interaction_map",
+      "community": 64,
+      "norm_label": "12. sqlite interaction map"
+    },
+    {
+      "label": "Read Operations",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1237",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_read_operations",
+      "community": 64,
+      "norm_label": "read operations"
+    },
+    {
+      "label": "Write Operations",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1277",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_write_operations",
+      "community": 64,
+      "norm_label": "write operations"
+    },
+    {
+      "label": "Write Frequency",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1287",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_write_frequency",
+      "community": 64,
+      "norm_label": "write frequency"
+    },
+    {
+      "label": "13. Non-Goals",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1299",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_13_non_goals",
+      "community": 55,
+      "norm_label": "13. non-goals"
+    },
+    {
+      "label": "Appendix: Code Reference",
+      "file_type": "document",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1316",
+      "_origin": "ast",
+      "id": "customer_behavior_specification_appendix_code_reference",
+      "community": 55,
+      "norm_label": "appendix: code reference"
+    },
+    {
       "label": "CUSTOMER_DECISION_REFACTOR.md",
       "file_type": "document",
       "source_file": "CUSTOMER_DECISION_REFACTOR.md",
@@ -3672,6 +4942,196 @@
       "id": "customer_decision_refactor_files_changed",
       "community": 40,
       "norm_label": "files changed"
+    },
+    {
+      "label": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis",
+      "community": 51,
+      "norm_label": "customer_root_cause_analysis.md"
+    },
+    {
+      "label": "Customer Root Cause Analysis",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_customer_root_cause_analysis",
+      "community": 51,
+      "norm_label": "customer root cause analysis"
+    },
+    {
+      "label": "Note on audit currency",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_note_on_audit_currency",
+      "community": 51,
+      "norm_label": "note on audit currency"
+    },
+    {
+      "label": "1. Actual Execution Graph (verified against current code)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L20",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_1_actual_execution_graph_verified_against_current_code",
+      "community": 51,
+      "norm_label": "1. actual execution graph (verified against current code)"
+    },
+    {
+      "label": "1.1 Phone Auto-Fill",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L22",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_1_1_phone_auto_fill",
+      "community": 51,
+      "norm_label": "1.1 phone auto-fill"
+    },
+    {
+      "label": "1.2 Completer popup",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_1_2_completer_popup",
+      "community": 51,
+      "norm_label": "1.2 completer popup"
+    },
+    {
+      "label": "1.3 Completer selection",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_1_3_completer_selection",
+      "community": 51,
+      "norm_label": "1.3 completer selection"
+    },
+    {
+      "label": "1.4 Duplicate detection (exact name)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_1_4_duplicate_detection_exact_name",
+      "community": 51,
+      "norm_label": "1.4 duplicate detection (exact name)"
+    },
+    {
+      "label": "1.5 Similar-name detection",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_1_5_similar_name_detection",
+      "community": 51,
+      "norm_label": "1.5 similar-name detection"
+    },
+    {
+      "label": "1.6 Customer creation",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L80",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_1_6_customer_creation",
+      "community": 51,
+      "norm_label": "1.6 customer creation"
+    },
+    {
+      "label": "1.7 Customer reuse",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L90",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_1_7_customer_reuse",
+      "community": 51,
+      "norm_label": "1.7 customer reuse"
+    },
+    {
+      "label": "1.8 Save entry",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L96",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_1_8_save_entry",
+      "community": 51,
+      "norm_label": "1.8 save entry"
+    },
+    {
+      "label": "2. Specification Conformance",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L110",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_2_specification_conformance",
+      "community": 51,
+      "norm_label": "2. specification conformance"
+    },
+    {
+      "label": "Gaps / partial conformance (not scenario failures)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L124",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_gaps_partial_conformance_not_scenario_failures",
+      "community": 51,
+      "norm_label": "gaps / partial conformance (not scenario failures)"
+    },
+    {
+      "label": "3. Root-Cause Grouping",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L134",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_3_root_cause_grouping",
+      "community": 51,
+      "norm_label": "3. root-cause grouping"
+    },
+    {
+      "label": "4. Architecture Assessment",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L154",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_4_architecture_assessment",
+      "community": 51,
+      "norm_label": "4. architecture assessment"
+    },
+    {
+      "label": "5. Highest-Risk Regression Points",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L177",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_5_highest_risk_regression_points",
+      "community": 51,
+      "norm_label": "5. highest-risk regression points"
+    },
+    {
+      "label": "6. Recommended Next Steps (priority order)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L188",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_6_recommended_next_steps_priority_order",
+      "community": 51,
+      "norm_label": "6. recommended next steps (priority order)"
+    },
+    {
+      "label": "Decision",
+      "file_type": "document",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L213",
+      "_origin": "ast",
+      "id": "customer_root_cause_analysis_decision",
+      "community": 51,
+      "norm_label": "decision"
     },
     {
       "label": "CUSTOMER_WORKFLOW_AUDIT.md",
@@ -4462,6 +5922,186 @@
       "id": "customer_workflow_regression_audit_12_conclusion",
       "community": 49,
       "norm_label": "12. conclusion"
+    },
+    {
+      "label": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization",
+      "community": 53,
+      "norm_label": "customer_workflow_stabilization.md"
+    },
+    {
+      "label": "Customer Workflow Stabilization",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_customer_workflow_stabilization",
+      "community": 53,
+      "norm_label": "customer workflow stabilization"
+    },
+    {
+      "label": "Old Execution Paths",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_old_execution_paths",
+      "community": 53,
+      "norm_label": "old execution paths"
+    },
+    {
+      "label": "Path A: Completer Selection",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_path_a_completer_selection",
+      "community": 53,
+      "norm_label": "path a: completer selection"
+    },
+    {
+      "label": "Path B: Phone Auto-Fill",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L21",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_path_b_phone_auto_fill",
+      "community": 53,
+      "norm_label": "path b: phone auto-fill"
+    },
+    {
+      "label": "Path C: Save (validate_and_accept)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L30",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_path_c_save_validate_and_accept",
+      "community": 53,
+      "norm_label": "path c: save (validate_and_accept)"
+    },
+    {
+      "label": "New Execution Path",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L45",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_new_execution_path",
+      "community": 53,
+      "norm_label": "new execution path"
+    },
+    {
+      "label": "Path A: Completer Selection",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_path_a_completer_selection_49",
+      "community": 53,
+      "norm_label": "path a: completer selection"
+    },
+    {
+      "label": "Path B: Phone Auto-Fill",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_path_b_phone_auto_fill_58",
+      "community": 53,
+      "norm_label": "path b: phone auto-fill"
+    },
+    {
+      "label": "Path C: Save (validate_and_accept)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L69",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_path_c_save_validate_and_accept_69",
+      "community": 53,
+      "norm_label": "path c: save (validate_and_accept)"
+    },
+    {
+      "label": "Removed Duplicate Logic",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L80",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_removed_duplicate_logic",
+      "community": 53,
+      "norm_label": "removed duplicate logic"
+    },
+    {
+      "label": "File Changes",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L93",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_file_changes",
+      "community": 53,
+      "norm_label": "file changes"
+    },
+    {
+      "label": "Created: `services/customer_workflow.py` (new)",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L95",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_created_services_customer_workflow_py_new",
+      "community": 53,
+      "norm_label": "created: `services/customer_workflow.py` (new)"
+    },
+    {
+      "label": "Modified: `ui/dialogs/repair_dialog.py`",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L107",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_modified_ui_dialogs_repair_dialog_py",
+      "community": 53,
+      "norm_label": "modified: `ui/dialogs/repair_dialog.py`"
+    },
+    {
+      "label": "Final Workflow Diagram",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L121",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_final_workflow_diagram",
+      "community": 53,
+      "norm_label": "final workflow diagram"
+    },
+    {
+      "label": "Acceptance Test Results",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L212",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_acceptance_test_results",
+      "community": 53,
+      "norm_label": "acceptance test results"
+    },
+    {
+      "label": "Test Details",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L223",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_test_details",
+      "community": 53,
+      "norm_label": "test details"
+    },
+    {
+      "label": "Guard: Single Execution Path Verification",
+      "file_type": "document",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L235",
+      "_origin": "ast",
+      "id": "customer_workflow_stabilization_guard_single_execution_path_verification",
+      "community": 53,
+      "norm_label": "guard: single execution path verification"
     },
     {
       "label": "INVOICE_BLANK_PREVIEW_AUDIT.md",
@@ -9834,12 +11474,82 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "opencode.json",
+      "source_file": "opencode - Copy.json",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "opencode",
-      "target": "opencode_agent"
+      "source": "opencode_copy",
+      "target": "opencode_copy_agent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "opencode_copy",
+      "target": "opencode_copy_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L2",
+      "weight": 1.0,
+      "source": "opencode_copy",
+      "target": "opencode_copy_schema",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "opencode_copy",
+      "target": "opencode_copy_small_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "opencode_copy_agent",
+      "target": "opencode_copy_agent_build",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "opencode_copy_agent",
+      "target": "opencode_copy_agent_plan",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L8",
+      "weight": 1.0,
+      "source": "opencode_copy_agent_plan",
+      "target": "opencode_copy_plan_temperature",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "opencode - Copy.json",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "opencode_copy_agent_build",
+      "target": "opencode_copy_build_temperature",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9850,6 +11560,16 @@
       "confidence_score": 1.0,
       "source": "opencode",
       "target": "opencode_model"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "opencode.json",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "opencode",
+      "target": "opencode_provider",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9867,9 +11587,9 @@
       "source_file": "opencode.json",
       "source_location": "L4",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "opencode",
-      "target": "opencode_small_model"
+      "source": "opencode_provider",
+      "target": "opencode_provider_agentrouter",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9877,9 +11597,29 @@
       "source_file": "opencode.json",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "opencode_agent",
-      "target": "opencode_agent_build"
+      "source": "opencode_provider_agentrouter",
+      "target": "opencode_agentrouter_models",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "opencode.json",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "opencode_provider_agentrouter",
+      "target": "opencode_agentrouter_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "opencode.json",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "opencode_provider_agentrouter",
+      "target": "opencode_agentrouter_npm",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9887,9 +11627,9 @@
       "source_file": "opencode.json",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "opencode_agent",
-      "target": "opencode_agent_plan"
+      "source": "opencode_provider_agentrouter",
+      "target": "opencode_agentrouter_options",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9897,9 +11637,9 @@
       "source_file": "opencode.json",
       "source_location": "L8",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "opencode_agent_plan",
-      "target": "opencode_plan_temperature"
+      "source": "opencode_agentrouter_options",
+      "target": "opencode_options_baseurl",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -9907,9 +11647,19 @@
       "source_file": "opencode.json",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "opencode_agent_build",
-      "target": "opencode_build_temperature"
+      "source": "opencode_agentrouter_models",
+      "target": "opencode_models_glm_5_2",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "opencode.json",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "opencode_models_glm_5_2",
+      "target": "opencode_glm_5_2_name",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10241,9 +11991,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow",
-      "target": "services_customer_service",
-      "confidence_score": 1.0
+      "target": "services_customer_service"
     },
     {
       "relation": "imports_from",
@@ -10302,16 +12052,6 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L112",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_customerservice",
-      "target": "services_customer_service_customerservice_find_by_phone"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_service.py",
       "source_location": "L106",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10332,31 +12072,11 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L150",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_customerservice",
-      "target": "services_customer_service_customerservice_get_all_customers"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_service.py",
       "source_location": "L138",
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "services_customer_service_customerservice",
       "target": "services_customer_service_customerservice_get_customer"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_service.py",
-      "source_location": "L16",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_customerservice",
-      "target": "services_customer_service_customerservice_get_or_create_customer"
     },
     {
       "relation": "method",
@@ -10415,9 +12135,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow",
-      "target": "services_customer_service_customerservice",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice"
     },
     {
       "relation": "uses",
@@ -10425,9 +12145,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L3",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "services_customer_workflow_customerworkflow",
-      "target": "services_customer_service_customerservice",
-      "confidence_score": 0.5
+      "target": "services_customer_service_customerservice"
     },
     {
       "relation": "calls",
@@ -10696,27 +12416,6 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L28",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_customerservice_get_or_create_customer",
-      "target": "services_customer_service_customerservice_generate_customer_code"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_service.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_17",
-      "target": "services_customer_service_customerservice_get_or_create_customer"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_service.py",
       "source_location": "L73",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10738,51 +12437,51 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L32",
+      "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_32",
-      "target": "services_customer_service_customerservice_resolve_customer"
+      "source": "services_customer_service_rationale_17",
+      "target": "services_customer_service_customerservice_resolve_customer",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L107",
+      "source_location": "L92",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_107",
-      "target": "services_customer_service_customerservice_find_customer"
+      "source": "services_customer_service_rationale_92",
+      "target": "services_customer_service_customerservice_find_customer",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L128",
+      "source_location": "L108",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_128",
-      "target": "services_customer_service_customerservice_search_customers"
+      "source": "services_customer_service_rationale_108",
+      "target": "services_customer_service_customerservice_search_customers",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L139",
+      "source_location": "L119",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_139",
-      "target": "services_customer_service_customerservice_get_customer"
+      "source": "services_customer_service_rationale_119",
+      "target": "services_customer_service_customerservice_get_customer",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L143",
+      "source_location": "L123",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_143",
-      "target": "services_customer_service_customerservice_update_customer"
+      "source": "services_customer_service_rationale_123",
+      "target": "services_customer_service_customerservice_update_customer",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10799,21 +12498,21 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L151",
+      "source_location": "L127",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_151",
-      "target": "services_customer_service_customerservice_get_all_customers"
+      "source": "services_customer_service_rationale_127",
+      "target": "services_customer_service_customerservice_create_customer",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L155",
+      "source_location": "L132",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_155",
-      "target": "services_customer_service_customerservice_generate_customer_code"
+      "source": "services_customer_service_rationale_132",
+      "target": "services_customer_service_customerservice_generate_customer_code",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -10821,9 +12520,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow",
-      "target": "services_customer_workflow_customerworkflow",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow"
     },
     {
       "relation": "imports_from",
@@ -10832,8 +12531,18 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog",
-      "target": "services_customer_workflow",
+      "target": "services_customer_workflow"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "services_customer_workflow_customerworkflow",
+      "target": "services_customer_workflow_customerworkflow_create_customer",
       "confidence_score": 1.0
     },
     {
@@ -10842,9 +12551,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_customerworkflow",
-      "target": "services_customer_workflow_customerworkflow_find_customer_by_phone",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_find_customer_by_phone"
     },
     {
       "relation": "method",
@@ -10852,9 +12561,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_customerworkflow",
-      "target": "services_customer_workflow_customerworkflow_get_customer",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_get_customer"
     },
     {
       "relation": "method",
@@ -10862,8 +12571,18 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L21",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_customerworkflow",
-      "target": "services_customer_workflow_customerworkflow_init",
+      "target": "services_customer_workflow_customerworkflow_init"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "services_customer_workflow_customerworkflow",
+      "target": "services_customer_workflow_customerworkflow_is_modified",
       "confidence_score": 1.0
     },
     {
@@ -10872,9 +12591,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L66",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_customerworkflow",
-      "target": "services_customer_workflow_customerworkflow_populate_fields",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_populate_fields"
     },
     {
       "relation": "method",
@@ -10882,9 +12601,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L48",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_customerworkflow",
-      "target": "services_customer_workflow_customerworkflow_resolve_customer",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_resolve_customer"
     },
     {
       "relation": "method",
@@ -10892,17 +12611,27 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_customerworkflow",
-      "target": "services_customer_workflow_customerworkflow_search_customers",
+      "target": "services_customer_workflow_customerworkflow_search_customers"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "services_customer_workflow_customerworkflow",
+      "target": "services_customer_workflow_customerworkflow_update_customer",
       "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L7",
+      "source_location": "L10",
       "weight": 1.0,
-      "source": "services_customer_workflow_rationale_7",
+      "source": "services_customer_workflow_rationale_10",
       "target": "services_customer_workflow_customerworkflow",
       "confidence_score": 1.0
     },
@@ -10913,9 +12642,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L25",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog",
-      "target": "services_customer_workflow_customerworkflow",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow"
     },
     {
       "relation": "uses",
@@ -10923,9 +12652,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L25",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ui_dialogs_repair_dialog_completeritemdelegate",
-      "target": "services_customer_workflow_customerworkflow",
-      "confidence_score": 0.5
+      "target": "services_customer_workflow_customerworkflow"
     },
     {
       "relation": "uses",
@@ -10933,9 +12662,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L25",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "services_customer_workflow_customerworkflow",
-      "confidence_score": 0.5
+      "target": "services_customer_workflow_customerworkflow"
     },
     {
       "relation": "calls",
@@ -10952,9 +12681,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L25",
+      "source_location": "L28",
       "weight": 1.0,
-      "source": "services_customer_workflow_rationale_25",
+      "source": "services_customer_workflow_rationale_28",
       "target": "services_customer_workflow_customerworkflow_search_customers",
       "confidence_score": 1.0
     },
@@ -10962,9 +12691,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L32",
+      "source_location": "L35",
       "weight": 1.0,
-      "source": "services_customer_workflow_rationale_32",
+      "source": "services_customer_workflow_rationale_35",
       "target": "services_customer_workflow_customerworkflow_get_customer",
       "confidence_score": 1.0
     },
@@ -10972,9 +12701,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L41",
+      "source_location": "L44",
       "weight": 1.0,
-      "source": "services_customer_workflow_rationale_41",
+      "source": "services_customer_workflow_rationale_44",
       "target": "services_customer_workflow_customerworkflow_find_customer_by_phone",
       "confidence_score": 1.0
     },
@@ -10982,9 +12711,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L51",
+      "source_location": "L54",
       "weight": 1.0,
-      "source": "services_customer_workflow_rationale_51",
+      "source": "services_customer_workflow_rationale_54",
       "target": "services_customer_workflow_customerworkflow_resolve_customer",
       "confidence_score": 1.0
     },
@@ -10992,9 +12721,39 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L67",
+      "source_location": "L70",
       "weight": 1.0,
-      "source": "services_customer_workflow_rationale_67",
+      "source": "services_customer_workflow_rationale_70",
+      "target": "services_customer_workflow_customerworkflow_is_modified",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "services_customer_workflow_rationale_77",
+      "target": "services_customer_workflow_customerworkflow_update_customer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "services_customer_workflow_rationale_81",
+      "target": "services_customer_workflow_customerworkflow_create_customer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "services_customer_workflow_rationale_85",
       "target": "services_customer_workflow_customerworkflow_populate_fields",
       "confidence_score": 1.0
     },
@@ -12669,6 +14428,16 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L300",
       "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog",
+      "target": "ui_dialogs_repair_dialog_repairdialog_show_modification_dialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L300",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
       "target": "ui_dialogs_repair_dialog_repairdialog_validate_and_accept"
@@ -12733,6 +14502,17 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L337",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog_validate_and_accept",
+      "target": "ui_dialogs_repair_dialog_repairdialog_show_modification_dialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L308",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -12743,9 +14523,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L330",
+      "source_location": "L377",
       "weight": 1.0,
-      "source": "ui_dialogs_repair_dialog_rationale_330",
+      "source": "ui_dialogs_repair_dialog_rationale_377",
       "target": "ui_dialogs_repair_dialog_repairdialog_calculate_total",
       "confidence_score": 1.0
     },
@@ -12897,21 +14677,21 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
-      "source_location": "L231",
+      "source_location": "L241",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_dialogs_shop_settings_dialog_rationale_231",
-      "target": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_restore_defaults"
+      "source": "ui_dialogs_shop_settings_dialog_rationale_241",
+      "target": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_restore_defaults",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
-      "source_location": "L350",
+      "source_location": "L360",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_dialogs_shop_settings_dialog_rationale_350",
-      "target": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_get_settings"
+      "source": "ui_dialogs_shop_settings_dialog_rationale_360",
+      "target": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_get_settings",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -13428,6 +15208,16 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "AGENTS.md",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "agents",
+      "target": "agents_architecture_refactor_session",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "AGENTS.md",
       "source_location": "L1",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13707,6 +15497,1096 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "customer_architecture",
+      "target": "customer_architecture_customer_workflow_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L27",
+      "weight": 1.0,
+      "source": "customer_architecture_customer_workflow_architecture",
+      "target": "customer_architecture_1_current_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "customer_architecture_customer_workflow_architecture",
+      "target": "customer_architecture_2_final_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "customer_architecture_customer_workflow_architecture",
+      "target": "customer_architecture_3_responsibility_matrix",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "customer_architecture_customer_workflow_architecture",
+      "target": "customer_architecture_4_call_graph",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L281",
+      "weight": 1.0,
+      "source": "customer_architecture_customer_workflow_architecture",
+      "target": "customer_architecture_5_sequence_diagrams",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L440",
+      "weight": 1.0,
+      "source": "customer_architecture_customer_workflow_architecture",
+      "target": "customer_architecture_6_class_responsibilities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L501",
+      "weight": 1.0,
+      "source": "customer_architecture_customer_workflow_architecture",
+      "target": "customer_architecture_7_verification_results",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L546",
+      "weight": 1.0,
+      "source": "customer_architecture_customer_workflow_architecture",
+      "target": "customer_architecture_8_architecture_limitations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "customer_architecture_customer_workflow_architecture",
+      "target": "customer_architecture_table_of_contents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "customer_architecture_1_current_architecture",
+      "target": "customer_architecture_current_production_call_chain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "customer_architecture_1_current_architecture",
+      "target": "customer_architecture_layer_count",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "customer_architecture_2_final_architecture",
+      "target": "customer_architecture_dead_code_removed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "customer_architecture_2_final_architecture",
+      "target": "customer_architecture_what_was_stabilized",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L139",
+      "weight": 1.0,
+      "source": "customer_architecture_3_responsibility_matrix",
+      "target": "customer_architecture_customerrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L128",
+      "weight": 1.0,
+      "source": "customer_architecture_3_responsibility_matrix",
+      "target": "customer_architecture_customerservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L118",
+      "weight": 1.0,
+      "source": "customer_architecture_3_responsibility_matrix",
+      "target": "customer_architecture_customerworkflow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "customer_architecture_3_responsibility_matrix",
+      "target": "customer_architecture_repairdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "customer_architecture_4_call_graph",
+      "target": "customer_architecture_completer_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "customer_architecture_4_call_graph",
+      "target": "customer_architecture_completer_selection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L264",
+      "weight": 1.0,
+      "source": "customer_architecture_4_call_graph",
+      "target": "customer_architecture_edit_mode_no_customer_resolution",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L204",
+      "weight": 1.0,
+      "source": "customer_architecture_4_call_graph",
+      "target": "customer_architecture_phone_auto_fill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L228",
+      "weight": 1.0,
+      "source": "customer_architecture_4_call_graph",
+      "target": "customer_architecture_save_customer_resolution",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L283",
+      "weight": 1.0,
+      "source": "customer_architecture_5_sequence_diagrams",
+      "target": "customer_architecture_5_1_completer_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L305",
+      "weight": 1.0,
+      "source": "customer_architecture_5_sequence_diagrams",
+      "target": "customer_architecture_5_2_completer_selection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L325",
+      "weight": 1.0,
+      "source": "customer_architecture_5_sequence_diagrams",
+      "target": "customer_architecture_5_3_phone_auto_fill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L355",
+      "weight": 1.0,
+      "source": "customer_architecture_5_sequence_diagrams",
+      "target": "customer_architecture_5_4_save_customer_resolution",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L417",
+      "weight": 1.0,
+      "source": "customer_architecture_5_sequence_diagrams",
+      "target": "customer_architecture_5_5_edit_mode_no_customer_resolution",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L482",
+      "weight": 1.0,
+      "source": "customer_architecture_6_class_responsibilities",
+      "target": "customer_architecture_core_storage_customer_repository_py_customerrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L470",
+      "weight": 1.0,
+      "source": "customer_architecture_6_class_responsibilities",
+      "target": "customer_architecture_services_customer_service_py_customerservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L459",
+      "weight": 1.0,
+      "source": "customer_architecture_6_class_responsibilities",
+      "target": "customer_architecture_services_customer_workflow_py_customerworkflow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L442",
+      "weight": 1.0,
+      "source": "customer_architecture_6_class_responsibilities",
+      "target": "customer_architecture_ui_dialogs_repair_dialog_py_repairdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L503",
+      "weight": 1.0,
+      "source": "customer_architecture_7_verification_results",
+      "target": "customer_architecture_7_1_compilation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L511",
+      "weight": 1.0,
+      "source": "customer_architecture_7_verification_results",
+      "target": "customer_architecture_7_2_architecture_rule_verification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L530",
+      "weight": 1.0,
+      "source": "customer_architecture_7_verification_results",
+      "target": "customer_architecture_7_3_import_chain",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L550",
+      "weight": 1.0,
+      "source": "customer_architecture_8_architecture_limitations",
+      "target": "customer_architecture_8_1_normalize_phone_in_repository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L558",
+      "weight": 1.0,
+      "source": "customer_architecture_8_architecture_limitations",
+      "target": "customer_architecture_8_2_phone_auto_fill_double_round_trip",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L568",
+      "weight": 1.0,
+      "source": "customer_architecture_8_architecture_limitations",
+      "target": "customer_architecture_8_3_dead_methods_in_repository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ARCHITECTURE.md",
+      "source_location": "L576",
+      "weight": 1.0,
+      "source": "customer_architecture_8_architecture_limitations",
+      "target": "customer_architecture_8_4_no_customer_update_from_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "customer_behavior_specification",
+      "target": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1049",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_10_state_transitions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1159",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_11_error_handling",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1235",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_12_sqlite_interaction_map",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1299",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_13_non_goals",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_1_architecture_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_2_layer_responsibilities",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L229",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_3_event_flow_diagram",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L339",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_4_scenario_specifications",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L699",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_5_field_mapping",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L760",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_6_completer_specification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L857",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_7_phone_auto_fill_specification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L909",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_8_duplicate_detection_decision_tree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L984",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_9_save_workflow_specification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1316",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_appendix_code_reference",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_customer_workflow_behavior_specification",
+      "target": "customer_behavior_specification_table_of_contents",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L66",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_1_architecture_overview",
+      "target": "customer_behavior_specification_layer_communication_contract",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_1_architecture_overview",
+      "target": "customer_behavior_specification_layered_architecture",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_1_architecture_overview",
+      "target": "customer_behavior_specification_prohibited_patterns",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_2_layer_responsibilities",
+      "target": "customer_behavior_specification_2_1_repairdialog_ui_layer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L116",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_2_layer_responsibilities",
+      "target": "customer_behavior_specification_2_2_customerworkflow_orchestration_layer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L142",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_2_layer_responsibilities",
+      "target": "customer_behavior_specification_2_3_customerservice_business_logic_layer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L178",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_2_layer_responsibilities",
+      "target": "customer_behavior_specification_2_4_customerrepository_data_access_layer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L208",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_2_layer_responsibilities",
+      "target": "customer_behavior_specification_2_5_customerdb_orm_model",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L231",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_3_event_flow_diagram",
+      "target": "customer_behavior_specification_complete_signal_flow_map",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L341",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_4_scenario_specifications",
+      "target": "customer_behavior_specification_scenario_1_phone_auto_fill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L401",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_4_scenario_specifications",
+      "target": "customer_behavior_specification_scenario_2_completer_selection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L464",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_4_scenario_specifications",
+      "target": "customer_behavior_specification_scenario_3_new_customer_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L525",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_4_scenario_specifications",
+      "target": "customer_behavior_specification_scenario_4_duplicate_customer_name_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L580",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_4_scenario_specifications",
+      "target": "customer_behavior_specification_scenario_5_similar_names_completer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L616",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_4_scenario_specifications",
+      "target": "customer_behavior_specification_scenario_6_customer_without_phone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L655",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_4_scenario_specifications",
+      "target": "customer_behavior_specification_scenario_7_phone_edited_refreshed_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L724",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_5_field_mapping",
+      "target": "customer_behavior_specification_reading_widgets_get_customer_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L750",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_5_field_mapping",
+      "target": "customer_behavior_specification_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L716",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_5_field_mapping",
+      "target": "customer_behavior_specification_widget_constraints",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L701",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_5_field_mapping",
+      "target": "customer_behavior_specification_widget_to_field_map",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L741",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_5_field_mapping",
+      "target": "customer_behavior_specification_writing_widgets_populate_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L762",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_6_completer_specification",
+      "target": "customer_behavior_specification_6_1_trigger_conditions",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L772",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_6_completer_specification",
+      "target": "customer_behavior_specification_6_2_timing",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L778",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_6_completer_specification",
+      "target": "customer_behavior_specification_6_3_search_algorithm",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L794",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_6_completer_specification",
+      "target": "customer_behavior_specification_6_4_sorting",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L799",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_6_completer_specification",
+      "target": "customer_behavior_specification_6_5_popup_display",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L820",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_6_completer_specification",
+      "target": "customer_behavior_specification_6_6_data_storage_per_item",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L826",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_6_completer_specification",
+      "target": "customer_behavior_specification_6_7_selection_behavior",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L835",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_6_completer_specification",
+      "target": "customer_behavior_specification_6_8_duplicate_handling",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L843",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_6_completer_specification",
+      "target": "customer_behavior_specification_6_9_qcompleter_configuration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L859",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_7_phone_auto_fill_specification",
+      "target": "customer_behavior_specification_7_1_trigger",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L871",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_7_phone_auto_fill_specification",
+      "target": "customer_behavior_specification_7_2_guards",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L880",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_7_phone_auto_fill_specification",
+      "target": "customer_behavior_specification_7_3_lookup_flow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L897",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_7_phone_auto_fill_specification",
+      "target": "customer_behavior_specification_7_4_signal_safety",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L903",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_7_phone_auto_fill_specification",
+      "target": "customer_behavior_specification_7_5_silent_failure",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L974",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_8_duplicate_detection_decision_tree",
+      "target": "customer_behavior_specification_key_behavioral_rules",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L965",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_8_duplicate_detection_decision_tree",
+      "target": "customer_behavior_specification_priority_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L911",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_8_duplicate_detection_decision_tree",
+      "target": "customer_behavior_specification_resolve_customer_full_decision_tree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L986",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_9_save_workflow_specification",
+      "target": "customer_behavior_specification_9_1_complete_save_sequence",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1019",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_9_save_workflow_specification",
+      "target": "customer_behavior_specification_9_2_edit_mode_behavior",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1034",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_9_save_workflow_specification",
+      "target": "customer_behavior_specification_9_3_save_outcomes_summary",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1051",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_10_state_transitions",
+      "target": "customer_behavior_specification_dialog_state_machine",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1131",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_10_state_transitions",
+      "target": "customer_behavior_specification_state_transition_triggers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1161",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_11_error_handling",
+      "target": "customer_behavior_specification_11_1_empty_phone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1170",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_11_error_handling",
+      "target": "customer_behavior_specification_11_2_duplicate_phone",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1179",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_11_error_handling",
+      "target": "customer_behavior_specification_11_3_duplicate_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1188",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_11_error_handling",
+      "target": "customer_behavior_specification_11_4_cancelled_dialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1197",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_11_error_handling",
+      "target": "customer_behavior_specification_11_5_deleted_customer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1206",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_11_error_handling",
+      "target": "customer_behavior_specification_11_6_invalid_customer_id",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1215",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_11_error_handling",
+      "target": "customer_behavior_specification_11_7_no_phone_no_name_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1225",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_11_error_handling",
+      "target": "customer_behavior_specification_11_8_database_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1237",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_12_sqlite_interaction_map",
+      "target": "customer_behavior_specification_read_operations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1287",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_12_sqlite_interaction_map",
+      "target": "customer_behavior_specification_write_frequency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_BEHAVIOR_SPECIFICATION.md",
+      "source_location": "L1277",
+      "weight": 1.0,
+      "source": "customer_behavior_specification_12_sqlite_interaction_map",
+      "target": "customer_behavior_specification_write_operations",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "CUSTOMER_DECISION_REFACTOR.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -13793,6 +16673,186 @@
       "confidence_score": 1.0,
       "source": "customer_decision_refactor_verification",
       "target": "customer_decision_refactor_known_limitation"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis",
+      "target": "customer_root_cause_analysis_customer_root_cause_analysis",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_customer_root_cause_analysis",
+      "target": "customer_root_cause_analysis_1_actual_execution_graph_verified_against_current_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L110",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_customer_root_cause_analysis",
+      "target": "customer_root_cause_analysis_2_specification_conformance",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L134",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_customer_root_cause_analysis",
+      "target": "customer_root_cause_analysis_3_root_cause_grouping",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L154",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_customer_root_cause_analysis",
+      "target": "customer_root_cause_analysis_4_architecture_assessment",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L177",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_customer_root_cause_analysis",
+      "target": "customer_root_cause_analysis_5_highest_risk_regression_points",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L188",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_customer_root_cause_analysis",
+      "target": "customer_root_cause_analysis_6_recommended_next_steps_priority_order",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_customer_root_cause_analysis",
+      "target": "customer_root_cause_analysis_note_on_audit_currency",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L22",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_1_actual_execution_graph_verified_against_current_code",
+      "target": "customer_root_cause_analysis_1_1_phone_auto_fill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_1_actual_execution_graph_verified_against_current_code",
+      "target": "customer_root_cause_analysis_1_2_completer_popup",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_1_actual_execution_graph_verified_against_current_code",
+      "target": "customer_root_cause_analysis_1_3_completer_selection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_1_actual_execution_graph_verified_against_current_code",
+      "target": "customer_root_cause_analysis_1_4_duplicate_detection_exact_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_1_actual_execution_graph_verified_against_current_code",
+      "target": "customer_root_cause_analysis_1_5_similar_name_detection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_1_actual_execution_graph_verified_against_current_code",
+      "target": "customer_root_cause_analysis_1_6_customer_creation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L90",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_1_actual_execution_graph_verified_against_current_code",
+      "target": "customer_root_cause_analysis_1_7_customer_reuse",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_1_actual_execution_graph_verified_against_current_code",
+      "target": "customer_root_cause_analysis_1_8_save_entry",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_2_specification_conformance",
+      "target": "customer_root_cause_analysis_gaps_partial_conformance_not_scenario_failures",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_ROOT_CAUSE_ANALYSIS.md",
+      "source_location": "L213",
+      "weight": 1.0,
+      "source": "customer_root_cause_analysis_6_recommended_next_steps_priority_order",
+      "target": "customer_root_cause_analysis_decision",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -14240,9 +17300,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_customer_workflow_regression_audit"
     },
     {
       "relation": "contains",
@@ -14250,9 +17310,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L470",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_10_root_cause_analysis",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_10_root_cause_analysis"
     },
     {
       "relation": "contains",
@@ -14260,9 +17320,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L488",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_11_regression_test_results",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_11_regression_test_results"
     },
     {
       "relation": "contains",
@@ -14270,9 +17330,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L519",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_12_conclusion",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_12_conclusion"
     },
     {
       "relation": "contains",
@@ -14280,9 +17340,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_1_complete_call_graph",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_1_complete_call_graph"
     },
     {
       "relation": "contains",
@@ -14290,9 +17350,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L131",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_2_resolve_customer_detailed_flow",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_2_resolve_customer_detailed_flow"
     },
     {
       "relation": "contains",
@@ -14300,9 +17360,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L167",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_3_signal_connection_audit",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_3_signal_connection_audit"
     },
     {
       "relation": "contains",
@@ -14310,9 +17370,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L187",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_4_method_by_method_audit",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_4_method_by_method_audit"
     },
     {
       "relation": "contains",
@@ -14320,9 +17380,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L406",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_5_feature_verification",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_5_feature_verification"
     },
     {
       "relation": "contains",
@@ -14330,9 +17390,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L421",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_6_regression_source_analysis",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_6_regression_source_analysis"
     },
     {
       "relation": "contains",
@@ -14340,9 +17400,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L444",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_7_broken_methods",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_7_broken_methods"
     },
     {
       "relation": "contains",
@@ -14350,9 +17410,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L450",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_8_broken_signals",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_8_broken_signals"
     },
     {
       "relation": "contains",
@@ -14360,9 +17420,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L456",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_customer_workflow_regression_audit",
-      "target": "customer_workflow_regression_audit_9_sql_query_audit",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_9_sql_query_audit"
     },
     {
       "relation": "contains",
@@ -14370,9 +17430,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L178",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_3_signal_connection_audit",
-      "target": "customer_workflow_regression_audit_supporting_signal_connections",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_supporting_signal_connections"
     },
     {
       "relation": "contains",
@@ -14380,9 +17440,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L189",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_4_method_by_method_audit",
-      "target": "customer_workflow_regression_audit_4_1_on_phone_editing_finished_repair_dialog_py_290",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_4_1_on_phone_editing_finished_repair_dialog_py_290"
     },
     {
       "relation": "contains",
@@ -14390,9 +17450,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L223",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_4_method_by_method_audit",
-      "target": "customer_workflow_regression_audit_4_2_on_completer_activated_repair_dialog_py_264",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_4_2_on_completer_activated_repair_dialog_py_264"
     },
     {
       "relation": "contains",
@@ -14400,9 +17460,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L251",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_4_method_by_method_audit",
-      "target": "customer_workflow_regression_audit_4_3_on_name_text_changed_repair_dialog_py_246",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_4_3_on_name_text_changed_repair_dialog_py_246"
     },
     {
       "relation": "contains",
@@ -14410,9 +17470,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L271",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_4_method_by_method_audit",
-      "target": "customer_workflow_regression_audit_4_4_validate_and_accept_repair_dialog_py_307",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_4_4_validate_and_accept_repair_dialog_py_307"
     },
     {
       "relation": "contains",
@@ -14420,9 +17480,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L318",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_4_method_by_method_audit",
-      "target": "customer_workflow_regression_audit_4_5_populate_customer_fields_repair_dialog_py_273",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_4_5_populate_customer_fields_repair_dialog_py_273"
     },
     {
       "relation": "contains",
@@ -14430,9 +17490,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L346",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_4_method_by_method_audit",
-      "target": "customer_workflow_regression_audit_4_6_resolve_customer_services_customer_service_py_31",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_4_6_resolve_customer_services_customer_service_py_31"
     },
     {
       "relation": "contains",
@@ -14440,9 +17500,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L423",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_6_regression_source_analysis",
-      "target": "customer_workflow_regression_audit_6_1_previous_regressions_historical_now_fixed",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_6_1_previous_regressions_historical_now_fixed"
     },
     {
       "relation": "contains",
@@ -14450,9 +17510,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L432",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_6_regression_source_analysis",
-      "target": "customer_workflow_regression_audit_6_2_current_latent_issues_not_regressions_but_design_risks",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_6_2_current_latent_issues_not_regressions_but_design_risks"
     },
     {
       "relation": "contains",
@@ -14460,9 +17520,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L472",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_10_root_cause_analysis",
-      "target": "customer_workflow_regression_audit_no_current_regressions_found",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_no_current_regressions_found"
     },
     {
       "relation": "contains",
@@ -14470,9 +17530,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L490",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_11_regression_test_results",
-      "target": "customer_workflow_regression_audit_test_1_create_a_customer",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_test_1_create_a_customer"
     },
     {
       "relation": "contains",
@@ -14480,9 +17540,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L493",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_11_regression_test_results",
-      "target": "customer_workflow_regression_audit_test_2_open_add_repair_type_phone_verify_every_field_populated",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_test_2_open_add_repair_type_phone_verify_every_field_populated"
     },
     {
       "relation": "contains",
@@ -14490,9 +17550,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L496",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_11_regression_test_results",
-      "target": "customer_workflow_regression_audit_test_3_open_add_repair_type_name_select_from_completer_verify_all_fields_populate",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_test_3_open_add_repair_type_name_select_from_completer_verify_all_fields_populate"
     },
     {
       "relation": "contains",
@@ -14500,9 +17560,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L499",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_11_regression_test_results",
-      "target": "customer_workflow_regression_audit_test_4_verify_phone_appears_only_in_phone_field",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_test_4_verify_phone_appears_only_in_phone_field"
     },
     {
       "relation": "contains",
@@ -14510,9 +17570,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L502",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_11_regression_test_results",
-      "target": "customer_workflow_regression_audit_test_5_verify_address_appears_only_in_address_field",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_test_5_verify_address_appears_only_in_address_field"
     },
     {
       "relation": "contains",
@@ -14520,9 +17580,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L505",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_11_regression_test_results",
-      "target": "customer_workflow_regression_audit_test_6_verify_notes_appear_only_in_notes_field",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_test_6_verify_notes_appear_only_in_notes_field"
     },
     {
       "relation": "contains",
@@ -14530,9 +17590,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L508",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_11_regression_test_results",
-      "target": "customer_workflow_regression_audit_test_7_verify_no_field_contains_concatenated_text",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_test_7_verify_no_field_contains_concatenated_text"
     },
     {
       "relation": "contains",
@@ -14540,9 +17600,9 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L511",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_11_regression_test_results",
-      "target": "customer_workflow_regression_audit_test_8_save_duplicate_customer",
-      "confidence_score": 1.0
+      "target": "customer_workflow_regression_audit_test_8_save_duplicate_customer"
     },
     {
       "relation": "contains",
@@ -14550,8 +17610,178 @@
       "source_file": "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md",
       "source_location": "L514",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "customer_workflow_regression_audit_11_regression_test_results",
-      "target": "customer_workflow_regression_audit_test_9_save_new_customer",
+      "target": "customer_workflow_regression_audit_test_9_save_new_customer"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization",
+      "target": "customer_workflow_stabilization_customer_workflow_stabilization",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L212",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_customer_workflow_stabilization",
+      "target": "customer_workflow_stabilization_acceptance_test_results",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L93",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_customer_workflow_stabilization",
+      "target": "customer_workflow_stabilization_file_changes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L121",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_customer_workflow_stabilization",
+      "target": "customer_workflow_stabilization_final_workflow_diagram",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L235",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_customer_workflow_stabilization",
+      "target": "customer_workflow_stabilization_guard_single_execution_path_verification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L45",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_customer_workflow_stabilization",
+      "target": "customer_workflow_stabilization_new_execution_path",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_customer_workflow_stabilization",
+      "target": "customer_workflow_stabilization_old_execution_paths",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_customer_workflow_stabilization",
+      "target": "customer_workflow_stabilization_removed_duplicate_logic",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_old_execution_paths",
+      "target": "customer_workflow_stabilization_path_a_completer_selection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L21",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_old_execution_paths",
+      "target": "customer_workflow_stabilization_path_b_phone_auto_fill",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_old_execution_paths",
+      "target": "customer_workflow_stabilization_path_c_save_validate_and_accept",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_new_execution_path",
+      "target": "customer_workflow_stabilization_path_a_completer_selection_49",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_new_execution_path",
+      "target": "customer_workflow_stabilization_path_b_phone_auto_fill_58",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_new_execution_path",
+      "target": "customer_workflow_stabilization_path_c_save_validate_and_accept_69",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_file_changes",
+      "target": "customer_workflow_stabilization_created_services_customer_workflow_py_new",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_file_changes",
+      "target": "customer_workflow_stabilization_modified_ui_dialogs_repair_dialog_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "CUSTOMER_WORKFLOW_STABILIZATION.md",
+      "source_location": "L223",
+      "weight": 1.0,
+      "source": "customer_workflow_stabilization_acceptance_test_results",
+      "target": "customer_workflow_stabilization_test_details",
       "confidence_score": 1.0
     },
     {
@@ -16558,5 +19788,5 @@
       "source_file": "SQLITE_MIGRATION_AUDIT.md"
     }
   ],
-  "built_at_commit": "ee3f63ec6c00b074e9920bcd0701c2c380e250bd"
+  "built_at_commit": "8e8c547ead85bfb4befcdf6be7c2847778e52a31"
 }

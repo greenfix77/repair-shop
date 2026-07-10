@@ -110,9 +110,9 @@
     "semantic_hash": "8187ba0c8f7bbe4009ae2adab03e62de"
   },
   "opencode.json": {
-    "mtime": 1783620696.4644885,
-    "ast_hash": "4f20b0bc062710233a27d220111f6e6f",
-    "semantic_hash": ""
+    "mtime": 1781882924.4488232,
+    "ast_hash": "f81a9f7c9499228f1e9646c649968209",
+    "semantic_hash": "f81a9f7c9499228f1e9646c649968209"
   },
   "repair_manager/ui/components.py": {
     "mtime": 1781868460.9180787,
@@ -130,9 +130,9 @@
     "semantic_hash": "735109e78a95a737b9884f3d93e79993"
   },
   "services/customer_service.py": {
-    "mtime": 1783624906.9200354,
-    "ast_hash": "5f06d2d7cf2dc2424546f39e6132c036",
-    "semantic_hash": ""
+    "mtime": 1782501601.0780704,
+    "ast_hash": "3aaa927eebce7a04481153530bdec2e1",
+    "semantic_hash": "3aaa927eebce7a04481153530bdec2e1"
   },
   "services/date_service.py": {
     "mtime": 1781720818.3316536,
@@ -205,14 +205,14 @@
     "semantic_hash": "64716346615e392e2ed63867625e6f53"
   },
   "ui/dialogs/repair_dialog.py": {
-    "mtime": 1783626893.8756368,
-    "ast_hash": "d6e1a80f78ce751939d2795712dcd7b1",
+    "mtime": 1782760090.3054368,
+    "ast_hash": "756ce64244fd4620455c06d7df157c62",
     "semantic_hash": ""
   },
   "ui/dialogs/shop_settings_dialog.py": {
-    "mtime": 1783623750.2548182,
-    "ast_hash": "e2ea88f01dba7ed34b399374c419f3ba",
-    "semantic_hash": ""
+    "mtime": 1782413014.541031,
+    "ast_hash": "84a26c872b595be58e5dbf04967f5c0a",
+    "semantic_hash": "84a26c872b595be58e5dbf04967f5c0a"
   },
   "ui/main_window.py": {
     "mtime": 1782416773.8196476,
@@ -240,9 +240,9 @@
     "semantic_hash": "061d27cf9d07e13cf5d18ab3c7a9a94f"
   },
   "AGENTS.md": {
-    "mtime": 1782764413.435966,
-    "ast_hash": "b737fcc4a71295ec8eb4bc477bcd623e",
-    "semantic_hash": ""
+    "mtime": 1782586314.7841663,
+    "ast_hash": "752aa83aa64361ac32860f882dcff932",
+    "semantic_hash": "752aa83aa64361ac32860f882dcff932"
   },
   "ARCHITECTURE_FINAL.md": {
     "mtime": 1781868765.5547903,
@@ -355,38 +355,13 @@
     "semantic_hash": "daf5c0547f0128aee649bf155b99c458"
   },
   "services/customer_workflow.py": {
-    "mtime": 1783624920.993181,
-    "ast_hash": "be459d4e82f1652f297471ee6b3bd99a",
+    "mtime": 1782759997.8012857,
+    "ast_hash": "46744e9e5453fdfa01b9e97cf91cac22",
     "semantic_hash": ""
   },
   "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md": {
     "mtime": 1782759621.7733188,
     "ast_hash": "20f4b72e683ce57d72518ef972ef16b6",
-    "semantic_hash": ""
-  },
-  "opencode - Copy.json": {
-    "mtime": 1781882924.4488232,
-    "ast_hash": "f81a9f7c9499228f1e9646c649968209",
-    "semantic_hash": ""
-  },
-  "CUSTOMER_ARCHITECTURE.md": {
-    "mtime": 1782764602.4705982,
-    "ast_hash": "99195c2f1314eec054cb4d2418322579",
-    "semantic_hash": ""
-  },
-  "CUSTOMER_BEHAVIOR_SPECIFICATION.md": {
-    "mtime": 1782761428.7736714,
-    "ast_hash": "3ed802461e855df7270839565ef79332",
-    "semantic_hash": ""
-  },
-  "CUSTOMER_ROOT_CAUSE_ANALYSIS.md": {
-    "mtime": 1783619962.198893,
-    "ast_hash": "687290e44a645bede8a68ea013724f91",
-    "semantic_hash": ""
-  },
-  "CUSTOMER_WORKFLOW_STABILIZATION.md": {
-    "mtime": 1782760238.1821265,
-    "ast_hash": "6e89fa117b92360865df6dd014b03b6c",
     "semantic_hash": ""
   }
 }

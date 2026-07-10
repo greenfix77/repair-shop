@@ -464,7 +464,7 @@
       "source_location": "L457",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_load_data",
-      "community": 54,
+      "community": 3,
       "norm_label": ".load_data()"
     },
     {
@@ -484,7 +484,7 @@
       "source_location": "L472",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_closeevent",
-      "community": 6,
+      "community": 3,
       "norm_label": ".closeevent()"
     },
     {
@@ -624,7 +624,7 @@
       "source_location": "L458",
       "_origin": "ast",
       "id": "app_rationale_458",
-      "community": 54,
+      "community": 3,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u0627\u0632 \u0641\u0627\u06cc\u0644"
     },
     {
@@ -1506,7 +1506,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "repair_manager_ui_components",
-      "community": 2,
+      "community": 4,
       "norm_label": "components.py"
     },
     {
@@ -1676,7 +1676,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_customer_service",
-      "community": 0,
+      "community": 68,
       "norm_label": "customer_service.py"
     },
     {
@@ -1926,7 +1926,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_customer_workflow",
-      "community": 2,
+      "community": 68,
       "norm_label": "customer_workflow.py"
     },
     {
@@ -3019,7 +3019,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "community": 54,
+      "community": 69,
       "norm_label": "customereditdialog"
     },
     {
@@ -3029,47 +3029,47 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_init",
-      "community": 54,
+      "community": 69,
       "norm_label": ".__init__()"
     },
     {
       "label": ".init_ui()",
       "file_type": "code",
       "source_file": "ui/dialogs/customer_edit_dialog.py",
-      "source_location": "L37",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_init_ui",
-      "community": 54,
+      "community": 69,
       "norm_label": ".init_ui()"
     },
     {
       "label": "._load_fields()",
       "file_type": "code",
       "source_file": "ui/dialogs/customer_edit_dialog.py",
-      "source_location": "L111",
+      "source_location": "L112",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_load_fields",
-      "community": 54,
+      "community": 69,
       "norm_label": "._load_fields()"
     },
     {
       "label": "._get_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/customer_edit_dialog.py",
-      "source_location": "L124",
+      "source_location": "L125",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_get_data",
-      "community": 54,
+      "community": 69,
       "norm_label": "._get_data()"
     },
     {
       "label": "._save()",
       "file_type": "code",
       "source_file": "ui/dialogs/customer_edit_dialog.py",
-      "source_location": "L138",
+      "source_location": "L139",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_save",
-      "community": 54,
+      "community": 69,
       "norm_label": "._save()"
     },
     {
@@ -3079,8 +3079,78 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_rationale_11",
-      "community": 54,
+      "community": 69,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0634\u062a\u0631\u06cc"
+    },
+    {
+      "label": "customer_selection_dialog.py",
+      "file_type": "code",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ui_dialogs_customer_selection_dialog",
+      "community": 68,
+      "norm_label": "customer_selection_dialog.py"
+    },
+    {
+      "label": "CustomerSelectionDialog",
+      "file_type": "code",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "community": 68,
+      "norm_label": "customerselectiondialog"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_init",
+      "community": 68,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": "._load_customers()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_load_customers",
+      "community": 68,
+      "norm_label": "._load_customers()"
+    },
+    {
+      "label": "._filter()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L75",
+      "_origin": "ast",
+      "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_filter",
+      "community": 68,
+      "norm_label": "._filter()"
+    },
+    {
+      "label": "._on_select()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_on_select",
+      "community": 68,
+      "norm_label": "._on_select()"
+    },
+    {
+      "label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u0634\u062a\u0631\u06cc \u0627\u0632 \u0644\u06cc\u0633\u062a",
+      "file_type": "rationale",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "ui_dialogs_customer_selection_dialog_rationale_11",
+      "community": 68,
+      "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u0634\u062a\u0631\u06cc \u0627\u0632 \u0644\u06cc\u0633\u062a"
     },
     {
       "label": "invoice_dialog.py",
@@ -3089,7 +3159,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog",
-      "community": 30,
+      "community": 2,
       "norm_label": "invoice_dialog.py"
     },
     {
@@ -3179,17 +3249,17 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog",
-      "community": 2,
+      "community": 68,
       "norm_label": "repair_dialog.py"
     },
     {
       "label": "CompleterItemDelegate",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L28",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate",
-      "community": 4,
+      "community": 70,
       "norm_label": "completeritemdelegate"
     },
     {
@@ -3199,54 +3269,54 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qstyleditemdelegate",
-      "community": 4,
+      "community": 70,
       "norm_label": "qstyleditemdelegate"
     },
     {
       "label": ".paint()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L29",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate_paint",
-      "community": 4,
+      "community": 70,
       "norm_label": ".paint()"
     },
     {
       "label": ".sizeHint()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L50",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate_sizehint",
-      "community": 4,
+      "community": 70,
       "norm_label": ".sizehint()"
     },
     {
       "label": "RepairDialog",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L55",
+      "source_location": "L50",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog",
-      "community": 4,
+      "community": 63,
       "norm_label": "repairdialog"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L58",
+      "source_location": "L53",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_init",
-      "community": 4,
+      "community": 63,
       "norm_label": ".__init__()"
     },
     {
       "label": ".init_ui()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L77",
+      "source_location": "L71",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_init_ui",
       "community": 4,
@@ -3256,140 +3326,160 @@
       "label": "._init_customer_completer()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L230",
+      "source_location": "L258",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_init_customer_completer",
-      "community": 4,
+      "community": 70,
       "norm_label": "._init_customer_completer()"
     },
     {
-      "label": "._on_name_text_changed()",
+      "label": "._on_selector_text_changed()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L250",
+      "source_location": "L278",
       "_origin": "ast",
-      "id": "ui_dialogs_repair_dialog_repairdialog_on_name_text_changed",
-      "community": 4,
-      "norm_label": "._on_name_text_changed()"
+      "id": "ui_dialogs_repair_dialog_repairdialog_on_selector_text_changed",
+      "community": 63,
+      "norm_label": "._on_selector_text_changed()"
     },
     {
       "label": "._on_completer_search()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L255",
+      "source_location": "L284",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_on_completer_search",
-      "community": 4,
+      "community": 63,
       "norm_label": "._on_completer_search()"
     },
     {
       "label": "._on_completer_activated()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L273",
+      "source_location": "L302",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_on_completer_activated",
-      "community": 4,
+      "community": 63,
       "norm_label": "._on_completer_activated()"
     },
     {
-      "label": "._connect_auto_fill()",
+      "label": "._select_customer()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L283",
+      "source_location": "L308",
       "_origin": "ast",
-      "id": "ui_dialogs_repair_dialog_repairdialog_connect_auto_fill",
-      "community": 4,
-      "norm_label": "._connect_auto_fill()"
+      "id": "ui_dialogs_repair_dialog_repairdialog_select_customer",
+      "community": 63,
+      "norm_label": "._select_customer()"
     },
     {
-      "label": "._on_phone_editing_finished()",
+      "label": "._refresh_customer_display()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L286",
+      "source_location": "L318",
       "_origin": "ast",
-      "id": "ui_dialogs_repair_dialog_repairdialog_on_phone_editing_finished",
-      "community": 4,
-      "norm_label": "._on_phone_editing_finished()"
+      "id": "ui_dialogs_repair_dialog_repairdialog_refresh_customer_display",
+      "community": 63,
+      "norm_label": "._refresh_customer_display()"
     },
     {
-      "label": "._show_modification_dialog()",
+      "label": "._clear_customer_display()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L304",
+      "source_location": "L336",
       "_origin": "ast",
-      "id": "ui_dialogs_repair_dialog_repairdialog_show_modification_dialog",
-      "community": 4,
-      "norm_label": "._show_modification_dialog()"
+      "id": "ui_dialogs_repair_dialog_repairdialog_clear_customer_display",
+      "community": 63,
+      "norm_label": "._clear_customer_display()"
+    },
+    {
+      "label": "._open_customer_selection()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L349",
+      "_origin": "ast",
+      "id": "ui_dialogs_repair_dialog_repairdialog_open_customer_selection",
+      "community": 63,
+      "norm_label": "._open_customer_selection()"
+    },
+    {
+      "label": "._open_customer_creation()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L356",
+      "_origin": "ast",
+      "id": "ui_dialogs_repair_dialog_repairdialog_open_customer_creation",
+      "community": 63,
+      "norm_label": "._open_customer_creation()"
+    },
+    {
+      "label": "._open_customer_edit()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L363",
+      "_origin": "ast",
+      "id": "ui_dialogs_repair_dialog_repairdialog_open_customer_edit",
+      "community": 63,
+      "norm_label": "._open_customer_edit()"
     },
     {
       "label": ".validate_and_accept()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L323",
+      "source_location": "L375",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_validate_and_accept",
-      "community": 4,
+      "community": 6,
       "norm_label": ".validate_and_accept()"
-    },
-    {
-      "label": "._get_customer_data()",
-      "file_type": "code",
-      "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L377",
-      "_origin": "ast",
-      "id": "ui_dialogs_repair_dialog_repairdialog_get_customer_data",
-      "community": 4,
-      "norm_label": "._get_customer_data()"
     },
     {
       "label": ".calculate_total()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L391",
+      "source_location": "L381",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_calculate_total",
-      "community": 4,
+      "community": 63,
       "norm_label": ".calculate_total()"
     },
     {
       "label": ".load_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L402",
+      "source_location": "L392",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_load_data",
-      "community": 4,
+      "community": 63,
       "norm_label": ".load_data()"
     },
     {
       "label": ".get_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L420",
+      "source_location": "L423",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_get_data",
-      "community": 4,
+      "community": 63,
       "norm_label": ".get_data()"
     },
     {
       "label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u062a\u0639\u0645\u06cc\u0631",
       "file_type": "rationale",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L56",
+      "source_location": "L51",
       "_origin": "ast",
-      "id": "ui_dialogs_repair_dialog_rationale_56",
-      "community": 4,
+      "id": "ui_dialogs_repair_dialog_rationale_51",
+      "community": 63,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u062a\u0639\u0645\u06cc\u0631"
     },
     {
       "label": "\u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u062c\u0645\u0648\u0639 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627",
       "file_type": "rationale",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L392",
+      "source_location": "L382",
       "_origin": "ast",
-      "id": "ui_dialogs_repair_dialog_rationale_392",
-      "community": 4,
+      "id": "ui_dialogs_repair_dialog_rationale_382",
+      "community": 63,
       "norm_label": "\u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u062c\u0645\u0648\u0639 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627"
     },
     {
@@ -9703,6 +9793,16 @@
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "target": "qdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/invoice_dialog.py",
       "source_location": "L15",
       "weight": 1.0,
@@ -12919,6 +13019,17 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog_init",
+      "target": "qlineedit"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L86",
       "weight": 1.0,
@@ -13647,6 +13758,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog",
+      "target": "services_customer_workflow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L25",
       "weight": 1.0,
@@ -13814,6 +13936,38 @@
       "source_location": "L15",
       "weight": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog_init",
+      "target": "services_customer_workflow_customerworkflow"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog",
+      "target": "services_customer_workflow_customerworkflow",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "target": "services_customer_workflow_customerworkflow",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog_init",
       "target": "services_customer_workflow_customerworkflow"
     },
     {
@@ -14630,6 +14784,17 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog",
+      "target": "services_notification_service_show_warning"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L365",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog_open_customer_edit",
       "target": "services_notification_service_show_warning"
     },
     {
@@ -15627,6 +15792,17 @@
       "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
     },
     {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog",
+      "target": "ui_dialogs_customer_edit_dialog",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/customer_edit_dialog.py",
@@ -15687,6 +15863,59 @@
       "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
     },
     {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog",
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L19",
+      "weight": 0.8,
+      "source": "ui_dialogs_repair_dialog_completeritemdelegate",
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L19",
+      "weight": 0.8,
+      "source": "ui_dialogs_repair_dialog_repairdialog",
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L357",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog_open_customer_creation",
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L367",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog_open_customer_edit",
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
+    },
+    {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
@@ -15718,6 +15947,130 @@
       "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog_save",
       "target": "ui_dialogs_customer_edit_dialog_customereditdialog_get_data"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog",
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog",
+      "target": "ui_dialogs_customer_selection_dialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_filter",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_load_customers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_on_select",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog_rationale_11",
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L20",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog",
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L20",
+      "weight": 0.8,
+      "source": "ui_dialogs_repair_dialog_completeritemdelegate",
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L20",
+      "weight": 0.8,
+      "source": "ui_dialogs_repair_dialog_repairdialog",
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L350",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog_open_customer_selection",
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/customer_selection_dialog.py",
+      "source_location": "L60",
+      "weight": 1.0,
+      "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog_init",
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_load_customers",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -15972,11 +16325,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L56",
+      "source_location": "L51",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_dialogs_repair_dialog_rationale_56",
-      "target": "ui_dialogs_repair_dialog_repairdialog"
+      "source": "ui_dialogs_repair_dialog_rationale_51",
+      "target": "ui_dialogs_repair_dialog_repairdialog",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -15992,21 +16345,11 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L286",
+      "source_location": "L336",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_connect_auto_fill"
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L330",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_get_customer_data"
+      "target": "ui_dialogs_repair_dialog_repairdialog_clear_customer_display",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -16082,31 +16425,61 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L246",
+      "source_location": "L278",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_on_name_text_changed"
+      "target": "ui_dialogs_repair_dialog_repairdialog_on_selector_text_changed",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L289",
+      "source_location": "L356",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_on_phone_editing_finished"
+      "target": "ui_dialogs_repair_dialog_repairdialog_open_customer_creation",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L300",
+      "source_location": "L363",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_show_modification_dialog"
+      "target": "ui_dialogs_repair_dialog_repairdialog_open_customer_edit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L349",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog",
+      "target": "ui_dialogs_repair_dialog_repairdialog_open_customer_selection",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L318",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog",
+      "target": "ui_dialogs_repair_dialog_repairdialog_refresh_customer_display",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L308",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog",
+      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -16128,17 +16501,6 @@
       "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog_init",
       "target": "ui_dialogs_repair_dialog_repairdialog_calculate_total"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L69",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_dialogs_repair_dialog_repairdialog_init",
-      "target": "ui_dialogs_repair_dialog_repairdialog_connect_auto_fill"
     },
     {
       "relation": "calls",
@@ -16178,30 +16540,85 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L337",
+      "source_location": "L280",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_dialogs_repair_dialog_repairdialog_validate_and_accept",
-      "target": "ui_dialogs_repair_dialog_repairdialog_show_modification_dialog"
+      "source": "ui_dialogs_repair_dialog_repairdialog_on_selector_text_changed",
+      "target": "ui_dialogs_repair_dialog_repairdialog_clear_customer_display",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L308",
+      "source_location": "L306",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_dialogs_repair_dialog_repairdialog_validate_and_accept",
-      "target": "ui_dialogs_repair_dialog_repairdialog_get_customer_data"
+      "source": "ui_dialogs_repair_dialog_repairdialog_on_completer_activated",
+      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L396",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog_load_data",
+      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L361",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog_open_customer_creation",
+      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L354",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog_open_customer_selection",
+      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L316",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog_select_customer",
+      "target": "ui_dialogs_repair_dialog_repairdialog_refresh_customer_display",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/repair_dialog.py",
+      "source_location": "L371",
+      "weight": 1.0,
+      "source": "ui_dialogs_repair_dialog_repairdialog_open_customer_edit",
+      "target": "ui_dialogs_repair_dialog_repairdialog_refresh_customer_display",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L392",
+      "source_location": "L382",
       "weight": 1.0,
-      "source": "ui_dialogs_repair_dialog_rationale_392",
+      "source": "ui_dialogs_repair_dialog_rationale_382",
       "target": "ui_dialogs_repair_dialog_repairdialog_calculate_total",
       "confidence_score": 1.0
     },
@@ -21708,5 +22125,5 @@
       "source_file": "SQLITE_MIGRATION_AUDIT.md"
     }
   ],
-  "built_at_commit": "5cf1dab842428f001a62086a48c0ee1c4fb3f98d"
+  "built_at_commit": "78f13a24aeb8b5d5d086c235b20c18d38df14c47"
 }

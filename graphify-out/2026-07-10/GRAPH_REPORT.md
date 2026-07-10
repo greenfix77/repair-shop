@@ -1,16 +1,16 @@
 # Graph Report - repair_manager  (2026-07-10)
 
 ## Corpus Check
-- 78 files · ~62,707 words
+- 79 files · ~62,907 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 878 nodes · 1231 edges · 67 communities (58 shown, 9 thin omitted)
-- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 47 edges (avg confidence: 0.6)
+- 887 nodes · 1262 edges · 71 communities (59 shown, 12 thin omitted)
+- Extraction: 96% EXTRACTED · 4% INFERRED · 0% AMBIGUOUS · INFERRED: 53 edges (avg confidence: 0.59)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `5cf1dab8`
+- Built from commit: `78f13a24`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -73,22 +73,26 @@
 - [[_COMMUNITY_Community 60|Community 60]]
 - [[_COMMUNITY_Community 61|Community 61]]
 - [[_COMMUNITY_Community 62|Community 62]]
+- [[_COMMUNITY_Community 63|Community 63]]
 - [[_COMMUNITY_Community 64|Community 64]]
 - [[_COMMUNITY_Community 65|Community 65]]
 - [[_COMMUNITY_Community 66|Community 66]]
 - [[_COMMUNITY_Community 67|Community 67]]
+- [[_COMMUNITY_Community 68|Community 68]]
+- [[_COMMUNITY_Community 69|Community 69]]
+- [[_COMMUNITY_Community 70|Community 70]]
 
 ## God Nodes (most connected - your core abstractions)
 1. `LaptopRepairManager` - 42 edges
 2. `CustomerService` - 41 edges
-3. `CustomerWorkflow` - 26 edges
-4. `RepairDialog` - 25 edges
+3. `CustomerWorkflow` - 29 edges
+4. `RepairDialog` - 29 edges
 5. `CustomerRepository` - 24 edges
-6. `ShopSettingsDialog` - 17 edges
-7. `SQLiteStorage` - 16 edges
-8. `make_callback()` - 16 edges
-9. `Customer Workflow Behavior Specification` - 16 edges
-10. `PersianDateEdit` - 15 edges
+6. `CustomerEditDialog` - 19 edges
+7. `ShopSettingsDialog` - 17 edges
+8. `SQLiteStorage` - 16 edges
+9. `make_callback()` - 16 edges
+10. `Customer Workflow Behavior Specification` - 16 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `NotificationDialog` --uses--> `MainController`  [INFERRED]
@@ -110,7 +114,7 @@
 - **Invoice Generation Pipeline** — architecture_final_invoice_preview_dialog, architecture_final_invoice_generator, shop_logo_audit_logo_service, qwebengine_migration_audit_qwebengine_view, invoice_blank_preview_audit_logo_base64_inflation, shop_logo_audit_chromium_file_url_block [INFERRED 0.95]
 - **Storage Layer Architecture** — sqlite_migration_audit_dualstorage, sqlite_migration_audit_repairs_storage, sqlite_migration_audit_sqlite_storage, sqlite_only_audit_json_read_dependency, architecture_final_laptop_repair_manager [INFERRED 0.95]
 
-## Communities (67 total, 9 thin omitted)
+## Communities (71 total, 12 thin omitted)
 
 ### Community 0 - "Customer Database Layer"
 Cohesion: 0.08
@@ -121,16 +125,16 @@ Cohesion: 0.07
 Nodes (37): CustomerService, Check for duplicates when creating a customer from management UI.          Bus, Search customers by full_name or phone (contains, case-insensitive)., Get a single customer by primary key., Update an existing customer's data., Single entry point for all customer resolution.          Decision order:, Create a new customer without duplicate detection (conscious clone path)., Return all customers (for management views). (+29 more)
 
 ### Community 2 - "Application Entry & UI Setup"
-Cohesion: 0.16
+Cohesion: 0.17
 Nodes (14): main(), today_persian(), calculate_invoice_totals(), Any, generate_print_invoice_html(), generate_web_invoice_html(), get_app_icon(), get_header_logo_pixmap() (+6 more)
 
 ### Community 3 - "Main Window & Repair Actions"
-Cohesion: 0.10
-Nodes (9): LaptopRepairManager, نمایش/پنهان کردن پاپ‌آپ وضعیت‌ها, بستن پاپ‌آپ هنگام کلیک خارج از آن یا ESC, بارگذاری و نمایش لیست مشتریان مرتب شده بر اساس نام, افزودن مشتری جدید از طریق دیالوگ اختصاصی, ویرایش یک مشتری از طریق دیالوگ اختصاصی, بررسی وجود تعمیر مرتبط برای یک مشتری, کلاس اصلی برنامه مدیریت تعمیرات (+1 more)
+Cohesion: 0.09
+Nodes (10): LaptopRepairManager, نمایش/پنهان کردن پاپ‌آپ وضعیت‌ها, بستن پاپ‌آپ هنگام کلیک خارج از آن یا ESC, بارگذاری و نمایش لیست مشتریان مرتب شده بر اساس نام, افزودن مشتری جدید از طریق دیالوگ اختصاصی, ویرایش یک مشتری از طریق دیالوگ اختصاصی, بررسی وجود تعمیر مرتبط برای یک مشتری, بارگذاری داده‌ها از فایل (+2 more)
 
 ### Community 4 - "Calendar & UI Components"
-Cohesion: 0.08
-Nodes (12): QCalendarWidget, QLineEdit, QStyledItemDelegate, PersianCalendarWidget, PersianDateEdit, ویجت تقویم شمسی سفارشی, دریافت تاریخ شمسی انتخاب شده, ویجت ورودی تاریخ شمسی (+4 more)
+Cohesion: 0.17
+Nodes (7): QCalendarWidget, QLineEdit, PersianCalendarWidget, PersianDateEdit, ویجت تقویم شمسی سفارشی, دریافت تاریخ شمسی انتخاب شده, ویجت ورودی تاریخ شمسی
 
 ### Community 5 - "Controller & Data Operations"
 Cohesion: 0.09
@@ -193,7 +197,7 @@ Cohesion: 0.15
 Nodes (24): بازسازی هدر پس از تغییر تنظیمات, build_customer_table(), build_customer_toolbar(), _on_header_clicked(), _on_item_changed(), QTableWidget, QTableWidgetItem, تغییر وضعیت همه چک‌باکس‌ها با کلیک روی هدر (+16 more)
 
 ### Community 30 - "Community 30"
-Cohesion: 0.17
+Cohesion: 0.15
 Nodes (8): QWidget, print_invoice_content(), save_invoice_to_pdf(), InvoicePreviewDialog, به‌روزرسانی پیش‌نمایش فاکتور, دیالوگ پیش‌نمایش و چاپ فاکتور, Invoice preview widget using QWebEngineView, WebInvoiceView
 
 ### Community 31 - "Community 31"
@@ -273,8 +277,8 @@ Cohesion: 0.11
 Nodes (17): Acceptance Test Results, Created: `services/customer_workflow.py` (new), Customer Workflow Stabilization, File Changes, Final Workflow Diagram, Guard: Single Execution Path Verification, Modified: `ui/dialogs/repair_dialog.py`, New Execution Path (+9 more)
 
 ### Community 54 - "Community 54"
-Cohesion: 0.17
-Nodes (6): NotificationDialog, دیالوگ نمایش اعلان‌ها, بارگذاری داده‌ها از فایل, QDialog, CustomerEditDialog, دیالوگ افزودن/ویرایش اطلاعات مشتری
+Cohesion: 0.33
+Nodes (3): NotificationDialog, دیالوگ نمایش اعلان‌ها, QDialog
 
 ### Community 55 - "Community 55"
 Cohesion: 0.20
@@ -308,6 +312,10 @@ Nodes (6): 5. Field Mapping, Reading Widgets (`_get_customer_data`), Rules, Widg
 Cohesion: 0.33
 Nodes (6): 7.1 Trigger, 7.2 Guards, 7.3 Lookup Flow, 7.4 Signal Safety, 7.5 Silent Failure, 7. Phone Auto-Fill Specification
 
+### Community 63 - "Community 63"
+Cohesion: 0.21
+Nodes (3): محاسبه مجموع هزینه‌ها, دیالوگ افزودن/ویرایش تعمیر, RepairDialog
+
 ### Community 64 - "Community 64"
 Cohesion: 0.50
 Nodes (4): 12. SQLite Interaction Map, Read Operations, Write Frequency, Write Operations
@@ -327,22 +335,22 @@ Nodes (4): 9.1 Complete Save Sequence, 9.2 Edit Mode Behavior, 9.3 Save Outcomes
 ## Knowledge Gaps
 - **370 isolated node(s):** `$schema`, `plugin`, `@opencode-ai/plugin`, `$schema`, `model` (+365 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **9 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **12 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `CustomerService` connect `Customer Service Operations` to `Customer Database Layer`, `Application Entry & UI Setup`, `Community 52`, `Calendar & UI Components`?**
-  _High betweenness centrality (0.049) - this node is a cross-community bridge._
-- **Why does `CustomerWorkflow` connect `Community 52` to `Customer Service Operations`, `Application Entry & UI Setup`, `Main Window & Repair Actions`, `Calendar & UI Components`, `Community 6`, `Community 54`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
-- **Why does `LaptopRepairManager` connect `Main Window & Repair Actions` to `Customer Database Layer`, `Application Entry & UI Setup`, `Community 35`, `Calendar & UI Components`, `Controller & Data Operations`, `Community 6`, `Community 52`, `Community 54`, `Community 29`, `Community 30`?**
-  _High betweenness centrality (0.033) - this node is a cross-community bridge._
+- **Why does `CustomerService` connect `Customer Service Operations` to `Customer Database Layer`, `Community 68`, `Community 70`, `Community 52`, `Community 63`?**
+  _High betweenness centrality (0.050) - this node is a cross-community bridge._
+- **Why does `CustomerWorkflow` connect `Community 52` to `Customer Service Operations`, `Application Entry & UI Setup`, `Main Window & Repair Actions`, `Community 68`, `Community 69`, `Community 6`, `Community 70`, `Community 54`, `Community 63`?**
+  _High betweenness centrality (0.034) - this node is a cross-community bridge._
+- **Why does `LaptopRepairManager` connect `Main Window & Repair Actions` to `Customer Database Layer`, `Application Entry & UI Setup`, `Community 35`, `Calendar & UI Components`, `Controller & Data Operations`, `Community 6`, `Community 69`, `Community 52`, `Community 54`, `Community 29`, `Community 30`, `Community 63`?**
+  _High betweenness centrality (0.032) - this node is a cross-community bridge._
 - **Are the 9 inferred relationships involving `LaptopRepairManager` (e.g. with `MainController` and `SQLiteStorage`) actually correct?**
   _`LaptopRepairManager` has 9 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 4 inferred relationships involving `CustomerService` (e.g. with `CustomerRepository` and `CustomerWorkflow`) actually correct?**
   _`CustomerService` has 4 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 6 inferred relationships involving `CustomerWorkflow` (e.g. with `LaptopRepairManager` and `NotificationDialog`) actually correct?**
-  _`CustomerWorkflow` has 6 INFERRED edges - model-reasoned connections that need verification._
-- **Are the 5 inferred relationships involving `RepairDialog` (e.g. with `LaptopRepairManager` and `NotificationDialog`) actually correct?**
-  _`RepairDialog` has 5 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 7 inferred relationships involving `CustomerWorkflow` (e.g. with `LaptopRepairManager` and `NotificationDialog`) actually correct?**
+  _`CustomerWorkflow` has 7 INFERRED edges - model-reasoned connections that need verification._
+- **Are the 7 inferred relationships involving `RepairDialog` (e.g. with `LaptopRepairManager` and `NotificationDialog`) actually correct?**
+  _`RepairDialog` has 7 INFERRED edges - model-reasoned connections that need verification._

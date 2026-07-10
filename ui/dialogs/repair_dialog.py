@@ -134,6 +134,7 @@ class RepairDialog(QDialog):
 
         customer_layout.addWidget(QLabel("کد ملی:"), 4, 0)
         self.national_id_input = QLineEdit()
+        self.national_id_input.setValidator(QRegularExpressionValidator(QRegularExpression(r'^\d{0,10}$')))
         customer_layout.addWidget(self.national_id_input, 4, 1)
 
         customer_layout.addWidget(QLabel("آدرس:"), 5, 0)
@@ -150,6 +151,7 @@ class RepairDialog(QDialog):
 
         customer_layout.addWidget(QLabel("کدپستی:"), 8, 0)
         self.postal_code_input = QLineEdit()
+        self.postal_code_input.setValidator(QRegularExpressionValidator(QRegularExpression(r'^\d{0,10}$')))
         customer_layout.addWidget(self.postal_code_input, 8, 1)
 
         customer_layout.addWidget(QLabel("یادداشت‌ها:"), 9, 0)
@@ -321,6 +323,14 @@ class RepairDialog(QDialog):
     def validate_and_accept(self):
         if self.phone_input.text() and not self.phone_input.hasAcceptableInput():
             show_warning(self, "خطا", "شماره تلفن باید ۱۱ رقم و با ۰ شروع شود")
+            return
+        national_id = self.national_id_input.text().strip()
+        if national_id and len(national_id) != 10:
+            show_warning(self, "خطا", "کد ملی باید دقیقاً ۱۰ رقم باشد.")
+            return
+        postal_code = self.postal_code_input.text().strip()
+        if postal_code and len(postal_code) != 10:
+            show_warning(self, "خطا", "کد پستی باید دقیقاً ۱۰ رقم باشد.")
             return
         if self.repair_data:
             self.accept()

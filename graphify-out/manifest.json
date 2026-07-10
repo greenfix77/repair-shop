@@ -205,8 +205,8 @@
     "semantic_hash": "64716346615e392e2ed63867625e6f53"
   },
   "ui/dialogs/repair_dialog.py": {
-    "mtime": 1783665210.2368386,
-    "ast_hash": "e4b98c87e163eaf7329c5650b1ddd620",
+    "mtime": 1783669036.8173988,
+    "ast_hash": "894179d30969b1514fa9abbbd1148e07",
     "semantic_hash": ""
   },
   "ui/dialogs/shop_settings_dialog.py": {
@@ -395,8 +395,8 @@
     "semantic_hash": ""
   },
   "ui/dialogs/customer_edit_dialog.py": {
-    "mtime": 1783666621.335625,
-    "ast_hash": "f5b5307a5599dd588e8b6447d58a963c",
+    "mtime": 1783669231.612564,
+    "ast_hash": "bbb8b958c8fe735b6c320b53bd9e5e94",
     "semantic_hash": ""
   }
 }

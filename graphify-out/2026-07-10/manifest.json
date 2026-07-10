@@ -15,9 +15,9 @@
     "semantic_hash": "111287aed37970b605d3ab422d1c93ec"
   },
   "app.py": {
-    "mtime": 1782458121.1655314,
-    "ast_hash": "3a1e8db1dd1d89630b75e72de6bd681a",
-    "semantic_hash": "3a1e8db1dd1d89630b75e72de6bd681a"
+    "mtime": 1783667018.1668892,
+    "ast_hash": "25b8bc531bf757adec9678a05c32cc13",
+    "semantic_hash": ""
   },
   "controllers/__init__.py": {
     "mtime": 1781864574.8239012,
@@ -130,8 +130,8 @@
     "semantic_hash": "735109e78a95a737b9884f3d93e79993"
   },
   "services/customer_service.py": {
-    "mtime": 1783624906.9200354,
-    "ast_hash": "5f06d2d7cf2dc2424546f39e6132c036",
+    "mtime": 1783666487.543983,
+    "ast_hash": "8c9cf7465c9412ce9b94a741ef81906b",
     "semantic_hash": ""
   },
   "services/date_service.py": {
@@ -205,8 +205,8 @@
     "semantic_hash": "64716346615e392e2ed63867625e6f53"
   },
   "ui/dialogs/repair_dialog.py": {
-    "mtime": 1783626893.8756368,
-    "ast_hash": "d6e1a80f78ce751939d2795712dcd7b1",
+    "mtime": 1783665210.2368386,
+    "ast_hash": "e4b98c87e163eaf7329c5650b1ddd620",
     "semantic_hash": ""
   },
   "ui/dialogs/shop_settings_dialog.py": {
@@ -215,9 +215,9 @@
     "semantic_hash": ""
   },
   "ui/main_window.py": {
-    "mtime": 1782416773.8196476,
-    "ast_hash": "3124c5140e85f3894a84dc968971f232",
-    "semantic_hash": "3124c5140e85f3894a84dc968971f232"
+    "mtime": 1783666859.192669,
+    "ast_hash": "0cc8d3695a21650343eef6c14f401ab5",
+    "semantic_hash": ""
   },
   "ui/status_styles.py": {
     "mtime": 1781720819.6774404,
@@ -355,8 +355,8 @@
     "semantic_hash": "daf5c0547f0128aee649bf155b99c458"
   },
   "services/customer_workflow.py": {
-    "mtime": 1783624920.993181,
-    "ast_hash": "be459d4e82f1652f297471ee6b3bd99a",
+    "mtime": 1783666502.4993637,
+    "ast_hash": "3e32fcb31d27a87efb1190e00f921b49",
     "semantic_hash": ""
   },
   "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md": {
@@ -387,6 +387,16 @@
   "CUSTOMER_WORKFLOW_STABILIZATION.md": {
     "mtime": 1782760238.1821265,
     "ast_hash": "6e89fa117b92360865df6dd014b03b6c",
+    "semantic_hash": ""
+  },
+  "ui/customer_view.py": {
+    "mtime": 1783666749.7734993,
+    "ast_hash": "15f19e654844f19284c46a42b3e290f3",
+    "semantic_hash": ""
+  },
+  "ui/dialogs/customer_edit_dialog.py": {
+    "mtime": 1783666621.335625,
+    "ast_hash": "f5b5307a5599dd588e8b6447d58a963c",
     "semantic_hash": ""
   }
 }

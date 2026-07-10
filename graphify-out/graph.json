@@ -2966,7 +2966,7 @@
       "label": "._load_fields()",
       "file_type": "code",
       "source_file": "ui/dialogs/customer_edit_dialog.py",
-      "source_location": "L104",
+      "source_location": "L106",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_load_fields",
       "community": 3,
@@ -2976,7 +2976,7 @@
       "label": "._get_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/customer_edit_dialog.py",
-      "source_location": "L117",
+      "source_location": "L119",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_get_data",
       "community": 3,
@@ -2986,7 +2986,7 @@
       "label": "._save()",
       "file_type": "code",
       "source_file": "ui/dialogs/customer_edit_dialog.py",
-      "source_location": "L131",
+      "source_location": "L133",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_save",
       "community": 3,
@@ -3176,7 +3176,7 @@
       "label": "._init_customer_completer()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L228",
+      "source_location": "L230",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_init_customer_completer",
       "community": 4,
@@ -3186,7 +3186,7 @@
       "label": "._on_name_text_changed()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L248",
+      "source_location": "L250",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_on_name_text_changed",
       "community": 4,
@@ -3196,7 +3196,7 @@
       "label": "._on_completer_search()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L253",
+      "source_location": "L255",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_on_completer_search",
       "community": 4,
@@ -3206,7 +3206,7 @@
       "label": "._on_completer_activated()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L271",
+      "source_location": "L273",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_on_completer_activated",
       "community": 4,
@@ -3216,7 +3216,7 @@
       "label": "._connect_auto_fill()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L281",
+      "source_location": "L283",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_connect_auto_fill",
       "community": 4,
@@ -3226,7 +3226,7 @@
       "label": "._on_phone_editing_finished()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L284",
+      "source_location": "L286",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_on_phone_editing_finished",
       "community": 4,
@@ -3236,7 +3236,7 @@
       "label": "._show_modification_dialog()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L302",
+      "source_location": "L304",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_show_modification_dialog",
       "community": 4,
@@ -3246,7 +3246,7 @@
       "label": ".validate_and_accept()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L321",
+      "source_location": "L323",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_validate_and_accept",
       "community": 4,
@@ -3256,7 +3256,7 @@
       "label": "._get_customer_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L364",
+      "source_location": "L374",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_get_customer_data",
       "community": 4,
@@ -3266,7 +3266,7 @@
       "label": ".calculate_total()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L378",
+      "source_location": "L388",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_calculate_total",
       "community": 4,
@@ -3276,7 +3276,7 @@
       "label": ".load_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L389",
+      "source_location": "L399",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_load_data",
       "community": 4,
@@ -3286,7 +3286,7 @@
       "label": ".get_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L407",
+      "source_location": "L417",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_get_data",
       "community": 4,
@@ -3306,9 +3306,9 @@
       "label": "\u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u062c\u0645\u0648\u0639 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627",
       "file_type": "rationale",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L379",
+      "source_location": "L389",
       "_origin": "ast",
-      "id": "ui_dialogs_repair_dialog_rationale_379",
+      "id": "ui_dialogs_repair_dialog_rationale_389",
       "community": 4,
       "norm_label": "\u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u062c\u0645\u0648\u0639 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627"
     },
@@ -8987,9 +8987,9 @@
       "source_file": "app.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app",
-      "target": "services_customer_workflow",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow"
     },
     {
       "relation": "imports",
@@ -8998,9 +8998,9 @@
       "source_file": "app.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app",
-      "target": "services_customer_workflow_customerworkflow",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow"
     },
     {
       "relation": "imports_from",
@@ -9240,9 +9240,9 @@
       "source_file": "app.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app",
-      "target": "ui_customer_view",
-      "confidence_score": 1.0
+      "target": "ui_customer_view"
     },
     {
       "relation": "imports",
@@ -9251,9 +9251,9 @@
       "source_file": "app.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app",
-      "target": "ui_customer_view_render_customer_rows",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_render_customer_rows"
     },
     {
       "relation": "imports_from",
@@ -9262,9 +9262,9 @@
       "source_file": "app.py",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app",
-      "target": "ui_dialogs_customer_edit_dialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog"
     },
     {
       "relation": "imports",
@@ -9273,9 +9273,9 @@
       "source_file": "app.py",
       "source_location": "L27",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
     },
     {
       "relation": "imports_from",
@@ -9486,9 +9486,9 @@
       "source_file": "app.py",
       "source_location": "L31",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "app_notificationdialog",
-      "target": "services_customer_workflow_customerworkflow",
-      "confidence_score": 0.5
+      "target": "services_customer_workflow_customerworkflow"
     },
     {
       "relation": "uses",
@@ -9496,9 +9496,9 @@
       "source_file": "app.py",
       "source_location": "L27",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "app_notificationdialog",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "confidence_score": 0.5
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
     },
     {
       "relation": "uses",
@@ -9536,9 +9536,9 @@
       "source_file": "app.py",
       "source_location": "L40",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_40",
-      "target": "app_notificationdialog",
-      "confidence_score": 1.0
+      "target": "app_notificationdialog"
     },
     {
       "relation": "inherits",
@@ -9546,9 +9546,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "target": "qdialog",
-      "confidence_score": 1.0
+      "target": "qdialog"
     },
     {
       "relation": "inherits",
@@ -9637,9 +9637,9 @@
       "source_file": "app.py",
       "source_location": "L298",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_delete_selected_customers",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_delete_selected_customers"
     },
     {
       "relation": "method",
@@ -9647,9 +9647,9 @@
       "source_file": "app.py",
       "source_location": "L277",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_edit_customer",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_edit_customer"
     },
     {
       "relation": "method",
@@ -9687,9 +9687,9 @@
       "source_file": "app.py",
       "source_location": "L287",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_has_related_repairs",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_has_related_repairs"
     },
     {
       "relation": "method",
@@ -9767,9 +9767,9 @@
       "source_file": "app.py",
       "source_location": "L272",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_refresh_customer_table",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_refresh_customer_table"
     },
     {
       "relation": "method",
@@ -9807,9 +9807,9 @@
       "source_file": "app.py",
       "source_location": "L261",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_show_customers_view",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_show_customers_view"
     },
     {
       "relation": "method",
@@ -9817,9 +9817,9 @@
       "source_file": "app.py",
       "source_location": "L251",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_show_repairs_view",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_show_repairs_view"
     },
     {
       "relation": "method",
@@ -9917,9 +9917,9 @@
       "source_file": "app.py",
       "source_location": "L31",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "app_laptoprepairmanager",
-      "target": "services_customer_workflow_customerworkflow",
-      "confidence_score": 0.5
+      "target": "services_customer_workflow_customerworkflow"
     },
     {
       "relation": "uses",
@@ -9927,9 +9927,9 @@
       "source_file": "app.py",
       "source_location": "L27",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "app_laptoprepairmanager",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "confidence_score": 0.5
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
     },
     {
       "relation": "uses",
@@ -9978,9 +9978,9 @@
       "source_file": "app.py",
       "source_location": "L77",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_77",
-      "target": "app_laptoprepairmanager",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager"
     },
     {
       "relation": "calls",
@@ -10109,9 +10109,9 @@
       "source_file": "app.py",
       "source_location": "L105",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_105",
-      "target": "app_laptoprepairmanager_open_shop_settings",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_open_shop_settings"
     },
     {
       "relation": "calls",
@@ -10152,9 +10152,9 @@
       "source_file": "app.py",
       "source_location": "L111",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_111",
-      "target": "app_laptoprepairmanager_rebuild_header",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_rebuild_header"
     },
     {
       "relation": "rationale_for",
@@ -10162,9 +10162,9 @@
       "source_file": "app.py",
       "source_location": "L123",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_123",
-      "target": "app_laptoprepairmanager_toggle_status_popup",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_toggle_status_popup"
     },
     {
       "relation": "rationale_for",
@@ -10172,9 +10172,9 @@
       "source_file": "app.py",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_133",
-      "target": "app_laptoprepairmanager_eventfilter",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_eventfilter"
     },
     {
       "relation": "calls",
@@ -10436,9 +10436,9 @@
       "source_file": "app.py",
       "source_location": "L270",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager_show_customers_view",
-      "target": "app_laptoprepairmanager_refresh_customer_table",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_refresh_customer_table"
     },
     {
       "relation": "calls",
@@ -10447,9 +10447,9 @@
       "source_file": "app.py",
       "source_location": "L356",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager_delete_selected_customers",
-      "target": "app_laptoprepairmanager_refresh_customer_table",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_refresh_customer_table"
     },
     {
       "relation": "calls",
@@ -10458,9 +10458,9 @@
       "source_file": "app.py",
       "source_location": "L285",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager_edit_customer",
-      "target": "app_laptoprepairmanager_refresh_customer_table",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_refresh_customer_table"
     },
     {
       "relation": "calls",
@@ -10479,9 +10479,9 @@
       "source_file": "app.py",
       "source_location": "L273",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_273",
-      "target": "app_laptoprepairmanager_refresh_customer_table",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_refresh_customer_table"
     },
     {
       "relation": "calls",
@@ -10500,9 +10500,9 @@
       "source_file": "app.py",
       "source_location": "L278",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_278",
-      "target": "app_laptoprepairmanager_edit_customer",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_edit_customer"
     },
     {
       "relation": "calls",
@@ -10511,9 +10511,9 @@
       "source_file": "app.py",
       "source_location": "L322",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager_delete_selected_customers",
-      "target": "app_laptoprepairmanager_has_related_repairs",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_has_related_repairs"
     },
     {
       "relation": "rationale_for",
@@ -10521,9 +10521,9 @@
       "source_file": "app.py",
       "source_location": "L288",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_288",
-      "target": "app_laptoprepairmanager_has_related_repairs",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_has_related_repairs"
     },
     {
       "relation": "calls",
@@ -10575,9 +10575,9 @@
       "source_file": "app.py",
       "source_location": "L299",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_299",
-      "target": "app_laptoprepairmanager_delete_selected_customers",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_delete_selected_customers"
     },
     {
       "relation": "calls",
@@ -10596,9 +10596,9 @@
       "source_file": "app.py",
       "source_location": "L421",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_421",
-      "target": "app_laptoprepairmanager_load_data",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_load_data"
     },
     {
       "relation": "calls",
@@ -10628,9 +10628,9 @@
       "source_file": "app.py",
       "source_location": "L429",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_429",
-      "target": "app_laptoprepairmanager_save_data",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_save_data"
     },
     {
       "relation": "calls",
@@ -12804,9 +12804,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L135",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_customerservice",
-      "target": "services_customer_service_customerservice_delete_customer",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_delete_customer"
     },
     {
       "relation": "method",
@@ -12844,9 +12844,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L131",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_customerservice",
-      "target": "services_customer_service_customerservice_get_all_customers",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_get_all_customers"
     },
     {
       "relation": "method",
@@ -13290,9 +13290,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_rationale_132",
-      "target": "services_customer_service_customerservice_get_all_customers",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_get_all_customers"
     },
     {
       "relation": "rationale_for",
@@ -13300,9 +13300,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_rationale_136",
-      "target": "services_customer_service_customerservice_delete_customer",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_delete_customer"
     },
     {
       "relation": "rationale_for",
@@ -13320,9 +13320,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L140",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_rationale_140",
-      "target": "services_customer_service_customerservice_generate_customer_code",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_generate_customer_code"
     },
     {
       "relation": "contains",
@@ -13341,9 +13341,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog",
-      "target": "services_customer_workflow",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow"
     },
     {
       "relation": "imports_from",
@@ -13372,9 +13372,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L88",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_customerworkflow",
-      "target": "services_customer_workflow_customerworkflow_delete_customer",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_delete_customer"
     },
     {
       "relation": "method",
@@ -13392,9 +13392,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_customerworkflow",
-      "target": "services_customer_workflow_customerworkflow_get_all_customers",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_get_all_customers"
     },
     {
       "relation": "method",
@@ -13483,9 +13483,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog",
-      "target": "services_customer_workflow_customerworkflow",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow"
     },
     {
       "relation": "uses",
@@ -13493,9 +13493,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L7",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "target": "services_customer_workflow_customerworkflow",
-      "confidence_score": 0.5
+      "target": "services_customer_workflow_customerworkflow"
     },
     {
       "relation": "calls",
@@ -13626,9 +13626,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_rationale_85",
-      "target": "services_customer_workflow_customerworkflow_get_all_customers",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_get_all_customers"
     },
     {
       "relation": "rationale_for",
@@ -13636,9 +13636,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L89",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_rationale_89",
-      "target": "services_customer_workflow_customerworkflow_delete_customer",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_delete_customer"
     },
     {
       "relation": "rationale_for",
@@ -13656,9 +13656,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L93",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_rationale_93",
-      "target": "services_customer_workflow_customerworkflow_populate_fields",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_populate_fields"
     },
     {
       "relation": "contains",
@@ -14212,9 +14212,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog",
-      "target": "services_notification_service",
-      "confidence_score": 1.0
+      "target": "services_notification_service"
     },
     {
       "relation": "imports_from",
@@ -14278,9 +14278,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog",
-      "target": "services_notification_service_show_warning",
-      "confidence_score": 1.0
+      "target": "services_notification_service_show_warning"
     },
     {
       "relation": "calls",
@@ -14344,9 +14344,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog",
-      "target": "services_notification_service_show_error",
-      "confidence_score": 1.0
+      "target": "services_notification_service_show_error"
     },
     {
       "relation": "calls",
@@ -15018,9 +15018,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view",
-      "target": "ui_customer_view_build_customer_table",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_build_customer_table"
     },
     {
       "relation": "contains",
@@ -15028,9 +15028,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view",
-      "target": "ui_customer_view_build_customer_toolbar",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_build_customer_toolbar"
     },
     {
       "relation": "contains",
@@ -15038,9 +15038,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L115",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view",
-      "target": "ui_customer_view_on_header_clicked",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_on_header_clicked"
     },
     {
       "relation": "contains",
@@ -15048,9 +15048,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view",
-      "target": "ui_customer_view_on_item_changed",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_on_item_changed"
     },
     {
       "relation": "contains",
@@ -15058,9 +15058,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view",
-      "target": "ui_customer_view_render_customer_rows",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_render_customer_rows"
     },
     {
       "relation": "contains",
@@ -15068,9 +15068,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view",
-      "target": "ui_customer_view_sync_header_state",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_sync_header_state"
     },
     {
       "relation": "imports_from",
@@ -15079,9 +15079,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window",
-      "target": "ui_customer_view",
-      "confidence_score": 1.0
+      "target": "ui_customer_view"
     },
     {
       "relation": "rationale_for",
@@ -15089,9 +15089,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_rationale_16",
-      "target": "ui_customer_view_build_customer_toolbar",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_build_customer_toolbar"
     },
     {
       "relation": "imports",
@@ -15100,9 +15100,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window",
-      "target": "ui_customer_view_build_customer_toolbar",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_build_customer_toolbar"
     },
     {
       "relation": "calls",
@@ -15111,9 +15111,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L407",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window_build_ui",
-      "target": "ui_customer_view_build_customer_toolbar",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_build_customer_toolbar"
     },
     {
       "relation": "calls",
@@ -15122,9 +15122,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_build_customer_table",
-      "target": "ui_customer_view_on_header_clicked",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_on_header_clicked"
     },
     {
       "relation": "calls",
@@ -15133,9 +15133,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L63",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_build_customer_table",
-      "target": "ui_customer_view_on_item_changed",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_on_item_changed"
     },
     {
       "relation": "calls",
@@ -15144,9 +15144,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_build_customer_table",
-      "target": "ui_customer_view_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_py_qtablewidget"
     },
     {
       "relation": "calls",
@@ -15155,9 +15155,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L55",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_build_customer_table",
-      "target": "ui_customer_view_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_py_qtablewidgetitem"
     },
     {
       "relation": "imports",
@@ -15166,9 +15166,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window",
-      "target": "ui_customer_view_build_customer_table",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_build_customer_table"
     },
     {
       "relation": "calls",
@@ -15177,9 +15177,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L409",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window_build_ui",
-      "target": "ui_customer_view_build_customer_table",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_build_customer_table"
     },
     {
       "relation": "rationale_for",
@@ -15187,9 +15187,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L70",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_rationale_70",
-      "target": "ui_customer_view_render_customer_rows",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_render_customer_rows"
     },
     {
       "relation": "references",
@@ -15198,9 +15198,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_render_customer_rows",
-      "target": "ui_customer_view_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_py_qtablewidget"
     },
     {
       "relation": "calls",
@@ -15209,9 +15209,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_render_customer_rows",
-      "target": "ui_customer_view_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_py_qtablewidgetitem"
     },
     {
       "relation": "references",
@@ -15220,9 +15220,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L115",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_on_header_clicked",
-      "target": "ui_customer_view_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_py_qtablewidget"
     },
     {
       "relation": "references",
@@ -15231,9 +15231,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_on_item_changed",
-      "target": "ui_customer_view_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_py_qtablewidget"
     },
     {
       "relation": "references",
@@ -15242,9 +15242,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_sync_header_state",
-      "target": "ui_customer_view_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_py_qtablewidget"
     },
     {
       "relation": "rationale_for",
@@ -15252,9 +15252,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L116",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_rationale_116",
-      "target": "ui_customer_view_on_header_clicked",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_on_header_clicked"
     },
     {
       "relation": "references",
@@ -15263,9 +15263,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_on_item_changed",
-      "target": "ui_customer_view_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_py_qtablewidgetitem"
     },
     {
       "relation": "calls",
@@ -15274,9 +15274,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_on_item_changed",
-      "target": "ui_customer_view_sync_header_state",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_sync_header_state"
     },
     {
       "relation": "rationale_for",
@@ -15284,9 +15284,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L133",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_rationale_133",
-      "target": "ui_customer_view_on_item_changed",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_on_item_changed"
     },
     {
       "relation": "contains",
@@ -15294,9 +15294,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
     },
     {
       "relation": "method",
@@ -15304,9 +15304,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L117",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_get_data",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_get_data"
     },
     {
       "relation": "method",
@@ -15314,9 +15314,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_init",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_init"
     },
     {
       "relation": "method",
@@ -15324,9 +15324,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_init_ui",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_init_ui"
     },
     {
       "relation": "method",
@@ -15334,9 +15334,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_load_fields",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_load_fields"
     },
     {
       "relation": "method",
@@ -15344,9 +15344,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L131",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_save",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_save"
     },
     {
       "relation": "rationale_for",
@@ -15354,9 +15354,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_rationale_11",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
     },
     {
       "relation": "calls",
@@ -15365,9 +15365,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog_init",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_init_ui",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_init_ui"
     },
     {
       "relation": "calls",
@@ -15376,9 +15376,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog_init",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_load_fields",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_load_fields"
     },
     {
       "relation": "calls",
@@ -15387,9 +15387,9 @@
       "source_file": "ui/dialogs/customer_edit_dialog.py",
       "source_location": "L132",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog_save",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_get_data",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog_get_data"
     },
     {
       "relation": "contains",
@@ -15871,9 +15871,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L379",
+      "source_location": "L389",
       "weight": 1.0,
-      "source": "ui_dialogs_repair_dialog_rationale_379",
+      "source": "ui_dialogs_repair_dialog_rationale_389",
       "target": "ui_dialogs_repair_dialog_repairdialog_calculate_total",
       "confidence_score": 1.0
     },
@@ -16057,9 +16057,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L338",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window",
-      "target": "ui_main_window_build_nav_bar",
-      "confidence_score": 1.0
+      "target": "ui_main_window_build_nav_bar"
     },
     {
       "relation": "contains",
@@ -16258,9 +16258,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L386",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window_build_ui",
-      "target": "ui_main_window_build_nav_bar",
-      "confidence_score": 1.0
+      "target": "ui_main_window_build_nav_bar"
     },
     {
       "relation": "rationale_for",
@@ -16268,9 +16268,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L339",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window_rationale_339",
-      "target": "ui_main_window_build_nav_bar",
-      "confidence_score": 1.0
+      "target": "ui_main_window_build_nav_bar"
     },
     {
       "relation": "contains",
@@ -16349,9 +16349,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L8",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_create_table_item",
-      "target": "ui_table_renderer_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_py_qtablewidgetitem"
     },
     {
       "relation": "rationale_for",
@@ -16381,9 +16381,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_set_status_styling",
-      "target": "ui_table_renderer_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_py_qtablewidgetitem"
     },
     {
       "relation": "references",
@@ -16392,9 +16392,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L22",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_set_total_styling",
-      "target": "ui_table_renderer_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_py_qtablewidgetitem"
     },
     {
       "relation": "rationale_for",
@@ -21167,5 +21167,5 @@
       "source_file": "SQLITE_MIGRATION_AUDIT.md"
     }
   ],
-  "built_at_commit": "e0bffc9cd4132fb8b9c81514bafce6eb54f46de5"
+  "built_at_commit": "0f6a6e831cf9aa19267b1e82f858563b0e6408cf"
 }

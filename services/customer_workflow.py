@@ -81,6 +81,14 @@ class CustomerWorkflow:
         """Create a new customer (conscious clone path, no duplicate detection)."""
         return self._service.create_customer(customer_data)
 
+    def get_all_customers(self) -> List[Dict]:
+        """Return all customers (for management views)."""
+        return self._service.get_all_customers()
+
+    def delete_customer(self, customer_id: int) -> bool:
+        """Delete a customer by primary key."""
+        return self._service.delete_customer(customer_id)
+
     def populate_fields(self, form, customer: Dict) -> None:
         """Populate all customer UI fields from a customer dict.
 

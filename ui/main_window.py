@@ -4,11 +4,13 @@ from pathlib import Path
 from PyQt5.QtWidgets import (QWidget, QHBoxLayout, QVBoxLayout,
                               QPushButton, QTableWidget, QLabel,
                               QLineEdit, QComboBox, QHeaderView,
-                              QAbstractItemView, QFrame, QSizePolicy)
+                              QAbstractItemView, QFrame, QSizePolicy,
+                              QStackedWidget)
 from PyQt5.QtCore import Qt, QPoint, QRect, QEvent
 from PyQt5.QtGui import QPixmap
 
 from services.logo_service import get_header_logo_pixmap
+from ui.customer_view import build_customer_table, build_customer_toolbar
 from core.status import (
     STATUS_PENDING, STATUS_IN_PROGRESS, STATUS_COMPLETED, STATUS_DELIVERED,
     ALL_STATUSES_WITH_ALL,
@@ -333,6 +335,32 @@ def create_status_popup(window):
     return popup
 
 
+def build_nav_bar(window):
+    """ایجاد نوار ناوبری بین نمای تعمیرات و مشتریان"""
+    nav = QFrame()
+    nav.setStyleSheet("background-color: #f5f5f5; border-radius: 5px; padding: 6px;")
+    layout = QHBoxLayout()
+    layout.setContentsMargins(4, 4, 4, 4)
+
+    window.repairs_nav_btn = QPushButton("تعمیرات")
+    window.repairs_nav_btn.setStyleSheet(
+        "background-color: #4F46E5; color: white; font-weight: bold;"
+    )
+    window.repairs_nav_btn.clicked.connect(window.show_repairs_view)
+    layout.addWidget(window.repairs_nav_btn)
+
+    window.customers_nav_btn = QPushButton("مشتریان")
+    window.customers_nav_btn.setStyleSheet(
+        "background-color: #607D8B; color: white;"
+    )
+    window.customers_nav_btn.clicked.connect(window.show_customers_view)
+    layout.addWidget(window.customers_nav_btn)
+
+    layout.addStretch()
+    nav.setLayout(layout)
+    return nav
+
+
 def build_ui(window):
     """ایجاد رابط کاربری"""
     window.setWindowTitle(_make_title(icon=False))
@@ -354,13 +382,36 @@ def build_ui(window):
     # Status popup
     window.status_popup = create_status_popup(window)
     
-    # نوار ابزار
-    toolbar = build_toolbar(window)
-    main_layout.addWidget(toolbar)
+    # نوار ناوبری
+    nav_bar = build_nav_bar(window)
+    main_layout.addWidget(nav_bar)
     
-    # جدول
+    # ناحیه نمایش: نمای تعمیرات (صفحه ۰) و نمای مشتریان (صفحه ۱)
+    window.view_stack = QStackedWidget()
+
+    # صفحه تعمیرات
+    repairs_page = QWidget()
+    repairs_layout = QVBoxLayout()
+    repairs_layout.setContentsMargins(0, 0, 0, 0)
+    repairs_toolbar = build_toolbar(window)
+    repairs_layout.addWidget(repairs_toolbar)
     window.table = build_table(window)
-    main_layout.addWidget(window.table)
+    repairs_layout.addWidget(window.table)
+    repairs_page.setLayout(repairs_layout)
+    window.view_stack.addWidget(repairs_page)
+
+    # صفحه مشتریان
+    customers_page = QWidget()
+    customers_layout = QVBoxLayout()
+    customers_layout.setContentsMargins(0, 0, 0, 0)
+    window.customer_toolbar = build_customer_toolbar(window)
+    customers_layout.addWidget(window.customer_toolbar)
+    window.customer_table = build_customer_table(window)
+    customers_layout.addWidget(window.customer_table)
+    customers_page.setLayout(customers_layout)
+    window.view_stack.addWidget(customers_page)
+
+    main_layout.addWidget(window.view_stack)
     
     # نوار وضعیت
     window.status_bar = build_status_bar(window)

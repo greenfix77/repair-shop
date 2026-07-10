@@ -24,8 +24,11 @@ from services.invoice_generator import generate_print_invoice_html, generate_web
 from ui.status_styles import get_status_color
 from ui.dialogs.repair_dialog import RepairDialog
 from ui.dialogs.invoice_dialog import InvoicePreviewDialog
+from ui.dialogs.customer_edit_dialog import CustomerEditDialog
 from ui.main_window import build_ui, build_header, create_status_popup
+from ui.customer_view import render_customer_rows
 from controllers.main_controller import MainController
+from services.customer_workflow import CustomerWorkflow
 from services.notification_service import (
     show_info, show_warning, show_error, show_question
 )
@@ -78,6 +81,7 @@ class LaptopRepairManager(QMainWindow):
         self.storage = SQLiteStorage()
         self.repairs = []
         self.controller = MainController()
+        self._customer_workflow = CustomerWorkflow()
         self.load_data()
         self.init_ui()
         self.refresh_table()  # پر کردن جدول با داده‌های بارگذاری شده
@@ -241,7 +245,118 @@ class LaptopRepairManager(QMainWindow):
             self.view_repair, self.quick_invoice,
             self.update_statistics,
         )
-    
+
+    # --- مدیریت مشتریان ---
+
+    def show_repairs_view(self):
+        """نمایش نمای تعمیرات"""
+        self.view_stack.setCurrentIndex(0)
+        self.repairs_nav_btn.setStyleSheet(
+            "background-color: #4F46E5; color: white; font-weight: bold;"
+        )
+        self.customers_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+
+    def show_customers_view(self):
+        """نمایش نمای مشتریان"""
+        self.view_stack.setCurrentIndex(1)
+        self.repairs_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.customers_nav_btn.setStyleSheet(
+            "background-color: #4F46E5; color: white; font-weight: bold;"
+        )
+        self.refresh_customer_table()
+
+    def refresh_customer_table(self):
+        """بارگذاری و نمایش لیست مشتریان مرتب شده بر اساس نام"""
+        customers = self._customer_workflow.get_all_customers()
+        render_customer_rows(self.customer_table, customers, self.edit_customer)
+
+    def edit_customer(self, customer_id):
+        """ویرایش یک مشتری از طریق دیالوگ اختصاصی"""
+        if customer_id is None:
+            return
+        dialog = CustomerEditDialog(customer_id, parent=self)
+        if getattr(dialog, '_init_failed', False):
+            return
+        if dialog.exec_() == QDialog.Accepted:
+            self.refresh_customer_table()
+
+    def _has_related_repairs(self, customer):
+        """بررسی وجود تعمیر مرتبط برای یک مشتری"""
+        name = (customer.get('full_name') or '').strip()
+        phone = (customer.get('phone') or '').strip()
+        for r in self.repairs:
+            if phone and r.get('phone', '').strip() == phone:
+                return True
+            if name and r.get('customer_name', '').strip() == name:
+                return True
+        return False
+
+    def delete_selected_customers(self):
+        """حذف مشتریان انتخاب‌شده با احتیاط"""
+        table = self.customer_table
+        selected_ids = []
+        for row in range(table.rowCount()):
+            item = table.item(row, 0)
+            if item is not None and item.checkState() == Qt.Checked:
+                cid = item.data(Qt.UserRole)
+                if cid is not None:
+                    selected_ids.append(cid)
+
+        if not selected_ids:
+            show_warning(self, "هشدار", "هیچ مشتری انتخاب نشده است.")
+            return
+
+        customers = self._customer_workflow.get_all_customers()
+        by_id = {c.get('id'): c for c in customers}
+
+        blocked = []
+        safe = []
+        for cid in selected_ids:
+            c = by_id.get(cid)
+            if c is None:
+                continue
+            if self._has_related_repairs(c):
+                blocked.append(c)
+            else:
+                safe.append(c)
+
+        if blocked:
+            names = '\n'.join(
+                c.get('full_name', '') or '(بی‌نام)' for c in blocked
+            )
+            show_warning(
+                self, "حذف ممکن نیست",
+                "مشتریان زیر دارای تعمیر مرتبط هستند و حذف نمی‌شوند:\n\n"
+                f"{names}\n\n"
+                "برای حذف این مشتریان ابتدا تعمیرات مرتبط را حذف کنید."
+            )
+
+        if not safe:
+            return
+
+        if not show_question(
+            self, "تأیید حذف",
+            f"آیا از حذف {len(safe)} مشتری انتخاب‌شده اطمینان دارید؟"
+        ):
+            return
+
+        deleted = 0
+        for c in safe:
+            try:
+                if self._customer_workflow.delete_customer(c.get('id')):
+                    deleted += 1
+            except Exception as e:
+                show_error(self, "خطا", f"حذف مشتری ناموفق بود: {e}")
+                break
+
+        self.refresh_customer_table()
+        if deleted > 0:
+            show_info(self, "موفق", f"{deleted} مشتری با موفقیت حذف شد.")
+
     def view_repair(self, row):
         """مشاهده جزئیات تعمیر"""
         self.table.selectRow(row)

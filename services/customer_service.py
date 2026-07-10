@@ -128,6 +128,14 @@ class CustomerService:
         customer_data['customer_code'] = self.generate_customer_code()
         return self._repo.create(customer_data)
 
+    def get_all_customers(self) -> List[Dict]:
+        """Return all customers (for management views)."""
+        return self._repo.get_all()
+
+    def delete_customer(self, customer_id: int) -> bool:
+        """Delete a customer by primary key."""
+        return self._repo.delete(customer_id)
+
     def generate_customer_code(self) -> str:
         """Return the next customer_code in C000001, C000002, … format."""
         customers = self._repo.get_all()

@@ -1,7 +1,7 @@
 from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                               QTabWidget, QWidget, QLineEdit, QTextEdit, QSpinBox,
                               QDoubleSpinBox, QComboBox, QLabel, QPushButton,
-                              QCompleter, QStyledItemDelegate)
+                              QCompleter, QStyledItemDelegate, QStyle, QMessageBox)
 from PyQt5.QtCore import Qt, QTimer, QRegularExpression, QSize, QModelIndex
 from PyQt5.QtGui import (
     QFont,
@@ -11,18 +11,13 @@ from PyQt5.QtGui import (
     QStandardItem,
 )
 
-from PyQt5.QtWidgets import (
-    QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
-    QTabWidget, QWidget, QLineEdit, QTextEdit, QSpinBox,
-    QDoubleSpinBox, QComboBox, QLabel, QPushButton,
-    QCompleter, QStyledItemDelegate, QStyle, QMessageBox
-)
-
 from services.notification_service import show_warning, show_question
 from core.status import ALL_STATUSES, STATUS_PENDING
 from repair_manager.ui.components import PersianDateEdit
 from services.invoice_calculator import calculate_invoice_totals
 from services.customer_workflow import CustomerWorkflow
+from ui.dialogs.customer_edit_dialog import CustomerEditDialog
+from ui.dialogs.customer_selection_dialog import CustomerSelectionDialog
 
 
 class CompleterItemDelegate(QStyledItemDelegate):
@@ -67,7 +62,6 @@ class RepairDialog(QDialog):
 
         self.init_ui()
         self._init_customer_completer()
-        self._connect_auto_fill()
 
         if repair_data:
             self.load_data(repair_data)
@@ -79,84 +73,116 @@ class RepairDialog(QDialog):
 
         tabs = QTabWidget()
 
-        # تب اطلاعات اصلی (فقط تعمیر)
+        # تب اطلاعات اصلی (تعمیر + انتخاب مشتری)
         main_tab = QWidget()
         main_layout = QGridLayout()
 
-        main_layout.addWidget(QLabel("برند:"), 0, 0)
+        # بخش انتخاب مشتری
+        main_layout.addWidget(QLabel("مشتری:"), 0, 0)
+        selector_layout = QHBoxLayout()
+        self.customer_selector_input = QLineEdit()
+        self.customer_selector_input.setPlaceholderText("نام مشتری را جستجو کنید...")
+        selector_layout.addWidget(self.customer_selector_input)
+
+        browse_btn = QPushButton("📋 انتخاب از لیست")
+        browse_btn.setStyleSheet("background-color: #607D8B; color: white;")
+        browse_btn.clicked.connect(self._open_customer_selection)
+        selector_layout.addWidget(browse_btn)
+
+        create_btn = QPushButton("➕ افزودن مشتری")
+        create_btn.setStyleSheet("background-color: #4CAF50; color: white;")
+        create_btn.clicked.connect(self._open_customer_creation)
+        selector_layout.addWidget(create_btn)
+
+        main_layout.addLayout(selector_layout, 0, 1)
+
+        main_layout.addWidget(QLabel("برند:"), 1, 0)
         self.brand_input = QLineEdit()
-        main_layout.addWidget(self.brand_input, 0, 1)
+        main_layout.addWidget(self.brand_input, 1, 1)
 
-        main_layout.addWidget(QLabel("مدل:"), 1, 0)
+        main_layout.addWidget(QLabel("مدل:"), 2, 0)
         self.model_input = QLineEdit()
-        main_layout.addWidget(self.model_input, 1, 1)
+        main_layout.addWidget(self.model_input, 2, 1)
 
-        main_layout.addWidget(QLabel("ایراد:"), 2, 0)
+        main_layout.addWidget(QLabel("ایراد:"), 3, 0)
         self.issue_input = QTextEdit()
         self.issue_input.setMaximumHeight(80)
-        main_layout.addWidget(self.issue_input, 2, 1)
+        main_layout.addWidget(self.issue_input, 3, 1)
 
-        main_layout.addWidget(QLabel("وضعیت:"), 3, 0)
+        main_layout.addWidget(QLabel("وضعیت:"), 4, 0)
         self.status_input = QComboBox()
         self.status_input.addItems(ALL_STATUSES)
-        main_layout.addWidget(self.status_input, 3, 1)
+        main_layout.addWidget(self.status_input, 4, 1)
 
-        main_layout.addWidget(QLabel("تاریخ دریافت:"), 4, 0)
+        main_layout.addWidget(QLabel("تاریخ دریافت:"), 5, 0)
         self.receive_date_input = PersianDateEdit()
-        main_layout.addWidget(self.receive_date_input, 4, 1)
+        main_layout.addWidget(self.receive_date_input, 5, 1)
 
-        main_layout.addWidget(QLabel("تاریخ تحویل:"), 5, 0)
+        main_layout.addWidget(QLabel("تاریخ تحویل:"), 6, 0)
         self.delivery_date_input = PersianDateEdit()
-        main_layout.addWidget(self.delivery_date_input, 5, 1)
+        main_layout.addWidget(self.delivery_date_input, 6, 1)
+
+        main_layout.addWidget(QLabel("یادداشت‌ها:"), 7, 0)
+        self.repair_notes_input = QTextEdit()
+        self.repair_notes_input.setMaximumHeight(80)
+        main_layout.addWidget(self.repair_notes_input, 7, 1)
 
         main_tab.setLayout(main_layout)
 
-        # تب اطلاعات مشتری
+        # تب اطلاعات مشتری (فقط خواندنی)
         customer_tab = QWidget()
         customer_layout = QGridLayout()
 
-        customer_layout.addWidget(QLabel("نام مشتری:"), 0, 0)
-        self.customer_name_input = QLineEdit()
-        customer_layout.addWidget(self.customer_name_input, 0, 1)
+        customer_layout.addWidget(QLabel("کد مشتری:"), 0, 0)
+        self.customer_code_label = QLabel("-")
+        customer_layout.addWidget(self.customer_code_label, 0, 1)
 
-        customer_layout.addWidget(QLabel("تلفن:"), 1, 0)
-        self.phone_input = QLineEdit()
-        self.phone_input.setValidator(QRegularExpressionValidator(QRegularExpression(r'^0\d{10}$')))
-        customer_layout.addWidget(self.phone_input, 1, 1)
+        customer_layout.addWidget(QLabel("نام:"), 1, 0)
+        self.customer_full_name_label = QLabel("-")
+        customer_layout.addWidget(self.customer_full_name_label, 1, 1)
 
-        customer_layout.addWidget(QLabel("ایمیل:"), 2, 0)
-        self.email_input = QLineEdit()
-        customer_layout.addWidget(self.email_input, 2, 1)
+        customer_layout.addWidget(QLabel("تلفن:"), 2, 0)
+        self.customer_phone_label = QLabel("-")
+        customer_layout.addWidget(self.customer_phone_label, 2, 1)
 
-        customer_layout.addWidget(QLabel("وبسایت:"), 3, 0)
-        self.website_input = QLineEdit()
-        customer_layout.addWidget(self.website_input, 3, 1)
+        customer_layout.addWidget(QLabel("کد ملی:"), 3, 0)
+        self.customer_national_id_label = QLabel("-")
+        customer_layout.addWidget(self.customer_national_id_label, 3, 1)
 
-        customer_layout.addWidget(QLabel("کد ملی:"), 4, 0)
-        self.national_id_input = QLineEdit()
-        self.national_id_input.setValidator(QRegularExpressionValidator(QRegularExpression(r'^\d{0,10}$')))
-        customer_layout.addWidget(self.national_id_input, 4, 1)
+        customer_layout.addWidget(QLabel("ایمیل:"), 4, 0)
+        self.customer_email_label = QLabel("-")
+        customer_layout.addWidget(self.customer_email_label, 4, 1)
 
-        customer_layout.addWidget(QLabel("آدرس:"), 5, 0)
-        self.address_input = QLineEdit()
-        customer_layout.addWidget(self.address_input, 5, 1)
+        customer_layout.addWidget(QLabel("وبسایت:"), 5, 0)
+        self.customer_website_label = QLabel("-")
+        customer_layout.addWidget(self.customer_website_label, 5, 1)
 
         customer_layout.addWidget(QLabel("شهر:"), 6, 0)
-        self.city_input = QLineEdit()
-        customer_layout.addWidget(self.city_input, 6, 1)
+        self.customer_city_label = QLabel("-")
+        customer_layout.addWidget(self.customer_city_label, 6, 1)
 
         customer_layout.addWidget(QLabel("استان:"), 7, 0)
-        self.province_input = QLineEdit()
-        customer_layout.addWidget(self.province_input, 7, 1)
+        self.customer_province_label = QLabel("-")
+        customer_layout.addWidget(self.customer_province_label, 7, 1)
 
         customer_layout.addWidget(QLabel("کدپستی:"), 8, 0)
-        self.postal_code_input = QLineEdit()
-        self.postal_code_input.setValidator(QRegularExpressionValidator(QRegularExpression(r'^\d{0,10}$')))
-        customer_layout.addWidget(self.postal_code_input, 8, 1)
+        self.customer_postal_code_label = QLabel("-")
+        customer_layout.addWidget(self.customer_postal_code_label, 8, 1)
 
-        customer_layout.addWidget(QLabel("یادداشت‌ها:"), 9, 0)
-        self.notes_input = QTextEdit()
-        customer_layout.addWidget(self.notes_input, 9, 1)
+        customer_layout.addWidget(QLabel("آدرس:"), 9, 0)
+        self.customer_address_label = QLabel("-")
+        self.customer_address_label.setWordWrap(True)
+        customer_layout.addWidget(self.customer_address_label, 9, 1)
+
+        customer_layout.addWidget(QLabel("یادداشت‌ها:"), 10, 0)
+        self.customer_notes_label = QLabel("-")
+        self.customer_notes_label.setWordWrap(True)
+        customer_layout.addWidget(self.customer_notes_label, 10, 1)
+
+        edit_customer_btn = QPushButton("✏️ ویرایش مشتری")
+        edit_customer_btn.setStyleSheet("background-color: #2196F3; color: white;")
+        edit_customer_btn.clicked.connect(self._open_customer_edit)
+        customer_layout.addWidget(edit_customer_btn, 11, 0, 1, 2)
 
         customer_tab.setLayout(customer_layout)
 
@@ -227,6 +253,8 @@ class RepairDialog(QDialog):
 
         self.setLayout(layout)
 
+    # --- بخش انتخاب مشتری ---
+
     def _init_customer_completer(self):
         self._completer_timer = QTimer()
         self._completer_timer.setSingleShot(True)
@@ -244,16 +272,17 @@ class RepairDialog(QDialog):
         self._completer.activated[QModelIndex].connect(self._on_completer_activated)
 
         self._completer.setCompletionRole(Qt.EditRole)
-        self.customer_name_input.setCompleter(self._completer)
-        self.customer_name_input.textChanged.connect(self._on_name_text_changed)
+        self.customer_selector_input.setCompleter(self._completer)
+        self.customer_selector_input.textChanged.connect(self._on_selector_text_changed)
 
-    def _on_name_text_changed(self, text):
+    def _on_selector_text_changed(self, text):
         self._selected_customer_id = None
+        self._clear_customer_display()
         self._completer.setCompletionPrefix(text)
         self._completer_timer.start(250)
 
     def _on_completer_search(self):
-        text = self.customer_name_input.text().strip()
+        text = self.customer_selector_input.text().strip()
         if len(text) < 2:
             self._completer_model.clear()
             return
@@ -274,119 +303,80 @@ class RepairDialog(QDialog):
         customer_id = index.data(Qt.UserRole)
         if not customer_id:
             return
+        self._select_customer(customer_id)
+
+    def _select_customer(self, customer_id):
         customer = self._workflow.get_customer(customer_id)
         if not customer:
             return
-        self._workflow.populate_fields(self, customer)
-        QTimer.singleShot(0, lambda cid=customer_id: setattr(self, '_selected_customer_id', cid))
-
-    def _connect_auto_fill(self):
-        self.phone_input.editingFinished.connect(self._on_phone_editing_finished)
-
-    def _on_phone_editing_finished(self):
-        phone = self.phone_input.text()
-        if not phone or not self.phone_input.hasAcceptableInput():
-            return
-        found = self._workflow.find_customer_by_phone(phone)
-        if not found:
-            return
-        customer_id = found.get('id')
-        if not customer_id:
-            return
-        customer = self._workflow.get_customer(customer_id)
-        if not customer:
-            return
-        self.phone_input.blockSignals(True)
-        self._workflow.populate_fields(self, customer)
-        self.phone_input.blockSignals(False)
         self._selected_customer_id = customer_id
+        self.customer_selector_input.blockSignals(True)
+        self.customer_selector_input.setText(customer.get('full_name', ''))
+        self.customer_selector_input.blockSignals(False)
+        self._refresh_customer_display(customer)
 
-    def _show_modification_dialog(self):
-        msg = QMessageBox(self)
-        msg.setWindowTitle("تغییر اطلاعات مشتری")
-        msg.setText(
-            "شما اطلاعات مشتری موجود را تغییر داده‌اید.\n"
-            "آیا می‌خواهید اطلاعات همین مشتری به‌روزرسانی شود\n"
-            "یا به عنوان مشتری جدید ثبت شود؟"
+    def _refresh_customer_display(self, customer=None):
+        if customer is None:
+            if self._selected_customer_id:
+                customer = self._workflow.get_customer(self._selected_customer_id)
+            if not customer:
+                return
+        self.customer_code_label.setText(customer.get('customer_code', '') or '-')
+        self.customer_full_name_label.setText(customer.get('full_name', '') or '-')
+        self.customer_phone_label.setText(customer.get('phone', '') or '-')
+        self.customer_national_id_label.setText(customer.get('national_id', '') or '-')
+        self.customer_email_label.setText(customer.get('email', '') or '-')
+        self.customer_website_label.setText(customer.get('website', '') or '-')
+        self.customer_city_label.setText(customer.get('city', '') or '-')
+        self.customer_province_label.setText(customer.get('province', '') or '-')
+        self.customer_postal_code_label.setText(customer.get('postal_code', '') or '-')
+        self.customer_address_label.setText(customer.get('address', '') or '-')
+        self.customer_notes_label.setText(customer.get('notes', '') or '-')
+
+    def _clear_customer_display(self):
+        self.customer_code_label.setText('-')
+        self.customer_full_name_label.setText('-')
+        self.customer_phone_label.setText('-')
+        self.customer_national_id_label.setText('-')
+        self.customer_email_label.setText('-')
+        self.customer_website_label.setText('-')
+        self.customer_city_label.setText('-')
+        self.customer_province_label.setText('-')
+        self.customer_postal_code_label.setText('-')
+        self.customer_address_label.setText('-')
+        self.customer_notes_label.setText('-')
+
+    def _open_customer_selection(self):
+        dialog = CustomerSelectionDialog(parent=self)
+        if dialog.exec_() == QDialog.Accepted:
+            cid = dialog.selected_customer_id
+            if cid:
+                self._select_customer(cid)
+
+    def _open_customer_creation(self):
+        dialog = CustomerEditDialog(customer_id=None, parent=self)
+        if dialog.exec_() == QDialog.Accepted:
+            created = getattr(dialog, '_created_customer', None)
+            if created:
+                self._select_customer(created['id'])
+
+    def _open_customer_edit(self):
+        if not self._selected_customer_id:
+            show_warning(self, "هشدار", "ابتدا یک مشتری انتخاب کنید.")
+            return
+        dialog = CustomerEditDialog(
+            customer_id=self._selected_customer_id, parent=self
         )
-        btn_update = msg.addButton("به‌روزرسانی مشتری موجود", QMessageBox.ActionRole)
-        btn_create = msg.addButton("ثبت به عنوان مشتری جدید", QMessageBox.ActionRole)
-        btn_cancel = msg.addButton("انصراف", QMessageBox.ActionRole)
-        msg.exec_()
-        clicked = msg.clickedButton()
-        if clicked == btn_update:
-            return 'update'
-        if clicked == btn_create:
-            return 'create'
-        return 'cancel'
+        if dialog.exec_() == QDialog.Accepted:
+            self._refresh_customer_display()
+
+    # --- ذخیره و بارگذاری ---
 
     def validate_and_accept(self):
-        if self.phone_input.text() and not self.phone_input.hasAcceptableInput():
-            show_warning(self, "خطا", "شماره تلفن باید ۱۱ رقم و با ۰ شروع شود")
+        if not self._selected_customer_id:
+            show_warning(self, "خطا", "لطفاً یک مشتری انتخاب کنید.")
             return
-        national_id = self.national_id_input.text().strip()
-        if national_id and len(national_id) != 10:
-            show_warning(self, "خطا", "کد ملی باید دقیقاً ۱۰ رقم باشد.")
-            return
-        postal_code = self.postal_code_input.text().strip()
-        if postal_code and len(postal_code) != 10:
-            show_warning(self, "خطا", "کد پستی باید دقیقاً ۱۰ رقم باشد.")
-            return
-        customer_name = self.customer_name_input.text().strip()
-        if not customer_name:
-            show_warning(self, "خطا", "لطفاً نام مشتری را وارد کنید.")
-            return
-        if not self.phone_input.text().strip() and not national_id:
-            show_warning(self, "خطا", "لطفاً حداقل یکی از فیلدهای «تلفن» یا «کد ملی» را وارد کنید.")
-            return
-        if self.repair_data:
-            self.accept()
-            return
-
-        customer_data = self._get_customer_data()
-
-        if self._selected_customer_id is not None:
-            original = self._workflow.get_customer(self._selected_customer_id)
-            if original is not None:
-                if self._workflow.is_modified(original, customer_data):
-                    choice = self._show_modification_dialog()
-                    if choice == 'update':
-                        self._workflow.update_customer(
-                            self._selected_customer_id, customer_data
-                        )
-                        self.accept()
-                    elif choice == 'create':
-                        new_customer = self._workflow.create_customer(customer_data)
-                        if new_customer:
-                            self._workflow.populate_fields(self, new_customer)
-                            self.accept()
-                    return
-                else:
-                    self._workflow.populate_fields(self, original)
-                    self.accept()
-                    return
-
-        customer = self._workflow.resolve_customer(
-            customer_data,
-            confirm_callback=lambda title, msg: show_question(self, title, msg)
-        )
-        if customer:
-            self._workflow.populate_fields(self, customer)
-            self.accept()
-
-    def _get_customer_data(self):
-        return {
-            'full_name': self.customer_name_input.text().strip(),
-            'phone': self.phone_input.text().strip(),
-            'email': self.email_input.text().strip(),
-            'website': self.website_input.text().strip(),
-            'national_id': self.national_id_input.text().strip(),
-            'address': self.address_input.text().strip(),
-            'city': self.city_input.text().strip(),
-            'province': self.province_input.text().strip(),
-            'postal_code': self.postal_code_input.text().strip(),
-            'notes': self.notes_input.toPlainText().strip(),
-        }
+        self.accept()
 
     def calculate_total(self, value):
         """محاسبه مجموع هزینه‌ها"""
@@ -401,8 +391,21 @@ class RepairDialog(QDialog):
 
     def load_data(self, data):
         """بارگذاری داده‌ها"""
-        self.customer_name_input.setText(data.get('customer_name', ''))
-        self.phone_input.setText(data.get('phone', ''))
+        customer_id = data.get('customer_id')
+        if customer_id:
+            self._select_customer(customer_id)
+        else:
+            name = data.get('customer_name', '')
+            phone = data.get('phone', '')
+            if phone:
+                found = self._workflow.find_customer_by_phone(phone)
+                if found:
+                    self._select_customer(found['id'])
+            if self._selected_customer_id is None and name:
+                exact = self._workflow._service.find_by_full_name(name)
+                if exact:
+                    self._select_customer(exact[0]['id'])
+
         self.brand_input.setText(data.get('brand', ''))
         self.model_input.setText(data.get('model', ''))
         self.issue_input.setText(data.get('issue', ''))
@@ -413,15 +416,23 @@ class RepairDialog(QDialog):
         self.labor_cost_input.setValue(data.get('labor_cost', 0))
         self.tax_input.setValue(data.get('tax', 0))
         self.discount_input.setValue(data.get('discount', 0))
-        self.notes_input.setText(data.get('notes', ''))
+        self.repair_notes_input.setText(data.get('notes', ''))
         self.warranty_input.setText(data.get('warranty', ''))
         self.calculate_total(0)
 
     def get_data(self):
         """دریافت داده‌ها"""
+        customer_name = ''
+        phone = ''
+        if self._selected_customer_id:
+            customer = self._workflow.get_customer(self._selected_customer_id)
+            if customer:
+                customer_name = customer.get('full_name', '')
+                phone = customer.get('phone', '') or ''
         return {
-            'customer_name': self.customer_name_input.text(),
-            'phone': self.phone_input.text(),
+            'customer_id': self._selected_customer_id,
+            'customer_name': customer_name,
+            'phone': phone,
             'brand': self.brand_input.text(),
             'model': self.model_input.text(),
             'issue': self.issue_input.toPlainText(),
@@ -432,6 +443,6 @@ class RepairDialog(QDialog):
             'labor_cost': self.labor_cost_input.value(),
             'tax': self.tax_input.value(),
             'discount': self.discount_input.value(),
-            'notes': self.notes_input.toPlainText(),
+            'notes': self.repair_notes_input.toPlainText(),
             'warranty': self.warranty_input.toPlainText()
         }

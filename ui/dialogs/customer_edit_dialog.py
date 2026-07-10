@@ -15,6 +15,7 @@ class CustomerEditDialog(QDialog):
         self._workflow = CustomerWorkflow()
         self._customer_id = customer_id
         self._is_create = customer_id is None
+        self._created_customer = None
 
         self.setWindowTitle("افزودن مشتری" if self._is_create else "ویرایش مشتری")
         self.setModal(True)
@@ -165,6 +166,7 @@ class CustomerEditDialog(QDialog):
                     show_warning(self, "خطا", duplicate_msg)
                     return
                 result = self._workflow.create_customer(data)
+                self._created_customer = result
             else:
                 result = self._workflow.update_customer(self._customer_id, data)
         except Exception as e:

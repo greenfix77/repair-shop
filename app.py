@@ -26,12 +26,15 @@ from ui.dialogs.repair_dialog import RepairDialog
 from ui.dialogs.invoice_dialog import InvoicePreviewDialog
 from ui.dialogs.customer_edit_dialog import CustomerEditDialog
 from ui.dialogs.service_edit_dialog import ServiceEditDialog
+from ui.dialogs.part_edit_dialog import PartEditDialog
 from ui.main_window import build_ui, build_header, create_status_popup
 from ui.customer_view import render_customer_rows
 from ui.service_view import render_service_rows
+from ui.part_view import render_part_rows
 from controllers.main_controller import MainController
 from services.customer_workflow import CustomerWorkflow
 from services.service_service import ServiceService
+from services.part_service import PartService
 from services.notification_service import (
     show_info, show_warning, show_error, show_question
 )
@@ -86,6 +89,7 @@ class LaptopRepairManager(QMainWindow):
         self.controller = MainController()
         self._customer_workflow = CustomerWorkflow()
         self._service_service = ServiceService()
+        self._part_service = PartService()
         self.load_data()
         self.init_ui()
         self.refresh_table()  # پر کردن جدول با داده‌های بارگذاری شده
@@ -293,6 +297,9 @@ class LaptopRepairManager(QMainWindow):
         self.services_nav_btn.setStyleSheet(
             "background-color: #607D8B; color: white;"
         )
+        self.parts_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
 
     def show_customers_view(self):
         """نمایش نمای مشتریان"""
@@ -304,6 +311,9 @@ class LaptopRepairManager(QMainWindow):
             "background-color: #4F46E5; color: white; font-weight: bold;"
         )
         self.services_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.parts_nav_btn.setStyleSheet(
             "background-color: #607D8B; color: white;"
         )
         self.refresh_customer_table()
@@ -322,7 +332,91 @@ class LaptopRepairManager(QMainWindow):
         self.services_nav_btn.setStyleSheet(
             "background-color: #4F46E5; color: white; font-weight: bold;"
         )
+        self.parts_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
         self.refresh_service_table()
+
+    # --- مدیریت قطعات ---
+
+    def show_parts_view(self):
+        """نمایش نمای قطعات"""
+        self.view_stack.setCurrentIndex(3)
+        self.repairs_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.customers_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.services_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.parts_nav_btn.setStyleSheet(
+            "background-color: #4F46E5; color: white; font-weight: bold;"
+        )
+        self.refresh_part_table()
+
+    def refresh_part_table(self):
+        """بارگذاری و نمایش لیست قطعات مرتب شده بر اساس نام"""
+        parts = self._part_service.list_all()
+        render_part_rows(self.part_table, parts, self.edit_part)
+
+    def search_parts(self, text):
+        """جستجوی قطعات"""
+        results = self._part_service.search(text)
+        render_part_rows(self.part_table, results, self.edit_part)
+
+    def add_part(self):
+        """افزودن قطعه جدید"""
+        dialog = PartEditDialog(part_id=None, parent=self)
+        if getattr(dialog, '_init_failed', False):
+            return
+        if dialog.exec_() == QDialog.Accepted:
+            self.refresh_part_table()
+
+    def edit_part(self, part_id):
+        """ویرایش یک قطعه از طریق دیالوگ اختصاصی"""
+        if part_id is None:
+            return
+        dialog = PartEditDialog(part_id, parent=self)
+        if getattr(dialog, '_init_failed', False):
+            return
+        if dialog.exec_() == QDialog.Accepted:
+            self.refresh_part_table()
+
+    def delete_selected_parts(self):
+        """حذف قطعات انتخاب‌شده"""
+        table = self.part_table
+        selected_ids = []
+        for row in range(table.rowCount()):
+            item = table.item(row, 0)
+            if item is not None and item.checkState() == Qt.Checked:
+                pid = item.data(Qt.UserRole)
+                if pid is not None:
+                    selected_ids.append(pid)
+
+        if not selected_ids:
+            show_warning(self, "هشدار", "هیچ قطعه‌ای انتخاب نشده است.")
+            return
+
+        if not show_question(
+            self, "تأیید حذف",
+            f"آیا از حذف {len(selected_ids)} قطعه انتخاب‌شده اطمینان دارید؟"
+        ):
+            return
+
+        deleted = 0
+        for pid in selected_ids:
+            try:
+                if self._part_service.delete_part(pid):
+                    deleted += 1
+            except Exception as e:
+                show_error(self, "خطا", f"حذف قطعه ناموفق بود: {e}")
+                break
+
+        self.refresh_part_table()
+        if deleted > 0:
+            show_info(self, "موفق", f"{deleted} قطعه با موفقیت حذف شد.")
 
     def refresh_service_table(self):
         """بارگذاری و نمایش لیست خدمات مرتب شده بر اساس نام"""

@@ -12,6 +12,7 @@ from PyQt5.QtGui import QPixmap
 from services.logo_service import get_header_logo_pixmap
 from ui.customer_view import build_customer_table, build_customer_toolbar
 from ui.service_view import build_service_table, build_service_toolbar
+from ui.part_view import build_part_table, build_part_toolbar
 from ui.table_renderer import setup_selection_column
 from core.status import (
     STATUS_PENDING, STATUS_IN_PROGRESS, STATUS_COMPLETED, STATUS_DELIVERED,
@@ -375,6 +376,13 @@ def build_nav_bar(window):
     window.services_nav_btn.clicked.connect(window.show_services_view)
     layout.addWidget(window.services_nav_btn)
 
+    window.parts_nav_btn = QPushButton("قطعات")
+    window.parts_nav_btn.setStyleSheet(
+        "background-color: #607D8B; color: white;"
+    )
+    window.parts_nav_btn.clicked.connect(window.show_parts_view)
+    layout.addWidget(window.parts_nav_btn)
+
     layout.addStretch()
     nav.setLayout(layout)
     return nav
@@ -440,6 +448,17 @@ def build_ui(window):
     services_layout.addWidget(window.service_table)
     services_page.setLayout(services_layout)
     window.view_stack.addWidget(services_page)
+
+    # صفحه قطعات
+    parts_page = QWidget()
+    parts_layout = QVBoxLayout()
+    parts_layout.setContentsMargins(0, 0, 0, 0)
+    window.part_toolbar = build_part_toolbar(window)
+    parts_layout.addWidget(window.part_toolbar)
+    window.part_table = build_part_table(window)
+    parts_layout.addWidget(window.part_table)
+    parts_page.setLayout(parts_layout)
+    window.view_stack.addWidget(parts_page)
 
     main_layout.addWidget(window.view_stack)
     

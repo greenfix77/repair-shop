@@ -21,3 +21,6 @@ class RepairDB(Base):
     delivery_date = Column(String, default="")
     notes = Column(String, default="")
     warranty = Column(String, default="")
+    paid_amount = Column(Integer, default=0)
+    payment_status = Column(String, default="پرداخت نشده")
+    financial_notes = Column(String, default="")

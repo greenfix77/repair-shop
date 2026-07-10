@@ -18,6 +18,7 @@ from services.invoice_calculator import calculate_invoice_totals
 from services.customer_workflow import CustomerWorkflow
 from ui.dialogs.customer_edit_dialog import CustomerEditDialog
 from ui.dialogs.customer_selection_dialog import CustomerSelectionDialog
+from ui.widgets.invoice_widget import InvoiceWidget
 
 
 class CompleterItemDelegate(QStyledItemDelegate):
@@ -65,8 +66,6 @@ class RepairDialog(QDialog):
 
         if repair_data:
             self.load_data(repair_data)
-        else:
-            self.calculate_total(0)
 
     def init_ui(self):
         layout = QVBoxLayout()
@@ -186,39 +185,11 @@ class RepairDialog(QDialog):
 
         customer_tab.setLayout(customer_layout)
 
-        # تب مالی
+        # تب مالی (سیستم فاکتور کامل)
         financial_tab = QWidget()
-        financial_layout = QGridLayout()
-
-        financial_layout.addWidget(QLabel("هزینه قطعات:"), 0, 0)
-        self.parts_cost_input = QSpinBox()
-        self.parts_cost_input.setMaximum(999999999)
-        self.parts_cost_input.valueChanged.connect(self.calculate_total)
-        financial_layout.addWidget(self.parts_cost_input, 0, 1)
-
-        financial_layout.addWidget(QLabel("هزینه تعمیر:"), 1, 0)
-        self.labor_cost_input = QSpinBox()
-        self.labor_cost_input.setMaximum(999999999)
-        self.labor_cost_input.valueChanged.connect(self.calculate_total)
-        financial_layout.addWidget(self.labor_cost_input, 1, 1)
-
-        financial_layout.addWidget(QLabel("مالیات (%):"), 2, 0)
-        self.tax_input = QDoubleSpinBox()
-        self.tax_input.setMaximum(100)
-        self.tax_input.valueChanged.connect(self.calculate_total)
-        financial_layout.addWidget(self.tax_input, 2, 1)
-
-        financial_layout.addWidget(QLabel("تخفیف:"), 3, 0)
-        self.discount_input = QSpinBox()
-        self.discount_input.setMaximum(999999999)
-        self.discount_input.valueChanged.connect(self.calculate_total)
-        financial_layout.addWidget(self.discount_input, 3, 1)
-
-        financial_layout.addWidget(QLabel("مجموع:"), 4, 0)
-        self.total_label = QLabel("0 تومان")
-        self.total_label.setStyleSheet("font-weight: bold; color: green; font-size: 12pt;")
-        financial_layout.addWidget(self.total_label, 4, 1)
-
+        financial_layout = QVBoxLayout()
+        self._invoice_widget = InvoiceWidget()
+        financial_layout.addWidget(self._invoice_widget)
         financial_tab.setLayout(financial_layout)
 
         # تب گارانتی
@@ -378,17 +349,6 @@ class RepairDialog(QDialog):
             return
         self.accept()
 
-    def calculate_total(self, value):
-        """محاسبه مجموع هزینه‌ها"""
-        data = {
-            'parts_cost': self.parts_cost_input.value(),
-            'labor_cost': self.labor_cost_input.value(),
-            'tax': self.tax_input.value(),
-            'discount': self.discount_input.value(),
-        }
-        fin = calculate_invoice_totals(data)
-        self.total_label.setText(f"{int(fin['total']):,} تومان")
-
     def load_data(self, data):
         """بارگذاری داده‌ها"""
         customer_id = data.get('customer_id')
@@ -412,13 +372,10 @@ class RepairDialog(QDialog):
         self.status_input.setCurrentText(data.get('status', STATUS_PENDING))
         self.receive_date_input.setText(data.get('receive_date', ''))
         self.delivery_date_input.setText(data.get('delivery_date', ''))
-        self.parts_cost_input.setValue(data.get('parts_cost', 0))
-        self.labor_cost_input.setValue(data.get('labor_cost', 0))
-        self.tax_input.setValue(data.get('tax', 0))
-        self.discount_input.setValue(data.get('discount', 0))
         self.repair_notes_input.setText(data.get('notes', ''))
         self.warranty_input.setText(data.get('warranty', ''))
-        self.calculate_total(0)
+
+        self._invoice_widget.load_data(data)
 
     def get_data(self):
         """دریافت داده‌ها"""
@@ -429,6 +386,9 @@ class RepairDialog(QDialog):
             if customer:
                 customer_name = customer.get('full_name', '')
                 phone = customer.get('phone', '') or ''
+
+        invoice_data = self._invoice_widget.get_data()
+
         return {
             'customer_id': self._selected_customer_id,
             'customer_name': customer_name,
@@ -439,10 +399,15 @@ class RepairDialog(QDialog):
             'status': self.status_input.currentText(),
             'receive_date': self.receive_date_input.get_date(),
             'delivery_date': self.delivery_date_input.get_date(),
-            'parts_cost': self.parts_cost_input.value(),
-            'labor_cost': self.labor_cost_input.value(),
-            'tax': self.tax_input.value(),
-            'discount': self.discount_input.value(),
+            'parts_cost': invoice_data.get('parts_cost', 0),
+            'labor_cost': invoice_data.get('labor_cost', 0),
+            'tax': invoice_data.get('tax', 0),
+            'discount': invoice_data.get('discount', 0),
             'notes': self.repair_notes_input.toPlainText(),
-            'warranty': self.warranty_input.toPlainText()
+            'warranty': self.warranty_input.toPlainText(),
+            'paid_amount': invoice_data.get('paid_amount', 0),
+            'payment_status': invoice_data.get('payment_status', 'پرداخت نشده'),
+            'financial_notes': invoice_data.get('financial_notes', ''),
+            'service_lines': invoice_data.get('service_lines', []),
+            'part_lines': invoice_data.get('part_lines', []),
         }

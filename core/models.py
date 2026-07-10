@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import Dict, Any
+from typing import Dict, Any, List
 
 
 @dataclass
@@ -19,6 +19,11 @@ class Repair:
     discount: int = 0
     notes: str = ''
     warranty: str = ''
+    paid_amount: int = 0
+    payment_status: str = 'پرداخت نشده'
+    financial_notes: str = ''
+    service_lines: List[Dict] = field(default_factory=list)
+    part_lines: List[Dict] = field(default_factory=list)
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -37,6 +42,11 @@ class Repair:
             'discount': self.discount,
             'notes': self.notes,
             'warranty': self.warranty,
+            'paid_amount': self.paid_amount,
+            'payment_status': self.payment_status,
+            'financial_notes': self.financial_notes,
+            'service_lines': self.service_lines,
+            'part_lines': self.part_lines,
         }
 
     @classmethod
@@ -57,4 +67,9 @@ class Repair:
             discount=data.get('discount', 0),
             notes=data.get('notes', ''),
             warranty=data.get('warranty', ''),
+            paid_amount=data.get('paid_amount', 0),
+            payment_status=data.get('payment_status', 'پرداخت نشده'),
+            financial_notes=data.get('financial_notes', ''),
+            service_lines=data.get('service_lines', []),
+            part_lines=data.get('part_lines', []),
         )

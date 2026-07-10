@@ -11,6 +11,7 @@ from PyQt5.QtGui import QPixmap
 
 from services.logo_service import get_header_logo_pixmap
 from ui.customer_view import build_customer_table, build_customer_toolbar
+from ui.service_view import build_service_table, build_service_toolbar
 from ui.table_renderer import setup_selection_column
 from core.status import (
     STATUS_PENDING, STATUS_IN_PROGRESS, STATUS_COMPLETED, STATUS_DELIVERED,
@@ -367,6 +368,13 @@ def build_nav_bar(window):
     window.customers_nav_btn.clicked.connect(window.show_customers_view)
     layout.addWidget(window.customers_nav_btn)
 
+    window.services_nav_btn = QPushButton("خدمات")
+    window.services_nav_btn.setStyleSheet(
+        "background-color: #607D8B; color: white;"
+    )
+    window.services_nav_btn.clicked.connect(window.show_services_view)
+    layout.addWidget(window.services_nav_btn)
+
     layout.addStretch()
     nav.setLayout(layout)
     return nav
@@ -421,6 +429,17 @@ def build_ui(window):
     customers_layout.addWidget(window.customer_table)
     customers_page.setLayout(customers_layout)
     window.view_stack.addWidget(customers_page)
+
+    # صفحه خدمات
+    services_page = QWidget()
+    services_layout = QVBoxLayout()
+    services_layout.setContentsMargins(0, 0, 0, 0)
+    window.service_toolbar = build_service_toolbar(window)
+    services_layout.addWidget(window.service_toolbar)
+    window.service_table = build_service_table(window)
+    services_layout.addWidget(window.service_table)
+    services_page.setLayout(services_layout)
+    window.view_stack.addWidget(services_page)
 
     main_layout.addWidget(window.view_stack)
     

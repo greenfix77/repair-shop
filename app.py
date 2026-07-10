@@ -25,10 +25,13 @@ from ui.status_styles import get_status_color
 from ui.dialogs.repair_dialog import RepairDialog
 from ui.dialogs.invoice_dialog import InvoicePreviewDialog
 from ui.dialogs.customer_edit_dialog import CustomerEditDialog
+from ui.dialogs.service_edit_dialog import ServiceEditDialog
 from ui.main_window import build_ui, build_header, create_status_popup
 from ui.customer_view import render_customer_rows
+from ui.service_view import render_service_rows
 from controllers.main_controller import MainController
 from services.customer_workflow import CustomerWorkflow
+from services.service_service import ServiceService
 from services.notification_service import (
     show_info, show_warning, show_error, show_question
 )
@@ -82,6 +85,7 @@ class LaptopRepairManager(QMainWindow):
         self.repairs = []
         self.controller = MainController()
         self._customer_workflow = CustomerWorkflow()
+        self._service_service = ServiceService()
         self.load_data()
         self.init_ui()
         self.refresh_table()  # پر کردن جدول با داده‌های بارگذاری شده
@@ -286,6 +290,9 @@ class LaptopRepairManager(QMainWindow):
         self.customers_nav_btn.setStyleSheet(
             "background-color: #607D8B; color: white;"
         )
+        self.services_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
 
     def show_customers_view(self):
         """نمایش نمای مشتریان"""
@@ -296,7 +303,88 @@ class LaptopRepairManager(QMainWindow):
         self.customers_nav_btn.setStyleSheet(
             "background-color: #4F46E5; color: white; font-weight: bold;"
         )
+        self.services_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
         self.refresh_customer_table()
+
+    # --- مدیریت خدمات ---
+
+    def show_services_view(self):
+        """نمایش نمای خدمات"""
+        self.view_stack.setCurrentIndex(2)
+        self.repairs_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.customers_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.services_nav_btn.setStyleSheet(
+            "background-color: #4F46E5; color: white; font-weight: bold;"
+        )
+        self.refresh_service_table()
+
+    def refresh_service_table(self):
+        """بارگذاری و نمایش لیست خدمات مرتب شده بر اساس نام"""
+        services = self._service_service.list_all()
+        render_service_rows(self.service_table, services, self.edit_service)
+
+    def search_services(self, text):
+        """جستجوی خدمات"""
+        results = self._service_service.search(text)
+        render_service_rows(self.service_table, results, self.edit_service)
+
+    def add_service(self):
+        """افزودن خدمت جدید"""
+        dialog = ServiceEditDialog(service_id=None, parent=self)
+        if getattr(dialog, '_init_failed', False):
+            return
+        if dialog.exec_() == QDialog.Accepted:
+            self.refresh_service_table()
+
+    def edit_service(self, service_id):
+        """ویرایش یک خدمت از طریق دیالوگ اختصاصی"""
+        if service_id is None:
+            return
+        dialog = ServiceEditDialog(service_id, parent=self)
+        if getattr(dialog, '_init_failed', False):
+            return
+        if dialog.exec_() == QDialog.Accepted:
+            self.refresh_service_table()
+
+    def delete_selected_services(self):
+        """حذف خدمات انتخاب‌شده"""
+        table = self.service_table
+        selected_ids = []
+        for row in range(table.rowCount()):
+            item = table.item(row, 0)
+            if item is not None and item.checkState() == Qt.Checked:
+                sid = item.data(Qt.UserRole)
+                if sid is not None:
+                    selected_ids.append(sid)
+
+        if not selected_ids:
+            show_warning(self, "هشدار", "هیچ خدمتی انتخاب نشده است.")
+            return
+
+        if not show_question(
+            self, "تأیید حذف",
+            f"آیا از حذف {len(selected_ids)} خدمت انتخاب‌شده اطمینان دارید؟"
+        ):
+            return
+
+        deleted = 0
+        for sid in selected_ids:
+            try:
+                if self._service_service.delete_service(sid):
+                    deleted += 1
+            except Exception as e:
+                show_error(self, "خطا", f"حذف خدمت ناموفق بود: {e}")
+                break
+
+        self.refresh_service_table()
+        if deleted > 0:
+            show_info(self, "موفق", f"{deleted} خدمت با موفقیت حذف شد.")
 
     def refresh_customer_table(self):
         """بارگذاری و نمایش لیست مشتریان مرتب شده بر اساس نام"""

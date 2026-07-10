@@ -154,7 +154,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "app_notificationdialog",
-      "community": 4,
+      "community": 54,
       "norm_label": "notificationdialog"
     },
     {
@@ -164,7 +164,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qdialog",
-      "community": 4,
+      "community": 54,
       "norm_label": "qdialog"
     },
     {
@@ -174,7 +174,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "app_notificationdialog_init",
-      "community": 3,
+      "community": 54,
       "norm_label": ".__init__()"
     },
     {
@@ -204,7 +204,7 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_init",
-      "community": 3,
+      "community": 54,
       "norm_label": ".__init__()"
     },
     {
@@ -214,7 +214,7 @@
       "source_location": "L90",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_init_ui",
-      "community": 3,
+      "community": 54,
       "norm_label": ".init_ui()"
     },
     {
@@ -284,7 +284,7 @@
       "source_location": "L166",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_repair",
-      "community": 7,
+      "community": 6,
       "norm_label": ".edit_repair()"
     },
     {
@@ -364,7 +364,7 @@
       "source_location": "L290",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_show_customers_view",
-      "community": 52,
+      "community": 3,
       "norm_label": ".show_customers_view()"
     },
     {
@@ -374,7 +374,7 @@
       "source_location": "L301",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_refresh_customer_table",
-      "community": 52,
+      "community": 3,
       "norm_label": ".refresh_customer_table()"
     },
     {
@@ -384,7 +384,7 @@
       "source_location": "L306",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_add_customer",
-      "community": 52,
+      "community": 3,
       "norm_label": ".add_customer()"
     },
     {
@@ -394,7 +394,7 @@
       "source_location": "L314",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_customer",
-      "community": 52,
+      "community": 3,
       "norm_label": ".edit_customer()"
     },
     {
@@ -424,7 +424,7 @@
       "source_location": "L397",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_view_repair",
-      "community": 7,
+      "community": 3,
       "norm_label": ".view_repair()"
     },
     {
@@ -454,7 +454,7 @@
       "source_location": "L422",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_check_notifications",
-      "community": 3,
+      "community": 54,
       "norm_label": ".check_notifications()"
     },
     {
@@ -464,7 +464,7 @@
       "source_location": "L457",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_load_data",
-      "community": 3,
+      "community": 54,
       "norm_label": ".load_data()"
     },
     {
@@ -494,7 +494,7 @@
       "source_location": "L481",
       "_origin": "ast",
       "id": "app_main",
-      "community": 29,
+      "community": 2,
       "norm_label": "main()"
     },
     {
@@ -504,7 +504,7 @@
       "source_location": "L40",
       "_origin": "ast",
       "id": "app_rationale_40",
-      "community": 4,
+      "community": 54,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0646\u0645\u0627\u06cc\u0634 \u0627\u0639\u0644\u0627\u0646\u200c\u0647\u0627"
     },
     {
@@ -574,7 +574,7 @@
       "source_location": "L302",
       "_origin": "ast",
       "id": "app_rationale_302",
-      "community": 52,
+      "community": 3,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645"
     },
     {
@@ -584,7 +584,7 @@
       "source_location": "L307",
       "_origin": "ast",
       "id": "app_rationale_307",
-      "community": 52,
+      "community": 3,
       "norm_label": "\u0627\u0641\u0632\u0648\u062f\u0646 \u0645\u0634\u062a\u0631\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
     {
@@ -594,7 +594,7 @@
       "source_location": "L315",
       "_origin": "ast",
       "id": "app_rationale_315",
-      "community": 52,
+      "community": 3,
       "norm_label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
     {
@@ -624,7 +624,7 @@
       "source_location": "L458",
       "_origin": "ast",
       "id": "app_rationale_458",
-      "community": 3,
+      "community": 54,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u0627\u0632 \u0641\u0627\u06cc\u0644"
     },
     {
@@ -1730,10 +1730,20 @@
       "norm_label": ".find_by_full_name()"
     },
     {
-      "label": ".search_customers()",
+      "label": ".check_create_duplicate()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
       "source_location": "L107",
+      "_origin": "ast",
+      "id": "services_customer_service_customerservice_check_create_duplicate",
+      "community": 1,
+      "norm_label": ".check_create_duplicate()"
+    },
+    {
+      "label": ".search_customers()",
+      "file_type": "code",
+      "source_file": "services/customer_service.py",
+      "source_location": "L150",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_search_customers",
       "community": 1,
@@ -1743,7 +1753,7 @@
       "label": ".get_customer()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L118",
+      "source_location": "L161",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_get_customer",
       "community": 1,
@@ -1753,7 +1763,7 @@
       "label": ".update_customer()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L122",
+      "source_location": "L165",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_update_customer",
       "community": 1,
@@ -1763,7 +1773,7 @@
       "label": ".create_customer()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L126",
+      "source_location": "L169",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_create_customer",
       "community": 1,
@@ -1773,7 +1783,7 @@
       "label": ".get_all_customers()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L131",
+      "source_location": "L174",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_get_all_customers",
       "community": 1,
@@ -1783,7 +1793,7 @@
       "label": ".delete_customer()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L135",
+      "source_location": "L178",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_delete_customer",
       "community": 1,
@@ -1793,7 +1803,7 @@
       "label": ".generate_customer_code()",
       "file_type": "code",
       "source_file": "services/customer_service.py",
-      "source_location": "L139",
+      "source_location": "L182",
       "_origin": "ast",
       "id": "services_customer_service_customerservice_generate_customer_code",
       "community": 1,
@@ -1830,12 +1840,22 @@
       "norm_label": "find a single customer by phone."
     },
     {
-      "label": "Search customers by full_name or phone (contains, case-insensitive).",
+      "label": "Check for duplicates when creating a customer from management UI.          Bus",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
       "source_location": "L108",
       "_origin": "ast",
       "id": "services_customer_service_rationale_108",
+      "community": 1,
+      "norm_label": "check for duplicates when creating a customer from management ui.          bus"
+    },
+    {
+      "label": "Search customers by full_name or phone (contains, case-insensitive).",
+      "file_type": "rationale",
+      "source_file": "services/customer_service.py",
+      "source_location": "L151",
+      "_origin": "ast",
+      "id": "services_customer_service_rationale_151",
       "community": 1,
       "norm_label": "search customers by full_name or phone (contains, case-insensitive)."
     },
@@ -1843,9 +1863,9 @@
       "label": "Get a single customer by primary key.",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L119",
+      "source_location": "L162",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_119",
+      "id": "services_customer_service_rationale_162",
       "community": 1,
       "norm_label": "get a single customer by primary key."
     },
@@ -1853,9 +1873,9 @@
       "label": "Update an existing customer's data.",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L123",
+      "source_location": "L166",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_123",
+      "id": "services_customer_service_rationale_166",
       "community": 1,
       "norm_label": "update an existing customer's data."
     },
@@ -1863,9 +1883,9 @@
       "label": "Create a new customer without duplicate detection (conscious clone path).",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L127",
+      "source_location": "L170",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_127",
+      "id": "services_customer_service_rationale_170",
       "community": 1,
       "norm_label": "create a new customer without duplicate detection (conscious clone path)."
     },
@@ -1873,9 +1893,9 @@
       "label": "Return all customers (for management views).",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L132",
+      "source_location": "L175",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_132",
+      "id": "services_customer_service_rationale_175",
       "community": 1,
       "norm_label": "return all customers (for management views)."
     },
@@ -1883,9 +1903,9 @@
       "label": "Delete a customer by primary key.",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L136",
+      "source_location": "L179",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_136",
+      "id": "services_customer_service_rationale_179",
       "community": 1,
       "norm_label": "delete a customer by primary key."
     },
@@ -1893,9 +1913,9 @@
       "label": "Return the next customer_code in C000001, C000002, \u2026 format.",
       "file_type": "rationale",
       "source_file": "services/customer_service.py",
-      "source_location": "L140",
+      "source_location": "L183",
       "_origin": "ast",
-      "id": "services_customer_service_rationale_140",
+      "id": "services_customer_service_rationale_183",
       "community": 1,
       "norm_label": "return the next customer_code in c000001, c000002, ... format."
     },
@@ -2000,10 +2020,20 @@
       "norm_label": ".create_customer()"
     },
     {
-      "label": ".get_all_customers()",
+      "label": ".check_create_duplicate()",
       "file_type": "code",
       "source_file": "services/customer_workflow.py",
       "source_location": "L84",
+      "_origin": "ast",
+      "id": "services_customer_workflow_customerworkflow_check_create_duplicate",
+      "community": 52,
+      "norm_label": ".check_create_duplicate()"
+    },
+    {
+      "label": ".get_all_customers()",
+      "file_type": "code",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L91",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow_get_all_customers",
       "community": 52,
@@ -2013,7 +2043,7 @@
       "label": ".delete_customer()",
       "file_type": "code",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L88",
+      "source_location": "L95",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow_delete_customer",
       "community": 52,
@@ -2023,7 +2053,7 @@
       "label": ".populate_fields()",
       "file_type": "code",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L92",
+      "source_location": "L99",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow_populate_fields",
       "community": 52,
@@ -2110,12 +2140,22 @@
       "norm_label": "create a new customer (conscious clone path, no duplicate detection)."
     },
     {
-      "label": "Return all customers (for management views).",
+      "label": "Check for duplicates when creating from management UI.          Returns an error",
       "file_type": "rationale",
       "source_file": "services/customer_workflow.py",
       "source_location": "L85",
       "_origin": "ast",
       "id": "services_customer_workflow_rationale_85",
+      "community": 52,
+      "norm_label": "check for duplicates when creating from management ui.          returns an error"
+    },
+    {
+      "label": "Return all customers (for management views).",
+      "file_type": "rationale",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L92",
+      "_origin": "ast",
+      "id": "services_customer_workflow_rationale_92",
       "community": 52,
       "norm_label": "return all customers (for management views)."
     },
@@ -2123,9 +2163,9 @@
       "label": "Delete a customer by primary key.",
       "file_type": "rationale",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L89",
+      "source_location": "L96",
       "_origin": "ast",
-      "id": "services_customer_workflow_rationale_89",
+      "id": "services_customer_workflow_rationale_96",
       "community": 52,
       "norm_label": "delete a customer by primary key."
     },
@@ -2133,9 +2173,9 @@
       "label": "Populate all customer UI fields from a customer dict.          This is the ONLY",
       "file_type": "rationale",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L93",
+      "source_location": "L100",
       "_origin": "ast",
-      "id": "services_customer_workflow_rationale_93",
+      "id": "services_customer_workflow_rationale_100",
       "community": 52,
       "norm_label": "populate all customer ui fields from a customer dict.          this is the only"
     },
@@ -2197,7 +2237,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_invoice_exporter",
-      "community": 6,
+      "community": 30,
       "norm_label": "invoice_exporter.py"
     },
     {
@@ -2207,7 +2247,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "services_invoice_exporter_print_invoice_content",
-      "community": 6,
+      "community": 30,
       "norm_label": "print_invoice_content()"
     },
     {
@@ -2217,7 +2257,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "services_invoice_exporter_save_invoice_to_pdf",
-      "community": 6,
+      "community": 30,
       "norm_label": "save_invoice_to_pdf()"
     },
     {
@@ -2257,7 +2297,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_logo_service",
-      "community": 29,
+      "community": 2,
       "norm_label": "logo_service.py"
     },
     {
@@ -2267,7 +2307,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "services_logo_service_load_settings",
-      "community": 29,
+      "community": 2,
       "norm_label": "_load_settings()"
     },
     {
@@ -2277,7 +2317,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "services_logo_service_load_logo_path",
-      "community": 29,
+      "community": 2,
       "norm_label": "load_logo_path()"
     },
     {
@@ -2287,7 +2327,7 @@
       "source_location": "L26",
       "_origin": "ast",
       "id": "services_logo_service_image_to_base64",
-      "community": 29,
+      "community": 2,
       "norm_label": "image_to_base64()"
     },
     {
@@ -2307,7 +2347,7 @@
       "source_location": "L79",
       "_origin": "ast",
       "id": "services_logo_service_get_header_logo_pixmap",
-      "community": 29,
+      "community": 2,
       "norm_label": "get_header_logo_pixmap()"
     },
     {
@@ -2317,7 +2357,7 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "services_logo_service_get_app_icon",
-      "community": 29,
+      "community": 2,
       "norm_label": "get_app_icon()"
     },
     {
@@ -2969,7 +3009,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog",
-      "community": 2,
+      "community": 6,
       "norm_label": "customer_edit_dialog.py"
     },
     {
@@ -2979,7 +3019,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "community": 52,
+      "community": 54,
       "norm_label": "customereditdialog"
     },
     {
@@ -2989,7 +3029,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_init",
-      "community": 52,
+      "community": 54,
       "norm_label": ".__init__()"
     },
     {
@@ -2999,7 +3039,7 @@
       "source_location": "L37",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_init_ui",
-      "community": 52,
+      "community": 54,
       "norm_label": ".init_ui()"
     },
     {
@@ -3009,7 +3049,7 @@
       "source_location": "L111",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_load_fields",
-      "community": 52,
+      "community": 54,
       "norm_label": "._load_fields()"
     },
     {
@@ -3019,7 +3059,7 @@
       "source_location": "L124",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_get_data",
-      "community": 52,
+      "community": 54,
       "norm_label": "._get_data()"
     },
     {
@@ -3029,7 +3069,7 @@
       "source_location": "L138",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_save",
-      "community": 52,
+      "community": 54,
       "norm_label": "._save()"
     },
     {
@@ -3039,7 +3079,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_rationale_11",
-      "community": 52,
+      "community": 54,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0634\u062a\u0631\u06cc"
     },
     {
@@ -3049,7 +3089,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog",
-      "community": 6,
+      "community": 30,
       "norm_label": "invoice_dialog.py"
     },
     {
@@ -3419,7 +3459,7 @@
       "source_location": "L240",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_restore_defaults",
-      "community": 35,
+      "community": 6,
       "norm_label": ".restore_defaults()"
     },
     {
@@ -3449,7 +3489,7 @@
       "source_location": "L359",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_get_settings",
-      "community": 30,
+      "community": 35,
       "norm_label": ".get_settings()"
     },
     {
@@ -3469,7 +3509,7 @@
       "source_location": "L241",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_rationale_241",
-      "community": 35,
+      "community": 6,
       "norm_label": "\u0628\u0627\u0632\u06af\u0631\u062f\u0627\u0646\u06cc \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u067e\u06cc\u0634\u200c\u0641\u0631\u0636 \u0638\u0627\u0647\u0631\u06cc"
     },
     {
@@ -3479,7 +3519,7 @@
       "source_location": "L360",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_rationale_360",
-      "community": 30,
+      "community": 35,
       "norm_label": "\u062f\u0631\u06cc\u0627\u0641\u062a \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647"
     },
     {
@@ -9707,9 +9747,9 @@
       "source_file": "app.py",
       "source_location": "L306",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_add_customer",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_add_customer"
     },
     {
       "relation": "method",
@@ -9767,9 +9807,9 @@
       "source_file": "app.py",
       "source_location": "L215",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_delete_selected_repairs",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_delete_selected_repairs"
     },
     {
       "relation": "method",
@@ -10511,9 +10551,9 @@
       "source_file": "app.py",
       "source_location": "L240",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager_delete_selected_repairs",
-      "target": "app_laptoprepairmanager_refresh_table",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_refresh_table"
     },
     {
       "relation": "calls",
@@ -10522,9 +10562,9 @@
       "source_file": "app.py",
       "source_location": "L239",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager_delete_selected_repairs",
-      "target": "app_laptoprepairmanager_save_data",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_save_data"
     },
     {
       "relation": "calls",
@@ -10565,9 +10605,9 @@
       "source_file": "app.py",
       "source_location": "L216",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_216",
-      "target": "app_laptoprepairmanager_delete_selected_repairs",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_delete_selected_repairs"
     },
     {
       "relation": "calls",
@@ -10642,9 +10682,9 @@
       "source_file": "app.py",
       "source_location": "L312",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager_add_customer",
-      "target": "app_laptoprepairmanager_refresh_customer_table",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_refresh_customer_table"
     },
     {
       "relation": "calls",
@@ -10685,9 +10725,9 @@
       "source_file": "app.py",
       "source_location": "L302",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_302",
-      "target": "app_laptoprepairmanager_refresh_customer_table",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_refresh_customer_table"
     },
     {
       "relation": "calls",
@@ -10706,9 +10746,9 @@
       "source_file": "app.py",
       "source_location": "L307",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_307",
-      "target": "app_laptoprepairmanager_add_customer",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_add_customer"
     },
     {
       "relation": "calls",
@@ -10727,9 +10767,9 @@
       "source_file": "app.py",
       "source_location": "L315",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_315",
-      "target": "app_laptoprepairmanager_edit_customer",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_edit_customer"
     },
     {
       "relation": "calls",
@@ -10748,9 +10788,9 @@
       "source_file": "app.py",
       "source_location": "L325",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_325",
-      "target": "app_laptoprepairmanager_has_related_repairs",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_has_related_repairs"
     },
     {
       "relation": "calls",
@@ -10802,9 +10842,9 @@
       "source_file": "app.py",
       "source_location": "L336",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_336",
-      "target": "app_laptoprepairmanager_delete_selected_customers",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_delete_selected_customers"
     },
     {
       "relation": "calls",
@@ -10823,9 +10863,9 @@
       "source_file": "app.py",
       "source_location": "L458",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_458",
-      "target": "app_laptoprepairmanager_load_data",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_load_data"
     },
     {
       "relation": "calls",
@@ -10855,9 +10895,9 @@
       "source_file": "app.py",
       "source_location": "L466",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_rationale_466",
-      "target": "app_laptoprepairmanager_save_data",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_save_data"
     },
     {
       "relation": "calls",
@@ -13019,6 +13059,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "services_customer_service_customerservice",
+      "target": "services_customer_service_customerservice_check_create_duplicate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_service.py",
       "source_location": "L146",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13461,6 +13511,27 @@
       "target": "services_customer_service_customerservice_find_customer"
     },
     {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_service.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "services_customer_service_customerservice_check_create_duplicate",
+      "target": "services_customer_service_customerservice_find_by_full_name",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_service.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "services_customer_service_rationale_108",
+      "target": "services_customer_service_customerservice_check_create_duplicate",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
@@ -13474,21 +13545,31 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L119",
+      "source_location": "L151",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_119",
-      "target": "services_customer_service_customerservice_get_customer"
+      "source": "services_customer_service_rationale_151",
+      "target": "services_customer_service_customerservice_search_customers",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L123",
+      "source_location": "L162",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_123",
-      "target": "services_customer_service_customerservice_update_customer"
+      "source": "services_customer_service_rationale_162",
+      "target": "services_customer_service_customerservice_get_customer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_service.py",
+      "source_location": "L166",
+      "weight": 1.0,
+      "source": "services_customer_service_rationale_166",
+      "target": "services_customer_service_customerservice_update_customer",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -13505,51 +13586,41 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L127",
+      "source_location": "L170",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_127",
-      "target": "services_customer_service_customerservice_create_customer"
+      "source": "services_customer_service_rationale_170",
+      "target": "services_customer_service_customerservice_create_customer",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L132",
+      "source_location": "L175",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_132",
-      "target": "services_customer_service_customerservice_get_all_customers"
+      "source": "services_customer_service_rationale_175",
+      "target": "services_customer_service_customerservice_get_all_customers",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L136",
+      "source_location": "L179",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_136",
-      "target": "services_customer_service_customerservice_delete_customer"
+      "source": "services_customer_service_rationale_179",
+      "target": "services_customer_service_customerservice_delete_customer",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_service.py",
-      "source_location": "L132",
+      "source_location": "L183",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_132",
-      "target": "services_customer_service_customerservice_generate_customer_code"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_service.py",
-      "source_location": "L140",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_service_rationale_140",
-      "target": "services_customer_service_customerservice_generate_customer_code"
+      "source": "services_customer_service_rationale_183",
+      "target": "services_customer_service_customerservice_generate_customer_code",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -13582,6 +13653,16 @@
       "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog",
       "target": "services_customer_workflow"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "services_customer_workflow_customerworkflow",
+      "target": "services_customer_workflow_customerworkflow_check_create_duplicate",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -13853,19 +13934,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L85",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "services_customer_workflow_rationale_85",
-      "target": "services_customer_workflow_customerworkflow_get_all_customers"
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_workflow.py",
-      "source_location": "L89",
-      "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "services_customer_workflow_rationale_89",
-      "target": "services_customer_workflow_customerworkflow_delete_customer"
+      "target": "services_customer_workflow_customerworkflow_check_create_duplicate",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -13875,16 +13946,46 @@
       "weight": 1.0,
       "confidence_score": 1.0,
       "source": "services_customer_workflow_rationale_85",
-      "target": "services_customer_workflow_customerworkflow_populate_fields"
+      "target": "services_customer_workflow_customerworkflow_get_all_customers"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "services/customer_workflow.py",
-      "source_location": "L93",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "services_customer_workflow_rationale_92",
+      "target": "services_customer_workflow_customerworkflow_get_all_customers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "services_customer_workflow_rationale_96",
+      "target": "services_customer_workflow_customerworkflow_delete_customer",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "services_customer_workflow_rationale_100",
+      "target": "services_customer_workflow_customerworkflow_populate_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/customer_workflow.py",
+      "source_location": "L85",
       "weight": 1.0,
       "confidence_score": 1.0,
-      "source": "services_customer_workflow_rationale_93",
+      "source": "services_customer_workflow_rationale_85",
       "target": "services_customer_workflow_customerworkflow_populate_fields"
     },
     {
@@ -15414,9 +15515,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_rationale_75",
-      "target": "ui_customer_view_render_customer_rows",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_render_customer_rows"
     },
     {
       "relation": "references",
@@ -15479,9 +15580,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L122",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_rationale_122",
-      "target": "ui_customer_view_on_header_clicked",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_on_header_clicked"
     },
     {
       "relation": "references",
@@ -15511,9 +15612,9 @@
       "source_file": "ui/customer_view.py",
       "source_location": "L139",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_customer_view_rationale_139",
-      "target": "ui_customer_view_on_item_changed",
-      "confidence_score": 1.0
+      "target": "ui_customer_view_on_item_changed"
     },
     {
       "relation": "contains",
@@ -16375,9 +16476,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window",
-      "target": "ui_table_renderer",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer"
     },
     {
       "relation": "imports",
@@ -16386,9 +16487,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window",
-      "target": "ui_table_renderer_setup_selection_column",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_setup_selection_column"
     },
     {
       "relation": "calls",
@@ -16474,9 +16575,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L225",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window_build_table",
-      "target": "ui_table_renderer_setup_selection_column",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_setup_selection_column"
     },
     {
       "relation": "calls",
@@ -16528,9 +16629,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L350",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window_rationale_350",
-      "target": "ui_main_window_build_nav_bar",
-      "confidence_score": 1.0
+      "target": "ui_main_window_build_nav_bar"
     },
     {
       "relation": "contains",
@@ -16568,9 +16669,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer",
-      "target": "ui_table_renderer_on_header_clicked",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_on_header_clicked"
     },
     {
       "relation": "contains",
@@ -16578,9 +16679,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer",
-      "target": "ui_table_renderer_on_item_changed",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_on_item_changed"
     },
     {
       "relation": "contains",
@@ -16628,9 +16729,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer",
-      "target": "ui_table_renderer_setup_selection_column",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_setup_selection_column"
     },
     {
       "relation": "contains",
@@ -16638,9 +16739,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer",
-      "target": "ui_table_renderer_sync_header_state",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_sync_header_state"
     },
     {
       "relation": "references",
@@ -16659,9 +16760,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_rationale_10",
-      "target": "ui_table_renderer_create_table_item",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_create_table_item"
     },
     {
       "relation": "calls",
@@ -16681,9 +16782,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_on_item_changed",
-      "target": "ui_table_renderer_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_py_qtablewidgetitem"
     },
     {
       "relation": "calls",
@@ -16692,9 +16793,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_render_table_rows",
-      "target": "ui_table_renderer_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_py_qtablewidgetitem"
     },
     {
       "relation": "references",
@@ -16725,9 +16826,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_setup_selection_column",
-      "target": "ui_table_renderer_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_py_qtablewidgetitem"
     },
     {
       "relation": "rationale_for",
@@ -16735,9 +16836,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_rationale_15",
-      "target": "ui_table_renderer_set_status_styling",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_set_status_styling"
     },
     {
       "relation": "calls",
@@ -16756,9 +16857,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L24",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_rationale_24",
-      "target": "ui_table_renderer_set_total_styling",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_set_total_styling"
     },
     {
       "relation": "calls",
@@ -16777,9 +16878,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L30",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_rationale_30",
-      "target": "ui_table_renderer_setup_selection_column",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_setup_selection_column"
     },
     {
       "relation": "calls",
@@ -16788,9 +16889,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L37",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_setup_selection_column",
-      "target": "ui_table_renderer_on_header_clicked",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_on_header_clicked"
     },
     {
       "relation": "calls",
@@ -16799,9 +16900,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L39",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_setup_selection_column",
-      "target": "ui_table_renderer_on_item_changed",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_on_item_changed"
     },
     {
       "relation": "references",
@@ -16810,9 +16911,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L29",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_setup_selection_column",
-      "target": "ui_table_renderer_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_py_qtablewidget"
     },
     {
       "relation": "references",
@@ -16821,9 +16922,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L120",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_on_header_clicked",
-      "target": "ui_table_renderer_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_py_qtablewidget"
     },
     {
       "relation": "references",
@@ -16832,9 +16933,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L137",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_on_item_changed",
-      "target": "ui_table_renderer_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_py_qtablewidget"
     },
     {
       "relation": "references",
@@ -16865,9 +16966,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L144",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_sync_header_state",
-      "target": "ui_table_renderer_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_py_qtablewidget"
     },
     {
       "relation": "references",
@@ -16886,9 +16987,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L43",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_rationale_43",
-      "target": "ui_table_renderer_create_action_buttons",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_create_action_buttons"
     },
     {
       "relation": "calls",
@@ -16907,9 +17008,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L67",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_rationale_67",
-      "target": "ui_table_renderer_render_single_row",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_render_single_row"
     },
     {
       "relation": "calls",
@@ -16928,9 +17029,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_rationale_91",
-      "target": "ui_table_renderer_render_table_rows",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_render_table_rows"
     },
     {
       "relation": "rationale_for",
@@ -16938,9 +17039,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L121",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_rationale_121",
-      "target": "ui_table_renderer_on_header_clicked",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_on_header_clicked"
     },
     {
       "relation": "calls",
@@ -16949,9 +17050,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L141",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_on_item_changed",
-      "target": "ui_table_renderer_sync_header_state",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_sync_header_state"
     },
     {
       "relation": "rationale_for",
@@ -16959,9 +17060,9 @@
       "source_file": "ui/table_renderer.py",
       "source_location": "L138",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_table_renderer_rationale_138",
-      "target": "ui_table_renderer_on_item_changed",
-      "confidence_score": 1.0
+      "target": "ui_table_renderer_on_item_changed"
     },
     {
       "relation": "contains",
@@ -21607,5 +21708,5 @@
       "source_file": "SQLITE_MIGRATION_AUDIT.md"
     }
   ],
-  "built_at_commit": "dbf6a0fadce21f17f7d42b348aacce12dc5744ac"
+  "built_at_commit": "86c24a5a817819376140d39ab6e499779b460fe6"
 }

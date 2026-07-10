@@ -151,7 +151,7 @@
       "label": "NotificationDialog",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L39",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "app_notificationdialog",
       "community": 54,
@@ -171,7 +171,7 @@
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L42",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "app_notificationdialog_init",
       "community": 54,
@@ -181,7 +181,7 @@
       "label": "LaptopRepairManager",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L76",
+      "source_location": "L79",
       "_origin": "ast",
       "id": "app_laptoprepairmanager",
       "community": 3,
@@ -201,27 +201,27 @@
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L79",
+      "source_location": "L82",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_init",
-      "community": 54,
+      "community": 3,
       "norm_label": ".__init__()"
     },
     {
       "label": ".init_ui()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L90",
+      "source_location": "L94",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_init_ui",
-      "community": 54,
+      "community": 3,
       "norm_label": ".init_ui()"
     },
     {
       "label": ".update_date_label()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L95",
+      "source_location": "L99",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_update_date_label",
       "community": 2,
@@ -231,7 +231,7 @@
       "label": ".open_shop_settings()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L104",
+      "source_location": "L108",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_open_shop_settings",
       "community": 35,
@@ -241,7 +241,7 @@
       "label": ".rebuild_header()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L110",
+      "source_location": "L114",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_rebuild_header",
       "community": 29,
@@ -251,7 +251,7 @@
       "label": ".toggle_status_popup()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L122",
+      "source_location": "L126",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_toggle_status_popup",
       "community": 3,
@@ -261,7 +261,7 @@
       "label": ".eventFilter()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L132",
+      "source_location": "L136",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_eventfilter",
       "community": 3,
@@ -271,27 +271,27 @@
       "label": ".add_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L151",
+      "source_location": "L155",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_add_repair",
-      "community": 6,
+      "community": 3,
       "norm_label": ".add_repair()"
     },
     {
       "label": ".edit_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L166",
+      "source_location": "L170",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_repair",
-      "community": 6,
+      "community": 3,
       "norm_label": ".edit_repair()"
     },
     {
       "label": ".delete_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L195",
+      "source_location": "L199",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_repair",
       "community": 6,
@@ -301,7 +301,7 @@
       "label": ".delete_selected_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L215",
+      "source_location": "L219",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_selected_repairs",
       "community": 6,
@@ -311,7 +311,7 @@
       "label": ".preview_invoice()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L244",
+      "source_location": "L248",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_preview_invoice",
       "community": 3,
@@ -321,7 +321,7 @@
       "label": ".search_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L262",
+      "source_location": "L266",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_search_repairs",
       "community": 3,
@@ -331,7 +331,7 @@
       "label": ".filter_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L266",
+      "source_location": "L270",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_filter_repairs",
       "community": 3,
@@ -341,17 +341,17 @@
       "label": ".refresh_table()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L270",
+      "source_location": "L274",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_refresh_table",
-      "community": 6,
+      "community": 3,
       "norm_label": ".refresh_table()"
     },
     {
       "label": ".show_repairs_view()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L280",
+      "source_location": "L284",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_show_repairs_view",
       "community": 3,
@@ -361,57 +361,117 @@
       "label": ".show_customers_view()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L290",
+      "source_location": "L297",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_show_customers_view",
-      "community": 3,
+      "community": 71,
       "norm_label": ".show_customers_view()"
+    },
+    {
+      "label": ".show_services_view()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L313",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_show_services_view",
+      "community": 54,
+      "norm_label": ".show_services_view()"
+    },
+    {
+      "label": ".refresh_service_table()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L327",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_refresh_service_table",
+      "community": 54,
+      "norm_label": ".refresh_service_table()"
+    },
+    {
+      "label": ".search_services()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L332",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_search_services",
+      "community": 29,
+      "norm_label": ".search_services()"
+    },
+    {
+      "label": ".add_service()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L337",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_add_service",
+      "community": 54,
+      "norm_label": ".add_service()"
+    },
+    {
+      "label": ".edit_service()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L345",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_edit_service",
+      "community": 54,
+      "norm_label": ".edit_service()"
+    },
+    {
+      "label": ".delete_selected_services()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L355",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_delete_selected_services",
+      "community": 6,
+      "norm_label": ".delete_selected_services()"
     },
     {
       "label": ".refresh_customer_table()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L301",
+      "source_location": "L389",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_refresh_customer_table",
-      "community": 3,
+      "community": 71,
       "norm_label": ".refresh_customer_table()"
     },
     {
       "label": ".add_customer()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L306",
+      "source_location": "L394",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_add_customer",
-      "community": 3,
+      "community": 71,
       "norm_label": ".add_customer()"
     },
     {
       "label": ".edit_customer()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L314",
+      "source_location": "L402",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_customer",
-      "community": 3,
+      "community": 71,
       "norm_label": ".edit_customer()"
     },
     {
       "label": "._has_related_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L324",
+      "source_location": "L412",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_has_related_repairs",
-      "community": 3,
+      "community": 6,
       "norm_label": "._has_related_repairs()"
     },
     {
       "label": ".delete_selected_customers()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L335",
+      "source_location": "L423",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_selected_customers",
       "community": 6,
@@ -421,7 +481,7 @@
       "label": ".view_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L397",
+      "source_location": "L485",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_view_repair",
       "community": 3,
@@ -431,7 +491,7 @@
       "label": ".quick_invoice()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L402",
+      "source_location": "L490",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_quick_invoice",
       "community": 3,
@@ -441,7 +501,7 @@
       "label": ".update_statistics()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L407",
+      "source_location": "L495",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_update_statistics",
       "community": 3,
@@ -451,17 +511,17 @@
       "label": ".check_notifications()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L422",
+      "source_location": "L510",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_check_notifications",
-      "community": 54,
+      "community": 3,
       "norm_label": ".check_notifications()"
     },
     {
       "label": ".load_data()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L457",
+      "source_location": "L545",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_load_data",
       "community": 3,
@@ -471,17 +531,17 @@
       "label": ".save_data()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L465",
+      "source_location": "L553",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_save_data",
-      "community": 6,
+      "community": 3,
       "norm_label": ".save_data()"
     },
     {
       "label": ".closeEvent()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L472",
+      "source_location": "L560",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_closeevent",
       "community": 3,
@@ -491,7 +551,7 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L481",
+      "source_location": "L569",
       "_origin": "ast",
       "id": "app_main",
       "community": 2,
@@ -501,9 +561,9 @@
       "label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0646\u0645\u0627\u06cc\u0634 \u0627\u0639\u0644\u0627\u0646\u200c\u0647\u0627",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L40",
+      "source_location": "L43",
       "_origin": "ast",
-      "id": "app_rationale_40",
+      "id": "app_rationale_43",
       "community": 54,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0646\u0645\u0627\u06cc\u0634 \u0627\u0639\u0644\u0627\u0646\u200c\u0647\u0627"
     },
@@ -511,9 +571,9 @@
       "label": "\u06a9\u0644\u0627\u0633 \u0627\u0635\u0644\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0639\u0645\u06cc\u0631\u0627\u062a",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L77",
+      "source_location": "L80",
       "_origin": "ast",
-      "id": "app_rationale_77",
+      "id": "app_rationale_80",
       "community": 3,
       "norm_label": "\u06a9\u0644\u0627\u0633 \u0627\u0635\u0644\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0639\u0645\u06cc\u0631\u0627\u062a"
     },
@@ -521,9 +581,9 @@
       "label": "\u0628\u0627\u0632 \u06a9\u0631\u062f\u0646 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L105",
+      "source_location": "L109",
       "_origin": "ast",
-      "id": "app_rationale_105",
+      "id": "app_rationale_109",
       "community": 35,
       "norm_label": "\u0628\u0627\u0632 \u06a9\u0631\u062f\u0646 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647"
     },
@@ -531,9 +591,9 @@
       "label": "\u0628\u0627\u0632\u0633\u0627\u0632\u06cc \u0647\u062f\u0631 \u067e\u0633 \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L111",
+      "source_location": "L115",
       "_origin": "ast",
-      "id": "app_rationale_111",
+      "id": "app_rationale_115",
       "community": 29,
       "norm_label": "\u0628\u0627\u0632\u0633\u0627\u0632\u06cc \u0647\u062f\u0631 \u067e\u0633 \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a"
     },
@@ -541,9 +601,9 @@
       "label": "\u0646\u0645\u0627\u06cc\u0634/\u067e\u0646\u0647\u0627\u0646 \u06a9\u0631\u062f\u0646 \u067e\u0627\u067e\u200c\u0622\u067e \u0648\u0636\u0639\u06cc\u062a\u200c\u0647\u0627",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L123",
+      "source_location": "L127",
       "_origin": "ast",
-      "id": "app_rationale_123",
+      "id": "app_rationale_127",
       "community": 3,
       "norm_label": "\u0646\u0645\u0627\u06cc\u0634/\u067e\u0646\u0647\u0627\u0646 \u06a9\u0631\u062f\u0646 \u067e\u0627\u067e\u200c\u0627\u067e \u0648\u0636\u0639\u06cc\u062a\u200c\u0647\u0627"
     },
@@ -551,9 +611,9 @@
       "label": "\u0628\u0633\u062a\u0646 \u067e\u0627\u067e\u200c\u0622\u067e \u0647\u0646\u06af\u0627\u0645 \u06a9\u0644\u06cc\u06a9 \u062e\u0627\u0631\u062c \u0627\u0632 \u0622\u0646 \u06cc\u0627 ESC",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L133",
+      "source_location": "L137",
       "_origin": "ast",
-      "id": "app_rationale_133",
+      "id": "app_rationale_137",
       "community": 3,
       "norm_label": "\u0628\u0633\u062a\u0646 \u067e\u0627\u067e\u200c\u0627\u067e \u0647\u0646\u06af\u0627\u0645 \u06a9\u0644\u06cc\u06a9 \u062e\u0627\u0631\u062c \u0627\u0632 \u0627\u0646 \u06cc\u0627 esc"
     },
@@ -561,59 +621,79 @@
       "label": "\u062d\u0630\u0641 \u062a\u0639\u0645\u06cc\u0631\u0627\u062a \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 (\u0686\u06a9\u200c\u0628\u0627\u06a9\u0633\u200c\u062f\u0627\u0631) \u062f\u0631 \u06cc\u06a9 \u0639\u0645\u0644\u06cc\u0627\u062a",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L216",
+      "source_location": "L220",
       "_origin": "ast",
-      "id": "app_rationale_216",
+      "id": "app_rationale_220",
       "community": 6,
       "norm_label": "\u062d\u0630\u0641 \u062a\u0639\u0645\u06cc\u0631\u0627\u062a \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 (\u0686\u06a9\u200c\u0628\u0627\u06a9\u0633\u200c\u062f\u0627\u0631) \u062f\u0631 \u06cc\u06a9 \u0639\u0645\u0644\u06cc\u0627\u062a"
+    },
+    {
+      "label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u062e\u062f\u0645\u0627\u062a \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L328",
+      "_origin": "ast",
+      "id": "app_rationale_328",
+      "community": 54,
+      "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u062e\u062f\u0645\u0627\u062a \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645"
+    },
+    {
+      "label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u062e\u062f\u0645\u062a \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L346",
+      "_origin": "ast",
+      "id": "app_rationale_346",
+      "community": 54,
+      "norm_label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u062e\u062f\u0645\u062a \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
     {
       "label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L302",
+      "source_location": "L390",
       "_origin": "ast",
-      "id": "app_rationale_302",
-      "community": 3,
+      "id": "app_rationale_390",
+      "community": 71,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645"
     },
     {
       "label": "\u0627\u0641\u0632\u0648\u062f\u0646 \u0645\u0634\u062a\u0631\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L307",
+      "source_location": "L395",
       "_origin": "ast",
-      "id": "app_rationale_307",
-      "community": 3,
+      "id": "app_rationale_395",
+      "community": 71,
       "norm_label": "\u0627\u0641\u0632\u0648\u062f\u0646 \u0645\u0634\u062a\u0631\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
     {
       "label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L315",
+      "source_location": "L403",
       "_origin": "ast",
-      "id": "app_rationale_315",
-      "community": 3,
+      "id": "app_rationale_403",
+      "community": 71,
       "norm_label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
     {
       "label": "\u0628\u0631\u0631\u0633\u06cc \u0648\u062c\u0648\u062f \u062a\u0639\u0645\u06cc\u0631 \u0645\u0631\u062a\u0628\u0637 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L325",
+      "source_location": "L413",
       "_origin": "ast",
-      "id": "app_rationale_325",
-      "community": 3,
+      "id": "app_rationale_413",
+      "community": 6,
       "norm_label": "\u0628\u0631\u0631\u0633\u06cc \u0648\u062c\u0648\u062f \u062a\u0639\u0645\u06cc\u0631 \u0645\u0631\u062a\u0628\u0637 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc"
     },
     {
       "label": "\u062d\u0630\u0641 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 \u0628\u0627 \u0627\u062d\u062a\u06cc\u0627\u0637",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L336",
+      "source_location": "L424",
       "_origin": "ast",
-      "id": "app_rationale_336",
+      "id": "app_rationale_424",
       "community": 6,
       "norm_label": "\u062d\u0630\u0641 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 \u0628\u0627 \u0627\u062d\u062a\u06cc\u0627\u0637"
     },
@@ -621,9 +701,9 @@
       "label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u0627\u0632 \u0641\u0627\u06cc\u0644",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L458",
+      "source_location": "L546",
       "_origin": "ast",
-      "id": "app_rationale_458",
+      "id": "app_rationale_546",
       "community": 3,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u0627\u0632 \u0641\u0627\u06cc\u0644"
     },
@@ -631,10 +711,10 @@
       "label": "\u0630\u062e\u06cc\u0631\u0647 \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u062f\u0631 \u0641\u0627\u06cc\u0644",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L466",
+      "source_location": "L554",
       "_origin": "ast",
-      "id": "app_rationale_466",
-      "community": 6,
+      "id": "app_rationale_554",
+      "community": 3,
       "norm_label": "\u0630\u062e\u06cc\u0631\u0647 \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u062f\u0631 \u0641\u0627\u06cc\u0644"
     },
     {
@@ -775,7 +855,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_models",
-      "community": 7,
+      "community": 2,
       "norm_label": "models.py"
     },
     {
@@ -785,7 +865,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "core_models_repair",
-      "community": 7,
+      "community": 2,
       "norm_label": "repair"
     },
     {
@@ -795,7 +875,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "core_models_repair_to_dict",
-      "community": 7,
+      "community": 2,
       "norm_label": ".to_dict()"
     },
     {
@@ -806,7 +886,7 @@
       "origin_file": "C:\\Users\\AL\\Desktop\\repair_manager\\core\\models.py",
       "_origin": "ast",
       "id": "core_models_py_any",
-      "community": 7,
+      "community": 2,
       "norm_label": "any"
     },
     {
@@ -816,7 +896,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "core_models_repair_from_dict",
-      "community": 7,
+      "community": 2,
       "norm_label": ".from_dict()"
     },
     {
@@ -1083,7 +1163,7 @@
       "label": "init_database()",
       "file_type": "code",
       "source_file": "core/storage/init_db.py",
-      "source_location": "L6",
+      "source_location": "L7",
       "_origin": "ast",
       "id": "core_storage_init_db_init_database",
       "community": 0,
@@ -1198,6 +1278,126 @@
       "id": "core_storage_repairs_storage_rationale_28",
       "community": 0,
       "norm_label": "save all repairs to file"
+    },
+    {
+      "label": "service_model_db.py",
+      "file_type": "code",
+      "source_file": "core/storage/service_model_db.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "core_storage_service_model_db",
+      "community": 0,
+      "norm_label": "service_model_db.py"
+    },
+    {
+      "label": "ServiceDB",
+      "file_type": "code",
+      "source_file": "core/storage/service_model_db.py",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "core_storage_service_model_db_servicedb",
+      "community": 0,
+      "norm_label": "servicedb"
+    },
+    {
+      "label": "service_repository.py",
+      "file_type": "code",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "core_storage_service_repository",
+      "community": 0,
+      "norm_label": "service_repository.py"
+    },
+    {
+      "label": "ServiceRepository",
+      "file_type": "code",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "core_storage_service_repository_servicerepository",
+      "community": 0,
+      "norm_label": "servicerepository"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "core_storage_service_repository_servicerepository_create",
+      "community": 0,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L33",
+      "_origin": "ast",
+      "id": "core_storage_service_repository_servicerepository_update",
+      "community": 0,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "core_storage_service_repository_servicerepository_delete",
+      "community": 0,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": ".get()",
+      "file_type": "code",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L68",
+      "_origin": "ast",
+      "id": "core_storage_service_repository_servicerepository_get",
+      "community": 0,
+      "norm_label": ".get()"
+    },
+    {
+      "label": ".list_all()",
+      "file_type": "code",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L76",
+      "_origin": "ast",
+      "id": "core_storage_service_repository_servicerepository_list_all",
+      "community": 0,
+      "norm_label": ".list_all()"
+    },
+    {
+      "label": ".search()",
+      "file_type": "code",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "core_storage_service_repository_servicerepository_search",
+      "community": 0,
+      "norm_label": ".search()"
+    },
+    {
+      "label": ".generate_service_code()",
+      "file_type": "code",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L99",
+      "_origin": "ast",
+      "id": "core_storage_service_repository_servicerepository_generate_service_code",
+      "community": 0,
+      "norm_label": ".generate_service_code()"
+    },
+    {
+      "label": "._to_dict()",
+      "file_type": "code",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L112",
+      "_origin": "ast",
+      "id": "core_storage_service_repository_servicerepository_to_dict",
+      "community": 0,
+      "norm_label": "._to_dict()"
     },
     {
       "label": "sqlite_storage.py",
@@ -1566,7 +1766,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qlineedit",
-      "community": 4,
+      "community": 29,
       "norm_label": "qlineedit"
     },
     {
@@ -2237,7 +2437,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_invoice_exporter",
-      "community": 30,
+      "community": 6,
       "norm_label": "invoice_exporter.py"
     },
     {
@@ -2247,7 +2447,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "services_invoice_exporter_print_invoice_content",
-      "community": 30,
+      "community": 2,
       "norm_label": "print_invoice_content()"
     },
     {
@@ -2257,7 +2457,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "services_invoice_exporter_save_invoice_to_pdf",
-      "community": 30,
+      "community": 6,
       "norm_label": "save_invoice_to_pdf()"
     },
     {
@@ -2417,7 +2617,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_repair_manager_service",
-      "community": 7,
+      "community": 2,
       "norm_label": "repair_manager_service.py"
     },
     {
@@ -2427,7 +2627,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "services_repair_manager_service_add_repair",
-      "community": 7,
+      "community": 2,
       "norm_label": "add_repair()"
     },
     {
@@ -2437,7 +2637,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "services_repair_manager_service_delete_repair",
-      "community": 7,
+      "community": 2,
       "norm_label": "delete_repair()"
     },
     {
@@ -2447,7 +2647,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "services_repair_manager_service_get_repair_by_id",
-      "community": 7,
+      "community": 3,
       "norm_label": "get_repair_by_id()"
     },
     {
@@ -2457,7 +2657,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "services_repair_manager_service_update_repair",
-      "community": 7,
+      "community": 2,
       "norm_label": "update_repair()"
     },
     {
@@ -2467,7 +2667,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_7",
-      "community": 7,
+      "community": 2,
       "norm_label": "add a new repair to the repairs list.     assigns a unique id to the new repair."
     },
     {
@@ -2477,7 +2677,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_22",
-      "community": 7,
+      "community": 2,
       "norm_label": "delete a repair by id from the repairs list."
     },
     {
@@ -2487,7 +2687,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_29",
-      "community": 7,
+      "community": 3,
       "norm_label": "find and return a repair by its id."
     },
     {
@@ -2497,8 +2697,168 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_39",
-      "community": 7,
+      "community": 2,
       "norm_label": "update a repair by id with new data."
+    },
+    {
+      "label": "service_service.py",
+      "file_type": "code",
+      "source_file": "services/service_service.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "services_service_service",
+      "community": 0,
+      "norm_label": "service_service.py"
+    },
+    {
+      "label": "ServiceService",
+      "file_type": "code",
+      "source_file": "services/service_service.py",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "services_service_service_serviceservice",
+      "community": 7,
+      "norm_label": "serviceservice"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "services/service_service.py",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "services_service_service_serviceservice_init",
+      "community": 7,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".create_service()",
+      "file_type": "code",
+      "source_file": "services/service_service.py",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "services_service_service_serviceservice_create_service",
+      "community": 7,
+      "norm_label": ".create_service()"
+    },
+    {
+      "label": ".update_service()",
+      "file_type": "code",
+      "source_file": "services/service_service.py",
+      "source_location": "L31",
+      "_origin": "ast",
+      "id": "services_service_service_serviceservice_update_service",
+      "community": 7,
+      "norm_label": ".update_service()"
+    },
+    {
+      "label": ".delete_service()",
+      "file_type": "code",
+      "source_file": "services/service_service.py",
+      "source_location": "L49",
+      "_origin": "ast",
+      "id": "services_service_service_serviceservice_delete_service",
+      "community": 7,
+      "norm_label": ".delete_service()"
+    },
+    {
+      "label": ".get_service()",
+      "file_type": "code",
+      "source_file": "services/service_service.py",
+      "source_location": "L53",
+      "_origin": "ast",
+      "id": "services_service_service_serviceservice_get_service",
+      "community": 7,
+      "norm_label": ".get_service()"
+    },
+    {
+      "label": ".list_all()",
+      "file_type": "code",
+      "source_file": "services/service_service.py",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "services_service_service_serviceservice_list_all",
+      "community": 7,
+      "norm_label": ".list_all()"
+    },
+    {
+      "label": ".search()",
+      "file_type": "code",
+      "source_file": "services/service_service.py",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "services_service_service_serviceservice_search",
+      "community": 7,
+      "norm_label": ".search()"
+    },
+    {
+      "label": "Business logic layer for service catalog operations.",
+      "file_type": "rationale",
+      "source_file": "services/service_service.py",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "services_service_service_rationale_7",
+      "community": 7,
+      "norm_label": "business logic layer for service catalog operations."
+    },
+    {
+      "label": "Create a new service with validation.",
+      "file_type": "rationale",
+      "source_file": "services/service_service.py",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "services_service_service_rationale_13",
+      "community": 7,
+      "norm_label": "create a new service with validation."
+    },
+    {
+      "label": "Update an existing service with validation.",
+      "file_type": "rationale",
+      "source_file": "services/service_service.py",
+      "source_location": "L32",
+      "_origin": "ast",
+      "id": "services_service_service_rationale_32",
+      "community": 7,
+      "norm_label": "update an existing service with validation."
+    },
+    {
+      "label": "Delete a service by primary key.",
+      "file_type": "rationale",
+      "source_file": "services/service_service.py",
+      "source_location": "L50",
+      "_origin": "ast",
+      "id": "services_service_service_rationale_50",
+      "community": 7,
+      "norm_label": "delete a service by primary key."
+    },
+    {
+      "label": "Get a single service by primary key.",
+      "file_type": "rationale",
+      "source_file": "services/service_service.py",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "services_service_service_rationale_54",
+      "community": 7,
+      "norm_label": "get a single service by primary key."
+    },
+    {
+      "label": "Return all services, optionally filtered to active only.",
+      "file_type": "rationale",
+      "source_file": "services/service_service.py",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "services_service_service_rationale_58",
+      "community": 7,
+      "norm_label": "return all services, optionally filtered to active only."
+    },
+    {
+      "label": "Search services by name or code (contains, case-insensitive).",
+      "file_type": "rationale",
+      "source_file": "services/service_service.py",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "services_service_service_rationale_62",
+      "community": 7,
+      "norm_label": "search services by name or code (contains, case-insensitive)."
     },
     {
       "label": "statistics.py",
@@ -3009,7 +3369,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog",
-      "community": 6,
+      "community": 68,
       "norm_label": "customer_edit_dialog.py"
     },
     {
@@ -3169,7 +3529,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_invoicepreviewdialog",
-      "community": 30,
+      "community": 2,
       "norm_label": "invoicepreviewdialog"
     },
     {
@@ -3179,7 +3539,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_invoicepreviewdialog_init",
-      "community": 30,
+      "community": 2,
       "norm_label": ".__init__()"
     },
     {
@@ -3189,7 +3549,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_invoicepreviewdialog_init_ui",
-      "community": 30,
+      "community": 2,
       "norm_label": ".init_ui()"
     },
     {
@@ -3199,7 +3559,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_invoicepreviewdialog_print_invoice",
-      "community": 30,
+      "community": 2,
       "norm_label": ".print_invoice()"
     },
     {
@@ -3209,7 +3569,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_invoicepreviewdialog_save_pdf",
-      "community": 30,
+      "community": 2,
       "norm_label": ".save_pdf()"
     },
     {
@@ -3219,7 +3579,7 @@
       "source_location": "L107",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_invoicepreviewdialog_update_preview",
-      "community": 30,
+      "community": 2,
       "norm_label": ".update_preview()"
     },
     {
@@ -3229,7 +3589,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_rationale_16",
-      "community": 30,
+      "community": 2,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0648 \u0686\u0627\u067e \u0641\u0627\u06a9\u062a\u0648\u0631"
     },
     {
@@ -3239,7 +3599,7 @@
       "source_location": "L108",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_rationale_108",
-      "community": 30,
+      "community": 2,
       "norm_label": "\u0628\u0647\u200c\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0641\u0627\u06a9\u062a\u0648\u0631"
     },
     {
@@ -3319,7 +3679,7 @@
       "source_location": "L71",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_init_ui",
-      "community": 4,
+      "community": 63,
       "norm_label": ".init_ui()"
     },
     {
@@ -3329,7 +3689,7 @@
       "source_location": "L258",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_init_customer_completer",
-      "community": 70,
+      "community": 63,
       "norm_label": "._init_customer_completer()"
     },
     {
@@ -3483,6 +3843,86 @@
       "norm_label": "\u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u062c\u0645\u0648\u0639 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627"
     },
     {
+      "label": "service_edit_dialog.py",
+      "file_type": "code",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ui_dialogs_service_edit_dialog",
+      "community": 6,
+      "norm_label": "service_edit_dialog.py"
+    },
+    {
+      "label": "ServiceEditDialog",
+      "file_type": "code",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "community": 54,
+      "norm_label": "serviceeditdialog"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "ui_dialogs_service_edit_dialog_serviceeditdialog_init",
+      "community": 54,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".init_ui()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "ui_dialogs_service_edit_dialog_serviceeditdialog_init_ui",
+      "community": 54,
+      "norm_label": ".init_ui()"
+    },
+    {
+      "label": "._load_fields()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L91",
+      "_origin": "ast",
+      "id": "ui_dialogs_service_edit_dialog_serviceeditdialog_load_fields",
+      "community": 54,
+      "norm_label": "._load_fields()"
+    },
+    {
+      "label": "._get_data()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L99",
+      "_origin": "ast",
+      "id": "ui_dialogs_service_edit_dialog_serviceeditdialog_get_data",
+      "community": 54,
+      "norm_label": "._get_data()"
+    },
+    {
+      "label": "._save()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L107",
+      "_origin": "ast",
+      "id": "ui_dialogs_service_edit_dialog_serviceeditdialog_save",
+      "community": 54,
+      "norm_label": "._save()"
+    },
+    {
+      "label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u062e\u062f\u0645\u062a",
+      "file_type": "rationale",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "ui_dialogs_service_edit_dialog_rationale_11",
+      "community": 54,
+      "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u062e\u062f\u0645\u062a"
+    },
+    {
       "label": "shop_settings_dialog.py",
       "file_type": "code",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
@@ -3579,7 +4019,7 @@
       "source_location": "L359",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_get_settings",
-      "community": 35,
+      "community": 2,
       "norm_label": ".get_settings()"
     },
     {
@@ -3609,7 +4049,7 @@
       "source_location": "L360",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_rationale_360",
-      "community": 35,
+      "community": 2,
       "norm_label": "\u062f\u0631\u06cc\u0627\u0641\u062a \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647"
     },
     {
@@ -3626,7 +4066,7 @@
       "label": "_get_shop_name()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L22",
+      "source_location": "L23",
       "_origin": "ast",
       "id": "ui_main_window_get_shop_name",
       "community": 29,
@@ -3636,7 +4076,7 @@
       "label": "_make_title()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L32",
+      "source_location": "L33",
       "_origin": "ast",
       "id": "ui_main_window_make_title",
       "community": 29,
@@ -3646,7 +4086,7 @@
       "label": "_get_header_appearance()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L40",
+      "source_location": "L41",
       "_origin": "ast",
       "id": "ui_main_window_get_header_appearance",
       "community": 29,
@@ -3656,7 +4096,7 @@
       "label": "build_header()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L67",
+      "source_location": "L68",
       "_origin": "ast",
       "id": "ui_main_window_build_header",
       "community": 29,
@@ -3666,7 +4106,7 @@
       "label": "build_toolbar()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L124",
+      "source_location": "L125",
       "_origin": "ast",
       "id": "ui_main_window_build_toolbar",
       "community": 29,
@@ -3676,7 +4116,7 @@
       "label": "build_table()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L192",
+      "source_location": "L193",
       "_origin": "ast",
       "id": "ui_main_window_build_table",
       "community": 29,
@@ -3686,7 +4126,7 @@
       "label": "build_status_bar()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L233",
+      "source_location": "L234",
       "_origin": "ast",
       "id": "ui_main_window_build_status_bar",
       "community": 29,
@@ -3696,7 +4136,7 @@
       "label": "create_status_popup()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L278",
+      "source_location": "L279",
       "_origin": "ast",
       "id": "ui_main_window_create_status_popup",
       "community": 29,
@@ -3706,7 +4146,7 @@
       "label": "build_nav_bar()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L349",
+      "source_location": "L350",
       "_origin": "ast",
       "id": "ui_main_window_build_nav_bar",
       "community": 29,
@@ -3716,7 +4156,7 @@
       "label": "build_ui()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L375",
+      "source_location": "L383",
       "_origin": "ast",
       "id": "ui_main_window_build_ui",
       "community": 29,
@@ -3726,11 +4166,123 @@
       "label": "\u0627\u06cc\u062c\u0627\u062f \u0646\u0648\u0627\u0631 \u0646\u0627\u0648\u0628\u0631\u06cc \u0628\u06cc\u0646 \u0646\u0645\u0627\u06cc \u062a\u0639\u0645\u06cc\u0631\u0627\u062a \u0648 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646",
       "file_type": "rationale",
       "source_file": "ui/main_window.py",
-      "source_location": "L350",
+      "source_location": "L351",
       "_origin": "ast",
-      "id": "ui_main_window_rationale_350",
+      "id": "ui_main_window_rationale_351",
       "community": 29,
       "norm_label": "\u0627\u06cc\u062c\u0627\u062f \u0646\u0648\u0627\u0631 \u0646\u0627\u0648\u0628\u0631\u06cc \u0628\u06cc\u0646 \u0646\u0645\u0627\u06cc \u062a\u0639\u0645\u06cc\u0631\u0627\u062a \u0648 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646"
+    },
+    {
+      "label": "service_view.py",
+      "file_type": "code",
+      "source_file": "ui/service_view.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ui_service_view",
+      "community": 29,
+      "norm_label": "service_view.py"
+    },
+    {
+      "label": "build_service_toolbar()",
+      "file_type": "code",
+      "source_file": "ui/service_view.py",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "ui_service_view_build_service_toolbar",
+      "community": 29,
+      "norm_label": "build_service_toolbar()"
+    },
+    {
+      "label": "build_service_table()",
+      "file_type": "code",
+      "source_file": "ui/service_view.py",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "ui_service_view_build_service_table",
+      "community": 29,
+      "norm_label": "build_service_table()"
+    },
+    {
+      "label": "render_service_rows()",
+      "file_type": "code",
+      "source_file": "ui/service_view.py",
+      "source_location": "L81",
+      "_origin": "ast",
+      "id": "ui_service_view_render_service_rows",
+      "community": 29,
+      "norm_label": "render_service_rows()"
+    },
+    {
+      "label": "QTableWidget",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "C:\\Users\\AL\\Desktop\\repair_manager\\ui\\service_view.py",
+      "_origin": "ast",
+      "id": "ui_service_view_py_qtablewidget",
+      "community": 29,
+      "norm_label": "qtablewidget"
+    },
+    {
+      "label": "_on_header_clicked()",
+      "file_type": "code",
+      "source_file": "ui/service_view.py",
+      "source_location": "L131",
+      "_origin": "ast",
+      "id": "ui_service_view_on_header_clicked",
+      "community": 29,
+      "norm_label": "_on_header_clicked()"
+    },
+    {
+      "label": "_on_item_changed()",
+      "file_type": "code",
+      "source_file": "ui/service_view.py",
+      "source_location": "L147",
+      "_origin": "ast",
+      "id": "ui_service_view_on_item_changed",
+      "community": 29,
+      "norm_label": "_on_item_changed()"
+    },
+    {
+      "label": "QTableWidgetItem",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "C:\\Users\\AL\\Desktop\\repair_manager\\ui\\service_view.py",
+      "_origin": "ast",
+      "id": "ui_service_view_py_qtablewidgetitem",
+      "community": 29,
+      "norm_label": "qtablewidgetitem"
+    },
+    {
+      "label": "_sync_header_state()",
+      "file_type": "code",
+      "source_file": "ui/service_view.py",
+      "source_location": "L153",
+      "_origin": "ast",
+      "id": "ui_service_view_sync_header_state",
+      "community": 29,
+      "norm_label": "_sync_header_state()"
+    },
+    {
+      "label": "\u0627\u06cc\u062c\u0627\u062f \u0646\u0648\u0627\u0631 \u0627\u0628\u0632\u0627\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062e\u062f\u0645\u0627\u062a",
+      "file_type": "rationale",
+      "source_file": "ui/service_view.py",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "ui_service_view_rationale_16",
+      "community": 29,
+      "norm_label": "\u0627\u06cc\u062c\u0627\u062f \u0646\u0648\u0627\u0631 \u0627\u0628\u0632\u0627\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062e\u062f\u0645\u0627\u062a"
+    },
+    {
+      "label": "\u0631\u0646\u062f\u0631 \u06a9\u0631\u062f\u0646 \u0631\u062f\u06cc\u0641\u200c\u0647\u0627\u06cc \u062e\u062f\u0645\u0627\u062a (\u0645\u0631\u062a\u0628 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645)",
+      "file_type": "rationale",
+      "source_file": "ui/service_view.py",
+      "source_location": "L83",
+      "_origin": "ast",
+      "id": "ui_service_view_rationale_83",
+      "community": 29,
+      "norm_label": "\u0631\u0646\u062f\u0631 \u06a9\u0631\u062f\u0646 \u0631\u062f\u06cc\u0641\u200c\u0647\u0627\u06cc \u062e\u062f\u0645\u0627\u062a (\u0645\u0631\u062a\u0628 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645)"
     },
     {
       "label": "status_styles.py",
@@ -3992,7 +4544,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_widgets_web_invoice_view",
-      "community": 30,
+      "community": 2,
       "norm_label": "web_invoice_view.py"
     },
     {
@@ -4002,7 +4554,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_widgets_web_invoice_view_webinvoiceview",
-      "community": 30,
+      "community": 2,
       "norm_label": "webinvoiceview"
     },
     {
@@ -4012,7 +4564,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qwidget",
-      "community": 30,
+      "community": 2,
       "norm_label": "qwidget"
     },
     {
@@ -4022,7 +4574,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "ui_widgets_web_invoice_view_webinvoiceview_init",
-      "community": 30,
+      "community": 2,
       "norm_label": ".__init__()"
     },
     {
@@ -4032,7 +4584,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "ui_widgets_web_invoice_view_webinvoiceview_set_html",
-      "community": 30,
+      "community": 2,
       "norm_label": ".set_html()"
     },
     {
@@ -4042,7 +4594,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_widgets_web_invoice_view_rationale_6",
-      "community": 30,
+      "community": 2,
       "norm_label": "invoice preview widget using qwebengineview"
     },
     {
@@ -7506,6 +8058,146 @@
       "norm_label": "summary"
     },
     {
+      "label": "SERVICES_CATALOG_PHASE1.md",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "services_catalog_phase1",
+      "community": 30,
+      "norm_label": "services_catalog_phase1.md"
+    },
+    {
+      "label": "Services Catalog \u2014 Phase 1",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_services_catalog_phase_1",
+      "community": 30,
+      "norm_label": "services catalog \u2014 phase 1"
+    },
+    {
+      "label": "1. Overview",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_1_overview",
+      "community": 30,
+      "norm_label": "1. overview"
+    },
+    {
+      "label": "2. Database \u2014 `service` table",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L17",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_2_database_service_table",
+      "community": 30,
+      "norm_label": "2. database \u2014 `service` table"
+    },
+    {
+      "label": "3. Repository \u2014 `ServiceRepository`",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_3_repository_servicerepository",
+      "community": 30,
+      "norm_label": "3. repository \u2014 `servicerepository`"
+    },
+    {
+      "label": "4. Service Layer \u2014 `ServiceService`",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L54",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_4_service_layer_serviceservice",
+      "community": 30,
+      "norm_label": "4. service layer \u2014 `serviceservice`"
+    },
+    {
+      "label": "5. Management UI",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L71",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_5_management_ui",
+      "community": 30,
+      "norm_label": "5. management ui"
+    },
+    {
+      "label": "Navigation",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L73",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_navigation",
+      "community": 30,
+      "norm_label": "navigation"
+    },
+    {
+      "label": "Services View (`ui/service_view.py`)",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L80",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_services_view_ui_service_view_py",
+      "community": 30,
+      "norm_label": "services view (`ui/service_view.py`)"
+    },
+    {
+      "label": "Add/Edit Dialog (`ui/dialogs/service_edit_dialog.py`)",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L91",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_add_edit_dialog_ui_dialogs_service_edit_dialog_py",
+      "community": 30,
+      "norm_label": "add/edit dialog (`ui/dialogs/service_edit_dialog.py`)"
+    },
+    {
+      "label": "App Integration (`app.py`)",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L98",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_app_integration_app_py",
+      "community": 30,
+      "norm_label": "app integration (`app.py`)"
+    },
+    {
+      "label": "6. Verification",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L107",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_6_verification",
+      "community": 30,
+      "norm_label": "6. verification"
+    },
+    {
+      "label": "7. Planned Future Integration",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L119",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_7_planned_future_integration",
+      "community": 30,
+      "norm_label": "7. planned future integration"
+    },
+    {
+      "label": "8. Files Created/Modified",
+      "file_type": "document",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L136",
+      "_origin": "ast",
+      "id": "services_catalog_phase1_8_files_created_modified",
+      "community": 30,
+      "norm_label": "8. files created/modified"
+    },
+    {
       "label": "SHOP_LOGO_AUDIT.md",
       "file_type": "document",
       "source_file": "SHOP_LOGO_AUDIT.md",
@@ -9456,6 +10148,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app",
+      "target": "services_service_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "app",
+      "target": "services_service_service_serviceservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
       "source_location": "L18",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -9566,6 +10280,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "app",
+      "target": "ui_dialogs_service_edit_dialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "app",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
       "source_location": "L32",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -9626,6 +10362,28 @@
       "confidence_score": 1.0,
       "source": "app",
       "target": "ui_main_window_create_status_popup"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "app",
+      "target": "ui_service_view",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "app",
+      "target": "ui_service_view_render_service_rows",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -9734,6 +10492,16 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "app.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "source": "app_notificationdialog",
+      "target": "services_service_service_serviceservice",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "app.py",
       "source_location": "L27",
       "weight": 0.8,
       "confidence_score": 0.5,
@@ -9764,6 +10532,16 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "app.py",
+      "source_location": "L28",
+      "weight": 0.8,
+      "source": "app_notificationdialog",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "app.py",
       "source_location": "L32",
       "weight": 0.8,
       "confidence_score": 0.5,
@@ -9774,11 +10552,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L40",
+      "source_location": "L43",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_40",
-      "target": "app_notificationdialog"
+      "source": "app_rationale_43",
+      "target": "app_notificationdialog",
+      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -9796,9 +10574,9 @@
       "source_file": "ui/dialogs/customer_selection_dialog.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "target": "qdialog",
-      "confidence_score": 1.0
+      "target": "qdialog"
     },
     {
       "relation": "inherits",
@@ -9819,6 +10597,16 @@
       "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
       "target": "qdialog"
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "target": "qdialog",
+      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -9860,6 +10648,16 @@
       "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
       "target": "app_laptoprepairmanager_add_repair"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L337",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_add_service",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -9915,6 +10713,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
+      "source_location": "L355",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_delete_selected_services",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
       "source_location": "L277",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -9930,6 +10738,16 @@
       "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
       "target": "app_laptoprepairmanager_edit_repair"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L345",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_edit_service",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -10045,6 +10863,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
+      "source_location": "L327",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_refresh_service_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
       "source_location": "L237",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10075,6 +10903,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
+      "source_location": "L332",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_search_services",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
       "source_location": "L261",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10090,6 +10928,16 @@
       "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
       "target": "app_laptoprepairmanager_show_repairs_view"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L313",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_show_services_view",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -10195,6 +11043,16 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "app.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "source": "app_laptoprepairmanager",
+      "target": "services_service_service_serviceservice",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "app.py",
       "source_location": "L27",
       "weight": 0.8,
       "confidence_score": 0.5,
@@ -10225,6 +11083,16 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "app.py",
+      "source_location": "L28",
+      "weight": 0.8,
+      "source": "app_laptoprepairmanager",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "app.py",
       "source_location": "L32",
       "weight": 0.8,
       "confidence_score": 0.5,
@@ -10246,11 +11114,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L77",
+      "source_location": "L80",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_77",
-      "target": "app_laptoprepairmanager"
+      "source": "app_rationale_80",
+      "target": "app_laptoprepairmanager",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10337,6 +11205,17 @@
       "source_file": "app.py",
       "source_location": "L88",
       "weight": 1.0,
+      "source": "app_laptoprepairmanager_init",
+      "target": "services_service_service_serviceservice"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L88",
+      "weight": 1.0,
       "source": "app_laptoprepairmanager_init_ui",
       "target": "ui_main_window_build_ui"
     },
@@ -10377,11 +11256,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L105",
+      "source_location": "L109",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_105",
-      "target": "app_laptoprepairmanager_open_shop_settings"
+      "source": "app_rationale_109",
+      "target": "app_laptoprepairmanager_open_shop_settings",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10420,31 +11299,31 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L111",
+      "source_location": "L115",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_111",
-      "target": "app_laptoprepairmanager_rebuild_header"
+      "source": "app_rationale_115",
+      "target": "app_laptoprepairmanager_rebuild_header",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L123",
+      "source_location": "L127",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_123",
-      "target": "app_laptoprepairmanager_toggle_status_popup"
+      "source": "app_rationale_127",
+      "target": "app_laptoprepairmanager_toggle_status_popup",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L133",
+      "source_location": "L137",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_133",
-      "target": "app_laptoprepairmanager_eventfilter"
+      "source": "app_rationale_137",
+      "target": "app_laptoprepairmanager_eventfilter",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10703,11 +11582,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L216",
+      "source_location": "L220",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_216",
-      "target": "app_laptoprepairmanager_delete_selected_repairs"
+      "source": "app_rationale_220",
+      "target": "app_laptoprepairmanager_delete_selected_repairs",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10780,6 +11659,158 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
+      "source_location": "L325",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_show_services_view",
+      "target": "app_laptoprepairmanager_refresh_service_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L343",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_add_service",
+      "target": "app_laptoprepairmanager_refresh_service_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L385",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_delete_selected_services",
+      "target": "app_laptoprepairmanager_refresh_service_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L353",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_edit_service",
+      "target": "app_laptoprepairmanager_refresh_service_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L330",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_refresh_service_table",
+      "target": "ui_service_view_render_service_rows"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L328",
+      "weight": 1.0,
+      "source": "app_rationale_328",
+      "target": "app_laptoprepairmanager_refresh_service_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L335",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_search_services",
+      "target": "ui_service_view_render_service_rows"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L339",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_add_service",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L349",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_edit_service",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L346",
+      "weight": 1.0,
+      "source": "app_rationale_346",
+      "target": "app_laptoprepairmanager_edit_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L382",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_delete_selected_services",
+      "target": "services_notification_service_show_error"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L387",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_delete_selected_services",
+      "target": "services_notification_service_show_info"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L370",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_delete_selected_services",
+      "target": "services_notification_service_show_question"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L367",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_delete_selected_services",
+      "target": "services_notification_service_show_warning"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
       "source_location": "L312",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10823,11 +11854,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L302",
+      "source_location": "L390",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_302",
-      "target": "app_laptoprepairmanager_refresh_customer_table"
+      "source": "app_rationale_390",
+      "target": "app_laptoprepairmanager_refresh_customer_table",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10844,11 +11875,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L307",
+      "source_location": "L395",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_307",
-      "target": "app_laptoprepairmanager_add_customer"
+      "source": "app_rationale_395",
+      "target": "app_laptoprepairmanager_add_customer",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10865,11 +11896,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L315",
+      "source_location": "L403",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_315",
-      "target": "app_laptoprepairmanager_edit_customer"
+      "source": "app_rationale_403",
+      "target": "app_laptoprepairmanager_edit_customer",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10886,11 +11917,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L325",
+      "source_location": "L413",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_325",
-      "target": "app_laptoprepairmanager_has_related_repairs"
+      "source": "app_rationale_413",
+      "target": "app_laptoprepairmanager_has_related_repairs",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10940,11 +11971,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L336",
+      "source_location": "L424",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_336",
-      "target": "app_laptoprepairmanager_delete_selected_customers"
+      "source": "app_rationale_424",
+      "target": "app_laptoprepairmanager_delete_selected_customers",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10961,11 +11992,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L458",
+      "source_location": "L546",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_458",
-      "target": "app_laptoprepairmanager_load_data"
+      "source": "app_rationale_546",
+      "target": "app_laptoprepairmanager_load_data",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -10993,11 +12024,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L466",
+      "source_location": "L554",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "app_rationale_466",
-      "target": "app_laptoprepairmanager_save_data"
+      "source": "app_rationale_554",
+      "target": "app_laptoprepairmanager_save_data",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -11524,6 +12555,16 @@
       "target": "base"
     },
     {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_model_db.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "core_storage_service_model_db_servicedb",
+      "target": "base",
+      "confidence_score": 1.0
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "core/storage/customer_repository.py",
@@ -11953,6 +12994,28 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_model_db.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "core_storage_service_model_db",
+      "target": "core_storage_database",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "core_storage_service_repository",
+      "target": "core_storage_database",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "core/storage/sqlite_storage.py",
       "source_location": "L3",
       "weight": 1.0,
@@ -12128,6 +13191,28 @@
       "confidence_score": 1.0,
       "source": "core_storage_init_db",
       "target": "core_storage_repair_model_db_repairdb"
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/init_db.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "core_storage_init_db",
+      "target": "core_storage_service_model_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/init_db.py",
+      "source_location": "L4",
+      "weight": 1.0,
+      "source": "core_storage_init_db",
+      "target": "core_storage_service_model_db_servicedb",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -12493,6 +13578,302 @@
       "confidence_score": 1.0,
       "source": "core_storage_repairs_storage_rationale_28",
       "target": "core_storage_repairs_storage_repairsstorage_save_all"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_model_db.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "core_storage_service_model_db",
+      "target": "core_storage_service_model_db_servicedb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "core_storage_service_repository",
+      "target": "core_storage_service_model_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "core_storage_service_repository",
+      "target": "core_storage_service_model_db_servicedb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L6",
+      "weight": 0.8,
+      "source": "core_storage_service_repository_servicerepository",
+      "target": "core_storage_service_model_db_servicedb",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository_create",
+      "target": "core_storage_service_model_db_servicedb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository_to_dict",
+      "target": "core_storage_service_model_db_servicedb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "core_storage_service_repository",
+      "target": "core_storage_service_repository_servicerepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "services_service_service",
+      "target": "core_storage_service_repository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository",
+      "target": "core_storage_service_repository_servicerepository_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository",
+      "target": "core_storage_service_repository_servicerepository_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository",
+      "target": "core_storage_service_repository_servicerepository_generate_service_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository",
+      "target": "core_storage_service_repository_servicerepository_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository",
+      "target": "core_storage_service_repository_servicerepository_list_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository",
+      "target": "core_storage_service_repository_servicerepository_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L112",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository",
+      "target": "core_storage_service_repository_servicerepository_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository",
+      "target": "core_storage_service_repository_servicerepository_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "services_service_service",
+      "target": "core_storage_service_repository_servicerepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "services/service_service.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "services_service_service_serviceservice",
+      "target": "core_storage_service_repository_servicerepository",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "services/service_service.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "services_service_service_serviceservice_init",
+      "target": "core_storage_service_repository_servicerepository"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository_create",
+      "target": "core_storage_service_repository_servicerepository_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L26",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository_create",
+      "target": "core_storage_service_repository_servicerepository_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L46",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository_update",
+      "target": "core_storage_service_repository_servicerepository_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository_generate_service_code",
+      "target": "core_storage_service_repository_servicerepository_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L72",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository_get",
+      "target": "core_storage_service_repository_servicerepository_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L100",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository_generate_service_code",
+      "target": "core_storage_service_repository_servicerepository_list_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository_list_all",
+      "target": "core_storage_service_repository_servicerepository_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L104",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository_generate_service_code",
+      "target": "core_storage_service_repository_servicerepository_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/service_repository.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "core_storage_service_repository_servicerepository_search",
+      "target": "core_storage_service_repository_servicerepository_to_dict",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -13041,6 +14422,17 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog_init_ui",
+      "target": "qlineedit"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "ui/dialogs/shop_settings_dialog.py",
       "source_location": "L42",
       "weight": 1.0,
@@ -13056,6 +14448,17 @@
       "source_location": "L164",
       "weight": 1.0,
       "source": "ui_main_window_build_toolbar",
+      "target": "qlineedit"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "ui/service_view.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "ui_service_view_build_service_toolbar",
       "target": "qlineedit"
     },
     {
@@ -13761,9 +15164,9 @@
       "source_file": "ui/dialogs/customer_selection_dialog.py",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_selection_dialog",
-      "target": "services_customer_workflow",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow"
     },
     {
       "relation": "imports_from",
@@ -13945,9 +15348,9 @@
       "source_file": "ui/dialogs/customer_selection_dialog.py",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_selection_dialog",
-      "target": "services_customer_workflow_customerworkflow",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow"
     },
     {
       "relation": "uses",
@@ -13955,9 +15358,9 @@
       "source_file": "ui/dialogs/customer_selection_dialog.py",
       "source_location": "L7",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "target": "services_customer_workflow_customerworkflow",
-      "confidence_score": 0.5
+      "target": "services_customer_workflow_customerworkflow"
     },
     {
       "relation": "calls",
@@ -14713,6 +16116,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog",
+      "target": "services_notification_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
       "source_location": "L11",
       "weight": 1.0,
@@ -14812,6 +16226,28 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog",
+      "target": "services_notification_service_show_warning",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L111",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog_save",
+      "target": "services_notification_service_show_warning"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/shop_settings_dialog.py",
       "source_location": "L11",
       "weight": 1.0,
@@ -14861,6 +16297,39 @@
       "source_location": "L145",
       "weight": 1.0,
       "source": "ui_dialogs_customer_edit_dialog_customereditdialog_save",
+      "target": "services_notification_service_show_error"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog",
+      "target": "services_notification_service_show_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog_init",
+      "target": "services_notification_service_show_error"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog_save",
       "target": "services_notification_service_show_error"
     },
     {
@@ -15008,6 +16477,210 @@
       "confidence_score": 1.0,
       "source": "services_repair_manager_service_rationale_39",
       "target": "services_repair_manager_service_update_repair"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "services_service_service",
+      "target": "services_service_service_serviceservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog",
+      "target": "services_service_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "services_service_service_rationale_7",
+      "target": "services_service_service_serviceservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "services_service_service_serviceservice",
+      "target": "services_service_service_serviceservice_create_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "services_service_service_serviceservice",
+      "target": "services_service_service_serviceservice_delete_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L53",
+      "weight": 1.0,
+      "source": "services_service_service_serviceservice",
+      "target": "services_service_service_serviceservice_get_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "services_service_service_serviceservice",
+      "target": "services_service_service_serviceservice_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "services_service_service_serviceservice",
+      "target": "services_service_service_serviceservice_list_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "services_service_service_serviceservice",
+      "target": "services_service_service_serviceservice_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "source": "services_service_service_serviceservice",
+      "target": "services_service_service_serviceservice_update_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog",
+      "target": "services_service_service_serviceservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "target": "services_service_service_serviceservice",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog_init",
+      "target": "services_service_service_serviceservice"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "services_service_service_rationale_13",
+      "target": "services_service_service_serviceservice_create_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L32",
+      "weight": 1.0,
+      "source": "services_service_service_rationale_32",
+      "target": "services_service_service_serviceservice_update_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "services_service_service_rationale_50",
+      "target": "services_service_service_serviceservice_delete_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "services_service_service_rationale_54",
+      "target": "services_service_service_serviceservice_get_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "services_service_service_rationale_58",
+      "target": "services_service_service_serviceservice_list_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L64",
+      "weight": 1.0,
+      "source": "services_service_service_serviceservice_search",
+      "target": "services_service_service_serviceservice_list_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/service_service.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "services_service_service_rationale_62",
+      "target": "services_service_service_serviceservice_search",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -15798,9 +17471,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog",
-      "target": "ui_dialogs_customer_edit_dialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog"
     },
     {
       "relation": "method",
@@ -15869,9 +17542,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L19",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
     },
     {
       "relation": "uses",
@@ -15879,9 +17552,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L19",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ui_dialogs_repair_dialog_completeritemdelegate",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "confidence_score": 0.5
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
     },
     {
       "relation": "uses",
@@ -15889,9 +17562,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L19",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "confidence_score": 0.5
+      "target": "ui_dialogs_customer_edit_dialog_customereditdialog"
     },
     {
       "relation": "calls",
@@ -15954,9 +17627,9 @@
       "source_file": "ui/dialogs/customer_selection_dialog.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_selection_dialog",
-      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog"
     },
     {
       "relation": "imports_from",
@@ -15965,9 +17638,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog",
-      "target": "ui_dialogs_customer_selection_dialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_selection_dialog"
     },
     {
       "relation": "method",
@@ -15975,9 +17648,9 @@
       "source_file": "ui/dialogs/customer_selection_dialog.py",
       "source_location": "L75",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_filter",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_filter"
     },
     {
       "relation": "method",
@@ -15985,9 +17658,9 @@
       "source_file": "ui/dialogs/customer_selection_dialog.py",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_init",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_init"
     },
     {
       "relation": "method",
@@ -15995,9 +17668,9 @@
       "source_file": "ui/dialogs/customer_selection_dialog.py",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_load_customers",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_load_customers"
     },
     {
       "relation": "method",
@@ -16005,9 +17678,9 @@
       "source_file": "ui/dialogs/customer_selection_dialog.py",
       "source_location": "L82",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_on_select",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_on_select"
     },
     {
       "relation": "rationale_for",
@@ -16015,9 +17688,9 @@
       "source_file": "ui/dialogs/customer_selection_dialog.py",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_selection_dialog_rationale_11",
-      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog"
     },
     {
       "relation": "imports",
@@ -16026,9 +17699,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L20",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog",
-      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog"
     },
     {
       "relation": "uses",
@@ -16036,9 +17709,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L20",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ui_dialogs_repair_dialog_completeritemdelegate",
-      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "confidence_score": 0.5
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog"
     },
     {
       "relation": "uses",
@@ -16046,9 +17719,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L20",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "confidence_score": 0.5
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog"
     },
     {
       "relation": "calls",
@@ -16068,9 +17741,9 @@
       "source_file": "ui/dialogs/customer_selection_dialog.py",
       "source_location": "L60",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_customer_selection_dialog_customerselectiondialog_init",
-      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_load_customers",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_customer_selection_dialog_customerselectiondialog_load_customers"
     },
     {
       "relation": "contains",
@@ -16327,9 +18000,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L51",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_rationale_51",
-      "target": "ui_dialogs_repair_dialog_repairdialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog"
     },
     {
       "relation": "method",
@@ -16347,9 +18020,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L336",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_clear_customer_display",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_clear_customer_display"
     },
     {
       "relation": "method",
@@ -16427,9 +18100,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L278",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_on_selector_text_changed",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_on_selector_text_changed"
     },
     {
       "relation": "method",
@@ -16437,9 +18110,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L356",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_open_customer_creation",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_open_customer_creation"
     },
     {
       "relation": "method",
@@ -16447,9 +18120,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L363",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_open_customer_edit",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_open_customer_edit"
     },
     {
       "relation": "method",
@@ -16457,9 +18130,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L349",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_open_customer_selection",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_open_customer_selection"
     },
     {
       "relation": "method",
@@ -16467,9 +18140,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L318",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_refresh_customer_display",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_refresh_customer_display"
     },
     {
       "relation": "method",
@@ -16477,9 +18150,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L308",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer"
     },
     {
       "relation": "method",
@@ -16542,9 +18215,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L280",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog_on_selector_text_changed",
-      "target": "ui_dialogs_repair_dialog_repairdialog_clear_customer_display",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_clear_customer_display"
     },
     {
       "relation": "calls",
@@ -16553,9 +18226,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L306",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog_on_completer_activated",
-      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer"
     },
     {
       "relation": "calls",
@@ -16564,9 +18237,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L396",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog_load_data",
-      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer"
     },
     {
       "relation": "calls",
@@ -16575,9 +18248,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L361",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog_open_customer_creation",
-      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer"
     },
     {
       "relation": "calls",
@@ -16586,9 +18259,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L354",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog_open_customer_selection",
-      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_select_customer"
     },
     {
       "relation": "calls",
@@ -16597,9 +18270,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L316",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog_select_customer",
-      "target": "ui_dialogs_repair_dialog_repairdialog_refresh_customer_display",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_refresh_customer_display"
     },
     {
       "relation": "calls",
@@ -16608,9 +18281,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L371",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog_open_customer_edit",
-      "target": "ui_dialogs_repair_dialog_repairdialog_refresh_customer_display",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_refresh_customer_display"
     },
     {
       "relation": "rationale_for",
@@ -16618,9 +18291,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L382",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_rationale_382",
-      "target": "ui_dialogs_repair_dialog_repairdialog_calculate_total",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_repair_dialog_repairdialog_calculate_total"
     },
     {
       "relation": "calls",
@@ -16632,6 +18305,109 @@
       "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_repairdialog_load_data",
       "target": "ui_dialogs_repair_dialog_repairdialog_calculate_total"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_rationale_11",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_get_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_init_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_load_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog_init",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_init_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog_init",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_load_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/service_edit_dialog.py",
+      "source_location": "L108",
+      "weight": 1.0,
+      "source": "ui_dialogs_service_edit_dialog_serviceeditdialog_save",
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_get_data",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -16893,6 +18669,39 @@
       "source_file": "ui/main_window.py",
       "source_location": "L14",
       "weight": 1.0,
+      "source": "ui_main_window",
+      "target": "ui_service_view",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/main_window.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "ui_main_window",
+      "target": "ui_service_view_build_service_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/main_window.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "ui_main_window",
+      "target": "ui_service_view_build_service_toolbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/main_window.py",
+      "source_location": "L14",
+      "weight": 1.0,
       "confidence_score": 1.0,
       "source": "ui_main_window",
       "target": "ui_table_renderer"
@@ -17044,11 +18853,234 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/main_window.py",
-      "source_location": "L350",
+      "source_location": "L351",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_main_window_rationale_350",
-      "target": "ui_main_window_build_nav_bar"
+      "source": "ui_main_window_rationale_351",
+      "target": "ui_main_window_build_nav_bar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/main_window.py",
+      "source_location": "L439",
+      "weight": 1.0,
+      "source": "ui_main_window_build_ui",
+      "target": "ui_service_view_build_service_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/main_window.py",
+      "source_location": "L437",
+      "weight": 1.0,
+      "source": "ui_main_window_build_ui",
+      "target": "ui_service_view_build_service_toolbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "ui_service_view",
+      "target": "ui_service_view_build_service_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "ui_service_view",
+      "target": "ui_service_view_build_service_toolbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "ui_service_view",
+      "target": "ui_service_view_on_header_clicked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "ui_service_view",
+      "target": "ui_service_view_on_item_changed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "ui_service_view",
+      "target": "ui_service_view_render_service_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L153",
+      "weight": 1.0,
+      "source": "ui_service_view",
+      "target": "ui_service_view_sync_header_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "ui_service_view_rationale_16",
+      "target": "ui_service_view_build_service_toolbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "ui_service_view_build_service_table",
+      "target": "ui_service_view_on_header_clicked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L76",
+      "weight": 1.0,
+      "source": "ui_service_view_build_service_table",
+      "target": "ui_service_view_on_item_changed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "ui_service_view_build_service_table",
+      "target": "ui_service_view_py_qtablewidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L68",
+      "weight": 1.0,
+      "source": "ui_service_view_build_service_table",
+      "target": "ui_service_view_py_qtablewidgetitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L83",
+      "weight": 1.0,
+      "source": "ui_service_view_rationale_83",
+      "target": "ui_service_view_render_service_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L81",
+      "weight": 1.0,
+      "source": "ui_service_view_render_service_rows",
+      "target": "ui_service_view_py_qtablewidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L95",
+      "weight": 1.0,
+      "source": "ui_service_view_render_service_rows",
+      "target": "ui_service_view_py_qtablewidgetitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L131",
+      "weight": 1.0,
+      "source": "ui_service_view_on_header_clicked",
+      "target": "ui_service_view_py_qtablewidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "ui_service_view_on_item_changed",
+      "target": "ui_service_view_py_qtablewidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L153",
+      "weight": 1.0,
+      "source": "ui_service_view_sync_header_state",
+      "target": "ui_service_view_py_qtablewidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L147",
+      "weight": 1.0,
+      "source": "ui_service_view_on_item_changed",
+      "target": "ui_service_view_py_qtablewidgetitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/service_view.py",
+      "source_location": "L150",
+      "weight": 1.0,
+      "source": "ui_service_view_on_item_changed",
+      "target": "ui_service_view_sync_header_state",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -20824,6 +22856,136 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "services_catalog_phase1",
+      "target": "services_catalog_phase1_services_catalog_phase_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_services_catalog_phase_1",
+      "target": "services_catalog_phase1_1_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L17",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_services_catalog_phase_1",
+      "target": "services_catalog_phase1_2_database_service_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_services_catalog_phase_1",
+      "target": "services_catalog_phase1_3_repository_servicerepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_services_catalog_phase_1",
+      "target": "services_catalog_phase1_4_service_layer_serviceservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L71",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_services_catalog_phase_1",
+      "target": "services_catalog_phase1_5_management_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L107",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_services_catalog_phase_1",
+      "target": "services_catalog_phase1_6_verification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L119",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_services_catalog_phase_1",
+      "target": "services_catalog_phase1_7_planned_future_integration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_services_catalog_phase_1",
+      "target": "services_catalog_phase1_8_files_created_modified",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L91",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_5_management_ui",
+      "target": "services_catalog_phase1_add_edit_dialog_ui_dialogs_service_edit_dialog_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L98",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_5_management_ui",
+      "target": "services_catalog_phase1_app_integration_app_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L73",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_5_management_ui",
+      "target": "services_catalog_phase1_navigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "SERVICES_CATALOG_PHASE1.md",
+      "source_location": "L80",
+      "weight": 1.0,
+      "source": "services_catalog_phase1_5_management_ui",
+      "target": "services_catalog_phase1_services_view_ui_service_view_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "SHOP_LOGO_AUDIT.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -22125,5 +24287,5 @@
       "source_file": "SQLITE_MIGRATION_AUDIT.md"
     }
   ],
-  "built_at_commit": "78f13a24aeb8b5d5d086c235b20c18d38df14c47"
+  "built_at_commit": "672e6f3fe1d1d05fce1332b987c32925c0eac7f3"
 }

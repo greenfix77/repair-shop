@@ -332,15 +332,18 @@ class RepairDialog(QDialog):
         if postal_code and len(postal_code) != 10:
             show_warning(self, "خطا", "کد پستی باید دقیقاً ۱۰ رقم باشد.")
             return
+        customer_name = self.customer_name_input.text().strip()
+        if not customer_name:
+            show_warning(self, "خطا", "لطفاً نام مشتری را وارد کنید.")
+            return
+        if not self.phone_input.text().strip() and not national_id:
+            show_warning(self, "خطا", "لطفاً حداقل یکی از فیلدهای «تلفن» یا «کد ملی» را وارد کنید.")
+            return
         if self.repair_data:
             self.accept()
             return
 
         customer_data = self._get_customer_data()
-
-        if not customer_data.get('phone') and not customer_data.get('full_name'):
-            self.accept()
-            return
 
         if self._selected_customer_id is not None:
             original = self._workflow.get_customer(self._selected_customer_id)

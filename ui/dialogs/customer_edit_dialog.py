@@ -150,8 +150,12 @@ class CustomerEditDialog(QDialog):
             show_warning(self, "خطا", "کد پستی باید دقیقاً ۱۰ رقم باشد.")
             return
 
-        if not data['phone'] and not data['full_name']:
-            show_warning(self, "خطا", "حداقل نام یا تلفن مشتری را وارد کنید")
+        if not data['full_name']:
+            show_warning(self, "خطا", "لطفاً نام مشتری را وارد کنید.")
+            return
+
+        if not data['phone'] and not data['national_id']:
+            show_warning(self, "خطا", "لطفاً حداقل یکی از فیلدهای «تلفن» یا «کد ملی» را وارد کنید.")
             return
 
         try:

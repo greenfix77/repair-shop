@@ -15,8 +15,8 @@
     "semantic_hash": "111287aed37970b605d3ab422d1c93ec"
   },
   "app.py": {
-    "mtime": 1783702462.3919666,
-    "ast_hash": "a97e53e43c805fbb6f495822ab49786a",
+    "mtime": 1783708482.1844704,
+    "ast_hash": "1ab36c00710a57655334e9d18436b49c",
     "semantic_hash": ""
   },
   "controllers/__init__.py": {
@@ -75,8 +75,8 @@
     "semantic_hash": "6c84c5be9303a224eba8d6f8b2719eab"
   },
   "core/storage/init_db.py": {
-    "mtime": 1783698295.508689,
-    "ast_hash": "d042014ee4b487596e7073d7af129c28",
+    "mtime": 1783706293.2297926,
+    "ast_hash": "809f416acf90b7e5bd8e3a88e8d35c62",
     "semantic_hash": ""
   },
   "core/storage/migrate_json_to_sqlite.py": {
@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   "ui/main_window.py": {
-    "mtime": 1783702123.3593667,
-    "ast_hash": "b5d1e9a4a51902ad35e43e49347c0924",
+    "mtime": 1783706624.7225502,
+    "ast_hash": "b6d18fb4b70ceb0913e2e6ad723ceefe",
     "semantic_hash": ""
   },
   "ui/status_styles.py": {
@@ -432,6 +432,36 @@
   "SERVICES_CATALOG_PHASE1.md": {
     "mtime": 1783702605.4273908,
     "ast_hash": "05d9fb1af0ff7e2ae30a875acb1cf432",
+    "semantic_hash": ""
+  },
+  "core/storage/part_model_db.py": {
+    "mtime": 1783706251.9363444,
+    "ast_hash": "9fbac1ef99a6e765f730959b202b5261",
+    "semantic_hash": ""
+  },
+  "core/storage/part_repository.py": {
+    "mtime": 1783706325.9835503,
+    "ast_hash": "dc39a306fde1b5acff3173be46ea770f",
+    "semantic_hash": ""
+  },
+  "services/part_service.py": {
+    "mtime": 1783706356.8230846,
+    "ast_hash": "de5715ba58d703e64979e272491b633d",
+    "semantic_hash": ""
+  },
+  "ui/dialogs/part_edit_dialog.py": {
+    "mtime": 1783706394.346171,
+    "ast_hash": "359bf04761b8469f3724573f37cb073c",
+    "semantic_hash": ""
+  },
+  "ui/part_view.py": {
+    "mtime": 1783706434.2231529,
+    "ast_hash": "d0b2697c7f855fb3731019b19e0ea26c",
+    "semantic_hash": ""
+  },
+  "PARTS_CATALOG_PHASE1.md": {
+    "mtime": 1783708586.039062,
+    "ast_hash": "1bdfdf3a7225dfea117fa5c67b78a56a",
     "semantic_hash": ""
   }
 }

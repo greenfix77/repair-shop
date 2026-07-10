@@ -151,10 +151,10 @@
       "label": "NotificationDialog",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L42",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "app_notificationdialog",
-      "community": 54,
+      "community": 63,
       "norm_label": "notificationdialog"
     },
     {
@@ -164,24 +164,24 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qdialog",
-      "community": 54,
+      "community": 63,
       "norm_label": "qdialog"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L45",
+      "source_location": "L48",
       "_origin": "ast",
       "id": "app_notificationdialog_init",
-      "community": 54,
+      "community": 63,
       "norm_label": ".__init__()"
     },
     {
       "label": "LaptopRepairManager",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L79",
+      "source_location": "L82",
       "_origin": "ast",
       "id": "app_laptoprepairmanager",
       "community": 3,
@@ -201,7 +201,7 @@
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L82",
+      "source_location": "L85",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_init",
       "community": 3,
@@ -211,7 +211,7 @@
       "label": ".init_ui()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L94",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_init_ui",
       "community": 3,
@@ -221,27 +221,27 @@
       "label": ".update_date_label()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L99",
+      "source_location": "L103",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_update_date_label",
-      "community": 2,
+      "community": 3,
       "norm_label": ".update_date_label()"
     },
     {
       "label": ".open_shop_settings()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L108",
+      "source_location": "L112",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_open_shop_settings",
-      "community": 35,
+      "community": 3,
       "norm_label": ".open_shop_settings()"
     },
     {
       "label": ".rebuild_header()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L114",
+      "source_location": "L118",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_rebuild_header",
       "community": 29,
@@ -251,7 +251,7 @@
       "label": ".toggle_status_popup()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L126",
+      "source_location": "L130",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_toggle_status_popup",
       "community": 3,
@@ -261,7 +261,7 @@
       "label": ".eventFilter()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L136",
+      "source_location": "L140",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_eventfilter",
       "community": 3,
@@ -271,27 +271,27 @@
       "label": ".add_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L155",
+      "source_location": "L159",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_add_repair",
-      "community": 3,
+      "community": 6,
       "norm_label": ".add_repair()"
     },
     {
       "label": ".edit_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L170",
+      "source_location": "L174",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_repair",
-      "community": 3,
+      "community": 6,
       "norm_label": ".edit_repair()"
     },
     {
       "label": ".delete_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L199",
+      "source_location": "L203",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_repair",
       "community": 6,
@@ -301,7 +301,7 @@
       "label": ".delete_selected_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L219",
+      "source_location": "L223",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_selected_repairs",
       "community": 6,
@@ -311,17 +311,17 @@
       "label": ".preview_invoice()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L248",
+      "source_location": "L252",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_preview_invoice",
-      "community": 3,
+      "community": 68,
       "norm_label": ".preview_invoice()"
     },
     {
       "label": ".search_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L266",
+      "source_location": "L270",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_search_repairs",
       "community": 3,
@@ -331,7 +331,7 @@
       "label": ".filter_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L270",
+      "source_location": "L274",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_filter_repairs",
       "community": 3,
@@ -341,17 +341,17 @@
       "label": ".refresh_table()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L274",
+      "source_location": "L278",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_refresh_table",
-      "community": 3,
+      "community": 6,
       "norm_label": ".refresh_table()"
     },
     {
       "label": ".show_repairs_view()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L284",
+      "source_location": "L288",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_show_repairs_view",
       "community": 3,
@@ -361,37 +361,97 @@
       "label": ".show_customers_view()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L297",
+      "source_location": "L304",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_show_customers_view",
-      "community": 71,
+      "community": 3,
       "norm_label": ".show_customers_view()"
     },
     {
       "label": ".show_services_view()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L313",
+      "source_location": "L323",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_show_services_view",
-      "community": 54,
+      "community": 3,
       "norm_label": ".show_services_view()"
+    },
+    {
+      "label": ".show_parts_view()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L342",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_show_parts_view",
+      "community": 3,
+      "norm_label": ".show_parts_view()"
+    },
+    {
+      "label": ".refresh_part_table()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L359",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_refresh_part_table",
+      "community": 3,
+      "norm_label": ".refresh_part_table()"
+    },
+    {
+      "label": ".search_parts()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L364",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_search_parts",
+      "community": 29,
+      "norm_label": ".search_parts()"
+    },
+    {
+      "label": ".add_part()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L369",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_add_part",
+      "community": 3,
+      "norm_label": ".add_part()"
+    },
+    {
+      "label": ".edit_part()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L377",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_edit_part",
+      "community": 3,
+      "norm_label": ".edit_part()"
+    },
+    {
+      "label": ".delete_selected_parts()",
+      "file_type": "code",
+      "source_file": "app.py",
+      "source_location": "L387",
+      "_origin": "ast",
+      "id": "app_laptoprepairmanager_delete_selected_parts",
+      "community": 6,
+      "norm_label": ".delete_selected_parts()"
     },
     {
       "label": ".refresh_service_table()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L327",
+      "source_location": "L421",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_refresh_service_table",
-      "community": 54,
+      "community": 3,
       "norm_label": ".refresh_service_table()"
     },
     {
       "label": ".search_services()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L332",
+      "source_location": "L426",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_search_services",
       "community": 29,
@@ -401,27 +461,27 @@
       "label": ".add_service()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L337",
+      "source_location": "L431",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_add_service",
-      "community": 54,
+      "community": 3,
       "norm_label": ".add_service()"
     },
     {
       "label": ".edit_service()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L345",
+      "source_location": "L439",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_service",
-      "community": 54,
+      "community": 3,
       "norm_label": ".edit_service()"
     },
     {
       "label": ".delete_selected_services()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L355",
+      "source_location": "L449",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_selected_services",
       "community": 6,
@@ -431,57 +491,57 @@
       "label": ".refresh_customer_table()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L389",
+      "source_location": "L483",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_refresh_customer_table",
-      "community": 71,
+      "community": 3,
       "norm_label": ".refresh_customer_table()"
     },
     {
       "label": ".add_customer()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L394",
+      "source_location": "L488",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_add_customer",
-      "community": 71,
+      "community": 3,
       "norm_label": ".add_customer()"
     },
     {
       "label": ".edit_customer()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L402",
+      "source_location": "L496",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_customer",
-      "community": 71,
+      "community": 3,
       "norm_label": ".edit_customer()"
     },
     {
       "label": "._has_related_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L412",
+      "source_location": "L506",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_has_related_repairs",
-      "community": 6,
+      "community": 3,
       "norm_label": "._has_related_repairs()"
     },
     {
       "label": ".delete_selected_customers()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L423",
+      "source_location": "L517",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_selected_customers",
-      "community": 6,
+      "community": 3,
       "norm_label": ".delete_selected_customers()"
     },
     {
       "label": ".view_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L485",
+      "source_location": "L579",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_view_repair",
       "community": 3,
@@ -491,7 +551,7 @@
       "label": ".quick_invoice()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L490",
+      "source_location": "L584",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_quick_invoice",
       "community": 3,
@@ -501,7 +561,7 @@
       "label": ".update_statistics()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L495",
+      "source_location": "L589",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_update_statistics",
       "community": 3,
@@ -511,7 +571,7 @@
       "label": ".check_notifications()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L510",
+      "source_location": "L604",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_check_notifications",
       "community": 3,
@@ -521,7 +581,7 @@
       "label": ".load_data()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L545",
+      "source_location": "L639",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_load_data",
       "community": 3,
@@ -531,27 +591,27 @@
       "label": ".save_data()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L553",
+      "source_location": "L647",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_save_data",
-      "community": 3,
+      "community": 6,
       "norm_label": ".save_data()"
     },
     {
       "label": ".closeEvent()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L560",
+      "source_location": "L654",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_closeevent",
-      "community": 3,
+      "community": 6,
       "norm_label": ".closeevent()"
     },
     {
       "label": "main()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L569",
+      "source_location": "L663",
       "_origin": "ast",
       "id": "app_main",
       "community": 2,
@@ -561,19 +621,19 @@
       "label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0646\u0645\u0627\u06cc\u0634 \u0627\u0639\u0644\u0627\u0646\u200c\u0647\u0627",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L43",
+      "source_location": "L46",
       "_origin": "ast",
-      "id": "app_rationale_43",
-      "community": 54,
+      "id": "app_rationale_46",
+      "community": 63,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0646\u0645\u0627\u06cc\u0634 \u0627\u0639\u0644\u0627\u0646\u200c\u0647\u0627"
     },
     {
       "label": "\u06a9\u0644\u0627\u0633 \u0627\u0635\u0644\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0639\u0645\u06cc\u0631\u0627\u062a",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L80",
+      "source_location": "L83",
       "_origin": "ast",
-      "id": "app_rationale_80",
+      "id": "app_rationale_83",
       "community": 3,
       "norm_label": "\u06a9\u0644\u0627\u0633 \u0627\u0635\u0644\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0639\u0645\u06cc\u0631\u0627\u062a"
     },
@@ -581,19 +641,19 @@
       "label": "\u0628\u0627\u0632 \u06a9\u0631\u062f\u0646 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L109",
+      "source_location": "L113",
       "_origin": "ast",
-      "id": "app_rationale_109",
-      "community": 35,
+      "id": "app_rationale_113",
+      "community": 3,
       "norm_label": "\u0628\u0627\u0632 \u06a9\u0631\u062f\u0646 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647"
     },
     {
       "label": "\u0628\u0627\u0632\u0633\u0627\u0632\u06cc \u0647\u062f\u0631 \u067e\u0633 \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L115",
+      "source_location": "L119",
       "_origin": "ast",
-      "id": "app_rationale_115",
+      "id": "app_rationale_119",
       "community": 29,
       "norm_label": "\u0628\u0627\u0632\u0633\u0627\u0632\u06cc \u0647\u062f\u0631 \u067e\u0633 \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a"
     },
@@ -601,9 +661,9 @@
       "label": "\u0646\u0645\u0627\u06cc\u0634/\u067e\u0646\u0647\u0627\u0646 \u06a9\u0631\u062f\u0646 \u067e\u0627\u067e\u200c\u0622\u067e \u0648\u0636\u0639\u06cc\u062a\u200c\u0647\u0627",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L127",
+      "source_location": "L131",
       "_origin": "ast",
-      "id": "app_rationale_127",
+      "id": "app_rationale_131",
       "community": 3,
       "norm_label": "\u0646\u0645\u0627\u06cc\u0634/\u067e\u0646\u0647\u0627\u0646 \u06a9\u0631\u062f\u0646 \u067e\u0627\u067e\u200c\u0627\u067e \u0648\u0636\u0639\u06cc\u062a\u200c\u0647\u0627"
     },
@@ -611,9 +671,9 @@
       "label": "\u0628\u0633\u062a\u0646 \u067e\u0627\u067e\u200c\u0622\u067e \u0647\u0646\u06af\u0627\u0645 \u06a9\u0644\u06cc\u06a9 \u062e\u0627\u0631\u062c \u0627\u0632 \u0622\u0646 \u06cc\u0627 ESC",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L137",
+      "source_location": "L141",
       "_origin": "ast",
-      "id": "app_rationale_137",
+      "id": "app_rationale_141",
       "community": 3,
       "norm_label": "\u0628\u0633\u062a\u0646 \u067e\u0627\u067e\u200c\u0627\u067e \u0647\u0646\u06af\u0627\u0645 \u06a9\u0644\u06cc\u06a9 \u062e\u0627\u0631\u062c \u0627\u0632 \u0627\u0646 \u06cc\u0627 esc"
     },
@@ -621,89 +681,109 @@
       "label": "\u062d\u0630\u0641 \u062a\u0639\u0645\u06cc\u0631\u0627\u062a \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 (\u0686\u06a9\u200c\u0628\u0627\u06a9\u0633\u200c\u062f\u0627\u0631) \u062f\u0631 \u06cc\u06a9 \u0639\u0645\u0644\u06cc\u0627\u062a",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L220",
+      "source_location": "L224",
       "_origin": "ast",
-      "id": "app_rationale_220",
+      "id": "app_rationale_224",
       "community": 6,
       "norm_label": "\u062d\u0630\u0641 \u062a\u0639\u0645\u06cc\u0631\u0627\u062a \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 (\u0686\u06a9\u200c\u0628\u0627\u06a9\u0633\u200c\u062f\u0627\u0631) \u062f\u0631 \u06cc\u06a9 \u0639\u0645\u0644\u06cc\u0627\u062a"
+    },
+    {
+      "label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u0642\u0637\u0639\u0627\u062a \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L360",
+      "_origin": "ast",
+      "id": "app_rationale_360",
+      "community": 3,
+      "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u0642\u0637\u0639\u0627\u062a \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645"
+    },
+    {
+      "label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u0642\u0637\u0639\u0647 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc",
+      "file_type": "rationale",
+      "source_file": "app.py",
+      "source_location": "L378",
+      "_origin": "ast",
+      "id": "app_rationale_378",
+      "community": 3,
+      "norm_label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u0642\u0637\u0639\u0647 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
     {
       "label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u062e\u062f\u0645\u0627\u062a \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L328",
+      "source_location": "L422",
       "_origin": "ast",
-      "id": "app_rationale_328",
-      "community": 54,
+      "id": "app_rationale_422",
+      "community": 3,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u062e\u062f\u0645\u0627\u062a \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645"
     },
     {
       "label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u062e\u062f\u0645\u062a \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L346",
+      "source_location": "L440",
       "_origin": "ast",
-      "id": "app_rationale_346",
-      "community": 54,
+      "id": "app_rationale_440",
+      "community": 3,
       "norm_label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u062e\u062f\u0645\u062a \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
     {
       "label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L390",
+      "source_location": "L484",
       "_origin": "ast",
-      "id": "app_rationale_390",
-      "community": 71,
+      "id": "app_rationale_484",
+      "community": 3,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645"
     },
     {
       "label": "\u0627\u0641\u0632\u0648\u062f\u0646 \u0645\u0634\u062a\u0631\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L395",
+      "source_location": "L489",
       "_origin": "ast",
-      "id": "app_rationale_395",
-      "community": 71,
+      "id": "app_rationale_489",
+      "community": 3,
       "norm_label": "\u0627\u0641\u0632\u0648\u062f\u0646 \u0645\u0634\u062a\u0631\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
     {
       "label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L403",
+      "source_location": "L497",
       "_origin": "ast",
-      "id": "app_rationale_403",
-      "community": 71,
+      "id": "app_rationale_497",
+      "community": 3,
       "norm_label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
     {
       "label": "\u0628\u0631\u0631\u0633\u06cc \u0648\u062c\u0648\u062f \u062a\u0639\u0645\u06cc\u0631 \u0645\u0631\u062a\u0628\u0637 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L413",
+      "source_location": "L507",
       "_origin": "ast",
-      "id": "app_rationale_413",
-      "community": 6,
+      "id": "app_rationale_507",
+      "community": 3,
       "norm_label": "\u0628\u0631\u0631\u0633\u06cc \u0648\u062c\u0648\u062f \u062a\u0639\u0645\u06cc\u0631 \u0645\u0631\u062a\u0628\u0637 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc"
     },
     {
       "label": "\u062d\u0630\u0641 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 \u0628\u0627 \u0627\u062d\u062a\u06cc\u0627\u0637",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L424",
+      "source_location": "L518",
       "_origin": "ast",
-      "id": "app_rationale_424",
-      "community": 6,
+      "id": "app_rationale_518",
+      "community": 3,
       "norm_label": "\u062d\u0630\u0641 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 \u0628\u0627 \u0627\u062d\u062a\u06cc\u0627\u0637"
     },
     {
       "label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u0627\u0632 \u0641\u0627\u06cc\u0644",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L546",
+      "source_location": "L640",
       "_origin": "ast",
-      "id": "app_rationale_546",
+      "id": "app_rationale_640",
       "community": 3,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u0627\u0632 \u0641\u0627\u06cc\u0644"
     },
@@ -711,10 +791,10 @@
       "label": "\u0630\u062e\u06cc\u0631\u0647 \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u062f\u0631 \u0641\u0627\u06cc\u0644",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L554",
+      "source_location": "L648",
       "_origin": "ast",
-      "id": "app_rationale_554",
-      "community": 3,
+      "id": "app_rationale_648",
+      "community": 6,
       "norm_label": "\u0630\u062e\u06cc\u0631\u0647 \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u062f\u0631 \u0641\u0627\u06cc\u0644"
     },
     {
@@ -855,7 +935,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_models",
-      "community": 2,
+      "community": 68,
       "norm_label": "models.py"
     },
     {
@@ -865,7 +945,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "core_models_repair",
-      "community": 2,
+      "community": 68,
       "norm_label": "repair"
     },
     {
@@ -875,7 +955,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "core_models_repair_to_dict",
-      "community": 2,
+      "community": 68,
       "norm_label": ".to_dict()"
     },
     {
@@ -886,7 +966,7 @@
       "origin_file": "C:\\Users\\AL\\Desktop\\repair_manager\\core\\models.py",
       "_origin": "ast",
       "id": "core_models_py_any",
-      "community": 2,
+      "community": 68,
       "norm_label": "any"
     },
     {
@@ -896,7 +976,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "core_models_repair_from_dict",
-      "community": 2,
+      "community": 68,
       "norm_label": ".from_dict()"
     },
     {
@@ -1163,7 +1243,7 @@
       "label": "init_database()",
       "file_type": "code",
       "source_file": "core/storage/init_db.py",
-      "source_location": "L7",
+      "source_location": "L8",
       "_origin": "ast",
       "id": "core_storage_init_db_init_database",
       "community": 0,
@@ -1188,6 +1268,126 @@
       "id": "core_storage_migrate_json_to_sqlite_migrate_json_to_sqlite",
       "community": 0,
       "norm_label": "migrate_json_to_sqlite()"
+    },
+    {
+      "label": "part_model_db.py",
+      "file_type": "code",
+      "source_file": "core/storage/part_model_db.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "core_storage_part_model_db",
+      "community": 0,
+      "norm_label": "part_model_db.py"
+    },
+    {
+      "label": "PartDB",
+      "file_type": "code",
+      "source_file": "core/storage/part_model_db.py",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "core_storage_part_model_db_partdb",
+      "community": 0,
+      "norm_label": "partdb"
+    },
+    {
+      "label": "part_repository.py",
+      "file_type": "code",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "core_storage_part_repository",
+      "community": 0,
+      "norm_label": "part_repository.py"
+    },
+    {
+      "label": "PartRepository",
+      "file_type": "code",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "core_storage_part_repository_partrepository",
+      "community": 4,
+      "norm_label": "partrepository"
+    },
+    {
+      "label": ".create()",
+      "file_type": "code",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "core_storage_part_repository_partrepository_create",
+      "community": 4,
+      "norm_label": ".create()"
+    },
+    {
+      "label": ".update()",
+      "file_type": "code",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "core_storage_part_repository_partrepository_update",
+      "community": 4,
+      "norm_label": ".update()"
+    },
+    {
+      "label": ".delete()",
+      "file_type": "code",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L55",
+      "_origin": "ast",
+      "id": "core_storage_part_repository_partrepository_delete",
+      "community": 4,
+      "norm_label": ".delete()"
+    },
+    {
+      "label": ".get()",
+      "file_type": "code",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L70",
+      "_origin": "ast",
+      "id": "core_storage_part_repository_partrepository_get",
+      "community": 4,
+      "norm_label": ".get()"
+    },
+    {
+      "label": ".list_all()",
+      "file_type": "code",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L78",
+      "_origin": "ast",
+      "id": "core_storage_part_repository_partrepository_list_all",
+      "community": 4,
+      "norm_label": ".list_all()"
+    },
+    {
+      "label": ".search()",
+      "file_type": "code",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L89",
+      "_origin": "ast",
+      "id": "core_storage_part_repository_partrepository_search",
+      "community": 4,
+      "norm_label": ".search()"
+    },
+    {
+      "label": ".generate_part_code()",
+      "file_type": "code",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L101",
+      "_origin": "ast",
+      "id": "core_storage_part_repository_partrepository_generate_part_code",
+      "community": 4,
+      "norm_label": ".generate_part_code()"
+    },
+    {
+      "label": "._to_dict()",
+      "file_type": "code",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L114",
+      "_origin": "ast",
+      "id": "core_storage_part_repository_partrepository_to_dict",
+      "community": 4,
+      "norm_label": "._to_dict()"
     },
     {
       "label": "repair_model_db.py",
@@ -1316,7 +1516,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository",
-      "community": 0,
+      "community": 7,
       "norm_label": "servicerepository"
     },
     {
@@ -1326,7 +1526,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_create",
-      "community": 0,
+      "community": 7,
       "norm_label": ".create()"
     },
     {
@@ -1336,7 +1536,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_update",
-      "community": 0,
+      "community": 7,
       "norm_label": ".update()"
     },
     {
@@ -1346,7 +1546,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_delete",
-      "community": 0,
+      "community": 7,
       "norm_label": ".delete()"
     },
     {
@@ -1356,7 +1556,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_get",
-      "community": 0,
+      "community": 7,
       "norm_label": ".get()"
     },
     {
@@ -1366,7 +1566,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_list_all",
-      "community": 0,
+      "community": 7,
       "norm_label": ".list_all()"
     },
     {
@@ -1376,7 +1576,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_search",
-      "community": 0,
+      "community": 7,
       "norm_label": ".search()"
     },
     {
@@ -1386,7 +1586,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_generate_service_code",
-      "community": 0,
+      "community": 7,
       "norm_label": ".generate_service_code()"
     },
     {
@@ -1396,7 +1596,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_to_dict",
-      "community": 0,
+      "community": 7,
       "norm_label": "._to_dict()"
     },
     {
@@ -1706,7 +1906,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "repair_manager_ui_components",
-      "community": 4,
+      "community": 52,
       "norm_label": "components.py"
     },
     {
@@ -1716,7 +1916,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiancalendarwidget",
-      "community": 4,
+      "community": 63,
       "norm_label": "persiancalendarwidget"
     },
     {
@@ -1726,7 +1926,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qcalendarwidget",
-      "community": 4,
+      "community": 63,
       "norm_label": "qcalendarwidget"
     },
     {
@@ -1736,7 +1936,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiancalendarwidget_init",
-      "community": 4,
+      "community": 63,
       "norm_label": ".__init__()"
     },
     {
@@ -1746,7 +1946,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiancalendarwidget_get_persian_date",
-      "community": 4,
+      "community": 63,
       "norm_label": ".get_persian_date()"
     },
     {
@@ -1756,7 +1956,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit",
-      "community": 4,
+      "community": 63,
       "norm_label": "persiandateedit"
     },
     {
@@ -1776,7 +1976,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit_init",
-      "community": 4,
+      "community": 63,
       "norm_label": ".__init__()"
     },
     {
@@ -1786,7 +1986,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit_resizeevent",
-      "community": 4,
+      "community": 63,
       "norm_label": ".resizeevent()"
     },
     {
@@ -1796,7 +1996,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit_show_calendar",
-      "community": 4,
+      "community": 63,
       "norm_label": ".show_calendar()"
     },
     {
@@ -1806,7 +2006,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit_set_date",
-      "community": 4,
+      "community": 63,
       "norm_label": ".set_date()"
     },
     {
@@ -1816,7 +2016,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit_get_date",
-      "community": 4,
+      "community": 63,
       "norm_label": ".get_date()"
     },
     {
@@ -1826,7 +2026,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "repair_manager_ui_components_rationale_18",
-      "community": 4,
+      "community": 63,
       "norm_label": "\u0648\u06cc\u062c\u062a \u062a\u0642\u0648\u06cc\u0645 \u0634\u0645\u0633\u06cc \u0633\u0641\u0627\u0631\u0634\u06cc"
     },
     {
@@ -1836,7 +2036,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "repair_manager_ui_components_rationale_34",
-      "community": 4,
+      "community": 63,
       "norm_label": "\u062f\u0631\u06cc\u0627\u0641\u062a \u062a\u0627\u0631\u06cc\u062e \u0634\u0645\u0633\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u062f\u0647"
     },
     {
@@ -1846,7 +2046,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "repair_manager_ui_components_rationale_43",
-      "community": 4,
+      "community": 63,
       "norm_label": "\u0648\u06cc\u062c\u062a \u0648\u0631\u0648\u062f\u06cc \u062a\u0627\u0631\u06cc\u062e \u0634\u0645\u0633\u06cc"
     },
     {
@@ -1876,7 +2076,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_customer_service",
-      "community": 68,
+      "community": 0,
       "norm_label": "customer_service.py"
     },
     {
@@ -2126,7 +2326,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_customer_workflow",
-      "community": 68,
+      "community": 52,
       "norm_label": "customer_workflow.py"
     },
     {
@@ -2146,7 +2346,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow_init",
-      "community": 52,
+      "community": 1,
       "norm_label": ".__init__()"
     },
     {
@@ -2386,7 +2586,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_date_service",
-      "community": 2,
+      "community": 3,
       "norm_label": "date_service.py"
     },
     {
@@ -2396,7 +2596,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "services_date_service_today_persian",
-      "community": 2,
+      "community": 3,
       "norm_label": "today_persian()"
     },
     {
@@ -2437,7 +2637,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_invoice_exporter",
-      "community": 6,
+      "community": 54,
       "norm_label": "invoice_exporter.py"
     },
     {
@@ -2447,7 +2647,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "services_invoice_exporter_print_invoice_content",
-      "community": 2,
+      "community": 54,
       "norm_label": "print_invoice_content()"
     },
     {
@@ -2457,7 +2657,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "services_invoice_exporter_save_invoice_to_pdf",
-      "community": 6,
+      "community": 54,
       "norm_label": "save_invoice_to_pdf()"
     },
     {
@@ -2611,13 +2811,223 @@
       "norm_label": "show_question()"
     },
     {
+      "label": "part_service.py",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "services_part_service",
+      "community": 2,
+      "norm_label": "part_service.py"
+    },
+    {
+      "label": "PartService",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L6",
+      "_origin": "ast",
+      "id": "services_part_service_partservice",
+      "community": 4,
+      "norm_label": "partservice"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L9",
+      "_origin": "ast",
+      "id": "services_part_service_partservice_init",
+      "community": 4,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": "._validate()",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L12",
+      "_origin": "ast",
+      "id": "services_part_service_partservice_validate",
+      "community": 4,
+      "norm_label": "._validate()"
+    },
+    {
+      "label": ".create_part()",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L28",
+      "_origin": "ast",
+      "id": "services_part_service_partservice_create_part",
+      "community": 4,
+      "norm_label": ".create_part()"
+    },
+    {
+      "label": ".update_part()",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L34",
+      "_origin": "ast",
+      "id": "services_part_service_partservice_update_part",
+      "community": 4,
+      "norm_label": ".update_part()"
+    },
+    {
+      "label": ".delete_part()",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L39",
+      "_origin": "ast",
+      "id": "services_part_service_partservice_delete_part",
+      "community": 4,
+      "norm_label": ".delete_part()"
+    },
+    {
+      "label": ".get_part()",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L43",
+      "_origin": "ast",
+      "id": "services_part_service_partservice_get_part",
+      "community": 4,
+      "norm_label": ".get_part()"
+    },
+    {
+      "label": ".list_all()",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "services_part_service_partservice_list_all",
+      "community": 4,
+      "norm_label": ".list_all()"
+    },
+    {
+      "label": ".search()",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L51",
+      "_origin": "ast",
+      "id": "services_part_service_partservice_search",
+      "community": 4,
+      "norm_label": ".search()"
+    },
+    {
+      "label": ".get_active_for_invoice()",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L57",
+      "_origin": "ast",
+      "id": "services_part_service_partservice_get_active_for_invoice",
+      "community": 4,
+      "norm_label": ".get_active_for_invoice()"
+    },
+    {
+      "label": ".find_by_code()",
+      "file_type": "code",
+      "source_file": "services/part_service.py",
+      "source_location": "L61",
+      "_origin": "ast",
+      "id": "services_part_service_partservice_find_by_code",
+      "community": 4,
+      "norm_label": ".find_by_code()"
+    },
+    {
+      "label": "Business logic layer for parts catalog operations.",
+      "file_type": "rationale",
+      "source_file": "services/part_service.py",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "services_part_service_rationale_7",
+      "community": 4,
+      "norm_label": "business logic layer for parts catalog operations."
+    },
+    {
+      "label": "Create a new part with validation.",
+      "file_type": "rationale",
+      "source_file": "services/part_service.py",
+      "source_location": "L29",
+      "_origin": "ast",
+      "id": "services_part_service_rationale_29",
+      "community": 4,
+      "norm_label": "create a new part with validation."
+    },
+    {
+      "label": "Update an existing part with validation.",
+      "file_type": "rationale",
+      "source_file": "services/part_service.py",
+      "source_location": "L35",
+      "_origin": "ast",
+      "id": "services_part_service_rationale_35",
+      "community": 4,
+      "norm_label": "update an existing part with validation."
+    },
+    {
+      "label": "Delete a part by primary key.",
+      "file_type": "rationale",
+      "source_file": "services/part_service.py",
+      "source_location": "L40",
+      "_origin": "ast",
+      "id": "services_part_service_rationale_40",
+      "community": 4,
+      "norm_label": "delete a part by primary key."
+    },
+    {
+      "label": "Get a single part by primary key.",
+      "file_type": "rationale",
+      "source_file": "services/part_service.py",
+      "source_location": "L44",
+      "_origin": "ast",
+      "id": "services_part_service_rationale_44",
+      "community": 4,
+      "norm_label": "get a single part by primary key."
+    },
+    {
+      "label": "Return all parts, optionally filtered to active only.",
+      "file_type": "rationale",
+      "source_file": "services/part_service.py",
+      "source_location": "L48",
+      "_origin": "ast",
+      "id": "services_part_service_rationale_48",
+      "community": 4,
+      "norm_label": "return all parts, optionally filtered to active only."
+    },
+    {
+      "label": "Search parts by name or code (contains, case-insensitive).",
+      "file_type": "rationale",
+      "source_file": "services/part_service.py",
+      "source_location": "L52",
+      "_origin": "ast",
+      "id": "services_part_service_rationale_52",
+      "community": 4,
+      "norm_label": "search parts by name or code (contains, case-insensitive)."
+    },
+    {
+      "label": "Return active parts for future invoice line-item selection.",
+      "file_type": "rationale",
+      "source_file": "services/part_service.py",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "services_part_service_rationale_58",
+      "community": 4,
+      "norm_label": "return active parts for future invoice line-item selection."
+    },
+    {
+      "label": "Find a part by its code (for future invoice integration).",
+      "file_type": "rationale",
+      "source_file": "services/part_service.py",
+      "source_location": "L62",
+      "_origin": "ast",
+      "id": "services_part_service_rationale_62",
+      "community": 4,
+      "norm_label": "find a part by its code (for future invoice integration)."
+    },
+    {
       "label": "repair_manager_service.py",
       "file_type": "code",
       "source_file": "services/repair_manager_service.py",
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_repair_manager_service",
-      "community": 2,
+      "community": 68,
       "norm_label": "repair_manager_service.py"
     },
     {
@@ -2627,7 +3037,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "services_repair_manager_service_add_repair",
-      "community": 2,
+      "community": 68,
       "norm_label": "add_repair()"
     },
     {
@@ -2637,7 +3047,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "services_repair_manager_service_delete_repair",
-      "community": 2,
+      "community": 68,
       "norm_label": "delete_repair()"
     },
     {
@@ -2647,7 +3057,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "services_repair_manager_service_get_repair_by_id",
-      "community": 3,
+      "community": 68,
       "norm_label": "get_repair_by_id()"
     },
     {
@@ -2657,7 +3067,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "services_repair_manager_service_update_repair",
-      "community": 2,
+      "community": 68,
       "norm_label": "update_repair()"
     },
     {
@@ -2667,7 +3077,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_7",
-      "community": 2,
+      "community": 68,
       "norm_label": "add a new repair to the repairs list.     assigns a unique id to the new repair."
     },
     {
@@ -2677,7 +3087,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_22",
-      "community": 2,
+      "community": 68,
       "norm_label": "delete a repair by id from the repairs list."
     },
     {
@@ -2687,7 +3097,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_29",
-      "community": 3,
+      "community": 68,
       "norm_label": "find and return a repair by its id."
     },
     {
@@ -2697,7 +3107,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_39",
-      "community": 2,
+      "community": 68,
       "norm_label": "update a repair by id with new data."
     },
     {
@@ -2707,7 +3117,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_service_service",
-      "community": 0,
+      "community": 2,
       "norm_label": "service_service.py"
     },
     {
@@ -3369,7 +3779,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog",
-      "community": 68,
+      "community": 52,
       "norm_label": "customer_edit_dialog.py"
     },
     {
@@ -3379,7 +3789,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "community": 69,
+      "community": 63,
       "norm_label": "customereditdialog"
     },
     {
@@ -3389,7 +3799,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_init",
-      "community": 69,
+      "community": 63,
       "norm_label": ".__init__()"
     },
     {
@@ -3399,7 +3809,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_init_ui",
-      "community": 69,
+      "community": 63,
       "norm_label": ".init_ui()"
     },
     {
@@ -3409,7 +3819,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_load_fields",
-      "community": 69,
+      "community": 63,
       "norm_label": "._load_fields()"
     },
     {
@@ -3419,7 +3829,7 @@
       "source_location": "L125",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_get_data",
-      "community": 69,
+      "community": 63,
       "norm_label": "._get_data()"
     },
     {
@@ -3429,7 +3839,7 @@
       "source_location": "L139",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_save",
-      "community": 69,
+      "community": 63,
       "norm_label": "._save()"
     },
     {
@@ -3439,7 +3849,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_rationale_11",
-      "community": 69,
+      "community": 63,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0634\u062a\u0631\u06cc"
     },
     {
@@ -3449,7 +3859,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog",
-      "community": 68,
+      "community": 52,
       "norm_label": "customer_selection_dialog.py"
     },
     {
@@ -3459,7 +3869,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "community": 68,
+      "community": 63,
       "norm_label": "customerselectiondialog"
     },
     {
@@ -3469,7 +3879,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_init",
-      "community": 68,
+      "community": 63,
       "norm_label": ".__init__()"
     },
     {
@@ -3479,7 +3889,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_load_customers",
-      "community": 68,
+      "community": 63,
       "norm_label": "._load_customers()"
     },
     {
@@ -3489,7 +3899,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_filter",
-      "community": 68,
+      "community": 63,
       "norm_label": "._filter()"
     },
     {
@@ -3499,7 +3909,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_on_select",
-      "community": 68,
+      "community": 63,
       "norm_label": "._on_select()"
     },
     {
@@ -3509,7 +3919,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_rationale_11",
-      "community": 68,
+      "community": 63,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u0634\u062a\u0631\u06cc \u0627\u0632 \u0644\u06cc\u0633\u062a"
     },
     {
@@ -3519,7 +3929,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog",
-      "community": 2,
+      "community": 54,
       "norm_label": "invoice_dialog.py"
     },
     {
@@ -3529,7 +3939,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_invoicepreviewdialog",
-      "community": 2,
+      "community": 54,
       "norm_label": "invoicepreviewdialog"
     },
     {
@@ -3539,7 +3949,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_invoicepreviewdialog_init",
-      "community": 2,
+      "community": 54,
       "norm_label": ".__init__()"
     },
     {
@@ -3549,7 +3959,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_invoicepreviewdialog_init_ui",
-      "community": 2,
+      "community": 54,
       "norm_label": ".init_ui()"
     },
     {
@@ -3559,7 +3969,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_invoicepreviewdialog_print_invoice",
-      "community": 2,
+      "community": 54,
       "norm_label": ".print_invoice()"
     },
     {
@@ -3569,7 +3979,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_invoicepreviewdialog_save_pdf",
-      "community": 2,
+      "community": 54,
       "norm_label": ".save_pdf()"
     },
     {
@@ -3589,7 +3999,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "ui_dialogs_invoice_dialog_rationale_16",
-      "community": 2,
+      "community": 54,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0648 \u0686\u0627\u067e \u0641\u0627\u06a9\u062a\u0648\u0631"
     },
     {
@@ -3603,13 +4013,93 @@
       "norm_label": "\u0628\u0647\u200c\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0641\u0627\u06a9\u062a\u0648\u0631"
     },
     {
+      "label": "part_edit_dialog.py",
+      "file_type": "code",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ui_dialogs_part_edit_dialog",
+      "community": 6,
+      "norm_label": "part_edit_dialog.py"
+    },
+    {
+      "label": "PartEditDialog",
+      "file_type": "code",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L10",
+      "_origin": "ast",
+      "id": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "community": 4,
+      "norm_label": "parteditdialog"
+    },
+    {
+      "label": ".__init__()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L13",
+      "_origin": "ast",
+      "id": "ui_dialogs_part_edit_dialog_parteditdialog_init",
+      "community": 4,
+      "norm_label": ".__init__()"
+    },
+    {
+      "label": ".init_ui()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L38",
+      "_origin": "ast",
+      "id": "ui_dialogs_part_edit_dialog_parteditdialog_init_ui",
+      "community": 4,
+      "norm_label": ".init_ui()"
+    },
+    {
+      "label": "._load_fields()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L103",
+      "_origin": "ast",
+      "id": "ui_dialogs_part_edit_dialog_parteditdialog_load_fields",
+      "community": 4,
+      "norm_label": "._load_fields()"
+    },
+    {
+      "label": "._get_data()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L113",
+      "_origin": "ast",
+      "id": "ui_dialogs_part_edit_dialog_parteditdialog_get_data",
+      "community": 4,
+      "norm_label": "._get_data()"
+    },
+    {
+      "label": "._save()",
+      "file_type": "code",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L123",
+      "_origin": "ast",
+      "id": "ui_dialogs_part_edit_dialog_parteditdialog_save",
+      "community": 4,
+      "norm_label": "._save()"
+    },
+    {
+      "label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0642\u0637\u0639\u0647",
+      "file_type": "rationale",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L11",
+      "_origin": "ast",
+      "id": "ui_dialogs_part_edit_dialog_rationale_11",
+      "community": 4,
+      "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0642\u0637\u0639\u0647"
+    },
+    {
       "label": "repair_dialog.py",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog",
-      "community": 68,
+      "community": 52,
       "norm_label": "repair_dialog.py"
     },
     {
@@ -3619,7 +4109,7 @@
       "source_location": "L23",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate",
-      "community": 70,
+      "community": 63,
       "norm_label": "completeritemdelegate"
     },
     {
@@ -3629,7 +4119,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qstyleditemdelegate",
-      "community": 70,
+      "community": 63,
       "norm_label": "qstyleditemdelegate"
     },
     {
@@ -3639,7 +4129,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate_paint",
-      "community": 70,
+      "community": 63,
       "norm_label": ".paint()"
     },
     {
@@ -3649,7 +4139,7 @@
       "source_location": "L45",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate_sizehint",
-      "community": 70,
+      "community": 63,
       "norm_label": ".sizehint()"
     },
     {
@@ -3859,7 +4349,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "community": 54,
+      "community": 3,
       "norm_label": "serviceeditdialog"
     },
     {
@@ -3869,7 +4359,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_dialogs_service_edit_dialog_serviceeditdialog_init",
-      "community": 54,
+      "community": 3,
       "norm_label": ".__init__()"
     },
     {
@@ -3879,7 +4369,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "ui_dialogs_service_edit_dialog_serviceeditdialog_init_ui",
-      "community": 54,
+      "community": 3,
       "norm_label": ".init_ui()"
     },
     {
@@ -3889,7 +4379,7 @@
       "source_location": "L91",
       "_origin": "ast",
       "id": "ui_dialogs_service_edit_dialog_serviceeditdialog_load_fields",
-      "community": 54,
+      "community": 3,
       "norm_label": "._load_fields()"
     },
     {
@@ -3899,7 +4389,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "ui_dialogs_service_edit_dialog_serviceeditdialog_get_data",
-      "community": 54,
+      "community": 3,
       "norm_label": "._get_data()"
     },
     {
@@ -3909,7 +4399,7 @@
       "source_location": "L107",
       "_origin": "ast",
       "id": "ui_dialogs_service_edit_dialog_serviceeditdialog_save",
-      "community": 54,
+      "community": 3,
       "norm_label": "._save()"
     },
     {
@@ -3919,7 +4409,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_dialogs_service_edit_dialog_rationale_11",
-      "community": 54,
+      "community": 3,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u062e\u062f\u0645\u062a"
     },
     {
@@ -4019,7 +4509,7 @@
       "source_location": "L359",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_get_settings",
-      "community": 2,
+      "community": 35,
       "norm_label": ".get_settings()"
     },
     {
@@ -4049,7 +4539,7 @@
       "source_location": "L360",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_rationale_360",
-      "community": 2,
+      "community": 35,
       "norm_label": "\u062f\u0631\u06cc\u0627\u0641\u062a \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647"
     },
     {
@@ -4066,7 +4556,7 @@
       "label": "_get_shop_name()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L23",
+      "source_location": "L24",
       "_origin": "ast",
       "id": "ui_main_window_get_shop_name",
       "community": 29,
@@ -4076,7 +4566,7 @@
       "label": "_make_title()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L33",
+      "source_location": "L34",
       "_origin": "ast",
       "id": "ui_main_window_make_title",
       "community": 29,
@@ -4086,7 +4576,7 @@
       "label": "_get_header_appearance()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L41",
+      "source_location": "L42",
       "_origin": "ast",
       "id": "ui_main_window_get_header_appearance",
       "community": 29,
@@ -4096,7 +4586,7 @@
       "label": "build_header()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L68",
+      "source_location": "L69",
       "_origin": "ast",
       "id": "ui_main_window_build_header",
       "community": 29,
@@ -4106,7 +4596,7 @@
       "label": "build_toolbar()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L125",
+      "source_location": "L126",
       "_origin": "ast",
       "id": "ui_main_window_build_toolbar",
       "community": 29,
@@ -4116,7 +4606,7 @@
       "label": "build_table()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L193",
+      "source_location": "L194",
       "_origin": "ast",
       "id": "ui_main_window_build_table",
       "community": 29,
@@ -4126,7 +4616,7 @@
       "label": "build_status_bar()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L234",
+      "source_location": "L235",
       "_origin": "ast",
       "id": "ui_main_window_build_status_bar",
       "community": 29,
@@ -4136,7 +4626,7 @@
       "label": "create_status_popup()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L279",
+      "source_location": "L280",
       "_origin": "ast",
       "id": "ui_main_window_create_status_popup",
       "community": 29,
@@ -4146,7 +4636,7 @@
       "label": "build_nav_bar()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L350",
+      "source_location": "L351",
       "_origin": "ast",
       "id": "ui_main_window_build_nav_bar",
       "community": 29,
@@ -4156,7 +4646,7 @@
       "label": "build_ui()",
       "file_type": "code",
       "source_file": "ui/main_window.py",
-      "source_location": "L383",
+      "source_location": "L391",
       "_origin": "ast",
       "id": "ui_main_window_build_ui",
       "community": 29,
@@ -4166,11 +4656,123 @@
       "label": "\u0627\u06cc\u062c\u0627\u062f \u0646\u0648\u0627\u0631 \u0646\u0627\u0648\u0628\u0631\u06cc \u0628\u06cc\u0646 \u0646\u0645\u0627\u06cc \u062a\u0639\u0645\u06cc\u0631\u0627\u062a \u0648 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646",
       "file_type": "rationale",
       "source_file": "ui/main_window.py",
-      "source_location": "L351",
+      "source_location": "L352",
       "_origin": "ast",
-      "id": "ui_main_window_rationale_351",
+      "id": "ui_main_window_rationale_352",
       "community": 29,
       "norm_label": "\u0627\u06cc\u062c\u0627\u062f \u0646\u0648\u0627\u0631 \u0646\u0627\u0648\u0628\u0631\u06cc \u0628\u06cc\u0646 \u0646\u0645\u0627\u06cc \u062a\u0639\u0645\u06cc\u0631\u0627\u062a \u0648 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646"
+    },
+    {
+      "label": "part_view.py",
+      "file_type": "code",
+      "source_file": "ui/part_view.py",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "ui_part_view",
+      "community": 29,
+      "norm_label": "part_view.py"
+    },
+    {
+      "label": "build_part_toolbar()",
+      "file_type": "code",
+      "source_file": "ui/part_view.py",
+      "source_location": "L15",
+      "_origin": "ast",
+      "id": "ui_part_view_build_part_toolbar",
+      "community": 29,
+      "norm_label": "build_part_toolbar()"
+    },
+    {
+      "label": "build_part_table()",
+      "file_type": "code",
+      "source_file": "ui/part_view.py",
+      "source_location": "L47",
+      "_origin": "ast",
+      "id": "ui_part_view_build_part_table",
+      "community": 29,
+      "norm_label": "build_part_table()"
+    },
+    {
+      "label": "render_part_rows()",
+      "file_type": "code",
+      "source_file": "ui/part_view.py",
+      "source_location": "L82",
+      "_origin": "ast",
+      "id": "ui_part_view_render_part_rows",
+      "community": 29,
+      "norm_label": "render_part_rows()"
+    },
+    {
+      "label": "QTableWidget",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "C:\\Users\\AL\\Desktop\\repair_manager\\ui\\part_view.py",
+      "_origin": "ast",
+      "id": "ui_part_view_py_qtablewidget",
+      "community": 29,
+      "norm_label": "qtablewidget"
+    },
+    {
+      "label": "_on_header_clicked()",
+      "file_type": "code",
+      "source_file": "ui/part_view.py",
+      "source_location": "L136",
+      "_origin": "ast",
+      "id": "ui_part_view_on_header_clicked",
+      "community": 29,
+      "norm_label": "_on_header_clicked()"
+    },
+    {
+      "label": "_on_item_changed()",
+      "file_type": "code",
+      "source_file": "ui/part_view.py",
+      "source_location": "L152",
+      "_origin": "ast",
+      "id": "ui_part_view_on_item_changed",
+      "community": 29,
+      "norm_label": "_on_item_changed()"
+    },
+    {
+      "label": "QTableWidgetItem",
+      "file_type": "code",
+      "source_file": "",
+      "source_location": "",
+      "origin_file": "C:\\Users\\AL\\Desktop\\repair_manager\\ui\\part_view.py",
+      "_origin": "ast",
+      "id": "ui_part_view_py_qtablewidgetitem",
+      "community": 29,
+      "norm_label": "qtablewidgetitem"
+    },
+    {
+      "label": "_sync_header_state()",
+      "file_type": "code",
+      "source_file": "ui/part_view.py",
+      "source_location": "L158",
+      "_origin": "ast",
+      "id": "ui_part_view_sync_header_state",
+      "community": 29,
+      "norm_label": "_sync_header_state()"
+    },
+    {
+      "label": "\u0627\u06cc\u062c\u0627\u062f \u0646\u0648\u0627\u0631 \u0627\u0628\u0632\u0627\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0642\u0637\u0639\u0627\u062a",
+      "file_type": "rationale",
+      "source_file": "ui/part_view.py",
+      "source_location": "L16",
+      "_origin": "ast",
+      "id": "ui_part_view_rationale_16",
+      "community": 29,
+      "norm_label": "\u0627\u06cc\u062c\u0627\u062f \u0646\u0648\u0627\u0631 \u0627\u0628\u0632\u0627\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0642\u0637\u0639\u0627\u062a"
+    },
+    {
+      "label": "\u0631\u0646\u062f\u0631 \u06a9\u0631\u062f\u0646 \u0631\u062f\u06cc\u0641\u200c\u0647\u0627\u06cc \u0642\u0637\u0639\u0627\u062a (\u0645\u0631\u062a\u0628 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645)",
+      "file_type": "rationale",
+      "source_file": "ui/part_view.py",
+      "source_location": "L84",
+      "_origin": "ast",
+      "id": "ui_part_view_rationale_84",
+      "community": 29,
+      "norm_label": "\u0631\u0646\u062f\u0631 \u06a9\u0631\u062f\u0646 \u0631\u062f\u06cc\u0641\u200c\u0647\u0627\u06cc \u0642\u0637\u0639\u0627\u062a (\u0645\u0631\u062a\u0628 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645)"
     },
     {
       "label": "service_view.py",
@@ -4544,7 +5146,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_widgets_web_invoice_view",
-      "community": 2,
+      "community": 54,
       "norm_label": "web_invoice_view.py"
     },
     {
@@ -4554,7 +5156,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "ui_widgets_web_invoice_view_webinvoiceview",
-      "community": 2,
+      "community": 54,
       "norm_label": "webinvoiceview"
     },
     {
@@ -4564,7 +5166,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qwidget",
-      "community": 2,
+      "community": 54,
       "norm_label": "qwidget"
     },
     {
@@ -4574,7 +5176,7 @@
       "source_location": "L8",
       "_origin": "ast",
       "id": "ui_widgets_web_invoice_view_webinvoiceview_init",
-      "community": 2,
+      "community": 54,
       "norm_label": ".__init__()"
     },
     {
@@ -4584,7 +5186,7 @@
       "source_location": "L16",
       "_origin": "ast",
       "id": "ui_widgets_web_invoice_view_webinvoiceview_set_html",
-      "community": 2,
+      "community": 54,
       "norm_label": ".set_html()"
     },
     {
@@ -4594,7 +5196,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "ui_widgets_web_invoice_view_rationale_6",
-      "community": 2,
+      "community": 54,
       "norm_label": "invoice preview widget using qwebengineview"
     },
     {
@@ -7398,6 +8000,156 @@
       "norm_label": "recommended minimal fix"
     },
     {
+      "label": "PARTS_CATALOG_PHASE1.md",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1",
+      "community": 69,
+      "norm_label": "parts_catalog_phase1.md"
+    },
+    {
+      "label": "Parts Catalog \u2014 Phase 1",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L1",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_parts_catalog_phase_1",
+      "community": 69,
+      "norm_label": "parts catalog \u2014 phase 1"
+    },
+    {
+      "label": "1. Overview",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L7",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_1_overview",
+      "community": 69,
+      "norm_label": "1. overview"
+    },
+    {
+      "label": "2. Database \u2014 `part` table",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L19",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_2_database_part_table",
+      "community": 69,
+      "norm_label": "2. database \u2014 `part` table"
+    },
+    {
+      "label": "3. Repository \u2014 `PartRepository`",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L42",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_3_repository_partrepository",
+      "community": 69,
+      "norm_label": "3. repository \u2014 `partrepository`"
+    },
+    {
+      "label": "4. Service Layer \u2014 `PartService`",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L58",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_4_service_layer_partservice",
+      "community": 69,
+      "norm_label": "4. service layer \u2014 `partservice`"
+    },
+    {
+      "label": "5. Management UI",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L77",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_5_management_ui",
+      "community": 69,
+      "norm_label": "5. management ui"
+    },
+    {
+      "label": "Navigation",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L79",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_navigation",
+      "community": 69,
+      "norm_label": "navigation"
+    },
+    {
+      "label": "Parts View (`ui/part_view.py`)",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L87",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_parts_view_ui_part_view_py",
+      "community": 69,
+      "norm_label": "parts view (`ui/part_view.py`)"
+    },
+    {
+      "label": "Add/Edit Dialog (`ui/dialogs/part_edit_dialog.py`)",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L99",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_add_edit_dialog_ui_dialogs_part_edit_dialog_py",
+      "community": 69,
+      "norm_label": "add/edit dialog (`ui/dialogs/part_edit_dialog.py`)"
+    },
+    {
+      "label": "App Integration (`app.py`)",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L106",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_app_integration_app_py",
+      "community": 69,
+      "norm_label": "app integration (`app.py`)"
+    },
+    {
+      "label": "6. Verification",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L115",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_6_verification",
+      "community": 69,
+      "norm_label": "6. verification"
+    },
+    {
+      "label": "7. Planned Future Integration",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L127",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_7_planned_future_integration",
+      "community": 69,
+      "norm_label": "7. planned future integration"
+    },
+    {
+      "label": "8. Helper Methods for Future Invoice Integration",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L146",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_8_helper_methods_for_future_invoice_integration",
+      "community": 69,
+      "norm_label": "8. helper methods for future invoice integration"
+    },
+    {
+      "label": "9. Files Created/Modified",
+      "file_type": "document",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L157",
+      "_origin": "ast",
+      "id": "parts_catalog_phase1_9_files_created_modified",
+      "community": 69,
+      "norm_label": "9. files created/modified"
+    },
+    {
       "label": "PHONE_NORMALIZATION_AUDIT.md",
       "file_type": "document",
       "source_file": "PHONE_NORMALIZATION_AUDIT.md",
@@ -10093,6 +10845,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "app",
+      "target": "services_part_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "app",
+      "target": "services_part_service_partservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
       "source_location": "L19",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10150,9 +10924,9 @@
       "source_file": "app.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app",
-      "target": "services_service_service",
-      "confidence_score": 1.0
+      "target": "services_service_service"
     },
     {
       "relation": "imports",
@@ -10161,9 +10935,9 @@
       "source_file": "app.py",
       "source_location": "L34",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app",
-      "target": "services_service_service_serviceservice",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice"
     },
     {
       "relation": "imports_from",
@@ -10258,6 +11032,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "app",
+      "target": "ui_dialogs_part_edit_dialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "app",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
       "source_location": "L25",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10282,9 +11078,9 @@
       "source_file": "app.py",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app",
-      "target": "ui_dialogs_service_edit_dialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog"
     },
     {
       "relation": "imports",
@@ -10293,9 +11089,9 @@
       "source_file": "app.py",
       "source_location": "L28",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog"
     },
     {
       "relation": "imports_from",
@@ -10368,11 +11164,33 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L31",
+      "source_location": "L33",
       "weight": 1.0,
       "source": "app",
-      "target": "ui_service_view",
+      "target": "ui_part_view",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L33",
+      "weight": 1.0,
+      "source": "app",
+      "target": "ui_part_view_render_part_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L31",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app",
+      "target": "ui_service_view"
     },
     {
       "relation": "imports",
@@ -10381,9 +11199,9 @@
       "source_file": "app.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app",
-      "target": "ui_service_view_render_service_rows",
-      "confidence_score": 1.0
+      "target": "ui_service_view_render_service_rows"
     },
     {
       "relation": "imports_from",
@@ -10492,11 +11310,21 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "app.py",
-      "source_location": "L34",
+      "source_location": "L37",
       "weight": 0.8,
       "source": "app_notificationdialog",
-      "target": "services_service_service_serviceservice",
+      "target": "services_part_service_partservice",
       "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "app.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "app_notificationdialog",
+      "target": "services_service_service_serviceservice"
     },
     {
       "relation": "uses",
@@ -10522,6 +11350,16 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "app.py",
+      "source_location": "L29",
+      "weight": 0.8,
+      "source": "app_notificationdialog",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "app.py",
       "source_location": "L25",
       "weight": 0.8,
       "confidence_score": 0.5,
@@ -10534,9 +11372,9 @@
       "source_file": "app.py",
       "source_location": "L28",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "app_notificationdialog",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "confidence_score": 0.5
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog"
     },
     {
       "relation": "uses",
@@ -10552,9 +11390,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L43",
+      "source_location": "L46",
       "weight": 1.0,
-      "source": "app_rationale_43",
+      "source": "app_rationale_46",
       "target": "app_notificationdialog",
       "confidence_score": 1.0
     },
@@ -10591,6 +11429,16 @@
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "target": "qdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L55",
       "weight": 1.0,
@@ -10604,9 +11452,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "target": "qdialog",
-      "confidence_score": 1.0
+      "target": "qdialog"
     },
     {
       "relation": "inherits",
@@ -10643,6 +11491,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
+      "source_location": "L369",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_add_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
       "source_location": "L147",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10655,9 +11513,9 @@
       "source_file": "app.py",
       "source_location": "L337",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_add_service",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_add_service"
     },
     {
       "relation": "method",
@@ -10703,6 +11561,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
+      "source_location": "L387",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_delete_selected_parts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
       "source_location": "L215",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10715,9 +11583,9 @@
       "source_file": "app.py",
       "source_location": "L355",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_delete_selected_services",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_delete_selected_services"
     },
     {
       "relation": "method",
@@ -10728,6 +11596,16 @@
       "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
       "target": "app_laptoprepairmanager_edit_customer"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L377",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_edit_part",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -10745,9 +11623,9 @@
       "source_file": "app.py",
       "source_location": "L345",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_edit_service",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_edit_service"
     },
     {
       "relation": "method",
@@ -10863,11 +11741,21 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L327",
+      "source_location": "L359",
       "weight": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_refresh_service_table",
+      "target": "app_laptoprepairmanager_refresh_part_table",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L327",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_refresh_service_table"
     },
     {
       "relation": "method",
@@ -10893,6 +11781,16 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
+      "source_location": "L364",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_search_parts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
       "source_location": "L229",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -10905,9 +11803,9 @@
       "source_file": "app.py",
       "source_location": "L332",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_search_services",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_search_services"
     },
     {
       "relation": "method",
@@ -10918,6 +11816,16 @@
       "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
       "target": "app_laptoprepairmanager_show_customers_view"
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L342",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager",
+      "target": "app_laptoprepairmanager_show_parts_view",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -10935,9 +11843,9 @@
       "source_file": "app.py",
       "source_location": "L313",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_show_services_view",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_show_services_view"
     },
     {
       "relation": "method",
@@ -11043,11 +11951,21 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "app.py",
-      "source_location": "L34",
+      "source_location": "L37",
       "weight": 0.8,
       "source": "app_laptoprepairmanager",
-      "target": "services_service_service_serviceservice",
+      "target": "services_part_service_partservice",
       "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "app.py",
+      "source_location": "L34",
+      "weight": 0.8,
+      "confidence_score": 0.5,
+      "source": "app_laptoprepairmanager",
+      "target": "services_service_service_serviceservice"
     },
     {
       "relation": "uses",
@@ -11073,6 +11991,16 @@
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "app.py",
+      "source_location": "L29",
+      "weight": 0.8,
+      "source": "app_laptoprepairmanager",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "app.py",
       "source_location": "L25",
       "weight": 0.8,
       "confidence_score": 0.5,
@@ -11085,9 +12013,9 @@
       "source_file": "app.py",
       "source_location": "L28",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "app_laptoprepairmanager",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "confidence_score": 0.5
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog"
     },
     {
       "relation": "uses",
@@ -11114,9 +12042,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L80",
+      "source_location": "L83",
       "weight": 1.0,
-      "source": "app_rationale_80",
+      "source": "app_rationale_83",
       "target": "app_laptoprepairmanager",
       "confidence_score": 1.0
     },
@@ -11203,6 +12131,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.py",
+      "source_location": "L92",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_init",
+      "target": "services_part_service_partservice"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
       "source_location": "L88",
       "weight": 1.0,
       "source": "app_laptoprepairmanager_init",
@@ -11256,9 +12195,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L109",
+      "source_location": "L113",
       "weight": 1.0,
-      "source": "app_rationale_109",
+      "source": "app_rationale_113",
       "target": "app_laptoprepairmanager_open_shop_settings",
       "confidence_score": 1.0
     },
@@ -11299,9 +12238,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L115",
+      "source_location": "L119",
       "weight": 1.0,
-      "source": "app_rationale_115",
+      "source": "app_rationale_119",
       "target": "app_laptoprepairmanager_rebuild_header",
       "confidence_score": 1.0
     },
@@ -11309,9 +12248,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L127",
+      "source_location": "L131",
       "weight": 1.0,
-      "source": "app_rationale_127",
+      "source": "app_rationale_131",
       "target": "app_laptoprepairmanager_toggle_status_popup",
       "confidence_score": 1.0
     },
@@ -11319,9 +12258,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L137",
+      "source_location": "L141",
       "weight": 1.0,
-      "source": "app_rationale_137",
+      "source": "app_rationale_141",
       "target": "app_laptoprepairmanager_eventfilter",
       "confidence_score": 1.0
     },
@@ -11582,9 +12521,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L220",
+      "source_location": "L224",
       "weight": 1.0,
-      "source": "app_rationale_220",
+      "source": "app_rationale_224",
       "target": "app_laptoprepairmanager_delete_selected_repairs",
       "confidence_score": 1.0
     },
@@ -11661,8 +12600,19 @@
       "source_file": "app.py",
       "source_location": "L325",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager_show_services_view",
-      "target": "app_laptoprepairmanager_refresh_service_table",
+      "target": "app_laptoprepairmanager_refresh_service_table"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L357",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_show_parts_view",
+      "target": "app_laptoprepairmanager_refresh_part_table",
       "confidence_score": 1.0
     },
     {
@@ -11670,10 +12620,21 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L343",
+      "source_location": "L375",
       "weight": 1.0,
-      "source": "app_laptoprepairmanager_add_service",
-      "target": "app_laptoprepairmanager_refresh_service_table",
+      "source": "app_laptoprepairmanager_add_part",
+      "target": "app_laptoprepairmanager_refresh_part_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L417",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_delete_selected_parts",
+      "target": "app_laptoprepairmanager_refresh_part_table",
       "confidence_score": 1.0
     },
     {
@@ -11683,9 +12644,139 @@
       "source_file": "app.py",
       "source_location": "L385",
       "weight": 1.0,
-      "source": "app_laptoprepairmanager_delete_selected_services",
-      "target": "app_laptoprepairmanager_refresh_service_table",
+      "source": "app_laptoprepairmanager_edit_part",
+      "target": "app_laptoprepairmanager_refresh_part_table",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L362",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_refresh_part_table",
+      "target": "ui_part_view_render_part_rows"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L360",
+      "weight": 1.0,
+      "source": "app_rationale_360",
+      "target": "app_laptoprepairmanager_refresh_part_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L367",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_search_parts",
+      "target": "ui_part_view_render_part_rows"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L371",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_add_part",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L381",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_edit_part",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog"
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L378",
+      "weight": 1.0,
+      "source": "app_rationale_378",
+      "target": "app_laptoprepairmanager_edit_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L414",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_delete_selected_parts",
+      "target": "services_notification_service_show_error"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L419",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_delete_selected_parts",
+      "target": "services_notification_service_show_info"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L402",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_delete_selected_parts",
+      "target": "services_notification_service_show_question"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "app.py",
+      "source_location": "L399",
+      "weight": 1.0,
+      "source": "app_laptoprepairmanager_delete_selected_parts",
+      "target": "services_notification_service_show_warning"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L343",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_laptoprepairmanager_add_service",
+      "target": "app_laptoprepairmanager_refresh_service_table"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "app.py",
+      "source_location": "L385",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "app_laptoprepairmanager_delete_selected_services",
+      "target": "app_laptoprepairmanager_refresh_service_table"
     },
     {
       "relation": "calls",
@@ -11694,9 +12785,9 @@
       "source_file": "app.py",
       "source_location": "L353",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "app_laptoprepairmanager_edit_service",
-      "target": "app_laptoprepairmanager_refresh_service_table",
-      "confidence_score": 1.0
+      "target": "app_laptoprepairmanager_refresh_service_table"
     },
     {
       "relation": "calls",
@@ -11713,9 +12804,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L328",
+      "source_location": "L422",
       "weight": 1.0,
-      "source": "app_rationale_328",
+      "source": "app_rationale_422",
       "target": "app_laptoprepairmanager_refresh_service_table",
       "confidence_score": 1.0
     },
@@ -11756,9 +12847,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L346",
+      "source_location": "L440",
       "weight": 1.0,
-      "source": "app_rationale_346",
+      "source": "app_rationale_440",
       "target": "app_laptoprepairmanager_edit_service",
       "confidence_score": 1.0
     },
@@ -11854,9 +12945,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L390",
+      "source_location": "L484",
       "weight": 1.0,
-      "source": "app_rationale_390",
+      "source": "app_rationale_484",
       "target": "app_laptoprepairmanager_refresh_customer_table",
       "confidence_score": 1.0
     },
@@ -11875,9 +12966,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L395",
+      "source_location": "L489",
       "weight": 1.0,
-      "source": "app_rationale_395",
+      "source": "app_rationale_489",
       "target": "app_laptoprepairmanager_add_customer",
       "confidence_score": 1.0
     },
@@ -11896,9 +12987,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L403",
+      "source_location": "L497",
       "weight": 1.0,
-      "source": "app_rationale_403",
+      "source": "app_rationale_497",
       "target": "app_laptoprepairmanager_edit_customer",
       "confidence_score": 1.0
     },
@@ -11917,9 +13008,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L413",
+      "source_location": "L507",
       "weight": 1.0,
-      "source": "app_rationale_413",
+      "source": "app_rationale_507",
       "target": "app_laptoprepairmanager_has_related_repairs",
       "confidence_score": 1.0
     },
@@ -11971,9 +13062,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L424",
+      "source_location": "L518",
       "weight": 1.0,
-      "source": "app_rationale_424",
+      "source": "app_rationale_518",
       "target": "app_laptoprepairmanager_delete_selected_customers",
       "confidence_score": 1.0
     },
@@ -11992,9 +13083,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L546",
+      "source_location": "L640",
       "weight": 1.0,
-      "source": "app_rationale_546",
+      "source": "app_rationale_640",
       "target": "app_laptoprepairmanager_load_data",
       "confidence_score": 1.0
     },
@@ -12024,9 +13115,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L554",
+      "source_location": "L648",
       "weight": 1.0,
-      "source": "app_rationale_554",
+      "source": "app_rationale_648",
       "target": "app_laptoprepairmanager_save_data",
       "confidence_score": 1.0
     },
@@ -12547,6 +13638,16 @@
     {
       "relation": "inherits",
       "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_model_db.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "core_storage_part_model_db_partdb",
+      "target": "base",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
       "source_file": "core/storage/repair_model_db.py",
       "source_location": "L6",
       "weight": 1.0,
@@ -12560,9 +13661,9 @@
       "source_file": "core/storage/service_model_db.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_model_db_servicedb",
-      "target": "base",
-      "confidence_score": 1.0
+      "target": "base"
     },
     {
       "relation": "contains",
@@ -12983,6 +14084,28 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_model_db.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "core_storage_part_model_db",
+      "target": "core_storage_database",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "core_storage_part_repository",
+      "target": "core_storage_database",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "core/storage/repair_model_db.py",
       "source_location": "L3",
       "weight": 1.0,
@@ -12997,9 +14120,9 @@
       "source_file": "core/storage/service_model_db.py",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_model_db",
-      "target": "core_storage_database",
-      "confidence_score": 1.0
+      "target": "core_storage_database"
     },
     {
       "relation": "imports_from",
@@ -13008,9 +14131,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L5",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository",
-      "target": "core_storage_database",
-      "confidence_score": 1.0
+      "target": "core_storage_database"
     },
     {
       "relation": "imports_from",
@@ -13175,6 +14298,28 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "core/storage/init_db.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "core_storage_init_db",
+      "target": "core_storage_part_model_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/init_db.py",
+      "source_location": "L5",
+      "weight": 1.0,
+      "source": "core_storage_init_db",
+      "target": "core_storage_part_model_db_partdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/init_db.py",
       "source_location": "L3",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13199,9 +14344,9 @@
       "source_file": "core/storage/init_db.py",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_init_db",
-      "target": "core_storage_service_model_db",
-      "confidence_score": 1.0
+      "target": "core_storage_service_model_db"
     },
     {
       "relation": "imports",
@@ -13210,9 +14355,9 @@
       "source_file": "core/storage/init_db.py",
       "source_location": "L4",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_init_db",
-      "target": "core_storage_service_model_db_servicedb",
-      "confidence_score": 1.0
+      "target": "core_storage_service_model_db_servicedb"
     },
     {
       "relation": "imports_from",
@@ -13469,6 +14614,302 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_model_db.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "core_storage_part_model_db",
+      "target": "core_storage_part_model_db_partdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "core_storage_part_repository",
+      "target": "core_storage_part_model_db",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "core_storage_part_repository",
+      "target": "core_storage_part_model_db_partdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L6",
+      "weight": 0.8,
+      "source": "core_storage_part_repository_partrepository",
+      "target": "core_storage_part_model_db_partdb",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository_create",
+      "target": "core_storage_part_model_db_partdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository_to_dict",
+      "target": "core_storage_part_model_db_partdb",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "core_storage_part_repository",
+      "target": "core_storage_part_repository_partrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "services_part_service",
+      "target": "core_storage_part_repository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository",
+      "target": "core_storage_part_repository_partrepository_create",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L55",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository",
+      "target": "core_storage_part_repository_partrepository_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L101",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository",
+      "target": "core_storage_part_repository_partrepository_generate_part_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L70",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository",
+      "target": "core_storage_part_repository_partrepository_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L78",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository",
+      "target": "core_storage_part_repository_partrepository_list_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L89",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository",
+      "target": "core_storage_part_repository_partrepository_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L114",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository",
+      "target": "core_storage_part_repository_partrepository_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository",
+      "target": "core_storage_part_repository_partrepository_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L3",
+      "weight": 1.0,
+      "source": "services_part_service",
+      "target": "core_storage_part_repository_partrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "services/part_service.py",
+      "source_location": "L3",
+      "weight": 0.8,
+      "source": "services_part_service_partservice",
+      "target": "core_storage_part_repository_partrepository",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "services/part_service.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "services_part_service_partservice_init",
+      "target": "core_storage_part_repository_partrepository"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository_create",
+      "target": "core_storage_part_repository_partrepository_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository_create",
+      "target": "core_storage_part_repository_partrepository_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository_update",
+      "target": "core_storage_part_repository_partrepository_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L105",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository_generate_part_code",
+      "target": "core_storage_part_repository_partrepository_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L74",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository_get",
+      "target": "core_storage_part_repository_partrepository_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L102",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository_generate_part_code",
+      "target": "core_storage_part_repository_partrepository_list_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L85",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository_list_all",
+      "target": "core_storage_part_repository_partrepository_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository_generate_part_code",
+      "target": "core_storage_part_repository_partrepository_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "core/storage/part_repository.py",
+      "source_location": "L97",
+      "weight": 1.0,
+      "source": "core_storage_part_repository_partrepository_search",
+      "target": "core_storage_part_repository_partrepository_to_dict",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "core/storage/repair_model_db.py",
       "source_location": "L6",
       "weight": 1.0,
@@ -13585,9 +15026,9 @@
       "source_file": "core/storage/service_model_db.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_model_db",
-      "target": "core_storage_service_model_db_servicedb",
-      "confidence_score": 1.0
+      "target": "core_storage_service_model_db_servicedb"
     },
     {
       "relation": "imports_from",
@@ -13596,9 +15037,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository",
-      "target": "core_storage_service_model_db",
-      "confidence_score": 1.0
+      "target": "core_storage_service_model_db"
     },
     {
       "relation": "imports",
@@ -13607,9 +15048,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository",
-      "target": "core_storage_service_model_db_servicedb",
-      "confidence_score": 1.0
+      "target": "core_storage_service_model_db_servicedb"
     },
     {
       "relation": "uses",
@@ -13617,9 +15058,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L6",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "core_storage_service_repository_servicerepository",
-      "target": "core_storage_service_model_db_servicedb",
-      "confidence_score": 0.5
+      "target": "core_storage_service_model_db_servicedb"
     },
     {
       "relation": "calls",
@@ -13628,9 +15069,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository_create",
-      "target": "core_storage_service_model_db_servicedb",
-      "confidence_score": 1.0
+      "target": "core_storage_service_model_db_servicedb"
     },
     {
       "relation": "references",
@@ -13639,9 +15080,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository_to_dict",
-      "target": "core_storage_service_model_db_servicedb",
-      "confidence_score": 1.0
+      "target": "core_storage_service_model_db_servicedb"
     },
     {
       "relation": "contains",
@@ -13649,9 +15090,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository",
-      "target": "core_storage_service_repository_servicerepository",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository"
     },
     {
       "relation": "imports_from",
@@ -13660,9 +15101,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service",
-      "target": "core_storage_service_repository",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository"
     },
     {
       "relation": "method",
@@ -13670,9 +15111,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository",
-      "target": "core_storage_service_repository_servicerepository_create",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_create"
     },
     {
       "relation": "method",
@@ -13680,9 +15121,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository",
-      "target": "core_storage_service_repository_servicerepository_delete",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_delete"
     },
     {
       "relation": "method",
@@ -13690,9 +15131,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository",
-      "target": "core_storage_service_repository_servicerepository_generate_service_code",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_generate_service_code"
     },
     {
       "relation": "method",
@@ -13700,9 +15141,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository",
-      "target": "core_storage_service_repository_servicerepository_get",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_get"
     },
     {
       "relation": "method",
@@ -13710,9 +15151,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository",
-      "target": "core_storage_service_repository_servicerepository_list_all",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_list_all"
     },
     {
       "relation": "method",
@@ -13720,9 +15161,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L87",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository",
-      "target": "core_storage_service_repository_servicerepository_search",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_search"
     },
     {
       "relation": "method",
@@ -13730,9 +15171,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L112",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository",
-      "target": "core_storage_service_repository_servicerepository_to_dict",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_to_dict"
     },
     {
       "relation": "method",
@@ -13740,9 +15181,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L33",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository",
-      "target": "core_storage_service_repository_servicerepository_update",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_update"
     },
     {
       "relation": "imports",
@@ -13751,9 +15192,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L3",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service",
-      "target": "core_storage_service_repository_servicerepository",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository"
     },
     {
       "relation": "uses",
@@ -13761,9 +15202,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L3",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "services_service_service_serviceservice",
-      "target": "core_storage_service_repository_servicerepository",
-      "confidence_score": 0.5
+      "target": "core_storage_service_repository_servicerepository"
     },
     {
       "relation": "calls",
@@ -13783,9 +15224,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository_create",
-      "target": "core_storage_service_repository_servicerepository_get",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_get"
     },
     {
       "relation": "calls",
@@ -13794,9 +15235,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L26",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository_create",
-      "target": "core_storage_service_repository_servicerepository_to_dict",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_to_dict"
     },
     {
       "relation": "calls",
@@ -13805,9 +15246,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L46",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository_update",
-      "target": "core_storage_service_repository_servicerepository_to_dict",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_to_dict"
     },
     {
       "relation": "calls",
@@ -13816,9 +15257,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L103",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository_generate_service_code",
-      "target": "core_storage_service_repository_servicerepository_get",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_get"
     },
     {
       "relation": "calls",
@@ -13827,9 +15268,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L72",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository_get",
-      "target": "core_storage_service_repository_servicerepository_to_dict",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_to_dict"
     },
     {
       "relation": "calls",
@@ -13838,9 +15279,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository_generate_service_code",
-      "target": "core_storage_service_repository_servicerepository_list_all",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_list_all"
     },
     {
       "relation": "calls",
@@ -13849,9 +15290,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository_list_all",
-      "target": "core_storage_service_repository_servicerepository_to_dict",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_to_dict"
     },
     {
       "relation": "calls",
@@ -13860,9 +15301,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L104",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository_generate_service_code",
-      "target": "core_storage_service_repository_servicerepository_search",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_search"
     },
     {
       "relation": "calls",
@@ -13871,9 +15312,9 @@
       "source_file": "core/storage/service_repository.py",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "core_storage_service_repository_servicerepository_search",
-      "target": "core_storage_service_repository_servicerepository_to_dict",
-      "confidence_score": 1.0
+      "target": "core_storage_service_repository_servicerepository_to_dict"
     },
     {
       "relation": "contains",
@@ -14411,6 +15852,17 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L50",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog_init_ui",
+      "target": "qlineedit"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L86",
       "weight": 1.0,
@@ -14448,6 +15900,17 @@
       "source_location": "L164",
       "weight": 1.0,
       "source": "ui_main_window_build_toolbar",
+      "target": "qlineedit"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "ui/part_view.py",
+      "source_location": "L37",
+      "weight": 1.0,
+      "source": "ui_part_view_build_part_toolbar",
       "target": "qlineedit"
     },
     {
@@ -16105,6 +17568,17 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog",
+      "target": "services_notification_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L21",
       "weight": 1.0,
@@ -16119,9 +17593,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog",
-      "target": "services_notification_service",
-      "confidence_score": 1.0
+      "target": "services_notification_service"
     },
     {
       "relation": "imports_from",
@@ -16193,6 +17667,28 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog",
+      "target": "services_notification_service_show_warning",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog_save",
+      "target": "services_notification_service_show_warning"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L21",
       "weight": 1.0,
@@ -16229,9 +17725,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog",
-      "target": "services_notification_service_show_warning",
-      "confidence_score": 1.0
+      "target": "services_notification_service_show_warning"
     },
     {
       "relation": "calls",
@@ -16303,12 +17799,45 @@
       "relation": "imports",
       "context": "import",
       "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog",
+      "target": "services_notification_service_show_error",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog_init",
+      "target": "services_notification_service_show_error"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L140",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog_save",
+      "target": "services_notification_service_show_error"
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog",
-      "target": "services_notification_service_show_error",
-      "confidence_score": 1.0
+      "target": "services_notification_service_show_error"
     },
     {
       "relation": "calls",
@@ -16401,6 +17930,304 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L6",
+      "weight": 1.0,
+      "source": "services_part_service",
+      "target": "services_part_service_partservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog",
+      "target": "services_part_service",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L28",
+      "weight": 1.0,
+      "source": "services_part_service_partservice",
+      "target": "services_part_service_partservice_create_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L39",
+      "weight": 1.0,
+      "source": "services_part_service_partservice",
+      "target": "services_part_service_partservice_delete_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L61",
+      "weight": 1.0,
+      "source": "services_part_service_partservice",
+      "target": "services_part_service_partservice_find_by_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L57",
+      "weight": 1.0,
+      "source": "services_part_service_partservice",
+      "target": "services_part_service_partservice_get_active_for_invoice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L43",
+      "weight": 1.0,
+      "source": "services_part_service_partservice",
+      "target": "services_part_service_partservice_get_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L9",
+      "weight": 1.0,
+      "source": "services_part_service_partservice",
+      "target": "services_part_service_partservice_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "services_part_service_partservice",
+      "target": "services_part_service_partservice_list_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L51",
+      "weight": 1.0,
+      "source": "services_part_service_partservice",
+      "target": "services_part_service_partservice_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L34",
+      "weight": 1.0,
+      "source": "services_part_service_partservice",
+      "target": "services_part_service_partservice_update_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L12",
+      "weight": 1.0,
+      "source": "services_part_service_partservice",
+      "target": "services_part_service_partservice_validate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "services_part_service_rationale_7",
+      "target": "services_part_service_partservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog",
+      "target": "services_part_service_partservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L7",
+      "weight": 0.8,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "target": "services_part_service_partservice",
+      "confidence_score": 0.5
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog_init",
+      "target": "services_part_service_partservice"
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L30",
+      "weight": 1.0,
+      "source": "services_part_service_partservice_create_part",
+      "target": "services_part_service_partservice_validate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "services_part_service_partservice_update_part",
+      "target": "services_part_service_partservice_validate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L29",
+      "weight": 1.0,
+      "source": "services_part_service_rationale_29",
+      "target": "services_part_service_partservice_create_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "services_part_service_rationale_35",
+      "target": "services_part_service_partservice_update_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L40",
+      "weight": 1.0,
+      "source": "services_part_service_rationale_40",
+      "target": "services_part_service_partservice_delete_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L44",
+      "weight": 1.0,
+      "source": "services_part_service_rationale_44",
+      "target": "services_part_service_partservice_get_part",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L59",
+      "weight": 1.0,
+      "source": "services_part_service_partservice_get_active_for_invoice",
+      "target": "services_part_service_partservice_list_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L54",
+      "weight": 1.0,
+      "source": "services_part_service_partservice_search",
+      "target": "services_part_service_partservice_list_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L48",
+      "weight": 1.0,
+      "source": "services_part_service_rationale_48",
+      "target": "services_part_service_partservice_list_all",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L63",
+      "weight": 1.0,
+      "source": "services_part_service_partservice_find_by_code",
+      "target": "services_part_service_partservice_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L52",
+      "weight": 1.0,
+      "source": "services_part_service_rationale_52",
+      "target": "services_part_service_partservice_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "services_part_service_rationale_58",
+      "target": "services_part_service_partservice_get_active_for_invoice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "services/part_service.py",
+      "source_location": "L62",
+      "weight": 1.0,
+      "source": "services_part_service_rationale_62",
+      "target": "services_part_service_partservice_find_by_code",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "services/repair_manager_service.py",
       "source_location": "L6",
       "weight": 1.0,
@@ -16484,9 +18311,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L6",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service",
-      "target": "services_service_service_serviceservice",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice"
     },
     {
       "relation": "imports_from",
@@ -16495,9 +18322,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog",
-      "target": "services_service_service",
-      "confidence_score": 1.0
+      "target": "services_service_service"
     },
     {
       "relation": "rationale_for",
@@ -16505,9 +18332,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_rationale_7",
-      "target": "services_service_service_serviceservice",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice"
     },
     {
       "relation": "method",
@@ -16515,9 +18342,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L12",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_serviceservice",
-      "target": "services_service_service_serviceservice_create_service",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_create_service"
     },
     {
       "relation": "method",
@@ -16525,9 +18352,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_serviceservice",
-      "target": "services_service_service_serviceservice_delete_service",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_delete_service"
     },
     {
       "relation": "method",
@@ -16535,9 +18362,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L53",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_serviceservice",
-      "target": "services_service_service_serviceservice_get_service",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_get_service"
     },
     {
       "relation": "method",
@@ -16545,9 +18372,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L9",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_serviceservice",
-      "target": "services_service_service_serviceservice_init",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_init"
     },
     {
       "relation": "method",
@@ -16555,9 +18382,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L57",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_serviceservice",
-      "target": "services_service_service_serviceservice_list_all",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_list_all"
     },
     {
       "relation": "method",
@@ -16565,9 +18392,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L61",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_serviceservice",
-      "target": "services_service_service_serviceservice_search",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_search"
     },
     {
       "relation": "method",
@@ -16575,9 +18402,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L31",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_serviceservice",
-      "target": "services_service_service_serviceservice_update_service",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_update_service"
     },
     {
       "relation": "imports",
@@ -16586,9 +18413,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog",
-      "target": "services_service_service_serviceservice",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice"
     },
     {
       "relation": "uses",
@@ -16596,9 +18423,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L7",
       "weight": 0.8,
+      "confidence_score": 0.5,
       "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "target": "services_service_service_serviceservice",
-      "confidence_score": 0.5
+      "target": "services_service_service_serviceservice"
     },
     {
       "relation": "calls",
@@ -16617,9 +18444,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_rationale_13",
-      "target": "services_service_service_serviceservice_create_service",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_create_service"
     },
     {
       "relation": "rationale_for",
@@ -16627,9 +18454,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L32",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_rationale_32",
-      "target": "services_service_service_serviceservice_update_service",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_update_service"
     },
     {
       "relation": "rationale_for",
@@ -16637,9 +18464,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L50",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_rationale_50",
-      "target": "services_service_service_serviceservice_delete_service",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_delete_service"
     },
     {
       "relation": "rationale_for",
@@ -16647,9 +18474,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_rationale_54",
-      "target": "services_service_service_serviceservice_get_service",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_get_service"
     },
     {
       "relation": "rationale_for",
@@ -16657,9 +18484,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L58",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_rationale_58",
-      "target": "services_service_service_serviceservice_list_all",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_list_all"
     },
     {
       "relation": "calls",
@@ -16668,9 +18495,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L64",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_serviceservice_search",
-      "target": "services_service_service_serviceservice_list_all",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_list_all"
     },
     {
       "relation": "rationale_for",
@@ -16678,9 +18505,9 @@
       "source_file": "services/service_service.py",
       "source_location": "L62",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_service_service_rationale_62",
-      "target": "services_service_service_serviceservice_search",
-      "confidence_score": 1.0
+      "target": "services_service_service_serviceservice_search"
     },
     {
       "relation": "contains",
@@ -17936,6 +19763,109 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L10",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L113",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog_get_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L13",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog_init",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L38",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog_init_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L103",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog_load_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L123",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L11",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_rationale_11",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L35",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog_init",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog_init_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L36",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog_init",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog_load_fields",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/dialogs/part_edit_dialog.py",
+      "source_location": "L124",
+      "weight": 1.0,
+      "source": "ui_dialogs_part_edit_dialog_parteditdialog_save",
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog_get_data",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L28",
       "weight": 1.0,
@@ -18312,9 +20242,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L10",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog"
     },
     {
       "relation": "rationale_for",
@@ -18322,9 +20252,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L11",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog_rationale_11",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog"
     },
     {
       "relation": "method",
@@ -18332,9 +20262,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L99",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_get_data",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_get_data"
     },
     {
       "relation": "method",
@@ -18342,9 +20272,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L13",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_init",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_init"
     },
     {
       "relation": "method",
@@ -18352,9 +20282,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_init_ui",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_init_ui"
     },
     {
       "relation": "method",
@@ -18362,9 +20292,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_load_fields",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_load_fields"
     },
     {
       "relation": "method",
@@ -18372,9 +20302,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog_serviceeditdialog",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_save",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_save"
     },
     {
       "relation": "calls",
@@ -18383,9 +20313,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L35",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog_serviceeditdialog_init",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_init_ui",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_init_ui"
     },
     {
       "relation": "calls",
@@ -18394,9 +20324,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L36",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog_serviceeditdialog_init",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_load_fields",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_load_fields"
     },
     {
       "relation": "calls",
@@ -18405,9 +20335,9 @@
       "source_file": "ui/dialogs/service_edit_dialog.py",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_dialogs_service_edit_dialog_serviceeditdialog_save",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_get_data",
-      "confidence_score": 1.0
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog_get_data"
     },
     {
       "relation": "contains",
@@ -18667,11 +20597,44 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "ui/main_window.py",
-      "source_location": "L14",
+      "source_location": "L15",
       "weight": 1.0,
       "source": "ui_main_window",
-      "target": "ui_service_view",
+      "target": "ui_part_view",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/main_window.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "ui_main_window",
+      "target": "ui_part_view_build_part_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/main_window.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "ui_main_window",
+      "target": "ui_part_view_build_part_toolbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "imports_from",
+      "context": "import",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/main_window.py",
+      "source_location": "L14",
+      "weight": 1.0,
+      "confidence_score": 1.0,
+      "source": "ui_main_window",
+      "target": "ui_service_view"
     },
     {
       "relation": "imports",
@@ -18680,9 +20643,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window",
-      "target": "ui_service_view_build_service_table",
-      "confidence_score": 1.0
+      "target": "ui_service_view_build_service_table"
     },
     {
       "relation": "imports",
@@ -18691,9 +20654,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L14",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window",
-      "target": "ui_service_view_build_service_toolbar",
-      "confidence_score": 1.0
+      "target": "ui_service_view_build_service_toolbar"
     },
     {
       "relation": "imports_from",
@@ -18853,10 +20816,32 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/main_window.py",
-      "source_location": "L351",
+      "source_location": "L352",
       "weight": 1.0,
-      "source": "ui_main_window_rationale_351",
+      "source": "ui_main_window_rationale_352",
       "target": "ui_main_window_build_nav_bar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/main_window.py",
+      "source_location": "L458",
+      "weight": 1.0,
+      "source": "ui_main_window_build_ui",
+      "target": "ui_part_view_build_part_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/main_window.py",
+      "source_location": "L456",
+      "weight": 1.0,
+      "source": "ui_main_window_build_ui",
+      "target": "ui_part_view_build_part_toolbar",
       "confidence_score": 1.0
     },
     {
@@ -18866,9 +20851,9 @@
       "source_file": "ui/main_window.py",
       "source_location": "L439",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window_build_ui",
-      "target": "ui_service_view_build_service_table",
-      "confidence_score": 1.0
+      "target": "ui_service_view_build_service_table"
     },
     {
       "relation": "calls",
@@ -18877,8 +20862,209 @@
       "source_file": "ui/main_window.py",
       "source_location": "L437",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_main_window_build_ui",
-      "target": "ui_service_view_build_service_toolbar",
+      "target": "ui_service_view_build_service_toolbar"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L47",
+      "weight": 1.0,
+      "source": "ui_part_view",
+      "target": "ui_part_view_build_part_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L15",
+      "weight": 1.0,
+      "source": "ui_part_view",
+      "target": "ui_part_view_build_part_toolbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "ui_part_view",
+      "target": "ui_part_view_on_header_clicked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "ui_part_view",
+      "target": "ui_part_view_on_item_changed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "ui_part_view",
+      "target": "ui_part_view_render_part_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L158",
+      "weight": 1.0,
+      "source": "ui_part_view",
+      "target": "ui_part_view_sync_header_state",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L16",
+      "weight": 1.0,
+      "source": "ui_part_view_rationale_16",
+      "target": "ui_part_view_build_part_toolbar",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L75",
+      "weight": 1.0,
+      "source": "ui_part_view_build_part_table",
+      "target": "ui_part_view_on_header_clicked",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "ui_part_view_build_part_table",
+      "target": "ui_part_view_on_item_changed",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L49",
+      "weight": 1.0,
+      "source": "ui_part_view_build_part_table",
+      "target": "ui_part_view_py_qtablewidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L69",
+      "weight": 1.0,
+      "source": "ui_part_view_build_part_table",
+      "target": "ui_part_view_py_qtablewidgetitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L84",
+      "weight": 1.0,
+      "source": "ui_part_view_rationale_84",
+      "target": "ui_part_view_render_part_rows",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L82",
+      "weight": 1.0,
+      "source": "ui_part_view_render_part_rows",
+      "target": "ui_part_view_py_qtablewidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L96",
+      "weight": 1.0,
+      "source": "ui_part_view_render_part_rows",
+      "target": "ui_part_view_py_qtablewidgetitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L136",
+      "weight": 1.0,
+      "source": "ui_part_view_on_header_clicked",
+      "target": "ui_part_view_py_qtablewidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "ui_part_view_on_item_changed",
+      "target": "ui_part_view_py_qtablewidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L158",
+      "weight": 1.0,
+      "source": "ui_part_view_sync_header_state",
+      "target": "ui_part_view_py_qtablewidget",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "context": "parameter_type",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L152",
+      "weight": 1.0,
+      "source": "ui_part_view_on_item_changed",
+      "target": "ui_part_view_py_qtablewidgetitem",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "context": "call",
+      "confidence": "EXTRACTED",
+      "source_file": "ui/part_view.py",
+      "source_location": "L155",
+      "weight": 1.0,
+      "source": "ui_part_view_on_item_changed",
+      "target": "ui_part_view_sync_header_state",
       "confidence_score": 1.0
     },
     {
@@ -18887,9 +21073,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L47",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view",
-      "target": "ui_service_view_build_service_table",
-      "confidence_score": 1.0
+      "target": "ui_service_view_build_service_table"
     },
     {
       "relation": "contains",
@@ -18897,9 +21083,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L15",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view",
-      "target": "ui_service_view_build_service_toolbar",
-      "confidence_score": 1.0
+      "target": "ui_service_view_build_service_toolbar"
     },
     {
       "relation": "contains",
@@ -18907,9 +21093,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L131",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view",
-      "target": "ui_service_view_on_header_clicked",
-      "confidence_score": 1.0
+      "target": "ui_service_view_on_header_clicked"
     },
     {
       "relation": "contains",
@@ -18917,9 +21103,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view",
-      "target": "ui_service_view_on_item_changed",
-      "confidence_score": 1.0
+      "target": "ui_service_view_on_item_changed"
     },
     {
       "relation": "contains",
@@ -18927,9 +21113,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view",
-      "target": "ui_service_view_render_service_rows",
-      "confidence_score": 1.0
+      "target": "ui_service_view_render_service_rows"
     },
     {
       "relation": "contains",
@@ -18937,9 +21123,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L153",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view",
-      "target": "ui_service_view_sync_header_state",
-      "confidence_score": 1.0
+      "target": "ui_service_view_sync_header_state"
     },
     {
       "relation": "rationale_for",
@@ -18947,9 +21133,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L16",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_rationale_16",
-      "target": "ui_service_view_build_service_toolbar",
-      "confidence_score": 1.0
+      "target": "ui_service_view_build_service_toolbar"
     },
     {
       "relation": "calls",
@@ -18958,9 +21144,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L74",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_build_service_table",
-      "target": "ui_service_view_on_header_clicked",
-      "confidence_score": 1.0
+      "target": "ui_service_view_on_header_clicked"
     },
     {
       "relation": "calls",
@@ -18969,9 +21155,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L76",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_build_service_table",
-      "target": "ui_service_view_on_item_changed",
-      "confidence_score": 1.0
+      "target": "ui_service_view_on_item_changed"
     },
     {
       "relation": "calls",
@@ -18980,9 +21166,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L49",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_build_service_table",
-      "target": "ui_service_view_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_service_view_py_qtablewidget"
     },
     {
       "relation": "calls",
@@ -18991,9 +21177,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L68",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_build_service_table",
-      "target": "ui_service_view_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_service_view_py_qtablewidgetitem"
     },
     {
       "relation": "rationale_for",
@@ -19001,9 +21187,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L83",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_rationale_83",
-      "target": "ui_service_view_render_service_rows",
-      "confidence_score": 1.0
+      "target": "ui_service_view_render_service_rows"
     },
     {
       "relation": "references",
@@ -19012,9 +21198,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L81",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_render_service_rows",
-      "target": "ui_service_view_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_service_view_py_qtablewidget"
     },
     {
       "relation": "calls",
@@ -19023,9 +21209,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L95",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_render_service_rows",
-      "target": "ui_service_view_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_service_view_py_qtablewidgetitem"
     },
     {
       "relation": "references",
@@ -19034,9 +21220,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L131",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_on_header_clicked",
-      "target": "ui_service_view_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_service_view_py_qtablewidget"
     },
     {
       "relation": "references",
@@ -19045,9 +21231,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_on_item_changed",
-      "target": "ui_service_view_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_service_view_py_qtablewidget"
     },
     {
       "relation": "references",
@@ -19056,9 +21242,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L153",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_sync_header_state",
-      "target": "ui_service_view_py_qtablewidget",
-      "confidence_score": 1.0
+      "target": "ui_service_view_py_qtablewidget"
     },
     {
       "relation": "references",
@@ -19067,9 +21253,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L147",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_on_item_changed",
-      "target": "ui_service_view_py_qtablewidgetitem",
-      "confidence_score": 1.0
+      "target": "ui_service_view_py_qtablewidgetitem"
     },
     {
       "relation": "calls",
@@ -19078,9 +21264,9 @@
       "source_file": "ui/service_view.py",
       "source_location": "L150",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "ui_service_view_on_item_changed",
-      "target": "ui_service_view_sync_header_state",
-      "confidence_score": 1.0
+      "target": "ui_service_view_sync_header_state"
     },
     {
       "relation": "contains",
@@ -22236,6 +24422,146 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L1",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1",
+      "target": "parts_catalog_phase1_parts_catalog_phase_1",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L7",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_parts_catalog_phase_1",
+      "target": "parts_catalog_phase1_1_overview",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L19",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_parts_catalog_phase_1",
+      "target": "parts_catalog_phase1_2_database_part_table",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L42",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_parts_catalog_phase_1",
+      "target": "parts_catalog_phase1_3_repository_partrepository",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L58",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_parts_catalog_phase_1",
+      "target": "parts_catalog_phase1_4_service_layer_partservice",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L77",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_parts_catalog_phase_1",
+      "target": "parts_catalog_phase1_5_management_ui",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L115",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_parts_catalog_phase_1",
+      "target": "parts_catalog_phase1_6_verification",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L127",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_parts_catalog_phase_1",
+      "target": "parts_catalog_phase1_7_planned_future_integration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L146",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_parts_catalog_phase_1",
+      "target": "parts_catalog_phase1_8_helper_methods_for_future_invoice_integration",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L157",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_parts_catalog_phase_1",
+      "target": "parts_catalog_phase1_9_files_created_modified",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L99",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_5_management_ui",
+      "target": "parts_catalog_phase1_add_edit_dialog_ui_dialogs_part_edit_dialog_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L106",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_5_management_ui",
+      "target": "parts_catalog_phase1_app_integration_app_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L79",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_5_management_ui",
+      "target": "parts_catalog_phase1_navigation",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "PARTS_CATALOG_PHASE1.md",
+      "source_location": "L87",
+      "weight": 1.0,
+      "source": "parts_catalog_phase1_5_management_ui",
+      "target": "parts_catalog_phase1_parts_view_ui_part_view_py",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "PHONE_NORMALIZATION_AUDIT.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -22859,9 +25185,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L1",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1",
-      "target": "services_catalog_phase1_services_catalog_phase_1",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_services_catalog_phase_1"
     },
     {
       "relation": "contains",
@@ -22869,9 +25195,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L7",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_services_catalog_phase_1",
-      "target": "services_catalog_phase1_1_overview",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_1_overview"
     },
     {
       "relation": "contains",
@@ -22879,9 +25205,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L17",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_services_catalog_phase_1",
-      "target": "services_catalog_phase1_2_database_service_table",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_2_database_service_table"
     },
     {
       "relation": "contains",
@@ -22889,9 +25215,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L38",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_services_catalog_phase_1",
-      "target": "services_catalog_phase1_3_repository_servicerepository",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_3_repository_servicerepository"
     },
     {
       "relation": "contains",
@@ -22899,9 +25225,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L54",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_services_catalog_phase_1",
-      "target": "services_catalog_phase1_4_service_layer_serviceservice",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_4_service_layer_serviceservice"
     },
     {
       "relation": "contains",
@@ -22909,9 +25235,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L71",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_services_catalog_phase_1",
-      "target": "services_catalog_phase1_5_management_ui",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_5_management_ui"
     },
     {
       "relation": "contains",
@@ -22919,9 +25245,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_services_catalog_phase_1",
-      "target": "services_catalog_phase1_6_verification",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_6_verification"
     },
     {
       "relation": "contains",
@@ -22929,9 +25255,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L119",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_services_catalog_phase_1",
-      "target": "services_catalog_phase1_7_planned_future_integration",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_7_planned_future_integration"
     },
     {
       "relation": "contains",
@@ -22939,9 +25265,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L136",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_services_catalog_phase_1",
-      "target": "services_catalog_phase1_8_files_created_modified",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_8_files_created_modified"
     },
     {
       "relation": "contains",
@@ -22949,9 +25275,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L91",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_5_management_ui",
-      "target": "services_catalog_phase1_add_edit_dialog_ui_dialogs_service_edit_dialog_py",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_add_edit_dialog_ui_dialogs_service_edit_dialog_py"
     },
     {
       "relation": "contains",
@@ -22959,9 +25285,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L98",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_5_management_ui",
-      "target": "services_catalog_phase1_app_integration_app_py",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_app_integration_app_py"
     },
     {
       "relation": "contains",
@@ -22969,9 +25295,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L73",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_5_management_ui",
-      "target": "services_catalog_phase1_navigation",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_navigation"
     },
     {
       "relation": "contains",
@@ -22979,9 +25305,9 @@
       "source_file": "SERVICES_CATALOG_PHASE1.md",
       "source_location": "L80",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_catalog_phase1_5_management_ui",
-      "target": "services_catalog_phase1_services_view_ui_service_view_py",
-      "confidence_score": 1.0
+      "target": "services_catalog_phase1_services_view_ui_service_view_py"
     },
     {
       "relation": "contains",
@@ -24287,5 +26613,5 @@
       "source_file": "SQLITE_MIGRATION_AUDIT.md"
     }
   ],
-  "built_at_commit": "672e6f3fe1d1d05fce1332b987c32925c0eac7f3"
+  "built_at_commit": "8e3d2c5a9c3dc8732f2ef59d7f04e352e7f8e257"
 }

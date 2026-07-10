@@ -40,9 +40,9 @@
     "semantic_hash": "8c409d06c046f66ddede5eb5f214f05d"
   },
   "core/models.py": {
-    "mtime": 1781861032.508285,
-    "ast_hash": "50c79e7005ebeaab66df84bc31b87f6c",
-    "semantic_hash": "50c79e7005ebeaab66df84bc31b87f6c"
+    "mtime": 1783710980.5773468,
+    "ast_hash": "716276588ffd09dc203338c0bad1c360",
+    "semantic_hash": ""
   },
   "core/status.py": {
     "mtime": 1781719763.198223,
@@ -75,8 +75,8 @@
     "semantic_hash": "6c84c5be9303a224eba8d6f8b2719eab"
   },
   "core/storage/init_db.py": {
-    "mtime": 1783706293.2297926,
-    "ast_hash": "809f416acf90b7e5bd8e3a88e8d35c62",
+    "mtime": 1783710906.0131202,
+    "ast_hash": "4e5891ee3c45f240f821c4b157462828",
     "semantic_hash": ""
   },
   "core/storage/migrate_json_to_sqlite.py": {
@@ -85,9 +85,9 @@
     "semantic_hash": "970a9a50deee8fade1a09ed4ccefb181"
   },
   "core/storage/repair_model_db.py": {
-    "mtime": 1781880077.3298295,
-    "ast_hash": "a6d9c9b8bf29fec8c54a7dcc126a8f63",
-    "semantic_hash": "a6d9c9b8bf29fec8c54a7dcc126a8f63"
+    "mtime": 1783710861.4943144,
+    "ast_hash": "c13c2f964018c4878c266ab227520a0b",
+    "semantic_hash": ""
   },
   "core/storage/repairs_storage.py": {
     "mtime": 1781283052.524129,
@@ -95,9 +95,9 @@
     "semantic_hash": "1ba38f313ba8d0ac05746af65584560b"
   },
   "core/storage/sqlite_storage.py": {
-    "mtime": 1781880619.832059,
-    "ast_hash": "bf5d7db5e93c1a4c05136e5fc047d01c",
-    "semantic_hash": "bf5d7db5e93c1a4c05136e5fc047d01c"
+    "mtime": 1783711084.6104698,
+    "ast_hash": "83f3785241e0686f759bdc13c4bb2df3",
+    "semantic_hash": ""
   },
   "core/storage/test_customer_repository.py": {
     "mtime": 1782463385.9221902,
@@ -205,8 +205,8 @@
     "semantic_hash": "64716346615e392e2ed63867625e6f53"
   },
   "ui/dialogs/repair_dialog.py": {
-    "mtime": 1783694268.0000603,
-    "ast_hash": "16b8bb34baef8495efa718c1af3d6188",
+    "mtime": 1783711857.755558,
+    "ast_hash": "fb391921070b257f362023ebba51b3c8",
     "semantic_hash": ""
   },
   "ui/dialogs/shop_settings_dialog.py": {
@@ -462,6 +462,26 @@
   "PARTS_CATALOG_PHASE1.md": {
     "mtime": 1783708586.039062,
     "ast_hash": "1bdfdf3a7225dfea117fa5c67b78a56a",
+    "semantic_hash": ""
+  },
+  "core/storage/repair_part_model_db.py": {
+    "mtime": 1783710814.3567164,
+    "ast_hash": "d63bfe653231aae9a924a27dfcd8f1d3",
+    "semantic_hash": ""
+  },
+  "core/storage/repair_service_model_db.py": {
+    "mtime": 1783710813.6905482,
+    "ast_hash": "74fb13dadf1c3e7766e87996aaf5608f",
+    "semantic_hash": ""
+  },
+  "ui/widgets/invoice_widget.py": {
+    "mtime": 1783711226.1035852,
+    "ast_hash": "e415aa0010b3261f2139b9726a7c7a9e",
+    "semantic_hash": ""
+  },
+  "REPAIR_INVOICE_REDESIGN.md": {
+    "mtime": 1783711560.5560863,
+    "ast_hash": "5bc04fec129750e58b780b43b711b8cb",
     "semantic_hash": ""
   }
 }

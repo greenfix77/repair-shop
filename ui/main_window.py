@@ -11,6 +11,7 @@ from PyQt5.QtGui import QPixmap
 
 from services.logo_service import get_header_logo_pixmap
 from ui.customer_view import build_customer_table, build_customer_toolbar
+from ui.table_renderer import setup_selection_column
 from core.status import (
     STATUS_PENDING, STATUS_IN_PROGRESS, STATUS_COMPLETED, STATUS_DELIVERED,
     ALL_STATUSES_WITH_ALL,
@@ -145,6 +146,12 @@ def build_toolbar(window):
     delete_btn.clicked.connect(window.delete_repair)
     layout.addWidget(delete_btn)
     
+    # دکمه حذف انتخاب‌شده‌ها
+    bulk_delete_btn = QPushButton("🗑️ حذف انتخاب‌شده‌ها")
+    bulk_delete_btn.setStyleSheet("background-color: #f44336; color: white;")
+    bulk_delete_btn.clicked.connect(window.delete_selected_repairs)
+    layout.addWidget(bulk_delete_btn)
+    
     # دکمه پیش‌نمایش فاکتور
     invoice_btn = QPushButton("📄 پیش‌نمایش فاکتور")
     invoice_btn.setStyleSheet("background-color: #FF9800; color: white;")
@@ -185,10 +192,10 @@ def build_toolbar(window):
 def build_table(window):
     """ایجاد جدول"""
     table = QTableWidget()
-    table.setColumnCount(11)
+    table.setColumnCount(12)
     table.setHorizontalHeaderLabels([
-        "شناسه", "نام مشتری", "تلفن", "برند", "مدل", 
-        "ایراد", "وضعیت", "تاریخ دریافت", "تاریخ تحویل", 
+        "", "شناسه", "نام مشتری", "تلفن", "برند", "مدل",
+        "ایراد", "وضعیت", "تاریخ دریافت", "تاریخ تحویل",
         "هزینه کل", "عملیات"
     ])
     
@@ -202,16 +209,20 @@ def build_table(window):
     # تنظیم عرض ستون‌ها
     header = table.horizontalHeader()
     header.setSectionResizeMode(0, QHeaderView.ResizeToContents)
-    header.setSectionResizeMode(1, QHeaderView.Stretch)
-    header.setSectionResizeMode(2, QHeaderView.ResizeToContents)
+    header.setSectionResizeMode(1, QHeaderView.ResizeToContents)
+    header.setSectionResizeMode(2, QHeaderView.Stretch)
     header.setSectionResizeMode(3, QHeaderView.ResizeToContents)
     header.setSectionResizeMode(4, QHeaderView.ResizeToContents)
-    header.setSectionResizeMode(5, QHeaderView.Stretch)
-    header.setSectionResizeMode(6, QHeaderView.ResizeToContents)
+    header.setSectionResizeMode(5, QHeaderView.ResizeToContents)
+    header.setSectionResizeMode(6, QHeaderView.Stretch)
     header.setSectionResizeMode(7, QHeaderView.ResizeToContents)
     header.setSectionResizeMode(8, QHeaderView.ResizeToContents)
     header.setSectionResizeMode(9, QHeaderView.ResizeToContents)
     header.setSectionResizeMode(10, QHeaderView.ResizeToContents)
+    header.setSectionResizeMode(11, QHeaderView.ResizeToContents)
+
+    # ستون چک‌باکس با هدر select-all
+    setup_selection_column(table)
     
     # دابل کلیک برای ویرایش
     table.doubleClicked.connect(window.edit_repair)

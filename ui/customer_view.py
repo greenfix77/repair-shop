@@ -19,6 +19,11 @@ def build_customer_toolbar(window):
 
     layout = QHBoxLayout()
 
+    add_btn = QPushButton("➕ افزودن مشتری")
+    add_btn.setStyleSheet("background-color: #4CAF50; color: white;")
+    add_btn.clicked.connect(window.add_customer)
+    layout.addWidget(add_btn)
+
     delete_btn = QPushButton("🗑️ حذف انتخاب‌شده‌ها")
     delete_btn.setStyleSheet("background-color: #f44336; color: white;")
     delete_btn.clicked.connect(window.delete_selected_customers)
@@ -93,6 +98,7 @@ def render_customer_rows(table: QTableWidget, customers: List[Dict],
         table.setItem(row, 6, QTableWidgetItem(c.get('created_at', '') or ''))
 
         edit_btn = QPushButton("ویرایش")
+        edit_btn.setMinimumWidth(75)
         edit_btn.setStyleSheet("background-color: #2196F3; color: white;")
         customer_id = c.get('id')
         edit_btn.clicked.connect(

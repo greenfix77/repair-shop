@@ -8,23 +8,28 @@ from services.customer_workflow import CustomerWorkflow
 
 
 class CustomerEditDialog(QDialog):
-    """دیالوگ ویرایش اطلاعات مشتری"""
+    """دیالوگ افزودن/ویرایش اطلاعات مشتری"""
 
-    def __init__(self, customer_id, parent=None):
+    def __init__(self, customer_id=None, parent=None):
         super().__init__(parent)
         self._workflow = CustomerWorkflow()
         self._customer_id = customer_id
+        self._is_create = customer_id is None
 
-        self.setWindowTitle("ویرایش مشتری")
+        self.setWindowTitle("افزودن مشتری" if self._is_create else "ویرایش مشتری")
         self.setModal(True)
         self.setMinimumSize(600, 480)
 
-        self.customer = self._workflow.get_customer(customer_id)
-        if not self.customer:
-            show_error(self, "خطا", "مشتری یافت نشد.")
-            self._init_failed = True
-            return
-        self._init_failed = False
+        if self._is_create:
+            self.customer = {}
+            self._init_failed = False
+        else:
+            self.customer = self._workflow.get_customer(customer_id)
+            if not self.customer:
+                show_error(self, "خطا", "مشتری یافت نشد.")
+                self._init_failed = True
+                return
+            self._init_failed = False
 
         self.init_ui()
         self._load_fields()
@@ -88,7 +93,7 @@ class CustomerEditDialog(QDialog):
         btns = QVBoxLayout()
         btns.setContentsMargins(0, 10, 0, 0)
 
-        save_btn = QPushButton("ذخیره تغییرات")
+        save_btn = QPushButton("ذخیره" if self._is_create else "ذخیره تغییرات")
         save_btn.setStyleSheet("background-color: #4CAF50; color: white;")
         save_btn.clicked.connect(self._save)
         btns.addWidget(save_btn)
@@ -150,13 +155,16 @@ class CustomerEditDialog(QDialog):
             return
 
         try:
-            updated = self._workflow.update_customer(self._customer_id, data)
+            if self._is_create:
+                result = self._workflow.create_customer(data)
+            else:
+                result = self._workflow.update_customer(self._customer_id, data)
         except Exception as e:
-            show_error(self, "خطا", f"به‌روزرسانی ناموفق بود: {e}")
+            show_error(self, "خطا", f"ذخیره‌سازی ناموفق بود: {e}")
             return
 
-        if not updated:
-            show_error(self, "خطا", "به‌روزرسانی ناموفق بود.")
+        if not result:
+            show_error(self, "خطا", "ذخیره‌سازی ناموفق بود.")
             return
 
         self.accept()

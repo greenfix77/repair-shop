@@ -171,7 +171,7 @@ class LaptopRepairManager(QMainWindow):
             show_warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
             return
         
-        repair_id = int(self.table.item(selected_row, 0).text())
+        repair_id = int(self.table.item(selected_row, 1).text())
         repair_data = get_repair_by_id(self.repairs, repair_id)
         
         if not repair_data:
@@ -200,8 +200,8 @@ class LaptopRepairManager(QMainWindow):
             show_warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
             return
         
-        repair_id = int(self.table.item(selected_row, 0).text())
-        customer_name = self.table.item(selected_row, 1).text()
+        repair_id = int(self.table.item(selected_row, 1).text())
+        customer_name = self.table.item(selected_row, 2).text()
         
         if show_question(self, "تأیید حذف", f"آیا از حذف تعمیر '{customer_name}' اطمینان دارید؟"):
             # استفاده از سرویس برای حذف تعمیر
@@ -212,6 +212,35 @@ class LaptopRepairManager(QMainWindow):
             
             show_info(self, "موفق", "تعمیر با موفقیت حذف شد.")
     
+    def delete_selected_repairs(self):
+        """حذف تعمیرات انتخاب‌شده (چک‌باکس‌دار) در یک عملیات"""
+        table = self.table
+        selected_ids = []
+        for row in range(table.rowCount()):
+            item = table.item(row, 0)
+            if item is not None and item.checkState() == Qt.Checked:
+                rid = item.data(Qt.UserRole)
+                if rid is not None:
+                    selected_ids.append(rid)
+
+        if not selected_ids:
+            show_warning(self, "هشدار", "هیچ تعمیری انتخاب نشده است.")
+            return
+
+        if not show_question(
+            self, "تأیید حذف",
+            f"آیا از حذف {len(selected_ids)} تعمیر انتخاب‌شده اطمینان دارید؟"
+        ):
+            return
+
+        id_set = set(selected_ids)
+        self.repairs = [r for r in self.repairs if r.get('id') not in id_set]
+
+        self.save_data()
+        self.refresh_table()
+
+        show_info(self, "موفق", f"{len(selected_ids)} تعمیر با موفقیت حذف شد.")
+    
     def preview_invoice(self):
         """پیش‌نمایش فاکتور"""
         selected_row = self.table.currentRow()
@@ -220,7 +249,7 @@ class LaptopRepairManager(QMainWindow):
             show_warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
             return
         
-        repair_id = int(self.table.item(selected_row, 0).text())
+        repair_id = int(self.table.item(selected_row, 1).text())
         repair_data = get_repair_by_id(self.repairs, repair_id)
         
         if not repair_data:
@@ -273,6 +302,14 @@ class LaptopRepairManager(QMainWindow):
         """بارگذاری و نمایش لیست مشتریان مرتب شده بر اساس نام"""
         customers = self._customer_workflow.get_all_customers()
         render_customer_rows(self.customer_table, customers, self.edit_customer)
+
+    def add_customer(self):
+        """افزودن مشتری جدید از طریق دیالوگ اختصاصی"""
+        dialog = CustomerEditDialog(customer_id=None, parent=self)
+        if getattr(dialog, '_init_failed', False):
+            return
+        if dialog.exec_() == QDialog.Accepted:
+            self.refresh_customer_table()
 
     def edit_customer(self, customer_id):
         """ویرایش یک مشتری از طریق دیالوگ اختصاصی"""

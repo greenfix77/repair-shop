@@ -104,6 +104,49 @@ class CustomerService:
                 result.append(c)
         return result
 
+    def check_create_duplicate(self, customer_data: Dict) -> Optional[str]:
+        """Check for duplicates when creating a customer from management UI.
+
+        Business rules:
+          - Find existing customers with the same normalized full_name.
+          - If none exist, allow creation.
+          - If same-name customers exist:
+              If entered phone (non-empty) matches any same-name customer's phone
+              (normalized via repository logic), block with phone message.
+              Else if entered national_id (non-empty) matches any same-name
+              customer's national_id, block with national_id message.
+              Else allow (different person, same name).
+
+        Returns:
+          Error message string if creation should be blocked, or None if allowed.
+        """
+        full_name = customer_data.get('full_name', '').strip()
+        if not full_name:
+            return None
+
+        same_name = self.find_by_full_name(full_name)
+        if not same_name:
+            return None
+
+        phone = customer_data.get('phone', '').strip()
+        national_id = customer_data.get('national_id', '').strip()
+
+        if phone:
+            entered_phone = self._repo._normalize_phone(phone)
+            for c in same_name:
+                existing_raw = (c.get('phone') or '').strip()
+                existing_phone = self._repo._normalize_phone(existing_raw)
+                if entered_phone is not None and entered_phone == existing_phone:
+                    return "مشتری با همین نام و شماره تلفن قبلاً ثبت شده است."
+
+        if national_id:
+            for c in same_name:
+                existing_nid = (c.get('national_id') or '').strip()
+                if existing_nid and existing_nid == national_id:
+                    return "مشتری با همین نام و کد ملی قبلاً ثبت شده است."
+
+        return None
+
     def search_customers(self, query: str) -> List[Dict]:
         """Search customers by full_name or phone (contains, case-insensitive).
 

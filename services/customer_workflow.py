@@ -81,6 +81,13 @@ class CustomerWorkflow:
         """Create a new customer (conscious clone path, no duplicate detection)."""
         return self._service.create_customer(customer_data)
 
+    def check_create_duplicate(self, customer_data: Dict) -> Optional[str]:
+        """Check for duplicates when creating from management UI.
+
+        Returns an error message if creation should be blocked, or None.
+        """
+        return self._service.check_create_duplicate(customer_data)
+
     def get_all_customers(self) -> List[Dict]:
         """Return all customers (for management views)."""
         return self._service.get_all_customers()

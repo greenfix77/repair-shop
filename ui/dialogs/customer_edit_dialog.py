@@ -156,6 +156,10 @@ class CustomerEditDialog(QDialog):
 
         try:
             if self._is_create:
+                duplicate_msg = self._workflow.check_create_duplicate(data)
+                if duplicate_msg:
+                    show_warning(self, "خطا", duplicate_msg)
+                    return
                 result = self._workflow.create_customer(data)
             else:
                 result = self._workflow.update_customer(self._customer_id, data)

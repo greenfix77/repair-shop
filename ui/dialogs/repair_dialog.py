@@ -265,6 +265,8 @@ class RepairDialog(QDialog):
             item.setData(c['id'], Qt.UserRole)
             self._completer_model.appendRow(item)
         self._completer.setCompletionPrefix(text)
+        if self._completer.completionCount() > 0:
+            self._completer.complete()
 
     def _on_completer_activated(self, index):
         customer_id = index.data(Qt.UserRole)

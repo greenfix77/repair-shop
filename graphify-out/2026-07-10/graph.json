@@ -3336,7 +3336,7 @@
       "label": "._get_customer_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L374",
+      "source_location": "L377",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_get_customer_data",
       "community": 4,
@@ -3346,7 +3346,7 @@
       "label": ".calculate_total()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L388",
+      "source_location": "L391",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_calculate_total",
       "community": 4,
@@ -3356,7 +3356,7 @@
       "label": ".load_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L399",
+      "source_location": "L402",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_load_data",
       "community": 4,
@@ -3366,7 +3366,7 @@
       "label": ".get_data()",
       "file_type": "code",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L417",
+      "source_location": "L420",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_get_data",
       "community": 4,
@@ -3386,9 +3386,9 @@
       "label": "\u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u062c\u0645\u0648\u0639 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627",
       "file_type": "rationale",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L389",
+      "source_location": "L392",
       "_origin": "ast",
-      "id": "ui_dialogs_repair_dialog_rationale_389",
+      "id": "ui_dialogs_repair_dialog_rationale_392",
       "community": 4,
       "norm_label": "\u0645\u062d\u0627\u0633\u0628\u0647 \u0645\u062c\u0645\u0648\u0639 \u0647\u0632\u06cc\u0646\u0647\u200c\u0647\u0627"
     },
@@ -13061,9 +13061,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L107",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_customerservice",
-      "target": "services_customer_service_customerservice_check_create_duplicate",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_check_create_duplicate"
     },
     {
       "relation": "method",
@@ -13517,9 +13517,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L127",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_customerservice_check_create_duplicate",
-      "target": "services_customer_service_customerservice_find_by_full_name",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_find_by_full_name"
     },
     {
       "relation": "rationale_for",
@@ -13527,9 +13527,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L108",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_rationale_108",
-      "target": "services_customer_service_customerservice_check_create_duplicate",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_check_create_duplicate"
     },
     {
       "relation": "rationale_for",
@@ -13547,9 +13547,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L151",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_rationale_151",
-      "target": "services_customer_service_customerservice_search_customers",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_search_customers"
     },
     {
       "relation": "rationale_for",
@@ -13557,9 +13557,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L162",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_rationale_162",
-      "target": "services_customer_service_customerservice_get_customer",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_get_customer"
     },
     {
       "relation": "rationale_for",
@@ -13567,9 +13567,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L166",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_rationale_166",
-      "target": "services_customer_service_customerservice_update_customer",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_update_customer"
     },
     {
       "relation": "calls",
@@ -13588,9 +13588,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L170",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_rationale_170",
-      "target": "services_customer_service_customerservice_create_customer",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_create_customer"
     },
     {
       "relation": "rationale_for",
@@ -13598,9 +13598,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L175",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_rationale_175",
-      "target": "services_customer_service_customerservice_get_all_customers",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_get_all_customers"
     },
     {
       "relation": "rationale_for",
@@ -13608,9 +13608,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L179",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_rationale_179",
-      "target": "services_customer_service_customerservice_delete_customer",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_delete_customer"
     },
     {
       "relation": "rationale_for",
@@ -13618,9 +13618,9 @@
       "source_file": "services/customer_service.py",
       "source_location": "L183",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_service_rationale_183",
-      "target": "services_customer_service_customerservice_generate_customer_code",
-      "confidence_score": 1.0
+      "target": "services_customer_service_customerservice_generate_customer_code"
     },
     {
       "relation": "contains",
@@ -13660,9 +13660,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L84",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_customerworkflow",
-      "target": "services_customer_workflow_customerworkflow_check_create_duplicate",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_check_create_duplicate"
     },
     {
       "relation": "method",
@@ -13934,9 +13934,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L85",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_rationale_85",
-      "target": "services_customer_workflow_customerworkflow_check_create_duplicate",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_check_create_duplicate"
     },
     {
       "relation": "rationale_for",
@@ -13954,9 +13954,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L92",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_rationale_92",
-      "target": "services_customer_workflow_customerworkflow_get_all_customers",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_get_all_customers"
     },
     {
       "relation": "rationale_for",
@@ -13964,9 +13964,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L96",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_rationale_96",
-      "target": "services_customer_workflow_customerworkflow_delete_customer",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_delete_customer"
     },
     {
       "relation": "rationale_for",
@@ -13974,9 +13974,9 @@
       "source_file": "services/customer_workflow.py",
       "source_location": "L100",
       "weight": 1.0,
+      "confidence_score": 1.0,
       "source": "services_customer_workflow_rationale_100",
-      "target": "services_customer_workflow_customerworkflow_populate_fields",
-      "confidence_score": 1.0
+      "target": "services_customer_workflow_customerworkflow_populate_fields"
     },
     {
       "relation": "rationale_for",
@@ -16199,11 +16199,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/repair_dialog.py",
-      "source_location": "L389",
+      "source_location": "L392",
       "weight": 1.0,
-      "confidence_score": 1.0,
-      "source": "ui_dialogs_repair_dialog_rationale_389",
-      "target": "ui_dialogs_repair_dialog_repairdialog_calculate_total"
+      "source": "ui_dialogs_repair_dialog_rationale_392",
+      "target": "ui_dialogs_repair_dialog_repairdialog_calculate_total",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -21708,5 +21708,5 @@
       "source_file": "SQLITE_MIGRATION_AUDIT.md"
     }
   ],
-  "built_at_commit": "86c24a5a817819376140d39ab6e499779b460fe6"
+  "built_at_commit": "5cf1dab842428f001a62086a48c0ee1c4fb3f98d"
 }

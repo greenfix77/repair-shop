@@ -190,9 +190,9 @@
     "semantic_hash": "71906f775a7df29540994aeaa8b33ce6"
   },
   "shop_settings.json": {
-    "mtime": 1782414240.8768878,
-    "ast_hash": "24333921bdfc79232af5f5a32f841b71",
-    "semantic_hash": "24333921bdfc79232af5f5a32f841b71"
+    "mtime": 1783690646.5645137,
+    "ast_hash": "a5cf7fbf76c7ca72d8f2bd4cce294ce6",
+    "semantic_hash": ""
   },
   "test_logo.py": {
     "mtime": 1782324835.0087118,
@@ -205,8 +205,8 @@
     "semantic_hash": "64716346615e392e2ed63867625e6f53"
   },
   "ui/dialogs/repair_dialog.py": {
-    "mtime": 1783669036.8173988,
-    "ast_hash": "894179d30969b1514fa9abbbd1148e07",
+    "mtime": 1783691783.0881958,
+    "ast_hash": "82cc51bcc8b94e73c83812c546c43f7b",
     "semantic_hash": ""
   },
   "ui/dialogs/shop_settings_dialog.py": {
@@ -395,8 +395,8 @@
     "semantic_hash": ""
   },
   "ui/dialogs/customer_edit_dialog.py": {
-    "mtime": 1783684184.622118,
-    "ast_hash": "9b0a69d27ca6bf65f8c497d77c4a826e",
+    "mtime": 1783691641.175273,
+    "ast_hash": "fb58428d292b60cc548e23cb31b57d1e",
     "semantic_hash": ""
   }
 }

@@ -2,7 +2,8 @@ from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QGridLayout,
                                QLabel, QLineEdit, QPushButton, QSpinBox,
                                QDoubleSpinBox, QTextEdit, QTableWidget,
                                QTableWidgetItem, QHeaderView, QAbstractItemView,
-                               QCompleter, QFrame, QStyledItemDelegate)
+                               QCompleter, QFrame, QStyledItemDelegate,
+                               QScrollArea)
 from PyQt5.QtCore import Qt, QTimer, QModelIndex, QSize
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QFont, QColor
 
@@ -11,6 +12,7 @@ from services.part_service import PartService
 from services.notification_service import show_warning
 from ui.dialogs.service_edit_dialog import ServiceEditDialog
 from ui.dialogs.part_edit_dialog import PartEditDialog
+from ui.dialogs.item_picker_dialog import ItemPickerDialog
 
 
 class _CompleterDelegate(QStyledItemDelegate):
@@ -35,7 +37,15 @@ class InvoiceWidget(QWidget):
     # --- UI Setup ---
 
     def _init_ui(self):
-        layout = QVBoxLayout()
+        outer_layout = QVBoxLayout()
+        outer_layout.setContentsMargins(0, 0, 0, 0)
+
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setFrameShape(QFrame.NoFrame)
+
+        content = QWidget()
+        layout = QVBoxLayout(content)
 
         # بخش خدمات
         svc_frame = QFrame()
@@ -136,7 +146,7 @@ class InvoiceWidget(QWidget):
         layout.addWidget(part_frame)
 
         # بخش خلاصه فاکتور + پرداخت
-        bottom_layout = QHBoxLayout()
+        bottom_layout = QVBoxLayout()
 
         # خلاصه
         summary_frame = QFrame()
@@ -210,7 +220,9 @@ class InvoiceWidget(QWidget):
         notes_layout.addWidget(self._financial_notes_input)
         layout.addWidget(notes_frame)
 
-        self.setLayout(layout)
+        scroll.setWidget(content)
+        outer_layout.addWidget(scroll)
+        self.setLayout(outer_layout)
 
     def _init_completers(self):
         self._svc_completer_model = QStandardItemModel()
@@ -222,7 +234,6 @@ class InvoiceWidget(QWidget):
         self._svc_completer.popup().setItemDelegate(_CompleterDelegate())
         self._svc_completer.popup().setLayoutDirection(Qt.RightToLeft)
         self._svc_completer.activated[QModelIndex].connect(self._on_svc_completer_activated)
-        self._svc_completer.setCompletionRole(Qt.EditRole)
         self._svc_search.setCompleter(self._svc_completer)
         self._svc_search.textChanged.connect(self._on_svc_search_changed)
 
@@ -235,7 +246,6 @@ class InvoiceWidget(QWidget):
         self._part_completer.popup().setItemDelegate(_CompleterDelegate())
         self._part_completer.popup().setLayoutDirection(Qt.RightToLeft)
         self._part_completer.activated[QModelIndex].connect(self._on_part_completer_activated)
-        self._part_completer.setCompletionRole(Qt.EditRole)
         self._part_search.setCompleter(self._part_completer)
         self._part_search.textChanged.connect(self._on_part_search_changed)
 
@@ -250,21 +260,29 @@ class InvoiceWidget(QWidget):
         for s in services:
             label = f"{s['name']} - {s.get('default_price', 0):,}"
             item = QStandardItem(label)
-            item.setData(s['name'], Qt.EditRole)
             item.setData(s['id'], Qt.UserRole)
             item.setData(s.get('default_price', 0), Qt.UserRole + 1)
             self._svc_completer_model.appendRow(item)
-        self._svc_completer.setCompletionPrefix(text)
-        if self._svc_completer.completionCount() > 0:
+        if services:
+            self._svc_completer.setCompletionPrefix(text)
             self._svc_completer.complete()
+        else:
+            empty = QStandardItem("نتیجه‌ای یافت نشد")
+            empty.setEnabled(False)
+            self._svc_completer_model.appendRow(empty)
+            self._svc_completer.setCompletionPrefix('')
+            self._svc_completer.complete()
+        self._svc_completer.popup().setMinimumWidth(self._svc_search.width())
 
     def _on_svc_completer_activated(self, index):
         sid = index.data(Qt.UserRole)
+        if not sid:
+            return
         price = index.data(Qt.UserRole + 1) or 0
-        name = index.data(Qt.EditRole) or ''
-        if sid:
-            self._add_service_line(sid, name, price)
-            self._svc_search.clear()
+        label = index.data(Qt.DisplayRole) or ''
+        name = label.split(' - ')[0] if ' - ' in label else label
+        self._add_service_line(sid, name, price)
+        self._svc_search.clear()
 
     def _on_part_search_changed(self, text):
         if len(text.strip()) < 1:
@@ -275,41 +293,51 @@ class InvoiceWidget(QWidget):
         for p in parts:
             label = f"{p['name']} - {p.get('sale_price', 0):,}"
             item = QStandardItem(label)
-            item.setData(p['name'], Qt.EditRole)
             item.setData(p['id'], Qt.UserRole)
             item.setData(p.get('sale_price', 0), Qt.UserRole + 1)
             self._part_completer_model.appendRow(item)
-        self._part_completer.setCompletionPrefix(text)
-        if self._part_completer.completionCount() > 0:
+        if parts:
+            self._part_completer.setCompletionPrefix(text)
             self._part_completer.complete()
+        else:
+            empty = QStandardItem("نتیجه‌ای یافت نشد")
+            empty.setEnabled(False)
+            self._part_completer_model.appendRow(empty)
+            self._part_completer.setCompletionPrefix('')
+            self._part_completer.complete()
+        self._part_completer.popup().setMinimumWidth(self._part_search.width())
 
     def _on_part_completer_activated(self, index):
         pid = index.data(Qt.UserRole)
+        if not pid:
+            return
         price = index.data(Qt.UserRole + 1) or 0
-        name = index.data(Qt.EditRole) or ''
-        if pid:
-            self._add_part_line(pid, name, price)
-            self._part_search.clear()
+        label = index.data(Qt.DisplayRole) or ''
+        name = label.split(' - ')[0] if ' - ' in label else label
+        self._add_part_line(pid, name, price)
+        self._part_search.clear()
 
     # --- Add from search button ---
 
     def _add_service_from_search(self):
-        text = self._svc_search.text().strip()
-        if not text:
+        services = self._service_svc.list_all(active_only=True)
+        if not services:
+            show_warning(self, "هیچ خدمتی", "هیچ خدمت فعالی در کاتالوگ یافت نشد.")
             return
-        services = self._service_svc.search(text)
-        if services:
-            s = services[0]
+        dialog = ItemPickerDialog("انتخاب خدمت", services, 'name', 'default_price', parent=self)
+        if dialog.exec_() == dialog.Accepted and dialog.selected_item:
+            s = dialog.selected_item
             self._add_service_line(s['id'], s['name'], s.get('default_price', 0))
             self._svc_search.clear()
 
     def _add_part_from_search(self):
-        text = self._part_search.text().strip()
-        if not text:
+        parts = self._part_svc.list_all(active_only=True)
+        if not parts:
+            show_warning(self, "هیچ قطعه‌ای", "هیچ قطعه فعالی در کاتالوگ یافت نشد.")
             return
-        parts = self._part_svc.search(text)
-        if parts:
-            p = parts[0]
+        dialog = ItemPickerDialog("انتخاب قطعه", parts, 'name', 'sale_price', parent=self)
+        if dialog.exec_() == dialog.Accepted and dialog.selected_item:
+            p = dialog.selected_item
             self._add_part_line(p['id'], p['name'], p.get('sale_price', 0))
             self._part_search.clear()
 

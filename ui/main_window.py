@@ -142,12 +142,6 @@ def build_toolbar(window):
     edit_btn.clicked.connect(window.edit_repair)
     layout.addWidget(edit_btn)
     
-    # دکمه حذف
-    delete_btn = QPushButton("🗑️ حذف")
-    delete_btn.setStyleSheet("background-color: #f44336; color: white;")
-    delete_btn.clicked.connect(window.delete_repair)
-    layout.addWidget(delete_btn)
-    
     # دکمه حذف انتخاب‌شده‌ها
     bulk_delete_btn = QPushButton("🗑️ حذف انتخاب‌شده‌ها")
     bulk_delete_btn.setStyleSheet("background-color: #f44336; color: white;")

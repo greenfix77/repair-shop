@@ -96,29 +96,6 @@ def build_header(window):
     
     layout.addStretch()
     
-    # Dashboard button on FAR LEFT
-    window.status_btn = QPushButton("📊 داشبورد")
-    window.status_btn.setStyleSheet("""
-        QPushButton {
-            background: transparent;
-            border: none;
-            border-radius: 6px;
-            color: white;
-            font-size: 8pt;
-            font-weight: bold;
-            padding: 1px 4px;
-            margin: 0px;
-        }
-
-        QPushButton:hover {
-            background: rgba(255,255,255,0.08);
-        }
-""")
-    window.status_btn.setSizePolicy(QSizePolicy.Fixed, QSizePolicy.Fixed)
-    window.status_btn.setFixedSize(80, 22)
-    window.status_btn.clicked.connect(window.toggle_status_popup)
-    layout.addWidget(window.status_btn)
-    
     header.setLayout(layout)
     return header
 
@@ -159,6 +136,12 @@ def build_toolbar(window):
     settings_btn.setStyleSheet("background-color: #607D8B; color: white;")
     settings_btn.clicked.connect(window.open_shop_settings)
     layout.addWidget(settings_btn)
+
+    # دکمه داشبورد (جابه‌جا شده از هدر)
+    window.status_btn = QPushButton("📊 داشبورد")
+    window.status_btn.setStyleSheet("background-color: #673AB7; color: white;")
+    window.status_btn.clicked.connect(window.toggle_status_popup)
+    layout.addWidget(window.status_btn)
     
     layout.addStretch()
     

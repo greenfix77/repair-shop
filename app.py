@@ -2,7 +2,8 @@
 from datetime import datetime, timedelta
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QVBoxLayout,
                               QHBoxLayout, QPushButton, QDialog,
-                              QLabel, QLineEdit, QFrame, QScrollArea)
+                              QLabel, QLineEdit, QFrame, QScrollArea,
+                              QWidget)
 from PyQt5.QtCore import Qt, QTimer, QEvent, QPoint, QRect
 from PyQt5.QtGui import QFont
 import jdatetime

@@ -15,8 +15,8 @@
     "semantic_hash": "111287aed37970b605d3ab422d1c93ec"
   },
   "app.py": {
-    "mtime": 1783821086.6415465,
-    "ast_hash": "11f6768dfbf4fa3e2e815d004956d3c1",
+    "mtime": 1783708482.1844704,
+    "ast_hash": "1ab36c00710a57655334e9d18436b49c",
     "semantic_hash": ""
   },
   "controllers/__init__.py": {
@@ -390,8 +390,8 @@
     "semantic_hash": ""
   },
   "ui/customer_view.py": {
-    "mtime": 1783798109.7297254,
-    "ast_hash": "0bc2586c480e9bf8bb13e83e717c9df4",
+    "mtime": 1783671030.045385,
+    "ast_hash": "1aae685ca2545ab06ee16a084c676301",
     "semantic_hash": ""
   },
   "ui/dialogs/customer_edit_dialog.py": {
@@ -475,28 +475,13 @@
     "semantic_hash": ""
   },
   "ui/widgets/invoice_widget.py": {
-    "mtime": 1783715954.6220257,
-    "ast_hash": "4d98e975d40f3112affb88d5012766b1",
+    "mtime": 1783711226.1035852,
+    "ast_hash": "e415aa0010b3261f2139b9726a7c7a9e",
     "semantic_hash": ""
   },
   "REPAIR_INVOICE_REDESIGN.md": {
     "mtime": 1783711560.5560863,
     "ast_hash": "5bc04fec129750e58b780b43b711b8cb",
-    "semantic_hash": ""
-  },
-  "services/customer_stats_service.py": {
-    "mtime": 1783798032.4904847,
-    "ast_hash": "de3bbc726aba0205936e0da0f5ffeddb",
-    "semantic_hash": ""
-  },
-  "ui/dialogs/item_picker_dialog.py": {
-    "mtime": 1783713565.479098,
-    "ast_hash": "c4ec0bd8fc128791af36288ff16802cd",
-    "semantic_hash": ""
-  },
-  "CUSTOMER_STATS_AND_STARTUP_UI.md": {
-    "mtime": 1783821195.9083467,
-    "ast_hash": "038638e3341a39837192aab149d458ec",
     "semantic_hash": ""
   }
 }

@@ -144,17 +144,17 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "app",
-      "community": 68,
+      "community": 2,
       "norm_label": "app.py"
     },
     {
       "label": "NotificationDialog",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L46",
+      "source_location": "L45",
       "_origin": "ast",
       "id": "app_notificationdialog",
-      "community": 54,
+      "community": 68,
       "norm_label": "notificationdialog"
     },
     {
@@ -164,24 +164,24 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qdialog",
-      "community": 63,
+      "community": 68,
       "norm_label": "qdialog"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L49",
+      "source_location": "L48",
       "_origin": "ast",
       "id": "app_notificationdialog_init",
-      "community": 54,
+      "community": 68,
       "norm_label": ".__init__()"
     },
     {
       "label": "LaptopRepairManager",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L116",
+      "source_location": "L82",
       "_origin": "ast",
       "id": "app_laptoprepairmanager",
       "community": 3,
@@ -201,47 +201,47 @@
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L119",
+      "source_location": "L85",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_init",
-      "community": 54,
+      "community": 3,
       "norm_label": ".__init__()"
     },
     {
       "label": ".init_ui()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L133",
+      "source_location": "L98",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_init_ui",
-      "community": 54,
+      "community": 3,
       "norm_label": ".init_ui()"
     },
     {
       "label": ".update_date_label()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L138",
+      "source_location": "L103",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_update_date_label",
-      "community": 68,
+      "community": 2,
       "norm_label": ".update_date_label()"
     },
     {
       "label": ".open_shop_settings()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L147",
+      "source_location": "L112",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_open_shop_settings",
-      "community": 74,
+      "community": 29,
       "norm_label": ".open_shop_settings()"
     },
     {
       "label": ".rebuild_header()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L153",
+      "source_location": "L118",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_rebuild_header",
       "community": 29,
@@ -251,7 +251,7 @@
       "label": ".toggle_status_popup()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L165",
+      "source_location": "L130",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_toggle_status_popup",
       "community": 3,
@@ -261,7 +261,7 @@
       "label": ".eventFilter()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L175",
+      "source_location": "L140",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_eventfilter",
       "community": 3,
@@ -271,7 +271,7 @@
       "label": ".add_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L194",
+      "source_location": "L159",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_add_repair",
       "community": 3,
@@ -281,7 +281,7 @@
       "label": ".edit_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L210",
+      "source_location": "L174",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_repair",
       "community": 3,
@@ -291,27 +291,27 @@
       "label": ".delete_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L240",
+      "source_location": "L203",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_repair",
-      "community": 68,
+      "community": 3,
       "norm_label": ".delete_repair()"
     },
     {
       "label": ".delete_selected_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L261",
+      "source_location": "L223",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_selected_repairs",
-      "community": 68,
+      "community": 3,
       "norm_label": ".delete_selected_repairs()"
     },
     {
       "label": ".preview_invoice()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L291",
+      "source_location": "L252",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_preview_invoice",
       "community": 3,
@@ -321,7 +321,7 @@
       "label": ".search_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L309",
+      "source_location": "L270",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_search_repairs",
       "community": 3,
@@ -331,7 +331,7 @@
       "label": ".filter_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L313",
+      "source_location": "L274",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_filter_repairs",
       "community": 3,
@@ -341,7 +341,7 @@
       "label": ".refresh_table()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L317",
+      "source_location": "L278",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_refresh_table",
       "community": 3,
@@ -351,7 +351,7 @@
       "label": ".show_repairs_view()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L327",
+      "source_location": "L288",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_show_repairs_view",
       "community": 3,
@@ -361,7 +361,7 @@
       "label": ".show_customers_view()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L343",
+      "source_location": "L304",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_show_customers_view",
       "community": 3,
@@ -371,7 +371,7 @@
       "label": ".show_services_view()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L362",
+      "source_location": "L323",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_show_services_view",
       "community": 3,
@@ -381,7 +381,7 @@
       "label": ".show_parts_view()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L381",
+      "source_location": "L342",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_show_parts_view",
       "community": 3,
@@ -391,7 +391,7 @@
       "label": ".refresh_part_table()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L398",
+      "source_location": "L359",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_refresh_part_table",
       "community": 3,
@@ -401,7 +401,7 @@
       "label": ".search_parts()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L403",
+      "source_location": "L364",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_search_parts",
       "community": 29,
@@ -411,7 +411,7 @@
       "label": ".add_part()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L408",
+      "source_location": "L369",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_add_part",
       "community": 3,
@@ -421,7 +421,7 @@
       "label": ".edit_part()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L416",
+      "source_location": "L377",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_part",
       "community": 3,
@@ -431,17 +431,17 @@
       "label": ".delete_selected_parts()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L426",
+      "source_location": "L387",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_selected_parts",
-      "community": 68,
+      "community": 3,
       "norm_label": ".delete_selected_parts()"
     },
     {
       "label": ".refresh_service_table()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L460",
+      "source_location": "L421",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_refresh_service_table",
       "community": 3,
@@ -451,7 +451,7 @@
       "label": ".search_services()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L465",
+      "source_location": "L426",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_search_services",
       "community": 29,
@@ -461,7 +461,7 @@
       "label": ".add_service()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L470",
+      "source_location": "L431",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_add_service",
       "community": 3,
@@ -471,7 +471,7 @@
       "label": ".edit_service()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L478",
+      "source_location": "L439",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_service",
       "community": 3,
@@ -481,37 +481,27 @@
       "label": ".delete_selected_services()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L488",
+      "source_location": "L449",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_selected_services",
-      "community": 68,
+      "community": 3,
       "norm_label": ".delete_selected_services()"
     },
     {
       "label": ".refresh_customer_table()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L522",
+      "source_location": "L483",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_refresh_customer_table",
       "community": 3,
       "norm_label": ".refresh_customer_table()"
     },
     {
-      "label": "._refresh_customer_table_if_visible()",
-      "file_type": "code",
-      "source_file": "app.py",
-      "source_location": "L529",
-      "_origin": "ast",
-      "id": "app_laptoprepairmanager_refresh_customer_table_if_visible",
-      "community": 3,
-      "norm_label": "._refresh_customer_table_if_visible()"
-    },
-    {
       "label": ".add_customer()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L534",
+      "source_location": "L488",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_add_customer",
       "community": 3,
@@ -521,7 +511,7 @@
       "label": ".edit_customer()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L542",
+      "source_location": "L496",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_edit_customer",
       "community": 3,
@@ -531,7 +521,7 @@
       "label": "._has_related_repairs()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L552",
+      "source_location": "L506",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_has_related_repairs",
       "community": 3,
@@ -541,17 +531,17 @@
       "label": ".delete_selected_customers()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L563",
+      "source_location": "L517",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_delete_selected_customers",
-      "community": 68,
+      "community": 3,
       "norm_label": ".delete_selected_customers()"
     },
     {
       "label": ".view_repair()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L625",
+      "source_location": "L579",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_view_repair",
       "community": 3,
@@ -561,7 +551,7 @@
       "label": ".quick_invoice()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L630",
+      "source_location": "L584",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_quick_invoice",
       "community": 3,
@@ -571,7 +561,7 @@
       "label": ".update_statistics()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L635",
+      "source_location": "L589",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_update_statistics",
       "community": 3,
@@ -581,27 +571,27 @@
       "label": ".check_notifications()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L650",
+      "source_location": "L604",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_check_notifications",
-      "community": 54,
+      "community": 3,
       "norm_label": ".check_notifications()"
     },
     {
       "label": ".load_data()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L685",
+      "source_location": "L639",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_load_data",
-      "community": 54,
+      "community": 3,
       "norm_label": ".load_data()"
     },
     {
       "label": ".save_data()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L693",
+      "source_location": "L647",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_save_data",
       "community": 3,
@@ -611,7 +601,7 @@
       "label": ".closeEvent()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L700",
+      "source_location": "L654",
       "_origin": "ast",
       "id": "app_laptoprepairmanager_closeevent",
       "community": 3,
@@ -621,29 +611,29 @@
       "label": "main()",
       "file_type": "code",
       "source_file": "app.py",
-      "source_location": "L709",
+      "source_location": "L663",
       "_origin": "ast",
       "id": "app_main",
-      "community": 3,
+      "community": 2,
       "norm_label": "main()"
     },
     {
       "label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0646\u0645\u0627\u06cc\u0634 \u0627\u0639\u0644\u0627\u0646\u200c\u0647\u0627",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L47",
+      "source_location": "L46",
       "_origin": "ast",
-      "id": "app_rationale_47",
-      "community": 54,
+      "id": "app_rationale_46",
+      "community": 68,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0646\u0645\u0627\u06cc\u0634 \u0627\u0639\u0644\u0627\u0646\u200c\u0647\u0627"
     },
     {
       "label": "\u06a9\u0644\u0627\u0633 \u0627\u0635\u0644\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0639\u0645\u06cc\u0631\u0627\u062a",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L117",
+      "source_location": "L83",
       "_origin": "ast",
-      "id": "app_rationale_117",
+      "id": "app_rationale_83",
       "community": 3,
       "norm_label": "\u06a9\u0644\u0627\u0633 \u0627\u0635\u0644\u06cc \u0628\u0631\u0646\u0627\u0645\u0647 \u0645\u062f\u06cc\u0631\u06cc\u062a \u062a\u0639\u0645\u06cc\u0631\u0627\u062a"
     },
@@ -651,19 +641,19 @@
       "label": "\u0628\u0627\u0632 \u06a9\u0631\u062f\u0646 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L148",
+      "source_location": "L113",
       "_origin": "ast",
-      "id": "app_rationale_148",
-      "community": 74,
+      "id": "app_rationale_113",
+      "community": 29,
       "norm_label": "\u0628\u0627\u0632 \u06a9\u0631\u062f\u0646 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647"
     },
     {
       "label": "\u0628\u0627\u0632\u0633\u0627\u0632\u06cc \u0647\u062f\u0631 \u067e\u0633 \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L154",
+      "source_location": "L119",
       "_origin": "ast",
-      "id": "app_rationale_154",
+      "id": "app_rationale_119",
       "community": 29,
       "norm_label": "\u0628\u0627\u0632\u0633\u0627\u0632\u06cc \u0647\u062f\u0631 \u067e\u0633 \u0627\u0632 \u062a\u063a\u06cc\u06cc\u0631 \u062a\u0646\u0638\u06cc\u0645\u0627\u062a"
     },
@@ -671,9 +661,9 @@
       "label": "\u0646\u0645\u0627\u06cc\u0634/\u067e\u0646\u0647\u0627\u0646 \u06a9\u0631\u062f\u0646 \u067e\u0627\u067e\u200c\u0622\u067e \u0648\u0636\u0639\u06cc\u062a\u200c\u0647\u0627",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L166",
+      "source_location": "L131",
       "_origin": "ast",
-      "id": "app_rationale_166",
+      "id": "app_rationale_131",
       "community": 3,
       "norm_label": "\u0646\u0645\u0627\u06cc\u0634/\u067e\u0646\u0647\u0627\u0646 \u06a9\u0631\u062f\u0646 \u067e\u0627\u067e\u200c\u0627\u067e \u0648\u0636\u0639\u06cc\u062a\u200c\u0647\u0627"
     },
@@ -681,9 +671,9 @@
       "label": "\u0628\u0633\u062a\u0646 \u067e\u0627\u067e\u200c\u0622\u067e \u0647\u0646\u06af\u0627\u0645 \u06a9\u0644\u06cc\u06a9 \u062e\u0627\u0631\u062c \u0627\u0632 \u0622\u0646 \u06cc\u0627 ESC",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L176",
+      "source_location": "L141",
       "_origin": "ast",
-      "id": "app_rationale_176",
+      "id": "app_rationale_141",
       "community": 3,
       "norm_label": "\u0628\u0633\u062a\u0646 \u067e\u0627\u067e\u200c\u0627\u067e \u0647\u0646\u06af\u0627\u0645 \u06a9\u0644\u06cc\u06a9 \u062e\u0627\u0631\u062c \u0627\u0632 \u0627\u0646 \u06cc\u0627 esc"
     },
@@ -691,19 +681,19 @@
       "label": "\u062d\u0630\u0641 \u062a\u0639\u0645\u06cc\u0631\u0627\u062a \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 (\u0686\u06a9\u200c\u0628\u0627\u06a9\u0633\u200c\u062f\u0627\u0631) \u062f\u0631 \u06cc\u06a9 \u0639\u0645\u0644\u06cc\u0627\u062a",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L262",
+      "source_location": "L224",
       "_origin": "ast",
-      "id": "app_rationale_262",
-      "community": 68,
+      "id": "app_rationale_224",
+      "community": 3,
       "norm_label": "\u062d\u0630\u0641 \u062a\u0639\u0645\u06cc\u0631\u0627\u062a \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 (\u0686\u06a9\u200c\u0628\u0627\u06a9\u0633\u200c\u062f\u0627\u0631) \u062f\u0631 \u06cc\u06a9 \u0639\u0645\u0644\u06cc\u0627\u062a"
     },
     {
       "label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u0642\u0637\u0639\u0627\u062a \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L399",
+      "source_location": "L360",
       "_origin": "ast",
-      "id": "app_rationale_399",
+      "id": "app_rationale_360",
       "community": 3,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u0642\u0637\u0639\u0627\u062a \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645"
     },
@@ -711,9 +701,9 @@
       "label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u0642\u0637\u0639\u0647 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L417",
+      "source_location": "L378",
       "_origin": "ast",
-      "id": "app_rationale_417",
+      "id": "app_rationale_378",
       "community": 3,
       "norm_label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u0642\u0637\u0639\u0647 \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
@@ -721,9 +711,9 @@
       "label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u062e\u062f\u0645\u0627\u062a \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L461",
+      "source_location": "L422",
       "_origin": "ast",
-      "id": "app_rationale_461",
+      "id": "app_rationale_422",
       "community": 3,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u062e\u062f\u0645\u0627\u062a \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645"
     },
@@ -731,9 +721,9 @@
       "label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u062e\u062f\u0645\u062a \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L479",
+      "source_location": "L440",
       "_origin": "ast",
-      "id": "app_rationale_479",
+      "id": "app_rationale_440",
       "community": 3,
       "norm_label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u062e\u062f\u0645\u062a \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
@@ -741,29 +731,19 @@
       "label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L523",
+      "source_location": "L484",
       "_origin": "ast",
-      "id": "app_rationale_523",
+      "id": "app_rationale_484",
       "community": 3,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u0648 \u0646\u0645\u0627\u06cc\u0634 \u0644\u06cc\u0633\u062a \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0645\u0631\u062a\u0628 \u0634\u062f\u0647 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645"
-    },
-    {
-      "label": "\u0628\u0647\u200c\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062c\u062f\u0648\u0644 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u062f\u0631 \u0635\u0648\u0631\u062a \u0646\u0645\u0627\u06cc\u0634 \u0646\u0645\u0627\u06cc \u0645\u0634\u062a\u0631\u06cc\u0627\u0646",
-      "file_type": "rationale",
-      "source_file": "app.py",
-      "source_location": "L530",
-      "_origin": "ast",
-      "id": "app_rationale_530",
-      "community": 3,
-      "norm_label": "\u0628\u0647\u200c\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u062c\u062f\u0648\u0644 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u062f\u0631 \u0635\u0648\u0631\u062a \u0646\u0645\u0627\u06cc\u0634 \u0646\u0645\u0627\u06cc \u0645\u0634\u062a\u0631\u06cc\u0627\u0646"
     },
     {
       "label": "\u0627\u0641\u0632\u0648\u062f\u0646 \u0645\u0634\u062a\u0631\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L535",
+      "source_location": "L489",
       "_origin": "ast",
-      "id": "app_rationale_535",
+      "id": "app_rationale_489",
       "community": 3,
       "norm_label": "\u0627\u0641\u0632\u0648\u062f\u0646 \u0645\u0634\u062a\u0631\u06cc \u062c\u062f\u06cc\u062f \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
@@ -771,9 +751,9 @@
       "label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L543",
+      "source_location": "L497",
       "_origin": "ast",
-      "id": "app_rationale_543",
+      "id": "app_rationale_497",
       "community": 3,
       "norm_label": "\u0648\u06cc\u0631\u0627\u06cc\u0634 \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc \u0627\u0632 \u0637\u0631\u06cc\u0642 \u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u062e\u062a\u0635\u0627\u0635\u06cc"
     },
@@ -781,9 +761,9 @@
       "label": "\u0628\u0631\u0631\u0633\u06cc \u0648\u062c\u0648\u062f \u062a\u0639\u0645\u06cc\u0631 \u0645\u0631\u062a\u0628\u0637 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L553",
+      "source_location": "L507",
       "_origin": "ast",
-      "id": "app_rationale_553",
+      "id": "app_rationale_507",
       "community": 3,
       "norm_label": "\u0628\u0631\u0631\u0633\u06cc \u0648\u062c\u0648\u062f \u062a\u0639\u0645\u06cc\u0631 \u0645\u0631\u062a\u0628\u0637 \u0628\u0631\u0627\u06cc \u06cc\u06a9 \u0645\u0634\u062a\u0631\u06cc"
     },
@@ -791,29 +771,29 @@
       "label": "\u062d\u0630\u0641 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 \u0628\u0627 \u0627\u062d\u062a\u06cc\u0627\u0637",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L564",
+      "source_location": "L518",
       "_origin": "ast",
-      "id": "app_rationale_564",
-      "community": 68,
+      "id": "app_rationale_518",
+      "community": 3,
       "norm_label": "\u062d\u0630\u0641 \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 \u0627\u0646\u062a\u062e\u0627\u0628\u200c\u0634\u062f\u0647 \u0628\u0627 \u0627\u062d\u062a\u06cc\u0627\u0637"
     },
     {
       "label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u0627\u0632 \u0641\u0627\u06cc\u0644",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L686",
+      "source_location": "L640",
       "_origin": "ast",
-      "id": "app_rationale_686",
-      "community": 54,
+      "id": "app_rationale_640",
+      "community": 3,
       "norm_label": "\u0628\u0627\u0631\u06af\u0630\u0627\u0631\u06cc \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u0627\u0632 \u0641\u0627\u06cc\u0644"
     },
     {
       "label": "\u0630\u062e\u06cc\u0631\u0647 \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u062f\u0631 \u0641\u0627\u06cc\u0644",
       "file_type": "rationale",
       "source_file": "app.py",
-      "source_location": "L694",
+      "source_location": "L648",
       "_origin": "ast",
-      "id": "app_rationale_694",
+      "id": "app_rationale_648",
       "community": 3,
       "norm_label": "\u0630\u062e\u06cc\u0631\u0647 \u062f\u0627\u062f\u0647\u200c\u0647\u0627 \u062f\u0631 \u0641\u0627\u06cc\u0644"
     },
@@ -955,7 +935,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_models",
-      "community": 72,
+      "community": 2,
       "norm_label": "models.py"
     },
     {
@@ -965,7 +945,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "core_models_repair",
-      "community": 72,
+      "community": 2,
       "norm_label": "repair"
     },
     {
@@ -975,7 +955,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "core_models_repair_to_dict",
-      "community": 72,
+      "community": 2,
       "norm_label": ".to_dict()"
     },
     {
@@ -986,7 +966,7 @@
       "origin_file": "C:\\Users\\AL\\Desktop\\repair_manager\\core\\models.py",
       "_origin": "ast",
       "id": "core_models_py_any",
-      "community": 72,
+      "community": 2,
       "norm_label": "any"
     },
     {
@@ -996,7 +976,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "core_models_repair_from_dict",
-      "community": 72,
+      "community": 2,
       "norm_label": ".from_dict()"
     },
     {
@@ -1316,7 +1296,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_storage_part_model_db",
-      "community": 0,
+      "community": 4,
       "norm_label": "part_model_db.py"
     },
     {
@@ -1326,7 +1306,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "core_storage_part_model_db_partdb",
-      "community": 0,
+      "community": 4,
       "norm_label": "partdb"
     },
     {
@@ -1336,7 +1316,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_storage_part_repository",
-      "community": 0,
+      "community": 4,
       "norm_label": "part_repository.py"
     },
     {
@@ -1346,7 +1326,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "core_storage_part_repository_partrepository",
-      "community": 0,
+      "community": 4,
       "norm_label": "partrepository"
     },
     {
@@ -1356,7 +1336,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "core_storage_part_repository_partrepository_create",
-      "community": 0,
+      "community": 4,
       "norm_label": ".create()"
     },
     {
@@ -1366,7 +1346,7 @@
       "source_location": "L35",
       "_origin": "ast",
       "id": "core_storage_part_repository_partrepository_update",
-      "community": 0,
+      "community": 4,
       "norm_label": ".update()"
     },
     {
@@ -1376,7 +1356,7 @@
       "source_location": "L55",
       "_origin": "ast",
       "id": "core_storage_part_repository_partrepository_delete",
-      "community": 0,
+      "community": 4,
       "norm_label": ".delete()"
     },
     {
@@ -1386,7 +1366,7 @@
       "source_location": "L70",
       "_origin": "ast",
       "id": "core_storage_part_repository_partrepository_get",
-      "community": 0,
+      "community": 4,
       "norm_label": ".get()"
     },
     {
@@ -1396,7 +1376,7 @@
       "source_location": "L78",
       "_origin": "ast",
       "id": "core_storage_part_repository_partrepository_list_all",
-      "community": 0,
+      "community": 4,
       "norm_label": ".list_all()"
     },
     {
@@ -1406,7 +1386,7 @@
       "source_location": "L89",
       "_origin": "ast",
       "id": "core_storage_part_repository_partrepository_search",
-      "community": 0,
+      "community": 4,
       "norm_label": ".search()"
     },
     {
@@ -1416,7 +1396,7 @@
       "source_location": "L101",
       "_origin": "ast",
       "id": "core_storage_part_repository_partrepository_generate_part_code",
-      "community": 0,
+      "community": 4,
       "norm_label": ".generate_part_code()"
     },
     {
@@ -1426,7 +1406,7 @@
       "source_location": "L114",
       "_origin": "ast",
       "id": "core_storage_part_repository_partrepository_to_dict",
-      "community": 0,
+      "community": 4,
       "norm_label": "._to_dict()"
     },
     {
@@ -1566,7 +1546,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_storage_service_model_db",
-      "community": 73,
+      "community": 7,
       "norm_label": "service_model_db.py"
     },
     {
@@ -1576,7 +1556,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "core_storage_service_model_db_servicedb",
-      "community": 73,
+      "community": 7,
       "norm_label": "servicedb"
     },
     {
@@ -1586,7 +1566,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "core_storage_service_repository",
-      "community": 73,
+      "community": 7,
       "norm_label": "service_repository.py"
     },
     {
@@ -1596,7 +1576,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository",
-      "community": 73,
+      "community": 7,
       "norm_label": "servicerepository"
     },
     {
@@ -1606,7 +1586,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_create",
-      "community": 73,
+      "community": 7,
       "norm_label": ".create()"
     },
     {
@@ -1616,7 +1596,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_update",
-      "community": 73,
+      "community": 7,
       "norm_label": ".update()"
     },
     {
@@ -1626,7 +1606,7 @@
       "source_location": "L53",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_delete",
-      "community": 73,
+      "community": 7,
       "norm_label": ".delete()"
     },
     {
@@ -1636,7 +1616,7 @@
       "source_location": "L68",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_get",
-      "community": 73,
+      "community": 7,
       "norm_label": ".get()"
     },
     {
@@ -1646,7 +1626,7 @@
       "source_location": "L76",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_list_all",
-      "community": 73,
+      "community": 7,
       "norm_label": ".list_all()"
     },
     {
@@ -1656,7 +1636,7 @@
       "source_location": "L87",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_search",
-      "community": 73,
+      "community": 7,
       "norm_label": ".search()"
     },
     {
@@ -1666,7 +1646,7 @@
       "source_location": "L99",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_generate_service_code",
-      "community": 73,
+      "community": 7,
       "norm_label": ".generate_service_code()"
     },
     {
@@ -1676,7 +1656,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "core_storage_service_repository_servicerepository_to_dict",
-      "community": 73,
+      "community": 7,
       "norm_label": "._to_dict()"
     },
     {
@@ -2016,7 +1996,7 @@
       "source_location": "L20",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiancalendarwidget_init",
-      "community": 63,
+      "community": 54,
       "norm_label": ".__init__()"
     },
     {
@@ -2026,7 +2006,7 @@
       "source_location": "L33",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiancalendarwidget_get_persian_date",
-      "community": 63,
+      "community": 54,
       "norm_label": ".get_persian_date()"
     },
     {
@@ -2036,7 +2016,7 @@
       "source_location": "L42",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit",
-      "community": 63,
+      "community": 54,
       "norm_label": "persiandateedit"
     },
     {
@@ -2056,7 +2036,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit_init",
-      "community": 63,
+      "community": 54,
       "norm_label": ".__init__()"
     },
     {
@@ -2066,7 +2046,7 @@
       "source_location": "L64",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit_resizeevent",
-      "community": 63,
+      "community": 54,
       "norm_label": ".resizeevent()"
     },
     {
@@ -2076,7 +2056,7 @@
       "source_location": "L69",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit_show_calendar",
-      "community": 63,
+      "community": 54,
       "norm_label": ".show_calendar()"
     },
     {
@@ -2086,7 +2066,7 @@
       "source_location": "L94",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit_set_date",
-      "community": 63,
+      "community": 54,
       "norm_label": ".set_date()"
     },
     {
@@ -2096,7 +2076,7 @@
       "source_location": "L100",
       "_origin": "ast",
       "id": "repair_manager_ui_components_persiandateedit_get_date",
-      "community": 63,
+      "community": 54,
       "norm_label": ".get_date()"
     },
     {
@@ -2116,7 +2096,7 @@
       "source_location": "L34",
       "_origin": "ast",
       "id": "repair_manager_ui_components_rationale_34",
-      "community": 63,
+      "community": 54,
       "norm_label": "\u062f\u0631\u06cc\u0627\u0641\u062a \u062a\u0627\u0631\u06cc\u062e \u0634\u0645\u0633\u06cc \u0627\u0646\u062a\u062e\u0627\u0628 \u0634\u062f\u0647"
     },
     {
@@ -2126,7 +2106,7 @@
       "source_location": "L43",
       "_origin": "ast",
       "id": "repair_manager_ui_components_rationale_43",
-      "community": 63,
+      "community": 54,
       "norm_label": "\u0648\u06cc\u062c\u062a \u0648\u0631\u0648\u062f\u06cc \u062a\u0627\u0631\u06cc\u062e \u0634\u0645\u0633\u06cc"
     },
     {
@@ -2156,7 +2136,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_customer_service",
-      "community": 1,
+      "community": 52,
       "norm_label": "customer_service.py"
     },
     {
@@ -2400,56 +2380,6 @@
       "norm_label": "return the next customer_code in c000001, c000002, ... format."
     },
     {
-      "label": "customer_stats_service.py",
-      "file_type": "code",
-      "source_file": "services/customer_stats_service.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "services_customer_stats_service",
-      "community": 2,
-      "norm_label": "customer_stats_service.py"
-    },
-    {
-      "label": "_match_key()",
-      "file_type": "code",
-      "source_file": "services/customer_stats_service.py",
-      "source_location": "L6",
-      "_origin": "ast",
-      "id": "services_customer_stats_service_match_key",
-      "community": 2,
-      "norm_label": "_match_key()"
-    },
-    {
-      "label": "compute_customer_repair_stats()",
-      "file_type": "code",
-      "source_file": "services/customer_stats_service.py",
-      "source_location": "L17",
-      "_origin": "ast",
-      "id": "services_customer_stats_service_compute_customer_repair_stats",
-      "community": 2,
-      "norm_label": "compute_customer_repair_stats()"
-    },
-    {
-      "label": "Build normalized lookup keys for a repair/customer link.      Repairs are linked",
-      "file_type": "rationale",
-      "source_file": "services/customer_stats_service.py",
-      "source_location": "L7",
-      "_origin": "ast",
-      "id": "services_customer_stats_service_rationale_7",
-      "community": 2,
-      "norm_label": "build normalized lookup keys for a repair/customer link.      repairs are linked"
-    },
-    {
-      "label": "Compute per-customer repair statistics in a single pass.      Returns a dict key",
-      "file_type": "rationale",
-      "source_file": "services/customer_stats_service.py",
-      "source_location": "L20",
-      "_origin": "ast",
-      "id": "services_customer_stats_service_rationale_20",
-      "community": 2,
-      "norm_label": "compute per-customer repair statistics in a single pass.      returns a dict key"
-    },
-    {
       "label": "customer_workflow.py",
       "file_type": "code",
       "source_file": "services/customer_workflow.py",
@@ -2476,7 +2406,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "services_customer_workflow_customerworkflow_init",
-      "community": 1,
+      "community": 52,
       "norm_label": ".__init__()"
     },
     {
@@ -2716,7 +2646,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_date_service",
-      "community": 68,
+      "community": 2,
       "norm_label": "date_service.py"
     },
     {
@@ -2726,7 +2656,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "services_date_service_today_persian",
-      "community": 68,
+      "community": 2,
       "norm_label": "today_persian()"
     },
     {
@@ -2736,7 +2666,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_invoice_calculator",
-      "community": 52,
+      "community": 2,
       "norm_label": "invoice_calculator.py"
     },
     {
@@ -2746,7 +2676,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "services_invoice_calculator_calculate_invoice_totals",
-      "community": 52,
+      "community": 2,
       "norm_label": "calculate_invoice_totals()"
     },
     {
@@ -2757,7 +2687,7 @@
       "origin_file": "C:\\Users\\AL\\Desktop\\repair_manager\\services\\invoice_calculator.py",
       "_origin": "ast",
       "id": "services_invoice_calculator_py_any",
-      "community": 52,
+      "community": 2,
       "norm_label": "any"
     },
     {
@@ -2767,7 +2697,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_invoice_exporter",
-      "community": 2,
+      "community": 3,
       "norm_label": "invoice_exporter.py"
     },
     {
@@ -2787,7 +2717,7 @@
       "source_location": "L18",
       "_origin": "ast",
       "id": "services_invoice_exporter_save_invoice_to_pdf",
-      "community": 2,
+      "community": 3,
       "norm_label": "save_invoice_to_pdf()"
     },
     {
@@ -2897,7 +2827,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_notification_service",
-      "community": 68,
+      "community": 3,
       "norm_label": "notification_service.py"
     },
     {
@@ -2907,7 +2837,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "services_notification_service_show_info",
-      "community": 68,
+      "community": 3,
       "norm_label": "show_info()"
     },
     {
@@ -2917,7 +2847,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "services_notification_service_show_warning",
-      "community": 68,
+      "community": 3,
       "norm_label": "show_warning()"
     },
     {
@@ -2927,7 +2857,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "services_notification_service_show_error",
-      "community": 68,
+      "community": 3,
       "norm_label": "show_error()"
     },
     {
@@ -2937,7 +2867,7 @@
       "source_location": "L19",
       "_origin": "ast",
       "id": "services_notification_service_show_question",
-      "community": 68,
+      "community": 3,
       "norm_label": "show_question()"
     },
     {
@@ -2947,7 +2877,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_part_service",
-      "community": 68,
+      "community": 4,
       "norm_label": "part_service.py"
     },
     {
@@ -2967,7 +2897,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "services_part_service_partservice_init",
-      "community": 0,
+      "community": 4,
       "norm_label": ".__init__()"
     },
     {
@@ -3027,7 +2957,7 @@
       "source_location": "L47",
       "_origin": "ast",
       "id": "services_part_service_partservice_list_all",
-      "community": 75,
+      "community": 4,
       "norm_label": ".list_all()"
     },
     {
@@ -3037,7 +2967,7 @@
       "source_location": "L51",
       "_origin": "ast",
       "id": "services_part_service_partservice_search",
-      "community": 75,
+      "community": 4,
       "norm_label": ".search()"
     },
     {
@@ -3047,7 +2977,7 @@
       "source_location": "L57",
       "_origin": "ast",
       "id": "services_part_service_partservice_get_active_for_invoice",
-      "community": 75,
+      "community": 4,
       "norm_label": ".get_active_for_invoice()"
     },
     {
@@ -3057,7 +2987,7 @@
       "source_location": "L61",
       "_origin": "ast",
       "id": "services_part_service_partservice_find_by_code",
-      "community": 75,
+      "community": 4,
       "norm_label": ".find_by_code()"
     },
     {
@@ -3117,7 +3047,7 @@
       "source_location": "L48",
       "_origin": "ast",
       "id": "services_part_service_rationale_48",
-      "community": 75,
+      "community": 4,
       "norm_label": "return all parts, optionally filtered to active only."
     },
     {
@@ -3127,7 +3057,7 @@
       "source_location": "L52",
       "_origin": "ast",
       "id": "services_part_service_rationale_52",
-      "community": 75,
+      "community": 4,
       "norm_label": "search parts by name or code (contains, case-insensitive)."
     },
     {
@@ -3137,7 +3067,7 @@
       "source_location": "L58",
       "_origin": "ast",
       "id": "services_part_service_rationale_58",
-      "community": 75,
+      "community": 4,
       "norm_label": "return active parts for future invoice line-item selection."
     },
     {
@@ -3147,7 +3077,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "services_part_service_rationale_62",
-      "community": 75,
+      "community": 4,
       "norm_label": "find a part by its code (for future invoice integration)."
     },
     {
@@ -3157,7 +3087,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_repair_manager_service",
-      "community": 72,
+      "community": 2,
       "norm_label": "repair_manager_service.py"
     },
     {
@@ -3167,7 +3097,7 @@
       "source_location": "L6",
       "_origin": "ast",
       "id": "services_repair_manager_service_add_repair",
-      "community": 72,
+      "community": 2,
       "norm_label": "add_repair()"
     },
     {
@@ -3177,7 +3107,7 @@
       "source_location": "L21",
       "_origin": "ast",
       "id": "services_repair_manager_service_delete_repair",
-      "community": 72,
+      "community": 2,
       "norm_label": "delete_repair()"
     },
     {
@@ -3187,7 +3117,7 @@
       "source_location": "L28",
       "_origin": "ast",
       "id": "services_repair_manager_service_get_repair_by_id",
-      "community": 72,
+      "community": 3,
       "norm_label": "get_repair_by_id()"
     },
     {
@@ -3197,7 +3127,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "services_repair_manager_service_update_repair",
-      "community": 72,
+      "community": 2,
       "norm_label": "update_repair()"
     },
     {
@@ -3207,7 +3137,7 @@
       "source_location": "L7",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_7",
-      "community": 72,
+      "community": 2,
       "norm_label": "add a new repair to the repairs list.     assigns a unique id to the new repair."
     },
     {
@@ -3217,7 +3147,7 @@
       "source_location": "L22",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_22",
-      "community": 72,
+      "community": 2,
       "norm_label": "delete a repair by id from the repairs list."
     },
     {
@@ -3227,7 +3157,7 @@
       "source_location": "L29",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_29",
-      "community": 72,
+      "community": 3,
       "norm_label": "find and return a repair by its id."
     },
     {
@@ -3237,7 +3167,7 @@
       "source_location": "L39",
       "_origin": "ast",
       "id": "services_repair_manager_service_rationale_39",
-      "community": 72,
+      "community": 2,
       "norm_label": "update a repair by id with new data."
     },
     {
@@ -3247,7 +3177,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_service_service",
-      "community": 68,
+      "community": 7,
       "norm_label": "service_service.py"
     },
     {
@@ -3267,7 +3197,7 @@
       "source_location": "L9",
       "_origin": "ast",
       "id": "services_service_service_serviceservice_init",
-      "community": 73,
+      "community": 7,
       "norm_label": ".__init__()"
     },
     {
@@ -3407,7 +3337,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "services_statistics",
-      "community": 68,
+      "community": 2,
       "norm_label": "statistics.py"
     },
     {
@@ -3417,7 +3347,7 @@
       "source_location": "L4",
       "_origin": "ast",
       "id": "services_statistics_update_statistics",
-      "community": 68,
+      "community": 2,
       "norm_label": "update_statistics()"
     },
     {
@@ -3427,7 +3357,7 @@
       "source_location": "L5",
       "_origin": "ast",
       "id": "services_statistics_rationale_5",
-      "community": 68,
+      "community": 2,
       "norm_label": "calculate statistics for repairs"
     },
     {
@@ -3784,7 +3714,7 @@
       "label": "build_customer_toolbar()",
       "file_type": "code",
       "source_file": "ui/customer_view.py",
-      "source_location": "L16",
+      "source_location": "L15",
       "_origin": "ast",
       "id": "ui_customer_view_build_customer_toolbar",
       "community": 29,
@@ -3794,7 +3724,7 @@
       "label": "build_customer_table()",
       "file_type": "code",
       "source_file": "ui/customer_view.py",
-      "source_location": "L39",
+      "source_location": "L38",
       "_origin": "ast",
       "id": "ui_customer_view_build_customer_table",
       "community": 29,
@@ -3804,7 +3734,7 @@
       "label": "render_customer_rows()",
       "file_type": "code",
       "source_file": "ui/customer_view.py",
-      "source_location": "L77",
+      "source_location": "L73",
       "_origin": "ast",
       "id": "ui_customer_view_render_customer_rows",
       "community": 29,
@@ -3825,7 +3755,7 @@
       "label": "_on_header_clicked()",
       "file_type": "code",
       "source_file": "ui/customer_view.py",
-      "source_location": "L144",
+      "source_location": "L121",
       "_origin": "ast",
       "id": "ui_customer_view_on_header_clicked",
       "community": 29,
@@ -3835,7 +3765,7 @@
       "label": "_on_item_changed()",
       "file_type": "code",
       "source_file": "ui/customer_view.py",
-      "source_location": "L161",
+      "source_location": "L138",
       "_origin": "ast",
       "id": "ui_customer_view_on_item_changed",
       "community": 29,
@@ -3856,7 +3786,7 @@
       "label": "_sync_header_state()",
       "file_type": "code",
       "source_file": "ui/customer_view.py",
-      "source_location": "L168",
+      "source_location": "L145",
       "_origin": "ast",
       "id": "ui_customer_view_sync_header_state",
       "community": 29,
@@ -3866,9 +3796,9 @@
       "label": "\u0627\u06cc\u062c\u0627\u062f \u0646\u0648\u0627\u0631 \u0627\u0628\u0632\u0627\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u0634\u062a\u0631\u06cc\u0627\u0646",
       "file_type": "rationale",
       "source_file": "ui/customer_view.py",
-      "source_location": "L17",
+      "source_location": "L16",
       "_origin": "ast",
-      "id": "ui_customer_view_rationale_17",
+      "id": "ui_customer_view_rationale_16",
       "community": 29,
       "norm_label": "\u0627\u06cc\u062c\u0627\u062f \u0646\u0648\u0627\u0631 \u0627\u0628\u0632\u0627\u0631 \u0645\u062f\u06cc\u0631\u06cc\u062a \u0645\u0634\u062a\u0631\u06cc\u0627\u0646"
     },
@@ -3876,9 +3806,9 @@
       "label": "\u0631\u0646\u062f\u0631 \u06a9\u0631\u062f\u0646 \u0631\u062f\u06cc\u0641\u200c\u0647\u0627\u06cc \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 (\u0645\u0631\u062a\u0628 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645)",
       "file_type": "rationale",
       "source_file": "ui/customer_view.py",
-      "source_location": "L79",
+      "source_location": "L75",
       "_origin": "ast",
-      "id": "ui_customer_view_rationale_79",
+      "id": "ui_customer_view_rationale_75",
       "community": 29,
       "norm_label": "\u0631\u0646\u062f\u0631 \u06a9\u0631\u062f\u0646 \u0631\u062f\u06cc\u0641\u200c\u0647\u0627\u06cc \u0645\u0634\u062a\u0631\u06cc\u0627\u0646 (\u0645\u0631\u062a\u0628 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0646\u0627\u0645)"
     },
@@ -3886,9 +3816,9 @@
       "label": "\u062a\u063a\u06cc\u06cc\u0631 \u0648\u0636\u0639\u06cc\u062a \u0647\u0645\u0647 \u0686\u06a9\u200c\u0628\u0627\u06a9\u0633\u200c\u0647\u0627 \u0628\u0627 \u06a9\u0644\u06cc\u06a9 \u0631\u0648\u06cc \u0647\u062f\u0631",
       "file_type": "rationale",
       "source_file": "ui/customer_view.py",
-      "source_location": "L145",
+      "source_location": "L122",
       "_origin": "ast",
-      "id": "ui_customer_view_rationale_145",
+      "id": "ui_customer_view_rationale_122",
       "community": 29,
       "norm_label": "\u062a\u063a\u06cc\u06cc\u0631 \u0648\u0636\u0639\u06cc\u062a \u0647\u0645\u0647 \u0686\u06a9\u200c\u0628\u0627\u06a9\u0633\u200c\u0647\u0627 \u0628\u0627 \u06a9\u0644\u06cc\u06a9 \u0631\u0648\u06cc \u0647\u062f\u0631"
     },
@@ -3896,9 +3826,9 @@
       "label": "\u0628\u0647\u200c\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u0686\u06a9\u200c\u0628\u0627\u06a9\u0633 \u0647\u062f\u0631 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0631\u062f\u06cc\u0641\u200c\u0647\u0627",
       "file_type": "rationale",
       "source_file": "ui/customer_view.py",
-      "source_location": "L162",
+      "source_location": "L139",
       "_origin": "ast",
-      "id": "ui_customer_view_rationale_162",
+      "id": "ui_customer_view_rationale_139",
       "community": 29,
       "norm_label": "\u0628\u0647\u200c\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u0648\u0636\u0639\u06cc\u062a \u0686\u06a9\u200c\u0628\u0627\u06a9\u0633 \u0647\u062f\u0631 \u0628\u0631 \u0627\u0633\u0627\u0633 \u0631\u062f\u06cc\u0641\u200c\u0647\u0627"
     },
@@ -3919,7 +3849,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog",
-      "community": 63,
+      "community": 68,
       "norm_label": "customereditdialog"
     },
     {
@@ -3929,7 +3859,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_init",
-      "community": 63,
+      "community": 68,
       "norm_label": ".__init__()"
     },
     {
@@ -3939,7 +3869,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_init_ui",
-      "community": 63,
+      "community": 68,
       "norm_label": ".init_ui()"
     },
     {
@@ -3949,7 +3879,7 @@
       "source_location": "L112",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_load_fields",
-      "community": 63,
+      "community": 68,
       "norm_label": "._load_fields()"
     },
     {
@@ -3959,7 +3889,7 @@
       "source_location": "L125",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_get_data",
-      "community": 63,
+      "community": 68,
       "norm_label": "._get_data()"
     },
     {
@@ -3969,7 +3899,7 @@
       "source_location": "L139",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_customereditdialog_save",
-      "community": 63,
+      "community": 68,
       "norm_label": "._save()"
     },
     {
@@ -3979,7 +3909,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_dialogs_customer_edit_dialog_rationale_11",
-      "community": 63,
+      "community": 68,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0627\u0637\u0644\u0627\u0639\u0627\u062a \u0645\u0634\u062a\u0631\u06cc"
     },
     {
@@ -3999,7 +3929,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog",
-      "community": 63,
+      "community": 71,
       "norm_label": "customerselectiondialog"
     },
     {
@@ -4009,7 +3939,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_init",
-      "community": 63,
+      "community": 71,
       "norm_label": ".__init__()"
     },
     {
@@ -4019,7 +3949,7 @@
       "source_location": "L62",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_load_customers",
-      "community": 63,
+      "community": 71,
       "norm_label": "._load_customers()"
     },
     {
@@ -4029,7 +3959,7 @@
       "source_location": "L75",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_filter",
-      "community": 63,
+      "community": 71,
       "norm_label": "._filter()"
     },
     {
@@ -4039,7 +3969,7 @@
       "source_location": "L82",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_customerselectiondialog_on_select",
-      "community": 63,
+      "community": 71,
       "norm_label": "._on_select()"
     },
     {
@@ -4049,7 +3979,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_dialogs_customer_selection_dialog_rationale_11",
-      "community": 63,
+      "community": 71,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0646\u062a\u062e\u0627\u0628 \u0645\u0634\u062a\u0631\u06cc \u0627\u0632 \u0644\u06cc\u0633\u062a"
     },
     {
@@ -4143,83 +4073,13 @@
       "norm_label": "\u0628\u0647\u200c\u0631\u0648\u0632\u0631\u0633\u0627\u0646\u06cc \u067e\u06cc\u0634\u200c\u0646\u0645\u0627\u06cc\u0634 \u0641\u0627\u06a9\u062a\u0648\u0631"
     },
     {
-      "label": "item_picker_dialog.py",
-      "file_type": "code",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "ui_dialogs_item_picker_dialog",
-      "community": 6,
-      "norm_label": "item_picker_dialog.py"
-    },
-    {
-      "label": "ItemPickerDialog",
-      "file_type": "code",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L8",
-      "_origin": "ast",
-      "id": "ui_dialogs_item_picker_dialog_itempickerdialog",
-      "community": 6,
-      "norm_label": "itempickerdialog"
-    },
-    {
-      "label": ".__init__()",
-      "file_type": "code",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L11",
-      "_origin": "ast",
-      "id": "ui_dialogs_item_picker_dialog_itempickerdialog_init",
-      "community": 6,
-      "norm_label": ".__init__()"
-    },
-    {
-      "label": "._load_items()",
-      "file_type": "code",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L62",
-      "_origin": "ast",
-      "id": "ui_dialogs_item_picker_dialog_itempickerdialog_load_items",
-      "community": 6,
-      "norm_label": "._load_items()"
-    },
-    {
-      "label": "._filter()",
-      "file_type": "code",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L73",
-      "_origin": "ast",
-      "id": "ui_dialogs_item_picker_dialog_itempickerdialog_filter",
-      "community": 6,
-      "norm_label": "._filter()"
-    },
-    {
-      "label": "._on_select()",
-      "file_type": "code",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L80",
-      "_origin": "ast",
-      "id": "ui_dialogs_item_picker_dialog_itempickerdialog_on_select",
-      "community": 6,
-      "norm_label": "._on_select()"
-    },
-    {
-      "label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0646\u062a\u062e\u0627\u0628 \u0622\u06cc\u062a\u0645 \u0627\u0632 \u06a9\u0627\u062a\u0627\u0644\u0648\u06af (\u062e\u062f\u0645\u0627\u062a \u06cc\u0627 \u0642\u0637\u0639\u0627\u062a)",
-      "file_type": "rationale",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L9",
-      "_origin": "ast",
-      "id": "ui_dialogs_item_picker_dialog_rationale_9",
-      "community": 6,
-      "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0646\u062a\u062e\u0627\u0628 \u0627\u06cc\u062a\u0645 \u0627\u0632 \u06a9\u0627\u062a\u0627\u0644\u0648\u06af (\u062e\u062f\u0645\u0627\u062a \u06cc\u0627 \u0642\u0637\u0639\u0627\u062a)"
-    },
-    {
       "label": "part_edit_dialog.py",
       "file_type": "code",
       "source_file": "ui/dialogs/part_edit_dialog.py",
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_part_edit_dialog",
-      "community": 68,
+      "community": 3,
       "norm_label": "part_edit_dialog.py"
     },
     {
@@ -4229,7 +4089,7 @@
       "source_location": "L10",
       "_origin": "ast",
       "id": "ui_dialogs_part_edit_dialog_parteditdialog",
-      "community": 4,
+      "community": 3,
       "norm_label": "parteditdialog"
     },
     {
@@ -4239,7 +4099,7 @@
       "source_location": "L13",
       "_origin": "ast",
       "id": "ui_dialogs_part_edit_dialog_parteditdialog_init",
-      "community": 4,
+      "community": 3,
       "norm_label": ".__init__()"
     },
     {
@@ -4249,7 +4109,7 @@
       "source_location": "L38",
       "_origin": "ast",
       "id": "ui_dialogs_part_edit_dialog_parteditdialog_init_ui",
-      "community": 4,
+      "community": 3,
       "norm_label": ".init_ui()"
     },
     {
@@ -4259,7 +4119,7 @@
       "source_location": "L103",
       "_origin": "ast",
       "id": "ui_dialogs_part_edit_dialog_parteditdialog_load_fields",
-      "community": 4,
+      "community": 3,
       "norm_label": "._load_fields()"
     },
     {
@@ -4269,7 +4129,7 @@
       "source_location": "L113",
       "_origin": "ast",
       "id": "ui_dialogs_part_edit_dialog_parteditdialog_get_data",
-      "community": 4,
+      "community": 3,
       "norm_label": "._get_data()"
     },
     {
@@ -4279,7 +4139,7 @@
       "source_location": "L123",
       "_origin": "ast",
       "id": "ui_dialogs_part_edit_dialog_parteditdialog_save",
-      "community": 4,
+      "community": 3,
       "norm_label": "._save()"
     },
     {
@@ -4289,7 +4149,7 @@
       "source_location": "L11",
       "_origin": "ast",
       "id": "ui_dialogs_part_edit_dialog_rationale_11",
-      "community": 4,
+      "community": 3,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u0627\u0641\u0632\u0648\u062f\u0646/\u0648\u06cc\u0631\u0627\u06cc\u0634 \u0642\u0637\u0639\u0647"
     },
     {
@@ -4309,7 +4169,7 @@
       "source_location": "L24",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate",
-      "community": 63,
+      "community": 72,
       "norm_label": "completeritemdelegate"
     },
     {
@@ -4319,7 +4179,7 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qstyleditemdelegate",
-      "community": 63,
+      "community": 7,
       "norm_label": "qstyleditemdelegate"
     },
     {
@@ -4329,7 +4189,7 @@
       "source_location": "L25",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate_paint",
-      "community": 63,
+      "community": 72,
       "norm_label": ".paint()"
     },
     {
@@ -4339,7 +4199,7 @@
       "source_location": "L46",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_completeritemdelegate_sizehint",
-      "community": 63,
+      "community": 72,
       "norm_label": ".sizehint()"
     },
     {
@@ -4379,7 +4239,7 @@
       "source_location": "L229",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_init_customer_completer",
-      "community": 63,
+      "community": 72,
       "norm_label": "._init_customer_completer()"
     },
     {
@@ -4479,7 +4339,7 @@
       "source_location": "L346",
       "_origin": "ast",
       "id": "ui_dialogs_repair_dialog_repairdialog_validate_and_accept",
-      "community": 68,
+      "community": 3,
       "norm_label": ".validate_and_accept()"
     },
     {
@@ -4519,7 +4379,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_service_edit_dialog",
-      "community": 68,
+      "community": 7,
       "norm_label": "service_edit_dialog.py"
     },
     {
@@ -4599,7 +4459,7 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog",
-      "community": 68,
+      "community": 3,
       "norm_label": "shop_settings_dialog.py"
     },
     {
@@ -4609,7 +4469,7 @@
       "source_location": "L14",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog",
-      "community": 74,
+      "community": 2,
       "norm_label": "shopsettingsdialog"
     },
     {
@@ -4619,7 +4479,7 @@
       "source_location": "L17",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_init",
-      "community": 74,
+      "community": 2,
       "norm_label": ".__init__()"
     },
     {
@@ -4629,7 +4489,7 @@
       "source_location": "L27",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_init_ui",
-      "community": 74,
+      "community": 2,
       "norm_label": ".init_ui()"
     },
     {
@@ -4639,7 +4499,7 @@
       "source_location": "L206",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_select_logo",
-      "community": 74,
+      "community": 2,
       "norm_label": ".select_logo()"
     },
     {
@@ -4649,7 +4509,7 @@
       "source_location": "L219",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_add_color_field",
-      "community": 74,
+      "community": 2,
       "norm_label": "._add_color_field()"
     },
     {
@@ -4659,7 +4519,7 @@
       "source_location": "L240",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_restore_defaults",
-      "community": 68,
+      "community": 3,
       "norm_label": ".restore_defaults()"
     },
     {
@@ -4669,7 +4529,7 @@
       "source_location": "L260",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_load_settings",
-      "community": 74,
+      "community": 2,
       "norm_label": ".load_settings()"
     },
     {
@@ -4679,7 +4539,7 @@
       "source_location": "L310",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_shopsettingsdialog_save_settings",
-      "community": 68,
+      "community": 3,
       "norm_label": ".save_settings()"
     },
     {
@@ -4699,7 +4559,7 @@
       "source_location": "L15",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_rationale_15",
-      "community": 74,
+      "community": 2,
       "norm_label": "\u062f\u06cc\u0627\u0644\u0648\u06af \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u0641\u0631\u0648\u0634\u06af\u0627\u0647"
     },
     {
@@ -4709,7 +4569,7 @@
       "source_location": "L241",
       "_origin": "ast",
       "id": "ui_dialogs_shop_settings_dialog_rationale_241",
-      "community": 68,
+      "community": 3,
       "norm_label": "\u0628\u0627\u0632\u06af\u0631\u062f\u0627\u0646\u06cc \u062a\u0646\u0638\u06cc\u0645\u0627\u062a \u067e\u06cc\u0634\u200c\u0641\u0631\u0636 \u0638\u0627\u0647\u0631\u06cc"
     },
     {
@@ -5326,14 +5186,14 @@
       "source_location": "L1",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget",
-      "community": 68,
+      "community": 7,
       "norm_label": "invoice_widget.py"
     },
     {
       "label": "_CompleterDelegate",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L18",
+      "source_location": "L16",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_completerdelegate",
       "community": 7,
@@ -5343,7 +5203,7 @@
       "label": ".sizeHint()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L19",
+      "source_location": "L17",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_completerdelegate_sizehint",
       "community": 7,
@@ -5353,7 +5213,7 @@
       "label": "InvoiceWidget",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L24",
+      "source_location": "L22",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget",
       "community": 6,
@@ -5366,24 +5226,24 @@
       "source_location": "",
       "_origin": "ast",
       "id": "qwidget",
-      "community": 6,
+      "community": 2,
       "norm_label": "qwidget"
     },
     {
       "label": ".__init__()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L27",
+      "source_location": "L25",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_init",
-      "community": 7,
+      "community": 6,
       "norm_label": ".__init__()"
     },
     {
       "label": "._init_ui()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L39",
+      "source_location": "L37",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_init_ui",
       "community": 6,
@@ -5393,17 +5253,17 @@
       "label": "._init_completers()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L227",
+      "source_location": "L215",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_init_completers",
-      "community": 7,
+      "community": 6,
       "norm_label": "._init_completers()"
     },
     {
       "label": "._on_svc_search_changed()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L254",
+      "source_location": "L244",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_on_svc_search_changed",
       "community": 6,
@@ -5413,7 +5273,7 @@
       "label": "._on_svc_completer_activated()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L277",
+      "source_location": "L261",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_on_svc_completer_activated",
       "community": 6,
@@ -5423,7 +5283,7 @@
       "label": "._on_part_search_changed()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L287",
+      "source_location": "L269",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_on_part_search_changed",
       "community": 6,
@@ -5433,7 +5293,7 @@
       "label": "._on_part_completer_activated()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L310",
+      "source_location": "L286",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_on_part_completer_activated",
       "community": 6,
@@ -5443,7 +5303,7 @@
       "label": "._add_service_from_search()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L322",
+      "source_location": "L296",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_add_service_from_search",
       "community": 6,
@@ -5453,7 +5313,7 @@
       "label": "._add_part_from_search()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L333",
+      "source_location": "L306",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_add_part_from_search",
       "community": 6,
@@ -5463,7 +5323,7 @@
       "label": "._create_new_service()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L346",
+      "source_location": "L318",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_create_new_service",
       "community": 6,
@@ -5473,7 +5333,7 @@
       "label": "._create_new_part()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L356",
+      "source_location": "L328",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_create_new_part",
       "community": 6,
@@ -5483,7 +5343,7 @@
       "label": "._add_service_line()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L368",
+      "source_location": "L340",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_add_service_line",
       "community": 6,
@@ -5493,7 +5353,7 @@
       "label": "._add_part_line()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L379",
+      "source_location": "L351",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_add_part_line",
       "community": 6,
@@ -5503,7 +5363,7 @@
       "label": "._remove_service_line()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L390",
+      "source_location": "L362",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_remove_service_line",
       "community": 6,
@@ -5513,7 +5373,7 @@
       "label": "._remove_part_line()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L395",
+      "source_location": "L367",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_remove_part_line",
       "community": 6,
@@ -5523,7 +5383,7 @@
       "label": "._render_service_table()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L402",
+      "source_location": "L374",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_render_service_table",
       "community": 6,
@@ -5533,7 +5393,7 @@
       "label": "._render_part_table()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L439",
+      "source_location": "L411",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_render_part_table",
       "community": 6,
@@ -5543,7 +5403,7 @@
       "label": "._update_svc_qty()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L478",
+      "source_location": "L450",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_update_svc_qty",
       "community": 6,
@@ -5553,7 +5413,7 @@
       "label": "._update_svc_price()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L489",
+      "source_location": "L461",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_update_svc_price",
       "community": 6,
@@ -5563,7 +5423,7 @@
       "label": "._update_part_qty()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L500",
+      "source_location": "L472",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_update_part_qty",
       "community": 6,
@@ -5573,7 +5433,7 @@
       "label": "._update_part_price()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L511",
+      "source_location": "L483",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_update_part_price",
       "community": 6,
@@ -5583,7 +5443,7 @@
       "label": "._recalculate()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L524",
+      "source_location": "L496",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_recalculate",
       "community": 6,
@@ -5593,7 +5453,7 @@
       "label": "._update_payment()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L543",
+      "source_location": "L515",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_update_payment",
       "community": 6,
@@ -5603,7 +5463,7 @@
       "label": ".load_data()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L578",
+      "source_location": "L550",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_load_data",
       "community": 6,
@@ -5613,7 +5473,7 @@
       "label": ".get_data()",
       "file_type": "code",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L612",
+      "source_location": "L584",
       "_origin": "ast",
       "id": "ui_widgets_invoice_widget_invoicewidget_get_data",
       "community": 6,
@@ -5623,9 +5483,9 @@
       "label": "\u0648\u06cc\u062c\u062a \u0641\u0627\u06a9\u062a\u0648\u0631 \u062a\u0639\u0645\u06cc\u0631: \u062e\u062f\u0645\u0627\u062a\u060c \u0642\u0637\u0639\u0627\u062a\u060c \u062e\u0644\u0627\u0635\u0647\u060c \u067e\u0631\u062f\u0627\u062e\u062a\u060c \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u0647\u0627\u06cc \u0645\u0627\u0644\u06cc",
       "file_type": "rationale",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L25",
+      "source_location": "L23",
       "_origin": "ast",
-      "id": "ui_widgets_invoice_widget_rationale_25",
+      "id": "ui_widgets_invoice_widget_rationale_23",
       "community": 6,
       "norm_label": "\u0648\u06cc\u062c\u062a \u0641\u0627\u06a9\u062a\u0648\u0631 \u062a\u0639\u0645\u06cc\u0631: \u062e\u062f\u0645\u0627\u062a\u060c \u0642\u0637\u0639\u0627\u062a\u060c \u062e\u0644\u0627\u0635\u0647\u060c \u067e\u0631\u062f\u0627\u062e\u062a\u060c \u06cc\u0627\u062f\u062f\u0627\u0634\u062a\u200c\u0647\u0627\u06cc \u0645\u0627\u0644\u06cc"
     },
@@ -5633,9 +5493,9 @@
       "label": "Load invoice data from a repair dict, with migration for old repairs.",
       "file_type": "rationale",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L579",
+      "source_location": "L551",
       "_origin": "ast",
-      "id": "ui_widgets_invoice_widget_rationale_579",
+      "id": "ui_widgets_invoice_widget_rationale_551",
       "community": 6,
       "norm_label": "load invoice data from a repair dict, with migration for old repairs."
     },
@@ -5643,9 +5503,9 @@
       "label": "Return invoice data as a dict.",
       "file_type": "rationale",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L613",
+      "source_location": "L585",
       "_origin": "ast",
-      "id": "ui_widgets_invoice_widget_rationale_613",
+      "id": "ui_widgets_invoice_widget_rationale_585",
       "community": 6,
       "norm_label": "return invoice data as a dict."
     },
@@ -7438,186 +7298,6 @@
       "id": "customer_root_cause_analysis_decision",
       "community": 51,
       "norm_label": "decision"
-    },
-    {
-      "label": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui",
-      "community": 71,
-      "norm_label": "customer_stats_and_startup_ui.md"
-    },
-    {
-      "label": "Customer Repair Statistics & Startup Notifications UI",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L1",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_customer_repair_statistics_startup_notifications_ui",
-      "community": 71,
-      "norm_label": "customer repair statistics & startup notifications ui"
-    },
-    {
-      "label": "Overview",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L3",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_overview",
-      "community": 71,
-      "norm_label": "overview"
-    },
-    {
-      "label": "1. Customer Repair Statistics Columns",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L15",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_1_customer_repair_statistics_columns",
-      "community": 71,
-      "norm_label": "1. customer repair statistics columns"
-    },
-    {
-      "label": "New columns",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L17",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_new_columns",
-      "community": 71,
-      "norm_label": "new columns"
-    },
-    {
-      "label": "Column order (new layout)",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L28",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_column_order_new_layout",
-      "community": 71,
-      "norm_label": "column order (new layout)"
-    },
-    {
-      "label": "Status definitions",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L36",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_status_definitions",
-      "community": 71,
-      "norm_label": "status definitions"
-    },
-    {
-      "label": "Customer \u2194 Repair linkage",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L48",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_customer_repair_linkage",
-      "community": 71,
-      "norm_label": "customer \u2194 repair linkage"
-    },
-    {
-      "label": "Efficient computation (no N+1)",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L59",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_efficient_computation_no_n_1",
-      "community": 71,
-      "norm_label": "efficient computation (no n+1)"
-    },
-    {
-      "label": "Automatic refresh",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L77",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_automatic_refresh",
-      "community": 71,
-      "norm_label": "automatic refresh"
-    },
-    {
-      "label": "Display rules",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L97",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_display_rules",
-      "community": 71,
-      "norm_label": "display rules"
-    },
-    {
-      "label": "Files changed",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L104",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_files_changed",
-      "community": 71,
-      "norm_label": "files changed"
-    },
-    {
-      "label": "2. Startup Notifications Screen",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L114",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_2_startup_notifications_screen",
-      "community": 71,
-      "norm_label": "2. startup notifications screen"
-    },
-    {
-      "label": "Requirements met",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L119",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_requirements_met",
-      "community": 71,
-      "norm_label": "requirements met"
-    },
-    {
-      "label": "Suggested behavior",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L140",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_suggested_behavior",
-      "community": 71,
-      "norm_label": "suggested behavior"
-    },
-    {
-      "label": "Files changed",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L146",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_files_changed_146",
-      "community": 71,
-      "norm_label": "files changed"
-    },
-    {
-      "label": "Verification",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L152",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_verification",
-      "community": 71,
-      "norm_label": "verification"
-    },
-    {
-      "label": "What was NOT changed",
-      "file_type": "document",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L166",
-      "_origin": "ast",
-      "id": "customer_stats_and_startup_ui_what_was_not_changed",
-      "community": 71,
-      "norm_label": "what was not changed"
     },
     {
       "label": "CUSTOMER_WORKFLOW_AUDIT.md",
@@ -11539,28 +11219,6 @@
       "context": "import",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "app",
-      "target": "services_customer_stats_service",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app.py",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "app",
-      "target": "services_customer_stats_service_compute_customer_repair_stats",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "app.py",
       "source_location": "L31",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -12282,11 +11940,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L47",
+      "source_location": "L46",
       "weight": 1.0,
-      "source": "app_rationale_47",
-      "target": "app_notificationdialog",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_46",
+      "target": "app_notificationdialog"
     },
     {
       "relation": "inherits",
@@ -12317,16 +11975,6 @@
       "confidence_score": 1.0,
       "source": "ui_dialogs_invoice_dialog_invoicepreviewdialog",
       "target": "qdialog"
-    },
-    {
-      "relation": "inherits",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "ui_dialogs_item_picker_dialog_itempickerdialog",
-      "target": "qdialog",
-      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -12643,16 +12291,6 @@
       "relation": "method",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L529",
-      "weight": 1.0,
-      "source": "app_laptoprepairmanager",
-      "target": "app_laptoprepairmanager_refresh_customer_table_if_visible",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "app.py",
       "source_location": "L359",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -12954,11 +12592,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L117",
+      "source_location": "L83",
       "weight": 1.0,
-      "source": "app_rationale_117",
-      "target": "app_laptoprepairmanager",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_83",
+      "target": "app_laptoprepairmanager"
     },
     {
       "relation": "calls",
@@ -13107,11 +12745,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L148",
+      "source_location": "L113",
       "weight": 1.0,
-      "source": "app_rationale_148",
-      "target": "app_laptoprepairmanager_open_shop_settings",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_113",
+      "target": "app_laptoprepairmanager_open_shop_settings"
     },
     {
       "relation": "calls",
@@ -13150,42 +12788,31 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L154",
+      "source_location": "L119",
       "weight": 1.0,
-      "source": "app_rationale_154",
-      "target": "app_laptoprepairmanager_rebuild_header",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_119",
+      "target": "app_laptoprepairmanager_rebuild_header"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L166",
+      "source_location": "L131",
       "weight": 1.0,
-      "source": "app_rationale_166",
-      "target": "app_laptoprepairmanager_toggle_status_popup",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_131",
+      "target": "app_laptoprepairmanager_toggle_status_popup"
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L176",
+      "source_location": "L141",
       "weight": 1.0,
-      "source": "app_rationale_176",
-      "target": "app_laptoprepairmanager_eventfilter",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app.py",
-      "source_location": "L206",
-      "weight": 1.0,
-      "source": "app_laptoprepairmanager_add_repair",
-      "target": "app_laptoprepairmanager_refresh_customer_table_if_visible",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_141",
+      "target": "app_laptoprepairmanager_eventfilter"
     },
     {
       "relation": "calls",
@@ -13230,17 +12857,6 @@
       "weight": 1.0,
       "source": "app_laptoprepairmanager_add_repair",
       "target": "ui_dialogs_repair_dialog_repairdialog"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app.py",
-      "source_location": "L236",
-      "weight": 1.0,
-      "source": "app_laptoprepairmanager_edit_repair",
-      "target": "app_laptoprepairmanager_refresh_customer_table_if_visible",
-      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -13346,17 +12962,6 @@
       "context": "call",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L257",
-      "weight": 1.0,
-      "source": "app_laptoprepairmanager_delete_repair",
-      "target": "app_laptoprepairmanager_refresh_customer_table_if_visible",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app.py",
       "source_location": "L207",
       "weight": 1.0,
       "confidence_score": 1.0,
@@ -13406,17 +13011,6 @@
       "weight": 1.0,
       "source": "app_laptoprepairmanager_delete_repair",
       "target": "services_notification_service_show_warning"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app.py",
-      "source_location": "L287",
-      "weight": 1.0,
-      "source": "app_laptoprepairmanager_delete_selected_repairs",
-      "target": "app_laptoprepairmanager_refresh_customer_table_if_visible",
-      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -13477,11 +13071,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L262",
+      "source_location": "L224",
       "weight": 1.0,
-      "source": "app_rationale_262",
-      "target": "app_laptoprepairmanager_delete_selected_repairs",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_224",
+      "target": "app_laptoprepairmanager_delete_selected_repairs"
     },
     {
       "relation": "calls",
@@ -13619,11 +13213,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L399",
+      "source_location": "L360",
       "weight": 1.0,
-      "source": "app_rationale_399",
-      "target": "app_laptoprepairmanager_refresh_part_table",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_360",
+      "target": "app_laptoprepairmanager_refresh_part_table"
     },
     {
       "relation": "calls",
@@ -13662,11 +13256,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L417",
+      "source_location": "L378",
       "weight": 1.0,
-      "source": "app_rationale_417",
-      "target": "app_laptoprepairmanager_edit_part",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_378",
+      "target": "app_laptoprepairmanager_edit_part"
     },
     {
       "relation": "calls",
@@ -13760,11 +13354,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L461",
+      "source_location": "L422",
       "weight": 1.0,
-      "source": "app_rationale_461",
-      "target": "app_laptoprepairmanager_refresh_service_table",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_422",
+      "target": "app_laptoprepairmanager_refresh_service_table"
     },
     {
       "relation": "calls",
@@ -13803,11 +13397,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L479",
+      "source_location": "L440",
       "weight": 1.0,
-      "source": "app_rationale_479",
-      "target": "app_laptoprepairmanager_edit_service",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_440",
+      "target": "app_laptoprepairmanager_edit_service"
     },
     {
       "relation": "calls",
@@ -13892,52 +13486,20 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "app.py",
-      "source_location": "L525",
-      "weight": 1.0,
-      "source": "app_laptoprepairmanager_refresh_customer_table",
-      "target": "services_customer_stats_service_compute_customer_repair_stats"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "app.py",
       "source_location": "L275",
       "weight": 1.0,
       "source": "app_laptoprepairmanager_refresh_customer_table",
       "target": "ui_customer_view_render_customer_rows"
     },
     {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "app.py",
-      "source_location": "L532",
-      "weight": 1.0,
-      "source": "app_laptoprepairmanager_refresh_customer_table_if_visible",
-      "target": "app_laptoprepairmanager_refresh_customer_table",
-      "confidence_score": 1.0
-    },
-    {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L523",
+      "source_location": "L484",
       "weight": 1.0,
-      "source": "app_rationale_523",
-      "target": "app_laptoprepairmanager_refresh_customer_table",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "app.py",
-      "source_location": "L530",
-      "weight": 1.0,
-      "source": "app_rationale_530",
-      "target": "app_laptoprepairmanager_refresh_customer_table_if_visible",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_484",
+      "target": "app_laptoprepairmanager_refresh_customer_table"
     },
     {
       "relation": "calls",
@@ -13954,11 +13516,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L535",
+      "source_location": "L489",
       "weight": 1.0,
-      "source": "app_rationale_535",
-      "target": "app_laptoprepairmanager_add_customer",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_489",
+      "target": "app_laptoprepairmanager_add_customer"
     },
     {
       "relation": "calls",
@@ -13975,11 +13537,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L543",
+      "source_location": "L497",
       "weight": 1.0,
-      "source": "app_rationale_543",
-      "target": "app_laptoprepairmanager_edit_customer",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_497",
+      "target": "app_laptoprepairmanager_edit_customer"
     },
     {
       "relation": "calls",
@@ -13996,11 +13558,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L553",
+      "source_location": "L507",
       "weight": 1.0,
-      "source": "app_rationale_553",
-      "target": "app_laptoprepairmanager_has_related_repairs",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_507",
+      "target": "app_laptoprepairmanager_has_related_repairs"
     },
     {
       "relation": "calls",
@@ -14050,11 +13612,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L564",
+      "source_location": "L518",
       "weight": 1.0,
-      "source": "app_rationale_564",
-      "target": "app_laptoprepairmanager_delete_selected_customers",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_518",
+      "target": "app_laptoprepairmanager_delete_selected_customers"
     },
     {
       "relation": "calls",
@@ -14071,11 +13633,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L686",
+      "source_location": "L640",
       "weight": 1.0,
-      "source": "app_rationale_686",
-      "target": "app_laptoprepairmanager_load_data",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_640",
+      "target": "app_laptoprepairmanager_load_data"
     },
     {
       "relation": "calls",
@@ -14103,11 +13665,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "app.py",
-      "source_location": "L694",
+      "source_location": "L648",
       "weight": 1.0,
-      "source": "app_rationale_694",
-      "target": "app_laptoprepairmanager_save_data",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "app_rationale_648",
+      "target": "app_laptoprepairmanager_save_data"
     },
     {
       "relation": "calls",
@@ -14443,17 +14005,6 @@
       "relation": "imports_from",
       "context": "import",
       "confidence": "EXTRACTED",
-      "source_file": "services/customer_stats_service.py",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "services_customer_stats_service",
-      "target": "core_status",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
       "source_file": "services/invoice_generator.py",
       "source_location": "L7",
       "weight": 1.0,
@@ -14660,9 +14211,9 @@
       "source_file": "core/storage/repair_part_model_db.py",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_repair_part_model_db_repairpartdb",
-      "target": "base"
+      "target": "base",
+      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -14670,9 +14221,9 @@
       "source_file": "core/storage/repair_service_model_db.py",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_repair_service_model_db_repairservicedb",
-      "target": "base"
+      "target": "base",
+      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -15139,9 +14690,9 @@
       "source_file": "core/storage/repair_part_model_db.py",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_repair_part_model_db",
-      "target": "core_storage_database"
+      "target": "core_storage_database",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -15150,9 +14701,9 @@
       "source_file": "core/storage/repair_service_model_db.py",
       "source_location": "L3",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_repair_service_model_db",
-      "target": "core_storage_database"
+      "target": "core_storage_database",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -15340,9 +14891,9 @@
       "source_file": "core/storage/init_db.py",
       "source_location": "L15",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_init_db",
-      "target": "core_storage_init_db_migrate_repair_columns"
+      "target": "core_storage_init_db_migrate_repair_columns",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -15395,9 +14946,9 @@
       "source_file": "core/storage/init_db.py",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_init_db",
-      "target": "core_storage_repair_part_model_db"
+      "target": "core_storage_repair_part_model_db",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -15406,9 +14957,9 @@
       "source_file": "core/storage/init_db.py",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_init_db",
-      "target": "core_storage_repair_part_model_db_repairpartdb"
+      "target": "core_storage_repair_part_model_db_repairpartdb",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -15417,9 +14968,9 @@
       "source_file": "core/storage/init_db.py",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_init_db",
-      "target": "core_storage_repair_service_model_db"
+      "target": "core_storage_repair_service_model_db",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -15428,9 +14979,9 @@
       "source_file": "core/storage/init_db.py",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_init_db",
-      "target": "core_storage_repair_service_model_db_repairservicedb"
+      "target": "core_storage_repair_service_model_db_repairservicedb",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -15527,9 +15078,9 @@
       "source_file": "core/storage/init_db.py",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_init_db_init_database",
-      "target": "core_storage_init_db_migrate_repair_columns"
+      "target": "core_storage_init_db_migrate_repair_columns",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -15647,9 +15198,9 @@
       "source_file": "core/storage/init_db.py",
       "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_init_db_rationale_16",
-      "target": "core_storage_init_db_migrate_repair_columns"
+      "target": "core_storage_init_db_migrate_repair_columns",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -16082,9 +15633,9 @@
       "source_file": "core/storage/repair_part_model_db.py",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_repair_part_model_db",
-      "target": "core_storage_repair_part_model_db_repairpartdb"
+      "target": "core_storage_repair_part_model_db_repairpartdb",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -16093,9 +15644,9 @@
       "source_file": "core/storage/sqlite_storage.py",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_sqlite_storage",
-      "target": "core_storage_repair_part_model_db"
+      "target": "core_storage_repair_part_model_db",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -16104,9 +15655,9 @@
       "source_file": "core/storage/sqlite_storage.py",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_sqlite_storage",
-      "target": "core_storage_repair_part_model_db_repairpartdb"
+      "target": "core_storage_repair_part_model_db_repairpartdb",
+      "confidence_score": 1.0
     },
     {
       "relation": "uses",
@@ -16114,9 +15665,9 @@
       "source_file": "core/storage/sqlite_storage.py",
       "source_location": "L6",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "core_storage_sqlite_storage_sqlitestorage",
-      "target": "core_storage_repair_part_model_db_repairpartdb"
+      "target": "core_storage_repair_part_model_db_repairpartdb",
+      "confidence_score": 0.5
     },
     {
       "relation": "calls",
@@ -16135,9 +15686,9 @@
       "source_file": "core/storage/repair_service_model_db.py",
       "source_location": "L6",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_repair_service_model_db",
-      "target": "core_storage_repair_service_model_db_repairservicedb"
+      "target": "core_storage_repair_service_model_db_repairservicedb",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports_from",
@@ -16146,9 +15697,9 @@
       "source_file": "core/storage/sqlite_storage.py",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_sqlite_storage",
-      "target": "core_storage_repair_service_model_db"
+      "target": "core_storage_repair_service_model_db",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -16157,9 +15708,9 @@
       "source_file": "core/storage/sqlite_storage.py",
       "source_location": "L5",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "core_storage_sqlite_storage",
-      "target": "core_storage_repair_service_model_db_repairservicedb"
+      "target": "core_storage_repair_service_model_db_repairservicedb",
+      "confidence_score": 1.0
     },
     {
       "relation": "uses",
@@ -16167,9 +15718,9 @@
       "source_file": "core/storage/sqlite_storage.py",
       "source_location": "L5",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "core_storage_sqlite_storage_sqlitestorage",
-      "target": "core_storage_repair_service_model_db_repairservicedb"
+      "target": "core_storage_repair_service_model_db_repairservicedb",
+      "confidence_score": 0.5
     },
     {
       "relation": "calls",
@@ -17074,17 +16625,6 @@
       "context": "call",
       "confidence": "INFERRED",
       "confidence_score": 0.8,
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L23",
-      "weight": 1.0,
-      "source": "ui_dialogs_item_picker_dialog_itempickerdialog_init",
-      "target": "qlineedit"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "INFERRED",
-      "confidence_score": 0.8,
       "source_file": "ui/dialogs/part_edit_dialog.py",
       "source_location": "L50",
       "weight": 1.0,
@@ -17842,57 +17382,6 @@
       "confidence_score": 1.0,
       "source": "services_customer_service_rationale_183",
       "target": "services_customer_service_customerservice_generate_customer_code"
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_stats_service.py",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "services_customer_stats_service",
-      "target": "services_customer_stats_service_compute_customer_repair_stats",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_stats_service.py",
-      "source_location": "L6",
-      "weight": 1.0,
-      "source": "services_customer_stats_service",
-      "target": "services_customer_stats_service_match_key",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_stats_service.py",
-      "source_location": "L44",
-      "weight": 1.0,
-      "source": "services_customer_stats_service_compute_customer_repair_stats",
-      "target": "services_customer_stats_service_match_key",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_stats_service.py",
-      "source_location": "L7",
-      "weight": 1.0,
-      "source": "services_customer_stats_service_rationale_7",
-      "target": "services_customer_stats_service_match_key",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "services/customer_stats_service.py",
-      "source_location": "L20",
-      "weight": 1.0,
-      "source": "services_customer_stats_service_rationale_20",
-      "target": "services_customer_stats_service_compute_customer_repair_stats",
-      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -18899,9 +18388,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "services_notification_service"
+      "target": "services_notification_service",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -19064,31 +18553,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L11",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "services_notification_service_show_warning"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L336",
-      "weight": 1.0,
-      "source": "ui_widgets_invoice_widget_invoicewidget_add_part_from_search",
-      "target": "services_notification_service_show_warning"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L325",
-      "weight": 1.0,
-      "source": "ui_widgets_invoice_widget_invoicewidget_add_service_from_search",
-      "target": "services_notification_service_show_warning"
+      "target": "services_notification_service_show_warning",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -19327,9 +18794,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "services_part_service"
+      "target": "services_part_service",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -19480,9 +18947,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L10",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "services_part_service_partservice"
+      "target": "services_part_service_partservice",
+      "confidence_score": 1.0
     },
     {
       "relation": "uses",
@@ -19490,9 +18957,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L10",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "ui_widgets_invoice_widget_completerdelegate",
-      "target": "services_part_service_partservice"
+      "target": "services_part_service_partservice",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -19500,9 +18967,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L10",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "services_part_service_partservice"
+      "target": "services_part_service_partservice",
+      "confidence_score": 0.5
     },
     {
       "relation": "calls",
@@ -19758,9 +19225,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "services_service_service"
+      "target": "services_service_service",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -19881,9 +19348,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L9",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "services_service_service_serviceservice"
+      "target": "services_service_service_serviceservice",
+      "confidence_score": 1.0
     },
     {
       "relation": "uses",
@@ -19891,9 +19358,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L9",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "ui_widgets_invoice_widget_completerdelegate",
-      "target": "services_service_service_serviceservice"
+      "target": "services_service_service_serviceservice",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -19901,9 +19368,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L9",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "services_service_service_serviceservice"
+      "target": "services_service_service_serviceservice",
+      "confidence_score": 0.5
     },
     {
       "relation": "calls",
@@ -20558,11 +20025,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/customer_view.py",
-      "source_location": "L17",
+      "source_location": "L16",
       "weight": 1.0,
-      "source": "ui_customer_view_rationale_17",
-      "target": "ui_customer_view_build_customer_toolbar",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "ui_customer_view_rationale_16",
+      "target": "ui_customer_view_build_customer_toolbar"
     },
     {
       "relation": "imports",
@@ -20656,11 +20123,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/customer_view.py",
-      "source_location": "L79",
+      "source_location": "L75",
       "weight": 1.0,
-      "source": "ui_customer_view_rationale_79",
-      "target": "ui_customer_view_render_customer_rows",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "ui_customer_view_rationale_75",
+      "target": "ui_customer_view_render_customer_rows"
     },
     {
       "relation": "references",
@@ -20721,11 +20188,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/customer_view.py",
-      "source_location": "L145",
+      "source_location": "L122",
       "weight": 1.0,
-      "source": "ui_customer_view_rationale_145",
-      "target": "ui_customer_view_on_header_clicked",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "ui_customer_view_rationale_122",
+      "target": "ui_customer_view_on_header_clicked"
     },
     {
       "relation": "references",
@@ -20753,11 +20220,11 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/customer_view.py",
-      "source_location": "L162",
+      "source_location": "L139",
       "weight": 1.0,
-      "source": "ui_customer_view_rationale_162",
-      "target": "ui_customer_view_on_item_changed",
-      "confidence_score": 1.0
+      "confidence_score": 1.0,
+      "source": "ui_customer_view_rationale_139",
+      "target": "ui_customer_view_on_item_changed"
     },
     {
       "relation": "contains",
@@ -21241,141 +20708,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L8",
-      "weight": 1.0,
-      "source": "ui_dialogs_item_picker_dialog",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports_from",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "ui_widgets_invoice_widget",
-      "target": "ui_dialogs_item_picker_dialog",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L73",
-      "weight": 1.0,
-      "source": "ui_dialogs_item_picker_dialog_itempickerdialog",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog_filter",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L11",
-      "weight": 1.0,
-      "source": "ui_dialogs_item_picker_dialog_itempickerdialog",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog_init",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L62",
-      "weight": 1.0,
-      "source": "ui_dialogs_item_picker_dialog_itempickerdialog",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog_load_items",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "method",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L80",
-      "weight": 1.0,
-      "source": "ui_dialogs_item_picker_dialog_itempickerdialog",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog_on_select",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "rationale_for",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L9",
-      "weight": 1.0,
-      "source": "ui_dialogs_item_picker_dialog_rationale_9",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "imports",
-      "context": "import",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "ui_widgets_invoice_widget",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L15",
-      "weight": 0.8,
-      "source": "ui_widgets_invoice_widget_completerdelegate",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "uses",
-      "confidence": "INFERRED",
-      "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L15",
-      "weight": 0.8,
-      "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog",
-      "confidence_score": 0.5
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L338",
-      "weight": 1.0,
-      "source": "ui_widgets_invoice_widget_invoicewidget_add_part_from_search",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L327",
-      "weight": 1.0,
-      "source": "ui_widgets_invoice_widget_invoicewidget_add_service_from_search",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog"
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/dialogs/item_picker_dialog.py",
-      "source_location": "L60",
-      "weight": 1.0,
-      "source": "ui_dialogs_item_picker_dialog_itempickerdialog_init",
-      "target": "ui_dialogs_item_picker_dialog_itempickerdialog_load_items",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "ui/dialogs/part_edit_dialog.py",
       "source_location": "L10",
       "weight": 1.0,
@@ -21390,9 +20722,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L13",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "ui_dialogs_part_edit_dialog"
+      "target": "ui_dialogs_part_edit_dialog",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -21461,9 +20793,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L13",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "ui_dialogs_part_edit_dialog_parteditdialog"
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "confidence_score": 1.0
     },
     {
       "relation": "uses",
@@ -21471,9 +20803,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L13",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "ui_widgets_invoice_widget_completerdelegate",
-      "target": "ui_dialogs_part_edit_dialog_parteditdialog"
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -21481,9 +20813,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L13",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_dialogs_part_edit_dialog_parteditdialog"
+      "target": "ui_dialogs_part_edit_dialog_parteditdialog",
+      "confidence_score": 0.5
     },
     {
       "relation": "calls",
@@ -21556,9 +20888,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L21",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog",
-      "target": "ui_widgets_invoice_widget"
+      "target": "ui_widgets_invoice_widget",
+      "confidence_score": 1.0
     },
     {
       "relation": "imports",
@@ -21567,9 +20899,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L21",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog",
-      "target": "ui_widgets_invoice_widget_invoicewidget"
+      "target": "ui_widgets_invoice_widget_invoicewidget",
+      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -21607,9 +20939,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L21",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "ui_dialogs_repair_dialog_completeritemdelegate",
-      "target": "ui_widgets_invoice_widget_invoicewidget"
+      "target": "ui_widgets_invoice_widget_invoicewidget",
+      "confidence_score": 0.5
     },
     {
       "relation": "calls",
@@ -21628,9 +20960,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_completerdelegate",
-      "target": "qstyleditemdelegate"
+      "target": "qstyleditemdelegate",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -21638,9 +20970,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L52",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_dialogs_repair_dialog_rationale_52",
-      "target": "ui_dialogs_repair_dialog_repairdialog"
+      "target": "ui_dialogs_repair_dialog_repairdialog",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -21798,9 +21130,9 @@
       "source_file": "ui/dialogs/repair_dialog.py",
       "source_location": "L21",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "ui_dialogs_repair_dialog_repairdialog",
-      "target": "ui_widgets_invoice_widget_invoicewidget"
+      "target": "ui_widgets_invoice_widget_invoicewidget",
+      "confidence_score": 0.5
     },
     {
       "relation": "calls",
@@ -21940,9 +21272,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "ui_dialogs_service_edit_dialog"
+      "target": "ui_dialogs_service_edit_dialog",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
@@ -22011,9 +21343,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L12",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog"
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "confidence_score": 1.0
     },
     {
       "relation": "uses",
@@ -22021,9 +21353,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L12",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "ui_widgets_invoice_widget_completerdelegate",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog"
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "confidence_score": 0.5
     },
     {
       "relation": "uses",
@@ -22031,9 +21363,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L12",
       "weight": 0.8,
-      "confidence_score": 0.5,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog"
+      "target": "ui_dialogs_service_edit_dialog_serviceeditdialog",
+      "confidence_score": 0.5
     },
     {
       "relation": "calls",
@@ -23445,9 +22777,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L16",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "ui_widgets_invoice_widget_completerdelegate"
+      "target": "ui_widgets_invoice_widget_completerdelegate",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -23455,9 +22787,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L22",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget",
-      "target": "ui_widgets_invoice_widget_invoicewidget"
+      "target": "ui_widgets_invoice_widget_invoicewidget",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23465,9 +22797,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L17",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_completerdelegate",
-      "target": "ui_widgets_invoice_widget_completerdelegate_sizehint"
+      "target": "ui_widgets_invoice_widget_completerdelegate_sizehint",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23476,9 +22808,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L222",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_init_completers",
-      "target": "ui_widgets_invoice_widget_completerdelegate"
+      "target": "ui_widgets_invoice_widget_completerdelegate",
+      "confidence_score": 1.0
     },
     {
       "relation": "inherits",
@@ -23486,9 +22818,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L22",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "qwidget"
+      "target": "qwidget",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23496,9 +22828,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L306",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_add_part_from_search"
+      "target": "ui_widgets_invoice_widget_invoicewidget_add_part_from_search",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23506,9 +22838,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L351",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_add_part_line"
+      "target": "ui_widgets_invoice_widget_invoicewidget_add_part_line",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23516,9 +22848,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L296",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_add_service_from_search"
+      "target": "ui_widgets_invoice_widget_invoicewidget_add_service_from_search",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23526,9 +22858,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L340",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_add_service_line"
+      "target": "ui_widgets_invoice_widget_invoicewidget_add_service_line",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23536,9 +22868,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L328",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_create_new_part"
+      "target": "ui_widgets_invoice_widget_invoicewidget_create_new_part",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23546,9 +22878,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L318",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_create_new_service"
+      "target": "ui_widgets_invoice_widget_invoicewidget_create_new_service",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23556,9 +22888,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L584",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_get_data"
+      "target": "ui_widgets_invoice_widget_invoicewidget_get_data",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23566,9 +22898,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L25",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_init"
+      "target": "ui_widgets_invoice_widget_invoicewidget_init",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23576,9 +22908,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L215",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_init_completers"
+      "target": "ui_widgets_invoice_widget_invoicewidget_init_completers",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23586,9 +22918,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L37",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_init_ui"
+      "target": "ui_widgets_invoice_widget_invoicewidget_init_ui",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23596,9 +22928,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L550",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_load_data"
+      "target": "ui_widgets_invoice_widget_invoicewidget_load_data",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23606,9 +22938,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L286",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_on_part_completer_activated"
+      "target": "ui_widgets_invoice_widget_invoicewidget_on_part_completer_activated",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23616,9 +22948,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L269",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_on_part_search_changed"
+      "target": "ui_widgets_invoice_widget_invoicewidget_on_part_search_changed",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23626,9 +22958,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L261",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_on_svc_completer_activated"
+      "target": "ui_widgets_invoice_widget_invoicewidget_on_svc_completer_activated",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23636,9 +22968,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L244",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_on_svc_search_changed"
+      "target": "ui_widgets_invoice_widget_invoicewidget_on_svc_search_changed",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23646,9 +22978,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L496",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate"
+      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23656,9 +22988,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L367",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_remove_part_line"
+      "target": "ui_widgets_invoice_widget_invoicewidget_remove_part_line",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23666,9 +22998,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L362",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_remove_service_line"
+      "target": "ui_widgets_invoice_widget_invoicewidget_remove_service_line",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23676,9 +23008,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L411",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_render_part_table"
+      "target": "ui_widgets_invoice_widget_invoicewidget_render_part_table",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23686,9 +23018,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L374",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_render_service_table"
+      "target": "ui_widgets_invoice_widget_invoicewidget_render_service_table",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23696,9 +23028,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L483",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_update_part_price"
+      "target": "ui_widgets_invoice_widget_invoicewidget_update_part_price",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23706,9 +23038,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L472",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_update_part_qty"
+      "target": "ui_widgets_invoice_widget_invoicewidget_update_part_qty",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23716,9 +23048,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L515",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_update_payment"
+      "target": "ui_widgets_invoice_widget_invoicewidget_update_payment",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23726,9 +23058,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L461",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_update_svc_price"
+      "target": "ui_widgets_invoice_widget_invoicewidget_update_svc_price",
+      "confidence_score": 1.0
     },
     {
       "relation": "method",
@@ -23736,29 +23068,18 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L450",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget",
-      "target": "ui_widgets_invoice_widget_invoicewidget_update_svc_qty"
+      "target": "ui_widgets_invoice_widget_invoicewidget_update_svc_qty",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L25",
+      "source_location": "L23",
       "weight": 1.0,
-      "source": "ui_widgets_invoice_widget_rationale_25",
+      "source": "ui_widgets_invoice_widget_rationale_23",
       "target": "ui_widgets_invoice_widget_invoicewidget",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "calls",
-      "context": "call",
-      "confidence": "EXTRACTED",
-      "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L47",
-      "weight": 1.0,
-      "source": "ui_widgets_invoice_widget_invoicewidget_init_ui",
-      "target": "qwidget",
       "confidence_score": 1.0
     },
     {
@@ -23778,9 +23099,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L33",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_init",
-      "target": "ui_widgets_invoice_widget_invoicewidget_init_completers"
+      "target": "ui_widgets_invoice_widget_invoicewidget_init_completers",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23789,9 +23110,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L32",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_init",
-      "target": "ui_widgets_invoice_widget_invoicewidget_init_ui"
+      "target": "ui_widgets_invoice_widget_invoicewidget_init_ui",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23800,9 +23121,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L266",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_on_svc_completer_activated",
-      "target": "ui_widgets_invoice_widget_invoicewidget_add_service_line"
+      "target": "ui_widgets_invoice_widget_invoicewidget_add_service_line",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23811,9 +23132,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L291",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_on_part_completer_activated",
-      "target": "ui_widgets_invoice_widget_invoicewidget_add_part_line"
+      "target": "ui_widgets_invoice_widget_invoicewidget_add_part_line",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23822,9 +23143,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L303",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_add_service_from_search",
-      "target": "ui_widgets_invoice_widget_invoicewidget_add_service_line"
+      "target": "ui_widgets_invoice_widget_invoicewidget_add_service_line",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23833,9 +23154,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L313",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_add_part_from_search",
-      "target": "ui_widgets_invoice_widget_invoicewidget_add_part_line"
+      "target": "ui_widgets_invoice_widget_invoicewidget_add_part_line",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23844,9 +23165,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L323",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_create_new_service",
-      "target": "ui_widgets_invoice_widget_invoicewidget_add_service_line"
+      "target": "ui_widgets_invoice_widget_invoicewidget_add_service_line",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23855,9 +23176,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L333",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_create_new_part",
-      "target": "ui_widgets_invoice_widget_invoicewidget_add_part_line"
+      "target": "ui_widgets_invoice_widget_invoicewidget_add_part_line",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23866,9 +23187,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L349",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_add_service_line",
-      "target": "ui_widgets_invoice_widget_invoicewidget_render_service_table"
+      "target": "ui_widgets_invoice_widget_invoicewidget_render_service_table",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23877,9 +23198,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L360",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_add_part_line",
-      "target": "ui_widgets_invoice_widget_invoicewidget_render_part_table"
+      "target": "ui_widgets_invoice_widget_invoicewidget_render_part_table",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23888,9 +23209,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L365",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_remove_service_line",
-      "target": "ui_widgets_invoice_widget_invoicewidget_render_service_table"
+      "target": "ui_widgets_invoice_widget_invoicewidget_render_service_table",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23899,9 +23220,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L370",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_remove_part_line",
-      "target": "ui_widgets_invoice_widget_invoicewidget_render_part_table"
+      "target": "ui_widgets_invoice_widget_invoicewidget_render_part_table",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23910,9 +23231,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L581",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_load_data",
-      "target": "ui_widgets_invoice_widget_invoicewidget_render_service_table"
+      "target": "ui_widgets_invoice_widget_invoicewidget_render_service_table",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23921,9 +23242,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L409",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_render_service_table",
-      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate"
+      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23932,9 +23253,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L391",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_render_service_table",
-      "target": "ui_widgets_invoice_widget_invoicewidget_update_svc_price"
+      "target": "ui_widgets_invoice_widget_invoicewidget_update_svc_price",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23943,9 +23264,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L385",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_render_service_table",
-      "target": "ui_widgets_invoice_widget_invoicewidget_update_svc_qty"
+      "target": "ui_widgets_invoice_widget_invoicewidget_update_svc_qty",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23954,9 +23275,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L582",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_load_data",
-      "target": "ui_widgets_invoice_widget_invoicewidget_render_part_table"
+      "target": "ui_widgets_invoice_widget_invoicewidget_render_part_table",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23965,9 +23286,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L446",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_render_part_table",
-      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate"
+      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23976,9 +23297,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L428",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_render_part_table",
-      "target": "ui_widgets_invoice_widget_invoicewidget_update_part_price"
+      "target": "ui_widgets_invoice_widget_invoicewidget_update_part_price",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23987,9 +23308,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L422",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_render_part_table",
-      "target": "ui_widgets_invoice_widget_invoicewidget_update_part_qty"
+      "target": "ui_widgets_invoice_widget_invoicewidget_update_part_qty",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -23998,9 +23319,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L459",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_update_svc_qty",
-      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate"
+      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -24009,9 +23330,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L470",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_update_svc_price",
-      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate"
+      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -24020,9 +23341,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L481",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_update_part_qty",
-      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate"
+      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -24031,9 +23352,9 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L492",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_update_part_price",
-      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate"
+      "target": "ui_widgets_invoice_widget_invoicewidget_recalculate",
+      "confidence_score": 1.0
     },
     {
       "relation": "calls",
@@ -24042,17 +23363,17 @@
       "source_file": "ui/widgets/invoice_widget.py",
       "source_location": "L513",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "ui_widgets_invoice_widget_invoicewidget_recalculate",
-      "target": "ui_widgets_invoice_widget_invoicewidget_update_payment"
+      "target": "ui_widgets_invoice_widget_invoicewidget_update_payment",
+      "confidence_score": 1.0
     },
     {
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L579",
+      "source_location": "L551",
       "weight": 1.0,
-      "source": "ui_widgets_invoice_widget_rationale_579",
+      "source": "ui_widgets_invoice_widget_rationale_551",
       "target": "ui_widgets_invoice_widget_invoicewidget_load_data",
       "confidence_score": 1.0
     },
@@ -24060,9 +23381,9 @@
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "ui/widgets/invoice_widget.py",
-      "source_location": "L613",
+      "source_location": "L585",
       "weight": 1.0,
-      "source": "ui_widgets_invoice_widget_rationale_613",
+      "source": "ui_widgets_invoice_widget_rationale_585",
       "target": "ui_widgets_invoice_widget_invoicewidget_get_data",
       "confidence_score": 1.0
     },
@@ -25769,176 +25090,6 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L1",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui",
-      "target": "customer_stats_and_startup_ui_customer_repair_statistics_startup_notifications_ui",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L15",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_customer_repair_statistics_startup_notifications_ui",
-      "target": "customer_stats_and_startup_ui_1_customer_repair_statistics_columns",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L114",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_customer_repair_statistics_startup_notifications_ui",
-      "target": "customer_stats_and_startup_ui_2_startup_notifications_screen",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L3",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_customer_repair_statistics_startup_notifications_ui",
-      "target": "customer_stats_and_startup_ui_overview",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L152",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_customer_repair_statistics_startup_notifications_ui",
-      "target": "customer_stats_and_startup_ui_verification",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L166",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_customer_repair_statistics_startup_notifications_ui",
-      "target": "customer_stats_and_startup_ui_what_was_not_changed",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L77",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_1_customer_repair_statistics_columns",
-      "target": "customer_stats_and_startup_ui_automatic_refresh",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L28",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_1_customer_repair_statistics_columns",
-      "target": "customer_stats_and_startup_ui_column_order_new_layout",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L48",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_1_customer_repair_statistics_columns",
-      "target": "customer_stats_and_startup_ui_customer_repair_linkage",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L97",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_1_customer_repair_statistics_columns",
-      "target": "customer_stats_and_startup_ui_display_rules",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L59",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_1_customer_repair_statistics_columns",
-      "target": "customer_stats_and_startup_ui_efficient_computation_no_n_1",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L104",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_1_customer_repair_statistics_columns",
-      "target": "customer_stats_and_startup_ui_files_changed",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L17",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_1_customer_repair_statistics_columns",
-      "target": "customer_stats_and_startup_ui_new_columns",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L36",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_1_customer_repair_statistics_columns",
-      "target": "customer_stats_and_startup_ui_status_definitions",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L146",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_2_startup_notifications_screen",
-      "target": "customer_stats_and_startup_ui_files_changed_146",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L119",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_2_startup_notifications_screen",
-      "target": "customer_stats_and_startup_ui_requirements_met",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "CUSTOMER_STATS_AND_STARTUP_UI.md",
-      "source_location": "L140",
-      "weight": 1.0,
-      "source": "customer_stats_and_startup_ui_2_startup_notifications_screen",
-      "target": "customer_stats_and_startup_ui_suggested_behavior",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
       "source_file": "CUSTOMER_WORKFLOW_AUDIT.md",
       "source_location": "L1",
       "weight": 1.0,
@@ -27552,9 +26703,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L1",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign",
-      "target": "repair_invoice_redesign_repair_invoice_redesign"
+      "target": "repair_invoice_redesign_repair_invoice_redesign",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27562,9 +26713,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L168",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_repair_invoice_redesign",
-      "target": "repair_invoice_redesign_10_future_inventory_integration"
+      "target": "repair_invoice_redesign_10_future_inventory_integration",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27572,9 +26723,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L182",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_repair_invoice_redesign",
-      "target": "repair_invoice_redesign_11_verification"
+      "target": "repair_invoice_redesign_11_verification",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27582,9 +26733,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L7",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_repair_invoice_redesign",
-      "target": "repair_invoice_redesign_1_overview"
+      "target": "repair_invoice_redesign_1_overview",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27592,9 +26743,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L18",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_repair_invoice_redesign",
-      "target": "repair_invoice_redesign_2_new_tables"
+      "target": "repair_invoice_redesign_2_new_tables",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27602,9 +26753,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L55",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_repair_invoice_redesign",
-      "target": "repair_invoice_redesign_3_why_snapshots"
+      "target": "repair_invoice_redesign_3_why_snapshots",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27612,9 +26763,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L62",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_repair_invoice_redesign",
-      "target": "repair_invoice_redesign_4_calculation_rules"
+      "target": "repair_invoice_redesign_4_calculation_rules",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27622,9 +26773,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L79",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_repair_invoice_redesign",
-      "target": "repair_invoice_redesign_5_payment_status_logic"
+      "target": "repair_invoice_redesign_5_payment_status_logic",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27632,9 +26783,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L87",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_repair_invoice_redesign",
-      "target": "repair_invoice_redesign_6_migration_behavior"
+      "target": "repair_invoice_redesign_6_migration_behavior",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27642,9 +26793,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L103",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_repair_invoice_redesign",
-      "target": "repair_invoice_redesign_7_architecture"
+      "target": "repair_invoice_redesign_7_architecture",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27652,9 +26803,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L148",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_repair_invoice_redesign",
-      "target": "repair_invoice_redesign_8_ux_features"
+      "target": "repair_invoice_redesign_8_ux_features",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27662,9 +26813,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L161",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_repair_invoice_redesign",
-      "target": "repair_invoice_redesign_9_validation"
+      "target": "repair_invoice_redesign_9_validation",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27672,9 +26823,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L44",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_2_new_tables",
-      "target": "repair_invoice_redesign_new_columns_on_repairs_table"
+      "target": "repair_invoice_redesign_new_columns_on_repairs_table",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27682,9 +26833,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L32",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_2_new_tables",
-      "target": "repair_invoice_redesign_repair_part"
+      "target": "repair_invoice_redesign_repair_part",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27692,9 +26843,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L20",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_2_new_tables",
-      "target": "repair_invoice_redesign_repair_service"
+      "target": "repair_invoice_redesign_repair_service",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27702,9 +26853,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L105",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_7_architecture",
-      "target": "repair_invoice_redesign_data_flow"
+      "target": "repair_invoice_redesign_data_flow",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27712,9 +26863,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L127",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_7_architecture",
-      "target": "repair_invoice_redesign_files"
+      "target": "repair_invoice_redesign_files",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -27722,9 +26873,9 @@
       "source_file": "REPAIR_INVOICE_REDESIGN.md",
       "source_location": "L140",
       "weight": 1.0,
-      "confidence_score": 1.0,
       "source": "repair_invoice_redesign_7_architecture",
-      "target": "repair_invoice_redesign_reuse"
+      "target": "repair_invoice_redesign_reuse",
+      "confidence_score": 1.0
     },
     {
       "relation": "contains",
@@ -29320,5 +28471,5 @@
       "source_file": "SQLITE_MIGRATION_AUDIT.md"
     }
   ],
-  "built_at_commit": "1e57d79fac705a871217e270b32da43a456cb716"
+  "built_at_commit": "d6c509b66aec95e4efe7663bf472cb393512dbd0"
 }

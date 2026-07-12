@@ -2,7 +2,7 @@
 from datetime import datetime, timedelta
 from PyQt5.QtWidgets import (QApplication, QMainWindow, QVBoxLayout,
                               QHBoxLayout, QPushButton, QDialog,
-                              QLabel, QLineEdit, QFrame)
+                              QLabel, QLineEdit, QFrame, QScrollArea)
 from PyQt5.QtCore import Qt, QTimer, QEvent, QPoint, QRect
 from PyQt5.QtGui import QFont
 import jdatetime
@@ -17,6 +17,7 @@ from repair_manager.ui.components import PersianCalendarWidget, PersianDateEdit
 from core.storage.sqlite_storage import SQLiteStorage
 from services.statistics import update_statistics
 from services.repair_manager_service import add_repair, delete_repair, get_repair_by_id, update_repair
+from services.customer_stats_service import compute_customer_repair_stats
 from services.date_service import today_persian
 from services.calculations import calculate_invoice
 from services.invoice_calculator import calculate_invoice_totals
@@ -49,35 +50,68 @@ class NotificationDialog(QDialog):
         super().__init__(parent)
         self.setWindowTitle("اعلان‌ها")
         self.setModal(True)
-        self.setMinimumSize(500, 400)
-        
+        self.setLayoutDirection(Qt.RightToLeft)
+        self.setMinimumSize(500, 300)
+
         layout = QVBoxLayout()
-        
+        layout.setSpacing(6)
+        layout.setContentsMargins(10, 10, 10, 10)
+
         title = QLabel("یادآوری تعمیرات")
         title.setFont(QFont("Segoe UI", 14, QFont.Bold))
         title.setAlignment(Qt.AlignCenter)
         layout.addWidget(title)
-        
+
+        scroll = QScrollArea()
+        scroll.setWidgetResizable(True)
+        scroll.setFrameShape(QFrame.NoFrame)
+        scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+
+        container = QWidget()
+        container.setLayoutDirection(Qt.RightToLeft)
+        list_layout = QVBoxLayout(container)
+        list_layout.setSpacing(3)
+        list_layout.setContentsMargins(0, 0, 0, 0)
+
         for notif in notifications:
             frame = QFrame()
             frame.setFrameShape(QFrame.Box)
-            frame.setStyleSheet("padding: 10px; margin: 5px; border-radius: 5px;")
-            
+            frame.setStyleSheet(
+                "padding: 4px 8px; margin: 1px; border-radius: 4px; "
+                "background-color: #F9FAFB; border: 1px solid #E5E7EB;"
+            )
+
             notif_layout = QVBoxLayout()
-            
+            notif_layout.setSpacing(0)
+            notif_layout.setContentsMargins(0, 0, 0, 0)
+
             message = QLabel(notif)
             message.setWordWrap(True)
-            message.setStyleSheet("font-size: 11pt;")
+            message.setLayoutDirection(Qt.RightToLeft)
+            message.setStyleSheet("font-size: 10pt; background: transparent; border: none;")
             notif_layout.addWidget(message)
-            
+
             frame.setLayout(notif_layout)
-            layout.addWidget(frame)
-        
+            list_layout.addWidget(frame)
+
+        list_layout.addStretch()
+        scroll.setWidget(container)
+        layout.addWidget(scroll)
+
         close_btn = QPushButton("بستن")
         close_btn.clicked.connect(self.accept)
         layout.addWidget(close_btn)
-        
+
         self.setLayout(layout)
+
+        # نمایش حدوداً ۵ مورد اول بدون اسکرول؛ موارد بیشتر با اسکرول
+        item_height = 52
+        title_space = 60
+        button_space = 44
+        base = title_space + button_space
+        visible = min(len(notifications), 5)
+        preferred = base + visible * item_height
+        self.resize(500, min(preferred, 500))
 
 class LaptopRepairManager(QMainWindow):
     """کلاس اصلی برنامه مدیریت تعمیرات"""
@@ -88,6 +122,7 @@ class LaptopRepairManager(QMainWindow):
         self.repairs = []
         self.controller = MainController()
         self._customer_workflow = CustomerWorkflow()
+        self._customer_stats = {}
         self._service_service = ServiceService()
         self._part_service = PartService()
         self.load_data()
@@ -168,6 +203,7 @@ class LaptopRepairManager(QMainWindow):
             
             self.save_data()
             self.refresh_table()
+            self._refresh_customer_table_if_visible()
 
             show_info(self, "موفق", "تعمیر با موفقیت ثبت شد.")
 
@@ -197,6 +233,7 @@ class LaptopRepairManager(QMainWindow):
             
             self.save_data()
             self.refresh_table()
+            self._refresh_customer_table_if_visible()
             
             show_info(self, "موفق", "تعمیر با موفقیت ویرایش شد.")
     
@@ -217,6 +254,7 @@ class LaptopRepairManager(QMainWindow):
             
             self.save_data()
             self.refresh_table()
+            self._refresh_customer_table_if_visible()
             
             show_info(self, "موفق", "تعمیر با موفقیت حذف شد.")
     
@@ -246,6 +284,7 @@ class LaptopRepairManager(QMainWindow):
 
         self.save_data()
         self.refresh_table()
+        self._refresh_customer_table_if_visible()
 
         show_info(self, "موفق", f"{len(selected_ids)} تعمیر با موفقیت حذف شد.")
     
@@ -483,7 +522,14 @@ class LaptopRepairManager(QMainWindow):
     def refresh_customer_table(self):
         """بارگذاری و نمایش لیست مشتریان مرتب شده بر اساس نام"""
         customers = self._customer_workflow.get_all_customers()
-        render_customer_rows(self.customer_table, customers, self.edit_customer)
+        stats = compute_customer_repair_stats(self.repairs, customers)
+        render_customer_rows(self.customer_table, customers, self.edit_customer, stats)
+        self._customer_stats = stats
+
+    def _refresh_customer_table_if_visible(self):
+        """به‌روزرسانی جدول مشتریان در صورت نمایش نمای مشتریان"""
+        if hasattr(self, 'view_stack') and self.view_stack.currentIndex() == 1:
+            self.refresh_customer_table()
 
     def add_customer(self):
         """افزودن مشتری جدید از طریق دیالوگ اختصاصی"""

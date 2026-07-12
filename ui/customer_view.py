@@ -8,6 +8,7 @@ from PyQt5.QtCore import Qt
 
 CUSTOMER_COLUMNS = [
     "", "کد مشتری", "نام مشتری", "تلفن",
+    "تعداد کل سفارشات", "تحویل شده", "در دست انجام",
     "ایمیل", "شهر", "تاریخ ایجاد", "ویرایش",
 ]
 
@@ -56,6 +57,9 @@ def build_customer_table(window):
     header.setSectionResizeMode(5, QHeaderView.ResizeToContents)
     header.setSectionResizeMode(6, QHeaderView.ResizeToContents)
     header.setSectionResizeMode(7, QHeaderView.ResizeToContents)
+    header.setSectionResizeMode(8, QHeaderView.ResizeToContents)
+    header.setSectionResizeMode(9, QHeaderView.ResizeToContents)
+    header.setSectionResizeMode(10, QHeaderView.ResizeToContents)
 
     select_all_item = QTableWidgetItem("")
     select_all_item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled)
@@ -71,7 +75,7 @@ def build_customer_table(window):
 
 
 def render_customer_rows(table: QTableWidget, customers: List[Dict],
-                         edit_callback: Callable):
+                         edit_callback: Callable, stats: Dict = None):
     """رندر کردن ردیف‌های مشتریان (مرتب بر اساس نام)"""
     table.blockSignals(True)
     table.setRowCount(0)
@@ -93,9 +97,28 @@ def render_customer_rows(table: QTableWidget, customers: List[Dict],
         table.setItem(row, 1, QTableWidgetItem(c.get('customer_code', '') or ''))
         table.setItem(row, 2, QTableWidgetItem(c.get('full_name', '') or ''))
         table.setItem(row, 3, QTableWidgetItem(c.get('phone', '') or ''))
-        table.setItem(row, 4, QTableWidgetItem(c.get('email', '') or ''))
-        table.setItem(row, 5, QTableWidgetItem(c.get('city', '') or ''))
-        table.setItem(row, 6, QTableWidgetItem(c.get('created_at', '') or ''))
+
+        cid = c.get('id')
+        entry = (stats or {}).get(cid) if cid is not None else None
+        total = str(entry['total']) if entry else '0'
+        delivered = str(entry['delivered']) if entry else '0'
+        in_progress = str(entry['in_progress']) if entry else '0'
+
+        total_item = QTableWidgetItem(total)
+        total_item.setTextAlignment(Qt.AlignCenter)
+        table.setItem(row, 4, total_item)
+
+        delivered_item = QTableWidgetItem(delivered)
+        delivered_item.setTextAlignment(Qt.AlignCenter)
+        table.setItem(row, 5, delivered_item)
+
+        in_progress_item = QTableWidgetItem(in_progress)
+        in_progress_item.setTextAlignment(Qt.AlignCenter)
+        table.setItem(row, 6, in_progress_item)
+
+        table.setItem(row, 7, QTableWidgetItem(c.get('email', '') or ''))
+        table.setItem(row, 8, QTableWidgetItem(c.get('city', '') or ''))
+        table.setItem(row, 9, QTableWidgetItem(c.get('created_at', '') or ''))
 
         edit_btn = QPushButton("ویرایش")
         edit_btn.setMinimumWidth(75)
@@ -109,7 +132,7 @@ def render_customer_rows(table: QTableWidget, customers: List[Dict],
         edit_layout.setContentsMargins(5, 2, 5, 2)
         edit_layout.addWidget(edit_btn)
         edit_widget.setLayout(edit_layout)
-        table.setCellWidget(row, 7, edit_widget)
+        table.setCellWidget(row, 10, edit_widget)
 
     header_item = table.horizontalHeaderItem(0)
     if header_item is not None:

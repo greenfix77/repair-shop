@@ -5,6 +5,7 @@ from PyQt5.QtCore import Qt
 
 from services.notification_service import show_warning, show_error
 from services.todo_service import TodoService
+from repair_manager.ui.components import PersianDateEdit
 
 
 class TodoEditDialog(QDialog):
@@ -53,8 +54,7 @@ class TodoEditDialog(QDialog):
         grid.addWidget(self.description_input, 1, 1)
 
         grid.addWidget(QLabel("تاریخ سررسید:"), 2, 0)
-        self.due_date_input = QLineEdit()
-        self.due_date_input.setPlaceholderText("مثال: 1405/04/22")
+        self.due_date_input = PersianDateEdit()
         grid.addWidget(self.due_date_input, 2, 1)
 
         grid.addWidget(QLabel("اولویت:"), 3, 0)
@@ -93,7 +93,9 @@ class TodoEditDialog(QDialog):
         t = self.todo
         self.title_input.setText(t.get('title', ''))
         self.description_input.setPlainText(t.get('description', ''))
-        self.due_date_input.setText(t.get('due_date', ''))
+        due_value = t.get('due_date', '') or ''
+        if due_value:
+            self.due_date_input.setText(due_value)
         priority = t.get('priority', 'معمولی')
         idx = self.priority_combo.findText(priority)
         if idx >= 0:

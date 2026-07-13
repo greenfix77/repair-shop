@@ -50,7 +50,7 @@ from services.logo_service import get_app_icon
 class NotificationDialog(QDialog):
     """دیالوگ نمایش اعلان‌ها"""
     
-    def __init__(self, notifications, parent=None):
+    def __init__(self, notifications, parent=None, todo_items=None):
         super().__init__(parent)
         self.setWindowTitle("اعلان‌ها")
         self.setModal(True)
@@ -98,6 +98,90 @@ class NotificationDialog(QDialog):
             frame.setLayout(notif_layout)
             list_layout.addWidget(frame)
 
+        # --- بخش وظایف امروز ---
+        if todo_items is not None:
+            separator = QFrame()
+            separator.setFixedHeight(1)
+            separator.setStyleSheet("background-color: #E5E7EB; border: none; margin: 6px 0;")
+            list_layout.addWidget(separator)
+
+            todos_title = QLabel("وظایف امروز")
+            todos_title.setFont(QFont("Segoe UI", 12, QFont.Bold))
+            todos_title.setAlignment(Qt.AlignCenter)
+            todos_title.setStyleSheet("color: #4F46E5; background: transparent; border: none;")
+            list_layout.addWidget(todos_title)
+
+            priority_colors = {
+                "فوری": "#DC2626",
+                "زیاد": "#D97706",
+                "معمولی": "#2563EB",
+                "کم": "#6B7280",
+            }
+            priority_marks = {
+                "فوری": "🔴",
+                "زیاد": "🟠",
+                "معمولی": "🔵",
+                "کم": "⚪",
+            }
+
+            if not todo_items:
+                empty = QLabel("🎉 وظیفه‌ای برای امروز ثبت نشده است.")
+                empty.setWordWrap(True)
+                empty.setLayoutDirection(Qt.RightToLeft)
+                empty.setAlignment(Qt.AlignCenter)
+                empty.setStyleSheet(
+                    "font-size: 10pt; color: #6B7280; "
+                    "background-color: #F9FAFB; border: 1px solid #E5E7EB; "
+                    "border-radius: 4px; padding: 8px; margin: 1px;"
+                )
+                list_layout.addWidget(empty)
+            else:
+                pending = [t for t in todo_items if not t.get('is_done')]
+                completed = [t for t in todo_items if t.get('is_done')]
+                ordered = pending + completed
+
+                for t in ordered:
+                    priority = t.get('priority', 'معمولی')
+                    mark = priority_marks.get(priority, "⚪")
+                    color = priority_colors.get(priority, "#6B7280")
+                    title_text = t.get('title', '') or ''
+                    due = t.get('due_date', '') or ''
+                    status_text = "✓ انجام شد" if t.get('is_done') else "○ در انتظار"
+                    bg = "#F0FDF4" if t.get('is_done') else "#FFFBEB"
+                    border = "#BBF7D0" if t.get('is_done') else "#FDE68A"
+                    status_color = "#059669" if t.get('is_done') else "#D97706"
+
+                    line = QFrame()
+                    line.setFrameShape(QFrame.Box)
+                    line.setStyleSheet(
+                        f"padding: 4px 8px; margin: 1px; border-radius: 4px; "
+                        f"background-color: {bg}; border: 1px solid {border};"
+                    )
+
+                    line_layout = QVBoxLayout()
+                    line_layout.setSpacing(0)
+                    line_layout.setContentsMargins(0, 0, 0, 0)
+
+                    head = QLabel(f"{mark} {title_text}")
+                    head.setWordWrap(True)
+                    head.setLayoutDirection(Qt.RightToLeft)
+                    head.setStyleSheet(
+                        "font-size: 10pt; font-weight: bold; "
+                        f"color: {color}; background: transparent; border: none;"
+                    )
+                    line_layout.addWidget(head)
+
+                    foot = QLabel(f"📅 سررسید: {due}   |   وضعیت: {status_text}")
+                    foot.setLayoutDirection(Qt.RightToLeft)
+                    foot.setStyleSheet(
+                        "font-size: 9pt; background: transparent; border: none; "
+                        f"color: {status_color};"
+                    )
+                    line_layout.addWidget(foot)
+
+                    line.setLayout(line_layout)
+                    list_layout.addWidget(line)
+
         list_layout.addStretch()
         scroll.setWidget(container)
         layout.addWidget(scroll)
@@ -110,12 +194,16 @@ class NotificationDialog(QDialog):
 
         # نمایش حدوداً ۵ مورد اول بدون اسکرول؛ موارد بیشتر با اسکرول
         item_height = 52
-        title_space = 60
+        todo_item_height = 56
+        todos_section_title_space = 36
+        total_counts = len(notifications) + (len(todo_items) if todo_items else 0)
         button_space = 44
-        base = title_space + button_space
-        visible = min(len(notifications), 5)
-        preferred = base + visible * item_height
-        self.resize(500, min(preferred, 500))
+        extra_todo_space = (todo_item_height * len(todo_items)) if todo_items else 0
+        sec_title = todos_section_title_space if todo_items is not None else 0
+        base = sec_title + button_space
+        visible = min(total_counts, 5)
+        preferred = base + visible * item_height + extra_todo_space
+        self.resize(500, min(preferred, 600))
 
 class LaptopRepairManager(QMainWindow):
     """کلاس اصلی برنامه مدیریت تعمیرات"""
@@ -782,18 +870,18 @@ class LaptopRepairManager(QMainWindow):
         """بررسی یادآوری‌ها"""
         notifications = []
         today = jdatetime.date.today()
-        
+
         for repair in self.repairs:
             if repair.get('status') in (STATUS_PENDING, STATUS_IN_PROGRESS):
                 delivery_date_str = repair.get('delivery_date', '')
-                
+
                 if delivery_date_str:
                     try:
                         parts = delivery_date_str.split('/')
                         delivery_date = jdatetime.date(int(parts[0]), int(parts[1]), int(parts[2]))
-                        
+
                         days_diff = (delivery_date - today).days
-                        
+
                         if days_diff < 0:
                             notifications.append(
                                 f"⚠️ تعمیر '{repair.get('customer_name')}' از تاریخ تحویل گذشته است! ({abs(days_diff)} روز تأخیر)"
@@ -808,9 +896,28 @@ class LaptopRepairManager(QMainWindow):
                             )
                     except:
                         pass
-        
-        if notifications:
-            dialog = NotificationDialog(notifications, self)
+
+        todo_items_today = []
+        try:
+            today_str = today_persian()
+            pending_today = self._todo_service.get_due_today(today_str)
+            completed_today = [
+                t for t in self._todo_service.get_completed()
+                if (t.get('due_date', '') or '') == today_str
+            ]
+            seen = set()
+            for t in pending_today + completed_today:
+                tid = t.get('id')
+                if tid is not None and tid not in seen:
+                    seen.add(tid)
+                    todo_items_today.append(t)
+        except Exception:
+            todo_items_today = []
+
+        if notifications or todo_items_today:
+            dialog = NotificationDialog(
+                notifications, self, todo_items=todo_items_today
+            )
             dialog.exec_()
 
     def load_data(self):

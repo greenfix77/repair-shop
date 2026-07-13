@@ -21,6 +21,34 @@ class _CompleterDelegate(QStyledItemDelegate):
         return QSize(super().sizeHint(option, index).width(), h)
 
 
+class _AutoGrowTable(QTableWidget):
+    """جدولی که ارتفاع مطابق تعداد سطرها تنظیم می‌کند؛ بدون اسکرول داخلی."""
+
+    def __init__(self, parent=None):
+        super().__init__(parent)
+        self.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.setHorizontalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+
+    def sizeHint(self):
+        hint = super().sizeHint()
+        n = self.rowCount()
+        h = self.frameWidth() * 2
+        vh = self.verticalHeader()
+        if vh is not None and vh.isVisible():
+            h += vh.length()
+        else:
+            h += self.horizontalHeader().sizeHint().height() if self.columnCount() > 0 else 0
+            for r in range(n):
+                h += self.rowHeight(r)
+        if n == 0:
+            h += self.horizontalHeader().sizeHint().height() + 4
+        hint.setHeight(h)
+        return hint
+
+    def minimumSizeHint(self):
+        return self.sizeHint()
+
+
 class InvoiceWidget(QWidget):
     """ویجت فاکتور تعمیر: خدمات، قطعات، خلاصه، پرداخت، یادداشت‌های مالی"""
 
@@ -74,14 +102,13 @@ class InvoiceWidget(QWidget):
         svc_header.addWidget(create_svc_btn)
         svc_layout.addLayout(svc_header)
 
-        self._svc_table = QTableWidget()
+        self._svc_table = _AutoGrowTable()
         self._svc_table.setColumnCount(5)
         self._svc_table.setHorizontalHeaderLabels(["خدمت", "تعداد", "قیمت واحد", "جمع", "عملیات"])
         self._svc_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self._svc_table.setSelectionBehavior(QAbstractItemView.SelectRows)
         self._svc_table.setAlternatingRowColors(True)
         self._svc_table.verticalHeader().setVisible(False)
-        self._svc_table.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         hdr = self._svc_table.horizontalHeader()
         hdr.setSectionResizeMode(0, QHeaderView.Stretch)
         hdr.setSectionResizeMode(1, QHeaderView.ResizeToContents)
@@ -123,14 +150,13 @@ class InvoiceWidget(QWidget):
         part_header.addWidget(create_part_btn)
         part_layout.addLayout(part_header)
 
-        self._part_table = QTableWidget()
+        self._part_table = _AutoGrowTable()
         self._part_table.setColumnCount(5)
         self._part_table.setHorizontalHeaderLabels(["قطعه", "تعداد", "قیمت واحد", "جمع", "عملیات"])
         self._part_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self._part_table.setSelectionBehavior(QAbstractItemView.SelectRows)
         self._part_table.setAlternatingRowColors(True)
         self._part_table.verticalHeader().setVisible(False)
-        self._part_table.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
         phdr = self._part_table.horizontalHeader()
         phdr.setSectionResizeMode(0, QHeaderView.Stretch)
         phdr.setSectionResizeMode(1, QHeaderView.ResizeToContents)
@@ -434,6 +460,7 @@ class InvoiceWidget(QWidget):
             self._svc_table.setItem(0, 0, placeholder)
             self._svc_table.setSpan(0, 0, 1, 5)
 
+        self._svc_table.updateGeometry()
         self._recalculate()
 
     def _render_part_table(self):
@@ -471,6 +498,7 @@ class InvoiceWidget(QWidget):
             self._part_table.setItem(0, 0, placeholder)
             self._part_table.setSpan(0, 0, 1, 5)
 
+        self._part_table.updateGeometry()
         self._recalculate()
 
     # --- Quantity / Price updates ---

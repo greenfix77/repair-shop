@@ -29,14 +29,17 @@ from ui.dialogs.invoice_dialog import InvoicePreviewDialog
 from ui.dialogs.customer_edit_dialog import CustomerEditDialog
 from ui.dialogs.service_edit_dialog import ServiceEditDialog
 from ui.dialogs.part_edit_dialog import PartEditDialog
+from ui.dialogs.todo_edit_dialog import TodoEditDialog
 from ui.main_window import build_ui, build_header, create_status_popup
 from ui.customer_view import render_customer_rows
 from ui.service_view import render_service_rows
 from ui.part_view import render_part_rows
+from ui.todo_view import render_todo_rows
 from controllers.main_controller import MainController
 from services.customer_workflow import CustomerWorkflow
 from services.service_service import ServiceService
 from services.part_service import PartService
+from services.todo_service import TodoService
 from services.notification_service import (
     show_info, show_warning, show_error, show_question
 )
@@ -126,6 +129,7 @@ class LaptopRepairManager(QMainWindow):
         self._customer_stats = {}
         self._service_service = ServiceService()
         self._part_service = PartService()
+        self._todo_service = TodoService()
         self.load_data()
         self.init_ui()
         self.refresh_table()  # پر کردن جدول با داده‌های بارگذاری شده
@@ -340,6 +344,9 @@ class LaptopRepairManager(QMainWindow):
         self.parts_nav_btn.setStyleSheet(
             "background-color: #607D8B; color: white;"
         )
+        self.todos_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
 
     def show_customers_view(self):
         """نمایش نمای مشتریان"""
@@ -354,6 +361,9 @@ class LaptopRepairManager(QMainWindow):
             "background-color: #607D8B; color: white;"
         )
         self.parts_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.todos_nav_btn.setStyleSheet(
             "background-color: #607D8B; color: white;"
         )
         self.refresh_customer_table()
@@ -375,6 +385,9 @@ class LaptopRepairManager(QMainWindow):
         self.parts_nav_btn.setStyleSheet(
             "background-color: #607D8B; color: white;"
         )
+        self.todos_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
         self.refresh_service_table()
 
     # --- مدیریت قطعات ---
@@ -394,7 +407,124 @@ class LaptopRepairManager(QMainWindow):
         self.parts_nav_btn.setStyleSheet(
             "background-color: #4F46E5; color: white; font-weight: bold;"
         )
+        self.todos_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
         self.refresh_part_table()
+
+    # --- مدیریت وظایف ---
+
+    def show_todos_view(self):
+        """نمایش نمای وظایف"""
+        self.view_stack.setCurrentIndex(4)
+        self.repairs_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.customers_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.services_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.parts_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.todos_nav_btn.setStyleSheet(
+            "background-color: #4F46E5; color: white; font-weight: bold;"
+        )
+        self.refresh_todo_table()
+
+    def refresh_todo_table(self):
+        """بارگذاری و نمایش لیست وظایف"""
+        todos = self._todo_service.list_all()
+        render_todo_rows(self.todo_table, todos, self.edit_todo)
+
+    def search_todos(self, text):
+        """جستجوی وظایف"""
+        results = self._todo_service.search(text)
+        render_todo_rows(self.todo_table, results, self.edit_todo)
+
+    def add_todo(self):
+        """افزودن وظیفه جدید"""
+        dialog = TodoEditDialog(todo_id=None, parent=self)
+        if getattr(dialog, '_init_failed', False):
+            return
+        if dialog.exec_() == QDialog.Accepted:
+            self.refresh_todo_table()
+
+    def edit_todo(self, todo_id):
+        """ویرایش یک وظیفه از طریق دیالوگ اختصاصی"""
+        if todo_id is None:
+            return
+        dialog = TodoEditDialog(todo_id, parent=self)
+        if getattr(dialog, '_init_failed', False):
+            return
+        if dialog.exec_() == QDialog.Accepted:
+            self.refresh_todo_table()
+
+    def toggle_selected_todo_done(self):
+        """تغییر وضعیت انجام‌شدن وظایف انتخاب‌شده (انجام شد / بازگردانی)"""
+        table = self.todo_table
+        selected_ids = []
+        for row in range(table.rowCount()):
+            item = table.item(row, 0)
+            if item is not None and item.checkState() == Qt.Checked:
+                tid = item.data(Qt.UserRole)
+                if tid is not None:
+                    selected_ids.append(tid)
+
+        if not selected_ids:
+            show_warning(self, "هشدار", "هیچ وظیفه‌ای انتخاب نشده است.")
+            return
+
+        toggled = 0
+        for tid in selected_ids:
+            current = self._todo_service.get_todo(tid)
+            if not current:
+                continue
+            if current.get('is_done'):
+                self._todo_service.mark_pending(tid)
+            else:
+                self._todo_service.mark_done(tid)
+            toggled += 1
+
+        self.refresh_todo_table()
+        if toggled > 0:
+            show_info(self, "موفق", f"وضعیت {toggled} وظیفه با موفقیت تغییر کرد.")
+
+    def delete_selected_todos(self):
+        """حذف وظایف انتخاب‌شده"""
+        table = self.todo_table
+        selected_ids = []
+        for row in range(table.rowCount()):
+            item = table.item(row, 0)
+            if item is not None and item.checkState() == Qt.Checked:
+                tid = item.data(Qt.UserRole)
+                if tid is not None:
+                    selected_ids.append(tid)
+
+        if not selected_ids:
+            show_warning(self, "هشدار", "هیچ وظیفه‌ای انتخاب نشده است.")
+            return
+
+        if not show_question(
+            self, "تأیید حذف",
+            f"آیا از حذف {len(selected_ids)} وظیفه انتخاب‌شده اطمینان دارید؟"
+        ):
+            return
+
+        deleted = 0
+        for tid in selected_ids:
+            try:
+                if self._todo_service.delete_todo(tid):
+                    deleted += 1
+            except Exception as e:
+                show_error(self, "خطا", f"حذف وظیفه ناموفق بود: {e}")
+                break
+
+        self.refresh_todo_table()
+        if deleted > 0:
+            show_info(self, "موفق", f"{deleted} وظیفه با موفقیت حذف شد.")
 
     def refresh_part_table(self):
         """بارگذاری و نمایش لیست قطعات مرتب شده بر اساس نام"""

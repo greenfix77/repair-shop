@@ -13,6 +13,7 @@ from services.logo_service import get_header_logo_pixmap
 from ui.customer_view import build_customer_table, build_customer_toolbar
 from ui.service_view import build_service_table, build_service_toolbar
 from ui.part_view import build_part_table, build_part_toolbar
+from ui.todo_view import build_todo_table, build_todo_toolbar
 from ui.table_renderer import setup_selection_column
 from core.status import (
     STATUS_PENDING, STATUS_IN_PROGRESS, STATUS_COMPLETED, STATUS_DELIVERED,
@@ -360,6 +361,13 @@ def build_nav_bar(window):
     window.parts_nav_btn.clicked.connect(window.show_parts_view)
     layout.addWidget(window.parts_nav_btn)
 
+    window.todos_nav_btn = QPushButton("وظایف")
+    window.todos_nav_btn.setStyleSheet(
+        "background-color: #607D8B; color: white;"
+    )
+    window.todos_nav_btn.clicked.connect(window.show_todos_view)
+    layout.addWidget(window.todos_nav_btn)
+
     layout.addStretch()
     nav.setLayout(layout)
     return nav
@@ -436,6 +444,17 @@ def build_ui(window):
     parts_layout.addWidget(window.part_table)
     parts_page.setLayout(parts_layout)
     window.view_stack.addWidget(parts_page)
+
+    # صفحه وظایف (صفحه ۴)
+    todos_page = QWidget()
+    todos_layout = QVBoxLayout()
+    todos_layout.setContentsMargins(0, 0, 0, 0)
+    window.todo_toolbar = build_todo_toolbar(window)
+    todos_layout.addWidget(window.todo_toolbar)
+    window.todo_table = build_todo_table(window)
+    todos_layout.addWidget(window.todo_table)
+    todos_page.setLayout(todos_layout)
+    window.view_stack.addWidget(todos_page)
 
     main_layout.addWidget(window.view_stack)
     

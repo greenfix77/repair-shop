@@ -5,6 +5,7 @@ from core.storage.service_model_db import ServiceDB  # noqa: F401
 from core.storage.part_model_db import PartDB  # noqa: F401
 from core.storage.repair_service_model_db import RepairServiceDB  # noqa: F401
 from core.storage.repair_part_model_db import RepairPartDB  # noqa: F401
+from core.storage.todo_model_db import TodoDB  # noqa: F401
 
 
 def init_database():

@@ -1,16 +1,16 @@
-# Graph Report - repair_manager  (2026-07-13)
+# Graph Report - repair_manager  (2026-07-11)
 
 ## Corpus Check
-- 103 files · ~74,613 words
+- 98 files · ~72,367 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 1194 nodes · 1900 edges · 84 communities (73 shown, 11 thin omitted)
-- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 102 edges (avg confidence: 0.57)
+- 1118 nodes · 1728 edges · 76 communities (66 shown, 10 thin omitted)
+- Extraction: 95% EXTRACTED · 5% INFERRED · 0% AMBIGUOUS · INFERRED: 87 edges (avg confidence: 0.58)
 - Token cost: 0 input · 0 output
 
 ## Graph Freshness
-- Built from commit: `ff85f6e0`
+- Built from commit: `1e57d79f`
 - Run `git rev-parse HEAD` and compare to check if the graph is stale.
 - Run `graphify update .` after code changes (no API cost).
 
@@ -86,38 +86,30 @@
 - [[_COMMUNITY_Community 73|Community 73]]
 - [[_COMMUNITY_Community 74|Community 74]]
 - [[_COMMUNITY_Community 75|Community 75]]
-- [[_COMMUNITY_Community 76|Community 76]]
-- [[_COMMUNITY_Community 77|Community 77]]
-- [[_COMMUNITY_Community 78|Community 78]]
-- [[_COMMUNITY_Community 79|Community 79]]
-- [[_COMMUNITY_Community 80|Community 80]]
-- [[_COMMUNITY_Community 81|Community 81]]
-- [[_COMMUNITY_Community 82|Community 82]]
-- [[_COMMUNITY_Community 83|Community 83]]
 
 ## God Nodes (most connected - your core abstractions)
-1. `LaptopRepairManager` - 68 edges
+1. `LaptopRepairManager` - 59 edges
 2. `CustomerService` - 41 edges
-3. `InvoiceWidget` - 38 edges
-4. `show_warning()` - 31 edges
-5. `CustomerWorkflow` - 29 edges
-6. `RepairDialog` - 29 edges
-7. `PartService` - 25 edges
-8. `CustomerRepository` - 24 edges
-9. `show_error()` - 24 edges
-10. `TodoService` - 24 edges
+3. `InvoiceWidget` - 37 edges
+4. `CustomerWorkflow` - 29 edges
+5. `RepairDialog` - 29 edges
+6. `show_warning()` - 27 edges
+7. `CustomerRepository` - 24 edges
+8. `PartService` - 24 edges
+9. `ServiceService` - 21 edges
+10. `show_error()` - 20 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `NotificationDialog` --uses--> `MainController`  [INFERRED]
   app.py → controllers/main_controller.py
 - `NotificationDialog` --uses--> `SQLiteStorage`  [INFERRED]
   app.py → core/storage/sqlite_storage.py
+- `NotificationDialog` --uses--> `PersianDateEdit`  [INFERRED]
+  app.py → repair_manager/ui/components.py
 - `NotificationDialog` --uses--> `CustomerWorkflow`  [INFERRED]
   app.py → services/customer_workflow.py
 - `NotificationDialog` --uses--> `PartService`  [INFERRED]
   app.py → services/part_service.py
-- `NotificationDialog` --uses--> `ServiceService`  [INFERRED]
-  app.py → services/service_service.py
 
 ## Import Cycles
 - None detected.
@@ -127,39 +119,39 @@
 - **Invoice Generation Pipeline** — architecture_final_invoice_preview_dialog, architecture_final_invoice_generator, shop_logo_audit_logo_service, qwebengine_migration_audit_qwebengine_view, invoice_blank_preview_audit_logo_base64_inflation, shop_logo_audit_chromium_file_url_block [INFERRED 0.95]
 - **Storage Layer Architecture** — sqlite_migration_audit_dualstorage, sqlite_migration_audit_repairs_storage, sqlite_migration_audit_sqlite_storage, sqlite_only_audit_json_read_dependency, architecture_final_laptop_repair_manager [INFERRED 0.95]
 
-## Communities (84 total, 11 thin omitted)
+## Communities (76 total, 10 thin omitted)
 
 ### Community 0 - "Customer Database Layer"
-Cohesion: 0.12
-Nodes (17): Base, CustomerDB, DualStorage, init_database(), _migrate_repair_columns(), Add new columns to existing repairs table if they don't exist., migrate_json_to_sqlite(), RepairDB (+9 more)
+Cohesion: 0.06
+Nodes (23): Base, CustomerDB, CustomerRepository, DualStorage, init_database(), _migrate_repair_columns(), Add new columns to existing repairs table if they don't exist., migrate_json_to_sqlite() (+15 more)
 
 ### Community 1 - "Customer Service Operations"
-Cohesion: 0.05
-Nodes (41): CustomerRepository, CustomerService, Check for duplicates when creating a customer from management UI.          Bus, Search customers by full_name or phone (contains, case-insensitive)., Get a single customer by primary key., Update an existing customer's data., Single entry point for all customer resolution.          Decision order:, Create a new customer without duplicate detection (conscious clone path). (+33 more)
+Cohesion: 0.07
+Nodes (37): CustomerService, Check for duplicates when creating a customer from management UI.          Bus, Search customers by full_name or phone (contains, case-insensitive)., Get a single customer by primary key., Update an existing customer's data., Single entry point for all customer resolution.          Decision order:, Create a new customer without duplicate detection (conscious clone path)., Return all customers (for management views). (+29 more)
 
 ### Community 2 - "Application Entry & UI Setup"
-Cohesion: 0.18
-Nodes (7): print_invoice_content(), save_invoice_to_pdf(), InvoicePreviewDialog, به‌روزرسانی پیش‌نمایش فاکتور, دیالوگ پیش‌نمایش و چاپ فاکتور, Invoice preview widget using QWebEngineView, WebInvoiceView
+Cohesion: 0.09
+Nodes (20): compute_customer_repair_stats(), _match_key(), Compute per-customer repair statistics in a single pass.      Returns a dict key, Build normalized lookup keys for a repair/customer link.      Repairs are linked, print_invoice_content(), save_invoice_to_pdf(), generate_print_invoice_html(), generate_web_invoice_html() (+12 more)
 
 ### Community 3 - "Main Window & Repair Actions"
-Cohesion: 0.10
-Nodes (9): LaptopRepairManager, کلاس اصلی برنامه مدیریت تعمیرات, نمایش/پنهان کردن پاپ‌آپ وضعیت‌ها, بستن پاپ‌آپ هنگام کلیک خارج از آن یا ESC, بارگذاری و نمایش لیست خدمات مرتب شده بر اساس نام, ویرایش یک خدمت از طریق دیالوگ اختصاصی, بررسی وجود تعمیر مرتبط برای یک مشتری, بارگذاری داده‌ها از فایل (+1 more)
+Cohesion: 0.07
+Nodes (16): LaptopRepairManager, main(), کلاس اصلی برنامه مدیریت تعمیرات, نمایش/پنهان کردن پاپ‌آپ وضعیت‌ها, بستن پاپ‌آپ هنگام کلیک خارج از آن یا ESC, بارگذاری و نمایش لیست قطعات مرتب شده بر اساس نام, ویرایش یک قطعه از طریق دیالوگ اختصاصی, بارگذاری و نمایش لیست خدمات مرتب شده بر اساس نام (+8 more)
 
 ### Community 4 - "Calendar & UI Components"
-Cohesion: 0.10
-Nodes (12): PartDB, PartRepository, PartService, Create a new part with validation., Update an existing part with validation., Delete a part by primary key., Get a single part by primary key., Return all parts, optionally filtered to active only. (+4 more)
+Cohesion: 0.15
+Nodes (8): PartService, Create a new part with validation., Update an existing part with validation., Delete a part by primary key., Get a single part by primary key., Business logic layer for parts catalog operations., PartEditDialog, دیالوگ افزودن/ویرایش قطعه
 
 ### Community 5 - "Controller & Data Operations"
 Cohesion: 0.09
 Nodes (31): MainController, QTableWidget, filter_repairs(), Return matching repair indices, Return matching repair indices by status, search_repairs(), calculate_invoice(), build_table_rows() (+23 more)
 
 ### Community 6 - "Community 6"
-Cohesion: 0.15
-Nodes (4): InvoiceWidget, ویجت فاکتور تعمیر: خدمات، قطعات، خلاصه، پرداخت، یادداشت‌های مالی, Load invoice data from a repair dict, with migration for old repairs., Return invoice data as a dict.
+Cohesion: 0.10
+Nodes (7): QWidget, ItemPickerDialog, دیالوگ انتخاب آیتم از کاتالوگ (خدمات یا قطعات), InvoiceWidget, ویجت فاکتور تعمیر: خدمات، قطعات، خلاصه، پرداخت، یادداشت‌های مالی, Load invoice data from a repair dict, with migration for old repairs., Return invoice data as a dict.
 
 ### Community 7 - "Community 7"
-Cohesion: 0.13
-Nodes (8): Create a new service with validation., Update an existing service with validation., Delete a service by primary key., Get a single service by primary key., Return all services, optionally filtered to active only., Search services by name or code (contains, case-insensitive)., Business logic layer for service catalog operations., ServiceService
+Cohesion: 0.10
+Nodes (11): Create a new service with validation., Update an existing service with validation., Delete a service by primary key., Get a single service by primary key., Return all services, optionally filtered to active only., Search services by name or code (contains, case-insensitive)., Business logic layer for service catalog operations., ServiceService (+3 more)
 
 ### Community 8 - "OpenCode Configuration"
 Cohesion: 0.17
@@ -206,8 +198,8 @@ Cohesion: 0.09
 Nodes (22): ALWAYS, ANALYZE FIRST, BEFORE MODIFYING, Commit, Commit format, COMPILATION CHECK, CURRENT ROADMAP, DIRTY WORKTREE POLICY (+14 more)
 
 ### Community 29 - "Community 29"
-Cohesion: 0.07
-Nodes (53): بازسازی هدر پس از تغییر تنظیمات, QLineEdit, build_customer_table(), build_customer_toolbar(), _on_header_clicked(), _on_item_changed(), QTableWidget, QTableWidgetItem (+45 more)
+Cohesion: 0.08
+Nodes (45): بازسازی هدر پس از تغییر تنظیمات, QLineEdit, build_customer_table(), build_customer_toolbar(), _on_header_clicked(), _on_item_changed(), QTableWidget, QTableWidgetItem (+37 more)
 
 ### Community 30 - "Community 30"
 Cohesion: 0.14
@@ -282,16 +274,16 @@ Cohesion: 0.11
 Nodes (18): 1.1 Phone Auto-Fill, 1.2 Completer popup, 1.3 Completer selection, 1.4 Duplicate detection (exact name), 1.5 Similar-name detection, 1.6 Customer creation, 1.7 Customer reuse, 1.8 Save entry (+10 more)
 
 ### Community 52 - "Community 52"
-Cohesion: 0.09
-Nodes (13): CustomerWorkflow, Single execution path for all customer UI workflows.      RepairDialog calls onl, Populate all customer UI fields from a customer dict.          This is the ONLY, Search customers for completer popup.          Returns list of customer dicts wi, Get a single customer by primary key.          This is the SINGLE source of trut, Find customer by phone number (exact match).          Returns the full customer, Resolve customer on save: create-or-reuse with duplicate detection.          Thi, Return True if any customer field differs between original and form. (+5 more)
+Cohesion: 0.10
+Nodes (12): CustomerWorkflow, Single execution path for all customer UI workflows.      RepairDialog calls onl, Search customers for completer popup.          Returns list of customer dicts wi, Get a single customer by primary key.          This is the SINGLE source of trut, Find customer by phone number (exact match).          Returns the full customer, Resolve customer on save: create-or-reuse with duplicate detection.          Thi, Return True if any customer field differs between original and form., Update an existing customer's data. (+4 more)
 
 ### Community 53 - "Community 53"
 Cohesion: 0.11
 Nodes (17): Acceptance Test Results, Created: `services/customer_workflow.py` (new), Customer Workflow Stabilization, File Changes, Final Workflow Diagram, Guard: Single Execution Path Verification, Modified: `ui/dialogs/repair_dialog.py`, New Execution Path (+9 more)
 
 ### Community 54 - "Community 54"
-Cohesion: 0.08
-Nodes (14): TodoDB, TodoRepository, Business logic layer for todo operations., Create a new todo with validation., Update an existing todo with validation., Delete a todo by primary key., Get a single todo by primary key., Return all todos, optionally filtered by completion status. (+6 more)
+Cohesion: 0.18
+Nodes (6): NotificationDialog, دیالوگ نمایش اعلان‌ها, بارگذاری داده‌ها از فایل, QCalendarWidget, PersianCalendarWidget, ویجت تقویم شمسی سفارشی
 
 ### Community 55 - "Community 55"
 Cohesion: 0.20
@@ -326,8 +318,8 @@ Cohesion: 0.33
 Nodes (6): 7.1 Trigger, 7.2 Guards, 7.3 Lookup Flow, 7.4 Signal Safety, 7.5 Silent Failure, 7. Phone Auto-Fill Specification
 
 ### Community 63 - "Community 63"
-Cohesion: 0.06
-Nodes (17): NotificationDialog, Render a single todo section (header + items)., دیالوگ نمایش اعلان‌ها, QCalendarWidget, QDialog, PersianCalendarWidget, PersianDateEdit, ویجت تقویم شمسی سفارشی (+9 more)
+Cohesion: 0.07
+Nodes (12): QDialog, QStyledItemDelegate, PersianDateEdit, دریافت تاریخ شمسی انتخاب شده, ویجت ورودی تاریخ شمسی, CustomerEditDialog, دیالوگ افزودن/ویرایش اطلاعات مشتری, CustomerSelectionDialog (+4 more)
 
 ### Community 64 - "Community 64"
 Cohesion: 0.50
@@ -346,77 +338,49 @@ Cohesion: 0.50
 Nodes (4): 9.1 Complete Save Sequence, 9.2 Edit Mode Behavior, 9.3 Save Outcomes Summary, 9. Save Workflow Specification
 
 ### Community 68 - "Community 68"
-Cohesion: 0.33
-Nodes (5): حذف مشتریان انتخاب‌شده با احتیاط, show_error(), show_info(), show_question(), show_warning()
+Cohesion: 0.17
+Nodes (10): حذف تعمیرات انتخاب‌شده (چک‌باکس‌دار) در یک عملیات, حذف مشتریان انتخاب‌شده با احتیاط, today_persian(), show_error(), show_info(), show_question(), show_warning(), Calculate statistics for repairs (+2 more)
 
 ### Community 69 - "Community 69"
 Cohesion: 0.13
 Nodes (14): 1. Overview, 2. Database — `part` table, 3. Repository — `PartRepository`, 4. Service Layer — `PartService`, 5. Management UI, 6. Verification, 7. Planned Future Integration, 8. Helper Methods for Future Invoice Integration (+6 more)
 
 ### Community 70 - "Community 70"
-Cohesion: 0.24
-Nodes (9): today_persian(), calculate_invoice_totals(), Any, generate_print_invoice_html(), generate_web_invoice_html(), get_invoice_logo_html(), Calculate statistics for repairs, update_statistics() (+1 more)
+Cohesion: 0.33
+Nodes (3): Populate all customer UI fields from a customer dict.          This is the ONLY, Check for duplicates when creating from management UI.          Returns an error, Return all customers (for management views).
 
 ### Community 71 - "Community 71"
 Cohesion: 0.11
 Nodes (17): 1. Customer Repair Statistics Columns, 2. Startup Notifications Screen, Automatic refresh, Column order (new layout), Customer ↔ Repair linkage, Customer Repair Statistics & Startup Notifications UI, Display rules, Efficient computation (no N+1) (+9 more)
 
 ### Community 72 - "Community 72"
-Cohesion: 0.23
-Nodes (8): Any, Repair, add_repair(), delete_repair(), Delete a repair by ID from the repairs list., Update a repair by ID with new data., Add a new repair to the repairs list.     Assigns a unique ID to the new repair., update_repair()
+Cohesion: 0.19
+Nodes (10): Any, Repair, add_repair(), delete_repair(), get_repair_by_id(), Delete a repair by ID from the repairs list., Find and return a repair by its ID., Update a repair by ID with new data. (+2 more)
 
 ### Community 74 - "Community 74"
-Cohesion: 0.19
-Nodes (5): باز کردن تنظیمات فروشگاه, دیالوگ تنظیمات فروشگاه, بازگردانی تنظیمات پیش‌فرض ظاهری, دریافت تنظیمات فروشگاه, ShopSettingsDialog
+Cohesion: 0.31
+Nodes (3): باز کردن تنظیمات فروشگاه, دیالوگ تنظیمات فروشگاه, ShopSettingsDialog
 
 ### Community 75 - "Community 75"
-Cohesion: 0.17
-Nodes (5): بارگذاری و نمایش لیست وظایف, ویرایش یک وظیفه از طریق دیالوگ اختصاصی, تغییر وضعیت انجام‌شدن وظایف انتخاب‌شده (انجام شد / بازگردانی), دیالوگ افزودن/ویرایش وظیفه, TodoEditDialog
-
-### Community 76 - "Community 76"
-Cohesion: 0.21
-Nodes (4): بارگذاری و نمایش لیست قطعات مرتب شده بر اساس نام, ویرایش یک قطعه از طریق دیالوگ اختصاصی, PartEditDialog, دیالوگ افزودن/ویرایش قطعه
-
-### Community 77 - "Community 77"
-Cohesion: 0.21
-Nodes (5): حذف تعمیرات انتخاب‌شده (چک‌باکس‌دار) در یک عملیات, به‌روزرسانی جدول مشتریان در صورت نمایش نمای مشتریان, ذخیره داده‌ها در فایل, get_repair_by_id(), Find and return a repair by its ID.
-
-### Community 78 - "Community 78"
-Cohesion: 0.22
-Nodes (4): QTableWidget, QWidget, _AutoGrowTable, جدولی که ارتفاع مطابق تعداد سطرها تنظیم می‌کند؛ بدون اسکرول داخلی.
-
-### Community 79 - "Community 79"
-Cohesion: 0.27
-Nodes (4): QStyledItemDelegate, ItemPickerDialog, دیالوگ انتخاب آیتم از کاتالوگ (خدمات یا قطعات), _CompleterDelegate
-
-### Community 80 - "Community 80"
-Cohesion: 0.29
-Nodes (3): بارگذاری و نمایش لیست مشتریان مرتب شده بر اساس نام, افزودن مشتری جدید از طریق دیالوگ اختصاصی, ویرایش یک مشتری از طریق دیالوگ اختصاصی
-
-### Community 81 - "Community 81"
-Cohesion: 0.43
-Nodes (5): main(), get_app_icon(), get_header_logo_pixmap(), load_logo_path(), _load_settings()
-
-### Community 83 - "Community 83"
-Cohesion: 0.50
-Nodes (4): compute_customer_repair_stats(), _match_key(), Compute per-customer repair statistics in a single pass.      Returns a dict key, Build normalized lookup keys for a repair/customer link.      Repairs are linked
+Cohesion: 0.25
+Nodes (4): Return all parts, optionally filtered to active only., Search parts by name or code (contains, case-insensitive)., Return active parts for future invoice line-item selection., Find a part by its code (for future invoice integration).
 
 ## Knowledge Gaps
 - **422 isolated node(s):** `$schema`, `plugin`, `@opencode-ai/plugin`, `$schema`, `model` (+417 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **11 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
+- **10 thin communities (<3 nodes) omitted from report** — run `graphify query` to explore isolated nodes.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `LaptopRepairManager` connect `Main Window & Repair Actions` to `Customer Database Layer`, `Application Entry & UI Setup`, `Community 68`, `Controller & Data Operations`, `Community 70`, `Calendar & UI Components`, `Community 7`, `Community 74`, `Community 75`, `Community 76`, `Community 77`, `Community 80`, `Community 81`, `Community 82`, `Community 52`, `Community 54`, `Community 29`, `Community 63`?**
+- **Why does `LaptopRepairManager` connect `Main Window & Repair Actions` to `Customer Database Layer`, `Application Entry & UI Setup`, `Community 68`, `Controller & Data Operations`, `Calendar & UI Components`, `Community 7`, `Community 74`, `Community 52`, `Community 54`, `Community 29`, `Community 63`?**
   _High betweenness centrality (0.049) - this node is a cross-community bridge._
-- **Why does `PartService` connect `Calendar & UI Components` to `Main Window & Repair Actions`, `Community 68`, `Community 70`, `Community 6`, `Community 76`, `Community 78`, `Community 79`, `Community 63`?**
-  _High betweenness centrality (0.045) - this node is a cross-community bridge._
-- **Why does `CustomerService` connect `Customer Service Operations` to `Community 52`, `Community 63`?**
-  _High betweenness centrality (0.037) - this node is a cross-community bridge._
-- **Are the 15 inferred relationships involving `LaptopRepairManager` (e.g. with `MainController` and `SQLiteStorage`) actually correct?**
-  _`LaptopRepairManager` has 15 INFERRED edges - model-reasoned connections that need verification._
+- **Why does `CustomerService` connect `Customer Service Operations` to `Customer Database Layer`, `Community 52`, `Community 63`?**
+  _High betweenness centrality (0.041) - this node is a cross-community bridge._
+- **Why does `InvoiceWidget` connect `Community 6` to `Calendar & UI Components`, `Community 68`, `Community 7`, `Community 52`, `Community 63`?**
+  _High betweenness centrality (0.034) - this node is a cross-community bridge._
+- **Are the 13 inferred relationships involving `LaptopRepairManager` (e.g. with `MainController` and `SQLiteStorage`) actually correct?**
+  _`LaptopRepairManager` has 13 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 4 inferred relationships involving `CustomerService` (e.g. with `CustomerRepository` and `CustomerWorkflow`) actually correct?**
   _`CustomerService` has 4 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 7 inferred relationships involving `InvoiceWidget` (e.g. with `CompleterItemDelegate` and `RepairDialog`) actually correct?**

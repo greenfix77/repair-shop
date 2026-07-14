@@ -50,7 +50,7 @@ from services.logo_service import get_app_icon
 class NotificationDialog(QDialog):
     """دیالوگ نمایش اعلان‌ها"""
     
-    def __init__(self, notifications, parent=None, todo_items=None):
+    def __init__(self, notifications, parent=None, todo_items=None, todo_sections=None):
         super().__init__(parent)
         self.setWindowTitle("اعلان‌ها")
         self.setModal(True)
@@ -98,89 +98,27 @@ class NotificationDialog(QDialog):
             frame.setLayout(notif_layout)
             list_layout.addWidget(frame)
 
-        # --- بخش وظایف امروز ---
-        if todo_items is not None:
+        sections_data = todo_sections if todo_sections is not None else (
+            {"today": todo_items} if todo_items else None
+        )
+
+        # --- بخش وظایف ---
+        if sections_data is not None:
             separator = QFrame()
             separator.setFixedHeight(1)
             separator.setStyleSheet("background-color: #E5E7EB; border: none; margin: 6px 0;")
             list_layout.addWidget(separator)
 
-            todos_title = QLabel("وظایف امروز")
-            todos_title.setFont(QFont("Segoe UI", 12, QFont.Bold))
-            todos_title.setAlignment(Qt.AlignCenter)
-            todos_title.setStyleSheet("color: #4F46E5; background: transparent; border: none;")
-            list_layout.addWidget(todos_title)
-
-            priority_colors = {
-                "فوری": "#DC2626",
-                "زیاد": "#D97706",
-                "معمولی": "#2563EB",
-                "کم": "#6B7280",
-            }
-            priority_marks = {
-                "فوری": "🔴",
-                "زیاد": "🟠",
-                "معمولی": "🔵",
-                "کم": "⚪",
-            }
-
-            if not todo_items:
-                empty = QLabel("🎉 وظیفه‌ای برای امروز ثبت نشده است.")
-                empty.setWordWrap(True)
-                empty.setLayoutDirection(Qt.RightToLeft)
-                empty.setAlignment(Qt.AlignCenter)
-                empty.setStyleSheet(
-                    "font-size: 10pt; color: #6B7280; "
-                    "background-color: #F9FAFB; border: 1px solid #E5E7EB; "
-                    "border-radius: 4px; padding: 8px; margin: 1px;"
-                )
-                list_layout.addWidget(empty)
-            else:
-                pending = [t for t in todo_items if not t.get('is_done')]
-                completed = [t for t in todo_items if t.get('is_done')]
-                ordered = pending + completed
-
-                for t in ordered:
-                    priority = t.get('priority', 'معمولی')
-                    mark = priority_marks.get(priority, "⚪")
-                    color = priority_colors.get(priority, "#6B7280")
-                    title_text = t.get('title', '') or ''
-                    due = t.get('due_date', '') or ''
-                    status_text = "✓ انجام شد" if t.get('is_done') else "○ در انتظار"
-                    bg = "#F0FDF4" if t.get('is_done') else "#FFFBEB"
-                    border = "#BBF7D0" if t.get('is_done') else "#FDE68A"
-                    status_color = "#059669" if t.get('is_done') else "#D97706"
-
-                    line = QFrame()
-                    line.setFrameShape(QFrame.Box)
-                    line.setStyleSheet(
-                        f"padding: 4px 8px; margin: 1px; border-radius: 4px; "
-                        f"background-color: {bg}; border: 1px solid {border};"
-                    )
-
-                    line_layout = QVBoxLayout()
-                    line_layout.setSpacing(0)
-                    line_layout.setContentsMargins(0, 0, 0, 0)
-
-                    head = QLabel(f"{mark} {title_text}")
-                    head.setWordWrap(True)
-                    head.setLayoutDirection(Qt.RightToLeft)
-                    head.setStyleSheet(
-                        "font-size: 10pt; font-weight: bold; "
-                        f"color: {color}; background: transparent; border: none;"
-                    )
-                    line_layout.addWidget(head)
-
-                    foot = QLabel(f"📅 سررسید: {due}   |   وضعیت: {status_text}")
-                    foot.setLayoutDirection(Qt.RightToLeft)
-                    foot.setStyleSheet(
-                        "font-size: 9pt; background: transparent; border: none; "
-                        f"color: {status_color};"
-                    )
-                    line_layout.addWidget(foot)
-
-                    line.setLayout(line_layout)
-                    list_layout.addWidget(line)
+            section_specs = [
+                ("overdue", "🔴 وظایف عقب‌افتاده", "#DC2626"),
+                ("today", "🟡 وظایف امروز", "#D97706"),
+                ("upcoming", "🟢 وظایف آینده", "#059669"),
+            ]
+            for key, header, color in section_specs:
+                items = sections_data.get(key) or []
+                if not items:
+                    continue
+                self._render_todo_section(list_layout, header, color, items)
 
         list_layout.addStretch()
         scroll.setWidget(container)
@@ -196,14 +134,81 @@ class NotificationDialog(QDialog):
         item_height = 52
         todo_item_height = 56
         todos_section_title_space = 36
-        total_counts = len(notifications) + (len(todo_items) if todo_items else 0)
+        if sections_data is not None:
+            todo_total = sum(len(sections_data.get(k) or []) for k in ("overdue", "today", "upcoming"))
+        else:
+            todo_total = len(todo_items) if todo_items else 0
+        total_counts = len(notifications) + todo_total
         button_space = 44
-        extra_todo_space = (todo_item_height * len(todo_items)) if todo_items else 0
-        sec_title = todos_section_title_space if todo_items is not None else 0
+        extra_todo_space = todo_item_height * todo_total
+        sec_title = todos_section_title_space if sections_data is not None or todo_items is not None else 0
         base = sec_title + button_space
         visible = min(total_counts, 5)
         preferred = base + visible * item_height + extra_todo_space
         self.resize(500, min(preferred, 600))
+
+    def _render_todo_section(self, list_layout, header_text, header_color, items):
+        """Render a single todo section (header + items)."""
+        section_title = QLabel(header_text)
+        section_title.setFont(QFont("Segoe UI", 12, QFont.Bold))
+        section_title.setAlignment(Qt.AlignCenter)
+        section_title.setStyleSheet(
+            f"color: {header_color}; background: transparent; border: none; "
+            "padding: 4px 0;"
+        )
+        list_layout.addWidget(section_title)
+
+        priority_colors = {
+            "فوری": "#DC2626",
+            "زیاد": "#D97706",
+            "معمولی": "#2563EB",
+            "کم": "#6B7280",
+        }
+        priority_marks = {
+            "فوری": "🔴",
+            "زیاد": "🟠",
+            "معمولی": "🔵",
+            "کم": "⚪",
+        }
+
+        for t in items:
+            priority = t.get('priority', 'معمولی')
+            mark = priority_marks.get(priority, "⚪")
+            color = priority_colors.get(priority, "#6B7280")
+            title_text = t.get('title', '') or ''
+            due = t.get('due_date', '') or ''
+
+            line = QFrame()
+            line.setFrameShape(QFrame.Box)
+            line.setStyleSheet(
+                "padding: 4px 8px; margin: 1px; border-radius: 4px; "
+                "background-color: #FFFBEB; border: 1px solid #FDE68A;"
+            )
+
+            line_layout = QVBoxLayout()
+            line_layout.setSpacing(0)
+            line_layout.setContentsMargins(0, 0, 0, 0)
+
+            head = QLabel(f"{mark} {title_text}")
+            head.setWordWrap(True)
+            head.setLayoutDirection(Qt.RightToLeft)
+            head.setStyleSheet(
+                "font-size: 10pt; font-weight: bold; "
+                f"color: {color}; background: transparent; border: none;"
+            )
+            line_layout.addWidget(head)
+
+            foot = QLabel(f"📅 سررسید: {due}   |   اولویت: {priority}")
+            foot.setLayoutDirection(Qt.RightToLeft)
+            foot.setStyleSheet(
+                "font-size: 9pt; background: transparent; border: none; "
+                f"color: #D97706;"
+            )
+            line_layout.addWidget(foot)
+
+            line.setLayout(line_layout)
+            list_layout.addWidget(line)
+
 
 class LaptopRepairManager(QMainWindow):
     """کلاس اصلی برنامه مدیریت تعمیرات"""
@@ -897,26 +902,43 @@ class LaptopRepairManager(QMainWindow):
                     except:
                         pass
 
-        todo_items_today = []
+        today_str = today_persian().strip()
+        today_date = jdatetime.date.today()
+        overdue_items = []
+        today_items = []
+        upcoming_items = []
         try:
-            today_str = today_persian()
-            pending_today = self._todo_service.get_due_today(today_str)
-            completed_today = [
-                t for t in self._todo_service.get_completed()
-                if (t.get('due_date', '') or '') == today_str
-            ]
-            seen = set()
-            for t in pending_today + completed_today:
-                tid = t.get('id')
-                if tid is not None and tid not in seen:
-                    seen.add(tid)
-                    todo_items_today.append(t)
+            for t in self._todo_service.get_pending():
+                due = (t.get('due_date', '') or '').strip()
+                if not due:
+                    continue
+                try:
+                    y, m, d = (int(x) for x in due.split('/'))
+                    due_d = jdatetime.date(y, m, d)
+                except Exception:
+                    continue
+                delta = (due_d - today_date).days
+                if delta < 0:
+                    overdue_items.append(t)
+                elif delta == 0:
+                    today_items.append(t)
+                elif 0 < delta <= 3:
+                    upcoming_items.append(t)
         except Exception:
-            todo_items_today = []
+            pass
 
-        if notifications or todo_items_today:
+        for bucket in (overdue_items, today_items, upcoming_items):
+            bucket.sort(key=lambda x: (x.get('due_date', '') or '').strip())
+
+        todo_sections = {
+            "overdue": overdue_items,
+            "today": today_items,
+            "upcoming": upcoming_items,
+        }
+
+        if notifications or any(todo_sections.values()):
             dialog = NotificationDialog(
-                notifications, self, todo_items=todo_items_today
+                notifications, self, todo_sections=todo_sections
             )
             dialog.exec_()
 

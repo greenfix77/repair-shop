@@ -15,8 +15,8 @@
     "semantic_hash": "111287aed37970b605d3ab422d1c93ec"
   },
   "app.py": {
-    "mtime": 1783997355.9981341,
-    "ast_hash": "ba4b81aeb786f68b8b63c3cc026faa09",
+    "mtime": 1783821086.6415465,
+    "ast_hash": "11f6768dfbf4fa3e2e815d004956d3c1",
     "semantic_hash": ""
   },
   "controllers/__init__.py": {
@@ -75,8 +75,8 @@
     "semantic_hash": "6c84c5be9303a224eba8d6f8b2719eab"
   },
   "core/storage/init_db.py": {
-    "mtime": 1783972783.325013,
-    "ast_hash": "6e3f09b8396f8e13baaa1d3d89be96b8",
+    "mtime": 1783710906.0131202,
+    "ast_hash": "4e5891ee3c45f240f821c4b157462828",
     "semantic_hash": ""
   },
   "core/storage/migrate_json_to_sqlite.py": {
@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   "ui/main_window.py": {
-    "mtime": 1783976599.5355468,
-    "ast_hash": "c6609bb630cbe422a31ed729cc1db660",
+    "mtime": 1783706624.7225502,
+    "ast_hash": "b6d18fb4b70ceb0913e2e6ad723ceefe",
     "semantic_hash": ""
   },
   "ui/status_styles.py": {
@@ -475,8 +475,8 @@
     "semantic_hash": ""
   },
   "ui/widgets/invoice_widget.py": {
-    "mtime": 1783970944.4861376,
-    "ast_hash": "cb4b0f3442d53952bf5c73e6e0d1742d",
+    "mtime": 1783715954.6220257,
+    "ast_hash": "4d98e975d40f3112affb88d5012766b1",
     "semantic_hash": ""
   },
   "REPAIR_INVOICE_REDESIGN.md": {
@@ -497,31 +497,6 @@
   "CUSTOMER_STATS_AND_STARTUP_UI.md": {
     "mtime": 1783821195.9083467,
     "ast_hash": "038638e3341a39837192aab149d458ec",
-    "semantic_hash": ""
-  },
-  "core/storage/todo_model_db.py": {
-    "mtime": 1783972741.3653672,
-    "ast_hash": "59456f9cb063a98aaf8ead6a97a59ba0",
-    "semantic_hash": ""
-  },
-  "core/storage/todo_repository.py": {
-    "mtime": 1783972771.9926696,
-    "ast_hash": "153bd5a1ea4ac4bdf869d58156d86508",
-    "semantic_hash": ""
-  },
-  "services/todo_service.py": {
-    "mtime": 1783979386.1519904,
-    "ast_hash": "df2fe09c84cf47cb371f7fd2558a2010",
-    "semantic_hash": ""
-  },
-  "ui/dialogs/todo_edit_dialog.py": {
-    "mtime": 1783979040.647304,
-    "ast_hash": "d0eae0f8b8ef88a9ef7d78980cdbaee5",
-    "semantic_hash": ""
-  },
-  "ui/todo_view.py": {
-    "mtime": 1783975715.1087837,
-    "ast_hash": "1ed165dcf41311a4a0fba1e7e83e2d0e",
     "semantic_hash": ""
   }
 }

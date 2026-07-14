@@ -60,8 +60,16 @@ class TodoService:
         return self._repo.search(query)
 
     def get_due_today(self, today: str) -> List[Dict]:
-        """Return pending todos due on a specific date string."""
-        return self._repo.get_due_today(today)
+        """Return pending todos due on a specific date string.
+
+        Compare with normalized whitespace-trimmed equality so legacy records
+        with stray leading/trailing spaces still match today's date.
+        """
+        target = (today or '').strip()
+        return [
+            t for t in self._repo.list_all(done_only=False)
+            if (t.get('due_date', '') or '').strip() == target
+        ]
 
     def get_pending(self) -> List[Dict]:
         """Return all pending (not done) todos."""

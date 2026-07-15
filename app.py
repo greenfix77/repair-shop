@@ -984,7 +984,7 @@ def main():
 
     # ایجاد و نمایش پنجره اصلی
     window = LaptopRepairManager()
-    window.show()
+    window.showMaximized()
 
     sys.exit(app.exec_())
 

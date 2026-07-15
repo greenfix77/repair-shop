@@ -110,9 +110,9 @@ class NotificationDialog(QDialog):
             list_layout.addWidget(separator)
 
             section_specs = [
-                ("overdue", "🔴 وظایف عقب‌افتاده", "#DC2626"),
-                ("today", "🟡 وظایف امروز", "#D97706"),
-                ("upcoming", "🟢 وظایف آینده", "#059669"),
+                ("overdue", "وظایف عقب‌افتاده", "#DC2626"),
+                ("today", "وظایف امروز", "#D97706"),
+                ("upcoming", "وظایف آینده", "#059669"),
             ]
             for key, header, color in section_specs:
                 items = sections_data.get(key) or []

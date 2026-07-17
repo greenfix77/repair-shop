@@ -141,7 +141,7 @@ def build_toolbar(window):
     # دکمه داشبورد (جابه‌جا شده از هدر)
     window.status_btn = QPushButton("📊 داشبورد")
     window.status_btn.setStyleSheet("background-color: #673AB7; color: white;")
-    window.status_btn.clicked.connect(window.toggle_status_popup)
+    window.status_btn.clicked.connect(window.open_dashboard)
     layout.addWidget(window.status_btn)
     
     layout.addStretch()

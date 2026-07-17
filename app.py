@@ -30,6 +30,8 @@ from ui.dialogs.customer_edit_dialog import CustomerEditDialog
 from ui.dialogs.service_edit_dialog import ServiceEditDialog
 from ui.dialogs.part_edit_dialog import PartEditDialog
 from ui.dialogs.todo_edit_dialog import TodoEditDialog
+from ui.dialogs.dashboard_dialog import DashboardDialog
+from services.dashboard_service import DashboardService
 from ui.main_window import build_ui, build_header, create_status_popup
 from ui.customer_view import render_customer_rows
 from ui.service_view import render_service_rows
@@ -40,6 +42,7 @@ from services.customer_workflow import CustomerWorkflow
 from services.service_service import ServiceService
 from services.part_service import PartService
 from services.todo_service import TodoService
+from services.repair_service import RepairService
 from services.notification_service import (
     show_info, show_warning, show_error, show_question
 )
@@ -269,6 +272,17 @@ class LaptopRepairManager(QMainWindow):
         self.status_popup.move(pos)
         self.status_popup.show()
         self.status_popup.raise_()
+
+    def open_dashboard(self):
+        """باز کردن داشبورد به‌صورت Maximized (نه FullScreen)."""
+        dashboard_service = DashboardService(
+            todo_service=self._todo_service,
+            customer_service=self._customer_workflow._service,
+            repair_source=self,
+            repair_service=RepairService(),
+        )
+        dialog = DashboardDialog(dashboard_service=dashboard_service, parent=self)
+        dialog.showMaximized()
 
     def eventFilter(self, obj, event):
         """بستن پاپ‌آپ هنگام کلیک خارج از آن یا ESC"""

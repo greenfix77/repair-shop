@@ -71,6 +71,14 @@ class TodoService:
             if (t.get('due_date', '') or '').strip() == target
         ]
 
+    def count_due_today(self, today: str) -> int:
+        """Return number of pending todos due on the given date string.
+
+        Thin aggregate over :meth:`get_due_today`. Used by
+        DashboardService — no business rules duplicated.
+        """
+        return len(self.get_due_today(today))
+
     def get_pending(self) -> List[Dict]:
         """Return all pending (not done) todos."""
         return self._repo.get_pending()

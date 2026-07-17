@@ -21,6 +21,8 @@ class Repair:
     warranty: str = ''
     paid_amount: int = 0
     payment_status: str = 'پرداخت نشده'
+    payment_method: str = 'نقدی'
+    payment_date: str = ''
     financial_notes: str = ''
     service_lines: List[Dict] = field(default_factory=list)
     part_lines: List[Dict] = field(default_factory=list)
@@ -44,6 +46,8 @@ class Repair:
             'warranty': self.warranty,
             'paid_amount': self.paid_amount,
             'payment_status': self.payment_status,
+            'payment_method': self.payment_method,
+            'payment_date': self.payment_date,
             'financial_notes': self.financial_notes,
             'service_lines': self.service_lines,
             'part_lines': self.part_lines,
@@ -69,6 +73,8 @@ class Repair:
             warranty=data.get('warranty', ''),
             paid_amount=data.get('paid_amount', 0),
             payment_status=data.get('payment_status', 'پرداخت نشده'),
+            payment_method=data.get('payment_method', 'نقدی'),
+            payment_date=data.get('payment_date', ''),
             financial_notes=data.get('financial_notes', ''),
             service_lines=data.get('service_lines', []),
             part_lines=data.get('part_lines', []),

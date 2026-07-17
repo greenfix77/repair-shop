@@ -407,6 +407,8 @@ class RepairDialog(QDialog):
             'warranty': self.warranty_input.toPlainText(),
             'paid_amount': invoice_data.get('paid_amount', 0),
             'payment_status': invoice_data.get('payment_status', 'پرداخت نشده'),
+            'payment_method': invoice_data.get('payment_method', 'نقدی'),
+            'payment_date': invoice_data.get('payment_date', ''),
             'financial_notes': invoice_data.get('financial_notes', ''),
             'service_lines': invoice_data.get('service_lines', []),
             'part_lines': invoice_data.get('part_lines', []),

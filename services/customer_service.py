@@ -175,6 +175,16 @@ class CustomerService:
         """Return all customers (for management views)."""
         return self._repo.get_all()
 
+    def count_customers(self) -> int:
+        """Return the total number of customers.
+
+        Aggregate helper used by the DashboardService. Domain rules
+        (duplicates, validation) intentionally live in resolve_customer
+        and create_customer — this method only reports the size of the
+        existing repository snapshot.
+        """
+        return len(self._repo.get_all())
+
     def delete_customer(self, customer_id: int) -> bool:
         """Delete a customer by primary key."""
         return self._repo.delete(customer_id)

@@ -3,13 +3,15 @@ from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QGridLayout,
                                QDoubleSpinBox, QTextEdit, QTableWidget,
                                QTableWidgetItem, QHeaderView, QAbstractItemView,
                                QCompleter, QFrame, QStyledItemDelegate,
-                               QScrollArea)
+                               QScrollArea, QComboBox)
 from PyQt5.QtCore import Qt, QTimer, QModelIndex, QSize
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QFont, QColor
 
 from services.service_service import ServiceService
 from services.part_service import PartService
 from services.notification_service import show_warning
+from services.date_service import today_persian
+from repair_manager.ui.components import PersianDateEdit
 from ui.dialogs.service_edit_dialog import ServiceEditDialog
 from ui.dialogs.part_edit_dialog import PartEditDialog
 from ui.dialogs.item_picker_dialog import ItemPickerDialog
@@ -222,14 +224,50 @@ class InvoiceWidget(QWidget):
         self._paid_input.valueChanged.connect(self._update_payment)
         payment_layout.addWidget(self._paid_input, 0, 1)
 
-        payment_layout.addWidget(QLabel("مانده:"), 1, 0)
-        self._remaining_label = QLabel("0")
-        payment_layout.addWidget(self._remaining_label, 1, 1)
+        self._full_pay_btn = QPushButton("کل مبلغ")
+        self._full_pay_btn.setStyleSheet(
+            "background-color: #4CAF50; color: white; padding: 4px 10px;"
+            " border: none; border-radius: 4px; font-size: 9pt;"
+        )
+        self._full_pay_btn.clicked.connect(self._fill_paid_with_total)
+        payment_layout.addWidget(self._full_pay_btn, 0, 2)
 
-        payment_layout.addWidget(QLabel("وضعیت پرداخت:"), 2, 0)
+        payment_layout.addWidget(QLabel("روش پرداخت:"), 1, 0)
+        self._payment_method_combo = QComboBox()
+        self._payment_method_combo.addItems([
+            "نقدی",
+            "کارت‌خوان (POS)",
+            "کارت به کارت",
+            "انتقال بانکی",
+            "چک",
+            "سایر",
+        ])
+        payment_layout.addWidget(self._payment_method_combo, 1, 1)
+
+        payment_layout.addWidget(QLabel("تاریخ پرداخت:"), 2, 0)
+        date_row = QWidget()
+        date_row_layout = QHBoxLayout(date_row)
+        date_row_layout.setContentsMargins(0, 0, 0, 0)
+        date_row_layout.setSpacing(6)
+        self._payment_date_today_btn = QPushButton("امروز")
+        self._payment_date_today_btn.setStyleSheet(
+            "background-color: #607D8B; color: white; padding: 4px 10px;"
+            " border: none; border-radius: 4px; font-size: 9pt;"
+        )
+        self._payment_date_today_btn.clicked.connect(self._set_payment_date_today)
+        self._payment_date_input = PersianDateEdit()
+        date_row_layout.addWidget(self._payment_date_today_btn)
+        date_row_layout.addWidget(self._payment_date_input, 1)
+        payment_layout.addWidget(date_row, 2, 1)
+
+        payment_layout.addWidget(QLabel("مانده:"), 3, 0)
+        self._remaining_label = QLabel("0")
+        payment_layout.addWidget(self._remaining_label, 3, 1)
+
+        payment_layout.addWidget(QLabel("وضعیت پرداخت:"), 4, 0)
         self._payment_status_label = QLabel("پرداخت نشده")
         self._payment_status_label.setStyleSheet("font-weight: bold; color: #f44336;")
-        payment_layout.addWidget(self._payment_status_label, 2, 1)
+        payment_layout.addWidget(self._payment_status_label, 4, 1)
 
         bottom_layout.addWidget(payment_frame)
         layout.addLayout(bottom_layout)
@@ -568,6 +606,34 @@ class InvoiceWidget(QWidget):
 
         self._update_payment()
 
+    def _final_amount(self) -> int:
+        """Reuse the existing recalculation chain and return the final total.
+
+        Avoids duplicating business logic: the same formula used for
+        ``مبلغ نهایی`` powers the 'کل مبلغ' quick-fill.
+        """
+        self._recalculate()
+        text = self._final_amount_label.text().replace(',', '').strip()
+        try:
+            return int(text or 0)
+        except ValueError:
+            return 0
+
+    def _fill_paid_with_total(self):
+        """Fill paid amount with the current invoice final total.
+
+        Triggers the same UI pipeline as a manual edit so the remaining
+        label and payment status reflect the new value immediately.
+        """
+        self._paid_input.blockSignals(True)
+        self._paid_input.setValue(self._final_amount())
+        self._paid_input.blockSignals(False)
+        self._update_payment()
+
+    def _set_payment_date_today(self):
+        """Fill payment_date with the authoritative today's Persian date."""
+        self._payment_date_input.setText(today_persian())
+
     def _update_payment(self):
         svc_subtotal = sum(l['total_price'] for l in self._service_lines)
         part_subtotal = sum(l['total_price'] for l in self._part_lines)
@@ -632,6 +698,18 @@ class InvoiceWidget(QWidget):
         self._discount_input.setValue(data.get('discount', 0))
         self._tax_input.setValue(data.get('tax', 0))
         self._paid_input.setValue(data.get('paid_amount', 0))
+        legacy_method_map = {
+            '': 'نقدی',
+            'کارت‌خوان': 'کارت‌خوان (POS)',
+        }
+        saved_method = legacy_method_map.get(
+            data.get('payment_method', '') or '',
+            data.get('payment_method', '') or 'نقدی',
+        )
+        idx = self._payment_method_combo.findText(saved_method)
+        self._payment_method_combo.setCurrentIndex(idx if idx >= 0 else 0)
+        payment_date = data.get('payment_date', '') or ''
+        self._payment_date_input.setText(payment_date)
         self._financial_notes_input.setPlainText(data.get('financial_notes', ''))
 
         self._render_service_table()
@@ -664,6 +742,8 @@ class InvoiceWidget(QWidget):
             'discount': self._discount_input.value(),
             'paid_amount': paid,
             'payment_status': payment_status,
+            'payment_method': self._payment_method_combo.currentText(),
+            'payment_date': self._payment_date_input.get_date(),
             'financial_notes': self._financial_notes_input.toPlainText(),
             'parts_cost': part_subtotal,
             'labor_cost': svc_subtotal,

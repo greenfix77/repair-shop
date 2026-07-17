@@ -35,6 +35,8 @@ class SQLiteStorage:
                     'warranty': row.warranty or '',
                     'paid_amount': getattr(row, 'paid_amount', 0) or 0,
                     'payment_status': getattr(row, 'payment_status', '') or 'پرداخت نشده',
+                    'payment_method': getattr(row, 'payment_method', '') or 'نقدی',
+                    'payment_date': getattr(row, 'payment_date', '') or '',
                     'financial_notes': getattr(row, 'financial_notes', '') or '',
                     'service_lines': [],
                     'part_lines': [],
@@ -97,6 +99,8 @@ class SQLiteStorage:
                     warranty=item.get('warranty', ''),
                     paid_amount=item.get('paid_amount', 0),
                     payment_status=item.get('payment_status', 'پرداخت نشده'),
+                    payment_method=item.get('payment_method', 'نقدی'),
+                    payment_date=item.get('payment_date', ''),
                     financial_notes=item.get('financial_notes', ''),
                 )
                 session.add(row)

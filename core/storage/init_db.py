@@ -23,6 +23,8 @@ def _migrate_repair_columns():
     new_columns = [
         ('paid_amount', 'INTEGER DEFAULT 0'),
         ('payment_status', "TEXT DEFAULT 'پرداخت نشده'"),
+        ('payment_method', "TEXT DEFAULT 'نقدی'"),
+        ('payment_date', "TEXT DEFAULT ''"),
         ('financial_notes', 'TEXT DEFAULT ""'),
     ]
     with engine.connect() as conn:

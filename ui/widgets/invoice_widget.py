@@ -9,6 +9,7 @@ from PyQt5.QtGui import QStandardItemModel, QStandardItem, QFont, QColor
 
 from services.service_service import ServiceService
 from services.part_service import PartService
+from services.charge_service import ChargeService
 from services.notification_service import show_warning
 from services.date_service import today_persian
 from repair_manager.ui.components import PersianDateEdit
@@ -58,8 +59,10 @@ class InvoiceWidget(QWidget):
         super().__init__(parent)
         self._service_svc = ServiceService()
         self._part_svc = PartService()
+        self._charge_svc = ChargeService()
         self._service_lines = []
         self._part_lines = []
+        self._additional_charges = []
 
         self._init_ui()
         self._init_completers()
@@ -153,8 +156,10 @@ class InvoiceWidget(QWidget):
         part_layout.addLayout(part_header)
 
         self._part_table = _AutoGrowTable()
-        self._part_table.setColumnCount(5)
-        self._part_table.setHorizontalHeaderLabels(["قطعه", "تعداد", "قیمت واحد", "جمع", "عملیات"])
+        self._part_table.setColumnCount(6)
+        self._part_table.setHorizontalHeaderLabels(
+            ["قطعه", "تعداد", "قیمت خرید", "قیمت واحد", "جمع", "عملیات"]
+        )
         self._part_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self._part_table.setSelectionBehavior(QAbstractItemView.SelectRows)
         self._part_table.setAlternatingRowColors(True)
@@ -165,6 +170,7 @@ class InvoiceWidget(QWidget):
         phdr.setSectionResizeMode(2, QHeaderView.ResizeToContents)
         phdr.setSectionResizeMode(3, QHeaderView.ResizeToContents)
         phdr.setSectionResizeMode(4, QHeaderView.ResizeToContents)
+        phdr.setSectionResizeMode(5, QHeaderView.ResizeToContents)
         part_layout.addWidget(self._part_table)
 
         self._part_subtotal_label = QLabel("جمع قطعات: 0")
@@ -172,6 +178,54 @@ class InvoiceWidget(QWidget):
         part_layout.addWidget(self._part_subtotal_label)
 
         layout.addWidget(part_frame)
+
+        # بخش هزینه‌های جانبی
+        charge_frame = QFrame()
+        charge_frame.setStyleSheet("background-color: white; border-radius: 5px; padding: 5px;")
+        charge_layout = QVBoxLayout(charge_frame)
+
+        charge_header = QHBoxLayout()
+        charge_title = QLabel("هزینه‌های جانبی")
+        charge_title.setStyleSheet("font-weight: bold; font-size: 11pt;")
+        charge_header.addWidget(charge_title)
+        charge_header.addStretch()
+
+        add_charge_btn = QPushButton("➕ افزودن هزینه")
+        add_charge_btn.setFixedHeight(36)
+        add_charge_btn.setStyleSheet("background-color: #4CAF50; color: white;")
+        add_charge_btn.clicked.connect(self._on_add_charge_clicked)
+        charge_header.addWidget(add_charge_btn)
+
+        del_charge_btn = QPushButton("🗑️ حذف هزینه")
+        del_charge_btn.setFixedHeight(36)
+        del_charge_btn.setStyleSheet("background-color: #f44336; color: white;")
+        del_charge_btn.clicked.connect(self._remove_last_charge)
+        charge_header.addWidget(del_charge_btn)
+
+        charge_layout.addLayout(charge_header)
+
+        self._charges_table = _AutoGrowTable()
+        self._charges_table.setColumnCount(5)
+        self._charges_table.setHorizontalHeaderLabels(
+            ["هزینه", "تعداد", "مبلغ واحد", "جمع", "عملیات"]
+        )
+        self._charges_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self._charges_table.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self._charges_table.setAlternatingRowColors(True)
+        self._charges_table.verticalHeader().setVisible(False)
+        chdr = self._charges_table.horizontalHeader()
+        chdr.setSectionResizeMode(0, QHeaderView.Stretch)
+        chdr.setSectionResizeMode(1, QHeaderView.ResizeToContents)
+        chdr.setSectionResizeMode(2, QHeaderView.ResizeToContents)
+        chdr.setSectionResizeMode(3, QHeaderView.ResizeToContents)
+        chdr.setSectionResizeMode(4, QHeaderView.ResizeToContents)
+        charge_layout.addWidget(self._charges_table)
+
+        self._charges_subtotal_label = QLabel("جمع هزینه‌های جانبی: ۰ تومان")
+        self._charges_subtotal_label.setStyleSheet("font-weight: bold; color: #333;")
+        charge_layout.addWidget(self._charges_subtotal_label)
+
+        layout.addWidget(charge_frame)
 
         # بخش خلاصه فاکتور + پرداخت
         bottom_layout = QVBoxLayout()
@@ -441,12 +495,27 @@ class InvoiceWidget(QWidget):
         self._render_service_table()
 
     def _add_part_line(self, part_id, name, unit_price):
+        purchase_price_snapshot = 0
+        default_sale_price = 0
+        if part_id is not None:
+            try:
+                part = self._part_svc.get_part(part_id)
+                if part:
+                    purchase_price_snapshot = part.get('purchase_price', 0) or 0
+                    default_sale_price = part.get('default_sale_price', 0) or 0
+            except Exception:
+                purchase_price_snapshot = 0
+                default_sale_price = 0
+        if default_sale_price <= 0:
+            default_sale_price = purchase_price_snapshot
+        initial_unit_price = default_sale_price
         line = {
             'part_id': part_id,
             'part_name_snapshot': name,
             'quantity': 1,
-            'unit_price': unit_price,
-            'total_price': unit_price,
+            'unit_price': initial_unit_price,
+            'total_price': initial_unit_price,
+            'purchase_price_snapshot': purchase_price_snapshot,
         }
         self._part_lines.append(line)
         self._render_part_table()
@@ -515,26 +584,31 @@ class InvoiceWidget(QWidget):
             qty.valueChanged.connect(lambda v, r=i: self._update_part_qty(r, v))
             self._part_table.setCellWidget(row, 1, qty)
 
+            purchase_price_snapshot = line.get('purchase_price_snapshot', 0) or 0
+            purchase_item = QTableWidgetItem(f"{purchase_price_snapshot:,}")
+            purchase_item.setFlags(purchase_item.flags() & ~Qt.ItemIsEditable)
+            self._part_table.setItem(row, 2, purchase_item)
+
             price = QSpinBox()
             price.setMaximum(999999999)
             price.setValue(line['unit_price'])
             price.valueChanged.connect(lambda v, r=i: self._update_part_price(r, v))
-            self._part_table.setCellWidget(row, 2, price)
+            self._part_table.setCellWidget(row, 3, price)
 
-            self._part_table.setItem(row, 3, QTableWidgetItem(f"{line['total_price']:,}"))
+            self._part_table.setItem(row, 4, QTableWidgetItem(f"{line['total_price']:,}"))
 
             rm_btn = QPushButton("🗑️")
             rm_btn.setFixedSize(35, 25)
             rm_btn.setStyleSheet("background-color: #f44336; color: white;")
             rm_btn.clicked.connect(lambda checked, r=i: self._remove_part_line(r))
-            self._part_table.setCellWidget(row, 4, rm_btn)
+            self._part_table.setCellWidget(row, 5, rm_btn)
 
         if self._part_table.rowCount() == 0:
             self._part_table.setRowCount(1)
             placeholder = QTableWidgetItem("هیچ قطعه‌ای اضافه نشده است")
             placeholder.setForeground(QColor('#999'))
             self._part_table.setItem(0, 0, placeholder)
-            self._part_table.setSpan(0, 0, 1, 5)
+            self._part_table.setSpan(0, 0, 1, 6)
 
         self._part_table.updateGeometry()
         self._recalculate()
@@ -571,7 +645,7 @@ class InvoiceWidget(QWidget):
                 return
             self._part_lines[row]['quantity'] = value
             self._part_lines[row]['total_price'] = value * self._part_lines[row]['unit_price']
-            self._part_table.item(row, 3).setText(f"{self._part_lines[row]['total_price']:,}")
+            self._part_table.item(row, 4).setText(f"{self._part_lines[row]['total_price']:,}")
             self._recalculate()
 
     def _update_part_price(self, row, value):
@@ -582,15 +656,175 @@ class InvoiceWidget(QWidget):
                 return
             self._part_lines[row]['unit_price'] = value
             self._part_lines[row]['total_price'] = value * self._part_lines[row]['quantity']
-            self._part_table.item(row, 3).setText(f"{self._part_lines[row]['total_price']:,}")
+            self._part_table.item(row, 4).setText(f"{self._part_lines[row]['total_price']:,}")
             self._recalculate()
+
+    def _update_charge_qty(self, row, value):
+        if 0 <= row < len(self._additional_charges):
+            if value < 1:
+                show_warning(self, "خطا", "تعداد باید بیشتر از صفر باشد.")
+                self.sender().setValue(1)
+                return
+            self._additional_charges[row]['quantity'] = value
+            self._additional_charges[row]['total_price'] = (
+                value * self._additional_charges[row]['unit_price']
+            )
+            self._charges_table.item(row, 3).setText(
+                f"{self._additional_charges[row]['total_price']:,}"
+            )
+            self._recalculate()
+
+    def _update_charge_price(self, row, value):
+        if 0 <= row < len(self._additional_charges):
+            if value < 0:
+                show_warning(self, "خطا", "قیمت نمی‌تواند منفی باشد.")
+                self.sender().setValue(0)
+                return
+            self._additional_charges[row]['unit_price'] = value
+            self._additional_charges[row]['total_price'] = (
+                value * self._additional_charges[row]['quantity']
+            )
+            self._charges_table.item(row, 3).setText(
+                f"{self._additional_charges[row]['total_price']:,}"
+            )
+            self._recalculate()
+
+    # --- Additional Charges ---
+
+    def _build_additional_charges_section(self) -> QFrame:
+        """هزینه‌های جانبی -----------------------------------------------------"""
+        frame = QFrame()
+        frame.setStyleSheet(
+            "background-color: white; border-radius: 5px; padding: 5px;"
+        )
+        v = QVBoxLayout(frame)
+
+        title = QLabel("هزینه‌های جانبی")
+        title.setStyleSheet("font-weight: bold;")
+        v.addWidget(title)
+
+        add_btn = QPushButton("افزودن هزینه")
+        add_btn.setFixedHeight(36)
+        add_btn.setStyleSheet(
+            "background-color: #4CAF50; color: white; padding: 4px 10px;"
+            " border: none; border-radius: 4px; font-size: 10pt;"
+        )
+        add_btn.clicked.connect(self._on_add_charge_clicked)
+        v.addWidget(add_btn)
+
+        self._charges_table = _AutoGrowTable()
+        self._charges_table.setColumnCount(5)
+        self._charges_table.setHorizontalHeaderLabels(
+            ["عنوان", "نوع", "مبلغ", "توضیح", "حذف"]
+        )
+        self._charges_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self._charges_table.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self._charges_table.verticalHeader().setVisible(False)
+        chdr = self._charges_table.horizontalHeader()
+        chdr.setSectionResizeMode(0, QHeaderView.Stretch)
+        chdr.setSectionResizeMode(1, QHeaderView.ResizeToContents)
+        chdr.setSectionResizeMode(2, QHeaderView.ResizeToContents)
+        chdr.setSectionResizeMode(3, QHeaderView.Stretch)
+        chdr.setSectionResizeMode(4, QHeaderView.ResizeToContents)
+        v.addWidget(self._charges_table)
+
+        return frame
+
+    def _on_add_charge_clicked(self):
+        self._add_charge_from_search()
+
+    def _add_charge_from_search(self):
+        charges = self._charge_svc.list_all(active_only=True)
+        if not charges:
+            show_warning(self, "هیچ هزینه‌ای", "هیچ هزینه فعالی در کاتالوگ یافت نشد.")
+            return
+        dialog = ItemPickerDialog(
+            "انتخاب هزینه", charges, 'name', 'default_amount', parent=self
+        )
+        if dialog.exec_() == dialog.Accepted and dialog.selected_item:
+            c = dialog.selected_item
+            self._add_charge_line(
+                c['id'], c['name'], c.get('default_amount', 0)
+            )
+
+    def _add_charge_line(self, charge_id, name, unit_price):
+        line = {
+            'charge_id': charge_id,
+            'charge_name_snapshot': name,
+            'quantity': 1,
+            'unit_price': unit_price,
+            'total_price': unit_price,
+        }
+        self._additional_charges.append(line)
+        self._render_additional_charges_table()
+        self._recalculate()
+
+    def _remove_last_charge(self):
+        """حذف آخرین هزینه اضافه‌شده (دکمه ابزار سرصفحه)."""
+        if not self._additional_charges:
+            return
+        self._additional_charges.pop()
+        self._render_additional_charges_table()
+        self._recalculate()
+
+    def _remove_additional_charge(self, row):
+        if 0 <= row < len(self._additional_charges):
+            del self._additional_charges[row]
+        self._render_additional_charges_table()
+        self._recalculate()
+
+    def _on_charge_field_changed(self, row, field, value):
+        if 0 <= row < len(self._additional_charges):
+            self._additional_charges[row][field] = value
+
+    def _render_additional_charges_table(self):
+        self._charges_table.setRowCount(0)
+        for i, line in enumerate(self._additional_charges):
+            row = self._charges_table.rowCount()
+            self._charges_table.insertRow(row)
+
+            self._charges_table.setItem(
+                row, 0, QTableWidgetItem(line.get('charge_name_snapshot', '') or '')
+            )
+
+            qty = QSpinBox()
+            qty.setMaximum(999999)
+            qty.setValue(line.get('quantity', 1) or 1)
+            qty.valueChanged.connect(lambda v, r=i: self._update_charge_qty(r, v))
+            self._charges_table.setCellWidget(row, 1, qty)
+
+            price = QSpinBox()
+            price.setMaximum(999999999)
+            price.setValue(line.get('unit_price', 0) or 0)
+            price.valueChanged.connect(lambda v, r=i: self._update_charge_price(r, v))
+            self._charges_table.setCellWidget(row, 2, price)
+
+            self._charges_table.setItem(
+                row, 3, QTableWidgetItem(f"{line.get('total_price', 0) or 0:,}")
+            )
+
+            rm_btn = QPushButton("🗑️")
+            rm_btn.setFixedSize(35, 25)
+            rm_btn.setStyleSheet("background-color: #f44336; color: white;")
+            rm_btn.clicked.connect(lambda checked, r=i: self._remove_additional_charge(r))
+            self._charges_table.setCellWidget(row, 4, rm_btn)
+
+        if self._charges_table.rowCount() == 0:
+            self._charges_table.setRowCount(1)
+            placeholder = QTableWidgetItem("هیچ هزینه‌ای اضافه نشده است")
+            placeholder.setForeground(QColor('#999'))
+            self._charges_table.setItem(0, 0, placeholder)
+            self._charges_table.setSpan(0, 0, 1, 5)
+
+        self._charges_table.updateGeometry()
 
     # --- Calculation ---
 
     def _recalculate(self):
         svc_subtotal = sum(l['total_price'] for l in self._service_lines)
         part_subtotal = sum(l['total_price'] for l in self._part_lines)
-        prediscount = svc_subtotal + part_subtotal
+        charge_subtotal = sum(l.get('total_price', 0) or 0 for l in self._additional_charges)
+        prediscount = svc_subtotal + part_subtotal + charge_subtotal
         discount = self._discount_input.value()
         after_discount = max(0, prediscount - discount)
         tax = self._tax_input.value()
@@ -599,6 +833,9 @@ class InvoiceWidget(QWidget):
 
         self._svc_subtotal_label.setText(f"جمع خدمات: {svc_subtotal:,}")
         self._part_subtotal_label.setText(f"جمع قطعات: {part_subtotal:,}")
+        self._charges_subtotal_label.setText(
+            f"جمع هزینه‌های جانبی: {charge_subtotal:,}"
+        )
         self._sum_services_label.setText(f"{svc_subtotal:,}")
         self._sum_parts_label.setText(f"{part_subtotal:,}")
         self._sum_prediscount_label.setText(f"{prediscount:,}")
@@ -637,7 +874,8 @@ class InvoiceWidget(QWidget):
     def _update_payment(self):
         svc_subtotal = sum(l['total_price'] for l in self._service_lines)
         part_subtotal = sum(l['total_price'] for l in self._part_lines)
-        prediscount = svc_subtotal + part_subtotal
+        charge_subtotal = sum(l.get('total_price', 0) or 0 for l in self._additional_charges)
+        prediscount = svc_subtotal + part_subtotal + charge_subtotal
         discount = self._discount_input.value()
         after_discount = max(0, prediscount - discount)
         tax = self._tax_input.value()
@@ -712,14 +950,50 @@ class InvoiceWidget(QWidget):
         self._payment_date_input.setText(payment_date)
         self._financial_notes_input.setPlainText(data.get('financial_notes', ''))
 
+        raw_charges = data.get('additional_charges', []) or []
+        migrated = []
+        for c in raw_charges:
+            if not isinstance(c, dict):
+                continue
+            line = dict(c)
+            if 'charge_name_snapshot' not in line:
+                line['charge_name_snapshot'] = (
+                    line.get('title', '') or line.get('name', '') or ''
+                )
+            if 'charge_id' not in line:
+                line['charge_id'] = line.get('id') or None
+            try:
+                unit_price = int(line.get('unit_price', 0) or 0)
+            except (TypeError, ValueError):
+                unit_price = 0
+            if unit_price == 0:
+                try:
+                    unit_price = int(line.get('amount', 0) or 0)
+                except (TypeError, ValueError):
+                    unit_price = 0
+            try:
+                quantity = int(line.get('quantity', 1) or 1)
+            except (TypeError, ValueError):
+                quantity = 1
+            if quantity < 1:
+                quantity = 1
+            line['unit_price'] = unit_price
+            line['quantity'] = quantity
+            line['total_price'] = unit_price * quantity
+            migrated.append(line)
+        self._additional_charges = migrated
+
         self._render_service_table()
         self._render_part_table()
+        self._render_additional_charges_table()
+        self._recalculate()
 
     def get_data(self):
         """Return invoice data as a dict."""
         svc_subtotal = sum(l['total_price'] for l in self._service_lines)
         part_subtotal = sum(l['total_price'] for l in self._part_lines)
-        prediscount = svc_subtotal + part_subtotal
+        charge_subtotal = sum(l.get('total_price', 0) or 0 for l in self._additional_charges)
+        prediscount = svc_subtotal + part_subtotal + charge_subtotal
         discount = self._discount_input.value()
         after_discount = max(0, prediscount - discount)
         tax = self._tax_input.value()
@@ -738,6 +1012,7 @@ class InvoiceWidget(QWidget):
         return {
             'service_lines': list(self._service_lines),
             'part_lines': list(self._part_lines),
+            'additional_charges': list(self._additional_charges),
             'tax': self._tax_input.value(),
             'discount': self._discount_input.value(),
             'paid_amount': paid,

@@ -56,27 +56,33 @@ class PartEditDialog(QDialog):
         self.purchase_price_input.setValue(0)
         grid.addWidget(self.purchase_price_input, 2, 1)
 
-        grid.addWidget(QLabel("قیمت فروش:"), 3, 0)
+        grid.addWidget(QLabel("قیمت فروش پیشنهادی:"), 3, 0)
+        self.default_sale_price_input = QSpinBox()
+        self.default_sale_price_input.setMaximum(999999999)
+        self.default_sale_price_input.setValue(0)
+        grid.addWidget(self.default_sale_price_input, 3, 1)
+
+        grid.addWidget(QLabel("قیمت فروش:"), 4, 0)
         self.sale_price_input = QSpinBox()
         self.sale_price_input.setMaximum(999999999)
         self.sale_price_input.setValue(0)
-        grid.addWidget(self.sale_price_input, 3, 1)
+        grid.addWidget(self.sale_price_input, 4, 1)
 
-        grid.addWidget(QLabel("موجودی:"), 4, 0)
+        grid.addWidget(QLabel("موجودی:"), 5, 0)
         self.stock_quantity_input = QSpinBox()
         self.stock_quantity_input.setMaximum(999999999)
         self.stock_quantity_input.setValue(0)
-        grid.addWidget(self.stock_quantity_input, 4, 1)
+        grid.addWidget(self.stock_quantity_input, 5, 1)
 
-        grid.addWidget(QLabel("توضیحات:"), 5, 0)
+        grid.addWidget(QLabel("توضیحات:"), 6, 0)
         self.description_input = QTextEdit()
         self.description_input.setMaximumHeight(80)
-        grid.addWidget(self.description_input, 5, 1)
+        grid.addWidget(self.description_input, 6, 1)
 
-        grid.addWidget(QLabel("فعال:"), 6, 0)
+        grid.addWidget(QLabel("فعال:"), 7, 0)
         self.is_active_input = QCheckBox()
         self.is_active_input.setChecked(True)
-        grid.addWidget(self.is_active_input, 6, 1)
+        grid.addWidget(self.is_active_input, 7, 1)
 
         form.setLayout(grid)
         layout.addWidget(form)
@@ -104,14 +110,16 @@ class PartEditDialog(QDialog):
         p = self.part
         self.part_code_label.setText(p.get('part_code', '') or '-')
         self.name_input.setText(p.get('name', ''))
-        self.purchase_price_input.setValue(p.get('purchase_price', 0))
+        purchase_price = p.get('purchase_price', 0) or 0
+        self.purchase_price_input.setValue(purchase_price)
+        self.default_sale_price_input.setValue(p.get('default_sale_price', purchase_price) or purchase_price)
         self.sale_price_input.setValue(p.get('sale_price', 0))
         self.stock_quantity_input.setValue(p.get('stock_quantity', 0))
         self.description_input.setPlainText(p.get('description', ''))
         self.is_active_input.setChecked(p.get('is_active', True))
 
     def _get_data(self):
-        return {
+        data = {
             'name': self.name_input.text().strip(),
             'purchase_price': self.purchase_price_input.value(),
             'sale_price': self.sale_price_input.value(),
@@ -119,6 +127,11 @@ class PartEditDialog(QDialog):
             'description': self.description_input.toPlainText().strip(),
             'is_active': self.is_active_input.isChecked(),
         }
+        default_sale_price = self.default_sale_price_input.value()
+        if self._is_create and default_sale_price <= 0:
+            default_sale_price = data['purchase_price']
+        data['default_sale_price'] = default_sale_price
+        return data
 
     def _save(self):
         data = self._get_data()

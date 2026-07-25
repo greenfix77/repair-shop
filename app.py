@@ -29,6 +29,7 @@ from ui.dialogs.invoice_dialog import InvoicePreviewDialog
 from ui.dialogs.customer_edit_dialog import CustomerEditDialog
 from ui.dialogs.service_edit_dialog import ServiceEditDialog
 from ui.dialogs.part_edit_dialog import PartEditDialog
+from ui.dialogs.charge_edit_dialog import ChargeEditDialog
 from ui.dialogs.todo_edit_dialog import TodoEditDialog
 from ui.dialogs.dashboard_dialog import DashboardDialog
 from services.dashboard_service import DashboardService
@@ -36,11 +37,13 @@ from ui.main_window import build_ui, build_header, create_status_popup
 from ui.customer_view import render_customer_rows
 from ui.service_view import render_service_rows
 from ui.part_view import render_part_rows
+from ui.charge_view import render_charge_rows
 from ui.todo_view import render_todo_rows
 from controllers.main_controller import MainController
 from services.customer_workflow import CustomerWorkflow
 from services.service_service import ServiceService
 from services.part_service import PartService
+from services.charge_service import ChargeService
 from services.todo_service import TodoService
 from services.repair_service import RepairService
 from services.notification_service import (
@@ -225,6 +228,7 @@ class LaptopRepairManager(QMainWindow):
         self._customer_stats = {}
         self._service_service = ServiceService()
         self._part_service = PartService()
+        self._charge_service = ChargeService()
         self._todo_service = TodoService()
         self.load_data()
         self.init_ui()
@@ -519,10 +523,10 @@ class LaptopRepairManager(QMainWindow):
         )
         self.refresh_part_table()
 
-    # --- مدیریت وظایف ---
+    # --- مدیریت هزینه‌ها ---
 
-    def show_todos_view(self):
-        """نمایش نمای وظایف"""
+    def show_charges_view(self):
+        """نمایش نمای هزینه‌ها"""
         self.view_stack.setCurrentIndex(4)
         self.repairs_nav_btn.setStyleSheet(
             "background-color: #607D8B; color: white;"
@@ -534,6 +538,34 @@ class LaptopRepairManager(QMainWindow):
             "background-color: #607D8B; color: white;"
         )
         self.parts_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.charges_nav_btn.setStyleSheet(
+            "background-color: #4F46E5; color: white; font-weight: bold;"
+        )
+        self.todos_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.refresh_charge_table()
+
+    # --- مدیریت وظایف ---
+
+    def show_todos_view(self):
+        """نمایش نمای وظایف"""
+        self.view_stack.setCurrentIndex(5)
+        self.repairs_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.customers_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.services_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.parts_nav_btn.setStyleSheet(
+            "background-color: #607D8B; color: white;"
+        )
+        self.charges_nav_btn.setStyleSheet(
             "background-color: #607D8B; color: white;"
         )
         self.todos_nav_btn.setStyleSheet(
@@ -694,6 +726,68 @@ class LaptopRepairManager(QMainWindow):
         self.refresh_part_table()
         if deleted > 0:
             show_info(self, "موفق", f"{deleted} قطعه با موفقیت حذف شد.")
+
+    def refresh_charge_table(self):
+        """بارگذاری و نمایش لیست هزینه‌ها مرتب شده بر اساس نام"""
+        charges = self._charge_service.list_all()
+        render_charge_rows(self.charge_table, charges, self.edit_charge)
+
+    def search_charges(self, text):
+        """جستجوی هزینه‌ها"""
+        results = self._charge_service.search(text)
+        render_charge_rows(self.charge_table, results, self.edit_charge)
+
+    def add_charge(self):
+        """افزودن هزینه جدید"""
+        dialog = ChargeEditDialog(charge_id=None, parent=self)
+        if getattr(dialog, '_init_failed', False):
+            return
+        if dialog.exec_() == QDialog.Accepted:
+            self.refresh_charge_table()
+
+    def edit_charge(self, charge_id):
+        """ویرایش یک هزینه از طریق دیالوگ اختصاصی"""
+        if charge_id is None:
+            return
+        dialog = ChargeEditDialog(charge_id, parent=self)
+        if getattr(dialog, '_init_failed', False):
+            return
+        if dialog.exec_() == QDialog.Accepted:
+            self.refresh_charge_table()
+
+    def delete_selected_charges(self):
+        """حذف هزینه‌های انتخاب‌شده"""
+        table = self.charge_table
+        selected_ids = []
+        for row in range(table.rowCount()):
+            item = table.item(row, 0)
+            if item is not None and item.checkState() == Qt.Checked:
+                cid = item.data(Qt.UserRole)
+                if cid is not None:
+                    selected_ids.append(cid)
+
+        if not selected_ids:
+            show_warning(self, "هشدار", "هیچ هزینه‌ای انتخاب نشده است.")
+            return
+
+        if not show_question(
+            self, "تأیید حذف",
+            f"آیا از حذف {len(selected_ids)} هزینه انتخاب‌شده اطمینان دارید؟"
+        ):
+            return
+
+        deleted = 0
+        for cid in selected_ids:
+            try:
+                if self._charge_service.delete_charge(cid):
+                    deleted += 1
+            except Exception as e:
+                show_error(self, "خطا", f"حذف هزینه ناموفق بود: {e}")
+                break
+
+        self.refresh_charge_table()
+        if deleted > 0:
+            show_info(self, "موفق", f"{deleted} هزینه با موفقیت حذف شد.")
 
     def refresh_service_table(self):
         """بارگذاری و نمایش لیست خدمات مرتب شده بر اساس نام"""

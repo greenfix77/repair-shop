@@ -1,3 +1,4 @@
+import json
 from typing import List, Dict
 
 from core.storage.database import SessionLocal
@@ -40,6 +41,7 @@ class SQLiteStorage:
                     'financial_notes': getattr(row, 'financial_notes', '') or '',
                     'service_lines': [],
                     'part_lines': [],
+                    'additional_charges': [],
                 }
 
                 svc_rows = session.query(RepairServiceDB).filter_by(
@@ -66,7 +68,21 @@ class SQLiteStorage:
                         'quantity': p.quantity or 1,
                         'unit_price': p.unit_price or 0,
                         'total_price': p.total_price or 0,
+                        'purchase_price_snapshot': getattr(
+                            p, 'purchase_price_snapshot', 0
+                        ) or 0,
                     })
+
+                additional_charges_json = getattr(
+                    row, 'additional_charges_json', '[]'
+                ) or '[]'
+                try:
+                    additional_charges = json.loads(additional_charges_json)
+                except (TypeError, ValueError):
+                    additional_charges = []
+                if not isinstance(additional_charges, list):
+                    additional_charges = []
+                repair_dict['additional_charges'] = additional_charges
 
                 result.append(repair_dict)
             return result
@@ -102,6 +118,10 @@ class SQLiteStorage:
                     payment_method=item.get('payment_method', 'نقدی'),
                     payment_date=item.get('payment_date', ''),
                     financial_notes=item.get('financial_notes', ''),
+                    additional_charges_json=json.dumps(
+                        item.get('additional_charges', []) or [],
+                        ensure_ascii=False,
+                    ),
                 )
                 session.add(row)
 
@@ -124,6 +144,9 @@ class SQLiteStorage:
                         quantity=prt.get('quantity', 1),
                         unit_price=prt.get('unit_price', 0),
                         total_price=prt.get('total_price', 0),
+                        purchase_price_snapshot=prt.get(
+                            'purchase_price_snapshot', 0
+                        ) or 0,
                     )
                     session.add(part_row)
 

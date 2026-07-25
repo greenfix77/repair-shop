@@ -13,6 +13,7 @@ from services.logo_service import get_header_logo_pixmap
 from ui.customer_view import build_customer_table, build_customer_toolbar
 from ui.service_view import build_service_table, build_service_toolbar
 from ui.part_view import build_part_table, build_part_toolbar
+from ui.charge_view import build_charge_table, build_charge_toolbar
 from ui.todo_view import build_todo_table, build_todo_toolbar
 from ui.table_renderer import setup_selection_column
 from core.status import (
@@ -361,6 +362,13 @@ def build_nav_bar(window):
     window.parts_nav_btn.clicked.connect(window.show_parts_view)
     layout.addWidget(window.parts_nav_btn)
 
+    window.charges_nav_btn = QPushButton("هزینه‌ها")
+    window.charges_nav_btn.setStyleSheet(
+        "background-color: #607D8B; color: white;"
+    )
+    window.charges_nav_btn.clicked.connect(window.show_charges_view)
+    layout.addWidget(window.charges_nav_btn)
+
     window.todos_nav_btn = QPushButton("وظایف")
     window.todos_nav_btn.setStyleSheet(
         "background-color: #607D8B; color: white;"
@@ -445,7 +453,18 @@ def build_ui(window):
     parts_page.setLayout(parts_layout)
     window.view_stack.addWidget(parts_page)
 
-    # صفحه وظایف (صفحه ۴)
+    # صفحه هزینه‌ها
+    charges_page = QWidget()
+    charges_layout = QVBoxLayout()
+    charges_layout.setContentsMargins(0, 0, 0, 0)
+    window.charge_toolbar = build_charge_toolbar(window)
+    charges_layout.addWidget(window.charge_toolbar)
+    window.charge_table = build_charge_table(window)
+    charges_layout.addWidget(window.charge_table)
+    charges_page.setLayout(charges_layout)
+    window.view_stack.addWidget(charges_page)
+
+    # صفحه وظایف (صفحه ۵)
     todos_page = QWidget()
     todos_layout = QVBoxLayout()
     todos_layout.setContentsMargins(0, 0, 0, 0)

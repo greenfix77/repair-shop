@@ -13,3 +13,4 @@ class RepairPartDB(Base):
     quantity = Column(Integer, default=1)
     unit_price = Column(Integer, default=0)
     total_price = Column(Integer, default=0)
+    purchase_price_snapshot = Column(Integer, default=0)

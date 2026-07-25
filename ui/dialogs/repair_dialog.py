@@ -412,4 +412,5 @@ class RepairDialog(QDialog):
             'financial_notes': invoice_data.get('financial_notes', ''),
             'service_lines': invoice_data.get('service_lines', []),
             'part_lines': invoice_data.get('part_lines', []),
+            'additional_charges': invoice_data.get('additional_charges', []),
         }

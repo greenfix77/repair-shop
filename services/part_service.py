@@ -15,7 +15,8 @@ class PartService:
             raise ValueError("نام قطعه الزامی است.")
         data['name'] = name
 
-        for field in ('purchase_price', 'sale_price', 'stock_quantity'):
+        for field in ('purchase_price', 'sale_price', 'default_sale_price',
+                      'stock_quantity'):
             value = data.get(field, 0)
             try:
                 value = int(value)

@@ -1,4 +1,4 @@
-from sqlalchemy import Column, Integer, String, Float
+from sqlalchemy import Column, Integer, String, Float, Text
 
 from core.storage.database import Base
 
@@ -26,3 +26,4 @@ class RepairDB(Base):
     payment_method = Column(String, default="نقدی")
     payment_date = Column(String, default="")
     financial_notes = Column(String, default="")
+    additional_charges_json = Column(Text, default="[]")

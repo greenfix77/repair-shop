@@ -26,6 +26,7 @@ class Repair:
     financial_notes: str = ''
     service_lines: List[Dict] = field(default_factory=list)
     part_lines: List[Dict] = field(default_factory=list)
+    additional_charges: List[Dict] = field(default_factory=list)
 
     def to_dict(self) -> Dict[str, Any]:
         return {
@@ -51,6 +52,7 @@ class Repair:
             'financial_notes': self.financial_notes,
             'service_lines': self.service_lines,
             'part_lines': self.part_lines,
+            'additional_charges': self.additional_charges,
         }
 
     @classmethod
@@ -78,4 +80,5 @@ class Repair:
             financial_notes=data.get('financial_notes', ''),
             service_lines=data.get('service_lines', []),
             part_lines=data.get('part_lines', []),
+            additional_charges=data.get('additional_charges', []),
         )

@@ -12,6 +12,7 @@ from services.part_service import PartService
 from services.charge_service import ChargeService
 from services.notification_service import show_warning
 from services.date_service import today_persian
+from core.storage.payment_transaction_repository import PaymentTransactionRepository
 from repair_manager.ui.components import PersianDateEdit
 from ui.dialogs.service_edit_dialog import ServiceEditDialog
 from ui.dialogs.part_edit_dialog import PartEditDialog
@@ -60,12 +61,15 @@ class InvoiceWidget(QWidget):
         self._service_svc = ServiceService()
         self._part_svc = PartService()
         self._charge_svc = ChargeService()
+        self._payment_tx_repo = PaymentTransactionRepository()
         self._service_lines = []
         self._part_lines = []
         self._additional_charges = []
+        self._payment_transactions = []
 
         self._init_ui()
         self._init_completers()
+        self._render_payment_history_table()
 
     # --- UI Setup ---
 
@@ -324,6 +328,35 @@ class InvoiceWidget(QWidget):
         payment_layout.addWidget(self._payment_status_label, 4, 1)
 
         bottom_layout.addWidget(payment_frame)
+
+        # تاریخچه پرداخت‌ها (فقط نمایش)
+        payment_history_frame = QFrame()
+        payment_history_frame.setStyleSheet(
+            "background-color: white; border-radius: 5px; padding: 5px;"
+        )
+        payment_history_layout = QVBoxLayout(payment_history_frame)
+        payment_history_title = QLabel("تاریخچه پرداخت‌ها")
+        payment_history_title.setStyleSheet("font-weight: bold; font-size: 11pt;")
+        payment_history_layout.addWidget(payment_history_title)
+
+        self._payment_history_table = _AutoGrowTable()
+        self._payment_history_table.setColumnCount(5)
+        self._payment_history_table.setHorizontalHeaderLabels(
+            ["تاریخ", "مبلغ", "روش پرداخت", "نوع", "توضیحات"]
+        )
+        self._payment_history_table.setEditTriggers(QAbstractItemView.NoEditTriggers)
+        self._payment_history_table.setSelectionBehavior(QAbstractItemView.SelectRows)
+        self._payment_history_table.setAlternatingRowColors(True)
+        self._payment_history_table.verticalHeader().setVisible(False)
+        phhdr = self._payment_history_table.horizontalHeader()
+        phhdr.setSectionResizeMode(0, QHeaderView.ResizeToContents)
+        phhdr.setSectionResizeMode(1, QHeaderView.ResizeToContents)
+        phhdr.setSectionResizeMode(2, QHeaderView.ResizeToContents)
+        phhdr.setSectionResizeMode(3, QHeaderView.ResizeToContents)
+        phhdr.setSectionResizeMode(4, QHeaderView.Stretch)
+        payment_history_layout.addWidget(self._payment_history_table)
+        bottom_layout.addWidget(payment_history_frame)
+
         layout.addLayout(bottom_layout)
 
         # یادداشت‌های مالی
@@ -818,6 +851,65 @@ class InvoiceWidget(QWidget):
 
         self._charges_table.updateGeometry()
 
+    # --- Payment history (read-only) ---
+
+    def _render_payment_history_table(self):
+        """Render the read-only payment history rows.
+
+        Reads exclusively from ``PaymentTransactionRepository``. Safe to
+        call with an empty list — shows a placeholder row.
+        """
+        if not hasattr(self, '_payment_history_table'):
+            return
+        self._payment_history_table.setRowCount(0)
+        transactions = self._payment_transactions or []
+        for tx in transactions:
+            row = self._payment_history_table.rowCount()
+            self._payment_history_table.insertRow(row)
+            payment_date = tx.get('payment_date', '') or ''
+            amount = tx.get('amount', 0) or 0
+            method = tx.get('payment_method', '') or ''
+            tx_type = tx.get('transaction_type', '') or ''
+            note = tx.get('note', '') or ''
+
+            self._payment_history_table.setItem(
+                row, 0, QTableWidgetItem(payment_date)
+            )
+            self._payment_history_table.setItem(
+                row, 1, QTableWidgetItem(f"{int(amount):,}")
+            )
+            self._payment_history_table.setItem(
+                row, 2, QTableWidgetItem(method)
+            )
+            self._payment_history_table.setItem(
+                row, 3, QTableWidgetItem(tx_type)
+            )
+            self._payment_history_table.setItem(
+                row, 4, QTableWidgetItem(note)
+            )
+
+        if self._payment_history_table.rowCount() == 0:
+            self._payment_history_table.setRowCount(1)
+            placeholder = QTableWidgetItem("هیچ تراکنش پرداختی ثبت نشده است")
+            placeholder.setForeground(QColor('#999'))
+            self._payment_history_table.setItem(0, 0, placeholder)
+            self._payment_history_table.setSpan(0, 0, 1, 5)
+
+        self._payment_history_table.updateGeometry()
+
+    def _load_payment_history(self, repair_id):
+        """Fetch ledger transactions for the repair via the repository."""
+        if not repair_id:
+            self._payment_transactions = []
+            self._render_payment_history_table()
+            return
+        try:
+            transactions = self._payment_tx_repo.list_for_repair(int(repair_id))
+        except Exception:
+            transactions = []
+        self._payment_transactions = transactions
+        self._render_payment_history_table()
+
     # --- Calculation ---
 
     def _recalculate(self):
@@ -987,6 +1079,7 @@ class InvoiceWidget(QWidget):
         self._render_part_table()
         self._render_additional_charges_table()
         self._recalculate()
+        self._load_payment_history(data.get('id'))
 
     def get_data(self):
         """Return invoice data as a dict."""

@@ -1,427 +1,573 @@
-# REPAIR_MANAGER OPCODE RULES
+# OpenCode Rules (v2)
 
-## PRIMARY GOAL
+## Primary Goal
 
-Fast, safe development with:
+This project is a long-term production application.
 
-* zero data loss
-* zero encoding corruption
-* small atomic changes
-* production stability
+The objective is to improve the software incrementally while preserving all existing functionality.
 
-Architecture refactor is COMPLETE.
-
-Current focus:
-
-1. Stability
-2. Bug fixes
-3. SQLite validation
-4. New features
-
-Not current focus:
-
-* architecture rewrites
-* extra abstraction layers
-* cosmetic refactors
-* rewriting working code
+Never sacrifice stability for speed.
 
 ---
 
-# NEVER
+# 1. Scope First
 
-Never:
+Never explore or modify the whole project.
 
-* change file encoding
-* convert UTF-8 Persian text
-* touch Persian comments
-* rewrite entire files
-* reformat unrelated code
-* move code and refactor logic in same step
-* perform multiple architectural changes at once
-* change UI appearance unless requested
-* rename keys used by existing code
-* add unnecessary abstractions
-* create circular imports
-* modify working code without reason
-* auto-format large files
-* reorder imports unnecessarily
-* optimize working code
-* change database schema without approval
+Always work inside the smallest possible scope.
+
+Before writing code determine:
+
+- exact files
+- exact functions
+- exact classes
+
+that are required.
+
+Never inspect unrelated modules.
 
 ---
 
-# ENCODING PROTECTION
+# 2. One Phase Only
 
-CRITICAL
+Each request represents one implementation phase.
 
-Persian text exists in this project.
+Never continue into later roadmap phases.
 
-Never:
+Never anticipate future features.
 
-* save Python files as ANSI
-* save files as Windows-1252
-* save files as Latin-1
-* convert Persian comments
-* convert Persian strings
-* replace Persian text globally
-* rewrite files only for formatting
-
-Required:
-
-* UTF-8 only
-* UTF-8 without BOM preferred
-
-If a file contains Persian text:
-
-DO NOT TOUCH ENCODING.
-
-If encoding is uncertain:
-
-STOP
-
-Create report.
-
-Do not modify file.
+Never refactor outside the requested phase.
 
 ---
 
-# ALWAYS
+# 3. Architecture Preservation
 
-Always:
+Do not redesign architecture unless explicitly requested.
 
-* use smallest possible changes
-* create new files instead of rewriting existing files
-* move code first, refactor later
-* one extraction per step
-* one feature per step
-* validate imports after each change
-* preserve all behavior exactly
-* preserve Persian text exactly
-* preserve UTF-8 encoding
-* preserve comments
-* prefer copy → import → delete
-* keep commits small
-* keep changes reversible
+Reuse existing:
+
+- Services
+- Repositories
+- Dialogs
+- Widgets
+- Models
+
+Avoid creating new abstractions unless absolutely necessary.
 
 ---
 
-# BEFORE MODIFYING
+# 4. Preserve Existing Behaviour
 
-Always run:
+Existing behaviour has higher priority than new features.
 
-```bash
-git status
-```
+Never modify existing workflows unless explicitly requested.
 
-Working tree must be clean.
+Do NOT change:
 
-If not clean:
+- calculations
+- persistence
+- dashboard
+- reports
+- invoice generation
+- customer workflow
+- payment workflow
 
-STOP
-
-Report uncommitted files.
-
-Wait for approval.
+unless the phase explicitly requires it.
 
 ---
 
-# ANALYZE FIRST
+# 5. Minimal Patch Principle
 
-Before coding:
+Generate the smallest possible patch.
 
-Analyze first.
+Avoid:
+
+- formatting-only edits
+- unrelated cleanup
+- moving code
+- automatic refactoring
+- file-wide rewrites
+
+Modify only the required code.
+
+---
+
+# 6. Never Delete Without Verification
+
+Never delete:
+
+- files
+- classes
+- methods
+- imports
+- functions
+
+unless ALL are true:
+
+- verified unused
+- searched project-wide
+- explicitly requested
 
 If uncertain:
 
-DO NOT MODIFY.
-
-Create report instead.
+Leave the code.
 
 ---
 
-# COMPILATION CHECK
+# 7. Never Rewrite Large Files
 
-After modifications:
+Never regenerate an entire file.
 
-```bash
+Patch only the necessary section.
+
+Large rewrites dramatically increase regression risk.
+
+---
+
+# 8. UI Rules
+
+Maintain:
+
+- RTL
+- existing spacing
+- existing layout
+- existing workflow
+- existing navigation
+
+Do not redesign unrelated widgets.
+
+All new UI must match the current application style.
+
+---
+
+# 9. Design Rules
+
+Always follow these UI standards:
+
+- Main buttons height: 36 px
+- Green only for confirmation actions
+- Red only for delete actions
+- 16 px spacing between cards
+- Financial forms share one common layout
+- Tables share one common header style
+- Dialogs use one common grid layout
+
+Never violate these rules.
+
+---
+
+# 10. Financial Safety
+
+Financial code is critical.
+
+Never modify:
+
+- invoice calculations
+- pricing
+- payment logic
+- dashboard totals
+- ledger
+- reports
+
+unless explicitly requested.
+
+---
+
+# 11. Invoice Immutability
+
+Invoices are immutable.
+
+Historical snapshots never change.
+
+Catalog changes must never modify historical invoices.
+
+Never rewrite historical financial records.
+
+---
+
+# 12. Backward Compatibility
+
+Every new field requires:
+
+- safe default
+- migration
+- legacy fallback
+
+Old databases must continue working.
+
+Old JSON files must continue working.
+
+---
+
+# 13. Regression Prevention
+
+Before modifying any function identify:
+
+- who calls it
+- who depends on it
+- what data flows through it
+
+Never modify shared code blindly.
+
+---
+
+# 14. Search Strategy
+
+Never grep the whole repository.
+
+Never recursively inspect every file.
+
+Search only the requested subsystem.
+
+Prefer Graphify whenever available.
+
+Read only the files required.
+
+---
+
+# 15. Graphify Rules
+
+If graphify-out exists:
+
+Use Graphify queries first.
+
+Never read GRAPH_REPORT.md for small tasks.
+
+Prefer focused graph queries.
+
+Use grep only when Graphify cannot answer.
+
+---
+
+# 16. Exploration Limit
+
+Stop exploring once sufficient information exists.
+
+Maximum:
+
+- 3 file reads
+
+OR
+
+- 5 focused searches
+
+before implementation.
+
+If enough information exists:
+
+Start coding.
+
+Never continue exploring indefinitely.
+
+---
+
+# 17. Prevent Infinite Loops
+
+Never repeatedly execute:
+
+- echo
+- compile
+- graphify
+- grep
+- directory listing
+- validation
+- status commands
+
+If a command succeeds:
+
+Continue to implementation.
+
+Never repeat it.
+
+---
+
+# 18. Validation Rules
+
+Run validation only once.
+
+Allowed:
+
 python -m py_compile app.py
-```
 
-If compilation fails:
+Only perform additional validation if explicitly requested.
 
-STOP
-
-Fix errors.
-
-Do NOT commit.
-
-Do NOT push.
+Never repeatedly compile.
 
 ---
 
-# MANUAL TESTING
+# 19. Safe Editing
 
-Before commit:
+Before editing:
 
-Run application.
+Locate the exact function.
 
-Test affected functionality.
+Patch only that function.
 
-Minimum validation:
-
-* application starts
-* modified feature works
-* no visible regression
+Do not regenerate surrounding code.
 
 ---
 
-# GIT POLICY
+# 20. Error Recovery
 
-Every successful step MUST end with:
+If implementation fails:
 
-1. Compilation
-2. Manual test
-3. Commit
-4. Push
+Stop immediately.
 
----
+Explain the failure.
 
-## Commit format
-
-```text
-<scope>: <short description>
-```
-
-Examples:
-
-```text
-feat: add customer validation
-feat: add sqlite repository
-fix: restore utf8 persian text
-fix: resolve circular import
-refactor: extract repair service
-refactor: move dialogs to ui.dialogs
-cleanup: remove dead code
-docs: update architecture
-```
-
-Rules:
-
-* one feature = one commit
-* one bug fix = one commit
-* one refactor = one commit
-* never mix unrelated changes
+Do not continue making speculative edits.
 
 ---
 
-## Commit
+# 21. Deliverables
 
-```bash
-git add .
-git commit -m "<message>"
-```
+Each completed phase must include:
 
----
+- Modified files
+- Architecture impact
+- Backward compatibility
+- Migration details
+- Regression assessment
+- Compilation result
 
-## Push
-
-After successful commit:
-
-```bash
-git push origin main
-```
-
-If using another branch:
-
-```bash
-git push origin <branch>
-```
-
-Verify push succeeded.
+Nothing more.
 
 ---
 
-# SAFETY CHECKPOINTS
-
-Before risky operations:
-
-```bash
-git add .
-git commit -m "checkpoint: before <operation>"
-git push origin main
-```
-
-Examples:
-
-```text
-checkpoint: before sqlite migration
-checkpoint: before pyqt6 migration
-checkpoint: before customer database
-checkpoint: before inventory module
-```
-
----
-
-# REPORT FORMAT
-
-After every change report:
-
-* modified files
-* created files
-* deleted files
-* imports added
-* imports removed
-* commit message used
-* push status
-
-Example:
-
-```text
-modified files:
-- app.py
-
-created files:
-- services/customer_service.py
-
-deleted files:
-- none
-
-imports added:
-- from services.customer_service import CustomerService
-
-imports removed:
-- none
-
-commit:
-feat: add customer service
-
-push:
-success
-```
-
----
-
-# FORBIDDEN GIT ACTIONS
+# 22. Git Safety
 
 Never:
 
-* force push
-* amend commits
-* rewrite history
-* auto squash commits
-* commit broken code
-* push broken code
-* continue with uncommitted changes
+- commit
+- branch
+- stash
+- reset
+- restore
+- checkout
+- rebase
+- merge
+
+unless explicitly instructed.
 
 ---
 
-# SQLITE STATUS
+# 23. File Safety
 
-Current storage mode:
+Never:
 
-```text
-DualStorage
-├── repairs.json
-└── repair_manager.db
-```
+- delete source files
+- overwrite entire files
+- replace app.py
+- remove methods because they "appear unused"
 
-Rules:
+If something appears unused:
 
-* do not remove DualStorage yet
-* do not delete repairs.json
-* do not switch to SQLite-only mode without audit
-* validate SQLite through real usage first
+Report it.
+
+Do not delete it.
 
 ---
 
-# PROJECT STATUS
+# 24. Large Project Rule
 
-Architecture refactor is COMPLETE.
+This repository is large.
 
-Do not perform additional architecture refactors unless explicitly requested.
+Token efficiency matters.
 
-Avoid modifying:
+Prefer:
 
-* services/invoice_generator.py
-* services/invoice_exporter.py
-* notification workflow
+- small reads
+- focused patches
+- concise outputs
 
-unless fixing a verified bug.
-
----
-
-# CURRENT ROADMAP
-
-Current order:
-
-1. SQLite validation
-2. SQLite-only migration
-3. Customer database
-4. Reports
-5. Dashboard
-6. Inventory
-7. SMS notifications
-8. Multi-user support
-9. PyQt6 migration
-
-Do not change roadmap unless requested.
+Avoid long architectural summaries unless requested.
 
 ---
 
-# PRIORITY
+# 25. Stop Rule
 
-1. Data safety
-2. UTF-8 safety
-3. Compiles
-4. Runs
-5. Tested
-6. Commit
-7. Push
-8. Next step
+When the requested phase is complete:
 
-# DIRTY WORKTREE POLICY
+Stop.
 
-Before ANY task:
+Do not begin the next roadmap phase.
 
-git status
+Wait for the next instruction.
 
-If working tree is NOT clean:
+---
 
-STOP.
+# 26. Maximum Execution Time
 
-Do NOT continue.
+If implementation exceeds approximately 10 minutes without producing a code patch:
 
-Show:
+Stop.
 
-- modified files
-- created files
-- deleted files
+Explain why.
 
-Ask:
+Suggest narrowing the scope.
 
-Choose one:
+Never continue indefinitely.
 
-1. Commit current changes
-2. Stash current changes
-3. Discard current changes
-4. Stop
+---
 
-Default action:
+# 27. No Temporary Validation Scripts
 
-Commit current changes first.
+Do NOT create:
 
-Never continue on a dirty worktree without explicit instruction.
+- validation scripts
+- helper scripts
+- sandbox scripts
+- migration simulators
+- temporary testing utilities
 
-# PYQT VERSION POLICY
+unless explicitly requested.
 
-Current UI framework:
+Prefer reasoning over temporary code.
 
-PyQt5
+---
 
-Rules:
+# 28. Existing Code First
 
-- All new code must compile and run on PyQt5.
-- Avoid Qt-version-specific implementations when a version-neutral solution exists.
-- Prefer APIs that are compatible with both PyQt5 and PyQt6.
-- Do not introduce Qt6-only APIs.
-- Keep future migration to PyQt6/PySide6 straightforward.
+Before creating any new:
+
+- Service
+- Repository
+- Utility
+- Helper
+- Dialog
+- Widget
+
+verify whether an equivalent already exists.
+
+Reuse existing code whenever possible.
+
+Avoid duplicate business logic.
+
+---
+
+# 29. Single Source of Truth
+
+Business logic must exist in exactly one place.
+
+Never duplicate calculations.
+
+Never duplicate financial logic.
+
+Never duplicate persistence logic.
+
+Always reuse the existing implementation.
+
+---
+
+# 30. Feature Completion Rule
+
+Never leave a feature half-implemented.
+
+If introducing:
+
+- a new model
+- a new repository
+- a new service
+- a new UI
+
+verify that every required connection is complete.
+
+Example:
+
+Model
+
+↓
+
+Repository
+
+↓
+
+Service
+
+↓
+
+UI
+
+↓
+
+Navigation
+
+↓
+
+Persistence
+
+↓
+
+Loading
+
+↓
+
+Saving
+
+↓
+
+Compilation
+
+Missing any step should be reported before ending the phase.
+
+---
+
+# 31. Navigation Safety
+
+Whenever adding a new page, dialog, or view:
+
+Verify:
+
+- navigation button
+- navigation handler
+- stacked widget index
+- refresh method
+- signal connections
+
+Never assume they already exist.
+
+---
+
+# 32. Compilation Before Completion
+
+A phase is not complete until:
+
+python -m py_compile app.py
+
+passes successfully.
+
+Compilation is mandatory before reporting success.
+
+---
+
+# 33. Read Before Modify
+
+Never modify a file before reading the relevant function or class.
+
+Avoid blind patches.
+
+Understand the surrounding code first.
+
+---
+
+# 34. Respect Existing Naming
+
+Use the project's existing naming conventions.
+
+Do not introduce inconsistent names.
+
+Maintain consistency across models, repositories, services, and UI.
+
+---
+
+# 35. Final Principle
+
+When in doubt:
+
+Prefer stability over cleverness.
+
+Prefer compatibility over optimization.
+
+Prefer small patches over large rewrites.
+
+Prefer preserving existing behaviour over introducing new architecture.

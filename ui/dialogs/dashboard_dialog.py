@@ -3,10 +3,11 @@ from typing import Optional
 from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                                QWidget, QLabel, QPushButton, QFrame,
                                QScrollArea, QSizePolicy,
-                               QGraphicsDropShadowEffect)
-from PyQt5.QtCore import Qt, QPropertyAnimation, QEasingCurve
-from PyQt5.QtGui import QColor, QFont
+                               QGraphicsDropShadowEffect, QToolTip)
+from PyQt5.QtCore import Qt, QPropertyAnimation, QEasingCurve, QRectF, QPointF
+from PyQt5.QtGui import QColor, QFont, QPainter, QTextOption
 
+from core.status import STATUS_COLORS
 from services.dashboard_service import DashboardService
 from services.date_service import today_persian
 
@@ -108,6 +109,162 @@ def _to_persian_digit_str(value: str) -> str:
     return value.translate(str.maketrans("0123456789", "۰۱۲۳۴۵۶۷۸۹"))
 
 
+class _BarChartWidget(QWidget):
+    """Lightweight bar chart rendered with QPainter (no chart library).
+
+    Accepts ``(label, value, color)`` items and paints vertical bars with a
+    compact value label above each bar and the Persian-localized label below
+    it. Hovering a bar shows a readable native tooltip with the exact value
+    (plus an optional unit). An empty item list renders an honest empty-state
+    message instead of any fake data. The widget scales to its container
+    width so cards stay responsive and nothing clips horizontally.
+    """
+
+    def __init__(self, accent: str, unit: str = "", parent=None):
+        super().__init__(parent)
+        self._accent = accent
+        self._unit = unit
+        self._items = []
+        self._hover_index = -1
+        self.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Expanding)
+        self.setMinimumHeight(120)
+        self.setMouseTracking(True)
+
+    def set_data(self, items):
+        self._items = list(items or [])
+        self._hover_index = -1
+        self.update()
+
+    def _compact(self, value) -> str:
+        try:
+            v = float(value)
+        except (TypeError, ValueError):
+            return "۰"
+        if abs(v) >= 1_000_000:
+            return f"{v / 1_000_000:.1f}م"
+        if abs(v) >= 1_000:
+            return f"{v / 1_000:.0f}هزار"
+        return str(int(v))
+
+    def _bar_rects(self):
+        """Return ``[(QRectF, label, value, color), ...]`` for current geometry."""
+        width = self.width()
+        height = self.height()
+        if not self._items or width <= 16 or height <= 50:
+            return []
+        margin_l, margin_r, margin_t, margin_b = 8, 8, 26, 36
+        plot_w = width - margin_l - margin_r
+        plot_h = height - margin_t - margin_b
+        count = len(self._items)
+        if plot_w <= 0 or plot_h <= 0 or count == 0:
+            return []
+        max_val = 1.0
+        for _, value, _ in self._items:
+            try:
+                max_val = max(max_val, abs(float(value)))
+            except (TypeError, ValueError):
+                pass
+        gap = 6
+        bar_w = max(6.0, (plot_w - gap * (count - 1)) / count)
+        rects = []
+        for i, (label, value, color) in enumerate(self._items):
+            try:
+                v = float(value)
+            except (TypeError, ValueError):
+                v = 0.0
+            bar_h = max(0.0, (abs(v) / max_val) * plot_h)
+            x = margin_l + i * (bar_w + gap)
+            y = margin_t + plot_h - bar_h
+            rects.append((QRectF(x, y, bar_w, bar_h), label, value, color))
+        return rects
+
+    def _tooltip_text(self, label, value) -> str:
+        try:
+            v = float(value)
+        except (TypeError, ValueError):
+            v = 0.0
+        if v == int(v):
+            num = f"{int(v):,}"
+        else:
+            num = f"{v:,.1f}"
+        text = f"{_to_persian_digit_str(label)}: {_to_persian_digit_str(num)}"
+        if self._unit:
+            text += f" {self._unit}"
+        return text
+
+    def mouseMoveEvent(self, event):
+        hover_index = -1
+        rects = self._bar_rects()
+        for idx, (rect, _label, _value, _color) in enumerate(rects):
+            if rect.contains(QPointF(event.pos())):
+                hover_index = idx
+                break
+        if hover_index != self._hover_index:
+            self._hover_index = hover_index
+            if hover_index >= 0:
+                _rect, label, value, _color = rects[hover_index]
+                QToolTip.showText(
+                    self.mapToGlobal(event.pos()),
+                    self._tooltip_text(label, value),
+                    self,
+                )
+            else:
+                QToolTip.hideText()
+
+    def leaveEvent(self, event):
+        QToolTip.hideText()
+        self._hover_index = -1
+
+    def paintEvent(self, event):
+        painter = QPainter(self)
+        painter.setRenderHint(QPainter.Antialiasing)
+        height = self.height()
+
+        if not self._items:
+            font = QFont()
+            font.setPointSize(9)
+            painter.setFont(font)
+            painter.setPen(QColor(_HINT))
+            painter.drawText(
+                self.rect(), Qt.AlignCenter, "داده کافی برای نمایش نمودار وجود ندارد"
+            )
+            return
+
+        rects = self._bar_rects()
+        if not rects:
+            return
+
+        margin_b = 36
+        label_font = QFont()
+        label_font.setPointSize(10)
+        painter.setFont(label_font)
+
+        text_opt = QTextOption(Qt.AlignHCenter)
+        text_opt.setWrapMode(QTextOption.WrapAtWordBoundaryOrAnywhere)
+
+        for rect, label, value, color in rects:
+            x, y = rect.x(), rect.y()
+            bar_w, bar_h = rect.width(), rect.height()
+
+            painter.setPen(QColor(_BORDER))
+            painter.setBrush(QColor(color))
+            painter.drawRoundedRect(rect, 2, 2)
+
+            painter.setPen(QColor(_TEXT))
+            painter.drawText(
+                QRectF(x - 6, y - 18, bar_w + 12, 16),
+                _to_persian_digit_str(self._compact(value)),
+                text_opt,
+            )
+
+            painter.setPen(QColor(_TEXT_SOFT))
+            painter.drawText(
+                QRectF(x - 6, height - margin_b + 2, bar_w + 12, 32),
+                _to_persian_digit_str(label),
+                text_opt,
+            )
+
+
 class DashboardDialog(QDialog):
     """دیالوگ داشبورد - فقط اسکلت رابط کاربری (فاز ۱).
 
@@ -152,7 +309,6 @@ class DashboardDialog(QDialog):
         page_layout.addWidget(self._create_status_bar(self._refresh_time))
         page_layout.addWidget(self._create_cards())
         page_layout.addWidget(self._create_charts())
-        page_layout.addWidget(self._create_information_panels())
         page_layout.addWidget(self._create_quick_actions())
 
         page_layout.addStretch()
@@ -214,8 +370,8 @@ class DashboardDialog(QDialog):
         """یک قاب ساده برای بخش‌های داشبورد."""
         frame = QFrame()
         frame.setStyleSheet(
-            "background-color: white; "
-            "border: 1px solid #E5E7EB; "
+            f"background-color: {_CARD_BG}; "
+            f"border: 1px solid {_BORDER}; "
             "border-radius: 8px; "
             "padding: 10px;"
         )
@@ -225,7 +381,7 @@ class DashboardDialog(QDialog):
         title_label = QLabel(title)
         title_label.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
         title_label.setStyleSheet(
-            "font-size: 11pt; font-weight: bold; color: #1F2937;"
+            f"font-size: 11pt; font-weight: bold; color: {_TEXT};"
             " background: transparent; border: none; padding: 0;"
         )
         v.addWidget(title_label)
@@ -337,8 +493,8 @@ class DashboardDialog(QDialog):
         # Accent color is derived from the title's KPI category so the
         # warm palette stays consistent across cards.
         layout = [
-            # Row 1 — task card (wide 2 cols), income today + income month
-            ("وظایف امروز",   "📝", "wide",
+            # Row 1 — ready card (2 cols), income today + income month
+            ("آماده تحویل",   "📦", "medium",
              (0, 0, 1, 2)),
             ("درآمد امروز",   "💵", "medium",
              (0, 2, 1, 2)),
@@ -353,8 +509,8 @@ class DashboardDialog(QDialog):
              (1, 2, 1, 2)),
             ("سود ماه",       "💹", "large",
              (1, 4, 1, 2)),
-            # Row 3 — ready + margin (compact wide 2 cols)
-            ("آماده تحویل",   "📦", "medium",
+            # Row 3 — task card (wide)
+            ("وظایف امروز",   "📝", "wide",
              (2, 0, 1, 4)),
             ("حاشیه سود",     "🎯", "compact",
              (2, 4, 1, 2)),
@@ -706,32 +862,83 @@ class DashboardDialog(QDialog):
         grid.setColumnStretch(2, 1)
 
         titles = ["روند درآمد", "وضعیت تعمیرات", "فعالیت ماهانه"]
-        for i, t in enumerate(titles):
+        # One restrained accent per chart, drawn from the dashboard's
+        # existing palette so the section matches the KPI cards. Data comes
+        # from DashboardService chart APIs only — the UI never computes it.
+        accents = [_ACCENT["income"], _ACCENT["tasks"], _ACCENT["profit"]]
+        series = [
+            self._dashboard_service.income_trend(),
+            self._dashboard_service.repair_status_breakdown(),
+            self._dashboard_service.monthly_activity(),
+        ]
+        for i, title in enumerate(titles):
+            accent = accents[i]
+            if i == 1:
+                items = [
+                    (label, value, STATUS_COLORS.get(label, accent))
+                    for label, value in series[i]
+                ]
+            else:
+                items = [
+                    (label, value, accent) for label, value in series[i]
+                ]
+            unit = "تومان" if i == 0 else ""
             row, col = divmod(i, 3)
-            grid.addWidget(self._chart_placeholder(t), row, col)
+            grid.addWidget(self._chart_card(title, accent, items, unit), row, col)
 
         container.layout().addLayout(grid)
         return container
 
-    def _chart_placeholder(self, title: str) -> QFrame:
+    def _chart_card(self, title: str, accent: str, items, unit: str = "") -> QFrame:
+        """کارت نمودار با عنوان، نوار رنگی بالا و نمودار میله‌ای ساده."""
+        box = QFrame()
+        box.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        box.setMinimumHeight(200)
+        box.setStyleSheet(
+            f"background-color: {_CARD_BG}; "
+            f"border: 1px solid {_BORDER}; "
+            f"border-top: 3px solid {accent}; "
+            "border-radius: 10px; "
+            "padding: 8px;"
+        )
+        v = QVBoxLayout()
+        v.setContentsMargins(8, 8, 8, 8)
+        v.setSpacing(4)
+
+        title_label = QLabel(title)
+        title_label.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+        title_label.setStyleSheet(
+            f"font-size: 11pt; font-weight: bold; color: {_TEXT};"
+            " background: transparent; border: none;"
+        )
+        v.addWidget(title_label)
+
+        chart = _BarChartWidget(accent, unit)
+        chart.set_data(items)
+        v.addWidget(chart, 1)
+
+        box.setLayout(v)
+        return box
+
+    def _chart_placeholder(self, title: str, accent: str) -> QFrame:
         box = QFrame()
         box.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         box.setMinimumHeight(140)
         box.setStyleSheet(
-            "background-color: #FAFBFC; "
-            "border: 1px dashed #C7D2FE; "
-            "border-top: 3px dashed #818CF8; "
+            f"background-color: {_CARD_BG}; "
+            f"border: 1px solid {_BORDER}; "
+            f"border-top: 3px solid {accent}; "
             "border-radius: 10px; "
             "padding: 10px;"
         )
         v = QVBoxLayout()
         v.setContentsMargins(10, 8, 10, 8)
-        v.setSpacing(6)
+        v.setSpacing(8)
 
         t = QLabel(title)
         t.setAlignment(Qt.AlignCenter)
         t.setStyleSheet(
-            "font-size: 11pt; font-weight: bold; color: #374151;"
+            f"font-size: 11pt; font-weight: bold; color: {_TEXT};"
             " background: transparent; border: none;"
         )
         v.addWidget(t)
@@ -739,7 +946,7 @@ class DashboardDialog(QDialog):
         icon = QLabel("📊")
         icon.setAlignment(Qt.AlignCenter)
         icon.setStyleSheet(
-            "font-size: 22pt; color: #C7D2FE;"
+            f"font-size: 22pt; color: {accent};"
             " background: transparent; border: none;"
         )
         v.addWidget(icon)
@@ -748,7 +955,7 @@ class DashboardDialog(QDialog):
         hint.setWordWrap(True)
         hint.setAlignment(Qt.AlignCenter)
         hint.setStyleSheet(
-            "color: #6B7280; font-size: 9pt; font-weight: normal;"
+            f"color: {_TEXT_SOFT}; font-size: 9pt; font-weight: normal;"
             " background: transparent; border: none;"
         )
         v.addWidget(hint)
@@ -758,7 +965,7 @@ class DashboardDialog(QDialog):
         return box
 
     def _create_information_panels(self) -> QFrame:
-        """دو پنل اطلاعاتی: فعالیت‌ها و هشدارها."""
+        """دو پنل اطلاعاتی عملیاتی بر پایه داده‌های واقعی snapshot."""
         container = self._panel("پنل‌های اطلاعاتی")
         grid = QGridLayout()
         grid.setContentsMargins(0, 0, 0, 0)
@@ -767,25 +974,50 @@ class DashboardDialog(QDialog):
         grid.setColumnStretch(0, 1)
         grid.setColumnStretch(1, 1)
 
-        grid.addWidget(self._info_panel("آخرین فعالیت‌ها", "🕘"), 0, 0)
-        grid.addWidget(self._info_panel("هشدارها", "⚠️"), 0, 1)
+        snap = self._snapshot
+        ops_rows = [
+            ("تعمیرات فعال", self._count_text(snap.active_repairs)),
+            ("آماده تحویل", self._count_text(snap.ready_repairs)),
+            ("وظایف امروز", self._count_text(snap.today_todos)),
+            ("مشتریان", self._count_text(snap.customer_count)),
+        ]
+        fin_rows = [
+            ("درآمد ناخالص امروز", self._money_text(snap.today_revenue)),
+            ("درآمد ناخالص ماه", self._money_text(snap.monthly_revenue)),
+            ("سود امروز", self._money_text(snap.today_profit)),
+            ("سود ماه", self._money_text(snap.monthly_profit)),
+        ]
+
+        grid.addWidget(self._info_panel("وضعیت تعمیرات", "🔧", ops_rows), 0, 0)
+        grid.addWidget(self._info_panel("وضعیت مالی خلاصه", "💰", fin_rows), 0, 1)
 
         container.layout().addLayout(grid)
         return container
 
-    def _info_panel(self, title: str, icon: str) -> QFrame:
+    def _count_text(self, value) -> str:
+        """Persian-digit text for a count, or an em-dash when missing."""
+        text = _fmt_count(value)
+        return text if text is not None else "—"
+
+    def _money_text(self, value) -> str:
+        """Persian-localized money text with the تومان unit, or an em-dash."""
+        if value is None:
+            return "—"
+        return _to_persian_digit_str(f"{value:,}") + " تومان"
+
+    def _info_panel(self, title: str, icon: str, rows=None) -> QFrame:
         panel = QFrame()
         panel.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
         panel.setMinimumHeight(120)
         panel.setStyleSheet(
-            "background-color: #FFFFFF; "
-            "border: 1px solid #E5E7EB; "
+            f"background-color: {_CARD_BG}; "
+            f"border: 1px solid {_BORDER}; "
             "border-radius: 10px; "
             "padding: 10px;"
         )
         v = QVBoxLayout()
         v.setContentsMargins(10, 10, 10, 10)
-        v.setSpacing(8)
+        v.setSpacing(6)
 
         header_row = QHBoxLayout()
         header_row.setContentsMargins(0, 0, 0, 0)
@@ -805,7 +1037,7 @@ class DashboardDialog(QDialog):
         t.setWordWrap(True)
         t.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
         t.setStyleSheet(
-            "font-size: 11pt; font-weight: bold; color: #1F2937;"
+            f"font-size: 11pt; font-weight: bold; color: {_TEXT};"
             " background: transparent; border: none;"
         )
         header_row.addWidget(t)
@@ -813,14 +1045,38 @@ class DashboardDialog(QDialog):
         header_row.addStretch()
         v.addLayout(header_row)
 
-        placeholder = QLabel("محتوایی برای نمایش وجود ندارد.")
-        placeholder.setWordWrap(True)
-        placeholder.setAlignment(Qt.AlignCenter)
-        placeholder.setStyleSheet(
-            "color: #9CA3AF; font-size: 10pt; font-weight: normal;"
-            " background: transparent; border: none;"
-        )
-        v.addWidget(placeholder)
+        if rows:
+            for label, value in rows:
+                row = QHBoxLayout()
+                row.setContentsMargins(0, 0, 0, 0)
+                row.setSpacing(8)
+
+                label_widget = QLabel(label)
+                label_widget.setWordWrap(True)
+                label_widget.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+                label_widget.setStyleSheet(
+                    f"font-size: 9pt; color: {_TEXT_SOFT};"
+                    " background: transparent; border: none;"
+                )
+                row.addWidget(label_widget, 1)
+
+                value_widget = QLabel(value)
+                value_widget.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+                value_widget.setStyleSheet(
+                    f"font-size: 10pt; font-weight: bold; color: {_TEXT};"
+                    " background: transparent; border: none;"
+                )
+                row.addWidget(value_widget, 0)
+                v.addLayout(row)
+        else:
+            placeholder = QLabel("داده‌ای برای نمایش وجود ندارد.")
+            placeholder.setWordWrap(True)
+            placeholder.setAlignment(Qt.AlignCenter)
+            placeholder.setStyleSheet(
+                f"color: {_HINT}; font-size: 10pt; font-weight: normal;"
+                " background: transparent; border: none;"
+            )
+            v.addWidget(placeholder)
         v.addStretch()
 
         panel.setLayout(v)
@@ -860,7 +1116,7 @@ class DashboardDialog(QDialog):
                 f" background-color: {color};"
                 f"}}"
             )
-            btn.setMinimumHeight(34)
+            btn.setMinimumHeight(36)
             btn.setSizePolicy(QSizePolicy.Preferred, QSizePolicy.Fixed)
             btn.setEnabled(False)
             h.addWidget(btn)

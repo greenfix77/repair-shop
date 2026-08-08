@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import List, Optional, Any, Dict
 
-from core.status import STATUS_COMPLETED
+from core.status import STATUS_COMPLETED, ALL_STATUSES
 from services.date_service import today_persian
 from services.profit_service import ProfitService
 
@@ -305,23 +305,77 @@ class DashboardService:
     # inventory, profit, expenses, monthly reports, employee statistics,
     # repair trends) without re-touching the Dashboard UI architecture.
 
-    def income_trend(self) -> List[Any]:
-        """Return income series points for the 'Income Trend' chart slot.
+    def income_trend(self, days: int = 7) -> List[Any]:
+        """Return recent revenue trend points for the 'Income Trend' chart.
 
-        Empty in Phase 3.
+        Each point is ``(label, revenue)`` where ``label`` is the delivery
+        date rendered as ``MM/DD`` and ``revenue`` is the gross revenue of
+        completed repairs delivered that day. Revenue is aggregated by
+        delegating each repair to :class:`ProfitService` (the sole owner of
+        profit math); this method never recomputes financial formulas.
+        Points are ordered oldest → newest, limited to the ``days`` most
+        recent days that actually contain deliveries.
         """
-        return []
+        repairs = []
+        try:
+            repairs = self._repair_source.repairs or []
+        except Exception:
+            repairs = []
+        per_day: Dict[str, int] = {}
+        for r in self._completed_repairs(repairs):
+            delivery = (r.get('delivery_date') or '').strip()
+            if not delivery:
+                continue
+            try:
+                breakdown = self._profit_service.calculate_profit(r)
+                revenue = int(breakdown.get('gross_revenue', 0) or 0)
+            except Exception:
+                continue
+            parts = delivery.split('/')
+            label = parts[1] + '/' + parts[2] if len(parts) == 3 else delivery
+            per_day[label] = per_day.get(label, 0) + revenue
+        ordered = sorted(per_day.items())
+        return ordered[-days:]
 
     def repair_status_breakdown(self) -> List[Any]:
-        """Return status→count pairs for the 'Repair Status' chart slot.
+        """Return ``(status, count)`` pairs for the 'Repair Status' chart.
 
-        Empty in Phase 3.
+        Counts every repair by its current status, ordered by the canonical
+        status list from :mod:`core.status`. Zero-count statuses are omitted.
+        Pure counting of existing data — no financial logic involved.
         """
-        return []
+        repairs = []
+        try:
+            repairs = self._repair_source.repairs or []
+        except Exception:
+            repairs = []
+        counts: Dict[str, int] = {}
+        for r in repairs:
+            status = r.get('status') if isinstance(r, dict) else None
+            if status:
+                counts[status] = counts.get(status, 0) + 1
+        return [(s, counts.get(s, 0)) for s in ALL_STATUSES if counts.get(s, 0) > 0]
 
-    def monthly_activity(self) -> List[Any]:
-        """Return monthly activity series for the 'Monthly Activity' chart.
+    def monthly_activity(self, months: int = 6) -> List[Any]:
+        """Return monthly activity points for the 'Monthly Activity' chart.
 
-        Empty in Phase 3.
+        Each point is ``(label, count)`` where ``label`` is the Persian
+        ``YYYY/MM`` prefix of a completed repair's delivery date and
+        ``count`` is the number of completed repairs that month. Ordered
+        oldest → newest, limited to the ``months`` most recent months that
+        are present in the data. Pure counting — no financial logic.
         """
-        return []
+        repairs = []
+        try:
+            repairs = self._repair_source.repairs or []
+        except Exception:
+            repairs = []
+        per_month: Dict[str, int] = {}
+        for r in self._completed_repairs(repairs):
+            delivery = (r.get('delivery_date') or '').strip()
+            if not delivery:
+                continue
+            month = delivery[:7]
+            per_month[month] = per_month.get(month, 0) + 1
+        ordered = sorted(per_month.items())
+        return ordered[-months:]

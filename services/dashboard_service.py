@@ -1,7 +1,9 @@
 from dataclasses import dataclass, field
 from typing import List, Optional, Any, Dict
 
+from core.status import STATUS_COMPLETED
 from services.date_service import today_persian
+from services.profit_service import ProfitService
 
 
 @dataclass
@@ -35,6 +37,12 @@ class DashboardSnapshot:
 
     today_income: Optional[int] = None
     monthly_income: Optional[int] = None
+
+    today_revenue: Optional[int] = None
+    monthly_revenue: Optional[int] = None
+    today_profit: Optional[int] = None
+    monthly_profit: Optional[int] = None
+    average_profit_margin: Optional[float] = None
 
     future: Dict[str, Any] = field(default_factory=dict)
 
@@ -70,6 +78,7 @@ class DashboardService:
         customer_service: Optional[Any] = None,
         repair_source: Optional[Any] = None,
         repair_service: Optional[Any] = None,
+        profit_service: Optional[ProfitService] = None,
     ):
         """Initialize with optional collaborators.
 
@@ -78,31 +87,36 @@ class DashboardService:
         repairs list (typically :class:`LaptopRepairManager`); it must
         expose a ``repairs`` attribute (list[dict]). The DashboardService
         never reaches into the storage layer itself — it asks the source.
+
+        Phase 5F-2 adds ``profit_service`` (defaults to a fresh
+        :class:`ProfitService` instance). All profit math goes through
+        this collaborator.
         """
         self._todo_service = todo_service
         self._customer_service = customer_service
         self._repair_source = repair_source
         self._repair_service = repair_service
+        self._profit_service = profit_service or ProfitService()
 
     # ------------------------------------------------------------------
     # KPI Cards
     # ------------------------------------------------------------------
 
     def today_income(self):
-        """Return today's income amount.
+        """Return today's income amount from the Payment Ledger.
 
-        Returns ``None`` in Phase 3 (the value will be populated by a
-        future financial phase). Once the financial pipeline is in
-        place, this method must aggregate paid invoices received today
-        via the existing ``SQLiteStorage`` and ``services.invoice_*``
-        modules — NOT duplicate their queries.
+        Delegates to :class:`RepairService` which in turn asks
+        :class:`PaymentReconciliationService` for ``SUM(PAYMENT) -
+        SUM(REFUND)`` filtered by today's ``payment_date``.
         """
         return None
 
     def monthly_income(self):
-        """Return this month's income amount.
+        """Return this month's income amount from the Payment Ledger.
 
-        See :meth:`today_income` for the placeholder contract.
+        Delegates to :class:`RepairService` which asks
+        :class:`PaymentReconciliationService` for ``SUM(PAYMENT) -
+        SUM(REFUND)`` filtered by the current month prefix.
         """
         return None
 
@@ -151,7 +165,13 @@ class DashboardService:
           - active_repairs   → RepairService.count_active(repair_list)
           - ready_repairs   → RepairService.count_ready_for_delivery(repair_list)
           - today_income    → RepairService.sum_paid_today(repair_list)
+                               — now reads the Payment Ledger via
+                                 PaymentReconciliationService
+                                 (SUM(PAYMENT) - SUM(REFUND) by today)
           - monthly_income  → RepairService.sum_paid_this_month(repair_list)
+                               — now reads the Payment Ledger via
+                                 PaymentReconciliationService
+                                 (SUM(PAYMENT) - SUM(REFUND) by month)
 
         Financial values are aggregated via RepairService so the
         DashboardService never duplicates financial calculations.
@@ -193,7 +213,68 @@ class DashboardService:
                 snapshot.today_income = None
                 snapshot.monthly_income = None
 
+        snapshot.today_revenue, snapshot.today_profit = self._profit_for_window(
+            repairs or [], 'today'
+        )
+        snapshot.monthly_revenue, snapshot.monthly_profit = self._profit_for_window(
+            repairs or [], 'month'
+        )
+        snapshot.average_profit_margin = self._average_profit_margin(repairs or [])
+
         return snapshot
+
+    # ------------------------------------------------------------------
+    # Profit helpers (Phase 5F-2)
+    # ------------------------------------------------------------------
+
+    def _completed_repairs(self, repairs: List[Any]) -> List[Dict]:
+        result = []
+        for r in repairs or []:
+            if isinstance(r, dict) and r.get('status') == STATUS_COMPLETED:
+                result.append(r)
+        return result
+
+    def _profit_for_window(
+        self, repairs: List[Any], window: str
+    ) -> (Optional[int], Optional[int]):
+        """Sum revenue and gross profit across completed repairs in window.
+
+        ``window`` is ``'today'`` or ``'month'``. Date key on the repair
+        dict is ``delivery_date`` (Persian string). Returns ``(None,
+        None)`` when the profit service or repair list is missing.
+        """
+        if not repairs:
+            return 0, 0
+        today = today_persian()
+        if window == 'today':
+            target = today
+            match = lambda d: (d or '').strip() == target  # noqa: E731
+        elif window == 'month':
+            prefix = today[:7]
+            match = lambda d: (d or '').strip().startswith(prefix)  # noqa: E731
+        else:
+            return 0, 0
+        revenue = 0
+        profit = 0
+        for r in self._completed_repairs(repairs):
+            if not match(r.get('delivery_date', '')):
+                continue
+            breakdown = self._profit_service.calculate_profit(r)
+            revenue += int(breakdown.get('gross_revenue', 0) or 0)
+            profit += int(breakdown.get('gross_profit', 0) or 0)
+        return revenue, profit
+
+    def _average_profit_margin(self, repairs: List[Any]) -> Optional[float]:
+        completed = self._completed_repairs(repairs)
+        if not completed:
+            return 0.0
+        margins = []
+        for r in completed:
+            breakdown = self._profit_service.calculate_profit(r)
+            margins.append(float(breakdown.get('profit_margin', 0) or 0))
+        if not margins:
+            return 0.0
+        return sum(margins) / len(margins)
 
     # ------------------------------------------------------------------
     # Information Panels

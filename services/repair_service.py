@@ -1,4 +1,4 @@
-from typing import List, Dict
+from typing import List, Dict, Optional
 
 from core.status import (
     STATUS_PENDING,
@@ -7,6 +7,7 @@ from core.status import (
     STATUS_DELIVERED,
 )
 from services.date_service import today_persian
+from services.payment_reconciliation_service import PaymentReconciliationService
 
 
 class RepairService:
@@ -29,6 +30,14 @@ class RepairService:
     ACTIVE_STATUSES = (STATUS_PENDING, STATUS_IN_PROGRESS)
     READY_STATUSES = (STATUS_COMPLETED,)
     PAID_STATUSES = ('تسویه شده', 'پرداخت جزئی')
+
+    _reconciliation_svc: Optional[PaymentReconciliationService] = None
+
+    @classmethod
+    def _reconciliation(cls) -> PaymentReconciliationService:
+        if cls._reconciliation_svc is None:
+            cls._reconciliation_svc = PaymentReconciliationService()
+        return cls._reconciliation_svc
 
     @staticmethod
     def count_by_status(repairs: List[Dict], status: str) -> int:
@@ -65,37 +74,25 @@ class RepairService:
 
     @classmethod
     def sum_paid_today(cls, repairs: List[Dict]) -> int:
-        """Return total paid amount for repairs delivered today.
+        """Return net income realized on today's ``payment_date``.
 
-        Counts only repairs where payment_status is not 'پرداخت نشده'.
-        Empty list returns 0.
+        Source of truth is the Payment Ledger via
+        :class:`PaymentReconciliationService`. The legacy
+        ``delivery_date``/``paid_amount``/``payment_status`` snapshot is
+        no longer consulted for Dashboard KPIs. The ``repairs`` argument
+        is accepted for backward compatibility with prior callers but
+        is intentionally ignored.
         """
-        if not repairs:
-            return 0
-        paid_set = set(cls.PAID_STATUSES)
-        today = today_persian()
-        return sum(
-            r.get('paid_amount', 0) or 0
-            for r in repairs
-            if (r.get('delivery_date') or '').strip() == today
-            and r.get('payment_status', '') in paid_set
-        )
+        return cls._reconciliation().net_income_for_payment_date(today_persian())
 
     @classmethod
     def sum_paid_this_month(cls, repairs: List[Dict]) -> int:
-        """Return total paid amount for repairs delivered in the current month.
+        """Return net income realized within the current payment month.
 
-        Counts only repairs where payment_status is not 'پرداخت نشده'.
-        Empty list returns 0.
+        Source of truth is the Payment Ledger via
+        :class:`PaymentReconciliationService`. The ``repairs`` argument
+        is accepted for backward compatibility with prior callers but
+        is intentionally ignored.
         """
-        if not repairs:
-            return 0
-        paid_set = set(cls.PAID_STATUSES)
-        today = today_persian()
-        current_month = today[:7]
-        return sum(
-            r.get('paid_amount', 0) or 0
-            for r in repairs
-            if (r.get('delivery_date') or '').strip().startswith(current_month)
-            and r.get('payment_status', '') in paid_set
-        )
+        current_month = today_persian()[:7]
+        return cls._reconciliation().net_income_for_payment_month(current_month)

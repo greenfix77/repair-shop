@@ -29,8 +29,43 @@ class PaymentReconciliationService:
     STATUS_MISMATCH = "MISMATCH"
     STATUS_NO_LEDGER = "NO_LEDGER"
 
+    PAYMENT_TYPE = "PAYMENT"
+    REFUND_TYPE = "REFUND"
+
     def __init__(self, repository: Optional[PaymentReconciliationRepository] = None):
         self._repo = repository or PaymentReconciliationRepository()
+
+    def net_income_for_payment_date(self, payment_date: str) -> int:
+        """Return net income realized on a given ``payment_date``.
+
+        net = SUM(PAYMENT) - SUM(REFUND). Empty/missing date returns 0.
+        Used by the Dashboard for today's income.
+        """
+        return self._repo.ledger_net_for_payment_date(payment_date)
+
+    def net_income_for_payment_month(self, year_month: str) -> int:
+        """Return net income realized within a payment month (``YYYY/MM``).
+
+        net = SUM(PAYMENT) - SUM(REFUND) over rows whose ``payment_date``
+        starts with the given prefix. Empty/missing prefix returns 0.
+        Used by the Dashboard for the monthly income KPI.
+        """
+        return self._repo.ledger_net_for_payment_month(year_month)
+
+    def net_paid_for_repair(self, repair_id: int) -> int:
+        """Return the authoritative paid amount derived from the ledger.
+
+        Single owner of ``net_paid`` for consumers:
+            net_paid = SUM(PAYMENT) - SUM(REFUND)
+
+        REFUND rows reduce the realized paid amount. ADJUSTMENT is
+        intentionally excluded from the snapshot formula.
+
+        Returns ``0`` when the repair has no ledger rows or doesn't
+        exist. When no ``REFUND`` rows exist the result is identical to
+        ``SUM(PAYMENT)`` — preserving prior PAYMENT-only behavior.
+        """
+        return self._repo.net_paid_amount_for_repair(int(repair_id))
 
     def reconcile_repair(self, repair_id: int) -> Optional[Dict]:
         """Reconcile a single repair.

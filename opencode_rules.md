@@ -1,4 +1,19 @@
-# OpenCode Rules (v2)
+# OpenCode Rules (v3)
+
+## Priority Order
+
+When rules conflict, follow this priority:
+
+1. Preserve Existing Behaviour
+2. Regression Prevention
+3. Financial Safety
+4. Backward Compatibility
+5. Minimal Patch Principle
+6. Scope First
+7. Token Efficiency
+8. UI Consistency
+
+Never violate a higher-priority rule to satisfy a lower-priority one.
 
 ## Primary Goal
 
@@ -269,6 +284,7 @@ Never repeatedly execute:
 - compile
 - graphify
 - grep
+- glob
 - directory listing
 - validation
 - status commands
@@ -277,7 +293,7 @@ If a command succeeds:
 
 Continue to implementation.
 
-Never repeat it.
+Never repeat it unless the result can actually change.
 
 ---
 
@@ -465,14 +481,12 @@ Never leave a feature half-implemented.
 
 If introducing:
 
-- a new model
-- a new repository
-- a new service
-- a new UI
+- Model
+- Repository
+- Service
+- UI
 
 verify that every required connection is complete.
-
-Example:
 
 Model
 
@@ -508,7 +522,9 @@ Saving
 
 Compilation
 
-Missing any step should be reported before ending the phase.
+If any step is incomplete:
+
+Report it before ending the phase.
 
 ---
 
@@ -536,8 +552,6 @@ python -m py_compile app.py
 
 passes successfully.
 
-Compilation is mandatory before reporting success.
-
 ---
 
 # 33. Read Before Modify
@@ -554,13 +568,16 @@ Understand the surrounding code first.
 
 Use the project's existing naming conventions.
 
-Do not introduce inconsistent names.
+Maintain consistency across:
 
-Maintain consistency across models, repositories, services, and UI.
+- models
+- repositories
+- services
+- UI
 
 ---
 
-# 35. Final Principle
+# 35. Stability First
 
 When in doubt:
 
@@ -568,6 +585,193 @@ Prefer stability over cleverness.
 
 Prefer compatibility over optimization.
 
-Prefer small patches over large rewrites.
+Prefer small patches over rewrites.
 
-Prefer preserving existing behaviour over introducing new architecture.
+Prefer preserving behaviour over new architecture.
+
+---
+
+# 36. Anti-Reasoning Loop
+
+Never repeat or restate the same implementation plan.
+
+Maximum planning iterations: 2.
+
+If the same implementation intent appears more than twice:
+
+- stop reasoning
+- begin editing immediately
+
+Do not rewrite the same plan using different wording.
+
+---
+
+# 37. Small Scope Execution
+
+If the remaining work is limited to:
+
+- one file
+- one class
+- one function
+
+then:
+
+- stop exploring
+- stop searching
+- modify only that target
+- compile
+- report
+- stop
+
+---
+
+# 38. Progress Requirement
+
+Every reasoning cycle must produce measurable progress.
+
+Allowed progress:
+
+- edit a file
+- create a file
+- remove obsolete code
+- compile
+- validate
+- complete the task
+
+If no measurable progress is made within two reasoning cycles:
+
+Start implementation immediately.
+
+---
+
+# 39. No Endless Exploration
+
+After the implementation target has been identified:
+
+Do NOT continue performing:
+
+- grep
+- glob
+- graphify query
+- file inspection
+
+Begin editing immediately.
+
+---
+
+# 40. Single Edit Pass
+
+Do not repeatedly edit the same file.
+
+Complete all intended modifications in one edit whenever possible.
+
+Avoid many small edits to the same file.
+
+---
+
+# 41. Complete Patch Rule
+
+Never modify only one side of an interface change.
+
+When changing:
+
+- function parameters
+- method signatures
+- constructors
+- public APIs
+
+update:
+
+- implementation
+- all required callers
+
+before ending the phase.
+
+Never leave partially applied interface changes.
+
+---
+
+# 42. Verify Patch Progress
+
+Before editing the same file again:
+
+Check whether the previous patch already contains the intended change.
+
+Do not repeat edits that are already applied.
+
+---
+
+# 43. Batch Related Changes
+
+If several nearby changes belong to the same function or file:
+
+Apply them together.
+
+Avoid many tiny sequential edits.
+
+---
+
+# 44. Command Deduplication
+
+Never execute the same command repeatedly if its result cannot change.
+
+Reuse previous successful results.
+
+Avoid redundant shell commands.
+
+---
+
+# 45. Finish Current Target
+
+Finish the current function or file completely before moving elsewhere.
+
+Do not switch between multiple unfinished sections.
+
+---
+
+# 46. No Planning After Target Identification
+
+Once the exact target has been identified:
+
+Stop planning.
+
+Begin implementation immediately.
+
+Do not generate additional implementation plans.
+
+---
+
+# 47. Final Principle
+
+A successful phase is one that is:
+
+- complete
+- minimal
+- compiled
+- regression-safe
+- backward compatible
+
+Stop immediately after these conditions are satisfied.
+
+## Execution Watchdog
+
+If the assistant emits three consecutive messages that begin with phrases like:
+
+- "Now I'll..."
+- "I will now..."
+- "Next I'll..."
+- "Let me..."
+
+without producing an actual code edit,
+
+the reasoning phase is considered stalled.
+
+Immediately:
+
+- stop reasoning
+- edit the target function
+- compile
+- report
+- terminate the phase
+
+Do not emit another planning message.

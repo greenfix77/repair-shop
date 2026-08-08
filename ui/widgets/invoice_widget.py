@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import (QWidget, QVBoxLayout, QHBoxLayout, QGridLayout,
                                QCompleter, QFrame, QStyledItemDelegate,
                                QScrollArea, QComboBox)
 from PyQt5.QtCore import Qt, QTimer, QModelIndex, QSize
+from typing import Dict
 from PyQt5.QtGui import QStandardItemModel, QStandardItem, QFont, QColor
 
 from services.service_service import ServiceService
@@ -12,6 +13,8 @@ from services.part_service import PartService
 from services.charge_service import ChargeService
 from services.notification_service import show_warning
 from services.date_service import today_persian
+from services.payment_reconciliation_service import PaymentReconciliationService
+from services.financial_summary_service import FinancialSummaryService
 from core.storage.payment_transaction_repository import PaymentTransactionRepository
 from repair_manager.ui.components import PersianDateEdit
 from ui.dialogs.service_edit_dialog import ServiceEditDialog
@@ -62,14 +65,20 @@ class InvoiceWidget(QWidget):
         self._part_svc = PartService()
         self._charge_svc = ChargeService()
         self._payment_tx_repo = PaymentTransactionRepository()
+        self._reconciliation_svc = PaymentReconciliationService()
+        self._financial_summary_svc = FinancialSummaryService(
+            payment_service=self._reconciliation_svc,
+        )
         self._service_lines = []
         self._part_lines = []
         self._additional_charges = []
         self._payment_transactions = []
+        self._current_repair_id = None
 
         self._init_ui()
         self._init_completers()
         self._render_payment_history_table()
+        self._refresh_financial_summary()
 
     # --- UI Setup ---
 
@@ -355,7 +364,30 @@ class InvoiceWidget(QWidget):
         phhdr.setSectionResizeMode(3, QHeaderView.ResizeToContents)
         phhdr.setSectionResizeMode(4, QHeaderView.Stretch)
         payment_history_layout.addWidget(self._payment_history_table)
+
+        self._add_payment_btn = QPushButton("ثبت پرداخت")
+        self._add_payment_btn.setFixedHeight(36)
+        self._add_payment_btn.setLayoutDirection(Qt.RightToLeft)
+        self._add_payment_btn.setStyleSheet(
+            "background-color: #4CAF50; color: white; padding: 4px 10px;"
+            " border: none; border-radius: 4px; font-size: 10pt;"
+        )
+        self._add_payment_btn.clicked.connect(self._on_add_payment_clicked)
+        payment_history_layout.addWidget(self._add_payment_btn)
+
+        self._add_refund_btn = QPushButton("ثبت استرداد")
+        self._add_refund_btn.setFixedHeight(36)
+        self._add_refund_btn.setLayoutDirection(Qt.RightToLeft)
+        self._add_refund_btn.setStyleSheet(
+            "background-color: #f44336; color: white; padding: 4px 10px;"
+            " border: none; border-radius: 4px; font-size: 10pt;"
+        )
+        self._add_refund_btn.clicked.connect(self._on_add_refund_clicked)
+        payment_history_layout.addWidget(self._add_refund_btn)
+
         bottom_layout.addWidget(payment_history_frame)
+
+        bottom_layout.addWidget(self._build_financial_summary_section())
 
         layout.addLayout(bottom_layout)
 
@@ -909,6 +941,73 @@ class InvoiceWidget(QWidget):
             transactions = []
         self._payment_transactions = transactions
         self._render_payment_history_table()
+        self._sync_paid_from_ledger(repair_id)
+
+    def _sync_paid_from_ledger(self, repair_id):
+        """Drive snapshot UI from the ledger via PaymentReconciliationService.
+
+        Updates only the existing UI controls (``پرداخت شده``,
+        ``مانده``, ``وضعیت پرداخت``). Does not touch calculations,
+        Repair persistence, or any other field.
+        """
+        if not repair_id:
+            return
+        try:
+            paid = int(self._reconciliation_svc.net_paid_for_repair(int(repair_id)) or 0)
+        except Exception:
+            return
+
+        self._paid_input.blockSignals(True)
+        try:
+            self._paid_input.setValue(paid)
+        finally:
+            self._paid_input.blockSignals(False)
+        self._update_payment()
+        self._refresh_financial_summary()
+
+    def _on_add_payment_clicked(self):
+        self._create_ledger_transaction('PAYMENT', 'ثبت پرداخت ناموفق بود:')
+
+    def _on_add_refund_clicked(self):
+        self._create_ledger_transaction('REFUND', 'ثبت استرداد ناموفق بود:')
+
+    def _create_ledger_transaction(self, transaction_type, error_prefix):
+        """Create one ledger transaction from the current payment controls.
+
+        Both PAYMENT and REFUND share this pipeline. Amount must be > 0.
+        After successful insert the history table reloads and the
+        snapshot sync runs through ``PaymentReconciliationService`` so
+        refunds automatically reduce the customer's net paid amount.
+        """
+        repair_id = self._current_repair_id
+        if not repair_id:
+            show_warning(self, "خطا", "ابتدا تعمیر را ذخیره کنید.")
+            return
+
+        amount = int(self._paid_input.value() or 0)
+        if amount <= 0:
+            show_warning(self, "خطا", "مبلغ باید بیشتر از صفر باشد.")
+            return
+
+        payment_method = self._payment_method_combo.currentText() or ''
+        payment_date = self._payment_date_input.get_date() or ''
+        note = self._financial_notes_input.toPlainText() or ''
+
+        try:
+            self._payment_tx_repo.create({
+                'repair_id': int(repair_id),
+                'amount': amount,
+                'payment_method': payment_method,
+                'payment_date': payment_date,
+                'transaction_type': transaction_type,
+                'note': note,
+            })
+        except Exception as exc:
+            show_warning(self, "خطا", f"{error_prefix} {exc}")
+            return
+
+        self._load_payment_history(repair_id)
+        self._sync_paid_from_ledger(repair_id)
 
     # --- Calculation ---
 
@@ -934,6 +1033,7 @@ class InvoiceWidget(QWidget):
         self._final_amount_label.setText(f"{final:,}")
 
         self._update_payment()
+        self._refresh_financial_summary()
 
     def _final_amount(self) -> int:
         """Reuse the existing recalculation chain and return the final total.
@@ -963,6 +1063,110 @@ class InvoiceWidget(QWidget):
         """Fill payment_date with the authoritative today's Persian date."""
         self._payment_date_input.setText(today_persian())
 
+    # --- Financial Summary Panel (read-only) ---
+
+    def _build_financial_summary_section(self) -> QFrame:
+        """Read-only panel fed exclusively by FinancialSummaryService."""
+        frame = QFrame()
+        frame.setStyleSheet(
+            "background-color: white; border-radius: 5px; padding: 5px;"
+        )
+        layout = QVBoxLayout(frame)
+
+        title = QLabel("خلاصه مالی")
+        title.setStyleSheet("font-weight: bold; font-size: 11pt;")
+        layout.addWidget(title)
+
+        self._summary_rows = {}
+        rows = [
+            ("درآمد خدمات", "services_revenue"),
+            ("درآمد قطعات", "parts_revenue"),
+            ("درآمد هزینه‌های جانبی", "additional_charge_revenue"),
+            ("درآمد کل", "gross_revenue"),
+            ("بهای تمام‌شده قطعات", "parts_cost"),
+            ("سود ناخالص", "gross_profit"),
+            ("حاشیه سود", "profit_margin"),
+            ("مبلغ پرداخت‌شده", "paid_amount"),
+            ("مانده", "remaining_amount"),
+            ("وضعیت پرداخت", "payment_status"),
+        ]
+        grid = QGridLayout()
+        grid.setContentsMargins(0, 0, 0, 0)
+        grid.setHorizontalSpacing(8)
+        grid.setVerticalSpacing(4)
+        grid.setColumnStretch(0, 1)
+        grid.setColumnStretch(1, 0)
+        for i, (label_text, key) in enumerate(rows):
+            name = QLabel(label_text)
+            name.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+            value = QLabel("--")
+            value.setAlignment(Qt.AlignLeft | Qt.AlignVCenter)
+            value.setStyleSheet("font-weight: bold;")
+            grid.addWidget(name, i, 0)
+            grid.addWidget(value, i, 1)
+            self._summary_rows[key] = value
+        layout.addLayout(grid)
+
+        return frame
+
+    def _refresh_financial_summary(self):
+        """Recompute summary rows via FinancialSummaryService.
+
+        All values are formatted — no math happens here. ProfitService
+        and PaymentReconciliationService remain the only owners of
+        calculations.
+        """
+        summary = self._financial_summary_svc.calculate(
+            self._build_summary_repair_dict(),
+            self._current_repair_id,
+        )
+        money_keys = (
+            'services_revenue',
+            'parts_revenue',
+            'additional_charge_revenue',
+            'gross_revenue',
+            'parts_cost',
+            'gross_profit',
+            'paid_amount',
+            'remaining_amount',
+        )
+        for key in money_keys:
+            value_label = self._summary_rows.get(key)
+            if value_label is None:
+                continue
+            try:
+                amount = int(summary.get(key, 0) or 0)
+            except (TypeError, ValueError):
+                amount = 0
+            value_label.setText(f"{amount:,} تومان")
+
+        margin_label = self._summary_rows.get('profit_margin')
+        if margin_label is not None:
+            try:
+                margin = float(summary.get('profit_margin', 0) or 0)
+            except (TypeError, ValueError):
+                margin = 0.0
+            margin_label.setText(f"{margin * 100:.1f} %")
+
+        status_label = self._summary_rows.get('payment_status')
+        if status_label is not None:
+            status_label.setText(str(summary.get('payment_status', '') or '--'))
+
+    def _build_summary_repair_dict(self) -> Dict:
+        """Project the current widget state into a repair-shaped dict.
+
+        No math — just structural mapping so FinancialSummaryService can
+        read the same shape it expects from a real Repair dict.
+        """
+        repair = {
+            'service_lines': list(self._service_lines),
+            'part_lines': list(self._part_lines),
+            'additional_charges': list(self._additional_charges),
+        }
+        if self._current_repair_id is not None:
+            repair['id'] = self._current_repair_id
+        return repair
+
     def _update_payment(self):
         svc_subtotal = sum(l['total_price'] for l in self._service_lines)
         part_subtotal = sum(l['total_price'] for l in self._part_lines)
@@ -977,9 +1181,8 @@ class InvoiceWidget(QWidget):
         paid = self._paid_input.value()
         if paid < 0:
             paid = 0
-        remaining = final - paid
-        if remaining < 0:
-            remaining = 0
+        remaining = FinancialSummaryService.remaining_for(paid, final)
+        if remaining == 0 and paid > final:
             paid = final
             self._paid_input.blockSignals(True)
             self._paid_input.setValue(paid)
@@ -987,15 +1190,16 @@ class InvoiceWidget(QWidget):
 
         self._remaining_label.setText(f"{remaining:,}")
 
-        if remaining <= 0 and final > 0:
-            self._payment_status_label.setText("تسویه شده")
-            self._payment_status_label.setStyleSheet("font-weight: bold; color: #4CAF50;")
-        elif paid > 0:
-            self._payment_status_label.setText("پرداخت جزئی")
-            self._payment_status_label.setStyleSheet("font-weight: bold; color: #FF9800;")
-        else:
-            self._payment_status_label.setText("پرداخت نشده")
-            self._payment_status_label.setStyleSheet("font-weight: bold; color: #f44336;")
+        payment_status = FinancialSummaryService.payment_status_for(paid, final)
+        status_styles = {
+            'تسویه شده': "font-weight: bold; color: #4CAF50;",
+            'پرداخت جزئی': "font-weight: bold; color: #FF9800;",
+            'پرداخت نشده': "font-weight: bold; color: #f44336;",
+        }
+        self._payment_status_label.setText(payment_status)
+        self._payment_status_label.setStyleSheet(
+            status_styles.get(payment_status, status_styles['پرداخت نشده'])
+        )
 
     # --- Public API: load / get data ---
 
@@ -1079,6 +1283,7 @@ class InvoiceWidget(QWidget):
         self._render_part_table()
         self._render_additional_charges_table()
         self._recalculate()
+        self._current_repair_id = data.get('id')
         self._load_payment_history(data.get('id'))
 
     def get_data(self):
@@ -1094,13 +1299,7 @@ class InvoiceWidget(QWidget):
         final = after_discount + tax_amount
         paid = self._paid_input.value()
 
-        remaining = max(0, final - paid)
-        if remaining <= 0 and final > 0:
-            payment_status = 'تسویه شده'
-        elif paid > 0:
-            payment_status = 'پرداخت جزئی'
-        else:
-            payment_status = 'پرداخت نشده'
+        payment_status = FinancialSummaryService.payment_status_for(paid, final)
 
         return {
             'service_lines': list(self._service_lines),

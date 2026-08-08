@@ -88,3 +88,115 @@ class PaymentReconciliationRepository:
                 totals[tx_type] = amount_sum
             totals['COUNT'] += count
         return totals
+
+    def ledger_net_for_payment_date(self, payment_date: str) -> int:
+        """Return ``SUM(PAYMENT) - SUM(REFUND)`` for a given ``payment_date``.
+
+        Empty/missing date returns ``0`` (safe default).
+        """
+        date = (payment_date or '').strip()
+        if not date:
+            return 0
+        session = self._session_factory()
+        try:
+            payment_sum = (
+                session.query(func.coalesce(func.sum(PaymentTransactionDB.amount), 0))
+                .filter(
+                    PaymentTransactionDB.payment_date == date,
+                    PaymentTransactionDB.transaction_type == 'PAYMENT',
+                )
+                .scalar()
+            ) or 0
+            refund_sum = (
+                session.query(func.coalesce(func.sum(PaymentTransactionDB.amount), 0))
+                .filter(
+                    PaymentTransactionDB.payment_date == date,
+                    PaymentTransactionDB.transaction_type == 'REFUND',
+                )
+                .scalar()
+            ) or 0
+        finally:
+            session.close()
+        try:
+            payment_sum = int(payment_sum or 0)
+        except (TypeError, ValueError):
+            payment_sum = 0
+        try:
+            refund_sum = int(refund_sum or 0)
+        except (TypeError, ValueError):
+            refund_sum = 0
+        return max(payment_sum - refund_sum, 0)
+
+    def ledger_net_for_payment_month(self, year_month: str) -> int:
+        """Return ``SUM(PAYMENT) - SUM(REFUND)`` for ``payment_date`` rows
+        whose string prefix matches ``year_month`` (``YYYY/MM``).
+        """
+        prefix = (year_month or '').strip()
+        if not prefix:
+            return 0
+        session = self._session_factory()
+        try:
+            payment_sum = (
+                session.query(func.coalesce(func.sum(PaymentTransactionDB.amount), 0))
+                .filter(
+                    PaymentTransactionDB.payment_date.like(prefix + '%'),
+                    PaymentTransactionDB.transaction_type == 'PAYMENT',
+                )
+                .scalar()
+            ) or 0
+            refund_sum = (
+                session.query(func.coalesce(func.sum(PaymentTransactionDB.amount), 0))
+                .filter(
+                    PaymentTransactionDB.payment_date.like(prefix + '%'),
+                    PaymentTransactionDB.transaction_type == 'REFUND',
+                )
+                .scalar()
+            ) or 0
+        finally:
+            session.close()
+        try:
+            payment_sum = int(payment_sum or 0)
+        except (TypeError, ValueError):
+            payment_sum = 0
+        try:
+            refund_sum = int(refund_sum or 0)
+        except (TypeError, ValueError):
+            refund_sum = 0
+        return max(payment_sum - refund_sum, 0)
+
+    def net_paid_amount_for_repair(self, repair_id: int) -> int:
+        """Return ``SUM(PAYMENT) - SUM(REFUND)`` for a single repair.
+
+        This is the authoritative realized paid amount for the snapshot
+        UI. Adjustment rows are intentionally excluded — the snapshot
+        only tracks payments and refunds.
+        """
+        session = self._session_factory()
+        try:
+            payment_sum = (
+                session.query(func.coalesce(func.sum(PaymentTransactionDB.amount), 0))
+                .filter(
+                    PaymentTransactionDB.repair_id == repair_id,
+                    PaymentTransactionDB.transaction_type == 'PAYMENT',
+                )
+                .scalar()
+            ) or 0
+            refund_sum = (
+                session.query(func.coalesce(func.sum(PaymentTransactionDB.amount), 0))
+                .filter(
+                    PaymentTransactionDB.repair_id == repair_id,
+                    PaymentTransactionDB.transaction_type == 'REFUND',
+                )
+                .scalar()
+            ) or 0
+        finally:
+            session.close()
+        try:
+            payment_sum = int(payment_sum or 0)
+        except (TypeError, ValueError):
+            payment_sum = 0
+        try:
+            refund_sum = int(refund_sum or 0)
+        except (TypeError, ValueError):
+            refund_sum = 0
+        return max(payment_sum - refund_sum, 0)

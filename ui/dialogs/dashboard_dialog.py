@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import (QDialog, QVBoxLayout, QHBoxLayout, QGridLayout,
                                QWidget, QLabel, QPushButton, QFrame,
                                QScrollArea, QSizePolicy,
                                QGraphicsDropShadowEffect, QToolTip)
-from PyQt5.QtCore import Qt, QPropertyAnimation, QEasingCurve, QRectF, QPointF
+from PyQt5.QtCore import Qt, QPropertyAnimation, QEasingCurve, QRectF, QPointF, QTimer
 from PyQt5.QtGui import QColor, QFont, QPainter, QTextOption
 
 from core.status import STATUS_COLORS
@@ -309,7 +309,6 @@ class DashboardDialog(QDialog):
         page_layout.addWidget(self._create_status_bar(self._refresh_time))
         page_layout.addWidget(self._create_cards())
         page_layout.addWidget(self._create_charts())
-        page_layout.addWidget(self._create_quick_actions())
 
         page_layout.addStretch()
 
@@ -365,6 +364,9 @@ class DashboardDialog(QDialog):
                 self._render_kpi_value(value_label, unit_label, value, title)
             if hint_label is not None:
                 hint_label.setText(hint if hint is not None else "داده‌ای موجود نیست")
+
+        self._refresh_toast.show()
+        self._refresh_toast_timer.start()
 
     def _panel(self, title: str) -> QFrame:
         """یک قاب ساده برای بخش‌های داشبورد."""
@@ -438,6 +440,23 @@ class DashboardDialog(QDialog):
         )
         refresh_btn.clicked.connect(self._refresh)
         h.addWidget(refresh_btn)
+
+        self._refresh_toast = QLabel("داشبورد با موفقیت بروزرسانی شد")
+        self._refresh_toast.setAlignment(Qt.AlignRight | Qt.AlignVCenter)
+        self._refresh_toast.setStyleSheet(
+            "background-color: #ECFDF5; "
+            "border: 1px solid #A7F3D0; "
+            "border-radius: 6px; "
+            "color: #065F46; "
+            "font-size: 10pt; "
+            "padding: 6px 12px;"
+        )
+        self._refresh_toast.hide()
+        self._refresh_toast_timer = QTimer(self)
+        self._refresh_toast_timer.setSingleShot(True)
+        self._refresh_toast_timer.setInterval(2500)
+        self._refresh_toast_timer.timeout.connect(self._refresh_toast.hide)
+        h.addWidget(self._refresh_toast)
 
         header.setLayout(h)
         return header

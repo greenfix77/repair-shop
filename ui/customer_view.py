@@ -10,6 +10,7 @@ CUSTOMER_COLUMNS = [
     "", "کد مشتری", "نام مشتری", "تلفن",
     "تعداد کل سفارشات", "تحویل شده", "در دست انجام",
     "ایمیل", "شهر", "تاریخ ایجاد", "ویرایش",
+    "گزارش‌گیری",
 ]
 
 
@@ -60,6 +61,7 @@ def build_customer_table(window):
     header.setSectionResizeMode(8, QHeaderView.ResizeToContents)
     header.setSectionResizeMode(9, QHeaderView.ResizeToContents)
     header.setSectionResizeMode(10, QHeaderView.ResizeToContents)
+    header.setSectionResizeMode(11, QHeaderView.ResizeToContents)
 
     select_all_item = QTableWidgetItem("")
     select_all_item.setFlags(Qt.ItemIsUserCheckable | Qt.ItemIsEnabled)
@@ -122,7 +124,7 @@ def render_customer_rows(table: QTableWidget, customers: List[Dict],
 
         edit_btn = QPushButton("ویرایش")
         edit_btn.setMinimumWidth(75)
-        edit_btn.setStyleSheet("background-color: #2196F3; color: white;")
+        edit_btn.setStyleSheet("background-color: #2196F3; color: white; padding: 3px 14px 5px 14px;")
         customer_id = c.get('id')
         edit_btn.clicked.connect(
             lambda checked, cid=customer_id: edit_callback(cid)
@@ -133,6 +135,16 @@ def render_customer_rows(table: QTableWidget, customers: List[Dict],
         edit_layout.addWidget(edit_btn)
         edit_widget.setLayout(edit_layout)
         table.setCellWidget(row, 10, edit_widget)
+
+        report_btn = QPushButton("گزارش‌گیری")
+        report_btn.setMinimumWidth(75)
+        report_btn.setStyleSheet("background-color: #2196F3; color: white; padding: 3px 14px 5px 14px;")
+        report_widget = QWidget()
+        report_layout = QHBoxLayout()
+        report_layout.setContentsMargins(5, 2, 5, 2)
+        report_layout.addWidget(report_btn)
+        report_widget.setLayout(report_layout)
+        table.setCellWidget(row, 11, report_widget)
 
     header_item = table.horizontalHeaderItem(0)
     if header_item is not None:

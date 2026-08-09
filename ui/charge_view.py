@@ -117,7 +117,7 @@ def render_charge_rows(table: QTableWidget, charges: List[Dict],
 
         edit_btn = QPushButton("ویرایش")
         edit_btn.setMinimumWidth(75)
-        edit_btn.setStyleSheet("background-color: #2196F3; color: white;")
+        edit_btn.setStyleSheet("background-color: #2196F3; color: white; padding: 3px 14px 5px 14px;")
         charge_id = c.get('id')
         edit_btn.clicked.connect(
             lambda checked, cid=charge_id: edit_callback(cid)

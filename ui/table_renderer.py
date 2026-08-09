@@ -39,25 +39,23 @@ def setup_selection_column(table: QTableWidget):
     table.itemChanged.connect(lambda item: _on_item_changed(table, item))
 
 
-def create_action_buttons(row_index: int, view_callback, invoice_callback) -> QWidget:
+def create_action_buttons(row_index: int, edit_callback) -> QWidget:
     """Create action buttons widget"""
     actions_widget = QWidget()
     actions_layout = QHBoxLayout()
     actions_layout.setContentsMargins(5, 2, 5, 2)
     
-    # View button
-    view_btn = QPushButton("👁️")
-    view_btn.setFixedSize(30, 25)
-    view_btn.setStyleSheet("background-color: #2196F3; color: white;")
-    view_btn.clicked.connect(lambda checked, r=row_index: view_callback(r))
-    actions_layout.addWidget(view_btn)
-    
-    # Invoice button
-    invoice_btn = QPushButton("📄")
-    invoice_btn.setFixedSize(30, 25)
-    invoice_btn.setStyleSheet("background-color: #FF9800; color: white;")
-    invoice_btn.clicked.connect(lambda checked, r=row_index: invoice_callback(r))
-    actions_layout.addWidget(invoice_btn)
+    # Edit button
+    edit_btn = QPushButton("ویرایش")
+    edit_btn.setFixedHeight(30)
+    edit_btn.setStyleSheet(
+        "background-color: #2196F3; color: white; "
+        "border-radius: 4px; padding: 3px 14px 5px 14px;"
+    )
+    edit_btn.clicked.connect(
+        lambda checked, r=row_index: edit_callback(r)
+    )
+    actions_layout.addWidget(edit_btn)
     
     actions_widget.setLayout(actions_layout)
     return actions_widget
@@ -87,7 +85,7 @@ def render_single_row(table_widget: QTableWidget, row: int, row_data: Dict):
     table_widget.setItem(row, 10, total_item)
 
 
-def render_table_rows(table_widget: QTableWidget, rows_data: List[Dict], view_callback, invoice_callback):
+def render_table_rows(table_widget: QTableWidget, rows_data: List[Dict], edit_callback):
     """Render all rows in the table"""
     table_widget.blockSignals(True)
     table_widget.setRowCount(0)
@@ -106,7 +104,7 @@ def render_table_rows(table_widget: QTableWidget, rows_data: List[Dict], view_ca
         render_single_row(table_widget, row, row_data)
         
         # Create and set action buttons (column 11)
-        actions_widget = create_action_buttons(row_idx, view_callback, invoice_callback)
+        actions_widget = create_action_buttons(row_idx, edit_callback)
         table_widget.setCellWidget(row, 11, actions_widget)
 
     # Reset header checkbox to unchecked after refresh

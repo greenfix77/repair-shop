@@ -13,12 +13,11 @@ class MainController:
     def refresh_table(
         table: QTableWidget,
         repairs: List[Dict],
-        view_callback: Callable,
-        invoice_callback: Callable,
+        edit_callback: Callable,
         update_stats_callback: Callable,
     ):
         rows_data = build_table_rows(repairs)
-        render_table_rows(table, rows_data, view_callback, invoice_callback)
+        render_table_rows(table, rows_data, edit_callback)
         update_stats_callback()
 
     @staticmethod

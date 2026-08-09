@@ -115,12 +115,6 @@ def build_toolbar(window):
     add_btn.clicked.connect(window.add_repair)
     layout.addWidget(add_btn)
     
-    # دکمه ویرایش
-    edit_btn = QPushButton("✏️ ویرایش")
-    edit_btn.setStyleSheet("background-color: #2196F3; color: white;")
-    edit_btn.clicked.connect(window.edit_repair)
-    layout.addWidget(edit_btn)
-    
     # دکمه حذف انتخاب‌شده‌ها
     bulk_delete_btn = QPushButton("🗑️ حذف انتخاب‌شده‌ها")
     bulk_delete_btn.setStyleSheet("background-color: #f44336; color: white;")
@@ -206,7 +200,7 @@ def build_table(window):
     setup_selection_column(table)
     
     # دابل کلیک برای ویرایش
-    table.doubleClicked.connect(window.edit_repair)
+    table.doubleClicked.connect(lambda index: window.edit_repair())
     
     return table
 

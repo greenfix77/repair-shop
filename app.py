@@ -323,15 +323,16 @@ class LaptopRepairManager(QMainWindow):
 
             show_info(self, "موفق", "تعمیر با موفقیت ثبت شد.")
 
-    def edit_repair(self):
+    def edit_repair(self, row=None):
         """ویرایش تعمیر"""
-        selected_row = self.table.currentRow()
-        
-        if selected_row < 0:
+        if row is None:
+            row = self.table.currentRow()
+
+        if row < 0:
             show_warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
             return
-        
-        repair_id = int(self.table.item(selected_row, 1).text())
+
+        repair_id = int(self.table.item(row, 1).text())
         repair_data = get_repair_by_id(self.repairs, repair_id)
         
         if not repair_data:
@@ -434,7 +435,7 @@ class LaptopRepairManager(QMainWindow):
         """به‌روزرسانی جدول"""
         self.controller.refresh_table(
             self.table, self.repairs,
-            self.view_repair, self.quick_invoice,
+            self.edit_repair,
             self.update_statistics,
         )
 

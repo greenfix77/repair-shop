@@ -114,7 +114,7 @@ def render_part_rows(table: QTableWidget, parts: List[Dict],
 
         edit_btn = QPushButton("ویرایش")
         edit_btn.setMinimumWidth(75)
-        edit_btn.setStyleSheet("background-color: #2196F3; color: white;")
+        edit_btn.setStyleSheet("background-color: #2196F3; color: white; padding: 3px 14px 5px 14px;")
         part_id = p.get('id')
         edit_btn.clicked.connect(
             lambda checked, pid=part_id: edit_callback(pid)

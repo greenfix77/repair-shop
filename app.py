@@ -323,16 +323,15 @@ class LaptopRepairManager(QMainWindow):
 
             show_info(self, "موفق", "تعمیر با موفقیت ثبت شد.")
 
-    def edit_repair(self, row=None):
+    def edit_repair(self, repair_id=None):
         """ویرایش تعمیر"""
-        if row is None:
+        if repair_id is None:
             row = self.table.currentRow()
+            if row < 0:
+                show_warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
+                return
+            repair_id = int(self.table.item(row, 1).text())
 
-        if row < 0:
-            show_warning(self, "هشدار", "لطفاً یک ردیف را انتخاب کنید.")
-            return
-
-        repair_id = int(self.table.item(row, 1).text())
         repair_data = get_repair_by_id(self.repairs, repair_id)
         
         if not repair_data:
@@ -858,6 +857,15 @@ class LaptopRepairManager(QMainWindow):
         stats = compute_customer_repair_stats(self.repairs, customers)
         render_customer_rows(self.customer_table, customers, self.edit_customer, stats)
         self._customer_stats = stats
+
+    def search_customers(self, text):
+        """جستجوی مشتریان"""
+        if not text or not text.strip():
+            self.refresh_customer_table()
+            return
+        customers = self._customer_workflow.search_customers(text)
+        stats = compute_customer_repair_stats(self.repairs, customers)
+        render_customer_rows(self.customer_table, customers, self.edit_customer, stats)
 
     def _refresh_customer_table_if_visible(self):
         """به‌روزرسانی جدول مشتریان در صورت نمایش نمای مشتریان"""

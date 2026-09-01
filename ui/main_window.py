@@ -127,18 +127,6 @@ def build_toolbar(window):
     invoice_btn.clicked.connect(window.preview_invoice)
     layout.addWidget(invoice_btn)
 
-    # دکمه تنظیمات کلی
-    settings_btn = QPushButton("⚙️ تنظیمات کلی")
-    settings_btn.setStyleSheet("background-color: #607D8B; color: white;")
-    settings_btn.clicked.connect(window.open_shop_settings)
-    layout.addWidget(settings_btn)
-
-    # دکمه داشبورد (جابه‌جا شده از هدر)
-    window.status_btn = QPushButton("📊 داشبورد")
-    window.status_btn.setStyleSheet("background-color: #673AB7; color: white;")
-    window.status_btn.clicked.connect(window.open_dashboard)
-    layout.addWidget(window.status_btn)
-    
     layout.addStretch()
     
     # جستجو
@@ -371,6 +359,19 @@ def build_nav_bar(window):
     layout.addWidget(window.todos_nav_btn)
 
     layout.addStretch()
+
+    # دکمه تنظیمات کلی
+    settings_btn = QPushButton("⚙️ تنظیمات کلی")
+    settings_btn.setStyleSheet("background-color: #607D8B; color: white;")
+    settings_btn.clicked.connect(window.open_shop_settings)
+    layout.addWidget(settings_btn)
+
+    # دکمه داشبورد
+    window.status_btn = QPushButton("📊 داشبورد")
+    window.status_btn.setStyleSheet("background-color: #673AB7; color: white;")
+    window.status_btn.clicked.connect(window.open_dashboard)
+    layout.addWidget(window.status_btn)
+
     nav.setLayout(layout)
     return nav
 

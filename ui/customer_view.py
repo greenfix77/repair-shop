@@ -2,7 +2,7 @@ from typing import List, Dict, Callable
 
 from PyQt5.QtWidgets import (QTableWidget, QTableWidgetItem, QWidget,
                               QHBoxLayout, QPushButton, QHeaderView,
-                              QAbstractItemView, QFrame)
+                              QAbstractItemView, QFrame, QLineEdit, QLabel)
 from PyQt5.QtCore import Qt
 
 
@@ -32,6 +32,15 @@ def build_customer_toolbar(window):
     layout.addWidget(delete_btn)
 
     layout.addStretch()
+
+    search_label = QLabel("🔍 جستجو:")
+    layout.addWidget(search_label)
+
+    window.customer_search_input = QLineEdit()
+    window.customer_search_input.setPlaceholderText("نام یا تلفن...")
+    window.customer_search_input.setMinimumWidth(200)
+    window.customer_search_input.textChanged.connect(window.search_customers)
+    layout.addWidget(window.customer_search_input)
 
     toolbar.setLayout(layout)
     return toolbar

@@ -39,7 +39,7 @@ def setup_selection_column(table: QTableWidget):
     table.itemChanged.connect(lambda item: _on_item_changed(table, item))
 
 
-def create_action_buttons(row_index: int, edit_callback) -> QWidget:
+def create_action_buttons(repair_id: int, edit_callback) -> QWidget:
     """Create action buttons widget"""
     actions_widget = QWidget()
     actions_layout = QHBoxLayout()
@@ -47,13 +47,13 @@ def create_action_buttons(row_index: int, edit_callback) -> QWidget:
     
     # Edit button
     edit_btn = QPushButton("ویرایش")
-    edit_btn.setFixedHeight(30)
+    edit_btn.setMinimumWidth(75)
     edit_btn.setStyleSheet(
         "background-color: #2196F3; color: white; "
-        "border-radius: 4px; padding: 3px 14px 5px 14px;"
+        "padding: 3px 14px 5px 14px;"
     )
     edit_btn.clicked.connect(
-        lambda checked, r=row_index: edit_callback(r)
+        lambda checked, rid=repair_id: edit_callback(rid)
     )
     actions_layout.addWidget(edit_btn)
     
@@ -90,7 +90,7 @@ def render_table_rows(table_widget: QTableWidget, rows_data: List[Dict], edit_ca
     table_widget.blockSignals(True)
     table_widget.setRowCount(0)
     
-    for row_idx, row_data in enumerate(rows_data):
+    for row_data in rows_data:
         row = table_widget.rowCount()
         table_widget.insertRow(row)
         
@@ -104,7 +104,7 @@ def render_table_rows(table_widget: QTableWidget, rows_data: List[Dict], edit_ca
         render_single_row(table_widget, row, row_data)
         
         # Create and set action buttons (column 11)
-        actions_widget = create_action_buttons(row_idx, edit_callback)
+        actions_widget = create_action_buttons(int(row_data['id']), edit_callback)
         table_widget.setCellWidget(row, 11, actions_widget)
 
     # Reset header checkbox to unchecked after refresh

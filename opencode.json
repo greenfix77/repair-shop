@@ -1,18 +1,17 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "provider": {
-    "agentrouter": {
+    "9router": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "AgentRouter (OpenAI Compatible)",
+      "name": "9router (OpenAI Compatible)",
       "options": {
-        "baseURL": "https://agentrouter.org/v1"
+        "baseURL": "https://9router-production-61a2.up.railway.app/v1"
       },
       "models": {
-        "glm-5.2": {
-          "name": "glm-5.2"
+        "claude-free-v1": {
+          "name": "claude-free-v1"
         }
       }
     }
   },
-  "model": "agentrouter/glm-5.2"
 }

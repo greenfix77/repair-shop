@@ -377,3 +377,274 @@ Financial invariants future implementations must preserve (baseline = roadmap + 
 ---
 
 *End of F1 audit. Source files untouched; database untouched; no service/model created.*
+
+---
+---
+
+# Independent Senior Accounting Architecture Review
+
+**Role:** senior software architect / accounting-domain reviewer
+**Scope:** independent verification of the F1 audit above against the actual codebase, plus accounting-architecture assessment. READ-ONLY except this file.
+**Baseline documents:** `FINANCIAL_ROADMAP.md` v1.0 (Persian) + the F1 audit above (not assumed correct).
+**Method:** every major conclusion re-traced in source; all financial calculations followed to their write/read paths; line references are to the working tree at review time.
+
+---
+
+## 1. Previous Audit Verification
+
+Verdict scale: CONFIRMED / PARTIALLY CONFIRMED / INCORRECT / OUTDATED / UNVERIFIABLE.
+
+| # | Previous conclusion | Verdict | Evidence |
+|---|---|---|---|
+| 1 | Real per-event payment ledger with working write path | CONFIRMED | `payment_transaction_model_db.py:6-21`; write path `invoice_widget.py:974-1010` (`_create_ledger_transaction`), buttons `:968-972` |
+| 2 | ProfitService snapshots purchase & sale price per part line | CONFIRMED | `profit_service.py:53-70`; `repair_part_model_db.py:11-16` |
+| 3 | Reconciliation + FinancialSummaryService treat ledger as source of truth for paid | CONFIRMED | `financial_summary_service.py:13-19, 82-89`; `payment_reconciliation_service.py:55-68` |
+| 4 | No persisted `customer_id`; dialog emits it at repair_dialog.py:393; dropped by model layer | CONFIRMED | `repair_dialog.py:393`; `core/models.py:6-29,31-56,58-84`; `repair_model_db.py:6-29`; `sqlite_storage.py:92-126` |
+| 5 | Three inconsistent totals; no single source of truth for payable | CONFIRMED | `invoice_calculator.py:4-22`; `invoice_widget.py:1014-1036,1170-1202,1289-1317`; `profit_service.py:110-114` |
+| 6 | Discount is a repair field only — no ledger event, no date | CONFIRMED | `core/models.py:19`; no DISCOUNT producer anywhere in the ledger layer |
+| 7 | Legacy payment history collapsed to one back-filled PAYMENT row | CONFIRMED | `init_db.py:101-153` (`note='مهاجرت پرداخت قدیمی'`, `payment_date` = header snapshot or `''`) |
+| 8 | Financial logic lives partly in UI (InvoiceWidget inline totals) | CONFIRMED | `invoice_widget.py:1014-1036,1170-1202,1289-1317` |
+| 9 | Heuristic phone/name customer linkage; can over-attribute to all matches | CONFIRMED | `customer_stats_service.py:38-83` (iterates `matched_ids`); `app.py:893-902` |
+| 10 | `calculations.calculate_invoice` is an identical duplicate used by the table | CONFIRMED | `calculations.py:4-13`; `table_service.py:35` |
+| 11 | Widget applies discount BEFORE tax and includes additional charges | CONFIRMED | `invoice_widget.py:1017-1023` |
+| 12 | ProfitService gross revenue excludes tax and discount | CONFIRMED | `profit_service.py:110-114` |
+| 13 | Widget clamps paid down to final when remaining==0 | CONFIRMED | `invoice_widget.py:1185-1189` |
+| 14 | ADJUSTMENT recognized by reconciliation, no write path | CONFIRMED | `payment_reconciliation_service.py:130-144`; no producer found (verified by code-path sweep) |
+| 15 | Dashboard income = ledger net by `payment_date`; header `payment_date` is a legacy snapshot | CONFIRMED | `repair_service.py:76-97`; `payment_reconciliation_repository.py:92-165` |
+| 16 | Dashboard profit = ProfitService over `delivery_date` window | CONFIRMED | `dashboard_service.py:237-265` |
+| 17 | Refund partially implemented; no reversal UI | CONFIRMED | `invoice_widget.py:971-972,974-1010` |
+| 18 | Cancellation not implemented; exactly 4 statuses | CONFIRMED | `status.py:1-6`; docstring note in `customer_stats_service.py:34-36` |
+| 19 | Legacy part lines lack purchase snapshot & part_id → profit overstated | CONFIRMED | synthetic lines created by `invoice_widget.py:1211-1230` carry no `purchase_price_snapshot` key → `profit_service.py:53-60` yields cost 0 |
+| 20 | Negative total possible in calculator branch (no clamp) | CONFIRMED | `invoice_calculator.py:10-12` |
+| 21 | Customer stats are counts only; no financial aggregation per customer | CONFIRMED | `customer_stats_service.py:17-36` |
+| 22 | Calculator total == widget final only when no charges and (no discount or no tax) | CONFIRMED (with rounding nuance) | widget truncates tax: `int(after_discount*tax/100)` (`invoice_widget.py:1022`) vs float in calculator (`invoice_calculator.py:11`) — ±1 unit drift possible even in the "equal" case when tax>0 |
+
+**Overall verdict on the previous audit: HIGH accuracy.** No INCORRECT or OUTDATED conclusions were found. Three findings are incomplete in ways that matter for accounting (see §2).
+
+---
+
+## 2. Corrections to Previous Findings
+
+No conclusion was wrong; three precision corrections:
+
+**C1 — Mechanism of the `customer_id` drop.** The audit attributes the drop to `Repair.from_dict/to_dict`. The precise chain is: dialog emits `customer_id` (`repair_dialog.py:393`) → `app.add_repair` / `app.edit_repair` pass it to the service (`app.py:315-318, 344-348`) → **`repair_manager_service.add_repair`/`update_repair` route the dict through `Repair.from_dict`, which has no such field** (`repair_manager_service.py:11, 42`; `core/models.py:58-84`) → `to_dict` re-emits without it (`core/models.py:31-56`) → `SQLiteStorage.save_all` never writes it (`sqlite_storage.py:100-125`). Note also `update_repair` merges over the OLD dict (`repair_manager_service.py:48`), so a legacy `customer_id` key would survive only by merge accident, never by intent. The UI even *guarantees* a selected customer (`repair_dialog.py:346-350`), so every new repair's id is deliberately discarded.
+
+**C2 — Refund "reduces net paid" is incomplete.** The per-repair net is floored at zero: `max(payment − refund, 0)` (`payment_reconciliation_repository.py:202`). A refund exceeding total payments does not produce a negative/correctable net — it silently reads as 0. Same floor applies to daily/monthly income (`:128`, `:165`). The previous refund description (§10 above) omitted this masking.
+
+**C3 — "Ledger→repair link READY" holds only while repairs are not deleted.** The ledger repository is append-only (create/read only, no update/delete — `payment_transaction_repository.py:8-69`), which is good; but the repair side can be deleted freely today, breaking the link (see NEW-1).
+
+---
+
+## 3. Newly Discovered Findings
+
+**NEW-1 (P1) — Repair deletion orphans its ledger rows.**
+`app.delete_repair` (`app.py:356-375`) → `delete_repair` (`repair_manager_service.py:21-25`) → `SQLiteStorage.save_all` rewrites the repairs table without the deleted id (`sqlite_storage.py:92-153`). `payment_transaction` rows for that repair are never removed (no delete API; no cleanup in `init_db`). Result: orphan PAYMENT/REFUND rows referencing a non-existent `repair_id` — unattributable money movements that will corrupt any future customer statement or reconciliation baseline. (Previous audit's rule 8 hinted at the missing FK but did not report this active production path.)
+
+**NEW-2 (P2) — Zero-floor clamping hides negative nets in three places.**
+`payment_reconciliation_repository.py:202` (per-repair net), `:128` (daily income), `:165` (monthly income) all return `max(net, 0)`. Over-refunds and net-negative cash days are reported as 0. Accounting consequence: customer-credit positions (roadmap §8 بستانکار) can never surface through these functions, and a future ledger built on them inherits the blindness.
+
+**NEW-3 (P2) — Two conflicting "net" definitions around ADJUSTMENT.**
+Reconciliation verdict: `net = PAYMENT + ADJUSTMENT − REFUND` (`payment_reconciliation_service.py:140`). Authoritative paid: `net = PAYMENT − REFUND`, ADJUSTMENT excluded (`payment_reconciliation_repository.py:167-173`); `FinancialSummaryService` uses the latter. Latent today (no producer), but the moment an ADJUSTMENT row exists, reconciliation verdicts and remaining/status math disagree. The roadmap does not define ADJUSTMENT's direction either (see Proposal 3).
+
+**NEW-4 (P2) — Widget silently rewrites ledger-derived paid and persists the clamped value.**
+`_sync_paid_from_ledger` fills `_paid_input` from the ledger (`invoice_widget.py:946-966`); `_update_payment` then clamps paid down to `final` when remaining==0 (`:1185-1189`); `get_data` persists the input value (`:1300,1310`). When ledger net exceeds the widget final (e.g., payments recorded before a later discount/tax edit), the persisted `paid_amount` snapshot is silently reduced versus the ledger and reconciliation flags MISMATCH. The ledger loses nothing; the snapshot channel proves untrustworthy.
+
+**NEW-5 (P2) — Dashboard profit window excludes DELIVERED repairs.**
+`DashboardService._completed_repairs` filters `STATUS_COMPLETED` only (`dashboard_service.py:230-235`), and `_profit_for_window` (`:237-265`) plus `income_trend` (`:308-338`) build on it. A repair leaves the month's revenue/profit KPIs the moment it is delivered — but delivered is the normal terminal state, so monthly profit understates and fluctuates with delivery actions rather than economics. (Income KPIs are unaffected — they use the ledger.)
+
+**NEW-6 (P3) — `payment_transaction.repair_id` defaults to 0** (`payment_transaction_model_db.py:10`) while repair ids start at 1 (`repair_manager_service.py:13-14`). Any row ever written with the default is permanently unattributable. Latent trap, not an active defect.
+
+**NEW-7 (P2, planning) — Discounts never reduce shop revenue.**
+`ProfitService.gross_revenue` excludes discount (`profit_service.py:110-114`); the discount lives only on the customer side. Correct for the customer account, but a future P&L built naively on ProfitService overstates profit by the discount amount. Must be solved when revenue accounting is designed (Stage 4) — not by touching ProfitService now.
+
+**NEW-8 (P2) — Overpayment is unrepresentable.**
+`payment_status_for` maps `paid > revenue` to 'تسویه شده' (`financial_summary_service.py:45-59`); combined with the widget clamp (NEW-4) the roadmap §8 'بستانکار' state is unreachable in both ladders.
+
+---
+
+## 4. Critical Financial Risks
+
+**P0**
+- **R1 — No persisted repair→customer identity.** All financial attribution rests on mutable display strings (`core/models.py:6-29`; `repair_model_db.py:6-29`; drop at `repair_manager_service.py:11,42`). Any ledger built today cannot guarantee whose money moved.
+- **R2 — No authoritative customer-payable total.** Three formulas disagree on charges inclusion, discount/tax order, clamping and rounding (§1 rows 5, 11, 12, 20, 22). A REPAIR_CHARGE generated from any of them enshrines an arbitrary number in immutable history.
+
+**P1**
+- **R3 — Orphaned ledger rows on repair deletion** (NEW-1).
+- **R4 — Legacy payment history collapsed** (`init_db.py:101-153`) — pre-migration statements cannot be faithfully reconstructed.
+- **R5 — No cancellation/void semantics** (`status.py:1-6`) — a voided repair's charge remains collectible money in the model.
+- **R6 — Discount has no event and no date** (`core/models.py:19`) — cannot become the roadmap §9 Credit without a policy decision.
+
+---
+
+## 5. Accounting Architecture Assessment
+
+Target layer model vs current code:
+
+| Target layer | Exists today? | Where |
+|---|---|---|
+| Operations (Customer/Repair/Part/Service) | YES | repositories + `SQLiteStorage` + services |
+| Financial Events (dated money movements) | PARTIAL | `payment_transaction` rows for PAYMENT/REFUND only; charges/discounts/adjustments exist only as repair attributes |
+| Ledger / customer account | NO | no per-customer account, running balance, or statement |
+| Accounts / chart of accounts | NO | nothing exists; nothing blocks it either |
+| Reports | PARTIAL | dashboard KPIs, per-repair FinancialSummaryService, count-only customer stats |
+
+**Business event vs accounting entry.** The codebase already separates these implicitly: "customer paid X" is a `payment_transaction` row (business event); `paid_amount` on the repair is a derived snapshot, not an entry. What is missing is the middle layer — dated, referenced, typed financial events for REPAIR_CHARGE and DISCOUNT. Nothing in the operational model prevents adding them; nothing operational should be made "accounting-like".
+
+**Roadmap semantics check (DEBIT/CREDIT/BALANCE/PAYMENT/REPAIR CHARGE/DISCOUNT/REFUND/ADJUSTMENT/REVENUE/COST/EXPENSE/PROFIT).**
+The roadmap §3-§12 definitions are internally consistent from the customer-account viewpoint **and match the classical Accounts-Receivable subsidiary-ledger convention** (debit increases what the counterparty owes). Future GL posting maps 1:1: customer-ledger DEBIT → AR debit; PAYMENT → AR credit + cash/bank debit; DISCOUNT → AR credit + discount-allowance debit; REFUND → cash credit + AR debit. No terminology conflict found — this convention must NOT be "corrected" by future agents. The single underspecified concept is ADJUSTMENT (direction/sign undefined — Proposal 3). REVENUE/COST/EXPENSE/PROFIT definitions are consistent with keeping profit out of the customer ledger (§2.2).
+
+---
+
+## 6. Recommended Ledger Architecture
+
+**A. Derived ledger** (reconstruct from operational records) — rejected as the target. Balances silently change whenever a formula, migration, or catalog edit touches inputs; the three-totals problem is a live demonstration; period closing is impossible; auditability is weak.
+
+**B. Dedicated manual accounting ledger** — rejected for now. Duplicates operations, invites books-vs-reality divergence, and carries the highest implementation and migration risk relative to current business need.
+
+**C. Hybrid — RECOMMENDED.** Operational records remain authoritative; **financial events are generated and persisted from them**, carrying immutable references (repair_id, customer_id, event date, type, signed amount, source). Payments/refunds already live this way (`payment_transaction` — append-only by design). Charges and discounts join the same pattern in F2. A later GL layer (Stage 5+) posts FROM these events and never mutates them.
+
+| Criterion | A Derived | B Dedicated | **C Hybrid** |
+|---|---|---|---|
+| Historical integrity | weak (formula drift rewrites past) | strong | strong (events frozen at generation) |
+| Auditability | weak | strong | strong (event→source link) |
+| Performance | degrades with data | good | good (precomputed events) |
+| Corrections/refunds | recomputation | native | native (adjustment/reversal events) |
+| Reporting | fragile | good | good |
+| Period closing | impossible | native | possible once events exist |
+| Double-entry future | rebuilt twice | native | natural (events → postings) |
+| Complexity / migration risk | low now, high later | high now | moderate, incremental; payments already events |
+
+---
+
+## 7. Recommended Source of Truth
+
+| Concept | Recommended single source of truth | Today's state |
+|---|---|---|
+| Customer identity | `customer.id` via `CustomerRepository` (path: CustomerWorkflow → CustomerService → CustomerRepository), referenced from Repair via persisted `customer_id` (F2) | customer.id solid; repair link heuristic-only |
+| Repair payable amount | ONE pure function — extend `invoice_calculator.calculate_invoice_totals` to include additional charges and pin discount/tax order (adopt the widget's current order and truncation so the displayed مبلغ نهایی is preserved); widget, table_service, invoice_generator, payment_status all call it | three competing formulas (R2) |
+| Payment history | `payment_transaction` rows (per-event) via `PaymentTransactionRepository`; net via `PaymentReconciliationService.net_paid_for_repair` | correct in design; zero-floor (NEW-2) and deletion orphans (NEW-1) must be fixed |
+| Customer balance | ONE future ledger service (F3) computed from financial events with a running balance; signed, not floored | does not exist; FinancialSummaryService is per-repair and gross-based |
+| Parts cost | `repair_part.purchase_price_snapshot` × qty via `ProfitService.parts_cost` | already correct (legacy rows cost 0 — data gap, not design) |
+| Revenue | Keep TWO named meanings apart: customer-side payable (invoice calculator) vs shop-side gross revenue (ProfitService) | conflated in consumers; naming decision needed |
+| Profit | `ProfitService` only; discount-aware net profit deferred to Stage 4 (NEW-7) | already centralized |
+| Accounting transactions | Financial events generated from operational records (hybrid C); GL postings later, from events only | `payment_transaction` is the embryo of the event table |
+
+---
+
+## 8. Customer Subsidiary Ledger Readiness
+
+Target statement: DATE | REFERENCE | DESCRIPTION | DEBIT | CREDIT | BALANCE, linked to Repair/Payment/Adjustment.
+
+| Row type | Amount | Date | Reference | Ready? |
+|---|---|---|---|---|
+| Opening balance | — | — | — | NO — needs an OPENING/ADJUSTMENT event concept |
+| Repair charge | derivable only after R2 decided | **no charge date exists** | repair_id | NO — must be generated as a dated event at save/approval |
+| Payment | YES | YES (`payment_date`) | repair_id | YES (new data) / collapsed (legacy) |
+| Discount | YES (header int) | **no date** | repair_id | NO — event + date policy needed |
+| Refund | YES | YES | repair_id | YES (new data) |
+| Adjustment | no producer; sign undefined | n/a | repair_id in reads | NO |
+| Closing balance | per-repair only (gross-based, ≠ payable) | — | — | NO customer-level balance exists |
+
+**Historical reconstruction limitations (concrete):**
+- Pre-ledger repairs: payments collapsed into one row with header `payment_date` (often empty — `init_db.py:139-147`); the original split is unrecoverable.
+- Charges and discounts were never dated. Back-filled rows must be flagged *reconstructed* and dated by explicit policy (recommend delivery_date when delivered, else receive_date — never "today"), or statements will mis-sequence history.
+- Deleted repairs leave payment rows without charges (NEW-1): statements would show credits with no debits.
+- Zero-floor nets (NEW-2) make credit balances unreconstructable from current functions.
+
+---
+
+## 9. General Accounting Readiness
+
+| Future account | Compatible today? | Notes / gaps |
+|---|---|---|
+| Cash / Bank | yes in principle | `payment_method` is free text; needs account mapping later (P3) |
+| Accounts Receivable / Customers | blocked only by customer_id (R1) | roadmap debit/credit convention already matches AR |
+| Repair / Parts / Service revenue | yes | ProfitService already splits parts/services/charges revenue |
+| Cost of Goods Sold | partial | parts via snapshots; no service/labor cost model (100%-margin assumption) |
+| Parts inventory / cost | partial | `PartDB.stock_quantity` exists but no movement ledger; `repair_part.part_id` nullable |
+| Operating expenses | no model | no expense events anywhere; a new domain object is needed later (no conflict with existing design) |
+| Discounts | partial | field exists; event + date missing (R6); contra-revenue treatment needed for P&L (NEW-7) |
+| Refunds | yes | REFUND events exist |
+| Owner Equity | — | nothing exists; no conflict |
+
+**Nothing found that would make future double-entry impossible.** Decisions that WOULD make it hard if taken now: generating charges from the wrong total (R2), not persisting customer_id (R1), allowing financial rows to be orphaned by deletion (NEW-1), and carrying zero-floor clamps into ledger math (NEW-2).
+
+---
+
+## 10. Double-Entry Accounting Readiness
+
+- **Sign convention:** roadmap §3-§4 (debit = customer owes more) is consistent with classical AR bookkeeping. Record this explicitly so future agents do not "fix" it.
+- **Amounts:** integer minor-unit columns throughout (float only for the tax rate) — suitable for postings.
+- **Ordered prerequisites:** (1) unified dated financial-event stream incl. charges/discounts; (2) persisted customer_id; (3) one payable formula; (4) signed nets instead of zero-floors; (5) void/reversal policy for deleted/edited charges; (6) account dimension on payment methods (Stage 5+).
+- **Verdict:** the architecture is EVOLVABLE toward double-entry without rewrite, provided F2 freezes events with dates and references and does not repurpose operational tables as books.
+
+---
+
+## 11. Recommended Financial Roadmap Changes
+
+*Not edited into FINANCIAL_ROADMAP.md — proposals only.*
+
+**ROADMAP CHANGE PROPOSAL 1**
+- Current rule: Phase F2 (§24) = create the customer ledger model and generate standard transaction types directly.
+- Problem: without persisted customer identity and one payable total, generated REPAIR_CHARGE rows embed an arbitrary total and cannot be reliably attributed — both are prerequisites, not enhancements.
+- Proposed rule: F2 explicitly includes, before event generation: (a) persist `customer_id` on Repair (dataclass + `RepairDB` + storage + back-fill policy), (b) unify the customer-payable formula in one service function used by widget/table/PDF/summary.
+- Reason: prevents enshrining wrong or unattributable numbers in immutable ledger rows.
+- Impact: F2 grows by two small atomic steps; no roadmap goal changes.
+
+**ROADMAP CHANGE PROPOSAL 2**
+- Current rule: §8 defines the states تسویه / بدهکار / بستانکار for the customer account.
+- Problem: implemented ladders (`FinancialSummaryService.payment_status_for`, widget) have only پرداخت نشده / پرداخت جزئی / تسویه شده; overpayment maps to تسویه شده and the widget clamps paid down — بستانکار is unreachable (NEW-4, NEW-8).
+- Proposed rule: add بستانکار to the ladder when ledger net exceeds payable; forbid clamping ledger-derived paid values.
+- Reason: §8 explicitly requires overpayment to be visible as customer credit.
+- Impact: display/logic change only in the overpayment case; no schema change.
+
+**ROADMAP CHANGE PROPOSAL 3**
+- Current rule: §12 lists ADJUSTMENT as a single transaction type.
+- Problem: direction/sign undefined; code already diverges (reconciliation adds ADJUSTMENT to net; net_paid excludes it — NEW-3).
+- Proposed rule: define ADJUSTMENT as signed (or ADJUSTMENT_IN / ADJUSTMENT_OUT) and declare ONE net formula authoritative.
+- Reason: an ambiguous type cannot be posted consistently to a ledger.
+- Impact: spec clarification only; no producer exists yet.
+
+**ROADMAP CHANGE PROPOSAL 4**
+- Current rule: §24 F2 lists transaction types without mandating an event date per type.
+- Problem: REPAIR_CHARGE and DISCOUNT have no date in the model; without a policy, generated history cannot be sequenced (see §8).
+- Proposed rule: every financial event carries an explicit event date; define the charge-date policy (recommend delivery_date when delivered, else receive_date) and the discount-date policy (date recorded); reconstructed rows must be flagged.
+- Reason: DATE is a required column of the roadmap's own §15 ledger table.
+- Impact: F2 design decision only.
+
+---
+
+## 12. Recommended F2
+
+Scope, in order — each step atomic and compile-checked, behavior-preserving except where noted:
+
+1. **Persist `customer_id` on Repair**: add to the `Repair` dataclass, `RepairDB`, `SQLiteStorage.load_all/save_all`; back-fill existing rows via the phone/name heuristic with an explicit confidence rule; the dialog already emits the id (`repair_dialog.py:393`).
+2. **Unify the payable total**: extend `invoice_calculator.calculate_invoice_totals` (accept additional_charges; pin discount-before-tax and the existing int truncation so the currently displayed مبلغ نهایی is preserved); make `InvoiceWidget._recalculate/_update_payment/get_data`, `table_service`, and `invoice_generator` call it. User-visible consequence to sign off: for repairs WITH additional charges and/or discount+tax, table/PDF totals converge on the widget's number.
+3. **Financial event model**: reuse the existing `payment_transaction`-style table as the financial-event table (it already has type/amount/date/repair_id/note); write REPAIR_CHARGE and DISCOUNT rows at repair save with the policy dates from Proposal 4; PAYMENT/REFUND continue as today; adopt the ADJUSTMENT sign convention (Proposal 3).
+4. **Deletion guard**: refuse repair deletion while payment/ledger rows exist for it (or convert the repair to a voided state) — prevents NEW-1.
+5. **Nothing else**: no new UI, no double-entry, no chart of accounts, no legacy payment re-migration.
+
+---
+
+## 13. Future Phases
+
+- **F3 — Customer Ledger Service**: statement assembly from events (running balance, date/type filters, totals footer); single owner of the customer balance; signed balances replace zero-floored nets (NEW-2/NEW-8).
+- **F4 — Customer Report Service**: DTOs per roadmap §13-§17 (header, repair history, ledger, payments, financial summary), reusing ProfitService for the summary tab's profit line.
+- **F5 — Customer Report UI**; **F6 — validation** (roadmap §24 F6 list, plus overpayment and refund-exceeds-payments cases); **F7 — PDF/print**.
+- **Stage 4 — Revenue/expense/cost accounting**: discount-aware revenue (NEW-7), service/labor cost, expense events.
+- **Stage 5 — Chart of accounts**; **Stage 6 — double-entry postings generated from financial events**; **Stage 7 — financial statements** (trial balance, P&L, period close).
+
+---
+
+## 14. Explicit Non-Goals (for F2)
+
+- No double-entry, no general ledger, no chart of accounts, no period closing.
+- No new UI screens; no appearance changes.
+- No rewrite of `SQLiteStorage`/`RepairDB` beyond the `customer_id` column; no change to `paid_amount` semantics or ledger-net computation (beyond the deletion guard and the F3 signed-balance decision).
+- No migration or cleanup of legacy collapsed payments or legacy part lines (document, do not touch).
+- No tax logic changes, no inventory movements, no expense tracking.
+- No renaming of `payment_transaction`; no second financial system alongside the existing one.
+
+---
+
+*End of Independent Senior Accounting Architecture Review. READ-ONLY audit: only this Markdown file was modified.*

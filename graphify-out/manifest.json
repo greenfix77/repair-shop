@@ -10,13 +10,13 @@
     "semantic_hash": "8fa62426495140189acc97c5ff0bc457"
   },
   ".opencode/plugins/graphify.js": {
-    "mtime": 1782586314.7866046,
+    "mtime": 1784913582.7406893,
     "ast_hash": "111287aed37970b605d3ab422d1c93ec",
     "semantic_hash": "111287aed37970b605d3ab422d1c93ec"
   },
   "app.py": {
-    "mtime": 1784658753.897699,
-    "ast_hash": "2e1520abeecefc03ac0e1aa6c641a1c1",
+    "mtime": 1788462503.2906797,
+    "ast_hash": "f1f4e9a629cf23b9b4047ed215f1c16a",
     "semantic_hash": ""
   },
   "controllers/__init__.py": {
@@ -25,9 +25,9 @@
     "semantic_hash": "81051bcc2cf1bedf378224b0a93e2877"
   },
   "controllers/main_controller.py": {
-    "mtime": 1781864582.0828288,
-    "ast_hash": "3d65c520848e3a1a0d362af425cb57fb",
-    "semantic_hash": "3d65c520848e3a1a0d362af425cb57fb"
+    "mtime": 1786300608.3820164,
+    "ast_hash": "d9235713e08341bcf6f9136a83d896f2",
+    "semantic_hash": ""
   },
   "core/__init__.py": {
     "mtime": 1781378395.1656609,
@@ -40,8 +40,8 @@
     "semantic_hash": "8c409d06c046f66ddede5eb5f214f05d"
   },
   "core/models.py": {
-    "mtime": 1784570074.6530676,
-    "ast_hash": "157bf1c8ecf7b0fc05114238260072dc",
+    "mtime": 1788458468.5070157,
+    "ast_hash": "bd1dfe6ac2c405287a0e5c59c7ace632",
     "semantic_hash": ""
   },
   "core/status.py": {
@@ -50,7 +50,7 @@
     "semantic_hash": "f568226ec512df3bfa3d72b91d3d0821"
   },
   "core/storage/__init__.py": {
-    "mtime": 1781378376.3487632,
+    "mtime": 1785170800.4610064,
     "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
     "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
   },
@@ -75,8 +75,8 @@
     "semantic_hash": "6c84c5be9303a224eba8d6f8b2719eab"
   },
   "core/storage/init_db.py": {
-    "mtime": 1784572165.192984,
-    "ast_hash": "c33a0b5b7d50a2a00e164d3200eb7966",
+    "mtime": 1788461876.54124,
+    "ast_hash": "012019cf16882d13a330ce8d6f388451",
     "semantic_hash": ""
   },
   "core/storage/migrate_json_to_sqlite.py": {
@@ -85,8 +85,8 @@
     "semantic_hash": "970a9a50deee8fade1a09ed4ccefb181"
   },
   "core/storage/repair_model_db.py": {
-    "mtime": 1784570103.9484072,
-    "ast_hash": "5f2b41df194a74d7f7848b6d34d5b203",
+    "mtime": 1788458480.6218362,
+    "ast_hash": "00c3fd2344b4899392f9e81613a81873",
     "semantic_hash": ""
   },
   "core/storage/repairs_storage.py": {
@@ -95,8 +95,8 @@
     "semantic_hash": "1ba38f313ba8d0ac05746af65584560b"
   },
   "core/storage/sqlite_storage.py": {
-    "mtime": 1784570198.282451,
-    "ast_hash": "73048d7d605728671d40e9b9d91c38a4",
+    "mtime": 1788458500.7598262,
+    "ast_hash": "308ef7e74609bcbf760f437ca4fe49ee",
     "semantic_hash": ""
   },
   "core/storage/test_customer_repository.py": {
@@ -110,8 +110,8 @@
     "semantic_hash": "8187ba0c8f7bbe4009ae2adab03e62de"
   },
   "opencode.json": {
-    "mtime": 1783620696.4644885,
-    "ast_hash": "4f20b0bc062710233a27d220111f6e6f",
+    "mtime": 1788203809.9708638,
+    "ast_hash": "03af79ec1c17e9f22e05a61304fd5fc7",
     "semantic_hash": ""
   },
   "repair_manager/ui/components.py": {
@@ -125,9 +125,9 @@
     "semantic_hash": "3cfe60832b86a133b2cfb6ea1ead4ffa"
   },
   "services/calculations.py": {
-    "mtime": 1781720819.1144178,
-    "ast_hash": "735109e78a95a737b9884f3d93e79993",
-    "semantic_hash": "735109e78a95a737b9884f3d93e79993"
+    "mtime": 1788458618.8483582,
+    "ast_hash": "81c363be22ed1da1c67a27a955b5cf6b",
+    "semantic_hash": ""
   },
   "services/customer_service.py": {
     "mtime": 1784297605.851865,
@@ -140,9 +140,9 @@
     "semantic_hash": "8a9335dcb971f7a60875aa0b821f83fa"
   },
   "services/invoice_calculator.py": {
-    "mtime": 1781721211.9251902,
-    "ast_hash": "a62bdb7203106eff9ac0b7505428cbb2",
-    "semantic_hash": "a62bdb7203106eff9ac0b7505428cbb2"
+    "mtime": 1788458607.4321551,
+    "ast_hash": "41d3260396e51b58e8249e9301a2d054",
+    "semantic_hash": ""
   },
   "services/invoice_exporter.py": {
     "mtime": 1781860727.0680158,
@@ -165,9 +165,9 @@
     "semantic_hash": "ce791920081727b5b6980ca19a99c302"
   },
   "services/repair_manager_service.py": {
-    "mtime": 1781863572.7210827,
-    "ast_hash": "75937f243af7eeb2ade9f594b36c9909",
-    "semantic_hash": "75937f243af7eeb2ade9f594b36c9909"
+    "mtime": 1788458574.5711372,
+    "ast_hash": "2bac2393bcd27f39244f7a18e9af031e",
+    "semantic_hash": ""
   },
   "services/statistics.py": {
     "mtime": 1781283842.9151564,
@@ -175,9 +175,9 @@
     "semantic_hash": "cd56a7690cf78a5d06400c2b48ed9b33"
   },
   "services/table_service.py": {
-    "mtime": 1781720944.6993055,
-    "ast_hash": "ac41171b51dd736e72d9b7f295c3ebb4",
-    "semantic_hash": "ac41171b51dd736e72d9b7f295c3ebb4"
+    "mtime": 1788459967.1956937,
+    "ast_hash": "cf78532e23112c440bc8dbb7809014d6",
+    "semantic_hash": ""
   },
   "services/test_customer_service.py": {
     "mtime": 1782467162.4274156,
@@ -190,8 +190,8 @@
     "semantic_hash": "71906f775a7df29540994aeaa8b33ce6"
   },
   "shop_settings.json": {
-    "mtime": 1783690646.5645137,
-    "ast_hash": "a5cf7fbf76c7ca72d8f2bd4cce294ce6",
+    "mtime": 1786302147.5502076,
+    "ast_hash": "38ad7a862f2ceac324092245db0ed127",
     "semantic_hash": ""
   },
   "test_logo.py": {
@@ -215,8 +215,8 @@
     "semantic_hash": ""
   },
   "ui/main_window.py": {
-    "mtime": 1784573694.9784403,
-    "ast_hash": "7b6c47d0f1df49822b9d36d7a1cf225b",
+    "mtime": 1786383526.4413986,
+    "ast_hash": "eb985734157cbc7f21031d6f07910c2d",
     "semantic_hash": ""
   },
   "ui/status_styles.py": {
@@ -225,8 +225,8 @@
     "semantic_hash": "f9ecf5626360b5d6600932ec6bea3ff0"
   },
   "ui/table_renderer.py": {
-    "mtime": 1783671174.2739806,
-    "ast_hash": "314b0273189a20135d625a1dee37bdfb",
+    "mtime": 1786387974.9777703,
+    "ast_hash": "91693dbd5055a2fe7bffb8501f9b1bf2",
     "semantic_hash": ""
   },
   "ui/widgets/web_invoice_view.py": {
@@ -315,9 +315,9 @@
     "semantic_hash": "37f17784481f3a9730a4ca53a17c9dd1"
   },
   "opencode_rules.md": {
-    "mtime": 1782480485.7071302,
-    "ast_hash": "eb2ed3558fd1d7029d285e78c9747162",
-    "semantic_hash": "eb2ed3558fd1d7029d285e78c9747162"
+    "mtime": 1785439886.110749,
+    "ast_hash": "f77ec4e57e6e016661decde99b683f8a",
+    "semantic_hash": ""
   },
   "project_docs/ARCHITECTURE.md": {
     "mtime": 1780602780.2880106,
@@ -390,8 +390,8 @@
     "semantic_hash": ""
   },
   "ui/customer_view.py": {
-    "mtime": 1783798109.7297254,
-    "ast_hash": "0bc2586c480e9bf8bb13e83e717c9df4",
+    "mtime": 1786384094.9853241,
+    "ast_hash": "74618e28f5415292e9c9193111528efc",
     "semantic_hash": ""
   },
   "ui/dialogs/customer_edit_dialog.py": {
@@ -425,8 +425,8 @@
     "semantic_hash": ""
   },
   "ui/service_view.py": {
-    "mtime": 1783701808.4075792,
-    "ast_hash": "8b742c5b31372ced1986de18ff26d1dd",
+    "mtime": 1786302040.8265643,
+    "ast_hash": "ebb3db1e1be14cd1d0353bf6995ebc08",
     "semantic_hash": ""
   },
   "SERVICES_CATALOG_PHASE1.md": {
@@ -455,8 +455,8 @@
     "semantic_hash": ""
   },
   "ui/part_view.py": {
-    "mtime": 1783706434.2231529,
-    "ast_hash": "d0b2697c7f855fb3731019b19e0ea26c",
+    "mtime": 1786302041.1703463,
+    "ast_hash": "14002886985adcc6700268321eb76490",
     "semantic_hash": ""
   },
   "PARTS_CATALOG_PHASE1.md": {
@@ -475,8 +475,8 @@
     "semantic_hash": ""
   },
   "ui/widgets/invoice_widget.py": {
-    "mtime": 1784675046.363486,
-    "ast_hash": "18b0c28254a553df7fc8cf7fffab1f0e",
+    "mtime": 1788462519.6800904,
+    "ast_hash": "0af6a6e0f59168b210b7c0c0a51f7527",
     "semantic_hash": ""
   },
   "REPAIR_INVOICE_REDESIGN.md": {
@@ -520,8 +520,8 @@
     "semantic_hash": ""
   },
   "ui/todo_view.py": {
-    "mtime": 1784137281.0518904,
-    "ast_hash": "1f2b5d51ff431598e3c86d04a655644a",
+    "mtime": 1786302041.594356,
+    "ast_hash": "c3652f4406453c672ac899deb5ff95c9",
     "semantic_hash": ""
   },
   "core/storage/charge_model_db.py": {
@@ -540,18 +540,18 @@
     "semantic_hash": ""
   },
   "services/dashboard_service.py": {
-    "mtime": 1784311551.6412356,
-    "ast_hash": "f27881d07292cba230605413369a9c87",
+    "mtime": 1786210264.5930624,
+    "ast_hash": "7376d31eff62fc956c84fba2e22dc2a1",
     "semantic_hash": ""
   },
   "services/repair_service.py": {
-    "mtime": 1784311275.199314,
-    "ast_hash": "d8b03df0c0c5eb5fe7d9d750737e4ebb",
+    "mtime": 1785350411.0535862,
+    "ast_hash": "6c84f3b5b228e1bd8036ab65c3d45a39",
     "semantic_hash": ""
   },
   "ui/charge_view.py": {
-    "mtime": 1784573538.657308,
-    "ast_hash": "3f42061680205c1906e76bbb0b39607e",
+    "mtime": 1786302039.5091753,
+    "ast_hash": "3648e834ed0c1fe2a3d82c397da63205",
     "semantic_hash": ""
   },
   "ui/dialogs/charge_edit_dialog.py": {
@@ -560,13 +560,103 @@
     "semantic_hash": ""
   },
   "ui/dialogs/dashboard_dialog.py": {
-    "mtime": 1784311671.6644404,
-    "ast_hash": "8935747754330868a643bc813af0343f",
+    "mtime": 1786299474.1937454,
+    "ast_hash": "610b5cf3b55ebd444f9b4757b0546760",
     "semantic_hash": ""
   },
   "docs/financial_architecture.md": {
     "mtime": 1784575844.5861769,
     "ast_hash": "ba12a964e57a10a7023ef9eb225d6d7f",
+    "semantic_hash": ""
+  },
+  "core/storage/payment_reconciliation_repository.py": {
+    "mtime": 1788462232.6488352,
+    "ast_hash": "08ddd3203746ee6c3285cc4f3d19de00",
+    "semantic_hash": ""
+  },
+  "core/storage/payment_transaction_model_db.py": {
+    "mtime": 1788461849.892224,
+    "ast_hash": "cd2e47c611b02c5abc91e2ca0c8ffc6e",
+    "semantic_hash": ""
+  },
+  "core/storage/payment_transaction_repository.py": {
+    "mtime": 1788461920.8957825,
+    "ast_hash": "e54dd84511ec06850612c77b6dd21b98",
+    "semantic_hash": ""
+  },
+  "services/financial_summary_service.py": {
+    "mtime": 1785353421.4401748,
+    "ast_hash": "1a38072e3438552fe913ebcf469e6a50",
+    "semantic_hash": ""
+  },
+  "services/payment_reconciliation_service.py": {
+    "mtime": 1785350264.3343642,
+    "ast_hash": "81f81047bbe78aea09758aa00ce19aa8",
+    "semantic_hash": ""
+  },
+  "services/profit_service.py": {
+    "mtime": 1785350964.1486516,
+    "ast_hash": "cc499d85ffec48bfcf9e1ae0e88f3f22",
+    "semantic_hash": ""
+  },
+  "services/test_financial_f1_5.py": {
+    "mtime": 1788460258.2334144,
+    "ast_hash": "c97534fc9c90205bda32988d8ae1d684",
+    "semantic_hash": ""
+  },
+  "FINANCIAL_F1_DATA_DOMAIN_AUDIT.md": {
+    "mtime": 1788375853.5545456,
+    "ast_hash": "2ae898016a36134e060aa67fb1df6b77",
+    "semantic_hash": ""
+  },
+  "FINANCIAL_ROADMAP.md": {
+    "mtime": 1786389355.0951946,
+    "ast_hash": "65a67dda6294fcb8db9bfffd57f53735",
+    "semantic_hash": ""
+  },
+  "services/financial_event_service.py": {
+    "mtime": 1788465659.1951745,
+    "ast_hash": "7872885c4d5882b0d6a45f1a4ce84200",
+    "semantic_hash": ""
+  },
+  "services/test_financial_f2.py": {
+    "mtime": 1788540270.1510816,
+    "ast_hash": "31ca2979e18c6940a881826b19c67690",
+    "semantic_hash": ""
+  },
+  "FINANCIAL_F1_5_IMPLEMENTATION_REPORT.md": {
+    "mtime": 1788460589.262635,
+    "ast_hash": "94b5ecf151e9390a1471ea7456669018",
+    "semantic_hash": ""
+  },
+  "services/customer_ledger_service.py": {
+    "mtime": 1788544267.9155164,
+    "ast_hash": "d28a4df982f3b1faf44af1feccbbe86c",
+    "semantic_hash": ""
+  },
+  "services/test_financial_f3.py": {
+    "mtime": 1788540139.5871463,
+    "ast_hash": "1989d6598a8557adf283c8eca3cf37fb",
+    "semantic_hash": ""
+  },
+  "FINANCIAL_F2_IMPLEMENTATION_REPORT.md": {
+    "mtime": 1788463897.0860631,
+    "ast_hash": "223e9c91e27ad71ca2fdfab7f6bc19f8",
+    "semantic_hash": ""
+  },
+  "services/customer_report_service.py": {
+    "mtime": 1788544532.0268235,
+    "ast_hash": "cbf510cecfb6c8341a14bdec1ec65db7",
+    "semantic_hash": ""
+  },
+  "services/test_financial_f4.py": {
+    "mtime": 1788544938.5394223,
+    "ast_hash": "0dd2dc0fd45d8aff692f8c5d171e2366",
+    "semantic_hash": ""
+  },
+  "FINANCIAL_F3_IMPLEMENTATION_REPORT.md": {
+    "mtime": 1788540521.658811,
+    "ast_hash": "401667c3f1f91be99934c883663d6647",
     "semantic_hash": ""
   }
 }

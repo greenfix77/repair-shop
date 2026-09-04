@@ -20,6 +20,7 @@ class SQLiteStorage:
             for row in rows:
                 repair_dict = {
                     'id': row.id,
+                    'customer_id': getattr(row, 'customer_id', None),
                     'customer_name': row.customer_name or '',
                     'phone': row.phone or '',
                     'brand': row.brand or '',
@@ -99,6 +100,7 @@ class SQLiteStorage:
             for item in repairs:
                 row = RepairDB(
                     id=item.get('id', 0),
+                    customer_id=item.get('customer_id') or None,
                     customer_name=item.get('customer_name', ''),
                     phone=item.get('phone', ''),
                     brand=item.get('brand', ''),

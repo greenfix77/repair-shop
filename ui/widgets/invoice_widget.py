@@ -15,6 +15,7 @@ from services.notification_service import show_warning
 from services.date_service import today_persian
 from services.payment_reconciliation_service import PaymentReconciliationService
 from services.financial_summary_service import FinancialSummaryService
+from services.invoice_calculator import calculate_invoice_totals
 from core.storage.payment_transaction_repository import PaymentTransactionRepository
 from repair_manager.ui.components import PersianDateEdit
 from ui.dialogs.service_edit_dialog import ServiceEditDialog
@@ -930,13 +931,22 @@ class InvoiceWidget(QWidget):
         self._payment_history_table.updateGeometry()
 
     def _load_payment_history(self, repair_id):
-        """Fetch ledger transactions for the repair via the repository."""
+        """Fetch ledger transactions for the repair via the repository.
+
+        F2: reads the PAYMENT/REFUND payment history only — the Financial
+        tab's history table keeps showing exactly what it showed before
+        the financial-event foundation. The full event stream (including
+        REPAIR_CHARGE / DISCOUNT) stays available through the
+        repository/service for the future customer ledger.
+        """
         if not repair_id:
             self._payment_transactions = []
             self._render_payment_history_table()
             return
         try:
-            transactions = self._payment_tx_repo.list_for_repair(int(repair_id))
+            transactions = self._payment_tx_repo.list_payment_history_for_repair(
+                int(repair_id)
+            )
         except Exception:
             transactions = []
         self._payment_transactions = transactions
@@ -1011,16 +1021,29 @@ class InvoiceWidget(QWidget):
 
     # --- Calculation ---
 
+    def _authoritative_totals(self) -> Dict:
+        """Compute the payable breakdown via the single source of truth.
+
+        F1.5: the widget owns no total formula anymore. Services, parts
+        and additional-charge subtotals plus the final payable all come
+        from ``invoice_calculator.calculate_invoice_totals`` so the
+        widget, the repairs table and the invoice PDF always agree.
+        """
+        return calculate_invoice_totals({
+            'parts_cost': sum(l['total_price'] for l in self._part_lines),
+            'labor_cost': sum(l['total_price'] for l in self._service_lines),
+            'additional_charges': self._additional_charges,
+            'tax': self._tax_input.value(),
+            'discount': self._discount_input.value(),
+        })
+
     def _recalculate(self):
-        svc_subtotal = sum(l['total_price'] for l in self._service_lines)
-        part_subtotal = sum(l['total_price'] for l in self._part_lines)
-        charge_subtotal = sum(l.get('total_price', 0) or 0 for l in self._additional_charges)
-        prediscount = svc_subtotal + part_subtotal + charge_subtotal
-        discount = self._discount_input.value()
-        after_discount = max(0, prediscount - discount)
-        tax = self._tax_input.value()
-        tax_amount = int(after_discount * tax / 100)
-        final = after_discount + tax_amount
+        fin = self._authoritative_totals()
+        svc_subtotal = fin['labor_cost']
+        part_subtotal = fin['parts_cost']
+        charge_subtotal = fin['additional_charges']
+        prediscount = fin['subtotal']
+        final = fin['total']
 
         self._svc_subtotal_label.setText(f"جمع خدمات: {svc_subtotal:,}")
         self._part_subtotal_label.setText(f"جمع قطعات: {part_subtotal:,}")
@@ -1168,15 +1191,7 @@ class InvoiceWidget(QWidget):
         return repair
 
     def _update_payment(self):
-        svc_subtotal = sum(l['total_price'] for l in self._service_lines)
-        part_subtotal = sum(l['total_price'] for l in self._part_lines)
-        charge_subtotal = sum(l.get('total_price', 0) or 0 for l in self._additional_charges)
-        prediscount = svc_subtotal + part_subtotal + charge_subtotal
-        discount = self._discount_input.value()
-        after_discount = max(0, prediscount - discount)
-        tax = self._tax_input.value()
-        tax_amount = int(after_discount * tax / 100)
-        final = after_discount + tax_amount
+        final = self._authoritative_totals()['total']
 
         paid = self._paid_input.value()
         if paid < 0:
@@ -1288,15 +1303,8 @@ class InvoiceWidget(QWidget):
 
     def get_data(self):
         """Return invoice data as a dict."""
-        svc_subtotal = sum(l['total_price'] for l in self._service_lines)
-        part_subtotal = sum(l['total_price'] for l in self._part_lines)
-        charge_subtotal = sum(l.get('total_price', 0) or 0 for l in self._additional_charges)
-        prediscount = svc_subtotal + part_subtotal + charge_subtotal
-        discount = self._discount_input.value()
-        after_discount = max(0, prediscount - discount)
-        tax = self._tax_input.value()
-        tax_amount = int(after_discount * tax / 100)
-        final = after_discount + tax_amount
+        fin = self._authoritative_totals()
+        final = fin['total']
         paid = self._paid_input.value()
 
         payment_status = FinancialSummaryService.payment_status_for(paid, final)
@@ -1312,6 +1320,6 @@ class InvoiceWidget(QWidget):
             'payment_method': self._payment_method_combo.currentText(),
             'payment_date': self._payment_date_input.get_date(),
             'financial_notes': self._financial_notes_input.toPlainText(),
-            'parts_cost': part_subtotal,
-            'labor_cost': svc_subtotal,
+            'parts_cost': fin['parts_cost'],
+            'labor_cost': fin['labor_cost'],
         }

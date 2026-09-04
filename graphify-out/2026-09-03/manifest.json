@@ -1,0 +1,617 @@
+{
+  ".opencode/opencode.json": {
+    "mtime": 1782589584.4223478,
+    "ast_hash": "1efe24ecf938911d4f23e4b1c6ec91f7",
+    "semantic_hash": "1efe24ecf938911d4f23e4b1c6ec91f7"
+  },
+  ".opencode/package.json": {
+    "mtime": 1782669350.506621,
+    "ast_hash": "8fa62426495140189acc97c5ff0bc457",
+    "semantic_hash": "8fa62426495140189acc97c5ff0bc457"
+  },
+  ".opencode/plugins/graphify.js": {
+    "mtime": 1784913582.7406893,
+    "ast_hash": "111287aed37970b605d3ab422d1c93ec",
+    "semantic_hash": "111287aed37970b605d3ab422d1c93ec"
+  },
+  "app.py": {
+    "mtime": 1786387600.2790437,
+    "ast_hash": "11ad6577c2eac88c7264495ea07a6a87",
+    "semantic_hash": ""
+  },
+  "controllers/__init__.py": {
+    "mtime": 1781864574.8239012,
+    "ast_hash": "81051bcc2cf1bedf378224b0a93e2877",
+    "semantic_hash": "81051bcc2cf1bedf378224b0a93e2877"
+  },
+  "controllers/main_controller.py": {
+    "mtime": 1786300608.3820164,
+    "ast_hash": "d9235713e08341bcf6f9136a83d896f2",
+    "semantic_hash": ""
+  },
+  "core/__init__.py": {
+    "mtime": 1781378395.1656609,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "core/filters.py": {
+    "mtime": 1781380681.1838603,
+    "ast_hash": "8c409d06c046f66ddede5eb5f214f05d",
+    "semantic_hash": "8c409d06c046f66ddede5eb5f214f05d"
+  },
+  "core/models.py": {
+    "mtime": 1788458468.5070157,
+    "ast_hash": "bd1dfe6ac2c405287a0e5c59c7ace632",
+    "semantic_hash": ""
+  },
+  "core/status.py": {
+    "mtime": 1781719763.198223,
+    "ast_hash": "f568226ec512df3bfa3d72b91d3d0821",
+    "semantic_hash": "f568226ec512df3bfa3d72b91d3d0821"
+  },
+  "core/storage/__init__.py": {
+    "mtime": 1785170800.4610064,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "core/storage/customer_model_db.py": {
+    "mtime": 1782504682.110922,
+    "ast_hash": "83e171d506cc64d99d1a7633d43f5a21",
+    "semantic_hash": "83e171d506cc64d99d1a7633d43f5a21"
+  },
+  "core/storage/customer_repository.py": {
+    "mtime": 1782503462.6829965,
+    "ast_hash": "064e3d2fb09a927f5032d6259651cae4",
+    "semantic_hash": "064e3d2fb09a927f5032d6259651cae4"
+  },
+  "core/storage/database.py": {
+    "mtime": 1781880075.76328,
+    "ast_hash": "4826c2c61db65b43bd03ace9017ec80a",
+    "semantic_hash": "4826c2c61db65b43bd03ace9017ec80a"
+  },
+  "core/storage/dual_storage.py": {
+    "mtime": 1782414703.22626,
+    "ast_hash": "6c84c5be9303a224eba8d6f8b2719eab",
+    "semantic_hash": "6c84c5be9303a224eba8d6f8b2719eab"
+  },
+  "core/storage/init_db.py": {
+    "mtime": 1788458558.7764604,
+    "ast_hash": "8520006eae28c02f6b73332e435de600",
+    "semantic_hash": ""
+  },
+  "core/storage/migrate_json_to_sqlite.py": {
+    "mtime": 1781881448.818499,
+    "ast_hash": "970a9a50deee8fade1a09ed4ccefb181",
+    "semantic_hash": "970a9a50deee8fade1a09ed4ccefb181"
+  },
+  "core/storage/repair_model_db.py": {
+    "mtime": 1788458480.6218362,
+    "ast_hash": "00c3fd2344b4899392f9e81613a81873",
+    "semantic_hash": ""
+  },
+  "core/storage/repairs_storage.py": {
+    "mtime": 1781283052.524129,
+    "ast_hash": "1ba38f313ba8d0ac05746af65584560b",
+    "semantic_hash": "1ba38f313ba8d0ac05746af65584560b"
+  },
+  "core/storage/sqlite_storage.py": {
+    "mtime": 1788458500.7598262,
+    "ast_hash": "308ef7e74609bcbf760f437ca4fe49ee",
+    "semantic_hash": ""
+  },
+  "core/storage/test_customer_repository.py": {
+    "mtime": 1782463385.9221902,
+    "ast_hash": "61ffdb4283029d325f108e9b53b49d11",
+    "semantic_hash": "61ffdb4283029d325f108e9b53b49d11"
+  },
+  "core/storage/test_sqlite_storage.py": {
+    "mtime": 1781880688.1771972,
+    "ast_hash": "8187ba0c8f7bbe4009ae2adab03e62de",
+    "semantic_hash": "8187ba0c8f7bbe4009ae2adab03e62de"
+  },
+  "opencode.json": {
+    "mtime": 1788203809.9708638,
+    "ast_hash": "03af79ec1c17e9f22e05a61304fd5fc7",
+    "semantic_hash": ""
+  },
+  "repair_manager/ui/components.py": {
+    "mtime": 1781868460.9180787,
+    "ast_hash": "8401f9ef0c3a72a08d3d6e3eefed3053",
+    "semantic_hash": "8401f9ef0c3a72a08d3d6e3eefed3053"
+  },
+  "repairs.json": {
+    "mtime": 1782458164.0245707,
+    "ast_hash": "3cfe60832b86a133b2cfb6ea1ead4ffa",
+    "semantic_hash": "3cfe60832b86a133b2cfb6ea1ead4ffa"
+  },
+  "services/calculations.py": {
+    "mtime": 1788458618.8483582,
+    "ast_hash": "81c363be22ed1da1c67a27a955b5cf6b",
+    "semantic_hash": ""
+  },
+  "services/customer_service.py": {
+    "mtime": 1784297605.851865,
+    "ast_hash": "d70ee9e1c5988bcfa94a96063d48983e",
+    "semantic_hash": ""
+  },
+  "services/date_service.py": {
+    "mtime": 1781720818.3316536,
+    "ast_hash": "8a9335dcb971f7a60875aa0b821f83fa",
+    "semantic_hash": "8a9335dcb971f7a60875aa0b821f83fa"
+  },
+  "services/invoice_calculator.py": {
+    "mtime": 1788458607.4321551,
+    "ast_hash": "41d3260396e51b58e8249e9301a2d054",
+    "semantic_hash": ""
+  },
+  "services/invoice_exporter.py": {
+    "mtime": 1781860727.0680158,
+    "ast_hash": "f3afd8e19f42454e77236ef48cd96437",
+    "semantic_hash": "f3afd8e19f42454e77236ef48cd96437"
+  },
+  "services/invoice_generator.py": {
+    "mtime": 1782325782.535642,
+    "ast_hash": "e488f0ca81b171a3dac15a6a452d2461",
+    "semantic_hash": "e488f0ca81b171a3dac15a6a452d2461"
+  },
+  "services/logo_service.py": {
+    "mtime": 1782327704.783719,
+    "ast_hash": "f62721d6a611dbfe8cfa84ecb57af3f3",
+    "semantic_hash": "f62721d6a611dbfe8cfa84ecb57af3f3"
+  },
+  "services/notification_service.py": {
+    "mtime": 1781860645.0857966,
+    "ast_hash": "ce791920081727b5b6980ca19a99c302",
+    "semantic_hash": "ce791920081727b5b6980ca19a99c302"
+  },
+  "services/repair_manager_service.py": {
+    "mtime": 1788458574.5711372,
+    "ast_hash": "2bac2393bcd27f39244f7a18e9af031e",
+    "semantic_hash": ""
+  },
+  "services/statistics.py": {
+    "mtime": 1781283842.9151564,
+    "ast_hash": "cd56a7690cf78a5d06400c2b48ed9b33",
+    "semantic_hash": "cd56a7690cf78a5d06400c2b48ed9b33"
+  },
+  "services/table_service.py": {
+    "mtime": 1788459967.1956937,
+    "ast_hash": "cf78532e23112c440bc8dbb7809014d6",
+    "semantic_hash": ""
+  },
+  "services/test_customer_service.py": {
+    "mtime": 1782467162.4274156,
+    "ast_hash": "27cd897bc945876cc983649309122ce7",
+    "semantic_hash": "27cd897bc945876cc983649309122ce7"
+  },
+  "services/test_verify_refactor.py": {
+    "mtime": 1782501844.0340483,
+    "ast_hash": "71906f775a7df29540994aeaa8b33ce6",
+    "semantic_hash": "71906f775a7df29540994aeaa8b33ce6"
+  },
+  "shop_settings.json": {
+    "mtime": 1786302147.5502076,
+    "ast_hash": "38ad7a862f2ceac324092245db0ed127",
+    "semantic_hash": ""
+  },
+  "test_logo.py": {
+    "mtime": 1782324835.0087118,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  "ui/dialogs/invoice_dialog.py": {
+    "mtime": 1782323628.4189777,
+    "ast_hash": "64716346615e392e2ed63867625e6f53",
+    "semantic_hash": "64716346615e392e2ed63867625e6f53"
+  },
+  "ui/dialogs/repair_dialog.py": {
+    "mtime": 1784571124.3045273,
+    "ast_hash": "77a3fa7599cfc947967ac11764b3aa05",
+    "semantic_hash": ""
+  },
+  "ui/dialogs/shop_settings_dialog.py": {
+    "mtime": 1783623750.2548182,
+    "ast_hash": "e2ea88f01dba7ed34b399374c419f3ba",
+    "semantic_hash": ""
+  },
+  "ui/main_window.py": {
+    "mtime": 1786383526.4413986,
+    "ast_hash": "eb985734157cbc7f21031d6f07910c2d",
+    "semantic_hash": ""
+  },
+  "ui/status_styles.py": {
+    "mtime": 1781720819.6774404,
+    "ast_hash": "f9ecf5626360b5d6600932ec6bea3ff0",
+    "semantic_hash": "f9ecf5626360b5d6600932ec6bea3ff0"
+  },
+  "ui/table_renderer.py": {
+    "mtime": 1786387974.9777703,
+    "ast_hash": "91693dbd5055a2fe7bffb8501f9b1bf2",
+    "semantic_hash": ""
+  },
+  "ui/widgets/web_invoice_view.py": {
+    "mtime": 1782322002.6680512,
+    "ast_hash": "4cc33ccd56940ef4eec33dcfe9e75b44",
+    "semantic_hash": "4cc33ccd56940ef4eec33dcfe9e75b44"
+  },
+  "verify_phone_normalization.py": {
+    "mtime": 1782513586.7425425,
+    "ast_hash": "061d27cf9d07e13cf5d18ab3c7a9a94f",
+    "semantic_hash": "061d27cf9d07e13cf5d18ab3c7a9a94f"
+  },
+  "AGENTS.md": {
+    "mtime": 1782764413.435966,
+    "ast_hash": "b737fcc4a71295ec8eb4bc477bcd623e",
+    "semantic_hash": ""
+  },
+  "ARCHITECTURE_FINAL.md": {
+    "mtime": 1781868765.5547903,
+    "ast_hash": "9748e43403f93aa7ad10be7aaf65349d",
+    "semantic_hash": "9748e43403f93aa7ad10be7aaf65349d"
+  },
+  "BACKUP_REPORT.md": {
+    "mtime": 1781869328.3245747,
+    "ast_hash": "bc7eed51a6add93db92a5df7414f8426",
+    "semantic_hash": "bc7eed51a6add93db92a5df7414f8426"
+  },
+  "CUSTOMER_DECISION_REFACTOR.md": {
+    "mtime": 1782501936.6766522,
+    "ast_hash": "b30ad9154c7aa5ad694f25887ae67923",
+    "semantic_hash": "b30ad9154c7aa5ad694f25887ae67923"
+  },
+  "CUSTOMER_WORKFLOW_AUDIT.md": {
+    "mtime": 1782490274.7931187,
+    "ast_hash": "be80815b4444481e80ff1a1fe8b1e309",
+    "semantic_hash": "be80815b4444481e80ff1a1fe8b1e309"
+  },
+  "CUSTOMER_WORKFLOW_REFACTOR.md": {
+    "mtime": 1782496048.7451108,
+    "ast_hash": "fa045e83ab20915ce24221bebcffdad0",
+    "semantic_hash": "fa045e83ab20915ce24221bebcffdad0"
+  },
+  "INVOICE_BLANK_PREVIEW_AUDIT.md": {
+    "mtime": 1782326903.790133,
+    "ast_hash": "8a0f25c97db8c6819d700fe61290f7a5",
+    "semantic_hash": "8a0f25c97db8c6819d700fe61290f7a5"
+  },
+  "PHONE_NORMALIZATION_AUDIT.md": {
+    "mtime": 1782513633.3207319,
+    "ast_hash": "82aa50be730c4c3762b2dabaac101e57",
+    "semantic_hash": "82aa50be730c4c3762b2dabaac101e57"
+  },
+  "PROJECT_CONTINUATION.md": {
+    "mtime": 1782407304.5287273,
+    "ast_hash": "1a0fbfee5f8791f412d0d55eda5cf7a0",
+    "semantic_hash": "1a0fbfee5f8791f412d0d55eda5cf7a0"
+  },
+  "QWEBENGINE_MIGRATION_AUDIT.md": {
+    "mtime": 1782318354.0608363,
+    "ast_hash": "8c1d0bb29a9561dbf96afefba6d7cfe8",
+    "semantic_hash": "8c1d0bb29a9561dbf96afefba6d7cfe8"
+  },
+  "RESOLVE_CUSTOMER_DECISION_TREE.md": {
+    "mtime": 1782499413.5887048,
+    "ast_hash": "4d8f20fc3d2d0b9e9d5a4678a192d44a",
+    "semantic_hash": "4d8f20fc3d2d0b9e9d5a4678a192d44a"
+  },
+  "SHOP_LOGO_AUDIT.md": {
+    "mtime": 1782324052.7899327,
+    "ast_hash": "86fe588346bfe4b587d2c80cddf3c693",
+    "semantic_hash": "86fe588346bfe4b587d2c80cddf3c693"
+  },
+  "SMART_COMPLETER_AUDIT.md": {
+    "mtime": 1782470389.4590094,
+    "ast_hash": "a28cb5bd174e5bcb1989d42f79b652bc",
+    "semantic_hash": "a28cb5bd174e5bcb1989d42f79b652bc"
+  },
+  "SQLITE_MIGRATION_AUDIT.md": {
+    "mtime": 1782157157.641826,
+    "ast_hash": "8b4a6a9413c3d637ab4cefe8594d6e8c",
+    "semantic_hash": "8b4a6a9413c3d637ab4cefe8594d6e8c"
+  },
+  "SQLITE_ONLY_AUDIT.md": {
+    "mtime": 1782414446.980113,
+    "ast_hash": "37f17784481f3a9730a4ca53a17c9dd1",
+    "semantic_hash": "37f17784481f3a9730a4ca53a17c9dd1"
+  },
+  "opencode_rules.md": {
+    "mtime": 1785439886.110749,
+    "ast_hash": "f77ec4e57e6e016661decde99b683f8a",
+    "semantic_hash": ""
+  },
+  "project_docs/ARCHITECTURE.md": {
+    "mtime": 1780602780.2880106,
+    "ast_hash": "b71f23459af7dbd87ad7b1b4aa07fae3",
+    "semantic_hash": "b71f23459af7dbd87ad7b1b4aa07fae3"
+  },
+  "project_docs/BUG_HISTORY.md": {
+    "mtime": 1780602290.8016179,
+    "ast_hash": "c362ff877e331d926a64e2de3a88ecb5",
+    "semantic_hash": "c362ff877e331d926a64e2de3a88ecb5"
+  },
+  "project_docs/FEATURES.md": {
+    "mtime": 1780602266.5884268,
+    "ast_hash": "10896dc97ea0e7e8cbff3bb46e2c9004",
+    "semantic_hash": "10896dc97ea0e7e8cbff3bb46e2c9004"
+  },
+  "project_docs/PROJECT_MAP.md": {
+    "mtime": 1780602140.108454,
+    "ast_hash": "926e23a4ca97326c8ffb73b45ebe46cf",
+    "semantic_hash": "926e23a4ca97326c8ffb73b45ebe46cf"
+  },
+  "project_docs/TASKS.md": {
+    "mtime": 1780602316.4939923,
+    "ast_hash": "f8897356e10c6dad0eee5906d480735a",
+    "semantic_hash": "f8897356e10c6dad0eee5906d480735a"
+  },
+  "requirements.txt": {
+    "mtime": 1781880070.7667236,
+    "ast_hash": "683e8d77b2a5dfdae6c16857989cdff3",
+    "semantic_hash": "683e8d77b2a5dfdae6c16857989cdff3"
+  },
+  "logo.png": {
+    "mtime": 1782327885.769285,
+    "ast_hash": "daf5c0547f0128aee649bf155b99c458",
+    "semantic_hash": "daf5c0547f0128aee649bf155b99c458"
+  },
+  "services/customer_workflow.py": {
+    "mtime": 1783683960.2887793,
+    "ast_hash": "2070ca79471ca4aa22723e3353ba4c12",
+    "semantic_hash": ""
+  },
+  "CUSTOMER_WORKFLOW_REGRESSION_AUDIT.md": {
+    "mtime": 1782759621.7733188,
+    "ast_hash": "20f4b72e683ce57d72518ef972ef16b6",
+    "semantic_hash": ""
+  },
+  "opencode - Copy.json": {
+    "mtime": 1781882924.4488232,
+    "ast_hash": "f81a9f7c9499228f1e9646c649968209",
+    "semantic_hash": ""
+  },
+  "CUSTOMER_ARCHITECTURE.md": {
+    "mtime": 1782764602.4705982,
+    "ast_hash": "99195c2f1314eec054cb4d2418322579",
+    "semantic_hash": ""
+  },
+  "CUSTOMER_BEHAVIOR_SPECIFICATION.md": {
+    "mtime": 1782761428.7736714,
+    "ast_hash": "3ed802461e855df7270839565ef79332",
+    "semantic_hash": ""
+  },
+  "CUSTOMER_ROOT_CAUSE_ANALYSIS.md": {
+    "mtime": 1783619962.198893,
+    "ast_hash": "687290e44a645bede8a68ea013724f91",
+    "semantic_hash": ""
+  },
+  "CUSTOMER_WORKFLOW_STABILIZATION.md": {
+    "mtime": 1782760238.1821265,
+    "ast_hash": "6e89fa117b92360865df6dd014b03b6c",
+    "semantic_hash": ""
+  },
+  "ui/customer_view.py": {
+    "mtime": 1786384094.9853241,
+    "ast_hash": "74618e28f5415292e9c9193111528efc",
+    "semantic_hash": ""
+  },
+  "ui/dialogs/customer_edit_dialog.py": {
+    "mtime": 1783694024.374446,
+    "ast_hash": "f26b2a2de5b9e372a76d458438920ea6",
+    "semantic_hash": ""
+  },
+  "ui/dialogs/customer_selection_dialog.py": {
+    "mtime": 1783693776.062795,
+    "ast_hash": "1d130942f89a69eb801a6dcb64b1d2c6",
+    "semantic_hash": ""
+  },
+  "core/storage/service_model_db.py": {
+    "mtime": 1783698240.8816972,
+    "ast_hash": "0ccb035349640294d77fab2b287bd093",
+    "semantic_hash": ""
+  },
+  "core/storage/service_repository.py": {
+    "mtime": 1783698482.3356547,
+    "ast_hash": "85472675df81e28ee0cb524b79a0a495",
+    "semantic_hash": ""
+  },
+  "services/service_service.py": {
+    "mtime": 1783698615.3611941,
+    "ast_hash": "bae672e458a30f8b2013024deff412ad",
+    "semantic_hash": ""
+  },
+  "ui/dialogs/service_edit_dialog.py": {
+    "mtime": 1783701656.3141453,
+    "ast_hash": "123e8b56d0559afb776738a258bce55c",
+    "semantic_hash": ""
+  },
+  "ui/service_view.py": {
+    "mtime": 1786302040.8265643,
+    "ast_hash": "ebb3db1e1be14cd1d0353bf6995ebc08",
+    "semantic_hash": ""
+  },
+  "SERVICES_CATALOG_PHASE1.md": {
+    "mtime": 1783702605.4273908,
+    "ast_hash": "05d9fb1af0ff7e2ae30a875acb1cf432",
+    "semantic_hash": ""
+  },
+  "core/storage/part_model_db.py": {
+    "mtime": 1784569227.8523924,
+    "ast_hash": "a4f86e702d7f9c42e3d940dc58f9b871",
+    "semantic_hash": ""
+  },
+  "core/storage/part_repository.py": {
+    "mtime": 1784569319.582622,
+    "ast_hash": "baf5de5d51c22ab42a6ff27008f70c59",
+    "semantic_hash": ""
+  },
+  "services/part_service.py": {
+    "mtime": 1784569382.4703305,
+    "ast_hash": "6dfa8bd9e0a3f1d19f43e7700b6aef9a",
+    "semantic_hash": ""
+  },
+  "ui/dialogs/part_edit_dialog.py": {
+    "mtime": 1784569376.282884,
+    "ast_hash": "1642dbbb23bb0a943611de9293506cb0",
+    "semantic_hash": ""
+  },
+  "ui/part_view.py": {
+    "mtime": 1786302041.1703463,
+    "ast_hash": "14002886985adcc6700268321eb76490",
+    "semantic_hash": ""
+  },
+  "PARTS_CATALOG_PHASE1.md": {
+    "mtime": 1783708586.039062,
+    "ast_hash": "1bdfdf3a7225dfea117fa5c67b78a56a",
+    "semantic_hash": ""
+  },
+  "core/storage/repair_part_model_db.py": {
+    "mtime": 1784493458.3052597,
+    "ast_hash": "4843bbc479be6c51433420e33121b8c2",
+    "semantic_hash": ""
+  },
+  "core/storage/repair_service_model_db.py": {
+    "mtime": 1783710813.6905482,
+    "ast_hash": "74fb13dadf1c3e7766e87996aaf5608f",
+    "semantic_hash": ""
+  },
+  "ui/widgets/invoice_widget.py": {
+    "mtime": 1788458677.5401568,
+    "ast_hash": "ba719b76afea0f8f07efc41fe22b6d27",
+    "semantic_hash": ""
+  },
+  "REPAIR_INVOICE_REDESIGN.md": {
+    "mtime": 1783711560.5560863,
+    "ast_hash": "5bc04fec129750e58b780b43b711b8cb",
+    "semantic_hash": ""
+  },
+  "services/customer_stats_service.py": {
+    "mtime": 1783798032.4904847,
+    "ast_hash": "de3bbc726aba0205936e0da0f5ffeddb",
+    "semantic_hash": ""
+  },
+  "ui/dialogs/item_picker_dialog.py": {
+    "mtime": 1783713565.479098,
+    "ast_hash": "c4ec0bd8fc128791af36288ff16802cd",
+    "semantic_hash": ""
+  },
+  "CUSTOMER_STATS_AND_STARTUP_UI.md": {
+    "mtime": 1783821195.9083467,
+    "ast_hash": "038638e3341a39837192aab149d458ec",
+    "semantic_hash": ""
+  },
+  "core/storage/todo_model_db.py": {
+    "mtime": 1784137280.9355202,
+    "ast_hash": "6ad16131b7171ccc98726cf5cdc32c94",
+    "semantic_hash": ""
+  },
+  "core/storage/todo_repository.py": {
+    "mtime": 1784137280.937532,
+    "ast_hash": "0b3215734737283f2e04820ce26dc82b",
+    "semantic_hash": ""
+  },
+  "services/todo_service.py": {
+    "mtime": 1784297941.999423,
+    "ast_hash": "b74433845463e72d1ccaf96a097beadd",
+    "semantic_hash": ""
+  },
+  "ui/dialogs/todo_edit_dialog.py": {
+    "mtime": 1784137281.049879,
+    "ast_hash": "b8d5779ffca3b1d42c4d79e9e82be6d3",
+    "semantic_hash": ""
+  },
+  "ui/todo_view.py": {
+    "mtime": 1786302041.594356,
+    "ast_hash": "c3652f4406453c672ac899deb5ff95c9",
+    "semantic_hash": ""
+  },
+  "core/storage/charge_model_db.py": {
+    "mtime": 1784571990.965775,
+    "ast_hash": "df28fa887ae3c338998bd2f86b403f47",
+    "semantic_hash": ""
+  },
+  "core/storage/charge_repository.py": {
+    "mtime": 1784572067.2145183,
+    "ast_hash": "8c0a8b04d14f3961a1a10fc4b7073715",
+    "semantic_hash": ""
+  },
+  "services/charge_service.py": {
+    "mtime": 1784572081.8475263,
+    "ast_hash": "ae993b279816fb2b1d065659d588bdec",
+    "semantic_hash": ""
+  },
+  "services/dashboard_service.py": {
+    "mtime": 1786210264.5930624,
+    "ast_hash": "7376d31eff62fc956c84fba2e22dc2a1",
+    "semantic_hash": ""
+  },
+  "services/repair_service.py": {
+    "mtime": 1785350411.0535862,
+    "ast_hash": "6c84f3b5b228e1bd8036ab65c3d45a39",
+    "semantic_hash": ""
+  },
+  "ui/charge_view.py": {
+    "mtime": 1786302039.5091753,
+    "ast_hash": "3648e834ed0c1fe2a3d82c397da63205",
+    "semantic_hash": ""
+  },
+  "ui/dialogs/charge_edit_dialog.py": {
+    "mtime": 1784572352.5863578,
+    "ast_hash": "18caa2cbc1211912b3e5824961e42e4c",
+    "semantic_hash": ""
+  },
+  "ui/dialogs/dashboard_dialog.py": {
+    "mtime": 1786299474.1937454,
+    "ast_hash": "610b5cf3b55ebd444f9b4757b0546760",
+    "semantic_hash": ""
+  },
+  "docs/financial_architecture.md": {
+    "mtime": 1784575844.5861769,
+    "ast_hash": "ba12a964e57a10a7023ef9eb225d6d7f",
+    "semantic_hash": ""
+  },
+  "core/storage/payment_reconciliation_repository.py": {
+    "mtime": 1785350221.594845,
+    "ast_hash": "8f33226c7ac13157194ebac08464ddbd",
+    "semantic_hash": ""
+  },
+  "core/storage/payment_transaction_model_db.py": {
+    "mtime": 1784918989.3431325,
+    "ast_hash": "847d78dd018cd4fd5a8fded23bbfebe7",
+    "semantic_hash": ""
+  },
+  "core/storage/payment_transaction_repository.py": {
+    "mtime": 1784928163.6224253,
+    "ast_hash": "968f6781671d7d92da267d6430414286",
+    "semantic_hash": ""
+  },
+  "services/financial_summary_service.py": {
+    "mtime": 1785353421.4401748,
+    "ast_hash": "1a38072e3438552fe913ebcf469e6a50",
+    "semantic_hash": ""
+  },
+  "services/payment_reconciliation_service.py": {
+    "mtime": 1785350264.3343642,
+    "ast_hash": "81f81047bbe78aea09758aa00ce19aa8",
+    "semantic_hash": ""
+  },
+  "services/profit_service.py": {
+    "mtime": 1785350964.1486516,
+    "ast_hash": "cc499d85ffec48bfcf9e1ae0e88f3f22",
+    "semantic_hash": ""
+  },
+  "services/test_financial_f1_5.py": {
+    "mtime": 1788460258.2334144,
+    "ast_hash": "c97534fc9c90205bda32988d8ae1d684",
+    "semantic_hash": ""
+  },
+  "FINANCIAL_F1_DATA_DOMAIN_AUDIT.md": {
+    "mtime": 1788375853.5545456,
+    "ast_hash": "2ae898016a36134e060aa67fb1df6b77",
+    "semantic_hash": ""
+  },
+  "FINANCIAL_ROADMAP.md": {
+    "mtime": 1786389355.0951946,
+    "ast_hash": "65a67dda6294fcb8db9bfffd57f53735",
+    "semantic_hash": ""
+  }
+}

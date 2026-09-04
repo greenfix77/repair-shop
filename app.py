@@ -230,6 +230,7 @@ class LaptopRepairManager(QMainWindow):
         self._part_service = PartService()
         self._charge_service = ChargeService()
         self._todo_service = TodoService()
+        self._financial_event_svc = None  # lazy: services.financial_event_service
         self.load_data()
         self.init_ui()
         self.refresh_table()  # پر کردن جدول با داده‌های بارگذاری شده
@@ -239,7 +240,33 @@ class LaptopRepairManager(QMainWindow):
         """ایجاد رابط کاربری"""
         build_ui(self)
         QApplication.instance().installEventFilter(self)
-    
+
+    # --- F2: Financial Event foundation -------------------------------
+
+    def _financial_event_service(self):
+        """Lazy FinancialEventService (F2 financial-event foundation)."""
+        if self._financial_event_svc is None:
+            from services.financial_event_service import FinancialEventService
+            self._financial_event_svc = FinancialEventService()
+        return self._financial_event_svc
+
+    def _materialize_financial_events(self, repair_data, is_new=False):
+        """Materialize REPAIR_CHARGE / DISCOUNT events after a repair save.
+
+        Idempotent (F2): unchanged repairs produce no events. Failures
+        never roll back the repair save itself — they are reported and
+        the next save self-heals.
+        """
+        try:
+            self._financial_event_service().materialize_for_repair(
+                repair_data, is_new=is_new
+            )
+        except Exception as exc:
+            show_error(
+                self, "خطا",
+                f"ثبت رویدادهای مالی ناموفق بود: {exc}"
+            )
+
     def update_date_label(self):
         """به‌روزرسانی تاریخ"""
         self.date_label.setText(f"📅 {today_persian()}")
@@ -318,6 +345,10 @@ class LaptopRepairManager(QMainWindow):
             self.repairs = add_repair(self.repairs, data)
             
             self.save_data()
+            # F2: ماده‌سازی رویدادهای مالی (REPAIR_CHARGE / DISCOUNT)
+            # add_repair خرج جدید را به انتهای لیست اضافه می‌کند.
+            if self.repairs:
+                self._materialize_financial_events(self.repairs[-1], is_new=True)
             self.refresh_table()
             self._refresh_customer_table_if_visible()
 
@@ -348,6 +379,9 @@ class LaptopRepairManager(QMainWindow):
             self.repairs = update_repair(self.repairs, repair_id, updated_data)
             
             self.save_data()
+            # F2: ماده‌سازی/اصلاح رویدادهای مالی (idempotent؛ رویدادهای
+            # قبلی دست‌نخورده می‌مانند و فقط اصلاحیه ثبت می‌شود)
+            self._materialize_financial_events(updated_data, is_new=False)
             self.refresh_table()
             self._refresh_customer_table_if_visible()
             
@@ -363,6 +397,17 @@ class LaptopRepairManager(QMainWindow):
         
         repair_id = int(self.table.item(selected_row, 1).text())
         customer_name = self.table.item(selected_row, 2).text()
+        
+        # F2: محافظت از سابقه مالی — حذف تعمیری که رویداد مالی دارد
+        # ردپای مالی آن را یتیم می‌کند؛ ابتدا باید رویدادها اصلاح شوند.
+        if self._financial_event_service().has_events_for_repair(repair_id):
+            show_warning(
+                self, "حذف ممکن نیست",
+                "این تعمیر رویدادهای مالی ثبت‌شده دارد (پرداخت، برگشت وجه، "
+                "بدهی تعمیر یا تخفیف).\nحذف آن سابقه مالی را از بین می‌برد.\n"
+                "ابتدا رویدادهای مالی باید اصلاح یا ابطال شوند."
+            )
+            return
         
         if show_question(self, "تأیید حذف", f"آیا از حذف تعمیر '{customer_name}' اطمینان دارید؟"):
             # استفاده از سرویس برای حذف تعمیر
@@ -395,14 +440,39 @@ class LaptopRepairManager(QMainWindow):
         ):
             return
 
-        id_set = set(selected_ids)
+        # F2: محافظت از سابقه مالی — تعمیرهای دارای رویداد مالی حذف نمی‌شوند
+        deletable_ids, blocked_ids = (
+            self._financial_event_service()
+            .filter_deletable_repairs(selected_ids)
+        )
+        if not deletable_ids:
+            show_warning(
+                self, "حذف ممکن نیست",
+                "تمام تعمیرات انتخاب‌شده رویدادهای مالی ثبت‌شده دارند.\n"
+                "ابتدا رویدادهای مالی باید اصلاح یا ابطال شوند."
+            )
+            return
+        if blocked_ids:
+            if not show_question(
+                self, "حذف جزئی",
+                f"{len(blocked_ids)} تعمیر رویداد مالی ثبت‌شده دارد و حفظ می‌شود.\n"
+                f"حذف {len(deletable_ids)} تعمیر دیگر ادامه یابد؟"
+            ):
+                return
+
+        id_set = set(deletable_ids)
         self.repairs = [r for r in self.repairs if r.get('id') not in id_set]
 
         self.save_data()
         self.refresh_table()
         self._refresh_customer_table_if_visible()
 
-        show_info(self, "موفق", f"{len(selected_ids)} تعمیر با موفقیت حذف شد.")
+        message = f"{len(deletable_ids)} تعمیر با موفقیت حذف شد."
+        if blocked_ids:
+            message += (
+                f"\n{len(blocked_ids)} تعمیر به دلیل سابقه مالی حفظ شد."
+            )
+        show_info(self, "موفق", message)
     
     def preview_invoice(self):
         """پیش‌نمایش فاکتور"""

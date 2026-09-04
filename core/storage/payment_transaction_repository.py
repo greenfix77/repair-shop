@@ -17,6 +17,8 @@ class PaymentTransactionRepository:
                 transaction_type=data.get('transaction_type', 'PAYMENT') or 'PAYMENT',
                 created_at=data.get('created_at') or datetime.now(),
                 note=data.get('note', '') or '',
+                customer_id=data.get('customer_id'),
+                event_key=data.get('event_key'),
             )
             session.add(row)
             session.commit()
@@ -44,6 +46,33 @@ class PaymentTransactionRepository:
             rows = session.query(PaymentTransactionDB).filter_by(
                 repair_id=repair_id,
             ).order_by(PaymentTransactionDB.created_at).all()
+            return [self._to_dict(row) for row in rows]
+        finally:
+            session.close()
+
+    def list_payment_history_for_repair(self, repair_id: int) -> List[Dict]:
+        """Return only the payment history rows (PAYMENT / REFUND).
+
+        F2: ``payment_transaction`` now also stores system-generated
+        REPAIR_CHARGE / DISCOUNT events. The Financial tab's payment
+        history keeps showing exactly what it showed before F2 — the
+        customer's payments and refunds — so the UI behavior is
+        unchanged. The full event stream (all types) is read via
+        :meth:`list_for_repair` / :meth:`list_all`.
+        """
+        session = SessionLocal()
+        try:
+            rows = (
+                session.query(PaymentTransactionDB)
+                .filter(
+                    PaymentTransactionDB.repair_id == repair_id,
+                    PaymentTransactionDB.transaction_type.in_(
+                        ('PAYMENT', 'REFUND')
+                    ),
+                )
+                .order_by(PaymentTransactionDB.created_at)
+                .all()
+            )
             return [self._to_dict(row) for row in rows]
         finally:
             session.close()
@@ -79,4 +108,6 @@ class PaymentTransactionRepository:
             'transaction_type': row.transaction_type or 'PAYMENT',
             'created_at': row.created_at.isoformat() if row.created_at else '',
             'note': row.note or '',
+            'customer_id': getattr(row, 'customer_id', None),
+            'event_key': getattr(row, 'event_key', None),
         }

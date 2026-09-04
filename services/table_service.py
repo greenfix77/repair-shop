@@ -26,13 +26,18 @@ def build_table_rows(repairs: List[Dict]) -> List[Dict]:
         receive_date = repair.get('receive_date', '')
         delivery_date = repair.get('delivery_date', '')
         
-        # Calculate financial totals
+        # Calculate financial totals (single source of truth, F1.5):
+        # the payable includes additional charges and applies the
+        # discount before tax, exactly like the InvoiceWidget and the
+        # invoice PDF.
         parts = repair.get('parts_cost', 0)
         labor = repair.get('labor_cost', 0)
         tax = repair.get('tax', 0)
         discount = repair.get('discount', 0)
-        
-        subtotal, tax_amount, total = calculate_invoice(parts, labor, tax, discount)
+        additional_charges = repair.get('additional_charges') or []
+
+        subtotal, tax_amount, total = calculate_invoice(
+            parts, labor, tax, discount, additional_charges)
         
         row_data = {
             'id': repair_id,

@@ -1,10 +1,11 @@
 from dataclasses import dataclass, field
-from typing import Dict, Any, List
+from typing import Dict, Any, List, Optional
 
 
 @dataclass
 class Repair:
     id: int = 0
+    customer_id: Optional[int] = None
     customer_name: str = ''
     phone: str = ''
     brand: str = ''
@@ -31,6 +32,7 @@ class Repair:
     def to_dict(self) -> Dict[str, Any]:
         return {
             'id': self.id,
+            'customer_id': self.customer_id,
             'customer_name': self.customer_name,
             'phone': self.phone,
             'brand': self.brand,
@@ -57,8 +59,22 @@ class Repair:
 
     @classmethod
     def from_dict(cls, data: Dict[str, Any]) -> 'Repair':
+        # customer_id is the authoritative customer reference (F1.5).
+        # Accept int or numeric string; missing/empty/0/invalid -> None
+        # (unresolved legacy link, never a guessed customer).
+        raw_customer_id = data.get('customer_id')
+        try:
+            customer_id = (
+                int(raw_customer_id)
+                if raw_customer_id not in (None, '', 0)
+                else None
+            )
+        except (TypeError, ValueError):
+            customer_id = None
+
         return cls(
             id=data.get('id', 0),
+            customer_id=customer_id,
             customer_name=data.get('customer_name', ''),
             phone=data.get('phone', ''),
             brand=data.get('brand', ''),

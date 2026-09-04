@@ -47,6 +47,10 @@ def update_repair(repairs: List[Dict], repair_id: int, updated_data: Dict) -> Li
         if r['id'] == repair_id:
             merged = {**r, **repair.to_dict()}
             merged['id'] = repair_id
+            # F1.5: an edit that does not carry a customer reference must
+            # never drop an already-stored customer_id (legacy safety).
+            if merged.get('customer_id') is None and r.get('customer_id') is not None:
+                merged['customer_id'] = r.get('customer_id')
             updated_repairs.append(merged)
         else:
             updated_repairs.append(r)

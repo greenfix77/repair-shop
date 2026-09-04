@@ -7,6 +7,9 @@ class RepairDB(Base):
     __tablename__ = "repairs"
 
     id = Column(Integer, primary_key=True, autoincrement=True)
+    # Authoritative customer reference (F1.5). Nullable: legacy repairs
+    # without a reliable customer match stay NULL (unresolved), never guessed.
+    customer_id = Column(Integer, nullable=True)
     customer_name = Column(String, default="")
     phone = Column(String, default="")
     brand = Column(String, default="")

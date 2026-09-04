@@ -54,6 +54,13 @@ class PaymentReconciliationRepository:
         Unknown transaction types are ignored on purpose — the reconciliation
         contract only knows the three documented types.
 
+        F2: ``payment_transaction`` also stores REPAIR_CHARGE / DISCOUNT
+        events. Those are NOT part of the payment reconciliation
+        contract, so the query is scoped to the three reconciliation
+        types. This keeps the historical verdict semantics unchanged:
+        a repair whose only event is a REPAIR_CHARGE still reports
+        ``NO_LEDGER`` (no payment rows), exactly as before F2.
+
         Missing or malformed amounts are coerced to ``0`` (safe default) but
         never silently mutated on disk: we only ``SELECT`` here.
         """
@@ -67,7 +74,12 @@ class PaymentReconciliationRepository:
                     ),
                     func.count(PaymentTransactionDB.transaction_id),
                 )
-                .filter(PaymentTransactionDB.repair_id == repair_id)
+                .filter(
+                    PaymentTransactionDB.repair_id == repair_id,
+                    PaymentTransactionDB.transaction_type.in_(
+                        ('PAYMENT', 'REFUND', 'ADJUSTMENT')
+                    ),
+                )
                 .group_by(PaymentTransactionDB.transaction_type)
                 .all()
             )
